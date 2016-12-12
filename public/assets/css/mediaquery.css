@@ -40,21 +40,18 @@
     border: 0px;
 }
 	
-	.soumenu_classics_text li, .soumenu_customs_text li {
+	.soumenu_classics_text li, .soumenu_customs_text li, .soumenu_pieces_text li, .soumenu_boites_text li {
 	border-bottom: 1px solid #000;
 	display: none;
-}
-	
-	.soumenu_classics_text li {
 	margin: 0 0 10px;
 }
 
-	#plusclassic_hide, #pluscustoms_hide {
+	#plusclassic_hide, #pluscustoms_hide, #pluspieces_hide, #plusboites_hide {
 	display: block;
 }
 	
-	#faminus_hide {
-	display: block;
+	#faminus_hide, #faminus1_hide, #faminus2_hide, #faminus3_hide {
+	display: hide;
 }
     
 }

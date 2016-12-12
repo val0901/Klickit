@@ -330,26 +330,26 @@ a:focus {
 	height: auto;
 }
 
-.soumenu_classics_text, .soumenu_customs_text {
+.soumenu_classics_text, .soumenu_customs_text, .soumenu_pieces_text, .soumenu_boites_text {
 	font-size: 20px;
 	color: #000;
 }
 
-.soumenu_classics_text li, .soumenu_customs_text li {
+.soumenu_classics_text li, .soumenu_customs_text li, .soumenu_pieces_text li, .soumenu_boites_text li {
 	border-bottom: 1px solid #000;
 	display: block;
 	margin: 0 0 20px;
 }
 
-.faplus_color {
+.faplus_color, .faminus_color {
 	color: #ea2229;
 	cursor: pointer;
 }
 
-#faminus_hide {
+#faminus_hide, #faminus1_hide, #faminus2_hide, #faminus3_hide {
 	display: none;
 }
 
-#plusclassic_hide, #pluscustoms_hide {
+#plusclassic_hide, #pluscustoms_hide, #pluspieces_hide, #plusboites_hide {
 	display: none;
 }

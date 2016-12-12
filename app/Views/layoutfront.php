@@ -37,26 +37,77 @@
 })
 	
 	$(document).ready(function(){
+		$(".slidetoggle").click(function(){
+			$(".TLA_dropdownbox_width").slideToggle();
+		})
 		$(".plus_classic").click(function(){
 			$(".soumenu_classics_text li").show();
 			$(".soumenu_customs_text li").hide();
+			$(".soumenu_pieces_text li").hide();
+			$(".soumenu_boites_text li").hide();
+			$("#plusclassic_hide").hide();
+			$("#pluscustoms_hide").show();
+			$("#pluspieces_hide").show();
+			$("#plusboites_hide").show();
+			$("#faminus_hide").show();
+			$("#faminus1_hide").hide();
+			$("#faminus2_hide").hide();
+			$("#faminus3_hide").hide();
 			$(".TLA_dropdownbox_width").css("display", "block");
-			$(".dropdown-toggle").click(function(){
-				$(".TLA_dropdownbox_width").slideToggle();
-			})
 		})
 	})
 	
 	$(document).ready(function(){
 		$(".plus_customs").click(function(){
 			$(".soumenu_customs_text li").show();
-			$("#plusclassic_hide").toggle();
-			$("#faminus_hide").toggle();
 			$(".soumenu_classics_text li").hide();
+			$(".soumenu_pieces_text li").hide();
+			$(".soumenu_boites_text li").hide();
+			$("#pluspieces_hide").show();
+			$("#pluscustoms_hide").hide();
+			$("#plusclassic_hide").show();
+			$("#plusboites_hide").show();
+			$("#faminus_hide").hide();
+			$("#faminus1_hide").show();
+			$("#faminus2_hide").hide();
+			$("#faminus3_hide").hide();
 			$(".TLA_dropdownbox_width").css("display", "block");
-			$(".dropdown-toggle").click(function(){
-				$(".TLA_dropdownbox_width").slideToggle();
-			})
+		})
+	})
+	
+	$(document).ready(function(){
+		$(".plus_pieces").click(function(){
+			$(".soumenu_customs_text li").hide();
+			$(".soumenu_classics_text li").hide();
+			$(".soumenu_boites_text li").hide();
+			$(".soumenu_pieces_text li").show();
+			$("#pluspieces_hide").hide();
+			$("#pluscustoms_hide").show();
+			$("#plusclassic_hide").show();
+			$("#plusboites_hide").show();
+			$("#faminus_hide").hide();
+			$("#faminus1_hide").hide();
+			$("#faminus3_hide").hide();
+			$("#faminus2_hide").show();
+			$(".TLA_dropdownbox_width").css("display", "block");
+		})
+	})
+	
+	$(document).ready(function(){
+		$(".plus_boites").click(function(){
+			$(".soumenu_customs_text li").hide();
+			$(".soumenu_classics_text li").hide();
+			$(".soumenu_pieces_text li").hide();
+			$(".soumenu_boites_text li").show();
+			$("#plusboites_hide").hide();
+			$("#pluscustoms_hide").show();
+			$("#plusclassic_hide").show();
+			$("#pluspieces_hide").show();
+			$("#faminus_hide").hide();
+			$("#faminus1_hide").hide();
+			$("#faminus2_hide").hide();
+			$("#faminus3_hide").show();
+			$(".TLA_dropdownbox_width").css("display", "block");
 		})
 	})
 	
@@ -155,14 +206,14 @@
         
         <!--menu tous les articles-->
 		<li class="navli_width TLA_bgcolor">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="padding: 15px;">Tous les articles
+          <a href="#" class="dropdown-toggle slidetoggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="padding: 15px;">Tous les articles
           </a>
           <ul class="dropdown-menu TLA_dropdownbox_width">
 			  <div class="row">
 				  <div class="col-lg-3 col-md-6 soumenu_TLA_height">
 					  <div class="soumenu_TLA_text">
 						  <li style="float:left;">Classic<li>
-						  <li style="float:right;"><i class="fa fa-plus faplus_color plus_classic" aria-hidden="true" id="plusclassic_hide"></i><i class="fa fa-minus" aria-hidden="true" id="faminus_hide"></i></li>
+						  <li style="float:right;"><i class="fa fa-plus faplus_color plus_classic" aria-hidden="true" id="plusclassic_hide"></i><i class="fa fa-minus faminus_color" aria-hidden="true" id="faminus_hide"></i></li>
 						  <div class="clear"></div>
 						  <ul class="soumenu_classics_text">
 							  <li>fadsfdsf</li>
@@ -175,7 +226,7 @@
 				  <div class="col-lg-3 col-md-6 soumenu_TLA_height">
 					  <div class="soumenu_TLA_text">
 						  <li style="float:left;">Customs<li>
-						  <li style="float:right;"><i class="fa fa-plus faplus_color plus_customs" aria-hidden="true" id="pluscustoms_hide"></i></li>
+						  <li style="float:right;"><i class="fa fa-plus faplus_color plus_customs" aria-hidden="true" id="pluscustoms_hide"></i><i class="fa fa-minus faminus_color" aria-hidden="true" id="faminus1_hide"></i></li>
 						  <div class="clear"></div>
 						  <ul class="soumenu_customs_text">
 							  <li>fadsfdsf</li>
@@ -186,10 +237,30 @@
 					  </div>
 				  </div>
 				  <div class="col-lg-3 col-md-6 soumenu_TLA_height">
-					  <p class="soumenu_TLA_text">Pieces détachées</p>
+					  <div class="soumenu_TLA_text">
+						  <li style="float:left;">Pieces détachées<li>
+						  <li style="float:right;"><i class="fa fa-plus faplus_color plus_pieces" aria-hidden="true" id="pluspieces_hide"></i><i class="fa fa-minus faminus_color" aria-hidden="true" id="faminus2_hide"></i></li>
+						  <div class="clear"></div>
+						  <ul class="soumenu_pieces_text">
+							  <li>fadsfdsf</li>
+							  <li>fadsfdsf</li>
+							  <li>fadsfdsf</li>
+							  <li>fadsfdsf</li>
+					  	  </ul>
+					  </div>
 				  </div>
-				  <div class="col-lg-3 col-md-6">
-					  <p class="soumenu_TLA_text">Boites/Set</p>
+				  <div class="col-lg-3 col-md-6 soumenu_TLA_height">
+					  <div class="soumenu_TLA_text">
+						  <li style="float:left;">Boites/Set<li>
+						  <li style="float:right;"><i class="fa fa-plus faplus_color plus_boites" aria-hidden="true" id="plusboites_hide"></i><i class="fa fa-minus faminus_color" aria-hidden="true" id="faminus3_hide"></i></li>
+						  <div class="clear"></div>
+						  <ul class="soumenu_boites_text">
+							  <li>fadsfdsf</li>
+							  <li>fadsfdsf</li>
+							  <li>fadsfdsf</li>
+							  <li>fadsfdsf</li>
+					  	  </ul>
+					  </div>
 				  </div>
 			  </div>
           </ul>
