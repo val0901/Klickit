@@ -4,6 +4,7 @@ namespace Controller;
 
 use \W\Controller\Controller;
 use \Model\UserModel;
+use \Model\OrdersModel;
 use \W\Security\AuthentificationModel;
 use \W\Security\AuthorizationModel;
 
@@ -15,7 +16,14 @@ class BackController extends Controller
 	 */
 	public function index()
 	{
-		$this->show('back/index');
+		 
+		$list = new OrdersModel();
+		$orders = $list->findAll();
+
+		$data = [
+			'orders'=> $orders,
+		];
+		$this->show('back/index', $data);
 	}
 
 	/**

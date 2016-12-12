@@ -71,3 +71,18 @@ STYLE NAVBAR
     .navbar .nav-collapse .navbar-form { margin: 0; }
     .nav-collapse>li { float: none; }
 }
+
+/**********
+STYLE INDEX
+***********/
+
+#lastorder {
+	border: 3px solid black;
+	width: 80%;
+	height: 300px ;
+	margin-top: 20px;
+}
+
+#voirplus {
+	position: relative;
+	
