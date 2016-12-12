@@ -15,7 +15,14 @@ class UserController extends Controller
 	 */
 	public function listUser()
 	{	
-		$this->show('back/User/listUser');
+		$list = new UserModel();
+		$users = $list->findAll();
+
+		$data = [
+			'users'	=> $users,
+		];
+
+		$this->show('back/User/listUser', $data);
 	}
 
 	/**
