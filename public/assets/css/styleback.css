@@ -35,14 +35,15 @@ form {
 /***********
 STYLE NAVBAR
 ***********/
-.navbar {
-	margin-bottom: 10px;
+.navbar-default {
+	margin: 10px;
+	margin-bottom: 5px;
+	height: 50px;
 }
 
 .navbar-right {
 	color: #777;
 }
-
 
 .navbar-brand { position: relative; z-index: 2; }
 

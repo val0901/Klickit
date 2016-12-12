@@ -15,18 +15,16 @@
 				<header>
 
 					<nav class="navbar navbar-default">
-					      
 					        <!-- Brand and toggle get grouped for better mobile display -->
 					        <div class="navbar-header">
-					          <a class="navbar-brand" href="#">Klick it</a>
+					          <a class="navbar-brand" href="#">Klickit</a>
 					        </div>
 					        <div class="navbar navbar-right">
 						        <ul>
-						        	<li>Bonjour Vava</li>
+						        	<li><a href="">Bonjour Vava</a></li>
 						        	<li><a href="">Se déconnecter</a></li>
 						        </ul>
-					        </div>
-					     
+					        </div>	     
 					    </nav><!-- /.navbar -->
 					  
 
@@ -40,7 +38,6 @@
 					        <div class="collapse navbar-collapse" id="navbar-collapse-1">
 					          <ul class="nav navbar-nav navbar-justified
 					          ">
-
 					            <li><a href="#">Accueil</a></li>
 					            <li><a href="#">Admin</a></li>
 					            <li><a href="#">Utilisateur</a></li>
@@ -56,12 +53,10 @@
 					      </div><!-- /.container -->
 					    </nav><!-- /.navbar -->
 					</div><!-- /.container-fluid -->
-
 					
 				</header>
 
 				<div class="container">
-
 					<section>
 						<?= $this->section('main_content') ?>
 					</section>
