@@ -21,7 +21,7 @@
 
 		//Pages liées à MessageController
 		['GET|POST', '/back/listMessage', 'Message#listMessage', 'listMessage'],
-		['GET|POST', '/back/viewMessage/[i:id]', 'Message#viewMessage', 'listMessage'],
+		['GET|POST', '/back/viewMessage/[i:id]', 'Message#viewMessage', 'viewMessage'],
 		['GET|POST', '/back/deleteMessage/[i:id]', 'Message#deleteMessage', 'deleteMessage'],
 
 		//Pages liées à EventController
