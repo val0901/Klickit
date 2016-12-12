@@ -5,8 +5,9 @@
 
 		//Routes pour le front (classé par controller)
 		['GET|POST', '/front/index', 'Front#index', 'front_index'],
-		['GET|POST', '/front/404', 'Front#404', 'front_404'],
 
+		//Pages liées à UserController
+		['GET|POST', '/front/addUser', 'User#faddUser', 'faddUser'],
 
 		//Routes pour le back (classé par controller)
 		['GET|POST', '/back/index', 'Back#index', 'back_index'],
