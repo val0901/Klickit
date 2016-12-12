@@ -8,6 +8,7 @@
 
 		//Pages liées à UserController
 		['GET|POST', '/front/addUser', 'User#faddUser', 'faddUser'],
+		['GET|POST', '/front/login', 'Front#login', 'front_login'],
 
 
 		//Routes pour le back (classé par controller)
