@@ -1,0 +1,61 @@
+@media screen and (max-width: 950px) {
+    .navli_width {
+    font-size: 20px;
+}
+    
+}
+
+@media screen and (max-width: 750px) {
+    .navli_width {
+    width: 100%;
+}
+    
+    .navlicon_width {
+    width: 100%;
+}
+    
+    .dropdown-menu {
+    background-clip: padding-box;
+    background-color: #fff;
+    display: none;
+    float: left;
+    font-size: 14px;
+    left: 0;
+    margin: 2px 0 0;
+    min-width: 100%;
+    padding: 5px 0;
+    position: relative;
+    text-align: left;
+    top: 100%;
+    z-index: 0;
+    border-radius: 0px;
+    box-shadow: none;
+}
+    
+    .TLA_bgcolor {
+    position: relative;
+}
+    
+    .TLA_dropdownbox_width {
+    border: 0px;
+}
+	
+	.soumenu_classics_text li, .soumenu_customs_text li {
+	border-bottom: 1px solid #000;
+	display: none;
+}
+	
+	.soumenu_classics_text li {
+	margin: 0 0 10px;
+}
+
+	#plusclassic_hide, #pluscustoms_hide {
+	display: block;
+}
+	
+	#faminus_hide {
+	display: block;
+}
+    
+}
+
