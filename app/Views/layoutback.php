@@ -10,7 +10,7 @@
 <body>
 	<div class="container">
 		<header>
-			<h1>W :: <?= $this->e($title) ?></h1>
+			<nav> <img src=""> <?= $this->section('nav_bar') ?></nav>
 		</header>
 
 		<section>

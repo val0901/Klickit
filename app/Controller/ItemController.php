@@ -8,21 +8,33 @@ use \W\Security\AuthorizationModel;
 
 class ItemController extends Controller 
 {
+	/**
+	 * Liste des articles
+	 */
 	public function listItem()
 	{
 		$this->show('back/Item/listItem');
 	}
 
+	/**
+	 * Ajoût d'article
+	 */
 	public function addItem()
 	{
 		$this->show('back/Item/addItem');
 	}
 
+	/**
+	 * Modification d'article 
+	 */
 	public function updateItem()
 	{
 		$this->show('back/Item/updateItem');
 	}
 
+	/**
+	 * Suppression d'article
+	 */
 	public function deleteItem()
 	{
 		$this->show('back/Item/deleteItem');

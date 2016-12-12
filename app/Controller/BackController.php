@@ -15,4 +15,11 @@ class BackController extends Controller
 		$this->show('back/index');
 	}
 
+	/**
+	 * Page de connexion
+	 */
+	public function login()
+	{
+		$this->show('back/login');
+	}
 }
