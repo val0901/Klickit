@@ -18,6 +18,7 @@
 				<td><?=$order['id']; ?></td>
 				<td><?=$order['firstname'].' '.$order['lastname']; ?></td>
 				<td><?php ?>Gérer la liste des articles</td>
+				<td><?= date('d/m/Y', strtotime($order['date_creation']));?></td>
 				<td><?=$order['statut']; ?></td>
 				<td>
 					<form>
