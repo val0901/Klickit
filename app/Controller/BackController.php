@@ -3,8 +3,9 @@
 namespace Controller;
 
 use \W\Controller\Controller;
-use \Model\AdminModel;
+use \Model\UserModel;
 use \W\Security\AuthentificationModel;
+use \W\Security\AuthorizationModel;
 
 class BackController extends Controller
 {
@@ -36,7 +37,7 @@ class BackController extends Controller
 				$idConnexion = $connexion->isValidLoginInfo($post['pseudo'], $post['password']);
 
 				if($connexion){
-					$userModel = new AdminModel();
+					$userModel = new UserModel();
 					$user = $userModel->find($idConnexion);
 
 					$connexion->logUserIn($user);
@@ -49,8 +50,11 @@ class BackController extends Controller
 		}
 
 		if(!empty($this->getUser())){
+			$verification = new AuthorizationModel();
 
-			$this->redirectToRoute('back_index');
+			if($verification->isGranted('Admin')) {
+				$this->redirectToRoute('back_index');
+			}
 		}
 		else {
 			$param = ['error' => $errors];
