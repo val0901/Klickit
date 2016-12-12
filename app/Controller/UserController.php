@@ -33,6 +33,7 @@ class UserController extends Controller
 		$post = [];
 		$errors = [];
 		$social_title = ['M', 'Mme'];
+		$role = ['Admin', 'Utilisateur'];
 		$hashPassword = new AuthentificationModel();
 		$insert = new UserModel();
 		$success = false;
@@ -48,6 +49,10 @@ class UserController extends Controller
 
 			if(!in_array($post['social_title'], $social_title)){
 				$errors[] = 'Vous devez choisir votre civilité (M ou Mme)';
+			}
+
+			if(!in_array($post['role'], $role)){
+				$errors[] = 'Vous devez choisir un niveau d\'utilisateur (Admin ou Utilisateur)';
 			}
 
 			if(!v::notEmpty()->length(3,20)->validate($post['firstname'])){
@@ -86,6 +91,7 @@ class UserController extends Controller
 				
 				$dataInsert = [
 					'social_title'	=> $post['social_title'],
+					'role'		=> $post['role'],
 					'firstname'	=> $post['firstname'],
 					'lastname'	=> $post['lastname'],
 					'username'	=> $post['username'],

@@ -25,6 +25,17 @@
 		  </div>
 		</div>
 
+		<!-- Select Basic -->
+		<div class="form-group">
+		  <label class="col-md-4 control-label" for="role">Rôle</label>
+		  <div class="col-md-4">
+		    <select id="role" name="role" class="form-control">
+		      <option value="Admin">Admin</option>
+		      <option value="Utilisateur">Utilisateur</option>
+		    </select>
+		  </div>
+		</div>
+
 		<!-- Text input-->
 		<div class="form-group">
 		  <label class="col-md-4 control-label" for="firstname">Prénom</label>  
