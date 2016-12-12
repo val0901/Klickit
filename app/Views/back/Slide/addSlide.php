@@ -1,4 +1,4 @@
-<?php $this->layout('layoutback', ['title' => 'Index']) ?>
+<?php $this->layout('layoutback', ['title' => 'Ajouter des slides']) ?>
 
 <?php $this->start('main_content') ?>
 	

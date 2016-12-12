@@ -1,4 +1,4 @@
-<?php $this->layout('layoutback', ['title' => 'Index']) ?>
+<?php $this->layout('layoutback', ['title' => 'Ajouter un article ']) ?>
 
 <?php $this->start('main_content') ?>
 	
