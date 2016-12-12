@@ -5,7 +5,7 @@
 <?php $this->stop('nav_bar') ?>
 
 <?php $this->start('main_content') ?>
-	<form class="form-horizontal">
+	<form method="POST" class="form-horizontal">
 		<fieldset>
 
 		<!-- Form Name -->

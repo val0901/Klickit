@@ -1,7 +1,9 @@
 <?php
 namespace Model;
 
-class AdminModel extends \W\Model\Model 
+use \W\Model\UsersModel;
+
+class AdminModel extends \W\Model\UsersModel 
 {
 
 
