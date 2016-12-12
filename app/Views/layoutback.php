@@ -15,18 +15,18 @@
 				<header>
 
 					<nav class="navbar navbar-default">
-					      <div class="container">
+					      
 					        <!-- Brand and toggle get grouped for better mobile display -->
 					        <div class="navbar-header">
 					          <a class="navbar-brand" href="#">Klick it</a>
 					        </div>
-					        <div class="navbar-right">
+					        <div class="navbar navbar-right">
 						        <ul>
 						        	<li>Bonjour <?php  ?></li>
 						        	<li><a href="">Se déconnecter</a></li>
 						        </ul>
 					        </div>
-					      </div><!-- /.container -->
+					     
 					    </nav><!-- /.navbar -->
 					  
 
@@ -38,7 +38,8 @@
 					    	
 					        <!-- Collect the nav links, forms, and other content for toggling -->
 					        <div class="collapse navbar-collapse" id="navbar-collapse-1">
-					          <ul class="nav navbar-nav navbar-right">
+					          <ul class="nav navbar-nav navbar-justified
+					          ">
 
 					            <li><a href="#">Accueil</a></li>
 					            <li><a href="#">Admin</a></li>
