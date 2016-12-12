@@ -55,6 +55,9 @@ class BackController extends Controller
 			if($verification->isGranted('Admin')) {
 				$this->redirectToRoute('back_index');
 			}
+			elseif ($verification->isGranted('Utilisateur')) {
+				$this->redirectToRoute('front_index');
+			}
 		}
 		else {
 			$param = ['error' => $errors];
