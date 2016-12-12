@@ -38,7 +38,7 @@ class BackController extends Controller
 			$post = array_map('trim', array_map('strip_tags', $_POST));
 
 			if(empty($post['pseudo']) && empty($post['password'])) {
-				$errors[] = 'Veuillez entre une pseudo et un mot de passe';
+				$errors[] = 'Veuillez saisir un pseudo et un mot de passe';
 			}
 			else {
 				$connexion = new AuthentificationModel();

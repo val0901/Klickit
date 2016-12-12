@@ -16,6 +16,9 @@ class FrontController extends Controller
 		$this->show('front/index');
 	}
 
+	/**
+	 * Page de connexion
+	 */
 	public function login()
 	{
 		$post = [];
@@ -25,14 +28,14 @@ class FrontController extends Controller
 			$post = array_map('trim', array_map('strip_tags', $_POST));
 
 			if(empty($post['pseudo']) && empty($post['password'])) {
-				$errors[] = 'Veuillez entre une pseudo et un mot de passe';
+				$errors[] = 'Veuillez saisir un pseudo et un mot de passe';
 			}
 			else {
 				$connexion = new AuthentificationModel();
 				$idConnexion = $connexion->isValidLoginInfo($post['pseudo'], $post['password']);
 
 				if($connexion){
-					$userModel = new AdminModel();
+					$userModel = new UserModel();
 					$user = $userModel->find($idConnexion);
 
 					$connexion->logUserIn($user);
@@ -41,17 +44,16 @@ class FrontController extends Controller
 					$error = 'Erreur d\'identifiant ou de mot de passe';
 				}
 			}
-
-		}
-
 		if(!empty($this->getUser())){
-
-			$this->redirectToRoute('back_index');
+			$this->redirectToRoute('front_index');
 		}
 		else {
 			$param = ['error' => $errors];
-			$this->show('front/User/connectUser', $param);			
+			$this->show('front_login', $param);			
 		}
+
+		}
+
 	}
 
 }

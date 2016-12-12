@@ -8,6 +8,10 @@
 
 		//Pages liées à UserController
 		['GET|POST', '/front/addUser', 'User#faddUser', 'faddUser'],
+		['GET|POST', '/front/cptUse', 'User#cptUse', 'front_cptUse'],
+
+
+		// Pages liées à FrontController
 		['GET|POST', '/front/login', 'Front#login', 'front_login'],
 
 

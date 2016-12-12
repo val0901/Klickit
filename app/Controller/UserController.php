@@ -10,6 +10,11 @@ use \Respect\Validation\Validator as v;
 
 class UserController extends Controller 
 {
+
+
+/**************** BACK ****************/
+
+
 	/**
 	 * Liste des utilisateurs
 	 */
@@ -135,7 +140,7 @@ class UserController extends Controller
 		$this->show('back/User/deleteUser');
 	}
 
-	/*********** FRONT ***********/
+/**************** FRONT ****************/
 
 	/**
 	 * Ajout d'utilisateur Front
@@ -225,5 +230,14 @@ class UserController extends Controller
 		$this->show('front/User/addUser', $params);
 	}
 
+	/**
+	* Affichage page compte user 
+	*/
+	public function cptUse()
+	{
+
+		$this->show('front/User/cptUse', $params);
+
+	}
 
 }
