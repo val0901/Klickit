@@ -1,9 +1,5 @@
 <?php $this->layout('layoutback', ['title' => 'Login']) ?>
 
-<?php $this->start('nav_bar') ?>
-
-<?php $this->stop('nav_bar') ?>
-
 <?php $this->start('main_content') ?>
 	<form method="POST" class="form-horizontal">
 		<fieldset>

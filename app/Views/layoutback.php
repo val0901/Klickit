@@ -22,7 +22,7 @@
 					        </div>
 					        <div class="navbar navbar-right">
 						        <ul>
-						        	<li>Bonjour <?php  ?></li>
+						        	<li>Bonjour Vava</li>
 						        	<li><a href="">Se déconnecter</a></li>
 						        </ul>
 					        </div>
