@@ -435,7 +435,7 @@
 	
 	/*vignetteEvent position*/
 	$(document).ready(function(){
-		$(".vignetteEvent_hide > img").hover(function () { $(this).attr("src", "../public/assets/img/vignetteEvent2.png") }, function () { $(this).attr("src", "../public/assets/img/vignetteEvent1.png") }); 
+		$(".vignetteEvent_hide > img").hover(function () { $(this).attr("src", "<?=$this->assetUrl('/img/vignetteEvent2.png');?>") }, function () { $(this).attr("src", "<?=$this->assetUrl('/img/vignetteEvent1.png');?>") }); 
 	})
 	/*End vignetteEvent position*/
 
