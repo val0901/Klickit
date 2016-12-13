@@ -15,7 +15,7 @@ class FrontOrdersController extends Controller
 	public function FrontListOrders()
 	{
 		
-		$this->show('front/User/listOrders', $data);
+		$this->show('front/User/listOrders');
 	}
 
 	/**
@@ -23,7 +23,7 @@ class FrontOrdersController extends Controller
 	 */
 	public function FrontviewOrders() 
 	{
-		$this->show('front/Orders/updateOrders');
+		$this->show('front/User/viewUserOrder');
 	}
 
 }

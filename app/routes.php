@@ -3,15 +3,7 @@
 	$w_routes = array(
 		['GET', '/', 'Default#home', 'default_home'],
 
-		//Routes pour le front (classé par controller)
-		['GET|POST', '/front/index', 'Front#index', 'front_index'],
-		['GET|POST', '/front/login', 'Front#login', 'front_login'],
-
-		//Pages liées à UserController
-		['GET|POST', '/front/addUser', 'User#faddUser', 'front_faddUser'],
-		['GET|POST', '/front/cptUser', 'User#affCptUser', 'front_affcptuser'],
-		['GET|POST', '/front/UpdateUser', 'User#fupdateUser', 'front_fupdateUser'],
-
+/******************** BACK *********************/
 
 		//Routes pour le back (classé par controller)
 		['GET|POST', '/back/index', 'Back#index', 'back_index'],
@@ -69,6 +61,18 @@
 
 /******************** FRONT *********************/
 
+//Routes pour le front (classé par controller)
+
+
+		//Pages liées à FrontController
+		['GET|POST', '/front/index', 'Front#index', 'front_index'],
+		['GET|POST', '/front/login', 'Front#login', 'front_login'],
+
+		//Pages liées à UserController
+		['GET|POST', '/front/addUser', 'FrontUser#faddUser', 'front_faddUser'],
+		['GET|POST', '/front/cptUser', 'FrontUser#affCptUser', 'front_affcptuser'],
+		['GET|POST', '/front/UpdateUser', 'FrontUser#fupdateUser', 'front_fupdateUser'],
+
 		//Pages liées à FrontItemController
 		['GET|POST', '/front/listItemClassics', 'FrontItem#listItemClassics', 'listItemClassics'],
 		['GET|POST', '/front/listItemCustoms', 'FrontItem#listItemCustoms', 'listItemCustoms'],
@@ -79,8 +83,8 @@
 		['GET|POST', '/front/fGuestbook', 'FrontGuestbook#affGuestbook', 'fGuestbook'],
 
 		//Pages liées à FrontOrdersController
-		['GET|POST', '/front/FrontListOrders', 'FrontOrders#FrontListOrders', 'front_FrontListOrders'],
-		['GET|POST', '/front/viewUserCde', 'FrontOrders#viewUserOrders', 'front_viewUserCde'],
+		['GET|POST', '/front/listOrders', 'FrontOrders#FrontListOrders', 'front_listOrders'],
+		['GET|POST', '/front/viewUserOrder', 'FrontOrders#FrontviewOrders', 'front_viewUserOrder'],
 
 
 	);
