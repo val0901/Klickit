@@ -1,10 +1,8 @@
 <?php $this->layout('layoutback', ['title' => 'Liste des articles ']) ?>
 
 <?php $this->start('main_content') ?>
-	<?php if(empty($Classic)): ?>
-		<p class="alert alert-danger">Aucun article trouvé</p>
-	<?php else: ?>
 		<form>
+			<h3>Catégorie Classique</h3>
 			<table class="table table-responsive">
 				<thead>
 					<th>N°</th>
@@ -36,9 +34,8 @@
 								    </select>
 							    </div>
 							</td>
-							<td><a href="#">Voir le profil</a></td> <!-- Mettre lien pour voir le profil sur le front -->
 							<td><a href="<?=$this->url('updatevalue', ['id'=>$value['id']]);?>">Mettre à jour le profil</a></td>
-							<td><button class="btn btn-danger">Effacer le profil</button></td>
+							<td><button class="btn btn-danger">Effacer le produit</button></td>
 						</tr>	
 					<?php endforeach;?>
 				</tbody>

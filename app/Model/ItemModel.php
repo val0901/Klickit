@@ -6,8 +6,8 @@ class ItemModel extends \W\Model\Model
 	// Requête pour aller sélectionner tout les articles dans la table "Item" qui ont pour catégorie "Playmobil classique"
 	public function listItemClassic()
 	{
-		$play1 = 'SELECT * FROM '.$this->table.' WHERE category = Playmobil classique';
-		$classicPlay = $this->dbh->prepare($play1);
+		$play = 'SELECT * FROM '.$this->table.' WHERE category = Playmobil classique';
+		$classicPlay = $this->dbh->prepare($play);
 		$classicPlay->execute();
 
 		return $classicPlay->fetchAll();
@@ -16,8 +16,8 @@ class ItemModel extends \W\Model\Model
 	// Requête pour aller sélectionner tout les articles dans la table "Item" qui ont pour catégorie "Playmobil custom"
 	public function listItemCustom()
 	{
-		$play2 = 'SELECT * FROM '.$this->table.' WHERE category = Playmobil Custom';
-		$customPlay = $this->dbh->prepare($play2);
+		$play = 'SELECT * FROM '.$this->table.' WHERE category = Playmobil Custom';
+		$customPlay = $this->dbh->prepare($play);
 		$customPlay->execute();
 
 		return $customPlay->fetchAll();
@@ -26,8 +26,8 @@ class ItemModel extends \W\Model\Model
 	// Requête pour aller sélectionner tout les articles dans la table "Item" qui ont pour catégorie "Pièces Détachées"
 	public function listItemPiece()
 	{
-		$play3 = 'SELECT * FROM '.$this->table.' WHERE category = Playmobil Custom';
-		$piecePlay = $this->dbh->prepare($play3);
+		$play = 'SELECT * FROM '.$this->table.' WHERE category = Playmobil Custom';
+		$piecePlay = $this->dbh->prepare($play);
 		$piecePlay->execute();
 
 		return $piecePlay->fetchAll();
