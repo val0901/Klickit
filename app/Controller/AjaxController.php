@@ -26,16 +26,26 @@ class AjaxController extends Controller
 	* Effacer un utilisateur en ajax
 	* @param int $id le membre qu'on veut effacer
 	*/
-	public function deleteUser($id)
+	public function deleteUser()
 	{
-		if(!is_numeric($id) || empty($id)){
-			$this->showNotFound();
-		}else{
-			$delete  = new UsersModel();
-			if($delete->delete($id)){
-				$this->showJson(['code'	=> 'ok']);
-			}
 
+		if(!empty($_POST)){
+
+			if(is_numeric($_POST['id_user'])){
+				$userModel  = new UsersModel();
+				$delete = $userModel->delete($_POST['id_user']);
+
+				if($delete){
+					$json = ['code' => 'ok'];
+				}
+			}
+			else {
+				$json = ['code' => 'error'];
+			}
 		}
+
+
+		$this->showJson(['code'	=> 'ok']);
+
 	}
 }
