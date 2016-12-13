@@ -18,12 +18,7 @@
 
 		// Les routes ajax
 		['GET|POST', '/ajax/logout', 'Ajax#logout', 'ajax_logout'],
-
-		//Pages liées à AdminController
-		['GET|POST', '/back/listAdmin', 'Admin#listAdmin', 'adminListAdmin'],
-		['GET|POST', '/back/addAdmin', 'Admin#addAdmin', 'adminAddAdmin'],
-		['GET|POST', '/back/updateAdmin/[i:id]', 'Admin#updateAdmin', 'adminUpdateAdmin'],
-		['GET|POST', '/back/deleteAdmin/[i:id]', 'Admin#deleteAdmin', 'adminDeleteAdmin'],
+		['GET|POST', '/ajax/deleteUser', 'Ajax#deleteUser', 'ajax_deleteUser'],
 
 		//Pages liées à UserController
 		['GET|POST', '/back/listUser', 'User#listUser', 'listUser'],
