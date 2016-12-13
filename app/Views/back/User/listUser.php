@@ -6,7 +6,7 @@
 	<p class="alert alert-danger">Aucun utilisateur trouvé</p>
 
 <?php else:?>
-	<form>
+	<form>	
 		<table class="table table-responsive">
 			<thead>
 				<th>Civilité</th>
@@ -29,12 +29,12 @@
 						<td>Commande ici (avec une super jointure)</td>
 						<td><a href="#">Voir le profil</a></td> <!-- Mettre lien pour voir le profil sur le front -->
 						<td><a href="<?=$this->url('updateUser', ['id'=>$user['id']]);?>">Mettre à jour le profil</a></td>
-						<td><button class=" btn btn-danger delete-user" data-id="<?=$user['id']?>">Effacer le profil</button></td>
+						<td><button class="btn btn-danger delete-user" data-id="<?=$user['id']?>">Effacer le profil</button></td>
 					</tr>	
 				<?php endforeach;?>
 			</tbody>
 		</table>
-	</form>
+	</form>	
 <?php endif;?>	
 
 <?php $this->stop('main_content') ?>
@@ -77,10 +77,12 @@
 									}
 								}
 			  				});
+			  		
 			  				setInterval(function(){
-								//$('html').load($(location).attr('href'));
-								location.reload(true);
+								$('html').load($(location).attr('href'));
+								//window.location.reload();
 							});
+			  				
 		  				}
 						},
 						cancel: function(button) {
