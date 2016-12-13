@@ -41,7 +41,7 @@
 					        <div class="collapse navbar-collapse" id="navbar-collapse-1">
 					          <ul class="nav navbar-nav navbar-justified
 					          ">
-					            <li><a href="#">Accueil</a></li>
+					            <li><a href="<?=$this->url('back_index');?>">Accueil</a></li>
 					            <li><a href="#">Utilisateur</a></li>
 					            <li><a href="#">Message</a></li>
 					            <li><a href="#">Evènement</a></li>
