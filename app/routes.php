@@ -10,6 +10,7 @@
 		//Pages liées à UserController
 		['GET|POST', '/front/addUser', 'User#faddUser', 'front_faddUser'],
 		['GET|POST', '/front/cptUser', 'User#affCptUser', 'front_affcptuser'],
+		['GET|POST', '/front/UpdateUser', 'User#fupdateUser', 'front_fupdateUser'],
 
 
 		//Routes pour le back (classé par controller)
@@ -49,11 +50,16 @@
 		['GET|POST', '/back/addItem', 'Item#addItem', 'addItem'],
 		['GET|POST', '/back/deleteItem/[i:id]', 'Item#deleteItem', 'deleteItem'],
 		['GET|POST', '/back/updateItem/[i:id]', 'Item#updateItem', 'updateItem'],
+		['GET|POST', '/front/listItemClassics', 'Item#listItemClassics', 'listItemClassics'],
+		['GET|POST', '/front/listItemCustoms', 'Item#listItemCustoms', 'listItemCustoms'],
+		['GET|POST', '/front/listItemDivers', 'Item#listItemDivers', 'listItemDivers'],
+		['GET|POST', '/front/listItemPieces', 'Item#listItemPieces', 'listItemPieces'],
 
 		//Pages liées à OrdersController
 		['GET|POST', '/back/listOrders', 'Orders#listOrders', 'listOrders'],
 		['GET|POST', '/back/viewOrder/[i:id]', 'Orders#viewOrders', 'viewOrders'],
 		['GET|POST', '/front/listUserOrders', 'Orders#listUserOrders', 'front_listOrders'],
+		['GET|POST', '/front/viewUserCde', 'Orders#viewUserOrders', 'front_viewUserCde'],
 
 
 		//Pages liées à ShippingController

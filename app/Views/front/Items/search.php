@@ -1,4 +1,4 @@
-<?php $this->layout('layoutfront', ['title' => 'Commande utilisateur']) ?>
+<?php $this->layout('layoutfront', ['title' => 'Recherche']) ?>
 
 <?php $this->start('main_content') ?>
 

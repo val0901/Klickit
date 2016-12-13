@@ -1,4 +1,4 @@
-<?php $this->layout('layoutfront', ['title' => 'Ajout client']) ?>
+<?php $this->layout('layoutfront', ['title' => 'Ajout utilisateur']) ?>
 
 <?php $this->start('main_content') ?>
 

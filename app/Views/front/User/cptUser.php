@@ -1,4 +1,4 @@
-<?php $this->layout('layoutfront', ['title' => 'Compte client']) ?>
+<?php $this->layout('layoutfront', ['title' => 'Compte utilisateur']) ?>
 
 <?php $this->start('main_content') ?>
 compte client
