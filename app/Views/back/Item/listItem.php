@@ -36,7 +36,7 @@
 								    </select>
 							    </div>
 							</td>
-							<td><a href="">Mettre à jour le profil</a></td>
+							<td><a href="<?=$this->url('updateItem', ['id'=>$value['id']]);?>">Mettre à jour le produit</a></td>
 							<td><button class="btn btn-danger">Effacer le produit</button></td>
 						</tr>	
 					<?php endforeach;?>
@@ -77,7 +77,7 @@
 								    </select>
 							    </div>
 							</td>
-							<td><a href="">Mettre à jour le profil</a></td>
+							<td><a href="<?=$this->url('updateItem', ['id'=>$value['id']]);?>">Mettre à jour le produit</a></td>
 							<td><button class="btn btn-danger">Effacer le produit</button></td>
 						</tr>	
 					<?php endforeach;?>
@@ -118,7 +118,7 @@
 								    </select>
 							    </div>
 							</td>
-							<td><a href="">Mettre à jour le profil</a></td>
+							<td><a href="<?=$this->url('updateItem', ['id'=>$value['id']]);?>">Mettre à jour le produit</a></td>
 							<td><button class="btn btn-danger">Effacer le produit</button></td>
 						</tr>	
 					<?php endforeach;?>
@@ -159,7 +159,7 @@
 								    </select>
 							    </div>
 							</td>
-							<td><a href="">Mettre à jour le profil</a></td>
+							<td><a href="<?=$this->url('updateItem', ['id'=>$value['id']]);?>">Mettre à jour le produit</a></td>
 							<td><button class="btn btn-danger">Effacer le produit</button></td>
 						</tr>	
 					<?php endforeach;?>

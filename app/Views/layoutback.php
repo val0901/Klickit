@@ -42,14 +42,14 @@
 					          <ul class="nav navbar-nav navbar-justified
 					          ">
 					            <li><a href="<?=$this->url('back_index');?>">Accueil</a></li>
-					            <li><a href="#">Utilisateur</a></li>
-					            <li><a href="#">Message</a></li>
-					            <li><a href="#">Evènement</a></li>
-					            <li><a href="#">Slide</a></li>
-					            <li><a href="#">Article</a></li>
-					            <li><a href="#">Commande</a></li>
-					            <li><a href="#">Option d'envoi</a></li>
-					            <li><a href="#">Livre d'Or</a></li>
+					            <li><a href="<?=$this->url('listUser');?>">Utilisateur</a></li>
+					            <li><a href="<?=$this->url('listMessage');?>">Message</a></li>
+					            <li><a href="<?=$this->url('listEvent');?>">Evènement</a></li>
+					            <li><a href="<?=$this->url('listSlide');?>">Slide</a></li>
+					            <li><a href="<?=$this->url('listItem');?>">Article</a></li>
+					            <li><a href="<?=$this->url('listOrders');?>">Commande</a></li>
+					            <li><a href="<?=$this->url('listShipping');?>">Option d'envoi</a></li>
+					            <li><a href="<?=$this->url('listGuestbook');?>">Livre d'Or</a></li>
 					          </ul>
 					        </div><!-- /.navbar-collapse -->
 					      </div><!-- /.container -->
