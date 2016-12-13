@@ -1,24 +1,20 @@
 <?php
 namespace Model;
 
-use \W\Controller\Controller;
-use \Model\Model;
 use \Model\UserModel;
-
-
 
 
 class OrdersModel extends \W\Model\Model 
 {
 
-	public function index
+	public function findAllWithUsers()
 	{
+		$sql = 'SELECT ' .$this->table.'.* FROM ' . $this->table . ' LEFT JOIN user AS u ON '.$this->table.'.idMember = u.id';
 
-		$sql = 'SELECT o.*, u.firstname FROM orders AS o LEFT JOIN user AS u ON u.id = o.id_user WHERE o.id=:id';
-		$sql= new Model;
-		$orders = $list->findAll();
+		$sth = $this->dbh->prepare($sql);
+		$sth->execute();
 
-		
+		return $sth->fetchAll();
 	}
 
 

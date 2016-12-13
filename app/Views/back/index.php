@@ -14,12 +14,12 @@
 			</thead>
 
 			<tbody>
-			<?php foreach ($orders as $order): ?>
-				<td><?=$order['id']; ?></td>
-				<td><?=$order['firstname'].' '.$order['lastname']; ?></td>
+			<?php foreach ($data as $value): ?>
+				<td><?=$value['id']; ?></td>
+				<td><?=$value['firstname'].' '.$value['lastname']; ?></td>
 				<td><?php ?>Gérer la liste des articles</td>
-				<td><?= date('d/m/Y', strtotime($order['date_creation']));?></td>
-				<td><?=$order['statut']; ?></td>
+				<td><?= date('d/m/Y', strtotime($value['date_creation']));?></td>
+				<td><?=$value['statut']; ?></td>
 				<td>
 					<form>
 						<div class="form-group">

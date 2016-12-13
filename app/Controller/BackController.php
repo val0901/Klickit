@@ -16,13 +16,10 @@ class BackController extends Controller
 	 */
 	public function index()
 	{
-		 
-		$list = new OrdersModel();
-		$orders = $list->findAll();
 
-		$data = [
-			'orders'=> $orders,
-		];
+		$orders = new OrdersModel();
+		$data = $orders->findAllWithUsers();
+		
 		$this->show('back/index', $data);
 	}
 
