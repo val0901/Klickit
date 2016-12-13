@@ -50,10 +50,6 @@
 		['GET|POST', '/back/addItem', 'Item#addItem', 'addItem'],
 		['GET|POST', '/back/deleteItem/[i:id]', 'Item#deleteItem', 'deleteItem'],
 		['GET|POST', '/back/updateItem/[i:id]', 'Item#updateItem', 'updateItem'],
-		['GET|POST', '/front/listItemClassics', 'Item#listItemClassics', 'listItemClassics'],
-		['GET|POST', '/front/listItemCustoms', 'Item#listItemCustoms', 'listItemCustoms'],
-		['GET|POST', '/front/listItemDivers', 'Item#listItemDivers', 'listItemDivers'],
-		['GET|POST', '/front/listItemPieces', 'Item#listItemPieces', 'listItemPieces'],
 
 		//Pages liées à OrdersController
 		['GET|POST', '/back/listOrders', 'Orders#listOrders', 'listOrders'],
@@ -70,6 +66,20 @@
 		//Pages liées à GuestbookController
 		['GET|POST', '/back/listGuestbook', 'Guestbook#listGuestbook', 'listGuestbook'],
 		['GET|POST', '/back/moderation', 'Guestbook#moderation', 'moderation'],
+
+
+
+/******************** FRONT *********************/
+
+		//Pages liées à FrontItemController
+		['GET|POST', '/front/listItemClassics', 'FrontItem#listItemClassics', 'listItemClassics'],
+		['GET|POST', '/front/listItemCustoms', 'FrontItem#listItemCustoms', 'listItemCustoms'],
+		['GET|POST', '/front/listItemDivers', 'FrontItem#listItemDivers', 'listItemDivers'],
+		['GET|POST', '/front/listItemPieces', 'FrontItem#listItemPieces', 'listItemPieces'],
+
+		//Pages liées à FrontGuestbookController
 		['GET|POST', '/front/guestBook', 'Guestbook#affGuestbook', 'front_guestBook'],
+
+
 
 	);

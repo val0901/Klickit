@@ -35,17 +35,4 @@ class GuestbookController extends Controller
 		$this->show('back/Guestbook/deleteGuestbook');
 	}
 
-
-/******************* FRONT *********************/
-
-
-	/**
-	 * Suppression des messages du Livre d'Or
-	 */
-	public function affGuestbook()
-	{
-		$this->show('front/User/guestBook');
-	}
-
-
 }
