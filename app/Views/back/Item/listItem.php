@@ -37,7 +37,7 @@
 							    </div>
 							</td>
 							<td><a href="<?=$this->url('updateItem', ['id'=>$value['id']]);?>">Mettre à jour le produit</a></td>
-							<td><button class="btn btn-danger">Effacer le produit</button></td>
+							<td><button class="btn btn-danger delete-item">Effacer le produit</button></td>
 						</tr>	
 					<?php endforeach;?>
 				</tbody>
@@ -78,7 +78,7 @@
 							    </div>
 							</td>
 							<td><a href="<?=$this->url('updateItem', ['id'=>$value['id']]);?>">Mettre à jour le produit</a></td>
-							<td><button class="btn btn-danger">Effacer le produit</button></td>
+							<td><button class="btn btn-danger delete-item">Effacer le produit</button></td>
 						</tr>	
 					<?php endforeach;?>
 				</tbody>
@@ -119,7 +119,7 @@
 							    </div>
 							</td>
 							<td><a href="<?=$this->url('updateItem', ['id'=>$value['id']]);?>">Mettre à jour le produit</a></td>
-							<td><button class="btn btn-danger">Effacer le produit</button></td>
+							<td><button class="btn btn-danger delete-item">Effacer le produit</button></td>
 						</tr>	
 					<?php endforeach;?>
 				</tbody>
@@ -160,9 +160,60 @@
 							    </div>
 							</td>
 							<td><a href="<?=$this->url('updateItem', ['id'=>$value['id']]);?>">Mettre à jour le produit</a></td>
-							<td><button class="btn btn-danger">Effacer le produit</button></td>
+							<td><button class="btn btn-danger delete-item">Effacer le produit</button></td>
 						</tr>	
 					<?php endforeach;?>
 				</tbody>
 			</table>
 <?php $this->stop('main_content') ?>
+
+<?php $this->start('js')?>
+	<script>
+	$(document).ready(function(){
+		
+		$('.delete-item').click(function(e){
+			e.preventDefault();
+
+			var idItem = $(this).data('id');
+
+			$.confirm({
+
+				title: 'Supprimer cet article',
+
+				content: "Êtes-vous sûr de vouloir supprimer cet article ?",
+
+				type: 'red',
+
+				theme: 'dark',
+
+				buttons: {
+					ok: {
+						text: 'Effacer l\'article',
+						btnClass: 'btn-danger',
+						keys: ['enter'],
+						action: function(){
+			  				$.ajax({
+			  					url: '<?=$this->url('ajax_deleteItem'); ?>',
+								type: 'post',
+								cache: false,
+								data: {id_item: idItem},
+								dataType: 'json',
+								success: function(out){
+									if(out.code == 'ok'){
+						  				window.location.href=window.location.href;	
+									}
+								}
+			  				});
+			  				
+		  				}
+					},
+					cancel: function(button) {
+					   
+					}
+				}
+			});
+
+		});
+	});
+</script>
+<?php $this->stop('js')?>

@@ -24,7 +24,6 @@ class AjaxController extends Controller
 
 	/**
 	* Effacer un utilisateur en ajax
-	* @param int $id le membre qu'on veut effacer
 	*/
 	public function deleteUser()
 	{
@@ -47,5 +46,13 @@ class AjaxController extends Controller
 
 		$this->showJson(['code'	=> 'ok']);
 
+	}
+
+	/**
+	 * Effacer un article en Ajax
+	 */
+	public function deleteItem()
+	{
+		if(!empty($_POST))
 	}
 }
