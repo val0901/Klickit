@@ -15,12 +15,30 @@ class ItemController extends Controller
 	 */
 	public function listItem()
 	{
+		$data = [];
 
+		/**** REQUÊTE CONCERNANT LES PLAYMOBILS DE CATEGORIE "CLASSIQUE" ****/
 		$listItemClassic = new ItemModel();
 		$itemsClassic = $listItemClassic->listItemClassic();
 
-		$data = [
+		$data.= [
 			'Classic'	=> $itemsClassic,
+		];
+
+		/**** REQUÊTE CONCERNANT LES PLAYMOBILS DE CATEGORIE "CUSTOM" ****/
+		$listItemCustom = new ItemModel();
+		$itemsCustom = $listItemCustom->listItemCustom();
+
+		$data.= [
+			'Custom'    => $itemsCustom,
+		];
+
+		/**** REQUÊTE CONCERNANT LES PLAYMOBILS DE CATEGORIE "PIECES DETACHEES" ****/
+		$listItemPiece = new ItemModel();
+		$itemsCustom = $listItemPiece->listItemPiece();
+
+		$data.= [
+			'Piece'    => $itemsPiece,
 		];
 
 		if(!empty($_SESSION)){
