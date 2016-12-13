@@ -81,12 +81,12 @@ STYLE INDEX
 #lastorder {
 	border: 3px solid black;
 	width: 100%;
-	height: 300px ;
+	height: auto ;
 	margin-top: 20px;
 }
 
 #selectStatut {
-	width: 100px;
+	width: 200px;
 }
 
 #selectStt {
@@ -98,7 +98,7 @@ STYLE INDEX
 	display: flex;
 	flex-direction: row-reverse;
 	align-self: flex-end;
-	margin: auto;
+	margin-right: 10px;
 
 
 }

@@ -22,8 +22,8 @@
 					<td><?= date('d/m/Y', strtotime($value['date_creation']));?></td>
 					<td><?=$value['statut']; ?></td>
 					<td>
-						<form>
-							<div class="form-group" id="selectStt">
+						<div class="form-group" id="selectStt">
+							<form>				
 							  <label class="col-md-4 control-label" for="selectStatut">Changer le statut</label>
 							  <div class="col-md-4">
 							    <select id="selectStatut" name="selectStatut" class="form-control">
@@ -32,8 +32,11 @@
 							      <option value="3">Expédiée</option>
 							    </select>
 							  </div>
-							</div>
-						</form></td>
+							</form>
+						</div></td>
+					<td>
+						<div> <a href=""><i class="fa fa-search-plus fa-2x" aria-hidden="true"></i></a></div>
+					</td>
 				</tr>
 			<?php endforeach; ?>			
 			</tbody>			
