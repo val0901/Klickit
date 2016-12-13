@@ -6,12 +6,12 @@ use \W\Controller\Controller;
 use \Model\GuestbookModel;
 use \W\Security\AuthorizationModel;
 
-class GuestbookController extends Controller 
+class FrontGuestbookController extends Controller 
 {
 
 
 	/**
-	 * Suppression des messages du Livre d'Or
+	 * formulaire du Livre d'Or
 	 */
 	public function affGuestbook()
 	{

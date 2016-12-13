@@ -6,40 +6,24 @@ use \W\Controller\Controller;
 use \Model\OrdersModel;
 use \W\Security\AuthorizationModel;
 
-class OrdersController extends Controller 
+class FrontOrdersController extends Controller 
 {
 
-/***************** BACK *****************/	
 	/**
-	 * Liste des commandes
+	 * Liste des commandes de l'utilisateur
 	 */
 	public function FrontListOrders()
 	{
-		$orders = new OrdersModel();
-				$list_orders = $orders->findAllOrders();
-
-				$data = [
-					'data'	=> $list_orders,
-				];
-				
-				if(!empty($_SESSION)){
-
-					$this->show('back/Orders/listOrders', $data);
-
-					if($_SESSION['role'] == 'Utilisateur') {
-						$this->redirectToRoute('front_index');
-					}
-				}
-				else {
-					$this->redirectToRoute('back_login');
-				}
+		
+		$this->show('front/User/listOrders', $data);
 	}
 
 	/**
 	 * Vu unique d'une commande avec possibilité de changer son statut
 	 */
-	public function viewOrders() 
+	public function FrontviewOrders() 
 	{
-		$this->show('back/Orders/updateOrders');
+		$this->show('front/Orders/updateOrders');
 	}
 
+}

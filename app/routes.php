@@ -19,7 +19,7 @@
 
 		// Les routes ajax
 		['GET|POST', '/ajax/logout', 'Ajax#logout', 'ajax_logout'],
-		['GET|POST', '/ajax/deleteUser/[i:id]', 'Ajax#deleteUser', 'ajax_deleteUser'],
+		['GET|POST', '/ajax/deleteUser', 'Ajax#deleteUser', 'ajax_deleteUser'],
 
 		//Pages liées à UserController
 		['GET|POST', '/back/listUser', 'User#listUser', 'listUser'],
@@ -79,8 +79,8 @@
 		['GET|POST', '/front/fGuestbook', 'FrontGuestbook#affGuestbook', 'fGuestbook'],
 
 		//Pages liées à FrontOrdersController
-		['GET|POST', '/front/listUserOrders', 'Orders#listUserOrders', 'front_listOrders'],
-		['GET|POST', '/front/viewUserCde', 'Orders#viewUserOrders', 'front_viewUserCde'],
+		['GET|POST', '/front/FrontListOrders', 'FrontOrders#FrontListOrders', 'front_FrontListOrders'],
+		['GET|POST', '/front/viewUserCde', 'FrontOrders#viewUserOrders', 'front_viewUserCde'],
 
 
 	);
