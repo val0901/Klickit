@@ -8,6 +8,7 @@
 
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 			<link rel="stylesheet" href="<?= $this->assetUrl('css/styleback.css') ?>">
+			<link rel="stylesheet" href="<?= $this->assetUrl('css/jquery-confirm.min.css') ?>">
 		</head>
 
 		<body>
@@ -23,7 +24,7 @@
 						        <ul>
 						        	<?php if(!empty($_SESSION)): ?>
 							        	<li><a href="">Bonjour Vava</a></li>
-							        	<li><form><button id="logout" class="confirm" type="submit">Se déconnecter</button></form></li>
+							        	<li><form><button id="logout" type="submit">Se déconnecter</button></form></li>
 							        <?php endif; ?>
 						        </ul>
 					        </div>	     
@@ -66,42 +67,42 @@
 
 				<footer>
 					<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-					<script src="<?= $this->assetUrl('js/jquery.confirm.js') ?>"></script>
-					<script src="<?= $this->assetUrl('js/jquery.confirm.min.js') ?>"></script>
+					<script src="<?= $this->assetUrl('js/jquery-confirm.min.js') ?>"></script>
 				  	<script>
 				  		$(document).ready(function(){
 				  			$('#logout').click(function(e){
 				  				e.preventDefault();
 
-							$(".confirm").confirm({
+							$.confirm({
+
+								title: 'Déconnexion',
 
 								text: "Êtes-vous sûr de vouloir vous déconnecter ?",
 
-    							confirm: function(button) {
-					  				$.ajax({
-					  					url: '<?=$this->url('ajax_logout'); ?>',
-										type: 'post',
-										cache: false,
-										data: $('form').serialize(),
-										dataType: 'json',
-										success: function(out){
-											if(out.code == 'ok'){
+								buttons: {
+	    							ok: {
+	    								text: 'Se déconnecter',
+	    								btnClass: 'btn-primary',
+            							keys: ['enter'],
+	    								action: function(){
+							  				$.ajax({
+							  					url: '<?=$this->url('ajax_logout'); ?>',
+												type: 'post',
+												cache: false,
+												data: $('form').serialize(),
+												dataType: 'json',
+												success: function(out){
+													if(out.code == 'ok'){
 
-											}
-										}
-					  				});
-				  				},
-
-				  				 cancel: function(button) {
-								    // nothing to do
-								},
-
-								confirmButton: "Se déconnecter",
-							    cancelButton: "Rester en ligne",
-							    post: true,
-							    confirmButtonClass: "btn-danger",
-							    cancelButtonClass: "btn-default",
-							    dialogClass: "modal-dialog modal-lg"
+													}
+												}
+							  				});
+						  				}
+					  				},
+					  				cancel: function(button) {
+									   
+									}
+								}
 				  			});
 
 				  			});
