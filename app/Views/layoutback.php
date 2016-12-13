@@ -43,7 +43,6 @@
 					          <ul class="nav navbar-nav navbar-justified
 					          ">
 					            <li><a href="#">Accueil</a></li>
-					            <li><a href="#">Admin</a></li>
 					            <li><a href="#">Utilisateur</a></li>
 					            <li><a href="#">Message</a></li>
 					            <li><a href="#">Evènement</a></li>

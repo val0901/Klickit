@@ -15,7 +15,25 @@ class ItemController extends Controller
 	 */
 	public function listItem()
 	{
-		$this->show('back/Item/listItem');
+
+		$listItem = new UserModel();
+		$items = $listItem->findAll();
+
+		$data = [
+			'items'	=> $items,
+		];
+
+		if(!empty($_SESSION)){
+
+			$this->show('back/Item/listItem', $data);
+
+			if($_SESSION['role'] == 'Utilisateur') {
+				$this->redirectToRoute('front_index');
+			}
+		}
+		else {
+			$this->redirectToRoute('back_login');
+		}
 	}
 
 	/**
