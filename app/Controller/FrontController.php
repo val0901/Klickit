@@ -84,5 +84,12 @@ class FrontController extends Controller
 	{
 		$this->show('front/Pages/legalMention');
 	}
+	/**
+	 * Page Events
+	 */
+	public function events()
+	{
+		$this->show('front/Event/viewEvent');
+	}
 
 }

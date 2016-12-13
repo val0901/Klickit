@@ -72,6 +72,7 @@
 		['GET|POST', '/front/cgv', 'Front#cgv', 'front_cgv'],
 		['GET|POST', '/front/contact', 'Front#contact', 'front_contact'],
 		['GET|POST', '/front/legalMention', 'Front#legalMention', 'front_legalMention'],
+		['GET|POST', '/front/events', 'Front#events', 'front_events'],
 
 		//Pages liées à UserController
 		['GET|POST', '/front/addUser', 'FrontUser#faddUser', 'front_faddUser'],
