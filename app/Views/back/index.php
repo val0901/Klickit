@@ -44,7 +44,5 @@
 		<a href="<?= $this->url('listOrders')?>" >Voir plus</a>
 		</div>	
 	</div>
-
-
 	
 <?php $this->stop('main_content') ?>

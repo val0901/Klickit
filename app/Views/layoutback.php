@@ -24,7 +24,7 @@
 					        <div class="navbar navbar-right">
 						        <ul>
 						        	<?php if(!empty($_SESSION)): ?>
-							        	<li><a href="">Bonjour Vava</a></li>
+							        	<li><a href="">Bonjour <?=$_SESSION['user']['firstname'].' '.$_SESSION['user']['lastname'];?></a></li>
 							        	<li><form><button id="logout" type="submit">Se déconnecter</button></form></li>
 							        <?php endif; ?>
 						        </ul>
