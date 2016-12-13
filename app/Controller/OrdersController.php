@@ -15,7 +15,24 @@ class OrdersController extends Controller
 	 */
 	public function listOrders()
 	{
-		$this->show('back/Orders/listOrders');
+		$orders = new OrdersModel();
+				$list_orders = $orders->findAllOrders();
+
+				$data = [
+					'data'	=> $list_orders,
+				];
+				
+				if(!empty($_SESSION)){
+
+					$this->show('back/Orders/listOrders', $data);
+
+					if($_SESSION['role'] == 'Utilisateur') {
+						$this->redirectToRoute('front_index');
+					}
+				}
+				else {
+					$this->redirectToRoute('back_login');
+				}
 	}
 
 	/**
