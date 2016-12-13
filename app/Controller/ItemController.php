@@ -69,12 +69,4 @@ class ItemController extends Controller
 	{
 		$this->show('back/Item/updateItem');
 	}
-
-	/**
-	 * Suppression d'article
-	 */
-	public function deleteItem()
-	{
-		$this->show('back/Item/deleteItem');
-	}
 }

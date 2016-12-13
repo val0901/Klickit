@@ -42,10 +42,7 @@ class AjaxController extends Controller
 				$json = ['code' => 'error'];
 			}
 		}
-
-
-		$this->showJson(['code'	=> 'ok']);
-
+		$this->showJson($json);
 	}
 
 	/**
@@ -53,6 +50,19 @@ class AjaxController extends Controller
 	 */
 	public function deleteItem()
 	{
-		if(!empty($_POST))
+		if(!empty($_POST)){
+			if(is_numeric($_POST['id_item'])){
+				$itemModel  = new ItemModel();
+				$deleteItem = $itemModel->delete($_POST['id_item']);
+
+				if($deleteItem){
+					$json = ['code' => 'ok'];
+				}
+			}
+			else {
+				$json = ['code' => 'error'];
+			}
+		}
+		$this->showJson($json);
 	}
 }

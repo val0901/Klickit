@@ -37,7 +37,7 @@
 							    </div>
 							</td>
 							<td><a href="<?=$this->url('updateItem', ['id'=>$value['id']]);?>">Mettre à jour le produit</a></td>
-							<td><button class="btn btn-danger delete-item">Effacer le produit</button></td>
+							<td><button class="btn btn-danger delete-item" data-id="<?=$value['id']?>">Effacer le produit</button></td>
 						</tr>	
 					<?php endforeach;?>
 				</tbody>
@@ -78,7 +78,7 @@
 							    </div>
 							</td>
 							<td><a href="<?=$this->url('updateItem', ['id'=>$value['id']]);?>">Mettre à jour le produit</a></td>
-							<td><button class="btn btn-danger delete-item">Effacer le produit</button></td>
+							<td><button class="btn btn-danger delete-item" data-id="<?=$value['id']?>">Effacer le produit</button></td>
 						</tr>	
 					<?php endforeach;?>
 				</tbody>
@@ -119,7 +119,7 @@
 							    </div>
 							</td>
 							<td><a href="<?=$this->url('updateItem', ['id'=>$value['id']]);?>">Mettre à jour le produit</a></td>
-							<td><button class="btn btn-danger delete-item">Effacer le produit</button></td>
+							<td><button class="btn btn-danger delete-item" data-id="<?=$value['id']?>">Effacer le produit</button></td>
 						</tr>	
 					<?php endforeach;?>
 				</tbody>
@@ -160,7 +160,7 @@
 							    </div>
 							</td>
 							<td><a href="<?=$this->url('updateItem', ['id'=>$value['id']]);?>">Mettre à jour le produit</a></td>
-							<td><button class="btn btn-danger delete-item">Effacer le produit</button></td>
+							<td><button class="btn btn-danger delete-item" data-id="<?=$value['id']?>">Effacer le produit</button></td>
 						</tr>	
 					<?php endforeach;?>
 				</tbody>
