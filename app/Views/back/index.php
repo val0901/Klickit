@@ -3,14 +3,14 @@
 <?php $this->start('main_content') ?>
 
 	<div id="lastorder">
-		<table class="table table">
+		<table class="table">
 			<thead>
 				<th>Numéro</th>
 				<th>Client</th>
 				<th>Contenu de la commande</th>
 				<th>Date de la commande</th>
 				<th>Statut</th>
-				<th>Action</th>
+				<th id="thaction">Changer le statut</th>
 			</thead>
 
 			<tbody>
@@ -23,8 +23,7 @@
 					<td><?=$value['statut']; ?></td>
 					<td>
 						<div class="form-group" id="selectStt">
-							<form>				
-							  <label class="col-md-4 control-label" for="selectStatut">Changer le statut</label>
+							<form>									
 							  <div class="col-md-4">
 							    <select id="selectStatut" name="selectStatut" class="form-control">
 							      <option value="1">En attente de paiement</option>
