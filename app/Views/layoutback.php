@@ -78,7 +78,11 @@
 
 								title: 'Déconnexion',
 
-								text: "Êtes-vous sûr de vouloir vous déconnecter ?",
+								content: "Êtes-vous sûr de vouloir vous déconnecter ?",
+
+								type: 'red',
+
+								theme: 'dark',
 
 								buttons: {
 	    							ok: {
