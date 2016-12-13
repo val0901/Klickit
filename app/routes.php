@@ -19,7 +19,7 @@
 
 		// Les routes ajax
 		['GET|POST', '/ajax/logout', 'Ajax#logout', 'ajax_logout'],
-		['GET|POST', '/ajax/deleteUser', 'Ajax#deleteUser', 'ajax_deleteUser'],
+		['GET|POST', '/ajax/deleteUser/[i:id]', 'Ajax#deleteUser', 'ajax_deleteUser'],
 
 		//Pages liées à UserController
 		['GET|POST', '/back/listUser', 'User#listUser', 'listUser'],
