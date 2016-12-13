@@ -12,7 +12,7 @@ class FrontOrdersController extends Controller
 	/**
 	 * Liste des commandes de l'utilisateur
 	 */
-	public function FrontListOrders()
+	public function frontListOrders()
 	{
 		
 		$this->show('front/User/listOrders');
@@ -21,7 +21,7 @@ class FrontOrdersController extends Controller
 	/**
 	 * Vu unique d'une commande avec possibilité de changer son statut
 	 */
-	public function FrontviewOrders() 
+	public function frontViewOrders() 
 	{
 		$this->show('front/User/viewUserOrder');
 	}
@@ -29,37 +29,37 @@ class FrontOrdersController extends Controller
 	/**
 	 * Vu unique d'une commande avec possibilité de changer son statut
 	 */
-	public function FrontorderLivr() 
+	public function frontOrderLivr() 
 	{
 		$this->show('front/Order/orderLivr');
 	}
 	/**
 	 * Vu unique d'une commande avec possibilité de changer son statut
 	 */
-	public function orderPaie() 
+	public function frontOrderPaie() 
 	{
 		$this->show('front/Order/orderMoyPaie');
 	}
 	/**
 	 * Vu unique d'une commande avec possibilité de changer son statut
 	 */
-	public function orderRecap() 
+	public function frontOrderRecap() 
 	{
 		$this->show('front/Order/orderRecap');
 	}
 	/**
 	 * Vu unique d'une commande avec possibilité de changer son statut
 	 */
-	public function orderValid() 
+	public function frontOrderValid() 
 	{
 		$this->show('front/Order/orderValidPaie');
 	}
 	/**
 	 * Vu unique d'une commande avec possibilité de changer son statut
 	 */
-	public function panier() 
+	public function frontPanier() 
 	{
-		$this->show('front/User/viewUserOrder');
+		$this->show('front/Order/panier');
 	}
 
 }

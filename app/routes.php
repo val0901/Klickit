@@ -89,12 +89,12 @@
 		['GET|POST', '/front/fGuestbook', 'FrontGuestbook#affGuestbook', 'fGuestbook'],
 
 		//Pages liées à FrontOrdersController
-		['GET|POST', '/front/listOrders', 'FrontOrders#FrontListOrders', 'front_listOrders'],
-		['GET|POST', '/front/viewUserOrder', 'FrontOrders#FrontviewOrders', 'front_viewUserOrder'],
-
-		/*['GET|POST', '/front/viewUserOrder', 'FrontOrders#FrontviewOrders', 'front_viewUserOrder'],
-		['GET|POST', '/front/viewUserOrder', 'FrontOrders#FrontviewOrders', 'front_viewUserOrder'],
-		['GET|POST', '/front/viewUserOrder', 'FrontOrders#FrontviewOrders', 'front_viewUserOrder'],
-		['GET|POST', '/front/viewUserOrder', 'FrontOrders#FrontviewOrders', 'front_viewUserOrder'],*/
+		['GET|POST', '/front/listOrders', 'FrontOrders#frontListOrders', 'front_listOrders'],
+		['GET|POST', '/front/viewUserOrder', 'FrontOrders#frontViewOrders', 'front_viewUserOrder'],
+		['GET|POST', '/front/orderLivr', 'FrontOrders#frontOrderLivr', 'front_orderLivr'],
+		['GET|POST', '/front/orderPaie', 'FrontOrders#frontOrderPaie', 'front_orderPaie'],
+		['GET|POST', '/front/orderRecap', 'FrontOrders#frontOrderRecap', 'front_orderRecap'],
+		['GET|POST', '/front/orderValid', 'FrontOrders#frontOrderValid', 'front_orderValid'],
+		['GET|POST', '/front/frontPanier', 'FrontOrders#frontPanier', 'front_frontPanier'],
 
 	);
