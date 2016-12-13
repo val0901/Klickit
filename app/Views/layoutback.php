@@ -83,7 +83,7 @@
 								buttons: {
 	    							ok: {
 	    								text: 'Se déconnecter',
-	    								btnClass: 'btn-primary',
+	    								btnClass: 'btn-danger',
             							keys: ['enter'],
 	    								action: function(){
 							  				$.ajax({
@@ -94,10 +94,13 @@
 												dataType: 'json',
 												success: function(out){
 													if(out.code == 'ok'){
-
+										  					
 													}
 												}
 							  				});
+							  				setInterval(function(){
+												$('body').load($(location).attr('href'));
+											});
 						  				}
 					  				},
 					  				cancel: function(button) {

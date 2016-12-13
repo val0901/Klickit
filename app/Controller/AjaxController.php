@@ -12,13 +12,10 @@ class AjaxController extends Controller
 {
 	public function logout()
 	{
-		if(isset($_POST['logout']) && !empty($_SESSION)) {
+		$logout = new AuthentificationModel();
 			
-			$logout = new AuthentificationModel();
-			
-			if($logout->logUserOut()) {
-				$this->showJson(['code' => 'ok']);
-			}
+		if($logout->logUserOut()) {
+			$this->showJson(['code' => 'ok']);
 		}
 	}
 }
