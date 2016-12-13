@@ -196,7 +196,7 @@
 			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-search search_padding" aria-hidden="true"></i>
 			  </a>
 			  <ul class="dropdown-menu soumenu_search">
-				  <div class="row">
+				  <div class="row" style="margin:0;padding:0;">
 					  <div class="col-md-3 col3_back">
 						  <div class="colmarginL colLtitle_fontsize">Résultat :</div>
 						  <p class="colLtext_fontsize"><span class="colmarginL colLtitle_fontsize">10 articles </span>correspondent à votre recherche</p>
