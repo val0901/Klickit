@@ -38,4 +38,9 @@
 </div>
 <!--End La derniere commentaire-->
 
+<!--La derniere evenement-->
+<div class="evenement_img">
+	<img class="img-responsive" src="<?=$this->assetUrl('/img/slideEvent1.jpg');?>">
+</div>
+<!--End La derniere evenement-->
 <?php $this->stop('main_content') ?>
