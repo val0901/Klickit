@@ -93,10 +93,12 @@
 												dataType: 'json',
 												success: function(out){
 													if(out.code == 'ok'){
-
+										  					
 													}
 												}
 							  				});
+							  				setInterval(function(){
+											});
 						  				}
 					  				},
 					  				cancel: function(button) {
