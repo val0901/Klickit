@@ -4,6 +4,7 @@ namespace Controller;
 
 use \W\Controller\Controller;
 use \W\Model\UsersModel;
+use \Model\ItemModel;
 use \W\Security\AuthentificationModel;
 
 use \Respect\Validation\Validator as v; 

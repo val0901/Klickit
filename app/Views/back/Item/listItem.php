@@ -2,8 +2,8 @@
 	
 <?php $this->start('main_content') ?>
 			
-			<a href="<?=$this->url('addItem');?>"><button class="btn btn-info">Ajout d'article</button></a>
-
+		<a href="<?=$this->url('addItem');?>"><button class="btn btn-info">Ajout d'article</button></a>
+		<form>
 			<h3>Catégorie Classique</h3>
 			<table class="table table-responsive">
 				<thead>
@@ -165,6 +165,7 @@
 					<?php endforeach;?>
 				</tbody>
 			</table>
+		</form>
 <?php $this->stop('main_content') ?>
 
 <?php $this->start('js')?>

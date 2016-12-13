@@ -17,8 +17,8 @@
 				<header>
 					<nav class="navbar navbar-default">
 					        <!-- Brand and toggle get grouped for better mobile display -->
-					        <div class="navbar-header">
-					          <a class="navbar-brand" href="#">Klickit</a>
+					        <div class="navbar-header"> 
+					          <a class="navbar-brand" href="<?=$this->url('front_index');?>">Klickit</a>
 					        </div>
 					        <div class="navbar navbar-right">
 						        <ul>
