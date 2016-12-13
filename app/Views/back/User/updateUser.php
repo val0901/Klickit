@@ -2,6 +2,9 @@
 
 <?php $this->start('main_content') ?>
 
+<a href="<?=$this->url('listUser');?>"><button class="btn btn-info">Retour à la liste des clients</button></a>
+<br><br>
+
 <?php if (empty($user)) :?>
 	<p class="alert alert-danger">Aucun utilisateur trouvé</p>
 <?php else :?>
@@ -15,9 +18,6 @@
 	<?php endif;?>
 			
 	<form class="form-horizontal" method="post">
-
-		<!-- Form Name -->
-		<legend>Création d'un compte client</legend>
 
 		<!-- Select Basic -->
 		<div class="form-group">

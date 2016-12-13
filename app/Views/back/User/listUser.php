@@ -1,7 +1,8 @@
 <?php $this->layout('layoutback', ['title' => 'Liste des clients']) ?>
 
 <?php $this->start('main_content') ?>
-
+<a href="<?=$this->url('addUser');?>"><button class="btn btn-info">Ajout d'un client</button></a>
+<br><br>
 <?php if(empty($users)): ?>
 	<p class="alert alert-danger">Aucun utilisateur trouvé</p>
 

@@ -1,7 +1,8 @@
 <?php $this->layout('layoutback', ['title' => 'Ajout client']) ?>
 
 <?php $this->start('main_content') ?>
-
+<a href="<?=$this->url('listUser');?>"><button class="btn btn-info">Retour à la liste des clients</button></a>
+<br><br>
 	<!-- Affichage des messages de réussite ou d'erreurs -->
 	<?php if($success): ?>
 		<p class="alert alert-success">Client créé</p>
@@ -10,9 +11,6 @@
 	<?php endif;?>
 
 	<form class="form-horizontal" method="post">
-
-		<!-- Form Name -->
-		<legend>Création d'un compte client</legend>
 
 		<!-- Select Basic -->
 		<div class="form-group">
