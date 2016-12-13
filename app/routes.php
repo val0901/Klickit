@@ -54,8 +54,6 @@
 		//Pages liées à OrdersController
 		['GET|POST', '/back/listOrders', 'Orders#listOrders', 'listOrders'],
 		['GET|POST', '/back/viewOrder/[i:id]', 'Orders#viewOrders', 'viewOrders'],
-		['GET|POST', '/front/listUserOrders', 'Orders#listUserOrders', 'front_listOrders'],
-		['GET|POST', '/front/viewUserCde', 'Orders#viewUserOrders', 'front_viewUserCde'],
 
 
 		//Pages liées à ShippingController
@@ -78,8 +76,11 @@
 		['GET|POST', '/front/listItemPieces', 'FrontItem#listItemPieces', 'listItemPieces'],
 
 		//Pages liées à FrontGuestbookController
-		['GET|POST', '/front/guestBook', 'Guestbook#affGuestbook', 'front_guestBook'],
+		['GET|POST', '/front/fGuestbook', 'FrontGuestbook#affGuestbook', 'fGuestbook'],
 
+		//Pages liées à FrontOrdersController
+		['GET|POST', '/front/listUserOrders', 'Orders#listUserOrders', 'front_listOrders'],
+		['GET|POST', '/front/viewUserCde', 'Orders#viewUserOrders', 'front_viewUserCde'],
 
 
 	);

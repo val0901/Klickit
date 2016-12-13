@@ -15,7 +15,7 @@ class GuestbookController extends Controller
 	 */
 	public function affGuestbook()
 	{
-		$this->show('front/User/guestBook');
+		$this->show('front/User/guestbook');
 	}
 
 

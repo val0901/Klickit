@@ -13,7 +13,7 @@ class OrdersController extends Controller
 	/**
 	 * Liste des commandes
 	 */
-	public function listOrders()
+	public function FrontListOrders()
 	{
 		$orders = new OrdersModel();
 				$list_orders = $orders->findAllOrders();
@@ -43,5 +43,3 @@ class OrdersController extends Controller
 		$this->show('back/Orders/updateOrders');
 	}
 
-
-}
