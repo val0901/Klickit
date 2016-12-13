@@ -73,19 +73,14 @@
 								dataType: 'json',
 								success: function(out){
 									if(out.code == 'ok'){
-						  					
+						  				window.location.href=window.location.href;	
 									}
 								}
 			  				});
-			  		
-			  				setInterval(function(){
-								$('html').load($(location).attr('href'));
-								//window.location.reload();
-							});
 			  				
 		  				}
-						},
-						cancel: function(button) {
+					},
+					cancel: function(button) {
 					   
 					}
 				}
