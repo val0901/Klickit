@@ -82,7 +82,7 @@
 								buttons: {
 	    							ok: {
 	    								text: 'Se déconnecter',
-	    								btnClass: 'btn-primary',
+	    								btnClass: 'btn-danger',
             							keys: ['enter'],
 	    								action: function(){
 							  				$.ajax({

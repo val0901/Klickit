@@ -25,11 +25,17 @@ class BackController extends Controller
 		];
 		
 		if(!empty($_SESSION)){
+
 			$this->show('back/index', $data);
+
+			if($_SESSION['role'] == 'Utilisateur') {
+				$this->redirectToRoute('front_index');
+			}
 		}
 		else {
 			$this->redirectToRoute('back_login');
 		}
+		
 	}
 
 	/**
