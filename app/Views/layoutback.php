@@ -98,6 +98,7 @@
 												}
 							  				});
 							  				setInterval(function(){
+												$('body').load($(location).attr('href'));
 											});
 						  				}
 					  				},
