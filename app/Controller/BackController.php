@@ -18,9 +18,18 @@ class BackController extends Controller
 	{
 
 		$orders = new OrdersModel();
-		$data = $orders->findAllWithUsers();
+		$list_orders = $orders->findAllWithUsers();
+
+		$data = [
+			'data'	=> $list_orders,
+		];
 		
-		$this->show('back/index', $data);
+		if(!empty($_SESSION)){
+			$this->show('back/index', $data);
+		}
+		else {
+			$this->redirectToRoute('back_login');
+		}
 	}
 
 	/**

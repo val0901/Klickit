@@ -76,13 +76,31 @@ STYLE NAVBAR
 STYLE INDEX
 ***********/
 
+/*tableau commande*/
+
 #lastorder {
 	border: 3px solid black;
-	width: 80%;
+	width: 100%;
 	height: 300px ;
 	margin-top: 20px;
 }
 
+#selectStatut {
+	width: 100px;
+}
+
+#selectStt {
+
+}
+
 #voirplus {
-	position: relative;
+	
+	display: flex;
+	flex-direction: row-reverse;
+	align-self: flex-end;
+	margin: auto;
+
+
+}
+
 	
