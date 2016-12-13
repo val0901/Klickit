@@ -8,16 +8,15 @@
 
 		//Pages liées à UserController
 		['GET|POST', '/front/addUser', 'User#faddUser', 'faddUser'],
-		['GET|POST', '/front/cptUse', 'User#cptUse', 'front_cptUse'],
-
-
-		// Pages liées à FrontController
 		['GET|POST', '/front/login', 'Front#login', 'front_login'],
 
 
 		//Routes pour le back (classé par controller)
 		['GET|POST', '/back/index', 'Back#index', 'back_index'],
 		['GET|POST', '/back/login', 'Back#login', 'back_login'],
+
+		// Les routes ajax
+		['GET|POST', '/ajax/logout', 'Ajax#logout', 'ajax_logout'],
 
 		//Pages liées à AdminController
 		['GET|POST', '/back/listAdmin', 'Admin#listAdmin', 'adminListAdmin'],
@@ -30,6 +29,7 @@
 		['GET|POST', '/back/addUser', 'User#addUser', 'addUser'],
 		['GET|POST', '/back/deleteUser/[i:id]', 'User#deleteUser', 'deleteUser'],
 		['GET|POST', '/back/updateUser/[i:id]', 'User#updateUser', 'updateUser'],
+
 
 		//Pages liées à MessageController
 		['GET|POST', '/back/listMessage', 'Message#listMessage', 'listMessage'],
@@ -66,6 +66,4 @@
 		//Pages liées à GuestbookController
 		['GET|POST', '/back/listGuestbook', 'Guestbook#listGuestbook', 'listGuestbook'],
 		['GET|POST', '/back/moderation', 'Guestbook#moderation', 'moderation'],
-
-
 	);

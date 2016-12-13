@@ -21,8 +21,10 @@
 					        </div>
 					        <div class="navbar navbar-right">
 						        <ul>
-						        	<li><a href="">Bonjour Vava</a></li>
-						        	<li><a href="">Se déconnecter</a></li>
+						        	<?php if(!empty($_SESSION)): ?>
+							        	<li><a href="">Bonjour Vava</a></li>
+							        	<li><form><button id="logout" class="confirm" type="submit">Se déconnecter</button></form></li>
+							        <?php endif; ?>
 						        </ul>
 					        </div>	     
 					    </nav><!-- /.navbar -->
@@ -63,11 +65,49 @@
 				</div>
 
 				<footer>
-				<script
-			  src="https://code.jquery.com/jquery-3.1.1.min.js"
-			  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-			  crossorigin="anonymous"></script>
-			  	<?= $this->section('js') ?>
+					<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+					<script src="<?= $this->assetUrl('js/jquery.confirm.js') ?>"></script>
+					<script src="<?= $this->assetUrl('js/jquery.confirm.min.js') ?>"></script>
+				  	<script>
+				  		$(document).ready(function(){
+				  			$('#logout').click(function(e){
+				  				e.preventDefault();
+
+							$(".confirm").confirm({
+
+								text: "Êtes-vous sûr de vouloir vous déconnecter ?",
+
+    							confirm: function(button) {
+					  				$.ajax({
+					  					url: '<?=$this->url('ajax_logout'); ?>',
+										type: 'post',
+										cache: false,
+										data: $('form').serialize(),
+										dataType: 'json',
+										success: function(out){
+											if(out.code == 'ok'){
+
+											}
+										}
+					  				});
+				  				},
+
+				  				 cancel: function(button) {
+								    // nothing to do
+								},
+
+								confirmButton: "Se déconnecter",
+							    cancelButton: "Rester en ligne",
+							    post: true,
+							    confirmButtonClass: "btn-danger",
+							    cancelButtonClass: "btn-default",
+							    dialogClass: "modal-dialog modal-lg"
+				  			});
+
+				  			});
+				  		});
+				  	</script>
+				  	<?= $this->section('js') ?>
 				</footer>
 			</div>
 		</body>
