@@ -16,11 +16,11 @@ class ItemController extends Controller
 	public function listItem()
 	{
 
-		$listItem = new UserModel();
-		$items = $listItem->findAll();
+		$listItemClassic = new ItemModel();
+		$itemsClassic = $listItemClassic->listItemClassic();
 
 		$data = [
-			'items'	=> $items,
+			'Classic'	=> $itemsClassic,
 		];
 
 		if(!empty($_SESSION)){
