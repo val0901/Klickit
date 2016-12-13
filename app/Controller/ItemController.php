@@ -5,6 +5,8 @@ namespace Controller;
 use \W\Controller\Controller;
 use \Model\ItemModel;
 use \W\Security\AuthorizationModel;
+use \W\Security\AuthentificationModel;
+use \Respect\Validation\Validator as v;
 
 class ItemController extends Controller 
 {

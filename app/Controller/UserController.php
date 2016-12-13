@@ -27,7 +27,17 @@ class UserController extends Controller
 			'users'	=> $users,
 		];
 
-		$this->show('back/User/listUser', $data);
+		if(!empty($_SESSION)){
+
+			$this->show('back/User/listUser', $data);
+
+			if($_SESSION['role'] == 'Utilisateur') {
+				$this->redirectToRoute('front_index');
+			}
+		}
+		else {
+			$this->redirectToRoute('back_login');
+		}
 	}
 
 	/**
@@ -121,7 +131,18 @@ class UserController extends Controller
 			'errors'	=> $errors
 		];	
 
-		$this->show('back/User/addUser', $params);
+		if(!empty($_SESSION)){
+
+			$this->show('back/User/addUser', $params);
+
+			if($_SESSION['role'] == 'Utilisateur') {
+				$this->redirectToRoute('front_index');
+			}
+		}
+		else {
+			$this->redirectToRoute('back_login');
+		}
+		
 	}
 
 	/**
@@ -228,15 +249,18 @@ class UserController extends Controller
 			'errors'	=> $errors
 		];	
 
-		$this->show('back/User/updateUser', $data);
-	}
+		if(!empty($_SESSION)){
 
-	/**
-	 * Suppression d'utilisateur
-	 */
-	public function deleteUser()
-	{
-		$this->show('back/User/deleteUser');
+			$this->show('back/User/updateUser', $data);
+
+			if($_SESSION['role'] == 'Utilisateur') {
+				$this->redirectToRoute('front_index');
+			}
+		}
+		else {
+			$this->redirectToRoute('back_login');
+		}
+		
 	}
 
 /**************** FRONT ****************/
