@@ -4,7 +4,6 @@
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="<?= $this->e($meta) ?>">
 	<title><?= $this->e($title) ?></title>
     
     <!-- bootstrap style-->
@@ -198,11 +197,126 @@
 			  </a>
 			  <ul class="dropdown-menu soumenu_search">
 				  <div class="row">
-					  <div class="col-md-4">
-						  <p>dfafdsfd</p>
+					  <div class="col-md-3 col3_back">
+						  <div class="colmarginL colLtitle_fontsize">Résultat :</div>
+						  <p class="colLtext_fontsize"><span class="colmarginL colLtitle_fontsize">10 articles </span>correspondent à votre recherche</p>
 					  </div>
-					  <div class="col-md-8">
-						  <p>dfadsfsdf</p>
+					  <div class="col-md-9 colmarginL colR_back">
+						  <div class="colmarginL ipad_padding"> <div class="form-group">
+								<div class="input-group searchbar_margin">
+									<input type="text" class="form-control" placeholder="Cherchez de filtres..." name="search" id="search" value="">
+									<div class="input-group-addon btn btn-primary">
+									<button type="submit" name="submit" id="submit" style="background:transparent;border:none;">
+									<i class="fa fa-search" aria-hidden="true"></i>	
+									</button>
+								  </div>
+								</div>
+  							</div>  
+						  </div>
+						  <!--search details-->
+						  <div class="row colmarginL">
+							  <!--search detail col1-->
+							  <div class="col-lg-4 col-md-6">
+								  <form class="form-horizontal">
+									  <div class="form-group">
+										<div class="col-sm-offset-2 col-sm-10 checkbox_height">
+											<label class="checkbox_border">
+												<input type="checkbox"> <span class="checkbox_font"> Customs Tampographiés</span>
+											</label>
+										</div>
+										<div class="col-sm-offset-2 col-sm-10 checkbox_height">
+											<label class="checkbox_border">
+												<input type="checkbox"> <span class="checkbox_font"> Customs peints</span>
+											</label>
+										</div>
+										<div class="col-sm-offset-2 col-sm-10 checkbox_height">
+											<label class="checkbox_border">
+												<input type="checkbox"> <span class="checkbox_font"> Bustes tampographiés</span>
+											</label>
+										</div>
+										<div class="col-sm-offset-2 col-sm-10 checkbox_height">
+											<label class="checkbox_border">
+												<input type="checkbox"> <span class="checkbox_font"> Pièces en résine</span>
+											</label>
+										</div>
+										<div class="col-sm-offset-2 col-sm-10 checkbox_height">
+											<label class="checkbox_border">
+												<input type="checkbox"> <span class="checkbox_font"> Stickers</span>
+											</label>
+										</div>
+									  </div>
+								  </form>
+							  </div>
+							  <!--End search detail col1-->
+							  
+							  <!--search detail col2-->
+							  	<div class="col-lg-4 col-md-6">
+								  <form class="form-horizontal">
+									  <div class="form-group">
+										<div class="col-sm-offset-2 col-sm-10 checkbox_height">
+											<label class="checkbox_border">
+												<input type="checkbox"> <span class="checkbox_font"> Customs Tampographiés</span>
+											</label>
+										</div>
+										<div class="col-sm-offset-2 col-sm-10 checkbox_height">
+											<label class="checkbox_border">
+												<input type="checkbox"> <span class="checkbox_font"> Customs peints</span>
+											</label>
+										</div>
+										<div class="col-sm-offset-2 col-sm-10 checkbox_height">
+											<label class="checkbox_border">
+												<input type="checkbox"> <span class="checkbox_font"> Bustes tampographiés</span>
+											</label>
+										</div>
+										<div class="col-sm-offset-2 col-sm-10 checkbox_height">
+											<label class="checkbox_border">
+												<input type="checkbox"> <span class="checkbox_font"> Pièces en résine</span>
+											</label>
+										</div>
+										<div class="col-sm-offset-2 col-sm-10 checkbox_height">
+											<label class="checkbox_border">
+												<input type="checkbox"> <span class="checkbox_font"> Stickers</span>
+											</label>
+										</div>
+									  </div>
+								  </form>
+							  </div>
+							  <!--End search detail col2-->
+							  
+							  <!--search detail col3-->
+							  <div class="col-lg-4 col-md-6">
+								  <form class="form-horizontal">
+									  <div class="form-group">
+										<div class="col-sm-offset-2 col-sm-10 checkbox_height">
+											<label class="checkbox_border">
+												<input type="checkbox"> <span class="checkbox_font"> Customs Tampographiés</span>
+											</label>
+										</div>
+										<div class="col-sm-offset-2 col-sm-10 checkbox_height">
+											<label class="checkbox_border">
+												<input type="checkbox"> <span class="checkbox_font"> Customs peints</span>
+											</label>
+										</div>
+										<div class="col-sm-offset-2 col-sm-10 checkbox_height">
+											<label class="checkbox_border">
+												<input type="checkbox"> <span class="checkbox_font"> Bustes tampographiés</span>
+											</label>
+										</div>
+										<div class="col-sm-offset-2 col-sm-10 checkbox_height">
+											<label class="checkbox_border">
+												<input type="checkbox"> <span class="checkbox_font"> Pièces en résine</span>
+											</label>
+										</div>
+										<div class="col-sm-offset-2 col-sm-10 checkbox_height">
+											<label class="checkbox_border">
+												<input type="checkbox"> <span class="checkbox_font"> Stickers</span>
+											</label>
+										</div>
+									  </div>
+								  </form>
+							  </div>
+							  <!--End search detail col3-->
+						  </div>
 					  </div>
 				  </div>
 			  </ul>
@@ -228,6 +342,7 @@
 	
 	<!--Script-->
 	<script>
+	/*soumenu 4 categories*/
     $(document).ready(function(){
     $("#cogicon_click").click(function(){
         $(".cogsoumenu_hidden").slideToggle();
@@ -316,13 +431,13 @@
 			$(".TLA_dropdownbox_width").css("display", "block");
 		})
 	})
+	/*End soumenu 4 categories*/
 	
-	/*$(document).ready(function(){
-		if(".plus_customs".bind("click") == true) {
-			alert("dfadsf");
-		}
-	})*/
-    
+	/*vignetteEvent position*/
+	$(document).ready(function(){
+		$(".vignetteEvent_hide > img").hover(function () { $(this).attr("src", "../public/assets/img/vignetteEvent2.png") }, function () { $(this).attr("src", "../public/assets/img/vignetteEvent1.png") }); 
+	})
+	/*End vignetteEvent position*/
 
     </script>
 </body>

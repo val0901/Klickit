@@ -119,9 +119,11 @@ header {
 }
 
 .soumenu_search {
-    padding: 0 10px;
-    width: auto;
+    margin: 2px 0;
+	padding: 0;
+    width: 1180%;
 	border: 10px solid #ff931e;
+	background-color: #ff931e;;
 }
 
 .clear {
@@ -256,6 +258,62 @@ a:focus {
 	margin: 0 50px;
 }
 
+.colmarginL {
+	padding-left: 20px;
+}
+
+.col3_back {
+	background-color: #ff931e;
+	color: #fff;
+}
+
+.colLtitle_fontsize {
+	font-size: 30px;
+	font-weight: 500;
+}
+
+.colLtext_fontsize {
+	font-size: 20px;
+}
+
+.input-group-addon {
+    background-color: #ff931e;
+    border: 1px solid #ff931e;
+}
+
+.searchbar_margin {
+	margin: 20px;
+}
+
+.checkbox_font {
+	font-size: 20px;
+	color: #ff931e;
+}
+
+.colR_back {
+	background-color: #fff;
+}
+
+.checkbox_border {
+    height: 60px;
+    padding: 0 100px 0 0;
+}
+
+.checkbox_height {
+	height: 50px;
+}
+
+.col-sm-offset-2 {
+    border-bottom: 1px dotted #000;
+    margin: 0 20px;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #ef820b;
+  border-color: #ef820b;
+}
+
 /*index.php 4 categories*/
 .classic_text {
     background-color: rgba(63, 169, 245, 0.6);
@@ -367,4 +425,43 @@ a:focus {
 
 #plusclassic_hide, #pluscustoms_hide, #pluspieces_hide, #plusboites_hide {
 	display: none;
+}
+
+/*index.php commentaire*/
+.commtaire_back {
+	background-image: url("../img/boxBackground.jpg");
+}
+
+.col2_commentaireback {
+	background-color: #fff;
+	padding: 80px;
+}
+
+.col2commtaire_margin {
+	margin: 50px;
+}
+
+.commentaire_title {
+	font-size: 30px;
+	font-weight: 600;
+}
+
+.quote_hide {
+	display: block;
+	margin-right: 200px;
+}
+
+.vignetteEvent_hide {
+	color: #000;
+    display: block;
+    margin-top: -50px;
+    position: absolute;
+    right: 0;
+    z-index: 5;
+	cursor: pointer;
+	overflow:inherit;
+}
+
+.vignetteEvent_hide > img {
+	display: block;
 }
