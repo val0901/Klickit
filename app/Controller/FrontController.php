@@ -56,4 +56,33 @@ class FrontController extends Controller
 
 	}
 
+	/**
+	 * Page A propos
+	 */
+	public function aPropos()
+	{
+		$this->show('front/Pages/aPropos');
+	}
+	/**
+	 * Page CGV
+	 */
+	public function cgv()
+	{
+		$this->show('front/Pages/cgv');
+	}
+	/**
+	 * Page A propos
+	 */
+	public function contact()
+	{
+		$this->show('front/Pages/contact');
+	}
+	/**
+	 * Page A propos
+	 */
+	public function legalMention()
+	{
+		$this->show('front/Pages/legalMention');
+	}
+
 }

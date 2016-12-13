@@ -27,6 +27,10 @@ class FrontItemController extends Controller
 	{
 		$this->show('front/Items/pieces');
 	}
+	public function searchItems()
+	{
+		$this->show('front/Items/search');
+	}
 
 
 }

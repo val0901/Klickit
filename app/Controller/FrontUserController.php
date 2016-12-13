@@ -101,21 +101,19 @@ class FrontUserController extends Controller
 	}
 
 	/**
-	* Affichage page compte user 
-	*/
-/*	public function cptUse()
-	{
-
-		$this->show('front/User/cptUse', $params);
-
-	}
-*/
-
-	/**
-	* Affichage compte user 
-	*/
+	 * affichage compte utilisateur
+	 */
 
 	public function affCptUser(){
 		$this->show('front/User/cptUser');
 	}
+
+	/**
+	 * Update compte utilisateur
+	 */
+
+	public function fupdateUser(){
+		$this->show('front/User/UpdateUser');
+	}
+
 }

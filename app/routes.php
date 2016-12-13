@@ -67,17 +67,22 @@
 		//Pages liées à FrontController
 		['GET|POST', '/front/index', 'Front#index', 'front_index'],
 		['GET|POST', '/front/login', 'Front#login', 'front_login'],
+		['GET|POST', '/front/aPropos', 'Front#aPropos', 'front_aPropos'],
+		['GET|POST', '/front/cgv', 'Front#cgv', 'front_cgv'],
+		['GET|POST', '/front/contact', 'Front#contact', 'front_contact'],
+		['GET|POST', '/front/legalMention', 'Front#legalMention', 'front_legalMention'],
 
 		//Pages liées à UserController
 		['GET|POST', '/front/addUser', 'FrontUser#faddUser', 'front_faddUser'],
 		['GET|POST', '/front/cptUser', 'FrontUser#affCptUser', 'front_affcptuser'],
-		['GET|POST', '/front/UpdateUser', 'FrontUser#fupdateUser', 'front_fupdateUser'],
+		['GET|POST', '/front/fUpdateUser', 'FrontUser#fupdateUser', 'front_fUpdateUser'],
 
 		//Pages liées à FrontItemController
 		['GET|POST', '/front/listItemClassics', 'FrontItem#listItemClassics', 'listItemClassics'],
 		['GET|POST', '/front/listItemCustoms', 'FrontItem#listItemCustoms', 'listItemCustoms'],
 		['GET|POST', '/front/listItemDivers', 'FrontItem#listItemDivers', 'listItemDivers'],
 		['GET|POST', '/front/listItemPieces', 'FrontItem#listItemPieces', 'listItemPieces'],
+		['GET|POST', '/front/searchItems', 'FrontItem#searchItems', 'searchItems'],
 
 		//Pages liées à FrontGuestbookController
 		['GET|POST', '/front/fGuestbook', 'FrontGuestbook#affGuestbook', 'fGuestbook'],
@@ -86,5 +91,9 @@
 		['GET|POST', '/front/listOrders', 'FrontOrders#FrontListOrders', 'front_listOrders'],
 		['GET|POST', '/front/viewUserOrder', 'FrontOrders#FrontviewOrders', 'front_viewUserOrder'],
 
+		['GET|POST', '/front/viewUserOrder', 'FrontOrders#FrontviewOrders', 'front_viewUserOrder'],
+		['GET|POST', '/front/viewUserOrder', 'FrontOrders#FrontviewOrders', 'front_viewUserOrder'],
+		['GET|POST', '/front/viewUserOrder', 'FrontOrders#FrontviewOrders', 'front_viewUserOrder'],
+		['GET|POST', '/front/viewUserOrder', 'FrontOrders#FrontviewOrders', 'front_viewUserOrder'],
 
 	);
