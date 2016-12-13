@@ -5,10 +5,11 @@
 
 		//Routes pour le front (classé par controller)
 		['GET|POST', '/front/index', 'Front#index', 'front_index'],
+		['GET|POST', '/front/login', 'Front#login', 'front_login'],
 
 		//Pages liées à UserController
-		['GET|POST', '/front/addUser', 'User#faddUser', 'faddUser'],
-		['GET|POST', '/front/login', 'Front#login', 'front_login'],
+		['GET|POST', '/front/addUser', 'User#faddUser', 'front_faddUser'],
+		['GET|POST', '/front/cptUser', 'User#affCptUser', 'front_affcptuser'],
 
 
 		//Routes pour le back (classé par controller)
@@ -57,6 +58,8 @@
 		//Pages liées à OrdersController
 		['GET|POST', '/back/listOrders', 'Orders#listOrders', 'listOrders'],
 		['GET|POST', '/back/viewOrder/[i:id]', 'Orders#viewOrders', 'viewOrders'],
+		['GET|POST', '/front/listUserOrders', 'Orders#listUserOrders', 'front_listOrders'],
+
 
 		//Pages liées à ShippingController
 		['GET|POST', '/back/listShipping', 'Shipping#listShipping', 'listShipping'],
@@ -66,4 +69,6 @@
 		//Pages liées à GuestbookController
 		['GET|POST', '/back/listGuestbook', 'Guestbook#listGuestbook', 'listGuestbook'],
 		['GET|POST', '/back/moderation', 'Guestbook#moderation', 'moderation'],
+		['GET|POST', '/front/guestBook', 'Guestbook#affGuestbook', 'front_guestBook'],
+
 	);

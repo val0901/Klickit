@@ -45,11 +45,11 @@ class FrontController extends Controller
 				}
 			}
 		if(!empty($this->getUser())){
-			$this->redirectToRoute('front_index');
+			$this->redirectToRoute('front/index');
 		}
 		else {
 			$param = ['error' => $errors];
-			$this->show('front_login', $param);			
+			$this->show('front/User/login', $param);			
 		}
 
 		}

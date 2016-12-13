@@ -332,11 +332,20 @@ class UserController extends Controller
 	/**
 	* Affichage page compte user 
 	*/
-	public function cptUse()
+/*	public function cptUse()
 	{
 
 		$this->show('front/User/cptUse', $params);
 
+	}
+*/
+
+	/**
+	* Affichage compte user 
+	*/
+
+	public function affCptUser(){
+		$this->show('front/User/cptUser');
 	}
 
 }

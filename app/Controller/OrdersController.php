@@ -8,6 +8,8 @@ use \W\Security\AuthorizationModel;
 
 class OrdersController extends Controller 
 {
+
+/***************** BACK *****************/	
 	/**
 	 * Liste des commandes
 	 */
@@ -23,4 +25,15 @@ class OrdersController extends Controller
 	{
 		$this->show('back/Orders/updateOrders');
 	}
+
+/***************** FRONT *****************/	
+
+	/**
+	 * Liste des commandes
+	 */
+	public function listUserOrders()
+	{
+		$this->show('front/User/listUserCde');
+	}
+
 }
