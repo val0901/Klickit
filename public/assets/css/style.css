@@ -120,8 +120,10 @@ header {
 
 .soumenu_search {
     padding: 0 10px;
-    width: 250px;
+    width: auto;
+	border: 10px solid #ff931e;
 }
+
 .clear {
     clear: both;
 }
@@ -164,10 +166,15 @@ header {
 
 .TLA_dropdownbox_width {
     border: 10px solid #ea232a;
+    width: 100%;
+}
+
+/*.search_dropdownbox_width {
+    border: 10px solid #ea232a;
     margin: 0;
     padding: 0;
     width: 100%;
-}
+}*/
 
 .AP_bgcolor {
     background-color: #7bc942;
@@ -337,8 +344,16 @@ a:focus {
 
 .soumenu_classics_text li, .soumenu_customs_text li, .soumenu_pieces_text li, .soumenu_boites_text li {
 	border-bottom: 1px solid #000;
-	display: block;
-	margin: 0 0 20px;
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    margin: 0;
+	cursor: pointer;
+	padding: 0 20px;
+}
+
+.soumenu_classics_text li:hover, .soumenu_customs_text li:hover, .soumenu_pieces_text li:hover, .soumenu_boites_text li:hover {
+	background-color: rgba(234, 35, 42, 0.6);
 }
 
 .faplus_color, .faminus_color {

@@ -16,109 +16,8 @@
     <link href="https://fonts.googleapis.com/css?family=Advent+Pro:400,700" rel="stylesheet"> 
     <!--fontawsome style-->
     <link rel="stylesheet" href="<?= $this->assetUrl('css/font-awesome.min.css') ?>">
-    <!--jquery js-->
-    <script src="<?= $this->assetUrl('js/jquery-3.1.1.min.js') ?>"></script>   
-    <!--bootstrap js-->
-    <script src="<?= $this->assetUrl('js/bootstrap.min.js') ?>"></script>
 
-    <script>
-    $(document).ready(function(){
-    $("#cogicon_click").click(function(){
-        $(".cogsoumenu_hidden").slideToggle();
-    })
-    /*$(document).click(function(){
-        $(".cogsoumenu_hidden").hide();
-    })*/
-})
-    $(document).ready(function(){
-    $("#usericon_click").click(function(){
-        $(".usersoumenu_hidden").slideToggle();
-    })
-})
-	
-	$(document).ready(function(){
-		$(".slidetoggle").click(function(){
-			$(".TLA_dropdownbox_width").slideToggle();
-		})
-		$(".plus_classic").click(function(){
-			$(".soumenu_classics_text li").show();
-			$(".soumenu_customs_text li").hide();
-			$(".soumenu_pieces_text li").hide();
-			$(".soumenu_boites_text li").hide();
-			$("#plusclassic_hide").hide();
-			$("#pluscustoms_hide").show();
-			$("#pluspieces_hide").show();
-			$("#plusboites_hide").show();
-			$("#faminus_hide").show();
-			$("#faminus1_hide").hide();
-			$("#faminus2_hide").hide();
-			$("#faminus3_hide").hide();
-			$(".TLA_dropdownbox_width").css("display", "block");
-		})
-	})
-	
-	$(document).ready(function(){
-		$(".plus_customs").click(function(){
-			$(".soumenu_customs_text li").show();
-			$(".soumenu_classics_text li").hide();
-			$(".soumenu_pieces_text li").hide();
-			$(".soumenu_boites_text li").hide();
-			$("#pluspieces_hide").show();
-			$("#pluscustoms_hide").hide();
-			$("#plusclassic_hide").show();
-			$("#plusboites_hide").show();
-			$("#faminus_hide").hide();
-			$("#faminus1_hide").show();
-			$("#faminus2_hide").hide();
-			$("#faminus3_hide").hide();
-			$(".TLA_dropdownbox_width").css("display", "block");
-		})
-	})
-	
-	$(document).ready(function(){
-		$(".plus_pieces").click(function(){
-			$(".soumenu_customs_text li").hide();
-			$(".soumenu_classics_text li").hide();
-			$(".soumenu_boites_text li").hide();
-			$(".soumenu_pieces_text li").show();
-			$("#pluspieces_hide").hide();
-			$("#pluscustoms_hide").show();
-			$("#plusclassic_hide").show();
-			$("#plusboites_hide").show();
-			$("#faminus_hide").hide();
-			$("#faminus1_hide").hide();
-			$("#faminus3_hide").hide();
-			$("#faminus2_hide").show();
-			$(".TLA_dropdownbox_width").css("display", "block");
-		})
-	})
-	
-	$(document).ready(function(){
-		$(".plus_boites").click(function(){
-			$(".soumenu_customs_text li").hide();
-			$(".soumenu_classics_text li").hide();
-			$(".soumenu_pieces_text li").hide();
-			$(".soumenu_boites_text li").show();
-			$("#plusboites_hide").hide();
-			$("#pluscustoms_hide").show();
-			$("#plusclassic_hide").show();
-			$("#pluspieces_hide").show();
-			$("#faminus_hide").hide();
-			$("#faminus1_hide").hide();
-			$("#faminus2_hide").hide();
-			$("#faminus3_hide").show();
-			$(".TLA_dropdownbox_width").css("display", "block");
-		})
-	})
-	
-	/*$(document).ready(function(){
-		if(".plus_customs".bind("click") == true) {
-			alert("dfadsf");
-		}
-	})*/
     
-
-    </script>
 </head>
 <body>
 	<div class="container_general">
@@ -216,10 +115,17 @@
 						  <li style="float:right;"><i class="fa fa-plus faplus_color plus_classic" aria-hidden="true" id="plusclassic_hide"></i><i class="fa fa-minus faminus_color" aria-hidden="true" id="faminus_hide"></i></li>
 						  <div class="clear"></div>
 						  <ul class="soumenu_classics_text">
-							  <li>fadsfdsf</li>
-							  <li>fadsfdsf</li>
-							  <li>fadsfdsf</li>
-							  <li>fadsfdsf</li>
+							  <li>Chevaliers</li>
+							  <li>Pirates</li>
+							  <li>Antique</li>
+							  <li>Western</li>
+							  <li>Fantazy</li>
+							  <li>XVIIIe</li>
+							  <li>Fées & Pincesses</li>
+							  <li>Police</li>
+							  <li>Animaux</li>
+							  <li>Sport</li>
+							  <li>Divers</li>
 					  	  </ul>
 					  </div>
 				  </div>
@@ -229,10 +135,11 @@
 						  <li style="float:right;"><i class="fa fa-plus faplus_color plus_customs" aria-hidden="true" id="pluscustoms_hide"></i><i class="fa fa-minus faminus_color" aria-hidden="true" id="faminus1_hide"></i></li>
 						  <div class="clear"></div>
 						  <ul class="soumenu_customs_text">
-							  <li>fadsfdsf</li>
-							  <li>fadsfdsf</li>
-							  <li>fadsfdsf</li>
-							  <li>fadsfdsf</li>
+							  <li>Customs Tampographiés</li>
+							  <li>Customs peints</li>
+							  <li>Bustes Tampographiés</li>
+							  <li>Pièces en résine</li>
+							  <li>Stickers</li>
 					  	  </ul>
 					  </div>
 				  </div>
@@ -242,10 +149,14 @@
 						  <li style="float:right;"><i class="fa fa-plus faplus_color plus_pieces" aria-hidden="true" id="pluspieces_hide"></i><i class="fa fa-minus faminus_color" aria-hidden="true" id="faminus2_hide"></i></li>
 						  <div class="clear"></div>
 						  <ul class="soumenu_pieces_text">
-							  <li>fadsfdsf</li>
-							  <li>fadsfdsf</li>
-							  <li>fadsfdsf</li>
-							  <li>fadsfdsf</li>
+							  <li>Armes</li>
+							  <li>Coiffes</li>
+							  <li>Manchettes</li>
+							  <li>Cols</li>
+							  <li>Ceinturons</li>
+							  <li>Têtes</li>
+							  <li>Cheveux</li>
+							  <li>Divers</li>
 					  	  </ul>
 					  </div>
 				  </div>
@@ -255,10 +166,10 @@
 						  <li style="float:right;"><i class="fa fa-plus faplus_color plus_boites" aria-hidden="true" id="plusboites_hide"></i><i class="fa fa-minus faminus_color" aria-hidden="true" id="faminus3_hide"></i></li>
 						  <div class="clear"></div>
 						  <ul class="soumenu_boites_text">
+							  <!--<li>fadsfdsf</li>
 							  <li>fadsfdsf</li>
 							  <li>fadsfdsf</li>
-							  <li>fadsfdsf</li>
-							  <li>fadsfdsf</li>
+							  <li>fadsfdsf</li>-->
 					  	  </ul>
 					  </div>
 				  </div>
@@ -280,19 +191,19 @@
 		<!--End menu contact-->
 		
 		<!--menu icon search-->
-		<ul class="navbar-right" style="width: 100%; padding: 0; margin: 0;">
+		<ul class="navbar-right search_dropdownbox_width" style="width: 100%; padding: 0; margin: 0;">
 			<li class="navlicon_width dropdown">
 			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-search search_padding" aria-hidden="true"></i>
 			  </a>
 			  <ul class="dropdown-menu soumenu_search">
-				<form class="form-inline">
-				<div class="form-group">
-				<input type="text" class="form-control" placeholder="Text input">
-				</div>
-				<div class="form-group">
-				<input class="btn btn-primary" type="submit" value="Search">
-				</div>
-				</form>
+				  <div class="row">
+					  <div class="col-md-4">
+						  <p>dfafdsfd</p>
+					  </div>
+					  <div class="col-md-8">
+						  <p>dfadsfsdf</p>
+					  </div>
+				  </div>
 			  </ul>
 			</li>
 		</ul>
@@ -308,6 +219,110 @@
 
     <footer>
     </footer>
+
+	<!--jquery js-->
+    <script src="<?= $this->assetUrl('js/jquery-3.1.1.min.js') ?>"></script>   
+    <!--bootstrap js-->
+    <script src="<?= $this->assetUrl('js/bootstrap.min.js') ?>"></script>
+	
+	<!--Script-->
+	<script>
+    $(document).ready(function(){
+    $("#cogicon_click").click(function(){
+        $(".cogsoumenu_hidden").slideToggle();
+    })
+    /*$(document).click(function(){
+        $(".cogsoumenu_hidden").hide();
+    })*/
+})
+    $(document).ready(function(){
+    $("#usericon_click").click(function(){
+        $(".usersoumenu_hidden").slideToggle();
+    })
+})
+	
+	$(document).ready(function(){
+		$(".slidetoggle").click(function(){
+			$(".TLA_dropdownbox_width").slideToggle();
+		})
+		$(".plus_classic").click(function(){
+			$(".soumenu_classics_text li").show();
+			$(".soumenu_customs_text li").hide();
+			$(".soumenu_pieces_text li").hide();
+			$(".soumenu_boites_text li").hide();
+			$("#plusclassic_hide").hide();
+			$("#pluscustoms_hide").show();
+			$("#pluspieces_hide").show();
+			$("#plusboites_hide").show();
+			$("#faminus_hide").show();
+			$("#faminus1_hide").hide();
+			$("#faminus2_hide").hide();
+			$("#faminus3_hide").hide();
+			$(".TLA_dropdownbox_width").css("display", "block");
+		})
+	})
+	
+	$(document).ready(function(){
+		$(".plus_customs").click(function(){
+			$(".soumenu_customs_text li").show();
+			$(".soumenu_classics_text li").hide();
+			$(".soumenu_pieces_text li").hide();
+			$(".soumenu_boites_text li").hide();
+			$("#pluspieces_hide").show();
+			$("#pluscustoms_hide").hide();
+			$("#plusclassic_hide").show();
+			$("#plusboites_hide").show();
+			$("#faminus_hide").hide();
+			$("#faminus1_hide").show();
+			$("#faminus2_hide").hide();
+			$("#faminus3_hide").hide();
+			$(".TLA_dropdownbox_width").css("display", "block");
+		})
+	})
+	
+	$(document).ready(function(){
+		$(".plus_pieces").click(function(){
+			$(".soumenu_customs_text li").hide();
+			$(".soumenu_classics_text li").hide();
+			$(".soumenu_boites_text li").hide();
+			$(".soumenu_pieces_text li").show();
+			$("#pluspieces_hide").hide();
+			$("#pluscustoms_hide").show();
+			$("#plusclassic_hide").show();
+			$("#plusboites_hide").show();
+			$("#faminus_hide").hide();
+			$("#faminus1_hide").hide();
+			$("#faminus3_hide").hide();
+			$("#faminus2_hide").show();
+			$(".TLA_dropdownbox_width").css("display", "block");
+		})
+	})
+	
+	$(document).ready(function(){
+		$(".plus_boites").click(function(){
+			$(".soumenu_customs_text li").hide();
+			$(".soumenu_classics_text li").hide();
+			$(".soumenu_pieces_text li").hide();
+			$(".soumenu_boites_text li").show();
+			$("#plusboites_hide").hide();
+			$("#pluscustoms_hide").show();
+			$("#plusclassic_hide").show();
+			$("#pluspieces_hide").show();
+			$("#faminus_hide").hide();
+			$("#faminus1_hide").hide();
+			$("#faminus2_hide").hide();
+			$("#faminus3_hide").show();
+			$(".TLA_dropdownbox_width").css("display", "block");
+		})
+	})
+	
+	/*$(document).ready(function(){
+		if(".plus_customs".bind("click") == true) {
+			alert("dfadsf");
+		}
+	})*/
     
+
+    </script>
 </body>
 </html>
