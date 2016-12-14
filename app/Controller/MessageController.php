@@ -50,9 +50,6 @@ class MessageController extends Controller
 
 			$getMessage  = new MessageModel();
 			$viewMessage = $getMessage->findOneMessage($id);
-			$data = [
-				'message' => $viewMessage
-			];
 		}
 
 		//Changement du statut du message

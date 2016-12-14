@@ -11,6 +11,7 @@ class GuestbookController extends Controller
 
 
 /******************* BACK *********************/
+
 	/**
 	 * Liste des messages du Livre d'Or
 	 */
@@ -24,6 +25,48 @@ class GuestbookController extends Controller
 		];
 
 		$this->show('back/Guestbook/listGuestbook', $data);
+	}
+
+	/**
+	* Permet de publier ou non un commentaire laissé par les clients
+	*/
+	public function moderation($id)
+	{	
+		//Va servir pour changer le statut
+		$publishing = new GuestbookModel();
+
+		//Affichage du message
+		if(!is_numeric($id) || empty($id)){
+			$this->showNotFound();
+		}else{
+			$guestbook = new GuestbookModel(); //Sert pour afficher le message
+			$message = $guestbook->viewMessage($id);
+			$data = [
+				'message' => $message
+			];
+		}
+
+		//Publication du message ou non
+		if(isset($_POST['publish'])){ //Si on décide de le publier, on change le statut à oui, sinon non
+
+			$published = [
+				'published' => 'oui'
+			];
+
+			$is_publish = $publishing->update($published,$id);
+			$this->redirectToRoute('listGuestbook');
+		
+		}elseif(isset($_POST['no-publish'])){
+			
+			$published = [
+				'published' => 'non'
+			];
+
+			$is_publish = $publishing->update($published,$id);
+			$this->redirectToRoute('listGuestbook');
+		}
+
+		$this->show('back/Guestbook/moderation', $data);
 	}
 
 	/**

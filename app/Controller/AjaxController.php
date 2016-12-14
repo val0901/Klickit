@@ -7,6 +7,7 @@ use \W\Model\UsersModel;
 use \Model\ItemModel;
 use \Model\MessageModel;
 use \Model\EventModel;
+use \Model\GuestbookModel;
 use \W\Security\AuthentificationModel;
 
 use \Respect\Validation\Validator as v; 
@@ -100,6 +101,27 @@ class AjaxController extends Controller
 			if(is_numeric($_POST['id_event'])){
 				$eventModel = new EventModel();
 				$deleteEvent = $eventModel->delete($_POST['id_event']);
+
+				if($deleteEvent){
+					$json = ['code' => 'ok'];
+				}
+			}else{
+				$json = ['code' => 'error'];
+			}
+		}
+		$this->showJson($json);
+	}
+
+	/**
+	 * Efface un commentaire dans le livre d'or en Ajax
+	 */
+	public function deleteMessageMod()
+	{
+		if(!empty($_POST)){
+
+			if(is_numeric($_POST['id_comment'])){
+				$eventModel = new GuestbookModel();
+				$deleteEvent = $eventModel->delete($_POST['id_comment']);
 
 				if($deleteEvent){
 					$json = ['code' => 'ok'];
