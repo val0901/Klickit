@@ -13,7 +13,25 @@ class EventController extends Controller
 	 */
 	public function listEvent()
 	{
-		$this->show('back/Event/listEvent');
+
+		$list = new EventModel();
+		$event = $list->findAll();
+
+		$data = [
+			'event'	=> $event,
+		];
+
+		if(!empty($_SESSION)){
+
+			$this->show('back/Event/listEvent', $data);
+
+			if($_SESSION['role'] == 'Utilisateur') {
+				$this->redirectToRoute('front_index');
+			}
+		}
+		else {
+			$this->redirectToRoute('back_login');
+		}
 	}
 
 	/**
@@ -30,13 +48,5 @@ class EventController extends Controller
 	public function updateEvent()
 	{
 		$this->show('back/Event/updateEvent');
-	}
-
-	/**
-	 * Suppression d'évènement
-	 */
-	public function deleteEvent()
-	{
-		$this->show('back/Event/deleteEvent');
 	}
 }

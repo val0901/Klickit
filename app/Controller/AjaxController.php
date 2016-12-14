@@ -88,4 +88,12 @@ class AjaxController extends Controller
 		}
 		$this->showJson($json);
 	}
+
+	/**
+	 * Efface un évènement en Ajax
+	 */
+	public function deleteEvent()
+	{
+		
+	}
 }

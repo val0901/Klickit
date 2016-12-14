@@ -14,6 +14,7 @@
 		['GET|POST', '/ajax/deleteUser', 'Ajax#deleteUser', 'ajax_deleteUser'],
 		['GET|POST', '/ajax/deleteItem', 'Ajax#deleteItem', 'ajax_deleteItem'],
 		['GET|POST', '/ajax/deleteMessage', 'Ajax#deleteMessage', 'ajax_deleteMessage'],
+		['GET|POST', '/ajax/deleteEvent', 'Ajax#deleteEvent', 'ajax_deleteEvent'],
 
 		//Pages liées à UserController
 		['GET|POST', '/back/listUser', 'User#listUser', 'listUser'],
@@ -25,13 +26,11 @@
 		//Pages liées à MessageController
 		['GET|POST', '/back/listMessage', 'Message#listMessage', 'listMessage'],
 		['GET|POST', '/back/viewMessage/[i:id]', 'Message#viewMessage', 'viewMessage'],
-		['GET|POST', '/back/deleteMessage/[i:id]', 'Message#deleteMessage', 'deleteMessage'],
 
 		//Pages liées à EventController
 		['GET|POST', '/back/listEvent', 'Event#listEvent', 'listEvent'],
 		['GET|POST', '/back/addEvent', 'Event#addEvent', 'addEvent'],
 		['GET|POST', '/back/updateEvent/[i:id]', 'Event#updateEvent', 'updateEvent'],
-		['GET|POST', '/back/deleteEvent/[i:id]', 'Event#deleteEvent', 'deleteEvent'],
 
 		//Pages liées à SlideController
 		['GET|POST', '/back/listSlide', 'Slide#listSlide', 'listSlide'],
@@ -53,7 +52,6 @@
 		//Pages liées à ShippingController
 		['GET|POST', '/back/listShipping', 'Shipping#listShipping', 'listShipping'],
 		['GET|POST', '/back/addShipping', 'Shipping#addShipping', 'addShipping'],
-		['GET|POST', '/back/deleteShipping/[i:id]', 'Shipping#deleteShipping', 'deleteShipping'],
 
 		//Pages liées à GuestbookController
 		['GET|POST', '/back/listGuestbook', 'Guestbook#listGuestbook', 'listGuestbook'],
