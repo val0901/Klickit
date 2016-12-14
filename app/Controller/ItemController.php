@@ -101,7 +101,7 @@ class ItemController extends Controller
 				$errors[] = 'Le fichier envoyé dans "Image 1" n\'est pas une image valide';
 			}
 
-			if(!v::size(null, '10MB')->validate($_FILES['picture1']['tmp_name'])){
+			if(!v::size(null, '2MB')->validate($_FILES['picture1']['tmp_name'])){
 				$errors[] = 'La taille de votre image dans "Image 1" doit être inférieur à 2MB';
 			}
 
@@ -113,7 +113,7 @@ class ItemController extends Controller
 				$errors[] = 'Le fichier envoyé dans "Image 1" n\'est pas une image valide';
 			}
 
-			if(!v::size(null, '10MB')->validate($_FILES['picture2']['tmp_name'])){
+			if(!v::size(null, '2MB')->validate($_FILES['picture2']['tmp_name'])){
 				$errors[] = 'La taille de votre image dans "Image 1" doit être inférieur à 2MB';
 			}
 
