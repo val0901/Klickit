@@ -3,10 +3,23 @@
 	position:absolute;
 	z-index:5;
 	color: #fff;
-	font-size: 50px;
+	font-size: 3vw;
 	display: block;
 	margin-top: 50px;
-	padding: 8px 250px;
+	padding: 2vh 20vw;
 	background-color: #7bc942;
 	text-transform: uppercase;
+}
+
+.event_poster {
+    background-color: #3fa9f5;
+    padding: 2vh 5vw;
+}
+.event_shareRS{
+    background-color: gainsboro;
+    padding: 10px;
+}
+
+.event_shareFB {
+    text-align: center;
 }
