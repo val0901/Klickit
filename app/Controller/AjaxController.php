@@ -5,6 +5,7 @@ namespace Controller;
 use \W\Controller\Controller;
 use \W\Model\UsersModel;
 use \Model\ItemModel;
+use \Model\MessageModel;
 use \W\Security\AuthentificationModel;
 
 use \Respect\Validation\Validator as v; 
@@ -61,6 +62,27 @@ class AjaxController extends Controller
 				}
 			}
 			else {
+				$json = ['code' => 'error'];
+			}
+		}
+		$this->showJson($json);
+	}
+
+	/**
+	* Efface un message en Ajax
+	*/
+	public function deleteMessage()
+	{
+		if(!empty($_POST)){
+
+			if(is_numeric($_POST['id_message'])){
+				$messageModel = new MessageModel();
+				$deleteMessage = $messageModel->delete($_POST['id_message']);
+
+				if($deleteMessage){
+					$json = ['code' => 'ok'];
+				}
+			}else{
 				$json = ['code' => 'error'];
 			}
 		}

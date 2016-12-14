@@ -39,3 +39,54 @@
 		</form>
 	<?php endif;?>				
 <?php $this->stop('main_content') ?>
+
+<?php $this->start('js')?>
+<script>
+	$(document).ready(function(){
+		
+		$('.delete-message').click(function(e){
+			e.preventDefault();
+
+			var idMessage = $(this).data('id');
+
+			$.confirm({
+
+				title: 'Supprimer un message',
+
+				content: "Êtes-vous sûr de vouloir supprimer cet message ?",
+
+				type: 'red',
+
+				theme: 'dark',
+
+				buttons: {
+					ok: {
+						text: 'Effacer le message',
+						btnClass: 'btn-danger',
+						keys: ['enter'],
+						action: function(){
+			  				$.ajax({
+			  					url: '<?=$this->url('ajax_deleteMessage'); ?>',
+								type: 'post',
+								cache: false,
+								data: {id_message: idMessage},  // $_POST['id_user']
+								dataType: 'json',
+								success: function(out){
+									if(out.code == 'ok'){
+						  				window.location.href=window.location.href;	
+									}
+								}
+			  				});
+			  				
+		  				}
+					},
+					cancel: function(button) {
+					   
+					}
+				}
+			});
+
+		});
+	});
+</script>
+<?php $this->stop('js')?>

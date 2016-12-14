@@ -13,6 +13,7 @@
 		['GET|POST', '/ajax/logout', 'Ajax#logout', 'ajax_logout'],
 		['GET|POST', '/ajax/deleteUser', 'Ajax#deleteUser', 'ajax_deleteUser'],
 		['GET|POST', '/ajax/deleteItem', 'Ajax#deleteItem', 'ajax_deleteItem'],
+		['GET|POST', '/ajax/deleteMessage', 'Ajax#deleteMessage', 'ajax_deleteMessage'],
 
 		//Pages liées à UserController
 		['GET|POST', '/back/listUser', 'User#listUser', 'listUser'],
