@@ -8,6 +8,19 @@
 <?php if (empty($user)) :?>
 	<p class="alert alert-danger">Aucun utilisateur trouvé</p>
 <?php else :?>
+	<div class="row">			
+		<div class="details col-lg-6">
+			<p class="price">Prénom : <?=$user['firstname'];?></p>
+			<p class="price">Nom : <?=$user['lastname'];?></p>
+			<p class="price">Pseudonyme : <?=$user['username'];?></p>
+		</div>
+		<div class="details col-lg-6">	
+			<p class="price">Adresse email : <?=$user['email'];?></p>
+			<p class="price">Adresse postale : <br><?=$user['adress'].'<br>'.$user['zipcode'].'<br>'.$user['city'];?></p>
+		</div>
+	</div>
+
+	<h3>Modification d'un client</h3>
 
 	<?php if(!empty($errors)):?>
 		<p class="alert alert-danger">
@@ -119,12 +132,13 @@
 		<div class="form-group">
 		  <label class="col-md-4 control-label" for="id"></label>
 		  <div class="col-md-4">
-		    <button id="id" name="id" class="btn btn-info">Créer un compte client</button>
+		    <button id="id" name="id" class="btn btn-info" type="submit">Créer un compte client</button>
 		  </div>
 		</div>
 
 		</fieldset>
 	</form>
+	
 <?php endif;?>
 
 <?php $this->stop('main_content') ?>
