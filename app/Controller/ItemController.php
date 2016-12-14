@@ -353,7 +353,7 @@ class ItemController extends Controller
 					$success = true;
 				}
 				else {
-					$errors[] = 'Erreur lors de l\'ajout en base de données';
+					$errors[] = 'Erreur lors de la mise à jour en base de données';
 				}
 			}
 
