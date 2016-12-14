@@ -45,7 +45,10 @@
 <!--La derniere evenement-->
 <div class="event_title">évènements</div>
 <div class="evenement_img">
-	<img class="img-responsive" src="<?=$this->assetUrl('/img/slideEvent1.jpg');?>">
+<!--
+    ../../../app/Views/front/Event/viewEvent.php
+-->
+	<a href="<?=$this->url('front_events');?>"> <img class="img-responsive" src="<?=$this->assetUrl('/img/slideEvent1.jpg');?>"></a>
 </div>
 <!--End La derniere evenement-->
 
