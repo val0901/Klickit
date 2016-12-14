@@ -108,6 +108,12 @@ th td {
 
 }
 
+	/****************AFFICHAGE MESSAGE*************/
+.jumbotron {
+	background-color:#777;
+	color:white;
+	}
+
 	/*****************UPDATE USER*************/
 body {
   font-family: 'open sans';
