@@ -15,8 +15,15 @@ class GuestbookController extends Controller
 	 * Liste des messages du Livre d'Or
 	 */
 	public function listGuestbook()
-	{
-		$this->show('back/Guestbook/listGuestbook');
+	{	
+		$guestbookModel = new GuestbookModel();
+		$list = $guestbookModel->findAll();
+
+		$data = [
+			'guestbook'	=> $list
+		];
+
+		$this->show('back/Guestbook/listGuestbook', $data);
 	}
 
 	/**

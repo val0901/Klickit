@@ -8,7 +8,7 @@
 		<h3>Sujet : <?=$message['subject']?></h3>
 		<h3>Contenu : </h3>
 		<div class="jumbotron ">
-			<?=$message['content']?>	
+			<?=nl2br($message['content'])?>	
 		</div>
 
 		<form method="post">
