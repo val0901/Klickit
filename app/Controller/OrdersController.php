@@ -15,17 +15,17 @@ class OrdersController extends Controller
 	 */
 	public function listOrders()
 	{
-		
+		// On instancie le nombre de nb de lignes ds la table
 		$nbpage= new OrdersModel();
 			$nb=$nbpage->countResults();
 
+		// on definit les variables, page courante et nb de lignes affichées
 		$page = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
 		$max = 5;
-		
+
 		$orders = new OrdersModel();
 			$list_orders = $orders->findAllOrders($page, $max);
 
-		
 				$data = [
 					'data'	=> $list_orders,
 					'max' => $max,

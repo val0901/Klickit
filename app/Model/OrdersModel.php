@@ -22,9 +22,10 @@ class OrdersModel extends \W\Model\Model
 	/*Requête sur la table orders avec jointure sur la table user*/
 	public function findAllOrders($page, $max)
 	{
-
+		//on definit la page de démarrage
 		$debut = ($page - 1) * $max;
 
+		// requête avec jointure où on definit les variables de la page de démarrage($debut) et là le nombre de lignes par page($max)
 		$sql = 'SELECT ' .$this->table.'.*, u.firstname, u.lastname,u.social_title, u.adress, u.zipcode,u.city FROM ' . $this->table . ' LEFT JOIN user AS u ON '.$this->table.'.idMember = u.id ORDER BY ' .$this->table.'.date_creation DESC LIMIT :debut, :max';
 
 		$sth = $this->dbh->prepare($sql);
@@ -39,7 +40,10 @@ class OrdersModel extends \W\Model\Model
 		
 	}
 
-	/*Méthode pour compter le nombre de résultat */
+	/** 
+	*Méthode pour compter le nombre de résultat 
+	* @return le nombre de lignes contenu ds la table
+	*/
 
 	public function countResults()
 	{
