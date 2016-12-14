@@ -21,8 +21,9 @@ $w_config = [
 	// configuration globale
 	'site_name'	=> '', 								// contiendra le nom du site
 
-	'upload_dir' => '/art/', 						// Répertoire de stockage des images uploadées
+	'upload_dir' 	   => '/art/', 						// Répertoire de stockage des images uploadées
 	'upload_dir_event' => '/events/',
+	'upload_dir_slide' => '/slide/',
 ];
 
 require('routes.php');

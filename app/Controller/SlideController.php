@@ -5,6 +5,9 @@ namespace Controller;
 use \W\Controller\Controller;
 use \Model\SlideModel;
 use \W\Security\AuthorizationModel;
+use \W\Security\AuthentificationModel;
+use \Respect\Validation\Validator as v;
+use \Intervention\Image\ImageManagerStatic as Image;
 
 class SlideController extends Controller 
 {
@@ -13,7 +16,24 @@ class SlideController extends Controller
 	 */
 	public function listSlide()
 	{
-		$this->show('back/Slide/listSlide');
+		$list = new SlideModel();
+		$slide = $list->findAll();
+
+		$data = [
+			'slide'	=> $slide,
+		];
+
+		if(!empty($_SESSION)){
+
+			$this->show('back/Slide/listSlide', $data);
+
+			if($_SESSION['role'] == 'Utilisateur') {
+				$this->redirectToRoute('front_index');
+			}
+		}
+		else {
+			$this->redirectToRoute('back_login');
+		}
 	}
 
 	/**

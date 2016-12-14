@@ -8,6 +8,7 @@ use \Model\ItemModel;
 use \Model\MessageModel;
 use \Model\EventModel;
 use \Model\GuestbookModel;
+use \Model\SlideModel;
 use \W\Security\AuthentificationModel;
 
 use \Respect\Validation\Validator as v; 
@@ -124,6 +125,27 @@ class AjaxController extends Controller
 				$deleteEvent = $eventModel->delete($_POST['id_comment']);
 
 				if($deleteEvent){
+					$json = ['code' => 'ok'];
+				}
+			}else{
+				$json = ['code' => 'error'];
+			}
+		}
+		$this->showJson($json);
+	}
+
+	/**
+	 * Efface un slide en Ajax
+	 */
+	public function deleteSlide()
+	{
+		if(!empty($_POST)){
+
+			if(is_numeric($_POST['id_slide'])){
+				$slideModel = new SlideModel();
+				$deleteSlide = $slideModel->delete($_POST['id_slide']);
+
+				if($deleteSlide){
 					$json = ['code' => 'ok'];
 				}
 			}else{
