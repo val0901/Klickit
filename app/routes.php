@@ -19,7 +19,6 @@
 		//Pages liées à UserController
 		['GET|POST', '/back/listUser', 'User#listUser', 'listUser'],
 		['GET|POST', '/back/addUser', 'User#addUser', 'addUser'],
-		['GET|POST', '/back/deleteUser/[i:id]', 'User#deleteUser', 'deleteUser'],
 		['GET|POST', '/back/updateUser/[i:id]', 'User#updateUser', 'updateUser'],
 
 
@@ -35,13 +34,11 @@
 		//Pages liées à SlideController
 		['GET|POST', '/back/listSlide', 'Slide#listSlide', 'listSlide'],
 		['GET|POST', '/back/addSlide', 'Slide#addSlide', 'addSlide'],
-		['GET|POST', '/back/deleteSlide/[i:id]', 'Slide#deleteSlide', 'deleteSlide'],
 		['GET|POST', '/back/updateSlide/[i:id]', 'Slide#updateSlide', 'updateSlide'],
 
 		//Pages liées à ItemController
 		['GET|POST', '/back/listItem', 'Item#listItem', 'listItem'],
 		['GET|POST', '/back/addItem', 'Item#addItem', 'addItem'],
-		['GET|POST', '/back/deleteItem/[i:id]', 'Item#deleteItem', 'deleteItem'],
 		['GET|POST', '/back/updateItem/[i:id]', 'Item#updateItem', 'updateItem'],
 
 		//Pages liées à OrdersController
