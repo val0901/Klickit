@@ -6,16 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title><?= $this->e($title) ?></title>
     
-    <!-- bootstrap style-->
-    <link rel="stylesheet" href="<?= $this->assetUrl('css/bootstrap.css') ?>">
-    <!-- mon propre style-->
-    <link rel="stylesheet" href="<?= $this->assetUrl('css/style.css') ?>">
-    <!-- mon propre mediaquery-->
-    <link rel="stylesheet" href="<?= $this->assetUrl('css/mediaquery.css') ?>">
+    
     <!--google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Advent+Pro:400,700" rel="stylesheet"> 
     <!--fontawsome style-->
     <link rel="stylesheet" href="<?= $this->assetUrl('css/font-awesome.min.css') ?>">
+    <!-- bootstrap style-->
+    <link rel="stylesheet" href="<?= $this->assetUrl('css/bootstrap.css') ?>">
+    <!-- styles index-->
+    <link rel="stylesheet" href="<?= $this->assetUrl('css/style.css') ?>">
+    <link rel="stylesheet" href="<?= $this->assetUrl('css/mediaquery.css') ?>">
+    <!-- styles page event-->
+    <link rel="stylesheet" href="<?= $this->assetUrl('css/eventsstyle.css') ?>">
+    <link rel="stylesheet" href="<?= $this->assetUrl('css/eventmediaquery.css') ?>">
 
     
 </head>
