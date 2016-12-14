@@ -9,7 +9,7 @@
 		<p class="alert alert-danger"><?=implode('<br>', $errors);?></p>	
 	<?php endif;?>
 
-	<form class="form-horizontal">
+	<form class="form-horizontal" enctype="multipart/form-data">
 		<!-- Text input-->
 		<div class="form-group">
 		  <label class="col-md-4 control-label" for="name">Nom du produit</label>  
