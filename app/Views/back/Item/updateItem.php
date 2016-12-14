@@ -2,11 +2,11 @@
 
 <?php $this->start('main_content') ?>
 	<a href="<?=$this->url('listItem');?>"><button class="btn btn-info">Retour liste article</button></a>
-	<h3>Vu du produit</h3>
+	<h3 class="titleItem">Vu du produit</h3>
 	<div class="row">
 		<div class="preview col-lg-6">
 			
-				<div class="preview-pic tab-content row">
+				<div class="preview-pic row">
 					<div class="tab-pane active col-sm-6" id="pic-1"><img src="<?=$this->assetUrl('art/'.$affichage['picture1']);?>" /></div>
 					<div class="tab-pane active col-sm-6" id="pic-2"><img src="<?=$this->assetUrl('art/'.$affichage['picture2']);?>" /></div>
 				</div>
@@ -15,18 +15,18 @@
 		
 					
 						<div class="details col-lg-6">
-							<h3 class="product-title"><?=$affichage['name'];?></h3>
+							<h3 class="titleArt"><?=$affichage['name'];?></h3>
 							
-							<p class="product-description"><?=$affichage['description'];?></p>
-							<h4 class="price">Prix d'origine : <span><?=$affichage['price'];?></span></h4>
+							<p class="price"><?=$affichage['description'];?></p>
+							<p class="price"><span>Prix d'origine : </span> <?=$affichage['price'];?> €</p>
 							<?php if($affichage['newPrice'] > 0) : ?>
-								<h4 class="price">Nouveau prix: <span><?=$affichage['newPrice'];?></span></h4>
+								<p class="price"><span>Nouveau prix : </span><?=$affichage['newPrice'];?> €</p>
 							<?php elseif($affichage['newPrice'] == 0) : ?>
-								<h4 class="price">Nouveau prix: <span>Pas de nouveau prix</span></h4>
+								<p class="price"><span>Nouveau prix :</span> Pas de nouveau prix</p>
 							<?php endif; ?>
 							
-							<p>Statut du produit : <span><?=$affichage['statut'];?><span></p>
-							<p>Catégorie du produit : <span><?=$affichage['category'];?><span></p>
+							<p class="price"><span>Statut du produit : </span> <?=$affichage['statut'];?></p>
+							<p class="price"><span>Catégorie du produit : </span> <?=$affichage['category'];?></p>
 						</div>
 	</div>
 	<br><br>
@@ -71,7 +71,7 @@
 		<div class="form-group">
 		  <label class="col-md-4 control-label" for="newPrice">Nouveau Prix</label>  
 		  <div class="col-md-4">
-		  <input id="newPrice" name="newPprice" placeholder="" class="form-control input-md" type="text">
+		  <input id="newPrice" name="newPrice" placeholder="" class="form-control input-md" type="text">
 		    
 		  </div>
 		</div>
