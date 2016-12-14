@@ -7,8 +7,8 @@
 		<div class="preview col-lg-6">
 			
 				<div class="preview-pic tab-content row">
-					<div class="tab-pane active col-sm-6" id="pic-1"><img src="<?=$affichage['picture1'];?>" /></div>
-					<div class="tab-pane active col-sm-6" id="pic-2"><img src="<?=$affichage['picture2'];?>" /></div>
+					<div class="tab-pane active col-sm-6" id="pic-1"><img src="<?=$this->assetUrl('art/'.$affichage['picture1']);?>" /></div>
+					<div class="tab-pane active col-sm-6" id="pic-2"><img src="<?=$this->assetUrl('art/'.$affichage['picture2']);?>" /></div>
 				</div>
 			
 		</div>
