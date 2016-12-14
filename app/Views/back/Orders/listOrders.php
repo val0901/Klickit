@@ -14,7 +14,7 @@
 			</thead>
 
 			<tbody>
-			<?php foreach ($data as $value): ?>
+			<?php foreach ($data as $value): ;?>
 				<tr>
 					<td><?=$value['id']; ?></td>
 					<td><?=$value['lastname'].' '.$value['firstname'].'<br>'.$value['adress'].'<br>'.$value['zipcode'].' '.$value['city']; ?></td>
@@ -39,7 +39,31 @@
 				</tr>
 			<?php endforeach; ?>			
 			</tbody>			
-		</table>
+		</table> 
+			<?php $search = (isset($_GET['search']))? 'search='. $_GET['search'].'&' :'';?>
+			<div>Page <?= $page; ?> / <?= ceil($nb/$max); ?>
+				<?= ($page!=1) ? '<a href="?'. $search .'page='. ($page - 1) .'">Page précédente</a>':''; ?>
+				<?= $page!= ceil($nb/$max) ? '<a href="?'. $search .'page='. ($page + 1) .'">Page suivante</a>':''; ?>
+
+			</div>
+
+		<!-- <ul class="pagination">
+		    <li>
+		      <a href="#" aria-label="Previous">
+		        <span aria-hidden="true">&laquo;</span>
+		      </a>
+		    </li>
+		    <li><a href="#">1</a></li>
+		    <li><a href="#">2</a></li>
+		    <li><a href="#">3</a></li>
+		    <li><a href="#">4</a></li>
+		    <li><a href="#">5</a></li>
+		    <li>
+		      <a href="#" aria-label="Next">
+		        <span aria-hidden="true">&raquo;</span>
+		      </a>
+		    </li>
+		  </ul> -->
 		
 	</div>
 

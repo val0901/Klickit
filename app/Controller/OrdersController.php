@@ -15,11 +15,20 @@ class OrdersController extends Controller
 	 */
 	public function listOrders()
 	{
+		$page = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
+		$nbpage= new OrdersModel();
+			$nb=$nbpage->countResults();
+		$max = 5;
 		$orders = new OrdersModel();
-				$list_orders = $orders->findAllOrders();
+			$list_orders = $orders->findAllOrders($page, $max);
 
+		
 				$data = [
 					'data'	=> $list_orders,
+					'max' => $max,
+					'page' => $page,
+					'nb' => $nb,
+					
 				];
 				
 				if(!empty($_SESSION)){

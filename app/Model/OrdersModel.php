@@ -13,8 +13,6 @@ class OrdersModel extends \W\Model\Model
 
 		$sql = 'SELECT ' .$this->table.'.*, u.firstname, u.lastname FROM ' . $this->table . ' LEFT JOIN user AS u ON '.$this->table.'.idMember = u.id ORDER BY ' .$this->table.'.date_creation DESC LIMIT 15';
 
-
-
 		$sth = $this->dbh->prepare($sql);
 		$sth->execute();
 
@@ -22,18 +20,45 @@ class OrdersModel extends \W\Model\Model
 	}
 
 	/*Requête sur la table orders avec jointure sur la table user*/
-	public function findAllOrders()
+	public function findAllOrders($page, $max)
 	{
+		$page = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
+		$max = 5;
 
-		$sql = 'SELECT ' .$this->table.'.*, u.firstname, u.lastname,u.social_title, u.adress, u.zipcode,u.city FROM ' . $this->table . ' LEFT JOIN user AS u ON '.$this->table.'.idMember = u.id ORDER BY ' .$this->table.'.date_creation DESC ';
+		$debut = ($page - 1) * $max;
 
 
+		$sql = 'SELECT ' .$this->table.'.*, u.firstname, u.lastname,u.social_title, u.adress, u.zipcode,u.city FROM ' . $this->table . ' LEFT JOIN user AS u ON '.$this->table.'.idMember = u.id ORDER BY ' .$this->table.'.date_creation DESC LIMIT :debut, :max';
 
 		$sth = $this->dbh->prepare($sql);
-		$sth->execute();
+		$sth->bindValue(':max', $max, \PDO::PARAM_INT);
+		$sth->bindValue(':debut', $debut, \PDO::PARAM_INT);
+		
+		$sth->execute(); 
+
 
 		return $sth->fetchAll();
+		
+		
 	}
+
+	/*Méthode pour compter le nombre de résultat */
+
+	public function countResults()
+	{
+    
+    $sql = 'SELECT COUNT(*) as total FROM ' . $this->table;
+
+    $sth = $this->dbh->prepare($sql);
+    $sth->execute();
+
+    $result = $sth->fetch();
+
+    return $result['total'];
+
+
+}
+
 
 
 }
