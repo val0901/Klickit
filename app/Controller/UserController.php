@@ -154,7 +154,6 @@ class UserController extends Controller
 		}else{
 			$update  = new UserModel();
 			$user = $update->find($id);
-
 		}
 
 		//Sert pour contrôler les entrées du formulaire
