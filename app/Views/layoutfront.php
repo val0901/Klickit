@@ -439,6 +439,13 @@
 	})
 	/*End vignetteEvent position*/
 
+	/*index.php slide article*/
+	$(document).ready(function() {
+    $('.carousel').carousel({
+      interval: 6000
+    })
+  });
+	/*End index.php slide article*/
     </script>
 </body>
 </html>
