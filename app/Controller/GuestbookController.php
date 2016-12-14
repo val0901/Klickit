@@ -17,10 +17,10 @@ class GuestbookController extends Controller
 	public function listGuestbook()
 	{	
 		$guestbookModel = new GuestbookModel();
-		$list = $guestbookModel->findAll();
+		$list = $guestbookModel->findAllMessage();
 
 		$data = [
-			'guestbook'	=> $list
+			'messages'	=> $list
 		];
 
 		$this->show('back/Guestbook/listGuestbook', $data);

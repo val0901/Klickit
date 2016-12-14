@@ -57,7 +57,7 @@
 
 		//Pages liées à GuestbookController
 		['GET|POST', '/back/listGuestbook', 'Guestbook#listGuestbook', 'listGuestbook'],
-		['GET|POST', '/back/moderation', 'Guestbook#moderation', 'moderation'],
+		['GET|POST', '/back/moderation/[i:id]', 'Guestbook#moderation', 'moderation'],
 
 
 
