@@ -14,9 +14,9 @@
 					<?php foreach($event as $value) : ?>
 						<tr>
 							<td><?=$value['id'];?></td>
-							<td><?=$value['name'];?></td>
+							<td><?=$value['title'];?></td>
 							<td><a href="<?=$this->url('updateEvent', ['id'=>$value['id']]);?>">Vu et modification de l'évènement</a></td>
-							<td><button class="btn btn-danger delete-item" data-id="<?=$value['id']?>">Effacer l'évènement'</button></td>
+							<td><button class="btn btn-danger delete-event" data-id="<?=$value['id']?>">Effacer l'évènement'</button></td>
 						</tr>	
 					<?php endforeach;?>
 				</tbody>
@@ -26,6 +26,50 @@
 
 <?php $this->start('js')?>
 	<script>
-		
+		$(document).ready(function(){
+			$('.delete-event').click(function(e){
+				e.preventDefault();
+
+				var idEvent = $(this).data('id');
+
+				$.confirm({
+
+					title: 'Supprimer cet évènement',
+
+					content: "Êtes-vous sûr de vouloir supprimer cet évènement ?",
+
+					type: 'red',
+
+					theme: 'dark',
+
+					buttons: {
+						ok: {
+							text: 'Effacer l\'évènement',
+							btnClass: 'btn-danger',
+							keys: ['enter'],
+							action: function(){
+				  				$.ajax({
+				  					url: '<?=$this->url('ajax_deleteEvent'); ?>',
+									type: 'post',
+									cache: false,
+									data: {id_event: idEvent},
+									dataType: 'json',
+									success: function(out){
+										if(out.code == 'ok'){
+							  				window.location.href=window.location.href;	
+										}
+									}
+				  				});
+				  				
+			  				}
+						},
+						cancel: function(button) {
+						   
+						}
+					}
+				});
+
+			});
+		});
 	</script>
 <?php $this->stop('js') ?>

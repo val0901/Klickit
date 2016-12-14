@@ -170,51 +170,51 @@
 
 <?php $this->start('js')?>
 	<script>
-	$(document).ready(function(){
-		
-		$('.delete-item').click(function(e){
-			e.preventDefault();
+		$(document).ready(function(){
+			
+			$('.delete-item').click(function(e){
+				e.preventDefault();
 
-			var idItem = $(this).data('id');
+				var idItem = $(this).data('id');
 
-			$.confirm({
+				$.confirm({
 
-				title: 'Supprimer cet article',
+					title: 'Supprimer cet article',
 
-				content: "Êtes-vous sûr de vouloir supprimer cet article ?",
+					content: "Êtes-vous sûr de vouloir supprimer cet article ?",
 
-				type: 'red',
+					type: 'red',
 
-				theme: 'dark',
+					theme: 'dark',
 
-				buttons: {
-					ok: {
-						text: 'Effacer l\'article',
-						btnClass: 'btn-danger',
-						keys: ['enter'],
-						action: function(){
-			  				$.ajax({
-			  					url: '<?=$this->url('ajax_deleteItem'); ?>',
-								type: 'post',
-								cache: false,
-								data: {id_item: idItem},
-								dataType: 'json',
-								success: function(out){
-									if(out.code == 'ok'){
-						  				window.location.href=window.location.href;	
+					buttons: {
+						ok: {
+							text: 'Effacer l\'article',
+							btnClass: 'btn-danger',
+							keys: ['enter'],
+							action: function(){
+				  				$.ajax({
+				  					url: '<?=$this->url('ajax_deleteItem'); ?>',
+									type: 'post',
+									cache: false,
+									data: {id_item: idItem},
+									dataType: 'json',
+									success: function(out){
+										if(out.code == 'ok'){
+							  				window.location.href=window.location.href;	
+										}
 									}
-								}
-			  				});
-			  				
-		  				}
-					},
-					cancel: function(button) {
-					   
+				  				});
+				  				
+			  				}
+						},
+						cancel: function(button) {
+						   
+						}
 					}
-				}
-			});
+				});
 
+			});
 		});
-	});
-</script>
+	</script>
 <?php $this->stop('js')?>

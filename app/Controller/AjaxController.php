@@ -6,6 +6,7 @@ use \W\Controller\Controller;
 use \W\Model\UsersModel;
 use \Model\ItemModel;
 use \Model\MessageModel;
+use \Model\EventModel;
 use \W\Security\AuthentificationModel;
 
 use \Respect\Validation\Validator as v; 
@@ -94,6 +95,19 @@ class AjaxController extends Controller
 	 */
 	public function deleteEvent()
 	{
-		
+		if(!empty($_POST)){
+
+			if(is_numeric($_POST['id_event'])){
+				$eventModel = new EventModel();
+				$deleteEvent = $eventModel->delete($_POST['id_event']);
+
+				if($deleteEvent){
+					$json = ['code' => 'ok'];
+				}
+			}else{
+				$json = ['code' => 'error'];
+			}
+		}
+		$this->showJson($json);
 	}
 }
