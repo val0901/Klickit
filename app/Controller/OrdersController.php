@@ -26,6 +26,42 @@ class OrdersController extends Controller
 		$orders = new OrdersModel();
 			$list_orders = $orders->findAllOrders($page, $max);
 
+
+		$update_status = new OrdersModel(); //servira pour changer le statut 
+
+			//Changement du statut du message
+		if(isset($_POST['commandé'])){
+
+			//On change le statut du message
+			$status = [
+				'statut' => 'commandé'
+			];
+			$updated = $update_status->update($status,$id);
+
+			$this->redirectToRoute('listOrders'); //et on redirige
+
+		}elseif(isset($_POST['en préparation'])){
+
+			$status = [
+				'statut' => 'en préparation'
+			];
+			$updated = $update_status->update($status,$id);
+
+			$this->redirectToRoute('listOrders');
+		}
+		elseif(isset($_POST['expédié'])){
+
+			$status = [
+				'statut' => 'expédié'
+			];
+			$updated = $update_status->update($status,$id);
+
+			$this->redirectToRoute('listOrders');
+		}
+
+
+		
+
 				$data = [
 					'data'	=> $list_orders,
 					'max' => $max,
@@ -33,6 +69,8 @@ class OrdersController extends Controller
 					'nb' => $nb,
 					
 				];
+
+
 				
 				if(!empty($_SESSION)){
 

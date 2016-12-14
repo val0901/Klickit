@@ -26,9 +26,9 @@
 						<div class="form-group" id="selectStt">									
 							  <div class="col-md-4">
 							    <select id="selectStatut" name="selectStatut" class="form-control">
-							      <option value="1">En attente de paiement</option>
-							      <option value="2">En cours de préparation</option>
-							      <option value="3">Expédiée</option>
+							      <option value="commandé" name="com">En attente de paiement</option>
+							      <option value="en préparation">En cours de préparation</option>
+							      <option value="expedié">Expédiée</option>
 							    </select>
 							  </div>
 							</form>
