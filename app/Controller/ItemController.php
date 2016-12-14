@@ -101,7 +101,7 @@ class ItemController extends Controller
 				$errors[] = 'Le fichier envoyé dans "Image 1" n\'est pas une image valide';
 			}
 
-			if(!v::size(null, '2MB')->validate($_FILES['picture1']['tmp_name'])){
+			if(!v::size(null, '10MB')->validate($_FILES['picture1']['tmp_name'])){
 				$errors[] = 'La taille de votre image dans "Image 1" doit être inférieur à 2MB';
 			}
 
@@ -113,7 +113,7 @@ class ItemController extends Controller
 				$errors[] = 'Le fichier envoyé dans "Image 1" n\'est pas une image valide';
 			}
 
-			if(!v::size(null, '2MB')->validate($_FILES['picture2']['tmp_name'])){
+			if(!v::size(null, '10MB')->validate($_FILES['picture2']['tmp_name'])){
 				$errors[] = 'La taille de votre image dans "Image 1" doit être inférieur à 2MB';
 			}
 
@@ -201,12 +201,19 @@ class ItemController extends Controller
 	/**
 	 * Modification d'article 
 	 */
-	public function updateItem()
-	{
+	public function updateItem($id)
+	{	
+		$affiche = new ItemModel();
+
+		$afficheItem = $affiche->find($id);
+
+		$data = [
+			'affichage' => $afficheItem,
+		];
 
 		if(!empty($_SESSION)){
 
-			$this->show('back/Item/updateItem');
+			$this->show('back/Item/updateItem', $data);
 
 			if($_SESSION['role'] == 'Utilisateur') {
 				$this->redirectToRoute('front_index');
