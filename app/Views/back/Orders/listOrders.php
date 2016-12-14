@@ -3,6 +3,7 @@
 <?php $this->start('main_content') ?>
 
 	<div id="viewOrder">
+	<form method="post">
 		<table class="table table-responsive">
 			<thead>
 				<th>Numéro</th>
@@ -22,8 +23,7 @@
 					<td><?= date('d/m/Y', strtotime($value['date_creation']));?></td>
 					<td><?=$value['statut']; ?></td>
 					<td>
-						<div class="form-group" id="selectStt">
-							<form>									
+						<div class="form-group" id="selectStt">									
 							  <div class="col-md-4">
 							    <select id="selectStatut" name="selectStatut" class="form-control">
 							      <option value="1">En attente de paiement</option>
@@ -39,7 +39,8 @@
 				</tr>
 			<?php endforeach; ?>			
 			</tbody>			
-		</table> 
+		</table>
+	</form>
 			<?php $search = (isset($_GET['search']))? 'search='. $_GET['search'].'&' :'';?>
 			<div>Page <?= $page; ?> / <?= ceil($nb/$max); ?>
 				<?= ($page!=1) ? '<a href="?'. $search .'page='. ($page - 1) .'">Page précédente</a>':''; ?>

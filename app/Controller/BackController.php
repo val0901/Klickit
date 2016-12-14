@@ -5,6 +5,7 @@ namespace Controller;
 use \W\Controller\Controller;
 use \Model\UserModel;
 use \Model\OrdersModel;
+use \Model\MessageModel;
 use \W\Security\AuthentificationModel;
 use \W\Security\AuthorizationModel;
 
@@ -20,8 +21,12 @@ class BackController extends Controller
 		$orders = new OrdersModel();
 		$list_orders = $orders->findAllWithUsers();
 
+		$messages = new MessageModel();
+		$list_messages = $messages->findAllMessage();
+
 		$data = [
-			'data'	=> $list_orders,
+			'orders'	=> $list_orders,
+			'messages' => $list_messages,
 		];
 		
 		if(!empty($_SESSION)){

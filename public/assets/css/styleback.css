@@ -80,14 +80,15 @@ STYLE INDEX
 
 /*tableau commande*/
 
-#lastorder {
+#lastorder, #lastMessage {
 	border: 3px solid black;
 	width: 100%;
 	height: auto ;
 	margin-top: 20px;
+	margin-bottom: 50px;
 }
 
-th td {
+th,td {
 	text-align: center;
 }
 
@@ -99,15 +100,14 @@ th td {
 
 }
 
-#voirplus {
-	
+#voirplus a {
+	color: white;
 	display: flex;
 	flex-direction: row-reverse;
 	align-self: flex-end;
 	margin-right: 10px;
-
-
 }
+
 
 	/****************AFFICHAGE MESSAGE*************/
 .jumbotron {
