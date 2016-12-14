@@ -46,10 +46,11 @@
 <!--End La derniere evenement-->
 
 <!--Slide articles-->
+<div class="clear"></div>
 <div class="slideartL_title">nouveau!</div>
 <div class="slideartR_title">promo!</div>
 
-<div class="container-fluid">
+<div class="">
 <div class="row-fluid">
 <div class="span12">
 
@@ -60,42 +61,43 @@
                     <ul class="thumbnails">
                         <li class="span3">
                             <div class="thumbnail">
-                                <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000004.jpg');?>" alt=""></a>
                             </div>
                             <div class="caption">
-                                <h4>Praesent commodo</h4>
-                				<p>Nullam Condimentum Nibh Etiam Sem</p>
-                                <a class="btn btn-mini" href="#">&raquo; Read More</a>
+                                <h4>5 €</h4>
+                				<p>Princess Playmo</p>
+								<div class="slidecontent_nouveau">nouveau !</div>
+                                <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
                             </div>
                         </li>
                         <li class="span3">
                             <div class="thumbnail">
-                                <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000005.jpg');?>" alt=""></a>
                             </div>
                             <div class="caption">
-                                <h4>Praesent commodo</h4>
+                                <h4>4 €</h4>
                 				<p>Nullam Condimentum Nibh Etiam Sem</p>
-                                <a class="btn btn-mini" href="#">&raquo; Read More</a>
+								<div class="slidecontent_promo">promo !</div>
                             </div>
                         </li>
                         <li class="span3">
                             <div class="thumbnail">
-                                <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000006.jpg');?>" alt=""></a>
                             </div>
                             <div class="caption">
-                                <h4>Praesent commodo</h4>
-                				<p>Nullam Condimentum Nibh Etiam Sem</p>
-                                <a class="btn btn-mini" href="#">&raquo; Read More</a>
+                                <h4>8 €</h4>
+                				<p>Princess Playmo</p>
+								<div class="slidecontent_nouveau">nouveau !</div>
                             </div>
                         </li>
                         <li class="span3">
                             <div class="thumbnail">
-                                <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000007.jpg');?>" alt=""></a>
                             </div>
                             <div class="caption">
-                                <h4>Praesent commodo</h4>
-                				<p>Nullam Condimentum Nibh Etiam Sem</p>
-                                <a class="btn btn-mini" href="#">&raquo; Read More</a>
+                                <h4>3 €</h4>
+                				<p>Princess Playmo</p>
+								<div class="slidecontent_nouveau">nouveau !</div>
                             </div>
                         </li>
                     </ul>
@@ -104,42 +106,42 @@
                     <ul class="thumbnails">
                         <li class="span3">
                             <div class="thumbnail">
-                                <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000008.jpg');?>" alt=""></a>
                             </div>
                             <div class="caption">
-                                <h4>Praesent commodo</h4>
-                				<p>Nullam Condimentum Nibh Etiam Sem</p>
-                                <a class="btn btn-mini" href="#">&raquo; Read More</a>
+                                <h4>5 €</h4>
+                				<p>Princess Playmo</p>
+								<div class="slidecontent_nouveau">nouveau !</div>
                             </div>
                         </li>
                         <li class="span3">
                             <div class="thumbnail">
-                                <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_espacerobots_000001.jpg');?>" alt=""></a>
                             </div>
                             <div class="caption">
-                                <h4>Praesent commodo</h4>
-                				<p>Nullam Condimentum Nibh Etiam Sem</p>
-                                <a class="btn btn-mini" href="#">&raquo; Read More</a>
+                                <h4>4 €</h4>
+                				<p>Princess Playmo</p>
+								<div class="slidecontent_promo">promo !</div>
                             </div>
                         </li>
                         <li class="span3">
                             <div class="thumbnail">
-                                <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_espacerobots_000002.jpg');?>" alt=""></a>
                             </div>
                             <div class="caption">
-                                <h4>Praesent commodo</h4>
-                				<p>Nullam Condimentum Nibh Etiam Sem</p>
-                                <a class="btn btn-mini" href="#">&raquo; Read More</a>
+                                <h4>8 €</h4>
+                				<p>Princess Playmo</p>
+								<div class="slidecontent_nouveau">nouveau !</div>
                             </div>
                         </li>
                         <li class="span3">
                             <div class="thumbnail">
-                                <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_fantasy_000001.jpg');?>" alt=""></a>
                             </div>
                             <div class="caption">
-                                <h4>Praesent commodo</h4>
-                				<p>Nullam Condimentum Nibh Etiam Sem</p>
-                                <a class="btn btn-mini" href="#">&raquo; Read More</a>
+                                <h4>3 €</h4>
+                				<p>Princess Playmo</p>
+								<div class="slidecontent_nouveau">nouveau !</div>
                             </div>
                         </li>
                     </ul>
@@ -148,42 +150,42 @@
                     <ul class="thumbnails">
                         <li class="span3">
                             <div class="thumbnail">
-                                <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_fantasy_000002.jpg');?>" alt=""></a>
                             </div>
                             <div class="caption">
-                                <h4>Praesent commodo</h4>
-                				<p>Nullam Condimentum Nibh Etiam Sem</p>
-                                <a class="btn btn-mini" href="#">&raquo; Read More</a>
+                                <h4>5 €</h4>
+                				<p>Princess Playmo</p>
+								<div class="slidecontent_nouveau">nouveau !</div>
                             </div>
                         </li>
                         <li class="span3">
                             <div class="thumbnail">
-                                <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_fantasy_000003.jpg');?>" alt=""></a>
                             </div>
                             <div class="caption">
-                                <h4>Praesent commodo</h4>
-                				<p>Nullam Condimentum Nibh Etiam Sem</p>
-                                <a class="btn btn-mini" href="#">&raquo; Read More</a>
+                                <h4>4 €</h4>
+                				<p>Princess Playmo</p>
+								<div class="slidecontent_promo">promo !</div>
                             </div>
                         </li>
                         <li class="span3">
                             <div class="thumbnail">
-                                <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_fantasy_000004.jpg');?>" alt=""></a>
                             </div>
                             <div class="caption">
-                                <h4>Praesent commodo</h4>
-                				<p>Nullam Condimentum Nibh Etiam Sem</p>
-                                <a class="btn btn-mini" href="#">&raquo; Read More</a>
+                                <h4>8 €</h4>
+                				<p>Princess Playmo</p>
+								<div class="slidecontent_nouveau">nouveau !</div>
                             </div>
                         </li>
                         <li class="span3">
                             <div class="thumbnail">
-                                <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_feesprincesses_000001.jpg');?>" alt=""></a>
                             </div>
                             <div class="caption">
-                                <h4>Praesent commodo</h4>
-                				<p>Nullam Condimentum Nibh Etiam Sem</p>
-                                <a class="btn btn-mini" href="#">&raquo; Read More</a>
+                                <h4>3 €</h4>
+                				<p>Princess Playmo</p>
+								<div class="slidecontent_nouveau">nouveau !</div>
                             </div>
                         </li>
                     </ul>
