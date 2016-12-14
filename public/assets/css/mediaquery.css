@@ -1,3 +1,17 @@
+@media screen and (max-width: 1400px) {
+	.slideartL_title {
+	font-size: 30px;
+	padding: 8px 200px;
+}
+
+	.slideartR_title {
+		font-size: 30px;
+		padding: 8px 200px;
+	}
+	
+    
+}
+
 @media screen and (max-width: 1200px) {
 .ipad_padding {
 		padding-top: 10px;
@@ -6,6 +20,22 @@
 	.quote_hide {
 		margin-right: 20px;
 	}
+	
+	.event_title {
+	font-size: 35px;
+	padding: 8px 150px;
+}
+	
+	.slideartL_title {
+	font-size: 30px;
+	padding: 8px 150px;
+}
+
+	.slideartR_title {
+		font-size: 30px;
+		padding: 8px 150px;
+	}
+	
     
 }
 
@@ -16,6 +46,23 @@
 	.quote_hide {
 		display: none;
 	}
+	
+	.vignetteEvent_hide > img {
+	display: none;
+}
+	
+	.event_title {
+	display: none;
+}
+	
+	.slideartL_title {
+	display: none;
+}
+
+	.slideartR_title {
+		display: none;
+	}
+	
     
 }
 
@@ -76,10 +123,16 @@
     width: 100%;
 }
 	
-	.vignetteEvent_hide > img {
-	display: none;
 }
-	
-   
+
+@media (max-width: 767px) {
+    .page-header, .control-box {
+    text-align: center;
+    } 
+}
+@media (max-width: 479px) {
+    .caption {
+    word-break: break-all;
+    }
 }
 
