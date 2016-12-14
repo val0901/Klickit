@@ -24,7 +24,18 @@ class GuestbookController extends Controller
 			'messages'	=> $list
 		];
 
-		$this->show('back/Guestbook/listGuestbook', $data);
+		if(!empty($_SESSION)){
+
+			$this->show('back/Guestbook/listGuestbook', $data);
+
+			if($_SESSION['role'] == 'Utilisateur') {
+				$this->redirectToRoute('front_index');
+			}
+		}
+		else {
+			$this->redirectToRoute('back_login');
+		}
+		
 	}
 
 	/**
@@ -66,7 +77,17 @@ class GuestbookController extends Controller
 			$this->redirectToRoute('listGuestbook');
 		}
 
-		$this->show('back/Guestbook/moderation', $data);
+		if(!empty($_SESSION)){
+
+			$this->show('back/Guestbook/moderation', $data);
+
+			if($_SESSION['role'] == 'Utilisateur') {
+				$this->redirectToRoute('front_index');
+			}
+		}
+		else {
+			$this->redirectToRoute('back_login');
+		}
 	}
 
 	/**
