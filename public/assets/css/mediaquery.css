@@ -9,6 +9,11 @@
 		padding: 8px 200px;
 	}
 	
+	.span3 {
+	width: 50%;
+	float: left;
+    margin: 0 0px;
+}
     
 }
 
@@ -35,6 +40,7 @@
 		font-size: 30px;
 		padding: 8px 150px;
 	}
+	
 	
     
 }
@@ -63,7 +69,18 @@
 		display: none;
 	}
 	
-    
+		#cogicon_click {
+	font-size: 6vw;
+}
+
+	#usericon_click {
+		font-size: 6vw;
+}
+
+	#shoppingicon_click {
+		font-size: 6vw;
+}
+	
 }
 
 @media screen and (max-width: 750px) {
@@ -123,12 +140,26 @@
     width: 100%;
 }
 	
+	.baseline_text {
+    font-size:3.5vw;
+}
+	
+	.nav_left > img {
+	width: 40vw;
+}
+	
+	.container_general {
+    margin: 0 10px;
+}
+	
+	
 }
 
 @media (max-width: 767px) {
     .page-header, .control-box {
     text-align: center;
     } 
+	
 }
 @media (max-width: 479px) {
     .caption {

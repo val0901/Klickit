@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title><?= $this->e($title) ?></title>
     
-    
     <!--google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Advent+Pro:400,700" rel="stylesheet"> 
     <!--fontawsome style-->
@@ -79,7 +78,7 @@
                     
                     <!--icon-shoppingcart-->
                     <li class="span_float">
-                        <i class="fa fa-shopping-cart fa-5x icon_cursor navR_color" aria-hidden="true"></i>
+                        <i class="fa fa-shopping-cart fa-5x icon_cursor navR_color" aria-hidden="true" id="shoppingicon_click"></i>
                     </li>
                     <!--End icon-shoppingcart-->
                 </ul>
