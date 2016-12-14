@@ -324,6 +324,73 @@ a:focus {
   border-color: #ef820b;
 }
 
+/*footer*/
+footer {
+    background-color: #1f3a93;
+    height: 100%;
+    width: 100%;
+	margin-top: 50px;
+	color: #fff;
+	padding: 10px;
+}
+
+.etiq_width > img {
+	width: 25vw;
+	margin: 10px 0px;
+}
+
+.etiq_width_small > img {
+	width: 25vw;
+	margin: 10px 0px;
+}
+
+.etiq_width{
+	text-align: center;
+}
+.etiq_width_small {
+	text-align: left;
+}
+
+.footerrow_margin {
+	margin:0;
+	padding:0;
+	margin-top:0px;
+}
+
+.footertitle {
+	font-size: 2.5vw;
+    margin-left: 20px;
+    text-align: left;
+}
+
+.footertext {
+	font-size: 1.5vw;
+	margin-left: 20px;
+    text-align: left;
+	font-family: 'Advent Pro', sans-serif;
+}
+
+.footercol2_margin {
+	margin-top: 30px;
+}
+
+.footerimg_hide {
+	display: block;
+}
+
+.footer_neticon {
+	text-align: left;
+	margin: 0;
+}
+
+.footer_largestyle {
+	display: block;
+}
+
+.footer_smallstyle {
+	display: none;
+}
+
 /*index.php 4 categories*/
 .classic_text {
     background-color: rgba(63, 169, 245, 0.6);
@@ -551,13 +618,16 @@ a:hover {
 
 /* Thumbnail Box */
 .caption h4 {
-    font-size: 1rem;
-    color: #444;
+    color: #ea2229;
+    font-size: 1.5vw;
+    text-align: center;
+	font-weight: 600;
 }
 
 .caption p {
-    font-size: 0.75rem;
-    color: #999;
+    color: #000;
+    font-size: 1.1vw;
+    text-align: center;
 }
 
 .btn.btn-mini {
@@ -602,4 +672,30 @@ input::-moz-focus-inner { border: 0; }
 
 .thumbnails {
 	margin-top: 50px;
+}
+
+.carousel-control.left {
+    background-image: linear-gradient(to right, rgba(255, 147, 30, 1) 100%, rgba(255, 147, 30, 1) 100%);
+    background-repeat: repeat-x;
+}
+
+.carousel-control.right {
+    background-image: linear-gradient(to right, rgba(255, 147, 30, 1) 100%, rgba(255, 147, 30, 1) 100%);
+    background-repeat: repeat-x;
+}
+
+.slidecontent_nouveau {
+	font-size: 1.1vw;
+	text-align: center;
+	color: #7ac943;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.slidecontent_promo {
+	font-size: 1.1vw;
+	text-align: center;
+	color: #3fa9f5;
+	font-weight: 600;
+	text-transform: uppercase;
 }

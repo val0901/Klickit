@@ -334,9 +334,84 @@
 			<?= $this->section('main_content') ?>
 		</section>
 
-    <footer>
+	<!--footer-->
+	<footer>
+	<div class="footer_largestyle">
+	<br>
+		<div class="container_general footercontainer_height">
+			<li class="footercol1_float">
+			<div class="row footerrow_margin">
+				<div class="col-md-4 etiq_width">
+					<img src="<?=$this->assetUrl('/img/etiq1large.png');?>" alt="" style="margin: 10px 0;">
+				</div>
+				<div class="col-md-4 etiq_width">
+					<img src="<?=$this->assetUrl('/img/etiq2large.png');?>" alt="">
+				</div>
+				<div class="col-md-4 etiq_width">
+					<img src="<?=$this->assetUrl('/img/etiq3large.png');?>" alt="">
+				</div>
+			</div>
+			</li>
+			
+			<li class="footercol2_margin">
+			<div class="row footerrow_margin">
+				<div class="col-md-4 etiq_width">
+					<p class="footertitle">Société</p>
+					<p class="footertext">Mentions légales</p>
+					<p class="footertext">Condition Générales de Ventes</p>
+					<p class="footertext">Création d'évènement Playmobil</p>
+					<p class="footertext">Contact</p>
+					<p class="footertext">Equipe de création</p>
+					<p class="footertext">Laissez nous votre avis</p>
+				</div>
+				<div class="col-md-4 etiq_width">
+					<p class="footertitle">Suivez-nous</p>
+					<i class="fa fa-facebook-square fa-2x footer_neticon" aria-hidden="true"> <span class="footertext">Sur Facebook</span></i>
+					<i class="fa fa-twitter-square fa-2x footer_neticon" aria-hidden="true"> <span class="footertext">Sur Twitter</span></i>
+				</div>
+				<div class="col-md-4 etiq_width">
+					<img src="<?=$this->assetUrl('/img/napoleonlarge.png');?>" alt="" class="footerimg_hide">
+				</div>
+			</div>
+			</li>
+			
+			<!--copyright-->
+			<div class="footertext">&copy; Klickit, Tous droits réservés</div>
+    	</div>
+	</div>
+		
+	<div class="footer_smallstyle">
+	<br>
+		<div class="container_general footercontainer_height">
+			<div class="row">
+				<div class="col-xs-6 etiq_width_small">
+					<img src="<?=$this->assetUrl('/img/etiq1large.png');?>" alt="" style="margin: 10px 0;">
+					<img src="<?=$this->assetUrl('/img/etiq2large.png');?>" alt="">
+					<img src="<?=$this->assetUrl('/img/etiq3large.png');?>" alt="">
+				</div>
+				<div class="col-xs-6 etiq_width_small">
+					<p class="footertitle">Société</p>
+					<p class="footertext">Mentions légales</p>
+					<p class="footertext">Condition Générales de Ventes</p>
+					<p class="footertext">Création d'évènement Playmobil</p>
+					<p class="footertext">Contact</p>
+					<p class="footertext">Equipe de création</p>
+					<p class="footertext">Laissez nous votre avis</p>
+					<br>
+					<p class="footertitle">Suivez-nous</p>
+					<i class="fa fa-facebook-square fa-2x footer_neticon" aria-hidden="true"> <span class="footertext">Sur Facebook</span></i>
+					<i class="fa fa-twitter-square fa-2x footer_neticon" aria-hidden="true"> <span class="footertext">Sur Twitter</span></i>
+				</div>
+			</div>
+			
+			<!--copyright-->
+			<br><br>
+			<div class="footertext">&copy; Klickit, Tous droits réservés</div>
+		</div>
+	</div>
     </footer>
-
+	<!--End footer-->
+	
 	<!--jquery js-->
     <script src="<?= $this->assetUrl('js/jquery-3.1.1.min.js') ?>"></script>   
     <!--bootstrap js-->
