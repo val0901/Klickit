@@ -36,7 +36,7 @@
 								    </select>
 							    </div>
 							</td>
-							<td><a href="<?=$this->url('updateItem', ['id'=>$value['id']]);?>">Mettre à jour le produit</a></td>
+							<td><a href="<?=$this->url('updateItem', ['id'=>$value['id']]);?>">Vu et modification du produit</a></td>
 							<td><button class="btn btn-danger delete-item" data-id="<?=$value['id']?>">Effacer le produit</button></td>
 						</tr>	
 					<?php endforeach;?>

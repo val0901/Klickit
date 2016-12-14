@@ -2,14 +2,14 @@
 
 <?php $this->start('main_content') ?>
 	<a href="<?=$this->url('listItem');?>"><button class="btn btn-info">Retour à la liste des articles</button></a>
-	
+	<br>
 	<?php if($success): ?>
 		<p class="alert alert-success">Produit créé</p>
 	<?php elseif(isset($errors) && !empty($errors)):?>
 		<p class="alert alert-danger"><?=implode('<br>', $errors);?></p>	
 	<?php endif;?>
 
-	<form class="form-horizontal" enctype="multipart/form-data">
+	<form class="form-horizontal" method="post" enctype="multipart/form-data">
 		<!-- Text input-->
 		<div class="form-group">
 		  <label class="col-md-4 control-label" for="name">Nom du produit</label>  

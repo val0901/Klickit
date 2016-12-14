@@ -7,6 +7,7 @@ use \Model\ItemModel;
 use \W\Security\AuthorizationModel;
 use \W\Security\AuthentificationModel;
 use \Respect\Validation\Validator as v;
+use \Intervention\Image\ImageManagerStatic as Image;
 
 class ItemController extends Controller 
 {
@@ -66,6 +67,9 @@ class ItemController extends Controller
 		$insert = new ItemModel();
 		$success = false;
 
+		$folderUpload = getApp()->getConfig('upload_dir'); 
+		$fullFolderUpload = $_SERVER['DOCUMENT_ROOT'].$_SERVER['W_BASE'].'/assets'.$folderUpload;
+
 		if(!empty($_POST)){
 			$post = array_map('trim', array_map('strip_tags', $_POST));
 
@@ -93,8 +97,93 @@ class ItemController extends Controller
 				$errors[] = 'Le prix doit être supérieur à 0';
 			}
 
-			
+			if(!v::image()->validate($_FILES['picture1']['tmp_name'])){
+				$errors[] = 'Le fichier envoyé dans "Image 1" n\'est pas une image valide';
+			}
+
+			if(!v::size(null, '2MB')->validate($_FILES['picture1']['tmp_name'])){
+				$errors[] = 'La taille de votre image dans "Image 1" doit être inférieur à 2MB';
+			}
+
+			if(!v::uploaded()->validate($_FILES['picture1']['tmp_name'])){
+				$errors[] = 'Une erreur est survenue lors de l\'upload de l\'image dans "Image 1"';
+			}
+
+			if(!v::image()->validate($_FILES['picture2']['tmp_name'])){
+				$errors[] = 'Le fichier envoyé dans "Image 1" n\'est pas une image valide';
+			}
+
+			if(!v::size(null, '2MB')->validate($_FILES['picture2']['tmp_name'])){
+				$errors[] = 'La taille de votre image dans "Image 1" doit être inférieur à 2MB';
+			}
+
+			if(!v::uploaded()->validate($_FILES['picture2']['tmp_name'])){
+				$errors[] = 'Une erreur est survenue lors de l\'upload de l\'image dans "Image 1"';
+			}
+
+			if(count($errors) === 0) {
+				$img1 = Image::make($_FILES['picture1']['tmp_name']);
+				$img2 = Image::make($_FILES['picture2']['tmp_name']);
+
+				switch($img1->mime()){
+					case 'image/jpg':
+					case 'image/jpeg':
+						$extension = '.jpg';
+					break;
+					case 'image/png':
+						$extension = '.png';
+					break;
+					case 'image/gif':
+						$extension = '.gif';
+					break;
+				}
+
+				switch($img2->mime()){
+					case 'image/jpg':
+					case 'image/jpeg':
+						$extension2 = '.jpg';
+					break;
+					case 'image/png':
+						$extension2 = '.png';
+					break;
+					case 'image/gif':
+						$extension2 = '.gif';
+					break;
+
+				}
+
+				$imgName = uniqid('art_').$extension;
+				$imgName2 = uniqid('art_').$extension2;
+
+				$img1->save($fullFolderUpload.$imgName);
+				$img2->save($fullFolderUpload.$imgName2);
+
+				$itemModel = new ItemModel();
+
+				$insert = $itemModel->insert([
+					'name'		  => $post['name'],
+					'description' => $post['description'],
+					'quantity' 	  => $post['quantity'],
+					'price' 	  => $post['price'],
+					'picture1'	  => $imgName,
+					'picture2'    => $imgName2,
+					'statut' 	  => $post['statut'],
+					'category' 	  => $post['category'],
+				]);
+
+				if($insert){
+					$success = true;
+				}
+				else {
+					$errors[] = 'Erreur lors de l\'ajout en base de données';
+				}
+			}
 		}
+
+		$params = [
+			'errors'  => $errors,
+			'success' => $success,
+		];
 
 		if(!empty($_SESSION)){
 
@@ -114,6 +203,17 @@ class ItemController extends Controller
 	 */
 	public function updateItem()
 	{
-		$this->show('back/Item/updateItem');
+
+		if(!empty($_SESSION)){
+
+			$this->show('back/Item/updateItem');
+
+			if($_SESSION['role'] == 'Utilisateur') {
+				$this->redirectToRoute('front_index');
+			}
+		}
+		else {
+			$this->redirectToRoute('back_login');
+		}
 	}
 }
