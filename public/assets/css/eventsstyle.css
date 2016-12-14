@@ -16,10 +16,16 @@
     padding: 2vh 5vw;
 }
 .event_shareRS{
-    background-color: gainsboro;
-    padding: 10px;
-}
-
-.event_shareFB {
+    background-color: #7bc942;
+    padding: 20px;
     text-align: center;
 }
+
+/*.event_shareFB {
+    text-align: center;
+}
+
+.event_shareTW{
+    text-align: center;
+    
+}*/
