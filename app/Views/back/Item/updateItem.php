@@ -2,7 +2,7 @@
 
 <?php $this->start('main_content') ?>
 	<a href="<?=$this->url('listItem');?>"><button class="btn btn-info">Retour liste article</button></a>
-
+	<h3>Vu du produit</h3>
 	<div class="row">
 		<div class="preview col-lg-6">
 			
@@ -28,9 +28,11 @@
 							<p>Statut du produit : <span><?=$affichage['statut'];?><span></p>
 							<p>Catégorie du produit : <span><?=$affichage['category'];?><span></p>
 						</div>
-					
-			
 	</div>
+	<br><br>
+
+	<h3>Modification du produit</h3>
+
 	<br><br>
 		<?php if($success): ?>
 			<p class="alert alert-success">Produit modifié</p>
