@@ -4,6 +4,36 @@
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Elevage de licornes">
+
+        <meta name="robots" content="index, follow, archive">
+
+         <!-- Méta FB -->
+        <meta property="og:title" content="Titre contenuFB">
+        <meta property="og:description" content="Description courte et UNIQUE">
+        <meta property="og:locale" content="fr_FR">
+        <meta property="og:site_name" content="Nom du site web">
+        <meta property="og:image" content="http://adressedemonimage600x315.jpg">
+        <meta property="og:type" content="website"><!-- voir ogp.me/*types -->
+        <!-- FIN Méta FB -->
+
+        <!-- Méta GOOGLE+ -->
+        <meta itemprop="name" content="Titre contenu G+">
+        <meta itemprop="description" content="Tdescription courte et unique G+">
+        <meta itemprop="image" content="http://adressedemonimage400x160.jpg G+">
+        <!-- FIN Méta G+ -->
+
+        <!-- Méta TWITTER -->
+        <meta name="twitter:card" content="summary"><!-- il faut écrire summary (=résumé) -->
+        <meta name="twitter:site" content="@idtwitter"><!-- que si on a un compte twitter actif-->
+        <meta name="twitter:title" content="titre de la page">
+        <meta name="twitter:description" content="description de la page">
+        <meta name="twitter:image" content="url image">
+        <!-- FIN Méta TWITTER -->
+    
+    
+    
+    
 	<title><?= $this->e($title) ?></title>
     
     <!--google fonts-->
