@@ -24,13 +24,9 @@
 		  <label class="col-md-4 control-label" for="social_title">Civilité</label>
 		  <div class="col-md-1">
 		    <select id="social_title" name="social_title" class="form-control">
-		       	<?php if($user['social_title'] == 'M'):?>
-			      	<option value="M" selected>M.</option>
-			      	<option value="Mme">Mme</option>
-		       	<?php elseif($user['social_title'] == 'Mme'):?>
-		       		<option value="M">M.</option>
-			      	<option value="Mme" selected>Mme</option>
-			   	<?php endif;?>   	
+		    	<option selected disabled></option>
+			    <option value="M">M.</option>
+			    <option value="Mme">Mme</option>  	
 		    </select>
 		  </div>
 		</div>
@@ -40,13 +36,9 @@
 		  <label class="col-md-4 control-label" for="role">Rôle</label>
 		  <div class="col-md-4">
 		    <select id="role" name="role" class="form-control">
-		      	<?php if($user['role'] == 'Admin'):?>	
-			      	<option value="Admin" selected>Admin</option>
-			      	<option value="Utilisateur">Utilisateur</option>
-			  	<?php elseif($user['role'] == 'Utilisateur'):?>
-			  	  	<option value="Admin">Admin</option>
-			      	<option value="Utilisateur" selected>Utilisateur</option>	
-			  	<?php endif;?>   
+		    	<option selected disabled></option>	
+			    <option value="Admin">Admin</option>
+			    <option value="Utilisateur">Utilisateur</option>  
 		    </select>
 		  </div>
 		</div>
@@ -55,7 +47,7 @@
 		<div class="form-group">
 		  <label class="col-md-4 control-label" for="firstname">Prénom</label>  
 		  <div class="col-md-4">
-		  <input id="firstname" name="firstname" value="<?=$user['firstname'];?>" class="form-control input-md" required="" type="text">
+		  <input id="firstname" name="firstname" class="form-control input-md" type="text">
 		    
 		  </div>
 		</div>
@@ -64,7 +56,7 @@
 		<div class="form-group">
 		  <label class="col-md-4 control-label" for="lastname">Nom</label>  
 		  <div class="col-md-4">
-		  <input id="lastname" name="lastname" value="<?=$user['lastname'];?>" class="form-control input-md" required="" type="text">
+		  <input id="lastname" name="lastname" class="form-control input-md" type="text">
 		    
 		  </div>
 		</div>
@@ -73,7 +65,7 @@
 		<div class="form-group">
 		  <label class="col-md-4 control-label" for="username">Pseudonyme</label>  
 		  <div class="col-md-4">
-		  <input id="username" name="username" value="<?=$user['username'];?>" class="form-control input-md" required="" type="text">
+		  <input id="username" name="username" class="form-control input-md" type="text">
 		    
 		  </div>
 		</div>
@@ -82,7 +74,7 @@
 		<div class="form-group">
 		  <label class="col-md-4 control-label" for="address">Adresse</label>  
 		  <div class="col-md-4">
-		  <input id="address" name="address" value="<?=$user['adress'];?>" class="form-control input-md" required="" type="text">
+		  <input id="address" name="address" class="form-control input-md" type="text">
 		    
 		  </div>
 		</div>
@@ -91,7 +83,7 @@
 		<div class="form-group">
 		  <label class="col-md-4 control-label" for="zipcode">Code postal</label>  
 		  <div class="col-md-4">
-		  <input id="zipcode" name="zipcode" value="<?=$user['zipcode'];?>" class="form-control input-md" required="" type="text">
+		  <input id="zipcode" name="zipcode" class="form-control input-md" type="text">
 		    
 		  </div>
 		</div>
@@ -100,7 +92,7 @@
 		<div class="form-group">
 		  <label class="col-md-4 control-label" for="city">Ville</label>  
 		  <div class="col-md-4">
-		  <input id="city" name="city" value="<?=$user['city'];?>" class="form-control input-md" required="" type="text">
+		  <input id="city" name="city" class="form-control input-md" type="text">
 		    
 		  </div>
 		</div>
@@ -109,7 +101,7 @@
 		<div class="form-group">
 		  <label class="col-md-4 control-label" for="email">Adresse email</label>  
 		  <div class="col-md-4">
-		  <input id="email" name="email" value="<?=$user['email'];?>" class="form-control input-md" required="" type="text">
+		  <input id="email" name="email" class="form-control input-md" type="text">
 		    
 		  </div>
 		</div>
@@ -118,7 +110,7 @@
 		<div class="form-group">
 		  <label class="col-md-4 control-label" for="password">Mot de passe</label>
 		  <div class="col-md-4">
-		    <input id="password" name="password" class="form-control input-md" required="" type="password">
+		    <input id="password" name="password" class="form-control input-md" type="password">
 		    
 		  </div>
 		</div>
@@ -133,5 +125,6 @@
 
 		</fieldset>
 	</form>
-<?php endif;?>	
+<?php endif;?>
+
 <?php $this->stop('main_content') ?>
