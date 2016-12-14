@@ -278,7 +278,7 @@ class ItemController extends Controller
 				}
 			}
 
-			if(!empty($_FILES['picture1']) && isset($_FILES['picture1'])) {
+			if(!empty($_FILES['picture1']) && file_exists($_FILES['picture1']['tmp_name'])) {
 				if(!v::image()->validate($_FILES['picture1']['tmp_name'])){
 					$errors[] = 'Le fichier envoyé dans "Image 1" n\'est pas une image valide';
 				}
@@ -292,7 +292,7 @@ class ItemController extends Controller
 				}
 			}
 
-			if(!empty($_FILES['picture2']) && isset($_FILES['picture2'])) {
+			if(!empty($_FILES['picture2']) && file_exists($_FILES['picture2']['tmp_name'])) {
 				if(!v::image()->validate($_FILES['picture2']['tmp_name'])){
 					$errors[] = 'Le fichier envoyé dans "Image 1" n\'est pas une image valide';
 				}
@@ -309,7 +309,7 @@ class ItemController extends Controller
 
 			if(count($errors) === 0) {
 
-			if(!empty($_FILES['picture1']) && isset($_FILES['picture1'])) {	
+			if(!empty($_FILES['picture1']) && file_exists($_FILES['picture1']['tmp_name'])) {	
 				$img1 = Image::make($_FILES['picture1']['tmp_name']);
 				switch($img1->mime()){
 					case 'image/jpg':
@@ -329,7 +329,7 @@ class ItemController extends Controller
 				}
 			}
 
-			if(!empty($_FILES['picture2']) && isset($_FILES['picture2'])) {
+			if(!empty($_FILES['picture2']) && file_exists($_FILES['picture2']['tmp_name'])) {
 				$img2 = Image::make($_FILES['picture2']['tmp_name']);
 				switch($img2->mime()){
 					case 'image/jpg':
