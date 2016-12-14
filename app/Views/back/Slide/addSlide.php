@@ -12,9 +12,9 @@
 	<form class="form-horizontal" method="post" enctype="multipart/form-data">
 		<!-- Text input-->
 		<div class="form-group">
-		  <label class="col-md-4 control-label" for="Titre">Titre</label>  
+		  <label class="col-md-4 control-label" for="title">Titre</label>  
 		  <div class="col-md-4">
-		  <input id="Titre" name="Titre" placeholder="" class="form-control input-md" type="text">
+		  <input id="title" name="title" placeholder="" class="form-control input-md" type="text">
 		    
 		  </div>
 		</div>
@@ -31,7 +31,7 @@
 		<div class="form-group">
 		  <label class="col-md-4 control-label" for="link">Url de l'évènement lié</label>
 		  <div class="col-md-4">
-		    <input id="link" name="link" class="input-file" type="text">
+		    <input id="link" name="link" class="input-file" type="text" style="color:black;">
 		  </div>
 		</div>
 
