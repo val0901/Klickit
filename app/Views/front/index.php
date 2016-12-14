@@ -31,9 +31,13 @@
 <div class="row commtaire_back">
   <div class="col-md-2"></div>
   <div class="col-md-10 col2_commentaireback">
-	<img class="img-responsive" src="<?=$this->assetUrl('/img/avatarBoy.png');?>" style="float: left;">
-	  <span class="col2commtaire_margin commentaire_title">J'adore trop vos customs<span style="float:right;" class="quote_hide"><i class="fa fa-quote-right fa-4x" aria-hidden="true" style="color: #7bc942;"></i></span><li><span style="padding-left:50px;font-size:25px;font-weight:400;">Mon père a beaucoup aimé le Napoléon ...</span><span style="font-size:25px;font-weight:400;">Emile S .</span></li>
-	  </span>
+    <?php foreach($comments as $value) :?>
+        <?php if($value['published'] == 'oui'):?>
+        	<img class="img-responsive" src="<?=$this->assetUrl('/img/avatarBoy.png');?>" style="float: left;">
+        	  <span class="col2commtaire_margin commentaire_title">J'adore trop vos customs<span style="float:right;" class="quote_hide"><i class="fa fa-quote-right fa-4x" aria-hidden="true" style="color: #7bc942;"></i></span><li><span style="padding-left:50px;font-size:25px;font-weight:400;"><?=$value['content'].' '?></span><span style="font-size:25px;font-weight:400;"><?=' ...'.$value['firstname'].' '.ucfirst(substr($value['lastname'],0,1))?></span></li>
+        	  </span>
+        <?php endif;?>          
+    <?php endforeach;?>      
   </div>
 </div>
 <!--End La derniere commentaire-->

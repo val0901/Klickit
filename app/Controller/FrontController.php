@@ -3,7 +3,7 @@
 namespace Controller;
 
 use \W\Controller\Controller;
-
+use \Model\GuestbookModel;
 
 class FrontController extends Controller
 {
@@ -12,8 +12,13 @@ class FrontController extends Controller
 	 * Page d'accueil par défaut
 	 */
 	public function index()
-	{
-		$this->show('front/index');
+	{	
+		$getComment = new GuestbookModel();
+		$comments = $getComment->findAllMessage();
+		$data = [
+			'comments' => $comments,
+		]; 
+		$this->show('front/index', $data);
 	}
 
 	/**
