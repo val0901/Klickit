@@ -3,10 +3,10 @@
 	position:absolute;
 	z-index:5;
 	color: #fff;
-	font-size: 3vw;
+	font-size: 4vw;
 	display: block;
 	margin-top: 50px;
-	padding: 2vh 20vw;
+	padding: 1vh 20vw;
 	background-color: #7bc942;
 	text-transform: uppercase;
 }
@@ -21,11 +21,11 @@
     text-align: center;
 }
 
-/*.event_shareFB {
-    text-align: center;
+.event_shareFB {
+    margin: 0 5px;
 }
 
 .event_shareTW{
-    text-align: center;
+    margin: 0 5px;
     
-}*/
+}
