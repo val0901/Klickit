@@ -8,6 +8,7 @@
 		//Routes pour le back (classé par controller)
 		['GET|POST', '/back/index', 'Back#index', 'back_index'],
 		['GET|POST', '/back/login', 'Back#login', 'back_login'],
+		['GET|POST', '/back/forgot_password', 'Back#forgot_pwd', 'back_forgot_pwd'],
 
 		// Les routes ajax
 		['GET|POST', '/ajax/logout', 'Ajax#logout', 'ajax_logout'],

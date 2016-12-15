@@ -94,4 +94,9 @@ class BackController extends Controller
 			$this->show('back/login', $param);			
 		}
 	}
+
+	public function forgot_pwd()
+	{
+		
+	}
 }
