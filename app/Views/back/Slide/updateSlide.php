@@ -1,4 +1,4 @@
-<?php $this->layout('layoutback', ['title' => 'Mettre à jour slide']) ?>
+<?php $this->layout('layoutback', ['title' => 'Mettre à jour le slide']) ?>
 
 <?php $this->start('main_content') ?>
 	

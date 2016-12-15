@@ -31,7 +31,7 @@
 		<div class="form-group">
 		  <label class="col-md-4 control-label" for="link">Url de l'évènement lié</label>
 		  <div class="col-md-4">
-		    <input id="link" name="link" class="input-file" type="text" style="color:black;">
+		    <input id="link" name="link" class="input-file" type="text" style="color:black;"> <!-- Sans le style le champ s'écrit en blanc -->
 		  </div>
 		</div>
 

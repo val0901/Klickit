@@ -36,30 +36,32 @@
 					    </nav><!-- /.navbar -->
 					  
 
-				<!-- MENU NAVIGATION -->
-					<div class="container-fluid">
-					    <!-- Second navbar for categories -->
-					    <nav class="navbar navbar-default">
-					      <div class="container">		     
-					    	
-					        <!-- Collect the nav links, forms, and other content for toggling -->
-					        <div class="collapse navbar-collapse" id="navbar-collapse-1">
-					          <ul class="nav navbar-nav navbar-justified
-					          ">
-					            <li><a href="<?=$this->url('back_index');?>">Accueil</a></li>
-					            <li><a href="<?=$this->url('listUser');?>">Utilisateur</a></li>
-					            <li><a href="<?=$this->url('listMessage');?>">Message</a></li>
-					            <li><a href="<?=$this->url('listEvent');?>">Evènement</a></li>
-					            <li><a href="<?=$this->url('listSlide');?>">Slide</a></li>
-					            <li><a href="<?=$this->url('listItem');?>">Article</a></li>
-					            <li><a href="<?=$this->url('listOrders');?>">Commande</a></li>
-					            <li><a href="<?=$this->url('listShipping');?>">Option d'envoi</a></li>
-					            <li><a href="<?=$this->url('listGuestbook');?>">Livre d'Or</a></li>
-					          </ul>
-					        </div><!-- /.navbar-collapse -->
-					      </div><!-- /.container -->
-					    </nav><!-- /.navbar -->
-					</div><!-- /.container-fluid -->
+					<?php if(!empty($_SESSION)): ?>
+					<!-- MENU NAVIGATION -->
+						<div class="container-fluid">
+						    <!-- Second navbar for categories -->
+						    <nav class="navbar navbar-default">
+						      <div class="container">		     
+						    	
+						        <!-- Collect the nav links, forms, and other content for toggling -->
+						        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+						          <ul class="nav navbar-nav navbar-justified
+						          ">
+							        <li><a href="<?=$this->url('back_index');?>">Accueil</a></li>
+							        <li><a href="<?=$this->url('listUser');?>">Utilisateur</a></li>
+						            <li><a href="<?=$this->url('listMessage');?>">Message</a></li>
+						            <li><a href="<?=$this->url('listEvent');?>">Evènement</a></li>
+						            <li><a href="<?=$this->url('listSlide');?>">Slide</a></li>
+						            <li><a href="<?=$this->url('listItem');?>">Article</a></li>
+						            <li><a href="<?=$this->url('listOrders');?>">Commande</a></li>
+						            <li><a href="<?=$this->url('listShipping');?>">Option d'envoi</a></li>
+						            <li><a href="<?=$this->url('listGuestbook');?>">Livre d'Or</a></li>
+						          </ul>
+						        </div><!-- /.navbar-collapse -->
+						      </div><!-- /.container -->
+						    </nav><!-- /.navbar -->
+						</div><!-- /.container-fluid -->
+					<?php endif; ?>
 					
 				</header>
 

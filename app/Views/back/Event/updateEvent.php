@@ -1,4 +1,4 @@
-<?php $this->layout('layoutback', ['title' => 'Mettre à jour un évènement']) ?>
+<?php $this->layout('layoutback', ['title' => 'Mettre à jour l\'évènement']) ?>
 
 <?php $this->start('main_content') ?>
 	<a href="<?=$this->url('listEvent');?>"><button class="btn btn-info">Retour liste des évènements</button></a>
