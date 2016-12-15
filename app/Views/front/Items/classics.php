@@ -2,6 +2,7 @@
 
 <?php $this->start('main_content') ?>
 <div>
+	<!--viewcategory row1 col1,2-->
 	<div class="row classics_background">
 		<div class="col-md-3" style="position:relative;">
 			<div class="classic_text_show"><span>Classics</span></div>
@@ -15,6 +16,7 @@
 			</div>
 		</div>
 	</div>
+	<!--End viewcategory row1 col1,2-->
 
 <!--vignetteEvent-->
 <div class="vignetteEvent_hide">
@@ -22,25 +24,26 @@
 </div>
 <!--End vignetteEvent-->
 	
+	<!--viewcategory row2 col1-->
 	<div class="row">
 		<div class="col-md-3">
-			<li>
-				<h3 class="viewcategoryrow2col1_title">sous-catégories</h3>
-				<div class="viewcategoryrow2col1_tirer"><a href="#">Customs tampographiés</a></div>
-				<div class="viewcategoryrow2col1_tirer"><a href="#">Customs peints</a></div>		
-				<div class="viewcategoryrow2col1_tirer"><a href="#">Bustes tampographiés</a></div>
-				<div class="viewcategoryrow2col1_tirer"><a href="#">Pièces en résine</a></div>
-				<div class="viewcategoryrow2col1_tirer"><a href="#">Stickers</a></div>
-			</li>
+			<h3 class="viewcategoryrow2col1_title">sous-catégories</h3>
+			<div class="viewcategoryrow2col1_tirer"><a href="#">Customs tampographiés</a></div>
+			<div class="viewcategoryrow2col1_tirer"><a href="#">Customs peints</a></div>		
+			<div class="viewcategoryrow2col1_tirer"><a href="#">Bustes tampographiés</a></div>
+			<div class="viewcategoryrow2col1_tirer"><a href="#">Pièces en résine</a></div>
+			<div class="viewcategoryrow2col1_tirer"><a href="#">Stickers</a></div>
 			<li>
 				<h3 class="viewcategoryrow2col1_title">fitres</h3>
 				<div class="form-group viewcategory_checkboxmargin">
 					<label class="viewcategorycheckbox_border">
 					<input type="checkbox"> <span class="viewcategorycheckbox_font"> 1er empire</span>
 					</label>
+					<div class="clear"></div>
 					<label class="viewcategorycheckbox_border">
 					<input type="checkbox"> <span class="viewcategorycheckbox_font"> Sudistes</span>
 					</label>
+					<div class="clear"></div>
 					<label class="viewcategorycheckbox_border">
 					<input type="checkbox"> <span class="viewcategorycheckbox_font"> Nordistes</span>
 					</label>
@@ -59,9 +62,132 @@
 				</div>
 			</li>
 		</div>
+		<!--End viewcategory row2 col1-->
+		
+		<!--viewcategory row2 col2-->
 		<div class="col-md-9">
-			<h4>Home <span>></span> Customs <span>></span> Customs tampographiés</h4>
+			<h4 class="viewcategory_pages">Home <span>></span> Customs <span>></span> Customs tampographiés</h4>
+			<div class="row">
+				<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
+					<a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000004.jpg');?>" alt="" class="img-thumbnail"></a>
+					<div class="viewcategorycaption">
+						<h4>5 €</h4>
+						<p>Princess Playmo</p>
+						<div class="viewcategory_nouveau">nouveau !</div>
+                    </div>
+					<div class="viewcategory_button">
+						<button type="button" class="btn btn-primary viewcategory_button_size ">ajouter au panier</button>
+					</div>
+				</div>
+				<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
+					<a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000005.jpg');?>" alt="" class="img-thumbnail"></a>
+					<div class="viewcategorycaption">
+						<h4>15 €</h4>
+						<p>Princess Playmo</p>
+						<div class="viewcategory_nouveau">nouveau !</div>
+                    </div>
+					<div class="viewcategory_button">
+						<button type="button" class="btn btn-primary viewcategory_button_size ">ajouter au panier</button>
+					</div>
+				</div>
+				<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
+					<a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000006.jpg');?>" alt="" class="img-thumbnail"></a>
+					<div class="viewcategorycaption">
+						<h4><span class="viewcategoryprixpromo">8 € </span> <span class="viewcategoryprixdelete">10 €</span></h4>
+						<p>Princess Playmo</p>
+						<div class="viewcategory_promo">promo !</div>
+					<div class="viewcategory_button">
+						<button type="button" class="btn btn-primary viewcategory_button_size ">ajouter au panier</button>
+					</div>
+                    </div>
+				</div>
+				<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
+					<a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000007.jpg');?>" alt="" class="img-thumbnail"></a>
+					<div class="viewcategorycaption">
+						<h4>20 €</h4>
+						<p>Princess Playmo</p>
+						<div class="viewcategory_nouveau">nouveau !</div>
+					<div class="viewcategory_button">
+						<button type="button" class="btn btn-primary viewcategory_button_size ">ajouter au panier</button>
+					</div>
+                    </div>
+				</div>
+			</div>
 		</div>
+		
+		
+		<div class="col-md-9">
+			<div class="row">
+				<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
+					<a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000004.jpg');?>" alt="" class="img-thumbnail"></a>
+					<div class="viewcategorycaption">
+						<h4>5 €</h4>
+						<p>Princess Playmo</p>
+						<div class="viewcategory_nouveau">nouveau !</div>
+                    </div>
+					<div class="viewcategory_button">
+						<button type="button" class="btn btn-primary viewcategory_button_size ">ajouter au panier</button>
+					</div>
+				</div>
+				<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
+					<a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000005.jpg');?>" alt="" class="img-thumbnail"></a>
+					<div class="viewcategorycaption">
+						<h4>15 €</h4>
+						<p>Princess Playmo</p>
+						<div class="viewcategory_nouveau">nouveau !</div>
+                    </div>
+					<div class="viewcategory_button">
+						<button type="button" class="btn btn-primary viewcategory_button_size ">ajouter au panier</button>
+					</div>
+				</div>
+				<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
+					<a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000006.jpg');?>" alt="" class="img-thumbnail"></a>
+					<div class="viewcategorycaption">
+						<h4><span class="viewcategoryprixpromo">8 € </span> <span class="viewcategoryprixdelete">10 €</span></h4>
+						<p>Princess Playmo</p>
+						<div class="viewcategory_promo">promo !</div>
+					<div class="viewcategory_button">
+						<button type="button" class="btn btn-primary viewcategory_button_size ">ajouter au panier</button>
+					</div>
+                    </div>
+				</div>
+				<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
+					<a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000007.jpg');?>" alt="" class="img-thumbnail"></a>
+					<div class="viewcategorycaption">
+						<h4>20 €</h4>
+						<p>Princess Playmo</p>
+						<div class="viewcategory_nouveau">nouveau !</div>
+					<div class="viewcategory_button">
+						<button type="button" class="btn btn-primary viewcategory_button_size ">ajouter au panier</button>
+					</div>
+                    </div>
+				</div>
+				<!--viewcategory row3 col1,2,3-->
+				<div class="row">
+					<div class="col-md-3 viewcategorypage_center">
+						<h4 class="viewcategory_pages">Résultats 1-6 sur 20</h4>
+					</div>
+					<div class="col-md-6 viewcategorypage_center">
+						<nav aria-label="...">
+						  <ul class="pagination">
+							<li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+							<li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+							<li><a href="#">2 </a></li>
+							  <li><a href="#">3 </a></li>
+							  <li><a href="#">4 </a></li>
+							  <li><a href="#">5 </a></li>
+							  <li class="disabled"><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+						  </ul>
+						</nav>
+					</div>
+					<div class="col-md-3 viewcategorypage_center">
+						<button type="button" class="btn btn-primary viewcategorypage_button">Primary</button>
+					</div>
+				</div>
+				<!--End viewcategory row3 col1,2,3-->
+			</div>
+		</div>
+		<!--End viewcategory row2 col2-->
 	</div>
 </div>
 

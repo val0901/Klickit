@@ -876,3 +876,77 @@ h3 {
 h4 {
 	font-weight: 600;
 }
+
+.viewcategoryrow2col1_img {
+	padding:70px 20px;
+}
+
+.viewcategoryprixdelete {
+	text-decoration:line-through;
+}
+
+.viewcategoryprixpromo {
+	color: #3fa9f5;
+	font-size: 1.5vw;
+}
+
+.viewcategory_nouveau {
+	font-size: 1.1vw;
+	text-align: center;
+	color: #7ac943;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.viewcategory_promo {
+	font-size: 1.1vw;
+	text-align: center;
+	color: #3fa9f5;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.viewcategorycaption h4 {
+    color: #ea2229;
+    font-size: 1.5vw;
+    text-align: center;
+	font-weight: 600;
+}
+
+.viewcategorycaption p {
+    color: #000;
+    font-size: 1.1vw;
+    text-align: center;
+}
+
+.viewcategory_pages {
+	margin: 20px;
+}
+
+.viewcategory_button {
+	text-align: center;
+}
+
+.viewcategory_button_size {
+	background-color: #ff931e;
+    border: 0 none;
+    font-size: 1.5vw;
+	text-transform: uppercase;
+}
+
+.viewcategorypage_button {
+	background-color: #3fa9f5;
+    border: 0 none;
+    font-size: 20px;
+    margin-top: 1vw;
+    padding: 5px 50px;
+}
+
+.viewcategorypage_button:hover {
+	background-color: #289ff4;
+}
+
+.viewcategorypage_center {
+	text-align: center;
+	padding: 5px;
+}
