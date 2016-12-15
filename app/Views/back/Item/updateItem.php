@@ -3,7 +3,7 @@
 <?php $this->start('main_content') ?>
 	<a href="<?=$this->url('listItem');?>"><button class="btn btn-info">Retour liste article</button></a>
 	<h3 class="titleItem">Vu du produit</h3>
-	<div class="row">
+	<div id="view" class="row">
 		<div class="preview col-lg-6">
 			
 				<div class="preview-pic row">
@@ -35,7 +35,7 @@
 
 	<br><br>
 		<?php if($success): ?>
-			<p class="alert alert-success">Produit modifié</p>
+			<p id="reload" class="alert alert-success">Produit modifié</p>
 		<?php elseif(isset($errors) && !empty($errors)):?>
 			<p class="alert alert-danger"><?=implode('<br>', $errors);?></p>	
 		<?php endif;?>
@@ -128,3 +128,13 @@
 		</div>
 	</form>
 <?php $this->stop('main_content') ?>
+
+<?php $this->start('js') ?>
+	<script>
+		var affichage = document.getElementById('view');
+
+		if (document.getElementById('reload')) {
+			affichage.location.href=affichage.location.href;
+		}
+	</script>
+<?php $this->stop('js') ?>

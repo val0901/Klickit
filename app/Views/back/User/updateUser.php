@@ -8,7 +8,7 @@
 <?php if (empty($user)) :?>
 	<p class="alert alert-danger">Aucun utilisateur trouvé</p>
 <?php else :?>
-	<div class="row">			
+	<div id="view" class="row">			
 		<div class="details col-lg-6">
 			<p class="price">Prénom : <?=$user['firstname'];?></p>
 			<p class="price">Nom : <?=$user['lastname'];?></p>
@@ -27,7 +27,7 @@
 			<?=implode('<br>',$errors);?>
 		</p>	
 	<?php elseif($success):?>
-		<p class="alert alert-success">Utilisateur mis à jour</p>
+		<p id="reload" class="alert alert-success">Utilisateur mis à jour</p>
 	<?php endif;?>
 			
 	<form class="form-horizontal" method="post">
@@ -142,3 +142,13 @@
 <?php endif;?>
 
 <?php $this->stop('main_content') ?>
+
+<?php $this->start('js') ?>
+	<script>
+		var affichage = document.getElementById('view');
+
+		if (document.getElementById('reload')) {
+			affichage.location.href=affichage.location.href;
+		}
+	</script>
+<?php $this->stop('js') ?>

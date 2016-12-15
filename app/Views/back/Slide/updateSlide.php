@@ -3,7 +3,7 @@
 <?php $this->start('main_content') ?>
 	<a href="<?=$this->url('listSlide');?>"><button class="btn btn-info">Retour liste des Slides</button></a>
 	<h3 class="titleItem">Vu du Slide</h3>
-	<div class="row">
+	<div id="view" class="row">
 		<div class="preview col-lg-6">
 			
 				<div class="preview-pic row">
@@ -69,8 +69,10 @@
 
 <?php $this->start('js') ?>
 	<script>
+		var affichage = document.getElementById('view');
+
 		if (document.getElementById('reload')) {
-			window.location.href=window.location.href;
+			affichage.location.href=affichage.location.href;
 		}
 	</script>
 <?php $this->stop('js') ?>
