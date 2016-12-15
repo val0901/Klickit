@@ -43,6 +43,12 @@ form {
 /***********
 STYLE NAVBAR
 ***********/
+
+.navbar-collapse.collapse {
+    display: flex !important;
+    justify-content: space-around;
+
+}
 .navbar-default {
 	margin: 10px;
 	margin-bottom: 5px;
