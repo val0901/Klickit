@@ -29,7 +29,7 @@
 						        <ul>
 						        	<?php if(!empty($_SESSION)): ?>
 							        	<li><a href="">Bonjour <?=$_SESSION['user']['firstname'].' '.$_SESSION['user']['lastname'];?></a></li>
-							        	<li><form><button id="logout" type="submit">Se déconnecter</button></form></li>
+							        	<li><form><button id="logout" type="submit" data-id="login_out">Se déconnecter</button></form></li>
 							        <?php endif; ?>
 						        </ul>
 					        </div>	     
@@ -82,45 +82,43 @@
 				  		$(document).ready(function(){
 				  			$('#logout').click(function(e){
 				  				e.preventDefault();
+				  				var logout = $(this).data('id');
+								$.confirm({
 
-							$.confirm({
+									title: 'Déconnexion',
 
-								title: 'Déconnexion',
+									content: "Êtes-vous sûr de vouloir vous déconnecter ?",
 
-								content: "Êtes-vous sûr de vouloir vous déconnecter ?",
+									type: 'red',
 
-								type: 'red',
+									theme: 'dark',
 
-								theme: 'dark',
-
-								buttons: {
-	    							ok: {
-	    								text: 'Se déconnecter',
-	    								btnClass: 'btn-danger',
-            							keys: ['enter'],
-	    								action: function(){
-							  				$.ajax({
-							  					url: '<?=$this->url('ajax_logout'); ?>',
-												type: 'post',
-												cache: false,
-												data: $('form').serialize(),
-												dataType: 'json',
-												success: function(out){
-													if(out.code == 'ok'){
-										  					
+									buttons: {
+		    							ok: {
+		    								text: 'Se déconnecter',
+		    								btnClass: 'btn-danger',
+	            							keys: ['enter'],
+		    								action: function(){
+								  				$.ajax({
+								  					url: '<?=$this->url('ajax_logout'); ?>',
+													type: 'post',
+													cache: false,
+													data: {id_logout: logout},
+													dataType: 'json',
+													success: function(out){
+														if(out.code == 'ok'){
+											  				window.location.reload(true);	
+														}
 													}
-												}
-							  				});
-							  				setInterval(function(){
-												$('body').load($(location).attr('href'));
-											});
-						  				}
-					  				},
-					  				cancel: function(button) {
-									   
+								  				});
+								  				
+							  				}
+						  				},
+						  				cancel: function(button) {
+										   
+										}
 									}
-								}
-				  			});
+					  			});
 
 				  			});
 				  		});

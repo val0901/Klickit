@@ -23,7 +23,9 @@ class AjaxController extends Controller
 	{
 		$logout = new AuthentificationModel();
 			
-		if($logout->logUserOut()) {
+		if(isset($_POST['id_logout'])) {
+			$logout->logUserOut();
+			
 			$this->showJson(['code' => 'ok']);
 		}
 	}

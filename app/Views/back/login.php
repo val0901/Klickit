@@ -1,6 +1,12 @@
 <?php $this->layout('layoutback', ['title' => 'Login']) ?>
 
 <?php $this->start('main_content') ?>
+
+	<!-- affichage des erreurs lors de la connexion -->
+	<?php if(!empty($error)):?>
+		<p class="alert alert-danger"><?=$error?></p>
+	<?php endif;?>	
+
 	<form method="POST" class="form-horizontal">
 		<fieldset>
 
