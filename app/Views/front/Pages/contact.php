@@ -31,8 +31,8 @@
 				
 			  <!--contact submit-->
 			  <!--<button type="submit" class="btn btn-default">Send</button>-->
-			  <div class="contactbutton">
-			  <img class="img-responsive" src="<?=$this->assetUrl('/img/formcontactsubmit.png');?>" title="Envoyer">
+			  <div>
+				  <button type="submit" class="contactbutton"><img class="img-responsive" src="<?=$this->assetUrl('/img/formcontactsubmit.png');?>" title="Envoyer"></button>
 			  </div>
 			  <br><br>
 			  <!--End contact submit-->

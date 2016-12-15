@@ -789,3 +789,11 @@ input::-moz-focus-inner { border: 0; }
 	width: 15vw;
 	cursor: pointer;
 }
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    background-color: transparent;
+    border: medium none;
+    cursor: pointer;
+}
+
+/*cgv.php*/
