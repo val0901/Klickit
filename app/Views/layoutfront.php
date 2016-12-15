@@ -540,6 +540,18 @@
 	})
 	/*End soumenu 4 categories*/
 	
+	/*4 categories hover background-color change*/
+	/*$(document).ready(function(){
+		$("#categoryclassic_hover").hover(function(){
+			$(".classic_text").hide();
+		})
+	})*/
+	
+	$(document).ready(function(){
+		$("#categoryclassic_hover").hover(function () { $(".classic_text").hide(); $(".classic_text_show").show() }, function () { $(".classic_text").show(); $(".classic_text_show").hide() }); 
+	})
+	/*End 4 categories hover background-color change*/
+	
 	/*vignetteEvent position*/
 	$(document).ready(function(){
 		$(".vignetteEvent_hide > img").hover(function () { $(this).attr("src", "<?=$this->assetUrl('/img/vignetteEvent2.png');?>") }, function () { $(this).attr("src", "<?=$this->assetUrl('/img/vignetteEvent1.png');?>") }); 

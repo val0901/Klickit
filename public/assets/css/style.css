@@ -405,6 +405,20 @@ footer {
     width: 100%;
 }
 
+.classic_text_show {
+    top: 10vw;
+    color: #fff;
+    font-size: 55px;
+    height: 80px;
+    padding-right: 20px;
+    padding-top: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+	z-index: 1;
+	display: none;
+}
+
 .customs_text {
     background-color: rgba(254, 148, 30, 0.6);
     bottom: 0;
@@ -458,6 +472,13 @@ footer {
 
 .navbar {
     margin-bottom: 0;
+}
+
+#categoryclassic_hover:hover {
+	background-color: #3fa9f5;
+	opacity: 0.4;
+	transition: background-color ease-in-out .2s;
+	cursor: pointer;
 }
 
 /*index.php soumenu de menu tous les articles*/
@@ -699,3 +720,5 @@ input::-moz-focus-inner { border: 0; }
 	font-weight: 600;
 	text-transform: uppercase;
 }
+
+/*contact.php*/

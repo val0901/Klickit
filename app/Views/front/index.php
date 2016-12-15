@@ -4,8 +4,10 @@
 <!--section 4 categories-->
 <div class="">
 	<div class="row">
-		<div class="col-lg-3 col-xs-6" style="position:relative;">
-			<img class="img-responsive" src="<?=$this->assetUrl('/img/art_classic_divers_000001.jpg');?>">
+		<!--<div class="classic_text_show"><span style="color: #000;">Classics</span></div>-->
+		<div class="col-lg-3 col-xs-6" style="position:relative;" id="categoryclassic_hover">
+			<div class="classic_text_show"><span>Classics</span></div>
+			<img class="img-responsive" src="<?=$this->assetUrl('/img/art_classic_divers_000001.jpg');?>" id="categoryclassic_hover">
 			<div class="classic_text">Classics</div>
 		</div>
 		<div class="col-lg-3 col-xs-6">
