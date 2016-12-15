@@ -34,6 +34,7 @@
 			  <div class="contactbutton">
 			  <img class="img-responsive" src="<?=$this->assetUrl('/img/formcontactsubmit.png');?>" title="Envoyer">
 			  </div>
+			  <br><br>
 			  <!--End contact submit-->
 			</form>
 		</div>
