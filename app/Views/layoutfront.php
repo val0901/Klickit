@@ -50,7 +50,7 @@
     <link rel="stylesheet" href="<?= $this->assetUrl('css/style.css') ?>">
     <link rel="stylesheet" href="<?= $this->assetUrl('css/mediaquery.css') ?>">
     <!-- styles page event-->
-    <link rel="stylesheet" href="<?= $this->assetUrl('css/eventsstyle.css') ?>">
+    <link rel="stylesheet" href="<?= $this->assetUrl('css/stylebis.css') ?>">
     <link rel="stylesheet" href="<?= $this->assetUrl('css/eventmediaquery.css') ?>">
 
     
