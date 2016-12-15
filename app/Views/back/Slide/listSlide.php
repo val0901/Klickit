@@ -16,7 +16,7 @@
 							<td><?=$value['id'];?></td>
 							<td><?=$value['title'];?></td>
 							<td><a href="<?=$this->url('updateSlide', ['id'=>$value['id']]);?>">Vu et modification du Slide</a></td>
-							<td><button class="btn btn-danger delete-slide" data-id="<?=$value['id']?>">Effacer le slide'</button></td>
+							<td><button class="btn btn-danger delete-slide" data-id="<?=$value['id']?>">Effacer le slide</button></td>
 						</tr>	
 					<?php endforeach;?>
 				</tbody>
