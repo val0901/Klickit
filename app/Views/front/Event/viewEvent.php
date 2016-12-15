@@ -3,7 +3,7 @@
 <?php $this->start('main_content') ?>
 
  <div class="event_etitle">
-     évenements
+     évènements
 </div>
 <div class="event_poster">
 	<img class="img-responsive" src="<?=$this->assetUrl('/events/expo_2016_noirmoutier.jpg');?>">
