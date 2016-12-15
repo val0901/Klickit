@@ -31,7 +31,9 @@ class MessageModel extends \W\Model\Model
 		return $sth->fetch();
 	}
 
-	/*retourne une liste de 15 messages*/
+	/**
+	*retourne une liste de 15 messages
+	*/
 	public function find15Messages()
 	{
 

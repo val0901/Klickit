@@ -25,10 +25,11 @@
 					<td>
 						<div class="form-group" id="selectStt">									
 							  <div class="col-md-4">
-							    <select id="selectStatut" name="selectStatut" class="form-control">
-							      <option value="commandé" name="com">En attente de paiement</option>
-							      <option value="en préparation">En cours de préparation</option>
-							      <option value="expedié">Expédiée</option>
+							    <select id="selectStatut" name="selectStatut" class="form-control" value>
+							    	<option value="Changer le statut" selected disabled>Changer le statut</option>
+							      <option value="En attente de paiement" name="com">En attente de paiement</option>
+							      <option value="En cours de préparation">En cours de préparation</option>
+							      <option value="Expédiée">Expédiée</option>
 							    </select>
 							  </div>
 							</form>
