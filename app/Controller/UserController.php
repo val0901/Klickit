@@ -25,10 +25,7 @@ class UserController extends Controller
 		$max = 15;
 
 		$list = new UserModel();
-			$users = $list->findAllUsers($page, $max);
-				
-		//$list = new UserModel();
-		//	$users = $list->findAll();
+		$users = $list->findAllUsers($page, $max);
 
 		$data = [
 			'users'	=> $users,

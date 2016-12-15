@@ -17,11 +17,20 @@ class EventController extends Controller
 	public function listEvent()
 	{
 
+		$nbpage= new EventModel();
+		$nb=$nbpage->countResults();
+
+		$page = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
+		$max = 1;
+
 		$list = new EventModel();
-		$event = $list->findAll();
+		$event = $list->findAllEvent($page, $max);
 
 		$data = [
 			'event'	=> $event,
+			'max' => $max,
+			'page' => $page,
+			'nb' => $nb,
 		];
 
 		if(!empty($_SESSION)){
