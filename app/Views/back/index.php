@@ -21,7 +21,10 @@
 							<tr>
 								<td><?=$order['id']; ?></td>
 								<td><?=$order['lastname'].' '.$order['firstname']; ?></td>
-								<td><?php ?>Gérer la liste des articles</td>
+								<td> <?php foreach ($items as $item):?>	
+									<?= $item['name'].'<br>'.$item['quantity'].'<br>'.$item['price'].'<br>'?>
+								<?php endforeach; ?>													
+                    			</td>
 								<td><?= date('d/m/Y', strtotime($order['date_creation']));?></td>
 								<td><?=$order['statut']; ?></td>
 								<td>
