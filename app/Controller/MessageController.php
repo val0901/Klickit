@@ -98,4 +98,6 @@ class MessageController extends Controller
 	{
 		$this->show('back/Message/deleteMessage');
 	}
+
+	
 }

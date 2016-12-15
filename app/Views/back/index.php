@@ -2,7 +2,10 @@
 
 <?php $this->start('main_content') ?>
 
+	<!--Derniers messages  -->	
+	<h3>Vos dernières commandes</h3>
 	<div id="lastorder">
+		
 		<table class="table">
 			<thead>
 				<th>Numéro</th>
@@ -33,12 +36,15 @@
 					</div>	
 	</div>
 
+	<!--Dernières Commandes  -->
+	<h3>Vos derniers messages</h3>
 	<div id="lastMessage">
 		<form>	
 			<table class="table table-responsive">
 				<thead>
 					<th>Pseudonyme</th>
 					<th>Adresse email</th>
+					<th>Date</th>
 					<th>Sujet</th>
 					<th>Contenu</th>
 					<th>Statut</th>
@@ -57,6 +63,7 @@
 						<tr>
 							<td <?=$bold?> ><?=$message['username'];?></td>
 							<td <?=$bold?> ><?=$message['email'];?></td>
+							<td><?= date('d/m/Y', strtotime($order['date_creation']));?></td>
 							<td <?=$bold?> ><?=$message['subject'];?></td> 
 							<td <?=$bold?> ><?=$message['content'];?></td>
 							<td <?=$bold?> ><?=$message['statut'];?></td>
@@ -68,9 +75,45 @@
 			</table>
 			<div id="voirplus">
 				<a href="<?= $this->url('listMessage')?>" >Voir plus</a>
-			</div>	
+			</div>
 		</form>
-		
+	</div>	
+
+	<!-- derniers messages guestbook -->
+	<h3>Vos derniers commentaires du livre d'or</h3>
+	<div id="lastGuestbook">
+		<form>
+			<table class="table table-responsive">
+				<thead>
+					<th>Prénom</th>
+					<th>Nom</th>
+					<th>Pseudonyme</th>
+					<th>Commentaire</th>
+					<th>Publié</th>				
+					<th colspan="2">Action</th>
+				</thead>
+
+				<tbody>
+					<?php foreach($comments as $comment) : ?>
+						<tr>
+							<td><?=$comment['firstname'];?></td>
+							<td><?=$comment['lastname'];?></td>
+							<td><?=$comment['username'];?></td>
+							<td><?=substr($comment['content'],0,20).'...';?></td>
+							<td><?=ucfirst($comment['published'])?></td>
+							<td><a href="<?=$this->url('moderation', ['id'=>$comment['id']])?>">Voir le commentaire</a></td>
+							<td><button class="btn btn-danger delete-comment" data-id="<?=$comment['id']?>">Effacer le commentaire</button></td>
+						</tr>	
+					<?php endforeach;?>
+				</tbody>
+			</table>
+		</form>	
+		<div id="voirplus">
+				<a href="<?= $this->url('listGuestbook')?>" >Voir plus</a>
+		</div>
+
 	</div>
+	
+	
 	
 <?php $this->stop('main_content') ?>

@@ -31,4 +31,16 @@ class MessageModel extends \W\Model\Model
 		return $sth->fetch();
 	}
 
+	/*retourne une liste de 15 messages*/
+	public function find15Messages()
+	{
+
+		$sql = 'SELECT ' .$this->table.'.*, u.username, u.email FROM ' . $this->table . ' LEFT JOIN user AS u ON '.$this->table.'.idMember = u.id ORDER BY ' .$this->table.'.date_creation DESC LIMIT 15';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->execute();
+
+		return $sth->fetchAll();
+	}
+
 }

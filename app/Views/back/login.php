@@ -4,9 +4,6 @@
 	<form method="POST" class="form-horizontal">
 		<fieldset>
 
-		<!-- Form Name -->
-		<legend>Connexion</legend>
-
 		<!-- Text input-->
 		<div class="form-group">
 		  <label class="col-md-4 control-label" for="pseudo">Pseudo</label>  

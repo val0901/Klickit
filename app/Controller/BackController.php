@@ -6,6 +6,7 @@ use \W\Controller\Controller;
 use \Model\UserModel;
 use \Model\OrdersModel;
 use \Model\MessageModel;
+use \Model\GuestbookModel;
 use \W\Security\AuthentificationModel;
 use \W\Security\AuthorizationModel;
 
@@ -22,11 +23,15 @@ class BackController extends Controller
 		$list_orders = $orders->findAllWithUsers();
 
 		$messages = new MessageModel();
-		$list_messages = $messages->findAllMessage();
+		$list_messages = $messages->find15Messages();
+
+		$comments = new GuestbookModel();
+		$list_guestbook = $comments->find15Comments();
 
 		$data = [
-			'orders'	=> $list_orders,
+			'orders'   => $list_orders,
 			'messages' => $list_messages,
+			'comments' => $list_guestbook,
 		];
 		
 		if(!empty($_SESSION)){
