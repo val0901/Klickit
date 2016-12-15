@@ -1,3 +1,79 @@
+/*aPropos.php*/
+
+.apropos_ul{
+    padding-top: 1em;
+    font-size: 1em;
+}
+.apropospicinfo{
+    display: inline;
+    margin-left: 1.1em;
+    color: #3fa9f5;
+}
+
+.apropos_containpaie{
+    text-align: center;
+    margin-bottom: 3em;
+
+}
+.apropos_picsortpaie{
+    text-align: center;
+    color: #7ac941;
+    font-size: 2em;
+    padding: 0 1em;
+    
+}
+.apropos_sortpaie{
+    text-align: center;
+    color: #7ac941;
+    font-size: 2em;
+    padding: 0 1em;
+    
+}
+.apropos_picpaie{
+    display: inline;
+    margin-left: 1.1em;
+    color: #3fa9f5;
+}
+.apropos_flech{
+    display: inline;
+    margin-left: 0.2em;
+    color: #ff9121;
+}
+
+.apropos_txtinfo{
+    display: inline;
+}
+
+.apropos_txtpaie{
+    padding-left: 2em;
+}
+
+.apropos_title {
+	color: #ea2229;
+	text-align: center;
+	text-transform: uppercase;
+    letter-spacing: 0.5em;
+}
+
+.apropos_title:before {
+	content: " 《 ";
+}
+
+.apropos_title:after {
+	content: " 》 ";
+}
+
+.apropos_text {
+    padding: 1em 2em;
+	font-size: 1.2em;
+	font-family: 'Roboto', sans-serif;
+}
+
+.apropos_container {
+    padding: 1.5em 25em;
+}
+
+
 /*events.php*/
 .event_etitle {
 	position:absolute;
