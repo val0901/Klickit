@@ -1,4 +1,4 @@
-<?php $this->layout('layoutfront', ['title' => 'Accueil']) ?>
+<?php $this->layout('layoutfront', ['title' => 'Playmobil Napoléon Western Pirate Fée Princesses Police Robots Espace Animaux Sport Tampographie Customs Accessoires Stickers Résine']) ?>
 
 <?php $this->start('main_content') ?>
 <!--section 4 categories-->
