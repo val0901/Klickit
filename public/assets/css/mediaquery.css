@@ -61,6 +61,10 @@
     top: 20vw;
 }
 	
+	.img-responsive {
+		width: 100%;
+	}
+	
 }
 
 @media screen and (max-width: 990px) {
@@ -86,6 +90,7 @@
 	.footer_smallstyle {
 	display: block;
 }
+	
 	
 }
 
@@ -137,7 +142,10 @@
 	margin-left: 20px;
     text-align: left;
 }
-
+	
+	.viewcategorycol2_text {
+	font-size: 2.5vw;
+}
 	
 }
 
@@ -223,9 +231,10 @@
 	padding: 16px;
 }
 
-.cgv_text {
-	font-size: 15px;
-}
+	.cgv_text {
+		font-size: 15px;
+	}
+	
 	
 }
 

@@ -824,3 +824,55 @@ h3 {
 .cgv_title:after {
 	content: " 》 ";
 }
+
+.classics_background {
+	background-color: rgba(63, 169, 245, 0.3);
+}
+
+.viewcategorycol2_title {
+	color: #3fa9f5;
+}
+
+.viewcategorycol2_text {
+	color: #fff;
+	font-size: 1.6vw;
+}
+
+.viewcategoryrow2col1_title {
+	text-align: center;
+	padding: 20px 0;
+	text-transform: uppercase;
+}
+
+.viewcategoryrow2col1_tirer {
+	text-align: center;
+	font-size: 25px;
+	color: #fff;
+	padding: 10px 50px;
+	background-color: #3fa9f5;
+	margin: 1px 0px;
+}
+
+.viewcategoryrow2col1_tirer:hover {
+	background-color: #289ff4;
+	cursor: pointer;
+}
+
+.viewcategory_checkboxmargin {
+	font-size: 1.2vw;
+    margin: 0px 40px;
+}
+
+.viewcategorycheckbox_border {
+    height: 40px;
+    padding: 0 100px 0 0;
+}
+
+.viewcategorycheckbox_font {
+    color: #000;
+    font-size: 20px;
+}
+
+h4 {
+	font-weight: 600;
+}
