@@ -22,9 +22,9 @@ class ItemModel extends \W\Model\Model
 	}
 
 	// Requête pour aller sélectionner tout les articles dans la table "Item" qui ont pour catégorie "Playmobil custom"
-	public function listItemCustom($page, $max)
+	public function listItemCustom($page1, $max)
 	{
-		$debut = ($page - 1) * $max;
+		$debut = ($page1 - 1) * $max;
 
 		$play2 = 'SELECT * FROM '.$this->table.' WHERE category = "PlaymobilCustom" LIMIT :debut, :max';
 
@@ -38,9 +38,9 @@ class ItemModel extends \W\Model\Model
 	}
 
 	// Requête pour aller sélectionner tout les articles dans la table "Item" qui ont pour catégorie "Pièces Détachées"
-	public function listItemPiece($page, $max)
+	public function listItemPiece($page2, $max)
 	{
-		$debut = ($page - 1) * $max;
+		$debut = ($page2 - 1) * $max;
 
 		$play3 = 'SELECT * FROM '.$this->table.' WHERE category = "PiecesDetachees" LIMIT :debut, :max';
 
@@ -54,9 +54,9 @@ class ItemModel extends \W\Model\Model
 	}
 
 	// Requête pour aller sélectionner tout les articles dans la table "Item" qui ont pour catégorie "Divers"
-	public function listItemDivers($page, $max)
+	public function listItemDivers($page3, $max)
 	{
-		$debut = ($page - 1) * $max;
+		$debut = ($page3 - 1) * $max;
 
 		$play4 = 'SELECT * FROM '.$this->table.' WHERE category = "Divers" LIMIT :debut, :max';
 		$piecePlay = $this->dbh->prepare($play4);
@@ -74,11 +74,13 @@ class ItemModel extends \W\Model\Model
 	* @return le nombre de lignes contenu ds la table
 	*/
 
-	public function countResults()
+	public function countResults($column = false)
 	{
-    
-    $sql = 'SELECT COUNT(*) as total FROM ' . $this->table;
+    $sql = 'SELECT COUNT(*) as total FROM ' . $this->table ;
 
+    if ($column) {
+    	$sql.= ' WHERE category = "' .$column .'"';
+    }
     $sth = $this->dbh->prepare($sql);
     $sth->execute();
 

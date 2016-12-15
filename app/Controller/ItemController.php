@@ -18,10 +18,22 @@ class ItemController extends Controller
 	{
 
 		$nbpage= new ItemModel();
-		$nb=$nbpage->countResults();
+		$nb=$nbpage->countResults('PlaymobilClassique');
+		$nb1=$nbpage->countResults('PlaymobilCustom');
+		$nb2=$nbpage->countResults('PiecesDetachees');
+		$nb3=$nbpage->countResults('Divers');
+
+		$max = 1;
 
 		$page = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
-		$max = 15;
+		
+
+		$page1 = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
+
+		$page2 = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
+
+		$page3 = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
+
 
 		/**** REQUÊTE CONCERNANT LES PLAYMOBILS DE CATEGORIE "CLASSIQUE" ****/
 		$listItemClassic = new ItemModel();
@@ -30,16 +42,16 @@ class ItemController extends Controller
 
 		/**** REQUÊTE CONCERNANT LES PLAYMOBILS DE CATEGORIE "CUSTOM" ****/
 		$listItemCustom = new ItemModel();
-		$itemsCustom = $listItemCustom->listItemCustom($page, $max);
+		$itemsCustom = $listItemCustom->listItemCustom($page1, $max);
 
 
 		/**** REQUÊTE CONCERNANT LES PLAYMOBILS DE CATEGORIE "PIECES DETACHEES" ****/
 		$listItemPiece = new ItemModel();
-		$itemsPiece = $listItemPiece->listItemPiece($page, $max);
+		$itemsPiece = $listItemPiece->listItemPiece($page2, $max);
 
 		/**** REQUÊTE CONCERNANT LES PLAYMOBILS DE CATEGORIE "DIVERS" ****/
 		$listItemDivers = new ItemModel();
-		$itemsDivers = $listItemDivers->listItemDivers($page, $max);
+		$itemsDivers = $listItemDivers->listItemDivers($page3, $max);
 
 		$data = [
 			'Classic'	=> $itemsClassic,
@@ -48,7 +60,13 @@ class ItemController extends Controller
 			'Divers'	=> $itemsDivers,
 			'max' => $max,
 			'page' => $page,
+			'page1' => $page1,
+			'page2' => $page2,
+			'page3' => $page3,
 			'nb' => $nb,
+			'nb1' => $nb1,
+			'nb2' => $nb2,
+			'nb3' => $nb3,
 		];
 
 		if(!empty($_SESSION)){
