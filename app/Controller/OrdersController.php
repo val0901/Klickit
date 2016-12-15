@@ -21,7 +21,7 @@ class OrdersController extends Controller
 
 		// on definit les variables, page courante et nb de lignes affichées
 		$page = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
-		$max = 5;
+		$max = 15;
 
 		$orders = new OrdersModel();
 			$list_orders = $orders->findAllOrders($page, $max);
