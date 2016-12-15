@@ -28,9 +28,13 @@ class BackController extends Controller
 		$comments = new GuestbookModel();
 		$list_guestbook = $comments->find15Comments();
 
+		$items = new OrdersModel();
+        $list_items = $items->findItems();
+
 		$data = [
 			'orders'   => $list_orders,
 			'messages' => $list_messages,
+			'items' => $list_items,
 			'comments' => $list_guestbook,
 		];
 		
