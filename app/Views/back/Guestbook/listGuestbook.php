@@ -23,7 +23,7 @@
 							<td><?=$message['username'];?></td>
 							<td><?=substr($message['content'],0,20).'...';?></td>
 							<td><?=ucfirst($message['published'])?></td>
-							<td><a href="<?=$this->url('moderation', ['id'=>$message['id']])?>">Voir le commentaire</a></td>
+							<td><a href="<?=$this->url('moderation', ['id'=>$message['id']])?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>
 							<td><button class="btn btn-danger delete-message" data-id="<?=$message['id']?>">Effacer le commentaire</button></td>
 						</tr>	
 					<?php endforeach;?>

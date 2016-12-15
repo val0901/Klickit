@@ -28,7 +28,7 @@
 						<td><?=$user['username'];?></td>
 						<td><?=$user['email'];?></td>
 						<td>Commande ici (avec une super jointure)</td>
-						<td><a href="<?=$this->url('front_affcptuser', ['id'=>$user['id']]);?>" target="_blank">Voir le profil</a></td> <!-- Mettre lien pour voir le profil sur le front -->
+						<td><a href="<?=$this->url('front_affcptuser', ['id'=>$user['id']]);?>" target="_blank"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td> <!-- Mettre lien pour voir le profil sur le front -->
 						<td><a href="<?=$this->url('updateUser', ['id'=>$user['id']]);?>">Mettre à jour le profil</a></td>
 						<td><button class="btn btn-danger delete-user" data-id="<?=$user['id']?>">Effacer le profil</button></td>
 					</tr>	

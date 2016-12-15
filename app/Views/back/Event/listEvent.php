@@ -15,7 +15,7 @@
 						<tr>
 							<td><?=$value['id'];?></td>
 							<td><?=$value['title'];?></td>
-							<td><a href="<?=$this->url('updateEvent', ['id'=>$value['id']]);?>">Vu et modification de l'évènement</a></td>
+							<td><a href="<?=$this->url('updateEvent', ['id'=>$value['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>
 							<td><button class="btn btn-danger delete-event" data-id="<?=$value['id']?>">Effacer l'évènement'</button></td>
 						</tr>	
 					<?php endforeach;?>

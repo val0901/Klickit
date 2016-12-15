@@ -70,7 +70,7 @@
 							<td <?=$bold?> ><?=$message['subject'];?></td> 
 							<td <?=$bold?> ><?=$message['content'];?></td>
 							<td <?=$bold?> ><?=$message['statut'];?></td>
-							<td><a href="<?=$this->url('viewMessage', ['id'=>$message['id']]);?>">Voir le message</a></td>
+							<td><a href="<?=$this->url('viewMessage', ['id'=>$message['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>
 							<td><button class="btn btn-danger delete-message" data-id="<?=$message['id']?>">Effacer le message</button></td>
 						</tr>	
 					<?php endforeach;?>
@@ -104,7 +104,7 @@
 							<td><?=$comment['username'];?></td>
 							<td><?=substr($comment['content'],0,20).'...';?></td>
 							<td><?=ucfirst($comment['published'])?></td>
-							<td><a href="<?=$this->url('moderation', ['id'=>$comment['id']])?>">Voir le commentaire</a></td>
+							<td><a href="<?=$this->url('moderation', ['id'=>$comment['id']])?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>
 							<td><button class="btn btn-danger delete-comment" data-id="<?=$comment['id']?>">Effacer le commentaire</button></td>
 						</tr>	
 					<?php endforeach;?>
