@@ -17,7 +17,7 @@ class MessageController extends Controller
 		$nb=$nbpage->countResults();
 
 		$page = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
-		$max = 1;
+		$max = 15;
 
 		$list = new MessageModel();
 		$messages = $list->findAllMessage($page, $max);
