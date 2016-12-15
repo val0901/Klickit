@@ -28,7 +28,7 @@
 						<td><?=$user['username'];?></td>
 						<td><?=$user['email'];?></td>
 						<td>Commande ici (avec une super jointure)</td>
-						<td><a href="<?=$this->url('front_affcptuser');?>" target="_blank">Voir le profil</a></td> <!-- Mettre lien pour voir le profil sur le front -->
+						<td><a href="#">Voir le profil</a></td> <!-- Mettre lien pour voir le profil sur le front -->
 						<td><a href="<?=$this->url('updateUser', ['id'=>$user['id']]);?>">Mettre à jour le profil</a></td>
 						<td><button class="btn btn-danger delete-user" data-id="<?=$user['id']?>">Effacer le profil</button></td>
 					</tr>	
@@ -36,6 +36,13 @@
 			</tbody>
 		</table>
 	</form>	
+	<?php $search = (isset($_GET['search']))? 'search='. $_GET['search'].'&' :'';?>
+	<div>
+		<?= ($page!=1) ? '<a href="?'. $search .'page='. ($page - 1) .'"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>':''; ?>
+		Page <?= $page; ?> / <?= ceil($nb/$max); ?>
+		<?= $page!= ceil($nb/$max) ? '<a href="?'. $search .'page='. ($page + 1) .'"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>':''; ?></div>
+	
+
 <?php endif;?>	
 
 <?php $this->stop('main_content') ?>

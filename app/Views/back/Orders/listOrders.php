@@ -43,9 +43,10 @@
 		</table>
 	</form>
 			<?php $search = (isset($_GET['search']))? 'search='. $_GET['search'].'&' :'';?>
-			<div>Page <?= $page; ?> / <?= ceil($nb/$max); ?>
-				<?= ($page!=1) ? '<a href="?'. $search .'page='. ($page - 1) .'">Page précédente</a>':''; ?>
-				<?= $page!= ceil($nb/$max) ? '<a href="?'. $search .'page='. ($page + 1) .'">Page suivante</a>':''; ?>
+			<div>
+				<?= ($page!=1) ? '<a href="?'. $search .'page='. ($page - 1) .'"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>':''; ?>
+				Page <?= $page; ?> / <?= ceil($nb/$max); ?>
+				<?= $page!= ceil($nb/$max) ? '<a href="?'. $search .'page='. ($page + 1) .'"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>':''; ?>
 
 			</div>
 

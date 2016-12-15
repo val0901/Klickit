@@ -16,11 +16,25 @@ class UserController extends Controller
 	 */
 	public function listUser()
 	{	
+		
+		$nbpage= new UserModel();
+			$nb=$nbpage->countResults();
+
+		// on definit les variables, page courante et nb de lignes affichées
+		$page = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
+		$max = 3;
+
 		$list = new UserModel();
-		$users = $list->findAll();
+			$users = $list->findAllUsers($page, $max);
+				
+		//$list = new UserModel();
+		//	$users = $list->findAll();
 
 		$data = [
 			'users'	=> $users,
+			'max' => $max,
+			'page' => $page,
+			'nb' => $nb,	
 		];
 
 		if(!empty($_SESSION)){
