@@ -64,6 +64,9 @@ class ItemController extends Controller
 		$errors = [];
 		$statut_product = ['promotion', 'nouveauté', 'par defaut'];
 		$category_product = ['PlaymobilClassique', 'PlaymobilCustom', 'PiecesDetachees', 'Divers'];
+		$subCategory_Classic = ['Chevaliers','Pirates','Antique','Western','Fantasy','XVIIIe','Fées Princesses','Police','Animaux','Sport', 'Divers'];
+		$subCategory_Custom = ['Customs tampographiés','Customs peints','Bustes tampographiés','Pièces en résine','Stickers'];
+		$subCategory_Piece = ['Armes','Coiffes','Manchettes','Cols','Ceinturons','Têtes','Cheveux','Divers'];
 		$insert = new ItemModel();
 		$success = false;
 
@@ -121,6 +124,18 @@ class ItemController extends Controller
 				$errors[] = 'Une erreur est survenue lors de l\'upload de l\'image dans "Image 1"';
 			}
 
+			if($post['category'] == 'PlaymobilClassique' && !in_array($post['subCategory'], $subCategory_Classic)){
+				$errors[] = 'Vous avez entré une sous-catégorie qui n\'est pas lié à la catégorie Classique';
+			}
+
+			if($post['category'] == 'PlaymobilCustom' && !in_array($post['subCategory'], $subCategory_Custom)){
+				$errors[] = 'Vous avez entré une sous-catégorie qui n\'est pas lié à la catégorie Custom';
+			}
+
+			if($post['category'] == 'PiecesDetachees' && !in_array($post['subCategory'], $subCategory_Piece)){
+				$errors[] = 'Vous avez entré une sous-catégorie qui n\'est pas lié à la catégorie Pièces Detachées';
+			}
+
 			if(count($errors) === 0) {
 				$img1 = Image::make($_FILES['picture1']['tmp_name']);
 				$img2 = Image::make($_FILES['picture2']['tmp_name']);
@@ -161,14 +176,15 @@ class ItemController extends Controller
 				$itemModel = new ItemModel();
 
 				$insert = $itemModel->insert([
-					'name'		  => $post['name'],
-					'description' => $post['description'],
-					'quantity' 	  => $post['quantity'],
-					'price' 	  => $post['price'],
-					'picture1'	  => $imgName,
-					'picture2'    => $imgName2,
-					'statut' 	  => $post['statut'],
-					'category' 	  => $post['category'],
+					'name'		   => $post['name'],
+					'description'  => $post['description'],
+					'quantity' 	   => $post['quantity'],
+					'price' 	   => $post['price'],
+					'picture1'	   => $imgName,
+					'picture2'     => $imgName2,
+					'statut' 	   => $post['statut'],
+					'category' 	   => $post['category'],
+					'sub_category' => $post['subCategory'],
 				]);
 
 				if($insert){
@@ -214,6 +230,9 @@ class ItemController extends Controller
 		$errors = [];
 		$statut_product = ['promotion', 'nouveauté', 'par defaut'];
 		$category_product = ['PlaymobilClassique', 'PlaymobilCustom', 'PiecesDetachees', 'Divers'];
+		$subCategory_Classic = ['Chevaliers','Pirates','Antique','Western','Fantasy','XVIIIe','Fées Princesses','Police','Animaux','Sport', 'Divers'];
+		$subCategory_Custom = ['Customs tampographiés','Customs peints','Bustes tampographiés','Pièces en résine','Stickers'];
+		$subCategory_Piece = ['Armes','Coiffes','Manchettes','Cols','Ceinturons','Têtes','Cheveux','Divers'];
 		$insert = new ItemModel();
 		$success = false;
 
@@ -238,6 +257,29 @@ class ItemController extends Controller
 				}
 				else{
 					$afficheItem['category'] = $post['category'];
+				}
+			}
+
+			if(!empty($post['category']) && isset($post['subCategory'])) {
+				if($post['category'] == 'PlaymobilClassique' && !in_array($post['subCategory'], $subCategory_Classic)){
+					$errors[] = 'Vous avez entré une sous-catégorie qui n\'est pas lié à la catégorie Classique';
+				}
+				else {
+					$afficheItem['sub_category'] = $post['subCategory'];
+				}
+
+				if($post['category'] == 'PlaymobilCustom' && !in_array($post['subCategory'], $subCategory_Custom)){
+					$errors[] = 'Vous avez entré une sous-catégorie qui n\'est pas lié à la catégorie Custom';
+				}
+				else {
+					$afficheItem['sub_category'] = $post['subCategory'];
+				}
+
+				if($post['category'] == 'PiecesDetachees' && !in_array($post['subCategory'], $subCategory_Piece)){
+					$errors[] = 'Vous avez entré une sous-catégorie qui n\'est pas lié à la catégorie Pièces Detachées';
+				}
+				else {
+					$afficheItem['sub_category'] = $post['subCategory'];
 				}
 			}
 

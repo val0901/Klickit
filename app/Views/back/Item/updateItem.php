@@ -119,6 +119,40 @@
 		  </div>
 		</div>
 
+		<!-- Select Basic -->
+		<div class="form-group">
+		  <label class="col-md-4 control-label" for="subCategory">Sous-catégorie</label>
+		  <div class="col-md-4">
+		    <select id="subCategory" name="subCategory" class="form-control">
+		    	  <option selected disabled></option>
+			      <option value="Chevaliers">Chevaliers</option>
+			      <option value="Pirates">Pirates</option>
+			      <option value="Antique">Antique</option>
+			      <option value="Western">Western</option>
+			      <option value="Fantasy">Fantasy</option>
+			      <option value="XVIIIe">XVIIIe</option>
+			      <option value="Fées Princesses">Fées et Princesses</option>
+			      <option value="Police">Police</option>
+			      <option value="Animaux">Animaux</option>
+			      <option value="Sport">Sport</option>
+			      <option value="Divers">Divers</option>
+			  	  <option value="Customs tampographiés">Customs tampographiés</option>
+			  	  <option value="Customs peints">Customs peints</option>
+			  	  <option value="Bustes tampographiés">Bustes tampographiés</option>
+			  	  <option value="Pièces en résine">Pièces en résine</option>
+			  	  <option value="Stickers">Stickers</option>
+			  	  <option value="Armes">Armes</option>
+			  	  <option value="Coiffes">Coiffes</option>
+			  	  <option value="Manchettes">Manchettes</option>
+			  	  <option value="Cols">Cols</option>
+			  	  <option value="Ceinturons">Ceinturons</option>
+			  	  <option value="Têtes">Têtes</option>
+			  	  <option value="Cheveux">Cheveux</option>
+			  	  <option value="Divers">Divers</option>
+		    </select>
+		  </div>
+		</div>
+
 		<!-- Button -->
 		<div class="form-group">
 		  <label class="col-md-4 control-label" for="submit"></label>
