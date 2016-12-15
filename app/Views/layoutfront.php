@@ -566,6 +566,12 @@
 		$(".vignetteEvent_hide > img").hover(function () { $(this).attr("src", "<?=$this->assetUrl('/img/vignetteEvent2.png');?>") }, function () { $(this).attr("src", "<?=$this->assetUrl('/img/vignetteEvent1.png');?>") }); 
 	})
 	/*End vignetteEvent position*/
+	
+	/*contact button send*/
+	$(document).ready(function(){
+		$(".contactbutton > img").hover(function () { $(this).attr("src", "<?=$this->assetUrl('/img/formcontactsubmithover2.png');?>") }, function () { $(this).attr("src", "<?=$this->assetUrl('/img/formcontactsubmit.png');?>") }); 
+	})
+	/*End contact button send*/
 
 	/*index.php slide article*/
 	$(document).ready(function() {

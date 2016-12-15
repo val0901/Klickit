@@ -743,3 +743,49 @@ input::-moz-focus-inner { border: 0; }
 }
 
 /*contact.php*/
+.contactbanner > img {
+	position:relative;
+	z-index:6;
+}
+
+.contactnuage >img {
+	margin-top:-7vw;
+	position:relative;
+	z-index:5;
+}
+
+.fa-phone, .telnumber {
+	color: #1f3a93;
+	font-size: 4vw;
+}
+
+.formlabel {
+	color: #1f3a93;
+	font-size: 2vw;
+}
+
+.form-control {
+    height: 50px;
+}
+
+.btn-default {
+    background-color: #1f3a93;
+    border-color: #1f3a93;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 40px;
+}
+
+.btn-default:hover {
+  color: #fff;
+  background-color: #1f3a93;
+  border-color: #1f3a93;
+  opacity: 0.8;
+  transition: opacity ease-in-out .3s;
+}
+
+.contactbutton {
+	display: block;
+	width: 15vw;
+	cursor: pointer;
+}

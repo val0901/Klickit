@@ -213,7 +213,11 @@
 	.footercol2_margin {
 	margin-top: 0px;
 }
-
+	
+	.formlabel {
+	color: #1f3a93;
+	font-size: 2.5vw;
+}
 	
 }
 
@@ -227,5 +231,7 @@
     .caption {
     word-break: break-all;
     }
+	
+}
 }
 
