@@ -69,7 +69,7 @@
 
 <?php $this->start('js') ?>
 	<script>
-		if (document.GetElementById('reload')) {
+		if (document.getElementById('reload')) {
 			window.location.href=window.location.href;
 		}
 	</script>
