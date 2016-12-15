@@ -269,14 +269,12 @@ class UserController extends Controller
 			}
 				
 			if(count($errors) === 0){
-
 				if($insert->update($user, $id)){
 					$success = true;
 				}
 				else{
 					$errors[] = 'Erreur lors de l\'ajout en base de données';
 				}
-				
 			}
 		}
 
