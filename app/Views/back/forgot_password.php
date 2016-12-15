@@ -6,7 +6,9 @@
 
 	<?php if(!empty($error)):?>
 		<p class="alert alert-danger"><?=$error?></p>
-	<?php endif;?>	
+	<?php elseif($success):?>
+		<p class="alert alert-success">Message envoyé. Veuillez regarder votre boîte mail</p>
+	<?php endif;?>		
 
 	<form method="POST" class="form-horizontal">
 

@@ -38,4 +38,21 @@ class UserModel extends \W\Model\UsersModel
 
     return $result['total'];
 	}
+
+	/**
+	* @param $email string l'email pour récupérer le nom et le prénom
+	* @return string le nom est le prénom dans un tableau
+	*/
+	public function getNameByMail($email)
+	{	
+		//$rename = new BackModel();
+
+		$sql = 'SELECT user.firstname, user.lastname FROM '.$this->table.' WHERE email = :email';
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':email', $email);
+
+		$sth->execute();
+
+		return $sth->fetchAll();
+	}
 }
