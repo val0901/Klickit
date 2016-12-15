@@ -9,6 +9,7 @@ use \Model\MessageModel;
 use \Model\EventModel;
 use \Model\GuestbookModel;
 use \Model\SlideModel;
+use \Model\ShippingModel;
 use \W\Security\AuthentificationModel;
 
 use \Respect\Validation\Validator as v; 
@@ -146,6 +147,27 @@ class AjaxController extends Controller
 				$deleteSlide = $slideModel->delete($_POST['id_slide']);
 
 				if($deleteSlide){
+					$json = ['code' => 'ok'];
+				}
+			}else{
+				$json = ['code' => 'error'];
+			}
+		}
+		$this->showJson($json);
+	}
+
+	/**
+	 * Efface une option d'envoi en Ajax
+	 */
+	public function deleteShipping()
+	{
+		if(!empty($_POST)){
+
+			if(is_numeric($_POST['id_shipping'])){
+				$shippingModel = new ShippingModel();
+				$deleteShipping = $shippingModel->delete($_POST['id_shipping']);
+
+				if($deleteShipping){
 					$json = ['code' => 'ok'];
 				}
 			}else{

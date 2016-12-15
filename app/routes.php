@@ -17,6 +17,7 @@
 		['GET|POST', '/ajax/deleteEvent', 'Ajax#deleteEvent', 'ajax_deleteEvent'],
 		['GET|POST', '/ajax/delete/moderation', 'Ajax#deleteMessageMod', 'ajax_delete_message_mod'],
 		['GET|POST', '/ajax/deleteSlide', 'Ajax#deleteSlide', 'ajax_deleteSlide'],
+		['GET|POST', '/ajax/deleteShipping', 'Ajax#deleteShipping', 'ajax_deleteShipping'],
 
 		//Pages liées à UserController
 		['GET|POST', '/back/listUser', 'User#listUser', 'listUser'],
