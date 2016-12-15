@@ -1,15 +1,22 @@
 <?php
 namespace Model;
 
+use \W\Model\UserModel;
+
 class GuestbookModel extends \W\Model\Model 
 {
 
 	/*retourne tous les messages*/
-	public function findAllMessage()
+	public function findAllMessage($page, $max)
 	{
-		$sql = 'SELECT ' .$this->table.'.*, u.firstname, u.lastname, u.username FROM ' . $this->table . ' LEFT JOIN user AS u ON '.$this->table.'.id_member = u.id ORDER BY ' .$this->table.'.id DESC ';
+		$debut = ($page - 1) * $max;
+
+		$sql = 'SELECT ' .$this->table.'.*, u.firstname, u.lastname, u.username FROM ' . $this->table . ' LEFT JOIN user AS u ON '.$this->table.'.id_member = u.id ORDER BY ' .$this->table. '.id DESC LIMIT :debut, :max';
 
 		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':max', $max, \PDO::PARAM_INT);
+		$sth->bindValue(':debut', $debut, \PDO::PARAM_INT);
+
 		$sth->execute();
 
 		return $sth->fetchAll();
@@ -37,4 +44,22 @@ class GuestbookModel extends \W\Model\Model
 
 		return $sth->fetchAll();
 	}
+
+	/** 
+	*Méthode pour compter le nombre de résultat 
+	* @return le nombre de lignes contenu ds la table
+	*/
+
+	public function countResults()
+	{
+
+		$sql = 'SELECT COUNT(*) as total FROM ' . $this->table;
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->execute();
+
+		$result = $sth->fetch();
+
+		return $result['total'];
+		}
 }

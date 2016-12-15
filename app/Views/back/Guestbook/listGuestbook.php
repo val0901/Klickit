@@ -30,7 +30,16 @@
 				</tbody>
 			</table>
 		</form>	
-	<?php endif;?>		
+	<?php endif;?>	
+
+	<?php $search = (isset($_GET['search']))? 'search='. $_GET['search'].'&' :'';?>
+	<div>
+		<?= ($page!=1) ? '<a href="?'. $search .'page='. ($page - 1) .'"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>':''; ?>
+		Page <?= $page; ?> / <?= ceil($nb/$max); ?>
+		<?= $page!= ceil($nb/$max) ? '<a href="?'. $search .'page='. ($page + 1) .'"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>':''; ?>
+
+	</div>
+		
 <?php $this->stop('main_content') ?>
 
 <?php $this->start('js')?>

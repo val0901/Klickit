@@ -18,11 +18,11 @@ class UserController extends Controller
 	{	
 		
 		$nbpage= new UserModel();
-			$nb=$nbpage->countResults();
+		$nb=$nbpage->countResults();
 
 		// on definit les variables, page courante et nb de lignes affichées
 		$page = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
-		$max = 3;
+		$max = 15;
 
 		$list = new UserModel();
 			$users = $list->findAllUsers($page, $max);

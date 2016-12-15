@@ -17,11 +17,21 @@ class GuestbookController extends Controller
 	 */
 	public function listGuestbook()
 	{	
+		$nbpage= new GuestbookModel();
+		$nb=$nbpage->countResults();
+
+		// on definit les variables, page courante et nb de lignes affichées
+		$page = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
+		$max = 15;
+
 		$guestbookModel = new GuestbookModel();
-		$list = $guestbookModel->findAllMessage();
+		$list = $guestbookModel->findAllMessage($page, $max);
 
 		$data = [
-			'messages'	=> $list
+			'messages'	=> $list,
+			'max' => $max,
+			'page' => $page,
+			'nb' => $nb,
 		];
 
 		if(!empty($_SESSION)){
