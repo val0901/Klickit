@@ -100,6 +100,9 @@ class BackController extends Controller
 		}
 	}
 
+	/**
+	* Envoi d'un mail pour réinitialiser le mot de passe
+	*/
 	public function forgot_pwd()
 	{	
 		$post = [];
