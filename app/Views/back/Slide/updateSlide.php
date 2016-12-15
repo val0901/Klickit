@@ -25,7 +25,7 @@
 
 	<br><br>
 		<?php if($success): ?>
-			<p class="alert alert-success">Slide modifié</p>
+			<p id="reload" class="alert alert-success">Slide modifié</p>
 		<?php elseif(isset($errors) && !empty($errors)):?>
 			<p class="alert alert-danger"><?=implode('<br>', $errors);?></p>	
 		<?php endif;?>
@@ -66,3 +66,11 @@
 		</div>
 	</form>
 <?php $this->stop('main_content') ?>
+
+<?php $this->start('js') ?>
+	<script>
+		if (document.GetElementById('reload')) {
+			window.location.href=window.location.href;
+		}
+	</script>
+<?php $this->stop('js') ?>

@@ -4,23 +4,23 @@
 	<a href="<?=$this->url('addSlide');?>"><button class="btn btn-info">Ajout de slide</button></a>
 	<form>
 		<table class="table table-responsive">
-				<thead>
-					<th>N°</th>
-					<th>Titre</th>
-					<th colspan="2">Action</th>
-				</thead>
+			<thead>
+				<th>N°</th>
+				<th>Titre</th>
+				<th colspan="2">Action</th>
+			</thead>
 
-				<tbody>
-					<?php foreach($slide as $value) : ?>
-						<tr>
-							<td><?=$value['id'];?></td>
-							<td><?=$value['title'];?></td>
-							<td><a href="<?=$this->url('updateSlide', ['id'=>$value['id']]);?>">Vu et modification du Slide</a></td>
-							<td><button class="btn btn-danger delete-slide" data-id="<?=$value['id']?>">Effacer le slide</button></td>
-						</tr>	
-					<?php endforeach;?>
-				</tbody>
-			</table>
+			<tbody>
+				<?php foreach($slide as $value) : ?>
+					<tr>
+						<td><?=$value['id'];?></td>
+						<td><?=$value['title'];?></td>
+						<td><a href="<?=$this->url('updateSlide', ['id'=>$value['id']]);?>">Vu et modification du Slide</a></td>
+						<td><button class="btn btn-danger delete-slide" data-id="<?=$value['id']?>">Effacer le slide</button></td>
+					</tr>	
+				<?php endforeach;?>
+			</tbody>
+		</table>
 	</form>
 <?php $this->stop('main_content') ?>
 
