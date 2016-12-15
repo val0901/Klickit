@@ -13,12 +13,20 @@ class MessageController extends Controller
 	*/
 	public function listMessage()
 	{	
+		$nbpage= new MessageModel();
+		$nb=$nbpage->countResults();
+
+		$page = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
+		$max = 1;
 
 		$list = new MessageModel();
-		$messages = $list->findAllMessage();
+		$messages = $list->findAllMessage($page, $max);
 
 		$data = [
 			'messages'	=> $messages,
+			'max' => $max,
+			'page' => $page,
+			'nb' => $nb,
 		];
 
 		//On sécurise la page, seulement accessible à l'Admin
