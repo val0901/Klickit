@@ -3,6 +3,7 @@
 namespace Controller;
 
 use \W\Controller\Controller;
+use \W\Model\UsersModel;
 use \Model\UserModel;
 use \Model\OrdersModel;
 use \Model\MessageModel;
@@ -100,7 +101,23 @@ class BackController extends Controller
 	}
 
 	public function forgot_pwd()
-	{
-		
+	{	
+		$post = [];
+		$error = '';
+		$verify_mail = new UsersModel();
+
+
+		if(!empty($_POST)){
+			foreach ($_POST as $key => $value) {
+				$post[$key] = trim(strip_tags($value));
+			}
+
+			if(!$verify_mail->emailExists($post['email'])){
+				$error = 'L\'adresse email n\'existe pas';
+			}
+
+		}
+		$data = ['error' => $error];
+		$this->show('back/forgot_password', $data);
 	}
 }

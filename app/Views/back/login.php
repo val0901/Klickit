@@ -40,3 +40,15 @@
 		</fieldset>
 	</form>
 <?php $this->stop('main_content') ?>
+
+<?php $this->start('js')?>
+	<!-- redirection si on clique sur mot de passe oublié -->
+	<script>
+		$(document).ready(function(){
+			$('#forget').click(function(e){
+				e.preventDefault();
+				window.location.href = "<?=$this->url('back_forgot_pwd')?>";
+			});
+		});
+	</script>
+<?php $this->stop('js')?>
