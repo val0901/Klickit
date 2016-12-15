@@ -135,7 +135,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul style="margin:0;padding:0;">
 		<!--menu icon home-->
-        <a href="#"><li class="navlicon_width HM_bgcolor"><i class="fa fa-home" aria-hidden="true"></i><span class="sr-only">(current)</span></li></a>
+        <li class="navlicon_width HM_bgcolor"><a href="#"><i class="fa fa-home" aria-hidden="true"></i><span class="sr-only">(current)</span></a></li>
 		<!--End menu icon home-->
         
         <!--menu tous les articles-->
@@ -214,15 +214,15 @@
 		<!--End menu tous les articles-->
         
         <!--menu a propos-->
-		<a href="#"><li class="navli_width AP_bgcolor">A propos</li></a>
+		<li class="navli_width AP_bgcolor"><a href="#">A propos</a></li>
 		<!--End menu a propos-->
 		
 		<!--menu eventmentiel-->
-        <a href="#"><li class="navli_width EVT_bgcolor">Evènementiel</li></a>
+        <li class="navli_width EVT_bgcolor"><a href="#">Evènementiel</a></li>
 		<!--End menu eventmentiel-->
         
 		<!--menu contact--> 
-        <a href="#"><li class="navli_width CT_bgcolor">Contact</li></a>
+        <li class="navli_width CT_bgcolor"><a href="#">Contact</a></li>
 		<!--End menu contact-->
 		
 		<!--menu icon search-->
