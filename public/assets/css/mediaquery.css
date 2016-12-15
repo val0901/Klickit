@@ -219,6 +219,14 @@
 	font-size: 2.5vw;
 }
 	
+	.cgv_background {
+	padding: 16px;
+}
+
+.cgv_text {
+	font-size: 15px;
+}
+	
 }
 
 @media (max-width: 767px) {
