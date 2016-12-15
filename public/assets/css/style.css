@@ -405,7 +405,7 @@ footer {
     width: 100%;
 }
 
-.classic_text_show {
+.classic_text_show, .customs_text_show, .pieces_text_show, .divers_text_show {
     top: 10vw;
     color: #fff;
     font-size: 55px;
@@ -476,6 +476,27 @@ footer {
 
 #categoryclassic_hover:hover {
 	background-color: #3fa9f5;
+	opacity: 0.4;
+	transition: background-color ease-in-out .2s;
+	cursor: pointer;
+}
+
+#categorycustoms_hover:hover {
+	background-color: #ff931e;
+	opacity: 0.4;
+	transition: background-color ease-in-out .2s;
+	cursor: pointer;
+}
+
+#categorypieces_hover:hover {
+	background-color: #7ac943;
+	opacity: 0.4;
+	transition: background-color ease-in-out .2s;
+	cursor: pointer;
+}
+
+#categorydivers_hover:hover {
+	background-color: #ea2229;
 	opacity: 0.4;
 	transition: background-color ease-in-out .2s;
 	cursor: pointer;

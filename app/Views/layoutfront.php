@@ -541,14 +541,20 @@
 	/*End soumenu 4 categories*/
 	
 	/*4 categories hover background-color change*/
-	/*$(document).ready(function(){
-		$("#categoryclassic_hover").hover(function(){
-			$(".classic_text").hide();
-		})
-	})*/
-	
 	$(document).ready(function(){
 		$("#categoryclassic_hover").hover(function () { $(".classic_text").hide(); $(".classic_text_show").show() }, function () { $(".classic_text").show(); $(".classic_text_show").hide() }); 
+	})
+	
+	$(document).ready(function(){
+		$("#categorycustoms_hover").hover(function () { $(".customs_text").hide(); $(".customs_text_show").show() }, function () { $(".customs_text").show(); $(".customs_text_show").hide() }); 
+	})
+	
+	$(document).ready(function(){
+		$("#categorypieces_hover").hover(function () { $(".pieces_text").hide(); $(".pieces_text_show").show() }, function () { $(".pieces_text").show(); $(".pieces_text_show").hide() }); 
+	})
+	
+	$(document).ready(function(){
+		$("#categorydivers_hover").hover(function () { $(".divers_text").hide(); $(".divers_text_show").show() }, function () { $(".divers_text").show(); $(".divers_text_show").hide() }); 
 	})
 	/*End 4 categories hover background-color change*/
 	

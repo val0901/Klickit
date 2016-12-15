@@ -57,7 +57,7 @@
 		padding: 8px 150px;
 	}
 	
-	.classic_text_show {
+	.classic_text_show, .customs_text_show, .pieces_text_show, .divers_text_show {
     top: 20vw;
 }
 	
