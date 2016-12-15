@@ -21,6 +21,7 @@
 							<td><?=$option['title'];?></td>
 							<td><?=$option['price'];?></td>
 							<td><?=nl2br($option['content']);?></td>
+							<td><a href="<?=$this->url('updateShipping')?>">Mettre à jour l'option d'envoi</a></td>
 							<td><button class="btn btn-danger delete-option" data-id="<?=$option['id']?>">Effacer l'option d'envoi</button></td>
 						</tr>	
 					<?php endforeach;?>
