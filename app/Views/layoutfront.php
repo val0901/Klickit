@@ -4,7 +4,10 @@
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="vente de playmobils customisés neuf occasion playmobil napoléon western pirate fée princesses police robots espace animaux sport tampographie customs accessoires  stickers résine  ">
+    <meta name="description" content="vente de playmobils customisés neuf occasion playmobil napoléon western pirate fée princesses police robots espace animaux sport tampographie customs accessoires  stickers résine">
+    <meta name="author" content="Laurent Lafont" />
+    <meta name="copyright" content="© Klickit Inc." />
+
 
         <meta name="robots" content="index, follow, archive">
 
