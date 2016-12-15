@@ -180,7 +180,7 @@ class UserController extends Controller
 					$errors[] = 'Vous devez choisir votre civilité (M ou Mme)';
 				}
 				else {
-					$dataUpdate['social_title'] = $post['social_title'];
+					$user['social_title'] = $post['social_title'];
 				}
 			}
 
@@ -189,7 +189,7 @@ class UserController extends Controller
 					$errors[] = 'Vous devez choisir un niveau d\'utilisateur (Admin ou Utilisateur)';
 				}
 				else {
-					$dataUpdate['role'] = $post['role'];
+					$user['role'] = $post['role'];
 				}
 			}
 
@@ -198,7 +198,7 @@ class UserController extends Controller
 					$errors[] = 'Le prénom doit comporter entre 3 et 20 caractères';
 				}
 				else{
-					$dataUpdate['firstname'] = $post['firstname'];
+					$user['firstname'] = $post['firstname'];
 				}
 
 			}
@@ -208,7 +208,7 @@ class UserController extends Controller
 					$errors[] = 'Le nom doit comporter entre 3 et 20 caractères';
 				}
 				else{
-					$dataUpdate['lastname'] = $post['lastname'];
+					$user['lastname'] = $post['lastname'];
 				}
 			}	
 
@@ -218,7 +218,7 @@ class UserController extends Controller
 					$errors[] = 'Le pseudonyme doit comporter entre 3 et 20 caractères';
 				}
 				else{
-					$dataUpdate['username'] = $post['username'];
+					$user['username'] = $post['username'];
 				}
 			}
 			
@@ -227,7 +227,7 @@ class UserController extends Controller
 					$errors[] = 'Votre adresse doit comporter au moins 5 caractères';
 				}
 				else{
-					$dataUpdate['adress'] = $post['address'];
+					$user['adress'] = $post['address'];
 				}
 			}	
 
@@ -237,7 +237,7 @@ class UserController extends Controller
 					$errors[] = 'Votre adresse doit comporter au moins 5 caractères';
 				}
 				else{
-					$dataUpdate['zipcode'] = $post['zipcode'];
+					$user['zipcode'] = $post['zipcode'];
 				}
 			}
 				
@@ -246,7 +246,7 @@ class UserController extends Controller
 					$errors[] = 'Votre adresse doit comporter au moins 3 caractères';
 				}
 				else{
-					$dataUpdate['city'] = $post['city'];
+					$user['city'] = $post['city'];
 				}
 			}
 
@@ -255,7 +255,7 @@ class UserController extends Controller
 					$errors[] = 'L\'adresse email n\'est pas valide';
 				}
 				else{
-					$dataUpdate['email'] = $post['email'];
+					$user['email'] = $post['email'];
 				}
 			}
 
@@ -264,13 +264,13 @@ class UserController extends Controller
 					$errors[] = 'Votre mot de passe doit comporter entre 8 et 20 caractères';
 				}
 				else{
-					$dataUpdate['password'] = $hashPassword->hashPassword($post['password']);
+					$user['password'] = $hashPassword->hashPassword($post['password']);
 				}
 			}
 				
 			if(count($errors) === 0){
 
-				if($insert->update($dataUpdate, $id)){
+				if($insert->update($user, $id)){
 					$success = true;
 				}
 				else{

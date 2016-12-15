@@ -139,7 +139,6 @@ class SlideController extends Controller
 			$afficheSlide = $affiche->find($id);
 		}
 
-		$dataUpdate = [];
 		$post = [];
 		$errors = [];
 		$insert = new SlideModel();
@@ -156,7 +155,7 @@ class SlideController extends Controller
 					$errors[] = 'Le titre du slide doit comporter plus de 3 caractères';
 				}
 				else {
-					$dataUpdate['title'] = $post['title'];
+					$afficheSlide['title'] = $post['title'];
 				}
 			}
 
@@ -179,7 +178,7 @@ class SlideController extends Controller
 					$errors[] = 'L\'url du slide n\'est pas valide';
 				}
 				else {
-					$dataUpdate['link'] = $post['link'];
+					$afficheSlide['link'] = $post['link'];
 				}
 			}
 
@@ -200,11 +199,11 @@ class SlideController extends Controller
 					}
 					$imgName = uniqid('slide_').$extension;
 					if($img->save($fullFolderUpload.$imgName)){
-						$dataUpdate['picture'] = $imgName;
+						$afficheSlide['picture'] = $imgName;
 					}
 				}
 
-				if($insert->update($dataUpdate, $id)){
+				if($insert->update($afficheSlide, $id)){
 					$success = true;
 				}
 				else {

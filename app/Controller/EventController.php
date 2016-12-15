@@ -138,7 +138,6 @@ class EventController extends Controller
 			$afficheEvent = $affiche->find($id);
 		}
 
-		$dataUpdate = [];
 		$post = [];
 		$errors = [];
 		$insert = new EventModel();
@@ -155,7 +154,7 @@ class EventController extends Controller
 					$errors[] = 'Le titre de l\'évènement doit comporter plus de 3 caractères';
 				}
 				else {
-					$dataUpdate['title'] = $post['title'];
+					$afficheEvent['title'] = $post['title'];
 				}
 			}
 
@@ -164,7 +163,7 @@ class EventController extends Controller
 					$errors[] = 'La description de l\'évènement doit contenir plus de 5 caractères';
 				}
 				else {
-					$dataUpdate['content'] = $post['content'];
+					$afficheEvent['content'] = $post['content'];
 				}
 			}
 
@@ -200,11 +199,11 @@ class EventController extends Controller
 					}
 					$imgName = uniqid('events_').$extension;
 					if($img->save($fullFolderUpload.$imgName)){
-						$dataUpdate['picture'] = $imgName;
+						$afficheEvent['picture'] = $imgName;
 					}
 				}
 
-				if($insert->update($dataUpdate, $id)){
+				if($insert->update($afficheEvent, $id)){
 					$success = true;
 				}
 				else {

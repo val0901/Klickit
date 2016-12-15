@@ -210,7 +210,6 @@ class ItemController extends Controller
 			$afficheItem = $affiche->find($id);
 		}
 
-		$dataUpdate = [];
 		$post = [];
 		$errors = [];
 		$statut_product = ['promotion', 'nouveauté', 'par defaut'];
@@ -229,7 +228,7 @@ class ItemController extends Controller
 					$errors[] = 'Veuillez choisir un statut valide';
 				}
 				else {
-					$dataUpdate['statut'] = $post['statut'];
+					$afficheItem['statut'] = $post['statut'];
 				}
 			}
 
@@ -238,7 +237,7 @@ class ItemController extends Controller
 					$errors[] = 'Veuillez choisir une catégorie valide';
 				}
 				else{
-					$dataUpdate['category'] = $post['category'];
+					$afficheItem['category'] = $post['category'];
 				}
 			}
 
@@ -247,7 +246,7 @@ class ItemController extends Controller
 					$errors[] = 'Le nom du produit doit comporter entre 3 et 30 caractères';
 				}
 				else {
-					$dataUpdate['name'] = $post['name'];
+					$afficheItem['name'] = $post['name'];
 				}
 			}
 
@@ -256,7 +255,7 @@ class ItemController extends Controller
 					$errors[] = 'La description doit comporter au moins 5 caractères';
 				}
 				else {
-					$dataUpdate['description'] = $post['description'];
+					$afficheItem['description'] = $post['description'];
 				}
 			}
 
@@ -265,7 +264,7 @@ class ItemController extends Controller
 					$errors[] = 'La quantité doit comporter au moins 1 unité';
 				}
 				else {
-					$dataUpdate['quantity'] = $post['quantity'];
+					$afficheItem['quantity'] = $post['quantity'];
 				}
 			}
 
@@ -274,7 +273,7 @@ class ItemController extends Controller
 					$errors[] = 'Le nouveau prix doit être supérieur à 0';
 				}
 				else {
-					$dataUpdate['newPrice'] = $post['newPrice'];
+					$afficheItem['newPrice'] = $post['newPrice'];
 				}
 			}
 
@@ -325,7 +324,7 @@ class ItemController extends Controller
 				}
 				$imgName = uniqid('art_').$extension;
 				if($img1->save($fullFolderUpload.$imgName)){
-					$dataUpdate['picture1'] = $imgName;
+					$afficheItem['picture1'] = $imgName;
 				}
 			}
 
@@ -345,11 +344,11 @@ class ItemController extends Controller
 				}
 				$imgName2 = uniqid('art_').$extension2;
 				if($img2->save($fullFolderUpload.$imgName2)){
-					$dataUpdate['picture2'] = $imgName2;
+					$afficheItem['picture2'] = $imgName2;
 				}
 			}
 			
-				if($insert->update($dataUpdate, $id)){
+				if($insert->update($afficheItem, $id)){
 					$success = true;
 				}
 				else {
