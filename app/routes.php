@@ -52,7 +52,7 @@
 		//Pages liées à ShippingController
 		['GET|POST', '/back/listShipping', 'Shipping#listShipping', 'listShipping'],
 		['GET|POST', '/back/addShipping', 'Shipping#addShipping', 'addShipping'],
-		['GET|POST', '/back/updateShipping/[i:id]', 'Shipping#addShipping', 'addShipping'],
+		['GET|POST', '/back/updateShipping/[i:id]', 'Shipping#updateShipping', 'updateShipping'],
 
 		//Pages liées à GuestbookController
 		['GET|POST', '/back/listGuestbook', 'Guestbook#listGuestbook', 'listGuestbook'],
