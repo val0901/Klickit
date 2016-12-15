@@ -17,29 +17,38 @@ class ItemController extends Controller
 	public function listItem()
 	{
 
+		$nbpage= new ItemModel();
+		$nb=$nbpage->countResults();
+
+		$page = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
+		$max = 15;
+
 		/**** REQUÊTE CONCERNANT LES PLAYMOBILS DE CATEGORIE "CLASSIQUE" ****/
 		$listItemClassic = new ItemModel();
-		$itemsClassic = $listItemClassic->listItemClassic();
+		$itemsClassic = $listItemClassic->listItemClassic($page, $max);
 
 
 		/**** REQUÊTE CONCERNANT LES PLAYMOBILS DE CATEGORIE "CUSTOM" ****/
 		$listItemCustom = new ItemModel();
-		$itemsCustom = $listItemCustom->listItemCustom();
+		$itemsCustom = $listItemCustom->listItemCustom($page, $max);
 
 
 		/**** REQUÊTE CONCERNANT LES PLAYMOBILS DE CATEGORIE "PIECES DETACHEES" ****/
 		$listItemPiece = new ItemModel();
-		$itemsPiece = $listItemPiece->listItemPiece();
+		$itemsPiece = $listItemPiece->listItemPiece($page, $max);
 
 		/**** REQUÊTE CONCERNANT LES PLAYMOBILS DE CATEGORIE "DIVERS" ****/
 		$listItemDivers = new ItemModel();
-		$itemsDivers = $listItemDivers->listItemDivers();
+		$itemsDivers = $listItemDivers->listItemDivers($page, $max);
 
 		$data = [
 			'Classic'	=> $itemsClassic,
 			'Custom'    => $itemsCustom,
 			'Piece'     => $itemsPiece,
 			'Divers'	=> $itemsDivers,
+			'max' => $max,
+			'page' => $page,
+			'nb' => $nb,
 		];
 
 		if(!empty($_SESSION)){
