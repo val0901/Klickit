@@ -129,9 +129,10 @@ class MessageController extends Controller
 				$sendMail->Port = 587;                                					// TCP port to connect to
 				$sendMail->CharSet = 'UTF-8';
 
-				$sendMail->setFrom('klickit@playmobil.dank', 'Klickit');		  				//Expéditeur
+				$sendMail->setFrom('klickit@playmobil.dank', 'Klickit');		  		//Expéditeur
+				
 				$sendMail->addAddress($viewMessage['email'], $viewMessage['firstname'].' '.$viewMessage['lastname']); 	   	//Destinataire
-				$sendMail->addCC('a7x.tholomew.plague@hotmail.fr'); //Copie envoyer à l'adresse souhaitée du mail
+				$sendMail->addCC('a7x.tholomew.plague@hotmail.fr'); 					//Copie envoyer à l'adresse souhaitée du mail
 
 				$sendMail->Subject = $post['subject'];
 				$sendMail->Body    = $contentEmail; //On envoi le message éventuellement en HTML
