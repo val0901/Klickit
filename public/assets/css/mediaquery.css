@@ -120,6 +120,14 @@
 	font-size: 2.5vw;
 }
 	
+	.addusercol1img_hide {
+	display: none;
+}
+	
+	.adduserscol1_text {
+    font-size: 5vw;
+}
+	
 	
 }
 
@@ -195,6 +203,7 @@
 	.viewcategory_button_size {
     font-size: 2.5vw;
 }
+	
 	
 }
 
@@ -284,8 +293,14 @@
 	font-size: 15px;
 	}
 	
-	
+	.adduser_label {
+	font-size: 2.5vw;
 }
+	
+	.addusercol2_padding {
+    padding: 20px 50px;
+}
+	
 
 @media (max-width: 767px) {
     .page-header, .control-box {
