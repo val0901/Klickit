@@ -17,17 +17,16 @@
 			</thead>
 
 			<tbody>
-				<?php foreach ($orders as $order): ?>
+				<?php $listO = '';foreach ($orders as $order): ?>
 					<tr>
 						<td><?=$order['id']; ?></td>
 						<td><?=$order['lastname'].' '.$order['firstname']; ?></td>
 						<td>
-							<?php foreach ($items as $item ):  ?>
-								<?php $listO=explode(',', $item['contenu']); ?>
-							<?php endforeach; ?>	
-							<?php foreach ($listO as $value) {
-								echo $value;
-							} ?>								
+							<?php foreach ($items as $item ): 
+								  $listO .= $item['contenu']; 
+							 	  endforeach; 
+								  echo $listO ?>
+
             			</td>
 						<td><?= date('d/m/Y', strtotime($order['date_creation']));?></td>
 						<td><?=$order['statut']; ?></td>
