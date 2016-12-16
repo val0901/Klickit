@@ -14,9 +14,10 @@ class FrontController extends Controller
 	public function index()
 	{	
 		$getComment = new GuestbookModel();
-		$comments = $getComment->findAllMessage();
+		$comments = $getComment->findAllMessageFront();
 		$data = [
 			'comments' => $comments,
+			
 		]; 
 		$this->show('front/index', $data);
 	}

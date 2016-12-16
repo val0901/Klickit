@@ -6,7 +6,7 @@ use \W\Model\UserModel;
 class GuestbookModel extends \W\Model\Model 
 {
 
-	/*retourne tous les messages*/
+	/*retourne tous les messages avec jointure et pagination*/
 	public function findAllMessage($page, $max)
 	{
 		$debut = ($page - 1) * $max;
@@ -61,5 +61,17 @@ class GuestbookModel extends \W\Model\Model
 		$result = $sth->fetch();
 
 		return $result['total'];
+		}
+
+		/*retourne tous les messages*/
+		public function findAllMessageFront()
+		{
+			$sql = 'SELECT ' .$this->table.'.*, u.firstname, u.lastname, u.username FROM ' . $this->table . ' LEFT JOIN user AS u ON '.$this->table.'.id_member = u.id ORDER BY ' .$this->table. '.id';
+
+			$sth = $this->dbh->prepare($sql);		
+
+			$sth->execute();
+
+			return $sth->fetchAll();
 		}
 }
