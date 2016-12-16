@@ -165,11 +165,11 @@ class BackController extends Controller
 					$resetInfos = [
 						'email'			=> $post['email'],
 						'token'			=> $token,
-						'date_expire'	=> date('Y-m-d'),
+						'date_expire'	=> date('Y-m-d H:i:s'),
 					];
 
 					$insertInfos->insert($resetInfos);
-					
+
 					$success = true;
 				}
 			}
