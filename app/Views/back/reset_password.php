@@ -2,6 +2,12 @@
 
 <?php $this->start('main_content') ?>
 
+	<?php if($success):?>
+		<p class="alert alert-success">Votre mot de passe a été mis à jour</p>
+	<?php elseif(!empty($error)):?>
+		<p class="alert alert-danger"><?=$error?></p>
+	<?php endif;?>			
+
 	<form method="POST" class="form-horizontal">
 
 		<div class="form-group">
@@ -14,10 +20,21 @@
 		<div class="form-group">
 		  <label class="col-md-4 control-label" for="submit"></label>
 			  <div class="col-md-8">
-			    <button type="submit" id="submit" name="submit" class="btn btn-info">Récupérer mon mot de passe</button>
+			    <button type="submit" id="submit" name="submit" class="btn btn-info">Mettre à jour mon mot de passe</button>
 			  </div>
 		</div>
 
 	</form>
 
 <?php $this->stop('main_content') ?>
+
+<?php $this->start('js')?>
+<!-- 	<script>
+		$(document).ready(function(){
+			$('button[type="submit"]').click(function(e){
+				e.preventDefault();
+
+			});
+		});
+	</script> -->
+<?php $this->stop('js')?>

@@ -130,6 +130,7 @@ class BackController extends Controller
 				$info = $user->getNameByMail($post['email']);
 				foreach($info as $name){
 					$name_user = $name['firstname'].' '.$name['lastname'];
+					$id_user = $name['id'];
 				}
 
 				//Génération du token
@@ -138,7 +139,7 @@ class BackController extends Controller
 				//Préparation de l'envoi du mail
 				$sendMail = new PHPMailer;
 
-				$contentEmail = 'Bonjour '.$name_user.'.<br> Lien pour réinitialiser votre mot de passe : '.'<a href="localhost'.$this->generateUrl('back_reset_pwd', ['email'=> $post['email'], 'token' => $token]).'">Cliquez ici</a>';
+				$contentEmail = 'Bonjour '.$name_user.'.<br> Lien pour réinitialiser votre mot de passe : '.'<a href="localhost'.$this->generateUrl('back_reset_pwd', ['id'=> $id_user, 'token' => $token]).'">Cliquez ici</a>';
 
 				$sendMail->isSMTP();                                      
 				$sendMail->Host = 'smtp.gmail.com';  									// Hôte du SMTP

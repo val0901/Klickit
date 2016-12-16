@@ -47,7 +47,7 @@ class UserModel extends \W\Model\UsersModel
 	{	
 		//$rename = new BackModel();
 
-		$sql = 'SELECT user.firstname, user.lastname FROM '.$this->table.' WHERE email = :email';
+		$sql = 'SELECT user.firstname, user.lastname, user.id FROM '.$this->table.' WHERE email = :email';
 		$sth = $this->dbh->prepare($sql);
 		$sth->bindValue(':email', $email);
 

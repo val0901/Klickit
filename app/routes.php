@@ -11,7 +11,7 @@
 		['GET|POST', '/back/forgot_password', 'Back#forgot_pwd', 'back_forgot_pwd'],
 
 		//Pages liées à ResetController
-		['GET|POST', '/back/reset_password?email=[a:email]&token=[a:token]', 'Reset#reset_pwd', 'back_reset_pwd'],
+		['GET|POST', '/back/reset_password/[i:id]/[:token]/', 'Reset#reset_pwd', 'back_reset_pwd'],
 
 		// Les routes ajax
 		['GET|POST', '/ajax/logout', 'Ajax#logout', 'ajax_logout'],
