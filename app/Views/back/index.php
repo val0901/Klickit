@@ -21,9 +21,17 @@
 							<tr>
 								<td><?=$order['id']; ?></td>
 								<td><?=$order['lastname'].' '.$order['firstname']; ?></td>
-								<td> <?php foreach ($items as $item):?>	
-									<?= $item['name'].'<br>'.$item['quantity'].'<br>'.$item['price'].'<br>'?>
-								<?php endforeach; ?>													
+								<td> <?php foreach ($items as $item) : ?>
+										<?php $listO=explode(',', $item['contenu']); ?>
+									<?php endforeach; ?>									
+									<?php 
+									// On compte quoi?
+									$count = count($item['contenu']);
+
+									for($i = 0 ; $i <= $count ; $i++){
+										echo $i;
+									} var_dump($listO);
+									?>
                     			</td>
 								<td><?= date('d/m/Y', strtotime($order['date_creation']));?></td>
 								<td><?=$order['statut']; ?></td>

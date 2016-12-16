@@ -15,6 +15,7 @@ class OrdersController extends Controller
 	 */
 	public function listOrders()
 	{
+		
 		// On instancie le nombre de nb de lignes ds la table
 		$nbpage= new OrdersModel();
 			$nb=$nbpage->countResults();
@@ -30,7 +31,8 @@ class OrdersController extends Controller
 					'data'	=> $list_orders,
 					'max' => $max,
 					'page' => $page,
-					'nb' => $nb,	
+					'nb' => $nb,
+						
 				];
 				
 				if(!empty($_SESSION)){
