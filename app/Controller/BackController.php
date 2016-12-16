@@ -36,15 +36,11 @@ class BackController extends Controller
 		$items = new OrdersModel();
         $list_items = $items->findItems();
 
-        $contenu = new OrdersModel();
-        $list_contenu = $contenu->findItems();
-
 		$data = [
 			'orders'   => $list_orders,
 			'messages' => $list_messages,
 			'items' => $list_items,
 			'comments' => $list_guestbook,
-			'contenu'=> $contenu,
 		];
 		
 		if(!empty($_SESSION)){
