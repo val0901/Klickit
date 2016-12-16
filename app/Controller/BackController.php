@@ -6,6 +6,7 @@ use \W\Controller\Controller;
 use \W\Model\UsersModel;
 use \Model\UserModel;
 use \Model\BackModel;
+use \Model\ResetModel;
 use \Model\OrdersModel;
 use \Model\MessageModel;
 use \Model\GuestbookModel;
@@ -137,13 +138,13 @@ class BackController extends Controller
 				//Préparation de l'envoi du mail
 				$sendMail = new PHPMailer;
 
-				$contentEmail = 'Lien pour réinitialiser votre mot de passe : '.$this->generateUrl('back_reset_pwd', ['email'=> $post['email'], 'token' => $token]);
+				$contentEmail = 'Lien pour réinitialiser votre mot de passe : '.'<a href="localhost'.$this->generateUrl('back_reset_pwd', ['email'=> $post['email'], 'token' => $token]).'">Cliquez ici</a>';
 
 				$sendMail->isSMTP();                                      
-				$sendMail->Host = 'smtp.mailgun.org';  									// Hôte du SMTP
+				$sendMail->Host = 'smtp.gmail.com';  									// Hôte du SMTP
 				$sendMail->SMTPAuth = true;                               				// SMTP Authentification
-				$sendMail->Username = 'postmaster@dev.axw.ovh';          				// SMTP username
-				$sendMail->Password = 'WF3Phil0#3';                    	 				// SMTP password
+				$sendMail->Username = 'duhfanofdoge@gmail.com';          				// SMTP username
+				$sendMail->Password = 'TheRevA7X';                    	 				// SMTP password
 				$sendMail->SMTPSecure = 'tls';                         					// Enable TLS encryption, `ssl` also accepted
 				$sendMail->Port = 587;                                					// TCP port to connect to
 				$sendMail->CharSet = 'UTF-8';
@@ -158,6 +159,17 @@ class BackController extends Controller
 				if(!$sendMail->send()){
 					$error = 'Erreur lors de l\'envoi du mail';
 				}else{
+					$insertInfos = new ResetModel();
+					
+					//Contiendra le token et le mail
+					$resetInfos = [
+						'email'			=> $post['email'],
+						'token'			=> $token,
+						'date_expire'	=> date('Y-m-d'),
+					];
+
+					$insertInfos->insert($resetInfos);
+					
 					$success = true;
 				}
 			}
