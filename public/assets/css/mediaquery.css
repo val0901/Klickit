@@ -204,6 +204,19 @@
     font-size: 2.5vw;
 }
 	
+	.ordertable_title {
+	margin-top: 5vw;
+	font-size: 2.5vw;
+}
+
+	.ordertable_text {
+	font-size: 1.5vw;
+}
+	
+	th {
+	font-size: 2.5vw;
+}
+	
 	
 }
 
@@ -299,6 +312,8 @@
 	
 	.addusercol2_padding {
     padding: 20px 50px;
+}
+	
 }
 	
 

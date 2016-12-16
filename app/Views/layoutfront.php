@@ -581,6 +581,8 @@
     })
   });
 	/*End index.php slide article*/
+		
+	
     </script>
 </body>
 </html>
