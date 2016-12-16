@@ -28,11 +28,17 @@
 	<div class="row">
 		<div class="col-md-3">
 			<h3 class="viewcategoryrow2col1_title">sous-catégories</h3>
-			<div class="viewcategoryrow2col1_tirer"><a href="#">Customs tampographiés</a></div>
-			<div class="viewcategoryrow2col1_tirer"><a href="#">Customs peints</a></div>		
-			<div class="viewcategoryrow2col1_tirer"><a href="#">Bustes tampographiés</a></div>
-			<div class="viewcategoryrow2col1_tirer"><a href="#">Pièces en résine</a></div>
-			<div class="viewcategoryrow2col1_tirer"><a href="#">Stickers</a></div>
+			<div class="viewcategoryrow2col1_tirer"><a href="#">Chevaliers</a></div>
+			<div class="viewcategoryrow2col1_tirer"><a href="#">Pirates</a></div>		
+			<div class="viewcategoryrow2col1_tirer"><a href="#">Antique</a></div>
+			<div class="viewcategoryrow2col1_tirer"><a href="#">Western</a></div>
+			<div class="viewcategoryrow2col1_tirer"><a href="#">Fantazy</a></div>
+			<div class="viewcategoryrow2col1_tirer"><a href="#">XVIIIe</a></div>
+			<div class="viewcategoryrow2col1_tirer"><a href="#">Fée & Pincesses</a></div>
+			<div class="viewcategoryrow2col1_tirer"><a href="#">Police</a></div>
+			<div class="viewcategoryrow2col1_tirer"><a href="#">Animaux</a></div>
+			<div class="viewcategoryrow2col1_tirer"><a href="#">Sport</a></div>
+			<div class="viewcategoryrow2col1_tirer"><a href="#">Divers</a></div>
 			<li>
 				<h3 class="viewcategoryrow2col1_title">fitres</h3>
 				<div class="form-group viewcategory_checkboxmargin">
@@ -66,7 +72,7 @@
 		
 		<!--viewcategory row2 col2-->
 		<div class="col-md-9">
-			<h4 class="viewcategory_pages">Home <span>></span> Customs <span>></span> Customs tampographiés</h4>
+			<h4 class="viewcategory_pages">Home <span>></span> Classics <span>></span> Chevaliers</h4>
 			<div class="row">
 				<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
 					<a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000004.jpg');?>" alt="" class="img-thumbnail"></a>

@@ -825,6 +825,7 @@ h3 {
 	content: " 》 ";
 }
 
+/*classics.php*/
 .classics_background {
 	background-color: rgba(63, 169, 245, 0.3);
 }
@@ -950,4 +951,73 @@ h4 {
 .viewcategorypage_center {
 	text-align: center;
 	padding: 5px;
+}
+
+/*customs.php*/
+.classics_background {
+	background-color: rgba(255, 147, 30, 0.3);
+}
+
+.viewcategorycol2customs_title {
+	color: #ff931e;
+}
+
+.viewcategoryrow2col1customs_tirer {
+	text-align: center;
+	font-size: 25px;
+	color: #fff;
+	padding: 10px 50px;
+	background-color: #ff931e;
+	margin: 1px 0px;
+}
+
+.viewcategoryrow2col1customs_tirer:hover {
+	background-color: #f7860c;
+	cursor: pointer;
+}
+
+/*pieces.php*/
+.pieces_background {
+	background-color: rgba(122, 201, 67, 0.3);
+}
+
+.viewcategorycol2pieces_title {
+	color: #7ac943;
+}
+
+.viewcategoryrow2col1pieces_tirer {
+	text-align: center;
+	font-size: 25px;
+	color: #fff;
+	padding: 10px 50px;
+	background-color: #7ac943;
+	margin: 1px 0px;
+}
+
+.viewcategoryrow2col1pieces_tirer:hover {
+	background-color: #65bd28;
+	cursor: pointer;
+}
+
+/*divers.php*/
+.divers_background {
+	background-color: rgba(234, 34, 41, 0.3);
+}
+
+.viewcategorycol2divers_title {
+	color: #ea2229;
+}
+
+.viewcategoryrow2col1divers_tirer {
+	text-align: center;
+	font-size: 25px;
+	color: #fff;
+	padding: 10px 50px;
+	background-color: #ea2229;
+	margin: 1px 0px;
+}
+
+.viewcategoryrow2col1divers_tirer:hover {
+	background-color: #de0f16;
+	cursor: pointer;
 }
