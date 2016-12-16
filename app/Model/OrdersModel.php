@@ -22,7 +22,8 @@ class OrdersModel extends \W\Model\Model
 	public function findItems()
 	{
 
-		$sql = 'SELECT ' .$this->table.'.*, i.name, i.quantity, i.price, i.newPrice FROM ' . $this->table . ' LEFT JOIN item AS i ON '.$this->table.'.contenu = i.id';
+		$sql = 'SELECT ' .$this->table.'.*, i.name, i.quantity, i.price, i.newPrice FROM ' . $this->table . ' JOIN item AS i ON '.$this->table.'.contenu = i.id 
+					  JOIN user AS u ON '.$this->table.'.idMember = u.id';
 
 		$sth = $this->dbh->prepare($sql);
 		$sth->execute();

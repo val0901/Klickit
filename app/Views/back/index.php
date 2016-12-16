@@ -17,29 +17,25 @@
 			</thead>
 
 			<tbody>
-						<?php foreach ($orders as $order): ?>
-							<tr>
-								<td><?=$order['id']; ?></td>
-								<td><?=$order['lastname'].' '.$order['firstname']; ?></td>
-								<td> <?php foreach ($items as $item) : ?>
-										<?php $listO=explode(',', $item['contenu']); ?>
-									<?php endforeach; ?>									
-									<?php 
-									// On compte quoi?
-									$count = count($item['contenu']);
-
-									for($i = 0 ; $i <= $count ; $i++){
-										echo $i;
-									} var_dump($listO);
-									?>
-                    			</td>
-								<td><?= date('d/m/Y', strtotime($order['date_creation']));?></td>
-								<td><?=$order['statut']; ?></td>
-								<td>
-									<div> <a href="<?=$this->url('viewOrders')?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></i></a></div>
-								</td>
-							</tr>
-						<?php endforeach; ?>			
+				<?php foreach ($orders as $order): ?>
+					<tr>
+						<td><?=$order['id']; ?></td>
+						<td><?=$order['lastname'].' '.$order['firstname']; ?></td>
+						<td>
+							<?php foreach ($items as $item ):  ?>
+								<?php $listO=explode(',', $item['contenu']); ?>
+							<?php endforeach; ?>	
+							<?php foreach ($listO as $value) {
+								echo $value;
+							} ?>								
+            			</td>
+						<td><?= date('d/m/Y', strtotime($order['date_creation']));?></td>
+						<td><?=$order['statut']; ?></td>
+						<td>
+							<div> <a href="<?=$this->url('viewOrders')?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></i></a></div>
+						</td>
+					</tr>
+				<?php endforeach; ?>			
 						</tbody>			
 					</table>
 					<div id="voirplus">
