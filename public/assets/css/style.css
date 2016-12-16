@@ -935,15 +935,16 @@ h4 {
 }
 
 .viewcategorypage_button {
-	background-color: #3fa9f5;
+	background-color: #7ac943;
     border: 0 none;
     font-size: 20px;
     margin-top: 1vw;
     padding: 5px 50px;
+	text-transform: uppercase;
 }
 
 .viewcategorypage_button:hover {
-	background-color: #289ff4;
+	background-color: #5abd15;
 }
 
 .viewcategorypage_center {

@@ -181,7 +181,7 @@
 						</nav>
 					</div>
 					<div class="col-md-3 viewcategorypage_center">
-						<button type="button" class="btn btn-primary viewcategorypage_button">Primary</button>
+						<button type="button" class="btn btn-primary viewcategorypage_button">afficher tout</button>
 					</div>
 				</div>
 				<!--End viewcategory row3 col1,2,3-->
@@ -189,6 +189,168 @@
 		</div>
 		<!--End viewcategory row2 col2-->
 	</div>
+	
+	<!--nouveute slideshow-->
+	<!--Slide articles-->
+<div class="clear"></div>
+<div class="slideartL_title">nouveau!</div>
+<!--<div class="slideartR_title">promo!</div>-->
+
+<div class="">
+<div class="row-fluid">
+<div class="span12">
+
+        
+    <div class="carousel slide" id="myCarousel">
+        <div class="carousel-inner">
+            <div class="item active">
+                    <ul class="thumbnails">
+                        <li class="span3">
+                            <div class="thumbnail">
+                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000004.jpg');?>" alt=""></a>
+                            </div>
+                            <div class="caption">
+                                <h4>5 €</h4>
+                				<p>Princess Playmo</p>
+								<div class="slidecontent_nouveau">nouveau !</div>
+                                <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
+                            </div>
+                        </li>
+                        <li class="span3">
+                            <div class="thumbnail">
+                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000005.jpg');?>" alt=""></a>
+                            </div>
+                            <div class="caption">
+                                <h4>4 €</h4>
+                				<p>Nullam Condimentum Nibh Etiam Sem</p>
+								<div class="slidecontent_nouveau">nouveau !</div>
+                            </div>
+                        </li>
+                        <li class="span3">
+                            <div class="thumbnail">
+                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000006.jpg');?>" alt=""></a>
+                            </div>
+                            <div class="caption">
+                                <h4>8 €</h4>
+                				<p>Princess Playmo</p>
+								<div class="slidecontent_nouveau">nouveau !</div>
+                            </div>
+                        </li>
+                        <li class="span3">
+                            <div class="thumbnail">
+                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000007.jpg');?>" alt=""></a>
+                            </div>
+                            <div class="caption">
+                                <h4>3 €</h4>
+                				<p>Princess Playmo</p>
+								<div class="slidecontent_nouveau">nouveau !</div>
+                            </div>
+                        </li>
+                    </ul>
+              </div><!-- /Slide1 --> 
+            <div class="item">
+                    <ul class="thumbnails">
+                        <li class="span3">
+                            <div class="thumbnail">
+                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000008.jpg');?>" alt=""></a>
+                            </div>
+                            <div class="caption">
+                                <h4>5 €</h4>
+                				<p>Princess Playmo</p>
+								<div class="slidecontent_nouveau">nouveau !</div>
+                            </div>
+                        </li>
+                        <li class="span3">
+                            <div class="thumbnail">
+                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_espacerobots_000001.jpg');?>" alt=""></a>
+                            </div>
+                            <div class="caption">
+                                <h4>4 €</h4>
+                				<p>Princess Playmo</p>
+								<div class="slidecontent_nouveau">nouveau !</div>
+                            </div>
+                        </li>
+                        <li class="span3">
+                            <div class="thumbnail">
+                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_espacerobots_000002.jpg');?>" alt=""></a>
+                            </div>
+                            <div class="caption">
+                                <h4>8 €</h4>
+                				<p>Princess Playmo</p>
+								<div class="slidecontent_nouveau">nouveau !</div>
+                            </div>
+                        </li>
+                        <li class="span3">
+                            <div class="thumbnail">
+                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_fantasy_000001.jpg');?>" alt=""></a>
+                            </div>
+                            <div class="caption">
+                                <h4>3 €</h4>
+                				<p>Princess Playmo</p>
+								<div class="slidecontent_nouveau">nouveau !</div>
+                            </div>
+                        </li>
+                    </ul>
+              </div><!-- /Slide2 --> 
+            <div class="item">
+                    <ul class="thumbnails">
+                        <li class="span3">
+                            <div class="thumbnail">
+                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_fantasy_000002.jpg');?>" alt=""></a>
+                            </div>
+                            <div class="caption">
+                                <h4>5 €</h4>
+                				<p>Princess Playmo</p>
+								<div class="slidecontent_nouveau">nouveau !</div>
+                            </div>
+                        </li>
+                        <li class="span3">
+                            <div class="thumbnail">
+                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_fantasy_000003.jpg');?>" alt=""></a>
+                            </div>
+                            <div class="caption">
+                                <h4>4 €</h4>
+                				<p>Princess Playmo</p>
+								<div class="slidecontent_nouveau">nouveau !</div>
+                            </div>
+                        </li>
+                        <li class="span3">
+                            <div class="thumbnail">
+                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_fantasy_000004.jpg');?>" alt=""></a>
+                            </div>
+                            <div class="caption">
+                                <h4>8 €</h4>
+                				<p>Princess Playmo</p>
+								<div class="slidecontent_nouveau">nouveau !</div>
+                            </div>
+                        </li>
+                        <li class="span3">
+                            <div class="thumbnail">
+                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_feesprincesses_000001.jpg');?>" alt=""></a>
+                            </div>
+                            <div class="caption">
+                                <h4>3 €</h4>
+                				<p>Princess Playmo</p>
+								<div class="slidecontent_nouveau">nouveau !</div>
+                            </div>
+                        </li>
+                    </ul>
+              </div><!-- /Slide3 --> 
+        </div>
+        
+        <div class="control-box">                            
+            <a data-slide="prev" href="#myCarousel" class="carousel-control left">‹</a>
+            <a data-slide="next" href="#myCarousel" class="carousel-control right">›</a>
+        </div><!-- /.control-box -->   
+                              
+    </div><!-- /#myCarousel -->
+        
+</div><!-- /.span12 -->          
+</div><!-- /.row --> 
+</div><!-- /.container -->
+<br><br>
+<!--End Slide articles-->
+	<!--End nouveute slideshow-->
 </div>
 
 <?php $this->stop('main_content') ?>
