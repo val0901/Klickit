@@ -32,7 +32,7 @@
 			<div class="viewcategoryrow2col1_tirer"><a href="#">Pirates</a></div>		
 			<div class="viewcategoryrow2col1_tirer"><a href="#">Antique</a></div>
 			<div class="viewcategoryrow2col1_tirer"><a href="#">Western</a></div>
-			<div class="viewcategoryrow2col1_tirer"><a href="#">Fantazy</a></div>
+			<div class="viewcategoryrow2col1_tirer"><a href="#">Fantasy</a></div>
 			<div class="viewcategoryrow2col1_tirer"><a href="#">XVIIIe</a></div>
 			<div class="viewcategoryrow2col1_tirer"><a href="#">Fée & Pincesses</a></div>
 			<div class="viewcategoryrow2col1_tirer"><a href="#">Police</a></div>
@@ -40,7 +40,7 @@
 			<div class="viewcategoryrow2col1_tirer"><a href="#">Sport</a></div>
 			<div class="viewcategoryrow2col1_tirer"><a href="#">Divers</a></div>
 			<li>
-				<h3 class="viewcategoryrow2col1_title">fitres</h3>
+				<h3 class="viewcategoryrow2col1_title">filtres</h3>
 				<div class="form-group viewcategory_checkboxmargin">
 					<label class="viewcategorycheckbox_border">
 					<input type="checkbox"> <span class="viewcategorycheckbox_font"> 1er empire</span>
