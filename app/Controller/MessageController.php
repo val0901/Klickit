@@ -142,6 +142,10 @@ class MessageController extends Controller
 
 				}else{
 					$success = true;
+					$status = [
+						'Statut' => 'lu', 
+					];
+					$updated = $update_status->update($status, $id);
 				}
 			}
 
