@@ -138,7 +138,7 @@ class BackController extends Controller
 				//Préparation de l'envoi du mail
 				$sendMail = new PHPMailer;
 
-				$contentEmail = 'Lien pour réinitialiser votre mot de passe : '.'<a href="localhost'.$this->generateUrl('back_reset_pwd', ['email'=> $post['email'], 'token' => $token]).'">Cliquez ici</a>';
+				$contentEmail = 'Bonjour '.$name_user.'.<br> Lien pour réinitialiser votre mot de passe : '.'<a href="localhost'.$this->generateUrl('back_reset_pwd', ['email'=> $post['email'], 'token' => $token]).'">Cliquez ici</a>';
 
 				$sendMail->isSMTP();                                      
 				$sendMail->Host = 'smtp.gmail.com';  									// Hôte du SMTP

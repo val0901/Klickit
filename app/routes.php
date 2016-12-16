@@ -10,8 +10,8 @@
 		['GET|POST', '/back/login', 'Back#login', 'back_login'],
 		['GET|POST', '/back/forgot_password', 'Back#forgot_pwd', 'back_forgot_pwd'],
 
-		//Pages liées à Password_ResetController
-		['GET|POST', '/back/reset_password?email=[a:email]&token=[a:token]', 'Password_Reset#reset_pwd', 'back_reset_pwd'],
+		//Pages liées à ResetController
+		['GET|POST', '/back/reset_password?email=[a:email]&token=[a:token]', 'Reset#reset_pwd', 'back_reset_pwd'],
 
 		// Les routes ajax
 		['GET|POST', '/ajax/logout', 'Ajax#logout', 'ajax_logout'],
