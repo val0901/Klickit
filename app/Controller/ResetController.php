@@ -16,7 +16,12 @@ class ResetController extends Controller
 
 		if(isset($id) && !empty($id) && isset($token) && !empty($token)){
 
-			
+			$verify_token = new ResetModel;
+			$getInfos = $verify_token->find($id);
+
+			if($getInfos['date_expire'] == date('Y-m-d H:i:s',strtotime($getInfos['date_expire']+'2 days')){
+				$error = 'Le jeton a expiré. Pour réinitialiser le mot de passe, veuillez cliquer <a href="'.$this->url('back_forgot_pwd').'">ici</a>';
+			}
 
 			//Insertion du nouveau mot de passe
 			$update = new UserModel;
