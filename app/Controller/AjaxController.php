@@ -178,4 +178,40 @@ class AjaxController extends Controller
 		}
 		$this->showJson($json);
 	}
+
+	/**
+	* Change le statut de la commande
+	*/
+	public function updateStatus()
+	{
+		/************CHANGEMENT DE STATUT DE LA COMMANDE**************/
+
+		$state = ['commandé', 'en préparation', 'expédié'];
+
+		if(!empty($_POST)){
+
+			if(!in_array($_POST['selectStatut'], $state)){
+				$error = 'Veuillez choisir le statut de la commande';
+			}
+			elseif($_POST['selectStatut'] == 'commandé'){
+				$new_state = 'commandé';
+			}
+			elseif($_POST['selectStatut'] == 'en préparation'){
+				$new_state = 'en préparation';
+			}
+			elseif($_POST['selectStatut'] == 'expédié'){
+				$new_state = 'expédié';
+			}
+
+			//On met à jour l'état de la commande
+			$update = new OrdersModel;
+			$updated_status = [
+				'statut'	=> $new_state
+			];
+
+			$newshit = $update->update($updated_status, $list_orders['id']);
+
+
+		}
+	}
 }

@@ -3,7 +3,6 @@
 <?php $this->start('main_content') ?>
 
 	<div id="viewOrder">
-	<form method="post">
 		<table class="table table-responsive">
 			<thead>
 				<th>Numéro</th>
@@ -23,15 +22,16 @@
 					<td><?= date('d/m/Y', strtotime($value['date_creation']));?></td>
 					<td><?=$value['statut']; ?></td>
 					<td>
-						<div class="form-group" id="selectStt">									
+						<div class="form-group" id="selectStt">									<form method="post">
 							  <div class="col-md-4">
 							    <select id="selectStatut" name="selectStatut" class="form-control" value>
 							    	<option value="Changer le statut" selected disabled>Changer le statut</option>
-							      <option value="En attente de paiement" name="com">En attente de paiement</option>
-							      <option value="En cours de préparation">En cours de préparation</option>
-							      <option value="Expédiée">Expédiée</option>
+							    	<option value="commandé" name="com">En attente de paiement</option>
+							    	<option value="en préparation">En cours de préparation</option>
+							    	<option value="expédié">Expédiée</option>
 							    </select>
 							  </div>
+							  <input type="submit" style="display:none;">
 							</form>
 						</div></td>
 					<td>
@@ -41,7 +41,6 @@
 			<?php endforeach; ?>			
 			</tbody>			
 		</table>
-	</form>
 			<?php $search = (isset($_GET['search']))? 'search='. $_GET['search'].'&' :'';?>
 			<div>
 				<?= ($page!=1) ? '<a href="?'. $search .'page='. ($page - 1) .'"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>':''; ?>

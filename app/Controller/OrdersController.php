@@ -25,27 +25,29 @@ class OrdersController extends Controller
 		$max = 15;
 
 		$orders = new OrdersModel();
-			$list_orders = $orders->findAllOrders($page, $max);
+		$list_orders = $orders->findAllOrders($page, $max);
 
-				$data = [
-					'data'	=> $list_orders,
-					'max' => $max,
-					'page' => $page,
-					'nb' => $nb,
-						
-				];
+
+		/***********ENVOI DES DONNEES POUR AFFICHER LA PAGE***********/
+			$data = [
+				'data'	=> $list_orders,
+				'max' => $max,
+				'page' => $page,
+				'nb' => $nb,
+			];
 				
-				if(!empty($_SESSION)){
+		//Sécurisation de la page		
+		if(!empty($_SESSION)){
 
-					$this->show('back/Orders/listOrders', $data);
+			$this->show('back/Orders/listOrders', $data);
 
-					if($_SESSION['role'] == 'Utilisateur') {
-						$this->redirectToRoute('front_index');
-					}
-				}
-				else {
-					$this->redirectToRoute('back_login');
-				}
+			if($_SESSION['role'] == 'Utilisateur') {
+				$this->redirectToRoute('front_index');
+			}
+		}
+		else {
+			$this->redirectToRoute('back_login');
+		}
 	}
 
 	/**
