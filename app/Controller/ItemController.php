@@ -287,7 +287,7 @@ class ItemController extends Controller
 				}
 			}
 
-			if(!empty($post['category']) && isset($post['subCategory'])) {
+			if(!empty($post['subCategory']) && isset($post['subCategory'])) {
 				if($post['category'] == 'PlaymobilClassique' && !in_array($post['subCategory'], $subCategory_Classic)){
 					$errors[] = 'Vous avez entré une sous-catégorie qui n\'est pas lié à la catégorie Classique';
 				}
