@@ -8,6 +8,7 @@ use \Model\ItemModel;
 use \Model\MessageModel;
 use \Model\EventModel;
 use \Model\GuestbookModel;
+use \Model\OrdersModel;
 use \Model\SlideModel;
 use \Model\ShippingModel;
 use \W\Security\AuthentificationModel;
@@ -187,31 +188,45 @@ class AjaxController extends Controller
 		/************CHANGEMENT DE STATUT DE LA COMMANDE**************/
 
 		$state = ['commandé', 'en préparation', 'expédié'];
+		$new_state = '';
+		$json = [];
 
 		if(!empty($_POST)){
+			if(is_numeric($_POST['id'])){
+				
+				if(!in_array($_POST['status'], $state)){
+					$error = 'Veuillez choisir le statut de la commande';
+				}
+				elseif($_POST['status'] == 'commandé'){
+					$new_state = 'commandé';
+				}
+				elseif($_POST['status'] == 'en préparation'){
+					$new_state = 'en préparation';
+				}
+				elseif($_POST['status'] == 'expédié'){
+					$new_state = 'expédié';
+				}
 
-			if(!in_array($_POST['selectStatut'], $state)){
-				$error = 'Veuillez choisir le statut de la commande';
+				//On met à jour l'état de la commande
+				$update = new OrdersModel;
+				$updated_status = [
+					'statut'	=> $new_state
+				];
+
+				$updating = $update->update($updated_status, $_POST['id']);
+				if($updating){
+					$json = [
+						'code'=>'ok',
+					];
+				}
+				else{
+					$json = [
+						'code'=>'no'
+					];
+				}
 			}
-			elseif($_POST['selectStatut'] == 'commandé'){
-				$new_state = 'commandé';
-			}
-			elseif($_POST['selectStatut'] == 'en préparation'){
-				$new_state = 'en préparation';
-			}
-			elseif($_POST['selectStatut'] == 'expédié'){
-				$new_state = 'expédié';
-			}
-
-			//On met à jour l'état de la commande
-			$update = new OrdersModel;
-			$updated_status = [
-				'statut'	=> $new_state
-			];
-
-			$newshit = $update->update($updated_status, $list_orders['id']);
-
-
 		}
+			
+		$this->showJson($json);
 	}
 }
