@@ -51,27 +51,27 @@
     <!--Frais de port-->
     <div class="order_frais">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 orderfrais_box_margin">
                 <p class="orderfrais_title">FRAIS DE PORT</p>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 orderfrais_box_margin">
                 <div class="orderfrais_box">
                     <i class="fa fa-question-circle-o" aria-hidden="true" style="color:#1c8b2f;"><span class="orderfrais_text"> pieces en résine + customs resine/peinture = forfait 6.90€</span></i>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 orderfrais_box_margin">
                 <div class="orderfrais_box">
                     <i class="fa fa-question-circle-o" aria-hidden="true" style="color:#1c8b2f;"><span class="orderfrais_text"> 1 à 3 personnages/articles = 2,50€</span></i>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 orderfrais_box_margin">
                 <div class="orderfrais_box">
                     <i class="fa fa-question-circle-o" aria-hidden="true" style="color:#1c8b2f;"><span class="orderfrais_text"> 4 à 8 personnages/ articles = 3,90€</span></i>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 orderfrais_box_margin">
                 <div class="orderfrais_box">
                     <i class="fa fa-question-circle-o" aria-hidden="true" style="color:#1c8b2f;"><span class="orderfrais_text"> au dela = forfait  6.90€</span></i>
                 </div>

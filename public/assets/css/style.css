@@ -1225,3 +1225,7 @@ td {
 .ordercommander_color {
     background-color: #fe941e;
 }
+
+.orderfrais_box_margin {
+    margin: 10px 0;
+}
