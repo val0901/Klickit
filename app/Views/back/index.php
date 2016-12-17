@@ -16,18 +16,31 @@
 				<th>Action</th>
 			</thead>
 
-			<tbody>
+			<tbody><?php  var_dump($items);?>
 				<?php foreach ($orders as $order): ?>
 					<tr>
 						<td><?=$order['id']; ?></td>
 						<td><?=$order['lastname'].' '.$order['firstname']; ?></td>
 						<td>
-							<?php foreach ($items as $item){
-								$listO = explode(', ', $item['contenu']);
-									foreach ($listO as $value) {
-										echo $value;
-								}
-							}
+							<?php ; foreach($items as $item){
+
+										$contents = explode(', ', $item['contenu']);
+										echo '<ul>';
+										foreach($contents as $content){
+											echo '<li>'.$content.'</li>';
+										}	
+										echo '</ul>';
+									}
+
+
+
+
+							//foreach ($items as $item){
+								//$listO = explode(', ', $item['contenu']);
+									//foreach ($listO as $value) {
+										//echo $value;
+								//}
+							//}
 
 							//foreach ($items as $item ): 
 							 	 // endforeach; 
