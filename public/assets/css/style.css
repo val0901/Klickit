@@ -1153,8 +1153,13 @@ h4 {
 
 th {
 	font-size: 1.5vw;
-	background-color: #ddd;
 	color: #391e20;
+    text-align: center;
+}
+
+td {
+    text-align: center;
+    background-color: #fff;
 }
 
 .ordertable_title {
@@ -1166,4 +1171,57 @@ th {
 .ordertable_text {
 	font-size: 1vw;
 	color: #391e20;
+}
+
+.order_title {
+    color: #000;
+}
+
+.order_box {
+    border:1px solid #ccc;
+    background-color:#eee;
+    padding:20px;
+}
+
+.order_frais {
+    background-color:#42b155;
+    padding:20px;
+    margin-top: 20px;
+}
+
+.orderfrais_title {
+    color: #1c8b2f;
+    font-size: 25px;
+    padding: 15px;
+}
+
+.orderfrais_text {
+    color: #1c8b2f;
+    font-family: 'Advent Pro', sans-serif;
+}
+
+.orderfrais_box {
+    background-color:#eee;
+    padding:20px;
+    font-size: 18px;
+    margin: 0 5px;
+}
+
+.order_buttonscap {
+    font-size: 30px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.order_buttonpadding {
+    padding: 10px 30px;
+    border: 0px;
+}
+
+.ordercontinu_color {
+    background-color: #ea232a;   
+}
+
+.ordercommander_color {
+    background-color: #fe941e;
 }
