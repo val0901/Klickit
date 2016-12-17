@@ -150,7 +150,7 @@ class BackController extends Controller
 				$sendMail->Port = 587;                                					// TCP port to connect to
 				$sendMail->CharSet = 'UTF-8';
 
-				$sendMail->setFrom('mail de Klickit', 'Klickit');		  				//Expéditeur
+				$sendMail->setFrom('sav@klickit.fr', 'Klickit');		  				//Expéditeur
 				$sendMail->addAddress($post['email'], $name_user); 	   	//Destinataire
 
 				$sendMail->Subject = 'Réinitialisation du mot de passe';
