@@ -1222,6 +1222,10 @@ td {
     background-color: #ea232a;   
 }
 
+.ordercontinu_color:hover {
+    background-color: #dc0e15;
+}
+
 .ordercommander_color {
     background-color: #fe941e;
 }
