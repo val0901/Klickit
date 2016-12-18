@@ -85,6 +85,7 @@
 	.viewcategoryprixpromo {
 	font-size: 2vw;
 }
+    
 	
 }
 
@@ -128,6 +129,13 @@
     font-size: 5vw;
 }
 	
+     .order_buttonscapL {
+    text-align: center;
+}
+
+    .order_buttonscapR {
+    text-align: center;
+}
 	
 }
 
@@ -217,7 +225,7 @@
 	font-size: 2.5vw;
 }
 	
-	
+    
 }
 
 @media screen and (max-width: 750px) {
@@ -313,6 +321,7 @@
 	.addusercol2_padding {
     padding: 20px 50px;
 }
+    
 	
 }
 	

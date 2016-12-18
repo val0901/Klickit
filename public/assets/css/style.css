@@ -1183,34 +1183,15 @@ td {
     padding:20px;
 }
 
-.order_frais {
-    background-color:#42b155;
-    padding:20px;
-    margin-top: 20px;
-}
-
-.orderfrais_title {
-    color: #1c8b2f;
-    font-size: 25px;
-    padding: 15px;
-}
-
-.orderfrais_text {
-    color: #1c8b2f;
-    font-family: 'Advent Pro', sans-serif;
-}
-
-.orderfrais_box {
-    background-color:#eee;
-    padding:20px;
-    font-size: 18px;
-    margin: 0 5px;
-}
-
-.order_buttonscap {
+.order_buttonscapL {
     font-size: 30px;
-    text-align: center;
     font-weight: 600;
+}
+
+.order_buttonscapR {
+    font-size: 30px;
+    font-weight: 600;
+    text-align: right;
 }
 
 .order_buttonpadding {
@@ -1232,4 +1213,33 @@ td {
 
 .orderfrais_box_margin {
     margin: 10px 0;
+}
+
+.orderfrais_title {
+    font-size: 30px;
+    text-align: center;
+    color: #fe941e;
+    font-weight: 600;
+    border-bottom: 1px dotted #ccc;
+    padding: 10px 0;
+}
+
+.orderfrais_list > li {
+    text-indent: 40px;
+    font-size: 18px;
+}
+
+.orderfrais_border {
+    padding:20px;
+    margin-top: 50px;
+    border:1px solid #ccc;
+}
+
+.orderfraislist_title {
+    font-family: 'Advent Pro', sans-serif;
+    font-weight: 600;
+}
+
+.orderfrais_price {
+    color: #fe941e;
 }
