@@ -98,6 +98,7 @@ class FrontUserController extends Controller
 		];	
 
 		$this->show('front/User/addUser', $params);
+
 	}
 
 	/**
@@ -115,5 +116,14 @@ class FrontUserController extends Controller
 	public function fupdateUser(){
 		$this->show('front/User/UpdateUser');
 	}
+
+	/**
+	 * Update compte utilisateur
+	 */
+
+	public function fconnectUser(){
+		$this->show('front/Order/orderLogin');
+	}
+
 
 }

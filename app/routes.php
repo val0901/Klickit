@@ -73,7 +73,7 @@
 		//Pages liées à FrontController
 		['GET|POST', '/front/index', 'Front#index', 'front_index'],
 		['GET|POST', '/front/login', 'Front#login', 'front_login'],
-		['GET|POST', '/front/aPropos', 'Front#aPropos', 'front_aPropos'],
+		['GET|POST', '/front/aPropos', 'Front#about', 'front_aPropos'],
 		['GET|POST', '/front/cgv', 'Front#cgv', 'front_cgv'],
 		['GET|POST', '/front/contact', 'Front#contact', 'front_contact'],
 		['GET|POST', '/front/legalMention', 'Front#legalMention', 'front_legalMention'],
@@ -83,6 +83,8 @@
 		['GET|POST', '/front/addUser', 'FrontUser#faddUser', 'front_faddUser'],
 		['GET|POST', '/front/cptUser', 'FrontUser#affCptUser', 'front_affcptuser'],
 		['GET|POST', '/front/fUpdateUser', 'FrontUser#fupdateUser', 'front_fUpdateUser'],
+		['GET|POST', '/front/orderLogin', 'FrontUser#fconnectUser', 'front_orderLogin'],
+
 
 		//Pages liées à FrontItemController
 		['GET|POST', '/front/listItemClassics', 'FrontItem#listItemClassics', 'listItemClassics'],
@@ -94,13 +96,20 @@
 		//Pages liées à FrontGuestbookController
 		['GET|POST', '/front/fGuestbook', 'FrontGuestbook#affGuestbook', 'fGuestbook'],
 
-		//Pages liées à FrontOrdersController
+
+		//Pages liées à FrontOrdersController du COMPTE CLIENT
+			//liste des commandes
 		['GET|POST', '/front/listOrders', 'FrontOrders#frontListOrders', 'front_listOrders'],
+			//vue d'une commande
 		['GET|POST', '/front/viewUserOrder', 'FrontOrders#frontViewOrders', 'front_viewUserOrder'],
-		['GET|POST', '/front/orderLivr', 'FrontOrders#frontOrderLivr', 'front_orderLivr'],
-		['GET|POST', '/front/orderPaie', 'FrontOrders#frontOrderPaie', 'front_orderPaie'],
-		['GET|POST', '/front/orderRecap', 'FrontOrders#frontOrderRecap', 'front_orderRecap'],
-		['GET|POST', '/front/orderValid', 'FrontOrders#frontOrderValid', 'front_orderValid'],
-		['GET|POST', '/front/frontPanier', 'FrontOrders#frontPanier', 'front_frontPanier'],
+
+
+		//Pages liées à FrontOrdersController du PROCESS COMMANDE
+			//commande du panier
+		['GET|POST', '/front/orderList', 'FrontOrders#frontPanier', 'front_orderList'],
+			//choix du mode de paiement
+		['GET|POST', '/front/orderPayment', 'FrontOrders#frontOrderPaie', 'front_orderPayment'],
+			//Page choix de l'adresse de livraison
+		['GET|POST', '/front/orderAddress', 'FrontOrders#frontOrderAddress', 'front_orderAddress'],
 
 	);

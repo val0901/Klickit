@@ -1,4 +1,4 @@
-<?php $this->layout('layoutfront', ['title' => 'Panier']) ?>
+<?php $this->layout('layoutfront', ['title' => 'Choix du paiement']) ?>
 
 <?php $this->start('main_content') ?>
 

@@ -19,7 +19,7 @@ class FrontOrdersController extends Controller
 	}
 
 	/**
-	 * Vu unique d'une commande avec possibilité de changer son statut
+	 * Vue unique d'une commande
 	 */
 	public function frontViewOrders() 
 	{
@@ -27,39 +27,39 @@ class FrontOrdersController extends Controller
 	}
 
 	/**
-	 * Vu unique d'une commande avec possibilité de changer son statut
-	 */
-	public function frontOrderLivr() 
-	{
-		$this->show('front/Order/orderLivr');
-	}
-	/**
-	 * Vu unique d'une commande avec possibilité de changer son statut
+	 * Page choix du mode de paiement
 	 */
 	public function frontOrderPaie() 
 	{
-		$this->show('front/Order/orderMoyPaie');
+		$this->show('front/Order/orderPayment');
+	}
+	/**
+	 * Page choix de l'adresse de livraison
+	 */
+	public function frontOrderAddress() 
+	{
+		$this->show('front/Order/orderAddress');
 	}
 	/**
 	 * Vu unique d'une commande avec possibilité de changer son statut
 	 */
-	public function frontOrderRecap() 
+/*	public function frontOrderRecap() 
 	{
 		$this->show('front/Order/orderRecap');
 	}
-	/**
+*/	/**
 	 * Vu unique d'une commande avec possibilité de changer son statut
 	 */
-	public function frontOrderValid() 
+/*	public function frontOrderValid() 
 	{
 		$this->show('front/Order/orderValidPaie');
 	}
-	/**
-	 * Vu unique d'une commande avec possibilité de changer son statut
+*/	/**
+	 * Vu du panier de commande
 	 */
 	public function frontPanier() 
 	{
-		$this->show('front/Order/panier');
+		$this->show('front/Order/orderList');
 	}
 
 }

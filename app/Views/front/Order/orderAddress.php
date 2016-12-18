@@ -1,4 +1,4 @@
-<?php $this->layout('layoutfront', ['title' => 'Commande']) ?>
+<?php $this->layout('layoutfront', ['title' => 'Adresse de livraison']) ?>
 
 <?php $this->start('main_content') ?>
 

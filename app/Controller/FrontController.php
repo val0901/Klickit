@@ -65,7 +65,7 @@ class FrontController extends Controller
 	/**
 	 * Page A propos
 	 */
-	public function aPropos()
+	public function about()
 	{
 		$this->show('front/Pages/aPropos');
 	}
