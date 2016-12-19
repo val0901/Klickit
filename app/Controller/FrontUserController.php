@@ -103,9 +103,9 @@ class FrontUserController extends Controller
 	 * affichage compte utilisateur
 	 */
 
-	public function affCptUser(){
+	public function affCptUser($id){
 
-		if(!empty($_SESSION)){
+		if(!empty($this->getUser())){
 			$this->show('front/User/cptUser');
 		}
 		else {
@@ -117,9 +117,9 @@ class FrontUserController extends Controller
 	 * Update compte utilisateur
 	 */
 
-	public function fupdateUser(){
+	public function fupdateUser($id){
 
-		if(!empty($_SESSION)){
+		if(!empty($this->getUser())){
 			$this->show('front/User/UpdateUser');
 		}
 		else {
@@ -133,7 +133,7 @@ class FrontUserController extends Controller
 
 	public function fconnectUser(){
 
-		if(!empty($_SESSION)){
+		if(!empty($this->getUser())){
 			$this->show('front/Order/orderLogin');
 		}
 		else {

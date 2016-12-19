@@ -69,10 +69,12 @@
 
 //Routes pour le front (classé par controller)
 
+		// Routes en Ajax Front
+		['GET|POST', '/ajax/login', 'AjaxFront#login', 'ajax_Flogin'],
+		['GET|POST', '/ajax/logout', 'AjaxFront#logout', 'ajax_Flogout'],
 
 		//Pages liées à FrontController
 		['GET|POST', '/home', 'Front#index', 'front_index'],
-		['GET|POST', '/login', 'Front#login', 'front_login'],
 		['GET|POST', '/aPropos', 'Front#about', 'front_aPropos'],
 		['GET|POST', '/cgv', 'Front#cgv', 'front_cgv'],
 		['GET|POST', '/contact', 'Front#contact', 'front_contact'],

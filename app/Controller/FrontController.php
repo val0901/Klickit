@@ -40,7 +40,7 @@ class FrontController extends Controller
 				$connexion = new AuthentificationModel();
 				$idConnexion = $connexion->isValidLoginInfo($post['pseudo'], $post['password']);
 
-				if($connexion){
+				if($idConnexion){
 					$userModel = new UserModel();
 					$user = $userModel->find($idConnexion);
 
