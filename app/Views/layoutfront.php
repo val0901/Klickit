@@ -120,7 +120,7 @@
 								</div>
 								<div class="col-xs-6" style="text-align:right;">
 									<span class="glyphicon glyphicon-minus-sign" aria-hidden="true" style="color: #fe941e;"></span>
-									<span> 3.00 €</span>
+									<span> 2</span>
 									<span class="glyphicon glyphicon-plus-sign" aria-hidden="true" style="color: #7fc842;"></span>
 								</div>
 							</div>
@@ -130,7 +130,7 @@
 								</div>
 								<div class="col-xs-6" style="text-align:right;">
 									<span class="glyphicon glyphicon-minus-sign" aria-hidden="true" style="color: #fe941e;"></span>
-									<span> 2.00 €</span>
+									<span> 10</span>
 									<span class="glyphicon glyphicon-plus-sign" aria-hidden="true" style="color: #7fc842;"></span>
 								</div>
 							</div>
@@ -140,7 +140,7 @@
 								</div>
 								<div class="col-xs-6" style="text-align:right;">
 									<span class="glyphicon glyphicon-minus-sign" aria-hidden="true" style="color: #fe941e;"></span>
-									<span> 4.00 €</span>
+									<span> 4</span>
 									<span class="glyphicon glyphicon-plus-sign" aria-hidden="true" style="color: #7fc842;"></span>
 								</div>
 							</div>
@@ -162,7 +162,7 @@
 								</div>
 							</div>
 							<div>
-								<button type="button" class="btn btn-primary">Primary</button>
+								<button type="button" class="btn btn-primary shoppingmenu_button">VOIR PANIER</button>
 							</div>
                         </div>
                     </li>

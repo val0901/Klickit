@@ -8,7 +8,6 @@
     		<li class="completed"><a href="javascript:void(0);">Récapitulatif</a></li>
 			<li><a href="javascript:void(0);">Conexion</a></li>
 			<li><a href="javascript:void(0);">Adresse</a></li>
-			<li><a href="javascript:void(0);">Livraison</a></li>
 			<li><a href="javascript:void(0);">Paiement</a></li>
 		</ul>
 	</div>
