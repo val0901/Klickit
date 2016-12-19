@@ -44,6 +44,22 @@
                 </tr>
             </tbody> 
         </table>
+		<div class="orderlist_total">
+			<ul  style="float:right;">
+				<li>
+					<p>17.00 €</p>
+					<p>2.60 €</p>
+					<p><strong>19.60 €</strong></p>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<p>Total articles :</p>
+					<p>frais de port :</p>
+					<p>TOTAL COMMANDE :</p>
+				</li>
+			</ul>
+		</div>
     </div>
     <!--End title et border-->
     
