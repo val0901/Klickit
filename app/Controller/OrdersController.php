@@ -67,7 +67,6 @@ class OrdersController extends Controller
 
 			$items = new ItemModel();
 
-
 			$data= [
 			'orders' => $viewOrders,
 			'items' => $items,
