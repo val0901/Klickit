@@ -119,9 +119,7 @@
 									<p>Princess Playmo</p>
 								</div>
 								<div class="col-xs-6" style="text-align:right;">
-									<span class="glyphicon glyphicon-minus-sign" aria-hidden="true" style="color: #fe941e;"></span>
-									<span> 3.00 €</span>
-									<span class="glyphicon glyphicon-plus-sign" aria-hidden="true" style="color: #7fc842;"></span>
+									<P> 3.00 € X 2</P>
 								</div>
 							</div>
 							<div class="row" style="margin: 0 10px;">
@@ -129,9 +127,7 @@
 									<p>Fée violette</p>
 								</div>
 								<div class="col-xs-6" style="text-align:right;">
-									<span class="glyphicon glyphicon-minus-sign" aria-hidden="true" style="color: #fe941e;"></span>
-									<span> 2.00 €</span>
-									<span class="glyphicon glyphicon-plus-sign" aria-hidden="true" style="color: #7fc842;"></span>
+									<P> 5.00 € X 3</P>
 								</div>
 							</div>
 							<div class="row" style="margin: 0 10px;">
@@ -139,9 +135,7 @@
 									<p>Chevalier bleu</p>
 								</div>
 								<div class="col-xs-6" style="text-align:right;">
-									<span class="glyphicon glyphicon-minus-sign" aria-hidden="true" style="color: #fe941e;"></span>
-									<span> 4.00 €</span>
-									<span class="glyphicon glyphicon-plus-sign" aria-hidden="true" style="color: #7fc842;"></span>
+									<P> 10.00 € X 4</P>
 								</div>
 							</div>
 							<br><br>
@@ -162,7 +156,7 @@
 								</div>
 							</div>
 							<div>
-								<button type="button" class="btn btn-primary">Primary</button>
+								<button type="button" class="btn btn-primary shoppingmenu_button">VOIR PANIER</button>
 							</div>
                         </div>
                     </li>
@@ -516,11 +510,11 @@
         $(".cogsoumenu_hidden").hide();
     })*/
 })
-    $(document).ready(function(){
+    /*$(document).ready(function(){
     $("#usericon_click").click(function(){
         $(".usersoumenu_hidden").slideToggle();
     })
-})
+})*/
 	
 	$(document).ready(function(){
     $("#shoppingicon_click").click(function(){

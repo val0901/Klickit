@@ -121,7 +121,7 @@ class MessageController extends Controller
 				$contentEmail = nl2br($post['content']);
 
 				$sendMail->isSMTP();                                      
-				$sendMail->Host = 'SSL0.OVH.NET';  									// Hôte du SMTP
+				$sendMail->Host = 'smtp.gmail.com';  									// Hôte du SMTP
 				$sendMail->SMTPAuth = true;                               				// SMTP Authentification
 				$sendMail->Username = 'duhfanofdoge@gmail.com'; //Username         				// SMTP username
 				$sendMail->Password = 'TheRevA7X'; //mot de passe                    	 				// SMTP password

@@ -109,7 +109,7 @@ class FrontUserController extends Controller
 			$this->show('front/User/cptUser');
 		}
 		else {
-			$this->redirectToRoute('front_login');
+			$this->redirectToRoute('front_faddUser');
 		}
 	}
 
@@ -123,7 +123,7 @@ class FrontUserController extends Controller
 			$this->show('front/User/UpdateUser');
 		}
 		else {
-			$this->redirectToRoute('front_login');
+			$this->redirectToRoute('front_faddUser');
 		}
 	}
 
@@ -132,6 +132,16 @@ class FrontUserController extends Controller
 	 */
 
 	public function fconnectUser(){
+<<<<<<< HEAD
 		$this->show('front/Order/orderLogin');
+=======
+
+		if(!empty($this->getUser())){
+			$this->show('front/Order/orderLogin');
+		}
+		else {
+			$this->redirectToRoute('front_faddUser');
+		}
+>>>>>>> origin/master
 	}
 }

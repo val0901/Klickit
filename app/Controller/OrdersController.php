@@ -53,9 +53,21 @@ class OrdersController extends Controller
 	/**
 	 * Vu unique d'une commande avec possibilité de changer son statut
 	 */
-	public function viewOrders() 
+	public function viewOrders($id) 
 	{
-		$this->show('back/Orders/updateOrders');
+		if(!is_numeric($id) || empty($id)){
+			$this->showNotFound();
+		}else{
+			$affiche = new OrdersModel();
+			$viewOrders = $affiche->findOrdersAndCustom($id);
+
+			$data= [
+			'orders' => $viewOrders,
+			];
+		}
+
+		$this->show('back/Orders/viewOrders',$data);
+		
 	}
 
 

@@ -116,6 +116,7 @@ header {
 	width:249px;
 	border-radius:0px;
 	height:40px;
+	font-size: 20px;
 }
 
 .nav_right {
@@ -1267,4 +1268,9 @@ td {
 
 .orderfrais_price {
     color: #fe941e;
+}
+
+.orderlist_total {
+	text-align: right;
+	font-size: 22px;
 }

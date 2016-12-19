@@ -75,4 +75,15 @@ class OrdersModel extends \W\Model\Model
 
 
 	}
+
+	public function findOrdersAndCustom($id)
+	{
+		$sql = 'SELECT ' .$this->table.'.*, u.* FROM ' . $this->table . ' LEFT JOIN user AS u ON '.$this->table.'.idMember = u.id WHERE ' .$this->table.'.id = :id';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':id', $id);
+		$sth->execute();
+
+		return $sth->fetchALL();
+	}
 }
