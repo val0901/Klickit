@@ -437,12 +437,15 @@
 			<div class="row footerrow_margin">
 				<div class="col-md-4 etiq_width">
 					<p class="footertitle">Société</p>
-					<a href="<?=$this->url('front_legalMention');?>"><p class="footertext">Mentions légales</p></a>
-					<p class="footertext">Condition Générales de Ventes</p>
-					<p class="footertext">Création d'évènement Playmobil</p>
-					<p class="footertext">Contact</p>
-					<p class="footertext">Equipe de création</p>
-					<p class="footertext">Laissez nous votre avis</p>
+					<a href="<?=$this->url('front_legalMention');?>"><p class="footertext">Mentions légales</p></a>				
+					<a href="<?=$this->url('front_cgv');?>"><p class="footertext">Condition Générales de Ventes</p></a>
+					<!-- changer lien -->
+					<a href="<?=$this->url('front_legalMention');?>"><p class="footertext">Création d'évènement Playmobil</p></a>
+					<a href="<?=$this->url('front_contact');?>"><p class="footertext">Contact</p></a>
+					<!-- changer lien -->
+					<a href="<?=$this->url('front_legalMention');?>"><p class="footertext">Equipe de création</p></a>
+					<!-- changer lien -->
+					<a href="<?=$this->url('front_legalMention');?>"><p class="footertext">Laissez nous votre avis</p></a>
 				</div>
 				<div class="col-md-4 etiq_width">
 					<p class="footertitle">Suivez-nous</p>
