@@ -1,6 +1,7 @@
 <?php $this->layout('layoutback', ['title' => 'Vue d\'une commande']) ?>
 
 <?php $this->start('main_content') ?>
+<a href="<?=$this->url('listOrders');?>"><button class="btn btn-info">Retour liste des commandes</button></a>
 
 <div id="viewOrder">
 		<form method="post">
