@@ -95,16 +95,16 @@
                         <div class="usersoumenu_hidden">
                           <form class="form_iconuser">
                               <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
+                                <label for="exampleInputEmail1">Adresse Email</label>
                                 <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
                               </div>
                               <div class="form-group">
-                                <label for="exampleInputPassword1">Password</label>
+                                <label for="exampleInputPassword1">Mot de passe</label>
                                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                               </div>
-                              <button type="submit" class="btn btn-default">Submit</button>
-                              <p>Creat an account?</p>
-                              <p>Forget your password?</p>
+                              <button type="submit" class="btn btn-default">Se connecter</button>
+                              <p>Créer un compte</p>
+                              <p>Si vous avez oublié votre mot de passe</p>
                         </form>
                         </div>
                     </li>
@@ -261,15 +261,15 @@
 		<!--End menu tous les articles-->
         
         <!--menu a propos-->
-		<li class="navli_width AP_bgcolor"><a href="#">A propos</a></li>
+		<li class="navli_width AP_bgcolor"><a href="<?=$this->url('front_aPropos');?>">A propos</a></li>
 		<!--End menu a propos-->
 		
 		<!--menu eventmentiel-->
-        <li class="navli_width EVT_bgcolor"><a href="#">Evènementiel</a></li>
+        <li class="navli_width EVT_bgcolor"><a href="<?=$this->url('front_events');?>">Evénementiel</a></li>
 		<!--End menu eventmentiel-->
         
 		<!--menu contact--> 
-        <li class="navli_width CT_bgcolor"><a href="#">Contact</a></li>
+        <li class="navli_width CT_bgcolor"><a href="<?=$this->url('front_contact');?>">Contact</a></li>
 		<!--End menu contact-->
 		
 		<!--menu icon search-->
@@ -471,12 +471,12 @@
 				</div>
 				<div class="col-xs-6 etiq_width_small">
 					<p class="footertitle">Société</p>
-					<p class="footertext">Mentions légales</p>
-					<p class="footertext">Condition Générales de Ventes</p>
+					<a href="<?=$this->url('front_legalMention');?>"><p class="footertext">Mentions légales</p></a>
+					<a href="<?=$this->url('front_cgv');?>"><p class="footertext">Condition Générales de Ventes</p></a>
 					<p class="footertext">Création d'évènement Playmobil</p>
-					<p class="footertext">Contact</p>
-					<p class="footertext">Equipe de création</p>
-					<p class="footertext">Laissez nous votre avis</p>
+					<a href="<?=$this->url('front_contact');?>"><p class="footertext">Contact</p></a>
+					<a href="<?=$this->url('');?>"><p class="footertext">Equipe de création</p></a>
+					<a href="<?=$this->url('');?>"><p class="footertext">Laissez nous votre avis</p></a>
 					<br>
 					<p class="footertitle">Suivez-nous</p>
 					<i class="fa fa-facebook-square fa-2x footer_neticon" aria-hidden="true"> <span class="footertext">Sur Facebook</span></i>
