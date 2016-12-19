@@ -55,7 +55,7 @@ class FrontController extends Controller
 		}
 		else {
 			$param = ['error' => $errors];
-			$this->show('front/User/login', $param);			
+			$this->show('front/login', $param);			
 		}
 
 		}
