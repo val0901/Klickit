@@ -22,7 +22,8 @@
 		['GET|POST', '/ajax/delete/moderation', 'Ajax#deleteMessageMod', 'ajax_delete_message_mod'],
 		['GET|POST', '/ajax/deleteSlide', 'Ajax#deleteSlide', 'ajax_deleteSlide'],
 		['GET|POST', '/ajax/deleteShipping', 'Ajax#deleteShipping', 'ajax_deleteShipping'],
-		['GET|POST', '/ajax/updateOrder', 'Ajax#updateStatus', 'ajax_updateStatus'],
+		['GET|POST', '/ajax/updateStatut', 'Ajax#updateStatus', 'ajax_updateStatus'], // /ajax/updateOrder' que j'ai modifié en '/ajax/updateStatut' pour éviter les conflits
+		['GET|POST', '/ajax/deleteOrder', 'Ajax#deleteOrder', 'ajax_deleteOrder'],
 
 		//Pages liées à UserController
 		['GET|POST', '/admin/listUser', 'User#listUser', 'listUser'],

@@ -437,7 +437,7 @@
 			<div class="row footerrow_margin">
 				<div class="col-md-4 etiq_width">
 					<p class="footertitle">Société</p>
-					<p class="footertext">Mentions légales</p>
+					<a href="<?=$this->url('front_legalMention');?>"><p class="footertext">Mentions légales</p></a>
 					<p class="footertext">Condition Générales de Ventes</p>
 					<p class="footertext">Création d'évènement Playmobil</p>
 					<p class="footertext">Contact</p>
@@ -471,7 +471,7 @@
 				</div>
 				<div class="col-xs-6 etiq_width_small">
 					<p class="footertitle">Société</p>
-					<p class="footertext">Mentions légales</p>
+					<a href="<?=$this->url('front_legalMention');?>"><p class="footertext">Mentions légales</p></a>
 					<p class="footertext">Condition Générales de Ventes</p>
 					<p class="footertext">Création d'évènement Playmobil</p>
 					<p class="footertext">Contact</p>

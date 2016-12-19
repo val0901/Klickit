@@ -1,7 +1,7 @@
 <?php $this->layout('layoutback', ['title' => 'Liste des articles ']) ?>
 	
 <?php $this->start('main_content') ?>
-			
+		
 		<a href="<?=$this->url('addItem');?>"><button class="btn btn-info">Ajout d'article</button></a>
 		<form>
 			<h3>Catégorie Classique</h3>
@@ -235,7 +235,7 @@
 			  				}
 						},
 						cancel: function(button) {
-						   
+
 						}
 					}
 				});

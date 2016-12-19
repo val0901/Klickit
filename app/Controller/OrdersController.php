@@ -73,7 +73,7 @@ class OrdersController extends Controller
 			];
 		}
 
-		$this->show('back/Orders/viewOrders',$data);
+		$this->show('back/Orders/viewOrders', $data);
 		
 	}
 

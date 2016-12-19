@@ -181,6 +181,27 @@ class AjaxController extends Controller
 	}
 
 	/**
+	 * Efface une commande
+	 */
+	public function deleteOrder()
+	{
+		if(!empty($_POST)){
+
+			if(is_numeric($_POST['id_order'])){
+				$orderModel = new OrdersModel();
+				$deleteOrder = $orderModel->delete($_POST['id_order']);
+
+				if($deleteOrder){
+					$json = ['code' => 'ok'];
+				}
+			}else{
+				$json = ['code' => 'error'];
+			}
+		}
+		$this->showJson($json);
+	}
+
+	/**
 	* Change le statut de la commande
 	*/
 	public function updateStatus()
