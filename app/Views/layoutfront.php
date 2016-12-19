@@ -182,7 +182,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul style="margin:0;padding:0;">
 		<!--menu icon home-->
-        <li class="navlicon_width HM_bgcolor"><a href="#"><i class="fa fa-home" aria-hidden="true"></i><span class="sr-only">(current)</span></a></li>
+        <li class="navlicon_width HM_bgcolor"><a href="<?=$this->url('front_index');?>"><i class="fa fa-home" aria-hidden="true"></i><span class="sr-only">(current)</span></a></li>
 		<!--End menu icon home-->
         
         <!--menu tous les articles-->
