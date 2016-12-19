@@ -96,9 +96,7 @@ class FrontUserController extends Controller
 			'success'	=> $success,
 			'errors'	=> $errors
 		];	
-
 		$this->show('front/User/addUser', $params);
-
 	}
 
 	/**
@@ -106,7 +104,13 @@ class FrontUserController extends Controller
 	 */
 
 	public function affCptUser(){
-		$this->show('front/User/cptUser');
+
+		if(!empty($_SESSION)){
+			$this->show('front/User/cptUser');
+		}
+		else {
+			$this->redirectToRoute('front_login');
+		}
 	}
 
 	/**
@@ -114,7 +118,13 @@ class FrontUserController extends Controller
 	 */
 
 	public function fupdateUser(){
-		$this->show('front/User/UpdateUser');
+
+		if(!empty($_SESSION)){
+			$this->show('front/User/UpdateUser');
+		}
+		else {
+			$this->redirectToRoute('front_login');
+		}
 	}
 
 	/**
@@ -122,8 +132,12 @@ class FrontUserController extends Controller
 	 */
 
 	public function fconnectUser(){
-		$this->show('front/Order/orderLogin');
+
+		if(!empty($_SESSION)){
+			$this->show('front/Order/orderLogin');
+		}
+		else {
+			$this->redirectToRoute('front_login');
+		}
 	}
-
-
 }
