@@ -203,7 +203,7 @@
 							  <li>Western</li>
 							  <li>Fantazy</li>
 							  <li>XVIIIe</li>
-							  <li>Fées & Pincesses</li>
+							  <li>Fées & Princesses</li>
 							  <li>Police</li>
 							  <li>Animaux</li>
 							  <li>Sport</li>
