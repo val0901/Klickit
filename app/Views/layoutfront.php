@@ -114,19 +114,55 @@
                     <li class="span_float">
                         <i class="fa fa-shopping-cart fa-5x icon_cursor navR_color" aria-hidden="true" id="shoppingicon_click"></i>
 						<div class="shoppingsoumenu_hidden">
-							<div class="row">
+							<div class="row" style="margin: 0 10px;">
 								<div class="col-xs-6">
 									<p>Princess Playmo</p>
 								</div>
 								<div class="col-xs-6" style="text-align:right;">
-									<li style="float:left;">
-										<i class="fa fa-minus-circle" aria-hidden="true" style="color: #fe941e;"></i>
-									</li>
-									<li style="float:left;">3.00 €</li>
-									<li style="float:left;">
-										<i class="fa fa-plus-circle" aria-hidden="true" style="color: #7fc842;"></i>
-									</li>
+									<span class="glyphicon glyphicon-minus-sign" aria-hidden="true" style="color: #fe941e;"></span>
+									<span> 3.00 €</span>
+									<span class="glyphicon glyphicon-plus-sign" aria-hidden="true" style="color: #7fc842;"></span>
 								</div>
+							</div>
+							<div class="row" style="margin: 0 10px;">
+								<div class="col-xs-6">
+									<p>Fée violette</p>
+								</div>
+								<div class="col-xs-6" style="text-align:right;">
+									<span class="glyphicon glyphicon-minus-sign" aria-hidden="true" style="color: #fe941e;"></span>
+									<span> 2.00 €</span>
+									<span class="glyphicon glyphicon-plus-sign" aria-hidden="true" style="color: #7fc842;"></span>
+								</div>
+							</div>
+							<div class="row" style="margin: 0 10px;">
+								<div class="col-xs-6">
+									<p>Chevalier bleu</p>
+								</div>
+								<div class="col-xs-6" style="text-align:right;">
+									<span class="glyphicon glyphicon-minus-sign" aria-hidden="true" style="color: #fe941e;"></span>
+									<span> 4.00 €</span>
+									<span class="glyphicon glyphicon-plus-sign" aria-hidden="true" style="color: #7fc842;"></span>
+								</div>
+							</div>
+							<br><br>
+							<div class="row" style="margin: 0 10px;border-top:1px dotted #000;">
+								<div class="col-xs-6 shoppingmenu_total">
+									<p>Expédition:</p>
+								</div>
+								<div class="col-xs-6 shoppingmenu_total" style="text-align:right;">
+									<p>2.60 €</p>
+								</div>
+							</div>
+							<div class="row" style="margin: 0 10px;">
+								<div class="col-xs-6 shoppingmenu_total">
+									<p>Total:</p>
+								</div>
+								<div class="col-xs-6 shoppingmenu_total" style="text-align:right;">
+									<p>11.60 €</p>
+								</div>
+							</div>
+							<div>
+								<button type="button" class="btn btn-primary">Primary</button>
 							</div>
                         </div>
                     </li>
