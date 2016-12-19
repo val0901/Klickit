@@ -70,6 +70,7 @@
 			$('#answer-show').click(function(e){
 				e.preventDefault();
 				$('#answer').slideToggle('slow');
+				$('.message').fadeOut();
 			});
 			
 		});
