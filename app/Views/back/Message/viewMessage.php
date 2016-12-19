@@ -69,7 +69,7 @@
 
 			$('#answer-show').click(function(e){
 				e.preventDefault();
-				$('#answer').toggle('slow');
+				$('#answer').slideToggle('slow');
 			});
 			
 		});
