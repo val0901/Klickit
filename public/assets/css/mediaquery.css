@@ -85,7 +85,18 @@
 	.viewcategoryprixpromo {
 	font-size: 2vw;
 }
+	
+	.orderlogin_box {
+    width: 97%;
+	padding-left: 0px;
+    padding-right: 0px;
+	box-sizing: border-box;
+}
     
+	.orderlogin_box {
+    padding-left: 15px;
+    padding-right: 15px;
+}
 	
 }
 
@@ -136,6 +147,7 @@
     .order_buttonscapR {
     text-align: center;
 }
+	
 	
 }
 
