@@ -89,10 +89,10 @@
 
 
 		//Pages liées à FrontItemController
-		['GET|POST', '/Classics', 'FrontItem#listItemClassics', 'listItemClassics'],
-		['GET|POST', '/Customs', 'FrontItem#listItemCustoms', 'listItemCustoms'],
-		['GET|POST', '/Divers', 'FrontItem#listItemDivers', 'listItemDivers'],
-		['GET|POST', '/Pieces', 'FrontItem#listItemPieces', 'listItemPieces'],
+		['GET|POST', '/Classics/[a:subcategory]', 'FrontItem#listItemClassics', 'listItemClassics'],
+		['GET|POST', '/Customs/[a:subcategory]', 'FrontItem#listItemCustoms', 'listItemCustoms'],
+		['GET|POST', '/Divers/[a:subcategory]', 'FrontItem#listItemDivers', 'listItemDivers'],
+		['GET|POST', '/Pieces/[a:subcategory]', 'FrontItem#listItemPieces', 'listItemPieces'],
 		['GET|POST', '/searchItems', 'FrontItem#searchItems', 'searchItems'],
 
 		//Pages liées à FrontGuestbookController
