@@ -61,8 +61,12 @@ class OrdersController extends Controller
 			$affiche = new OrdersModel();
 			$viewOrders = $affiche->findOrdersAndCustom($id);
 
+			$items = new OrdersModel();
+			$viewItems = $items->findItemsFromOrder();
+
 			$data= [
 			'orders' => $viewOrders,
+			'items' =>$viewItems,
 			];
 		}
 

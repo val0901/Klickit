@@ -88,4 +88,17 @@ class ItemModel extends \W\Model\Model
 
     return $result['total'];
 	}
+
+	/*REQUÊTE SUR LA TABLE ORDERS AVEC JOINTURE SUR ITEM*/
+	public function findItems($id)
+	{
+
+		$sql = 'SELECT * FROM '.$this->table.' WHERE id = :id';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':id', $id);
+		$sth->execute();
+
+		return $sth->fetch();
+	}
 }

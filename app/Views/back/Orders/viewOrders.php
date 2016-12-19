@@ -5,10 +5,11 @@
 
 <div id="viewOrder">
 		<form method="post">
-			<table class="table table-responsive">
+			<table class="table">
 				<thead>
 					<th>Numéro</th>
 					<th>Client</th>
+					<th>Adresse</th>
 					<th>Contenu de la commande</th>
 					<th>Date de la commande</th>
 					<th>Statut</th>
@@ -19,8 +20,17 @@
 				<?php foreach ($orders as $value): ;?>
 					<tr>
 						<td><?=$value['id']; ?></td>
-						<td><?=$value['lastname'].' '.$value['firstname'].'<br>'.$value['adress'].'<br>'.$value['zipcode'].' '.$value['city']; ?></td>
-						<td><?php ?>Gérer la liste des articles</td>
+						<td><?=$value['lastname'].' '.$value['firstname'].'<br>'; ?></td>
+						<td><?= $value['adress'].'<br>'.$value['zipcode'].' '.$value['city'] ?></td>
+						<td><?php  var_dump($items['name']);foreach($items as $item){
+
+										$contents = explode(', ', $item['name']);
+										echo '<ul>';
+										foreach($contents as $content){
+											echo '<li>'.$content.'</li>';
+										}	
+										echo '</ul>';
+									}?></td>
 						<td><?= date('d/m/Y', strtotime($value['date_creation']));?></td>
 						<td><?=$value['statut']; ?></td>
 						<td>

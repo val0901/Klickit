@@ -8,6 +8,7 @@ use \Model\UserModel;
 use \Model\BackModel;
 use \Model\ResetModel;
 use \Model\OrdersModel;
+use \Model\ItemModel;
 use \Model\MessageModel;
 use \Model\GuestbookModel;
 use \W\Security\AuthentificationModel;
@@ -33,13 +34,12 @@ class BackController extends Controller
 		$comments = new GuestbookModel();
 		$list_guestbook = $comments->find15Comments();
 
-		$items = new OrdersModel();
-        $list_items = $items->findItems();
+		$items = new ItemModel();
 
 		$data = [
 			'orders'   => $list_orders,
 			'messages' => $list_messages,
-			'items' => $list_items,
+			'items' => $items,
 			'comments' => $list_guestbook,
 		];
 		

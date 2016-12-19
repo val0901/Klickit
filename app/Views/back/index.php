@@ -16,41 +16,22 @@
 				<th>Action</th>
 			</thead>
 
-			<tbody><?php  var_dump($items);?>
+			<tbody>
 				<?php foreach ($orders as $order): ?>
 					<tr>
 						<td><?=$order['id']; ?></td>
 						<td><?=$order['lastname'].' '.$order['firstname']; ?></td>
 						<td>
-							<?php ; foreach($items as $item){
+							<?php $contents = explode(', ', $order['contenu']); ?>
 
-										$contents = explode(', ', $item['contenu']);
-										echo '<ul>';
-										foreach($contents as $content){
-											echo '<li>'.$content.'</li>';
-										}	
-										echo '</ul>';
-									}
+							<?php 
+								foreach ($contents as $value) : ?>
+									<?php 
+										$list_items = $items->findItems($value); 
 
-
-
-
-							//foreach ($items as $item){
-								//$listO = explode(', ', $item['contenu']);
-									//foreach ($listO as $value) {
-										//echo $value;
-								//}
-							//}
-
-							//foreach ($items as $item ): 
-							 	 // endforeach; 
-
-								 // $listO = explode(', ', $item['contenu']); 
-
-								 // foreach ($listO as $value) {
-								  //	echo $value;
-								 // }
-							?>
+										echo '<a href="'.$this->url('updateItem', ['id'=>$list_items['id']]).'">'.$list_items['name'].'</a> <br>';
+									?>
+							<?php endforeach; ?>
             			</td>
 						<td><?= date('d/m/Y', strtotime($order['date_creation']));?></td>
 						<td><?=$order['statut']; ?></td>

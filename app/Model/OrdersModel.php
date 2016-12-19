@@ -19,21 +19,6 @@ class OrdersModel extends \W\Model\Model
 		return $sth->fetchAll();
 	}
 
-	/*REQUÊTE SUR LA TABLE ORDERS AVEC JOINTURE SUR ITEM*/
-	public function findItems()
-	{
-
-		$sql = 'SELECT ' .$this->table.'.*, i.name, i.quantity, i.price, i.newPrice FROM ' . $this->table . 
-		' LEFT JOIN item AS i ON '.$this->table.'.contenu = i.id WHERE
-		FIND_IN_SET(1,orders.contenu)';
-		  // JOIN user AS u ON '.$this->table.'.idMember = u.id
-
-		$sth = $this->dbh->prepare($sql);
-		$sth->execute();
-
-		return $sth->fetchAll();
-	}
-
 
 	/*Requête sur la table orders avec jointure sur la table user*/
 	public function findAllOrders($page, $max)
@@ -76,6 +61,7 @@ class OrdersModel extends \W\Model\Model
 
 	}
 
+	/* Requête pour trouver chaque commande par client*/
 	public function findOrdersAndCustom($id)
 	{
 		$sql = 'SELECT ' .$this->table.'.*, u.* FROM ' . $this->table . ' LEFT JOIN user AS u ON '.$this->table.'.idMember = u.id WHERE ' .$this->table.'.id = :id';
@@ -84,6 +70,21 @@ class OrdersModel extends \W\Model\Model
 		$sth->bindValue(':id', $id);
 		$sth->execute();
 
-		return $sth->fetchALL();
+		return $sth->fetchAll();
 	}
+
+	/*public function findItemsFromOrder()
+	{
+
+		$sql = 'SELECT ' .$this->table.'.*, i.name, i.quantity, i.price, i.newPrice FROM ' . $this->table . 
+		' JOIN user AS u ON '.$this->table.'.idMember = u.id
+		JOIN item AS i ON '.$this->table.'
+		.contenu = i.id WHERE
+		FIND_IN_SET('',orders.contenu)';
+		  
+		$sth = $this->dbh->prepare($sql);
+		$sth->execute();
+
+		return $sth->fetch();
+	}*/
 }
