@@ -106,6 +106,10 @@
 		width: 0%;
 	}
 	
+	.ordermidia_width {
+		width: 100%;
+	}
+	
 }
 
 @media screen and (max-width: 990px) {
