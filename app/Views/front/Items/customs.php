@@ -1,4 +1,4 @@
-<?php $this->layout('layoutfront', ['title' => 'catégorie Custom', 'meta' => 'napoleon, Customs playmobil, customs Tampographiés, bustes playmobil, bustes tampographiés, pièces résine, stickers drapeau']) ?>
+<?php $this->layout('layoutfront', ['title' => 'catégorie Customs', 'meta' => 'napoleon, Customs playmobil, customs Tampographiés, bustes playmobil, bustes tampographiés, pièces résine, stickers drapeau']) ?>
 
 <?php $this->start('main_content') ?>
 <div>
