@@ -9,6 +9,8 @@
 					<th>Numéro</th>
 					<th>Client</th>
 					<th>Contenu de la commande</th>
+					<th>Quantité</th>
+					<th>Prix</th>
 					<th>Date de la commande</th>
 					<th>Statut</th>
 					<!-- <th id="thaction">Changer le statut</th> -->
@@ -21,14 +23,24 @@
 						<td><?=$order['lastname'].' '.$order['firstname'].'<br>'.$order['adress'].'<br>'.$order['zipcode'].' '.$order['city']; ?></td>
 						<td><?php $contents = explode(', ', $order['contenu']); ?>
 
-							<?php 
-								foreach ($contents as $value) : ?>
+							<?php foreach ($contents as $value) : ?>
 									<?php 
 										$list_items = $items->findItems($value); 
 
 										echo '<a href="'.$this->url('updateItem', ['id'=>$list_items['id']]).'" style="color:white;">'.$list_items['name'].'</a> <br>';
 									?>
 							<?php endforeach; ?></td>
+						<td>
+							<?php $quantity = explode(', ', $order['quantity']); ?>
+            				<?php foreach ($quantity as $value):?>
+            					<?php
+            						echo $value.'<br>';
+            					?>
+            				<?php endforeach;?>	
+						</td>
+						<td>
+							
+						</td>
 						<td><?= date('d/m/Y', strtotime($order['date_creation']));?></td>
 						<td><?=$order['statut']; ?></td>
 						<!-- <td>

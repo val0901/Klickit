@@ -71,11 +71,11 @@
 //Routes pour le front (classé par controller)
 
 		// Routes en Ajax Front
-		['GET|POST', '/ajax/login', 'AjaxFront#login', 'ajax_Flogin'],
 		['GET|POST', '/ajax/logout', 'AjaxFront#logout', 'ajax_Flogout'],
 
 		//Pages liées à FrontController
 		['GET|POST', '/home', 'Front#index', 'front_index'],
+		['GET|POST', '/connexion', 'Front#login', 'login'],
 		['GET|POST', '/aPropos', 'Front#about', 'front_aPropos'],
 		['GET|POST', '/cgv', 'Front#cgv', 'front_cgv'],
 		['GET|POST', '/contact', 'Front#contact', 'front_contact'],
@@ -90,7 +90,7 @@
 
 
 		//Pages liées à FrontItemController
-		// ['GET|POST', '/Classics', 'FrontItem#listItemClassics', 'listItemClassics'],
+		['GET|POST', '/Customs', 'FrontItem#listCustomItemsFull', 'listItemCustomFull'],
 		['GET|POST', '/Classics/[a:sub_category]', 'FrontItem#listItemClassics', 'listItemClassics'],
 		['GET|POST', '/Customs/[a:sub_category]', 'FrontItem#listItemCustoms', 'listItemCustoms'],
 		['GET|POST', '/Divers/[a:sub_category]', 'FrontItem#listItemDivers', 'listItemDivers'],

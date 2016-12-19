@@ -11,6 +11,7 @@
 				<th>Numéro</th>
 				<th>Client</th>
 				<th>Contenu de la commande</th>
+				<th>Quantité</th>
 				<th>Date de la commande</th>
 				<th>Statut</th>
 				<th>Action</th>
@@ -32,6 +33,14 @@
 										echo '<a href="'.$this->url('updateItem', ['id'=>$list_items['id']]).'" style="color:white;">'.$list_items['name'].'</a> <br>';
 									?>
 							<?php endforeach; ?>
+            			</td>
+            			<td>
+            				<?php $quantity = explode(', ', $order['quantity']); ?>
+            				<?php foreach ($quantity as $value):?>
+            					<?php
+            						echo $value.'<br>';
+            					?>
+            				<?php endforeach;?>	
             			</td>
 						<td><?= date('d/m/Y', strtotime($order['date_creation']));?></td>
 						<td><?=$order['statut']; ?></td>

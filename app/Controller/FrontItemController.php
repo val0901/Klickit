@@ -37,6 +37,18 @@ class FrontItemController extends Controller
 		$this->show('front/Items/customs', $data);
 	}
 
+	public function listCustomItemsFull()
+	{
+		$getCustomItems = new ItemModel();
+		$items = $getCustomItems->findByCategory('PlaymobilCustom');
+
+		$data = [
+			'items'	=> $items
+		];
+
+		$this->show('front/Items/customsFull', $data);
+	}
+
 	/**
 	 * Affiche la page des items "Divers"
 	 */

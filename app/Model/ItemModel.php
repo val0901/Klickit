@@ -130,4 +130,18 @@ class ItemModel extends \W\Model\Model
 
 		return $sth->fetchAll();
 	}
+
+	/**
+	*	Affichage par catégorie
+	*/
+	public function findByCategory($category)
+	{
+		$sql = 'SELECT * FROM '.$this->table.' WHERE category = :category';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':category', $category);
+		$sth->execute();
+
+		return $sth->fetchAll();
+	}
 }
