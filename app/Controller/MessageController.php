@@ -121,10 +121,10 @@ class MessageController extends Controller
 				$contentEmail = nl2br($post['content']);
 
 				$sendMail->isSMTP();                                      
-				$sendMail->Host = 'smtp.gmail.com';  									// Hôte du SMTP
+				$sendMail->Host = 'SSL0.OVH.NET';  									// Hôte du SMTP
 				$sendMail->SMTPAuth = true;                               				// SMTP Authentification
-				$sendMail->Username = 'duhfanofdoge@gmail.com'; //Username         				// SMTP username
-				$sendMail->Password = 'TheRevA7X'; //mot de passe                    	 				// SMTP password
+				$sendMail->Username = 'sav@klickit.fr'; //Username         				// SMTP username
+				$sendMail->Password = 'silSAV33@'; //mot de passe                    	 				// SMTP password
 				$sendMail->SMTPSecure = 'tls';                         					// Enable TLS encryption, `ssl` also accepted
 				$sendMail->Port = 587;                                					// TCP port to connect to
 				$sendMail->CharSet = 'UTF-8';
@@ -132,7 +132,7 @@ class MessageController extends Controller
 				$sendMail->setFrom('sav@klickit.fr', 'Klickit');		  		//Expéditeur
 				
 				$sendMail->addAddress($viewMessage['email'], $viewMessage['firstname'].' '.$viewMessage['lastname']); 	   	//Destinataire
-				$sendMail->addCC('a7x.tholomew.plague@hotmail.fr'); 					//Copie envoyer à l'adresse souhaitée du mail
+				$sendMail->addCC('duhfanofdoge@gmail.com'); 					//Copie envoyer à l'adresse souhaitée du mail
 
 				$sendMail->Subject = $post['subject'];
 				$sendMail->Body    = $contentEmail; //On envoi le message éventuellement en HTML
