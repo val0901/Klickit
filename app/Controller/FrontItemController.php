@@ -24,11 +24,14 @@ class FrontItemController extends Controller
 	public function listItemCustoms($sub_category)
 	{
 		$affiche = new ItemModel();
-
 		$afficheItems = $affiche->findSubCategory($sub_category);
 
+		$newItems = new ItemModel();
+		$afficheNewItems = $newItems->findCategoryStatutCustom('PlaymobilCustom', 'nouveaute');
+
 		$data = [
-			'affiche' => $afficheItems,
+			'affiche' 		 => $afficheItems,
+			'afficheNewItem' => $afficheNewItems,
 		];
 
 		$this->show('front/Items/customs', $data);

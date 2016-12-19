@@ -105,9 +105,16 @@ class ItemModel extends \W\Model\Model
 	/**
 	 * REQUÊTE D'AFFICHAGE EN FONCTION DU STATUT
 	 */
-	public function findCategoryStatut($statut)
+	public function findCategoryStatutCustom($category, $statut)
 	{
+		$sql = 'SELECT * FROM '.$this->table.' WHERE category = :category AND statut = :statut';
 
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':category', $category);
+		$sth->bindValue(':statut', $statut);
+		$sth->execute();
+
+		return $sth->fetchAll();
 	}	
 
 	/**

@@ -81,11 +81,11 @@
 							<p><?=$product['name'];?></p>
 
 							<?php if($product['statut'] == 'nouveaute'):?>
-								<div class="viewcategory_nouveau"><?=$product['category'];?></div>
+								<div class="viewcategory_nouveau"><?=$product['statut'];?></div>
 							<?php elseif($product['statut'] == 'promotion'):?>
-								<div class="viewcategory_promo">promo !</div>
+								<div class="viewcategory_promo"><?=$product['statut'];?></div>
 							<?php elseif($product['statut'] == 'defaut'): ?>
-								<div class="viewcategory_defaut"><?=$product['defaut'];?></div>
+								<div class="viewcategory_defaut"><?=$product['statut'];?></div>
 							<?php endif; ?>
 	                    </div>
 						<div class="viewcategory_button">
@@ -141,135 +141,65 @@
         <div class="carousel-inner">
             <div class="item active">
                     <ul class="thumbnails">
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000004.jpg');?>" alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4>5 €</h4>
-                				<p>Princess Playmo</p>
-								<div class="slidecontent_nouveau">nouveau !</div>
-                                <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
-                            </div>
-                        </li>
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000005.jpg');?>" alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4>4 €</h4>
-                				<p>Nullam Condimentum Nibh Etiam Sem</p>
-								<div class="slidecontent_nouveau">nouveau !</div>
-                            </div>
-                        </li>
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000006.jpg');?>" alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4>8 €</h4>
-                				<p>Princess Playmo</p>
-								<div class="slidecontent_nouveau">nouveau !</div>
-                            </div>
-                        </li>
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000007.jpg');?>" alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4>3 €</h4>
-                				<p>Princess Playmo</p>
-								<div class="slidecontent_nouveau">nouveau !</div>
-                            </div>
-                        </li>
+                    	<?php foreach ($afficheNewItem as $newProduct) : ?>
+	                        <li class="span3">
+	                            <div class="thumbnail">
+	                                <a href="#"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
+	                            </div>
+	                            <div class="caption">
+	                            	<?php if($newProduct['newPrice'] === 0) : ?>
+	                            		<h4><?=$newProduct['price'];?></h4>
+	                            	<?php else : ?>
+	                            		<h4><?=$newProduct['newPrice'];?></h4>
+	                            	<?php endif; ?>
+	                				<p><?=$newProduct['name'];?></p>
+									<div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
+	                                <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
+	                            </div>
+	                        </li>
+	                    <?php endforeach; ?>
                     </ul>
               </div><!-- /Slide1 --> 
             <div class="item">
                     <ul class="thumbnails">
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000008.jpg');?>" alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4>5 €</h4>
-                				<p>Princess Playmo</p>
-								<div class="slidecontent_nouveau">nouveau !</div>
-                            </div>
-                        </li>
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_espacerobots_000001.jpg');?>" alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4>4 €</h4>
-                				<p>Princess Playmo</p>
-								<div class="slidecontent_nouveau">nouveau !</div>
-                            </div>
-                        </li>
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_espacerobots_000002.jpg');?>" alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4>8 €</h4>
-                				<p>Princess Playmo</p>
-								<div class="slidecontent_nouveau">nouveau !</div>
-                            </div>
-                        </li>
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_fantasy_000001.jpg');?>" alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4>3 €</h4>
-                				<p>Princess Playmo</p>
-								<div class="slidecontent_nouveau">nouveau !</div>
-                            </div>
-                        </li>
+                        <?php foreach ($afficheNewItem as $newProduct) : ?>
+                       	    <li class="span3">
+                       	        <div class="thumbnail">
+                       	            <a href="#"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
+                       	        </div>
+                       	        <div class="caption">
+                       	            <?php if($newProduct['newPrice'] === 0) : ?>
+                       	                <h4><?=$newProduct['price'];?></h4>
+                       	            <?php else : ?>
+                       	                <h4><?=$newProduct['newPrice'];?></h4>
+                       	            <?php endif; ?>
+                       	            <p><?=$newProduct['name'];?></p>
+                       			<div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
+                       	        <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
+                       	        </div>
+                       	    </li>
+                       	<?php endforeach; ?>
                     </ul>
               </div><!-- /Slide2 --> 
             <div class="item">
                     <ul class="thumbnails">
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_fantasy_000002.jpg');?>" alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4>5 €</h4>
-                				<p>Princess Playmo</p>
-								<div class="slidecontent_nouveau">nouveau !</div>
-                            </div>
-                        </li>
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_fantasy_000003.jpg');?>" alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4>4 €</h4>
-                				<p>Princess Playmo</p>
-								<div class="slidecontent_nouveau">nouveau !</div>
-                            </div>
-                        </li>
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_fantasy_000004.jpg');?>" alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4>8 €</h4>
-                				<p>Princess Playmo</p>
-								<div class="slidecontent_nouveau">nouveau !</div>
-                            </div>
-                        </li>
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_feesprincesses_000001.jpg');?>" alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4>3 €</h4>
-                				<p>Princess Playmo</p>
-								<div class="slidecontent_nouveau">nouveau !</div>
-                            </div>
-                        </li>
+                        <?php foreach ($afficheNewItem as $newProduct) : ?>
+	                        <li class="span3">
+	                            <div class="thumbnail">
+	                                <a href="#"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
+	                            </div>
+	                            <div class="caption">
+	                            	<?php if($newProduct['newPrice'] === 0) : ?>
+	                            		<h4><?=$newProduct['price'];?></h4>
+	                            	<?php else : ?>
+	                            		<h4><?=$newProduct['newPrice'];?></h4>
+	                            	<?php endif; ?>
+	                				<p><?=$newProduct['name'];?></p>
+									<div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
+	                                <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
+	                            </div>
+	                        </li>
+	                    <?php endforeach; ?>
                     </ul>
               </div><!-- /Slide3 --> 
         </div>
