@@ -217,11 +217,11 @@
 						  <li style="float:right;"><i class="fa fa-plus faplus_color plus_customs" aria-hidden="true" id="pluscustoms_hide"></i><i class="fa fa-minus faminus_color" aria-hidden="true" id="faminus1_hide"></i></li>
 						  <div class="clear"></div>
 						  <ul class="soumenu_customs_text">
-							  <li><a href="<?=$this->url('listItemCustoms', ['sub_category'=>'CustomsTampographies']);?>">Customs Tampographiés</a></li>
-							  <li><a href="<?=$this->url('listItemCustoms', ['sub_category'=>'CustomsPeints']);?>">Customs peints</a></li>
-							  <li><a href="<?=$this->url('listItemCustoms', ['sub_category'=>'BustesTampographies']);?>">Bustes Tampographiés</a></li>
-							  <li><a href="<?=$this->url('listItemCustoms', ['sub_category'=>'PiecesEnResine']);?>">Pièces en résine</a></li>
-							  <li><a href="<?=$this->url('listItemCustoms', ['sub_category'=>'Stickers']);?>">Stickers</a></li>
+							  <li><a id="customsmenu_scat" href="<?=$this->url('listItemCustoms', ['sub_category'=>'CustomsTampographies']);?>">Customs Tampographiés</a></li>
+							  <li><a id="customsmenu_scat" href="<?=$this->url('listItemCustoms', ['sub_category'=>'CustomsPeints']);?>">Customs peints</a></li>
+							  <li><a id="customsmenu_scat" href="<?=$this->url('listItemCustoms', ['sub_category'=>'BustesTampographies']);?>">Bustes Tampographiés</a></li>
+							  <li><a id="customsmenu_scat" href="<?=$this->url('listItemCustoms', ['sub_category'=>'PiecesEnResine']);?>">Pièces en résine</a></li>
+							  <li><a id="customsmenu_scat" href="<?=$this->url('listItemCustoms', ['sub_category'=>'Stickers']);?>">Stickers</a></li>
 					  	  </ul>
 					  </div>
 				  </div>
