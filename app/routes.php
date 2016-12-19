@@ -80,28 +80,28 @@
 		['GET|POST', '/events', 'Front#events', 'front_events'],
 
 		//Pages liées à UserController
-		['GET|POST', '/addUser', 'FrontUser#faddUser', 'front_faddUser'],
-		['GET|POST', '/cptUser', 'FrontUser#affCptUser', 'front_affcptuser'],
-		['GET|POST', '/fUpdateUser', 'FrontUser#fupdateUser', 'front_fUpdateUser'],
+		['GET|POST', '/inscription', 'FrontUser#faddUser', 'front_faddUser'],
+		['GET|POST', '/compte/[i:id]', 'FrontUser#affCptUser', 'front_affcptuser'],
+		['GET|POST', '/updateCompte/[i:id]', 'FrontUser#fupdateUser', 'front_fUpdateUser'],
 		['GET|POST', '/orderLogin', 'FrontUser#fconnectUser', 'front_orderLogin'],
 
 
 		//Pages liées à FrontItemController
-		['GET|POST', '/listItemClassics', 'FrontItem#listItemClassics', 'listItemClassics'],
-		['GET|POST', '/listItemCustoms', 'FrontItem#listItemCustoms', 'listItemCustoms'],
-		['GET|POST', '/listItemDivers', 'FrontItem#listItemDivers', 'listItemDivers'],
-		['GET|POST', '/listItemPieces', 'FrontItem#listItemPieces', 'listItemPieces'],
+		['GET|POST', '/Classics', 'FrontItem#listItemClassics', 'listItemClassics'],
+		['GET|POST', '/Customs', 'FrontItem#listItemCustoms', 'listItemCustoms'],
+		['GET|POST', '/Divers', 'FrontItem#listItemDivers', 'listItemDivers'],
+		['GET|POST', '/Pieces', 'FrontItem#listItemPieces', 'listItemPieces'],
 		['GET|POST', '/searchItems', 'FrontItem#searchItems', 'searchItems'],
 
 		//Pages liées à FrontGuestbookController
-		['GET|POST', '/fGuestbook', 'FrontGuestbook#affGuestbook', 'fGuestbook'],
+		['GET|POST', '/Guestbook', 'FrontGuestbook#affGuestbook', 'fGuestbook'],
 
 
 		//Pages liées à FrontOrdersController du COMPTE CLIENT
 			//liste des commandes
 		['GET|POST', '/listOrders', 'FrontOrders#frontListOrders', 'front_listOrders'],
 			//vue d'une commande
-		['GET|POST', '/viewUserOrder', 'FrontOrders#frontViewOrders', 'front_viewUserOrder'],
+		['GET|POST', '/viewOrder', 'FrontOrders#frontViewOrders', 'front_viewUserOrder'],
 
 
 		//Pages liées à FrontOrdersController du PROCESS COMMANDE
