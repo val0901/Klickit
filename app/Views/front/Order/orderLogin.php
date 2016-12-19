@@ -1,4 +1,4 @@
-<?php $this->layout('layoutfront', ['title' => 'Panier de commande']) ?>
+<?php $this->layout('layoutfront', ['title' => 'Login de commande']) ?>
 
 <?php $this->start('main_content') ?>
 <div class="container">

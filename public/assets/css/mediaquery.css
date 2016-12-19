@@ -98,6 +98,14 @@
     padding-right: 15px;
 }
 	
+	.col-md-6 {
+		width: 97%;
+	}
+	
+	.col-md-3 {
+		width: 0%;
+	}
+	
 }
 
 @media screen and (max-width: 990px) {
