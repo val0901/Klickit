@@ -636,6 +636,39 @@
   });
 	/*End index.php slide article*/
 		
+  /*orderpayment radio click photo change*/
+/*$(document).ready(function(){
+	   $("#orderpaypal_hover").click(function(){
+		  $("input.orderpayment_checked1").attr("checked","checked");
+		  $("#orderpaypal_hover").attr("src", "<?=$this->assetUrl('/img/paypal.png');?>") }, function () { $(this).attr("src", "<?=$this->assetUrl('/img/paypalHover.png');?>")
+	  	  $("input.orderpayment_checked2").removeAttr("checked","checked");	
+						$("input.orderpayment_checked3").removeAttr("checked","checked");
+
+																							});
+				});
+	  
+$(document).ready(function(){
+	   $("#ordercheque_hover").click(function(){
+		  $("input.orderpayment_checked2").attr("checked","checked");
+		  $("#orderpaypal_hover").attr("src", "<?=$this->assetUrl('/img/paychq.png');?>") }, function () { $(this).attr("src", "<?=$this->assetUrl('/img/paychqhover.png');?>")
+	  	  $("input.orderpayment_checked1").prop("checked",false);	
+						$("input.orderpayment_checked3").removeAttr("checked","checked");
+
+																							});
+					});
+				
+$(document).ready(function(){
+	   $("#ordervirement_hover").click(function(){
+		  $("input.orderpayment_checked3").attr("checked","checked");
+		  $("#orderpaypal_hover").attr("src", "<?=$this->assetUrl('/img/payvir.png');?>") }, function () { $(this).attr("src", "<?=$this->assetUrl('/img/payvirhover.png');?>")
+						$("input.orderpayment_checked1").removeAttr("checked","checked");
+						$("input.orderpayment_checked2").removeAttr("checked","checked");
+
+																							});
+
+  })		*/
+  /*End orderpayment radio click photo change*/
+		
 	
     </script>
 </body>

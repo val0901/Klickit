@@ -1344,3 +1344,22 @@ td {
 	background-color: #3d980b;
 	border: none;
 }
+
+.orderpayment_button {
+	text-transform: uppercase;
+}
+
+.orderpayment_buttontext {
+	font-family: 'Advent Pro', sans-serif;
+	font-weight: 600;
+}
+
+.orderpayment_text {
+	padding: 10px;
+	font-size:18px;
+	font-weight:600;
+}
+
+.orderpaymentradio_margin {
+	margin-left: 50px;
+}
