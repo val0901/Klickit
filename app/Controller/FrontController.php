@@ -50,14 +50,14 @@ class FrontController extends Controller
 					$error = 'Erreur d\'identifiant ou de mot de passe';
 				}
 			}
+		}
+		
 		if(!empty($this->getUser())){
 			$this->redirectToRoute('front/index');
 		}
 		else {
 			$param = ['error' => $errors];
 			$this->show('front/login', $param);			
-		}
-
 		}
 
 	}
