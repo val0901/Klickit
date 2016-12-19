@@ -65,6 +65,7 @@
 			$('.delete-order').click(function(e){
 				e.preventDefault();
 
+				var idOrder = $(this).data('id');
 
 				$.confirm({
 
