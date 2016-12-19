@@ -5,8 +5,8 @@
 <div class="">
 	<div class="row">
 		<div class="col-lg-3 col-xs-6" style="position:relative;" id="categoryclassic_hover">
-			<a href="<?=$this->url('listItemClassics', ['sub_category'=> 'none']);?>"><div class="classic_text_show"><span>Classics</span></div>
-			<img class="img-responsive" src="<?=$this->assetUrl('/img/art_classic_divers_000001.jpg');?>" id="categoryclassic_hover"></a>
+			<div class="classic_text_show"><span>Classics</span></div>
+			<img class="img-responsive" src="<?=$this->assetUrl('/img/art_classic_divers_000001.jpg');?>" id="categoryclassic_hover">
 			<div class="classic_text">Classics</div>
 		</div>
 		<div class="col-lg-3 col-xs-6" id="categorycustoms_hover">
