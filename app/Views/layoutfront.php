@@ -217,7 +217,7 @@
 						  <li style="float:right;"><i class="fa fa-plus faplus_color plus_customs" aria-hidden="true" id="pluscustoms_hide"></i><i class="fa fa-minus faminus_color" aria-hidden="true" id="faminus1_hide"></i></li>
 						  <div class="clear"></div>
 						  <ul class="soumenu_customs_text">
-							  <li>Customs Tampographiés</li>
+							  <li><a href="<?=$this->url('listItemCustoms', ['sub_category'=>'CustomsTampographies']);?>">Customs Tampographiés</a></li>
 							  <li>Customs peints</li>
 							  <li>Bustes Tampographiés</li>
 							  <li>Pièces en résine</li>

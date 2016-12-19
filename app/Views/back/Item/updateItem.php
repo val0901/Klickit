@@ -99,8 +99,8 @@
 		    <select id="statut" name="statut" class="form-control">
 		      <option selected disabled></option>
 		      <option value="promotion">promotion</option>
-		      <option value="nouveauté">nouveauté</option>
-		      <option value="par defaut">par defaut</option>
+		      <option value="nouveaute">nouveauté</option>
+		      <option value="defaut">par defaut</option>
 		    </select>
 		  </div>
 		</div>
@@ -136,7 +136,7 @@
 			      <option value="Animaux">Animaux</option>
 			      <option value="Sport">Sport</option>
 			      <option value="Divers">Divers</option>
-			  	  <option value="Customs tampographiés">Customs tampographiés</option>
+			  	  <option value="CustomsTampographies">Customs tampographiés</option>
 			  	  <option value="Customs peints">Customs peints</option>
 			  	  <option value="Bustes tampographiés">Bustes tampographiés</option>
 			  	  <option value="Pièces en résine">Pièces en résine</option>

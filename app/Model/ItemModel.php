@@ -89,7 +89,7 @@ class ItemModel extends \W\Model\Model
     return $result['total'];
 	}
 
-	/*REQUÊTE SUR LA TABLE ORDERS AVEC JOINTURE SUR ITEM*/
+	/*REQUÊTE SUR LA ITEM PAR ID*/
 	public function findItems($id)
 	{
 
@@ -100,5 +100,27 @@ class ItemModel extends \W\Model\Model
 		$sth->execute();
 
 		return $sth->fetch();
+	}
+
+	/**
+	 * REQUÊTE D'AFFICHAGE EN FONCTION DU STATUT
+	 */
+	public function findCategoryStatut($statut)
+	{
+
+	}	
+
+	/**
+	 * REQUÊTE D'AFFICHAGE D'UNE SUB_CATEGORY
+	 */
+	public function findSubCategory($sub_category)
+	{
+		$sql = 'SELECT * FROM '.$this->table.' WHERE sub_category = :subCategory';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':subCategory', $sub_category);
+		$sth->execute();
+
+		return $sth->fetchAll();
 	}
 }
