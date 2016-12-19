@@ -89,7 +89,7 @@
 
 
 		//Pages liées à FrontItemController
-		// ['GET|POST', '/Classics', 'FrontItem#listItemClassics', 'listItemClassics'],
+		['GET|POST', '/Classics', 'FrontItem#listItemClassics', 'listItemClassicsFull'],
 		['GET|POST', '/Classics/[a:sub_category]', 'FrontItem#listItemClassics', 'listItemClassics'],
 		['GET|POST', '/Customs/[a:sub_category]', 'FrontItem#listItemCustoms', 'listItemCustoms'],
 		['GET|POST', '/Divers/[a:sub_category]', 'FrontItem#listItemDivers', 'listItemDivers'],
