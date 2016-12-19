@@ -15,7 +15,11 @@ class FrontGuestbookController extends Controller
 	 */
 	public function affGuestbook()
 	{
-		$this->show('front/User/guestbook');
+		if(!empty($_SESSION)){
+			$this->show('front/User/guestbook');
+		}else {
+			$this->redirectToRoute('login');
+		}
 	}
 
 

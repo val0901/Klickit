@@ -69,6 +69,7 @@ class FrontController extends Controller
 	{
 		$this->show('front/Pages/aPropos');
 	}
+
 	/**
 	 * Page CGV
 	 */
@@ -76,6 +77,7 @@ class FrontController extends Controller
 	{
 		$this->show('front/Pages/cgv');
 	}
+
 	/**
 	 * Page A propos
 	 */
@@ -83,6 +85,7 @@ class FrontController extends Controller
 	{
 		$this->show('front/Pages/contact');
 	}
+
 	/**
 	 * Page A propos
 	 */
@@ -90,6 +93,7 @@ class FrontController extends Controller
 	{
 		$this->show('front/Pages/legalMention');
 	}
+
 	/**
 	 * Page Events
 	 */
@@ -97,5 +101,15 @@ class FrontController extends Controller
 	{
 		$this->show('front/Event/viewEvent');
 	}
+
+	/**
+	 * Page équipe
+	 */
+	public function team()
+	{
+		$this->show('front/Pages/team');
+	}
+
+
 
 }

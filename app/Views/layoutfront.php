@@ -59,7 +59,7 @@
 	<div class="container_general">
 		<header>
             <div class="nav_left">
-            <img src="<?=$this->assetUrl('/img/KLICKIT-logo-napoleon.png');?>">
+            <a href="<?=$this->url('front_index');?>"><img src="<?=$this->assetUrl('/img/KLICKIT-logo-napoleon.png');?>"></a>
             <p class="baseline_text">Créez l'histoire !</p>
             </div>
             
@@ -437,20 +437,18 @@
 			<div class="row footerrow_margin">
 				<div class="col-md-4 etiq_width">
 					<p class="footertitle">Société</p>
-					<a href="<?=$this->url('front_legalMention');?>"><p class="footertext">Mentions légales</p></a>				
-					<a href="<?=$this->url('front_cgv');?>"><p class="footertext">Condition Générales de Ventes</p></a>
-					<!-- changer lien -->
-					<a href="<?=$this->url('front_legalMention');?>"><p class="footertext">Création d'évènement Playmobil</p></a>
-					<a href="<?=$this->url('front_contact');?>"><p class="footertext">Contact</p></a>
-					<!-- changer lien -->
-					<a href="<?=$this->url('front_legalMention');?>"><p class="footertext">Equipe de création</p></a>
-					<!-- changer lien -->
-					<a href="<?=$this->url('front_legalMention');?>"><p class="footertext">Laissez nous votre avis</p></a>
-				</div>
-				<div class="col-md-4 etiq_width">
-					<p class="footertitle">Suivez-nous</p>
-					<i class="fa fa-facebook-square fa-2x footer_neticon" aria-hidden="true"> <span class="footertext">Sur Facebook</span></i>
-					<i class="fa fa-twitter-square fa-2x footer_neticon" aria-hidden="true"> <span class="footertext">Sur Twitter</span></i>
+						<a href="<?=$this->url('front_legalMention');?>"><p class="footertext">Mentions légales</p></a>				
+						<a href="<?=$this->url('front_cgv');?>"><p class="footertext">Condition Générales de Ventes</p></a>
+						<a href="<?=$this->url('front_createEvent');?>"><p class="footertext">Création d'évènement Playmobil</p></a>
+						<a href="<?=$this->url('front_contact');?>"><p class="footertext">Contact</p></a>
+						<a href="<?=$this->url('front_team');?>"><p class="footertext">Equipe de création</p></a>
+						<a href="<?=$this->url('fGuestbook');?>"><p class="footertext">Laissez nous votre avis</p></a>
+					</div>
+					<div class="col-md-4 etiq_width">
+						<p class="footertitle">Suivez-nous</p>
+						<a href="https://www.facebook.com/Klickit-787164048000917/" target="_blank"><i class="fa fa-facebook-square fa-2x footer_neticon" aria-hidden="true"> <span class="footertext">Sur Facebook</span></i></a>
+						<a href=" https://twitter.com/Klickit33" target="_blank"><i class="fa fa-twitter-square fa-2x footer_neticon" aria-hidden="true"> <span class="footertext">Sur Twitter</span></i></a>
+					
 				</div>
 				<div class="col-md-4 etiq_width">
 					<img src="<?=$this->assetUrl('/img/napoleonlarge.png');?>" alt="" class="footerimg_hide">
@@ -475,15 +473,15 @@
 				<div class="col-xs-6 etiq_width_small">
 					<p class="footertitle">Société</p>
 					<a href="<?=$this->url('front_legalMention');?>"><p class="footertext">Mentions légales</p></a>
-					<p class="footertext">Condition Générales de Ventes</p>
-					<p class="footertext">Création d'évènement Playmobil</p>
-					<p class="footertext">Contact</p>
-					<p class="footertext">Equipe de création</p>
-					<p class="footertext">Laissez nous votre avis</p>
+					<a href="<?=$this->url('front_cgv');?>"><p class="footertext">Condition Générales de Ventes</p></a>
+					<a href="<?=$this->url('front_createEvent');?>"><p class="footertext">Création d'évènement Playmobil</p></a>
+					<a href="<?=$this->url('front_contact');?>"><p class="footertext">Contact</p></a>
+					<a href="<?=$this->url('front_team');?>"><p class="footertext">Equipe de création</p></a>
+					<a href="<?=$this->url('fGuestbook');?>"><p class="footertext">Laissez nous votre avis</p></a>
 					<br>
 					<p class="footertitle">Suivez-nous</p>
-					<i class="fa fa-facebook-square fa-2x footer_neticon" aria-hidden="true"> <span class="footertext">Sur Facebook</span></i>
-					<i class="fa fa-twitter-square fa-2x footer_neticon" aria-hidden="true"> <span class="footertext">Sur Twitter</span></i>
+					<a href="https://www.facebook.com/Klickit-787164048000917/" target="_blank"><i class="fa fa-facebook-square fa-2x footer_neticon" aria-hidden="true"> <span class="footertext">Sur Facebook</span></i></a>
+					<a href=" https://twitter.com/Klickit33" target="_blank"><i class="fa fa-twitter-square fa-2x footer_neticon" aria-hidden="true"> <span class="footertext">Sur Twitter</span></i></a>
 				</div>
 			</div>
 			
