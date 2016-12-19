@@ -201,7 +201,7 @@
 							  <li>Pirates</li>
 							  <li>Antique</li>
 							  <li>Western</li>
-							  <li>Fantazy</li>
+							  <li>Fantasy</li>
 							  <li>XVIIIe</li>
 							  <li>Fées & Princesses</li>
 							  <li>Police</li>
