@@ -445,11 +445,13 @@
 	</div>
     </footer>
 	<!--End footer-->
-	
+
 	<!--jquery js-->
     <script src="<?= $this->assetUrl('js/jquery-3.1.1.min.js') ?>"></script>   
     <!--bootstrap js-->
     <script src="<?= $this->assetUrl('js/bootstrap.min.js') ?>"></script>
+	
+    <?= $this->section('js')?>
 	
 	<!--Script-->
 	<script>
