@@ -73,18 +73,4 @@ class OrdersModel extends \W\Model\Model
 		return $sth->fetchAll();
 	}
 
-	/*public function findItemsFromOrder()
-	{
-
-		$sql = 'SELECT ' .$this->table.'.*, i.name, i.quantity, i.price, i.newPrice FROM ' . $this->table . 
-		' JOIN user AS u ON '.$this->table.'.idMember = u.id
-		JOIN item AS i ON '.$this->table.'
-		.contenu = i.id WHERE
-		FIND_IN_SET('',orders.contenu)';
-		  
-		$sth = $this->dbh->prepare($sql);
-		$sth->execute();
-
-		return $sth->fetch();
-	}*/
 }

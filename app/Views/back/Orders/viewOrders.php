@@ -17,22 +17,23 @@
 				</thead>
 
 				<tbody>
-				<?php foreach ($orders as $value): ;?>
+				<?php foreach ($orders as $order): ;?>
 					<tr>
-						<td><?=$value['id']; ?></td>
-						<td><?=$value['lastname'].' '.$value['firstname'].'<br>'; ?></td>
-						<td><?= $value['adress'].'<br>'.$value['zipcode'].' '.$value['city'] ?></td>
-						<td><?php  var_dump($items['name']);foreach($items as $item){
+						<td><?=$order['id']; ?></td>
+						<td><?=$order['lastname'].' '.$order['firstname'].'<br>'; ?></td>
+						<td><?= $order['adress'].'<br>'.$order['zipcode'].' '.$order['city'] ?></td>
+						<td><?php $contents = explode(', ', $order['contenu']); ?>
 
-										$contents = explode(', ', $item['name']);
-										echo '<ul>';
-										foreach($contents as $content){
-											echo '<li>'.$content.'</li>';
-										}	
-										echo '</ul>';
-									}?></td>
-						<td><?= date('d/m/Y', strtotime($value['date_creation']));?></td>
-						<td><?=$value['statut']; ?></td>
+							<?php 
+								foreach ($contents as $value) : ?>
+									<?php 
+										$list_items = $items->findItems($value); 
+
+										echo '<a href="'.$this->url('updateItem', ['id'=>$list_items['id']]).'" style="color:white;">'.$list_items['name'].'</a> <br>';
+									?>
+							<?php endforeach; ?></td>
+						<td><?= date('d/m/Y', strtotime($order['date_creation']));?></td>
+						<td><?=$order['statut']; ?></td>
 						<td>
 							<div class="form-group" id="selectStt">									
 								  <div class="col-md-4">
@@ -43,9 +44,9 @@
 								    	<option value="expédié">Expédiée</option>
 								    </select>
 								  </div>
-								  <input type="submit" style="display:none;" data-id="<?=$value['id']?>">
+								  <input type="submit" style="display:none;" data-id="<?=$order['id']?>">
 							</div></td>
-						<td><button class="btn btn-danger delete-item" data-id="<?=$value['id']?>">Effacer la commande</button>
+						<td><button class="btn btn-danger delete-item" data-id="<?=$order['id']?>">Effacer la commande</button>
 	
 						</td>
 					</tr>
