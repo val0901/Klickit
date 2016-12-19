@@ -137,9 +137,9 @@
 			      <option value="Sport">Sport</option>
 			      <option value="Divers">Divers</option>
 			  	  <option value="CustomsTampographies">Customs tampographiés</option>
-			  	  <option value="Customs peints">Customs peints</option>
-			  	  <option value="Bustes tampographiés">Bustes tampographiés</option>
-			  	  <option value="Pièces en résine">Pièces en résine</option>
+			  	  <option value="CustomsPeints">Customs peints</option>
+			  	  <option value="BustesTampographies">Bustes tampographiés</option>
+			  	  <option value="PiecesEnResine">Pièces en résine</option>
 			  	  <option value="Stickers">Stickers</option>
 			  	  <option value="Armes">Armes</option>
 			  	  <option value="Coiffes">Coiffes</option>

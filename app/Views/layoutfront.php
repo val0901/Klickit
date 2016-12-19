@@ -218,10 +218,10 @@
 						  <div class="clear"></div>
 						  <ul class="soumenu_customs_text">
 							  <li><a href="<?=$this->url('listItemCustoms', ['sub_category'=>'CustomsTampographies']);?>">Customs Tampographiés</a></li>
-							  <li>Customs peints</li>
-							  <li>Bustes Tampographiés</li>
-							  <li>Pièces en résine</li>
-							  <li>Stickers</li>
+							  <li><a href="<?=$this->url('listItemCustoms', ['sub_category'=>'CustomsPeints']);?>">Customs peints</a></li>
+							  <li><a href="<?=$this->url('listItemCustoms', ['sub_category'=>'BustesTampographies']);?>">Bustes Tampographiés</a></li>
+							  <li><a href="<?=$this->url('listItemCustoms', ['sub_category'=>'PiecesEnResine']);?>">Pièces en résine</a></li>
+							  <li><a href="<?=$this->url('listItemCustoms', ['sub_category'=>'Stickers']);?>">Stickers</a></li>
 					  	  </ul>
 					  </div>
 				  </div>
