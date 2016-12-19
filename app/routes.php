@@ -6,12 +6,12 @@
 /******************** BACK *********************/
 
 		//Routes pour le back (classé par controller)
-		['GET|POST', '/back/index', 'Back#index', 'back_index'],
-		['GET|POST', '/back/login', 'Back#login', 'back_login'],
-		['GET|POST', '/back/forgot_password', 'Back#forgot_pwd', 'back_forgot_pwd'],
+		['GET|POST', '/admin/home', 'Back#index', 'back_index'],
+		['GET|POST', '/admin/login', 'Back#login', 'back_login'],
+		['GET|POST', '/admin/forgot_password', 'Back#forgot_pwd', 'back_forgot_pwd'],
 
 		//Pages liées à ResetController
-		['GET|POST', '/back/reset_password/[i:id]/[:token]/', 'Reset#reset_pwd', 'back_reset_pwd'],
+		['GET|POST', '/admin/reset_password/[i:id]/[:token]/', 'Reset#reset_pwd', 'back_reset_pwd'],
 
 		// Les routes ajax
 		['GET|POST', '/ajax/logout', 'Ajax#logout', 'ajax_logout'],
@@ -25,43 +25,43 @@
 		['GET|POST', '/ajax/updateOrder', 'Ajax#updateStatus', 'ajax_updateStatus'],
 
 		//Pages liées à UserController
-		['GET|POST', '/back/listUser', 'User#listUser', 'listUser'],
-		['GET|POST', '/back/addUser', 'User#addUser', 'addUser'],
-		['GET|POST', '/back/updateUser/[i:id]', 'User#updateUser', 'updateUser'],
+		['GET|POST', '/admin/listUser', 'User#listUser', 'listUser'],
+		['GET|POST', '/admin/addUser', 'User#addUser', 'addUser'],
+		['GET|POST', '/admin/updateUser/[i:id]', 'User#updateUser', 'updateUser'],
 
 
 		//Pages liées à MessageController
-		['GET|POST', '/back/listMessage', 'Message#listMessage', 'listMessage'],
-		['GET|POST', '/back/viewMessage/[i:id]', 'Message#viewMessage', 'viewMessage'],
+		['GET|POST', '/admin/listMessage', 'Message#listMessage', 'listMessage'],
+		['GET|POST', '/admin/viewMessage/[i:id]', 'Message#viewMessage', 'viewMessage'],
 
 		//Pages liées à EventController
-		['GET|POST', '/back/listEvent', 'Event#listEvent', 'listEvent'],
-		['GET|POST', '/back/addEvent', 'Event#addEvent', 'addEvent'],
-		['GET|POST', '/back/updateEvent/[i:id]', 'Event#updateEvent', 'updateEvent'],
+		['GET|POST', '/admin/listEvent', 'Event#listEvent', 'listEvent'],
+		['GET|POST', '/admin/addEvent', 'Event#addEvent', 'addEvent'],
+		['GET|POST', '/admin/updateEvent/[i:id]', 'Event#updateEvent', 'updateEvent'],
 
 		//Pages liées à SlideController
-		['GET|POST', '/back/listSlide', 'Slide#listSlide', 'listSlide'],
-		['GET|POST', '/back/addSlide', 'Slide#addSlide', 'addSlide'],
-		['GET|POST', '/back/updateSlide/[i:id]', 'Slide#updateSlide', 'updateSlide'],
+		['GET|POST', '/admin/listSlide', 'Slide#listSlide', 'listSlide'],
+		['GET|POST', '/admin/addSlide', 'Slide#addSlide', 'addSlide'],
+		['GET|POST', '/admin/updateSlide/[i:id]', 'Slide#updateSlide', 'updateSlide'],
 
 		//Pages liées à ItemController
-		['GET|POST', '/back/listItem', 'Item#listItem', 'listItem'],
-		['GET|POST', '/back/addItem', 'Item#addItem', 'addItem'],
-		['GET|POST', '/back/updateItem/[i:id]', 'Item#updateItem', 'updateItem'],
+		['GET|POST', '/admin/listItem', 'Item#listItem', 'listItem'],
+		['GET|POST', '/admin/addItem', 'Item#addItem', 'addItem'],
+		['GET|POST', '/admin/updateItem/[i:id]', 'Item#updateItem', 'updateItem'],
 
 		//Pages liées à OrdersController
-		['GET|POST', '/back/listOrders', 'Orders#listOrders', 'listOrders'],
-		['GET|POST', '/back/viewOrder/[i:id]', 'Orders#viewOrders', 'viewOrders'],
+		['GET|POST', '/admin/listOrders', 'Orders#listOrders', 'listOrders'],
+		['GET|POST', '/admin/viewOrder/[i:id]', 'Orders#viewOrders', 'viewOrders'],
 
 
 		//Pages liées à ShippingController
-		['GET|POST', '/back/listShipping', 'Shipping#listShipping', 'listShipping'],
-		['GET|POST', '/back/addShipping', 'Shipping#addShipping', 'addShipping'],
-		['GET|POST', '/back/updateShipping/[i:id]', 'Shipping#updateShipping', 'updateShipping'],
+		['GET|POST', '/admin/listShipping', 'Shipping#listShipping', 'listShipping'],
+		['GET|POST', '/admin/addShipping', 'Shipping#addShipping', 'addShipping'],
+		['GET|POST', '/admin/updateShipping/[i:id]', 'Shipping#updateShipping', 'updateShipping'],
 
 		//Pages liées à GuestbookController
-		['GET|POST', '/back/listGuestbook', 'Guestbook#listGuestbook', 'listGuestbook'],
-		['GET|POST', '/back/moderation/[i:id]', 'Guestbook#moderation', 'moderation'],
+		['GET|POST', '/admin/listGuestbook', 'Guestbook#listGuestbook', 'listGuestbook'],
+		['GET|POST', '/admin/moderation/[i:id]', 'Guestbook#moderation', 'moderation'],
 
 
 
@@ -71,45 +71,45 @@
 
 
 		//Pages liées à FrontController
-		['GET|POST', '/front/index', 'Front#index', 'front_index'],
-		['GET|POST', '/front/login', 'Front#login', 'front_login'],
-		['GET|POST', '/front/aPropos', 'Front#about', 'front_aPropos'],
-		['GET|POST', '/front/cgv', 'Front#cgv', 'front_cgv'],
-		['GET|POST', '/front/contact', 'Front#contact', 'front_contact'],
-		['GET|POST', '/front/legalMention', 'Front#legalMention', 'front_legalMention'],
-		['GET|POST', '/front/events', 'Front#events', 'front_events'],
+		['GET|POST', '/home', 'Front#index', 'front_index'],
+		['GET|POST', '/login', 'Front#login', 'front_login'],
+		['GET|POST', '/aPropos', 'Front#about', 'front_aPropos'],
+		['GET|POST', '/cgv', 'Front#cgv', 'front_cgv'],
+		['GET|POST', '/contact', 'Front#contact', 'front_contact'],
+		['GET|POST', '/legalMention', 'Front#legalMention', 'front_legalMention'],
+		['GET|POST', '/events', 'Front#events', 'front_events'],
 
 		//Pages liées à UserController
-		['GET|POST', '/front/addUser', 'FrontUser#faddUser', 'front_faddUser'],
-		['GET|POST', '/front/cptUser', 'FrontUser#affCptUser', 'front_affcptuser'],
-		['GET|POST', '/front/fUpdateUser', 'FrontUser#fupdateUser', 'front_fUpdateUser'],
-		['GET|POST', '/front/orderLogin', 'FrontUser#fconnectUser', 'front_orderLogin'],
+		['GET|POST', '/addUser', 'FrontUser#faddUser', 'front_faddUser'],
+		['GET|POST', '/cptUser', 'FrontUser#affCptUser', 'front_affcptuser'],
+		['GET|POST', '/fUpdateUser', 'FrontUser#fupdateUser', 'front_fUpdateUser'],
+		['GET|POST', '/orderLogin', 'FrontUser#fconnectUser', 'front_orderLogin'],
 
 
 		//Pages liées à FrontItemController
-		['GET|POST', '/front/listItemClassics', 'FrontItem#listItemClassics', 'listItemClassics'],
-		['GET|POST', '/front/listItemCustoms', 'FrontItem#listItemCustoms', 'listItemCustoms'],
-		['GET|POST', '/front/listItemDivers', 'FrontItem#listItemDivers', 'listItemDivers'],
-		['GET|POST', '/front/listItemPieces', 'FrontItem#listItemPieces', 'listItemPieces'],
-		['GET|POST', '/front/searchItems', 'FrontItem#searchItems', 'searchItems'],
+		['GET|POST', '/listItemClassics', 'FrontItem#listItemClassics', 'listItemClassics'],
+		['GET|POST', '/listItemCustoms', 'FrontItem#listItemCustoms', 'listItemCustoms'],
+		['GET|POST', '/listItemDivers', 'FrontItem#listItemDivers', 'listItemDivers'],
+		['GET|POST', '/listItemPieces', 'FrontItem#listItemPieces', 'listItemPieces'],
+		['GET|POST', '/searchItems', 'FrontItem#searchItems', 'searchItems'],
 
 		//Pages liées à FrontGuestbookController
-		['GET|POST', '/front/fGuestbook', 'FrontGuestbook#affGuestbook', 'fGuestbook'],
+		['GET|POST', '/fGuestbook', 'FrontGuestbook#affGuestbook', 'fGuestbook'],
 
 
 		//Pages liées à FrontOrdersController du COMPTE CLIENT
 			//liste des commandes
-		['GET|POST', '/front/listOrders', 'FrontOrders#frontListOrders', 'front_listOrders'],
+		['GET|POST', '/listOrders', 'FrontOrders#frontListOrders', 'front_listOrders'],
 			//vue d'une commande
-		['GET|POST', '/front/viewUserOrder', 'FrontOrders#frontViewOrders', 'front_viewUserOrder'],
+		['GET|POST', '/viewUserOrder', 'FrontOrders#frontViewOrders', 'front_viewUserOrder'],
 
 
 		//Pages liées à FrontOrdersController du PROCESS COMMANDE
 			//commande du panier
-		['GET|POST', '/front/orderList', 'FrontOrders#frontPanier', 'front_orderList'],
+		['GET|POST', '/orderList', 'FrontOrders#frontPanier', 'front_orderList'],
 			//choix du mode de paiement
-		['GET|POST', '/front/orderPayment', 'FrontOrders#frontOrderPaie', 'front_orderPayment'],
+		['GET|POST', '/orderPayment', 'FrontOrders#frontOrderPaie', 'front_orderPayment'],
 			//Page choix de l'adresse de livraison
-		['GET|POST', '/front/orderAddress', 'FrontOrders#frontOrderAddress', 'front_orderAddress'],
+		['GET|POST', '/orderAddress', 'FrontOrders#frontOrderAddress', 'front_orderAddress'],
 
 	);
