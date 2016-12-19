@@ -105,12 +105,12 @@ class FrontUserController extends Controller
 
 	public function affCptUser($id){
 
-		if(!empty($this->getUser())){
 			$this->show('front/User/cptUser');
+		/*if(!empty($this->getUser())){
 		}
 		else {
 			$this->redirectToRoute('front_faddUser');
-		}
+		}*/
 	}
 
 	/**

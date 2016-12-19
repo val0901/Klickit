@@ -1409,3 +1409,17 @@ td {
 	padding: 10px 0;
 	border-bottom: 1px dotted #ccc;
 }
+
+/*cptuser.php*/
+.cptuser_textlien {
+	font-size: 25px;
+	text-transform: uppercase;
+	text-align: center;
+	text-decoration: underline;
+	color: #999;
+}
+
+.cptuser_contenu {
+	background-color: #fff;
+	padding: 50px 30px 340px;
+}
