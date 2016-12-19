@@ -97,7 +97,7 @@
 			      <option value="Western">Western</option>
 			      <option value="Fantasy">Fantasy</option>
 			      <option value="XVIIIe">XVIIIe</option>
-			      <option value="Fées Princesses">Fées et Princesses</option>
+			      <option value="FeesPrincesses">Fées et Princesses</option>
 			      <option value="Police">Police</option>
 			      <option value="Animaux">Animaux</option>
 			      <option value="Sport">Sport</option>
@@ -112,7 +112,7 @@
 			  	  <option value="Manchettes">Manchettes</option>
 			  	  <option value="Cols">Cols</option>
 			  	  <option value="Ceinturons">Ceinturons</option>
-			  	  <option value="Têtes">Têtes</option>
+			  	  <option value="Tetes">Têtes</option>
 			  	  <option value="Cheveux">Cheveux</option>
 			  	  <option value="Divers">Divers</option>
 		    </select>
