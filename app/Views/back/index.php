@@ -29,7 +29,7 @@
 									<?php 
 										$list_items = $items->findItems($value); 
 
-										echo '<a href="'.$this->url('updateItem', ['id'=>$list_items['id']]).'">'.$list_items['name'].'</a> <br>';
+										echo '<a href="'.$this->url('updateItem', ['id'=>$list_items['id']]).'" style="color:white;">'.$list_items['name'].'</a> <br>';
 									?>
 							<?php endforeach; ?>
             			</td>
