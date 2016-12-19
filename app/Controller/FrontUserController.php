@@ -132,16 +132,6 @@ class FrontUserController extends Controller
 	 */
 
 	public function fconnectUser(){
-<<<<<<< HEAD
 		$this->show('front/Order/orderLogin');
-=======
-
-		if(!empty($this->getUser())){
-			$this->show('front/Order/orderLogin');
-		}
-		else {
-			$this->redirectToRoute('front_faddUser');
-		}
->>>>>>> origin/master
 	}
 }

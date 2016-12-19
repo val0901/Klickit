@@ -23,7 +23,6 @@ class FrontController extends Controller
 	}
 
 	/**
-<<<<<<< HEAD
 	 * Page de connexion
 	 */
 	public function login()
@@ -64,8 +63,6 @@ class FrontController extends Controller
 	}
 
 	/**
-=======
->>>>>>> origin/master
 	 * Page A propos
 	 */
 	public function about()
