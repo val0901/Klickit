@@ -21,16 +21,23 @@
 
     <p class="apropos_text">Toutes nos expéditions pour la France sont traitées par La Poste. Les délais d&#39;acheminements sont donc ceux de La Poste : 24 à 48h pour une lettre suivie et 48h pour un colissimo.</p>
 
-     <i class="fa fa-info-circle fa-2x apropospicinfo" aria-hidden="true"></i> <h2 class="apropos_txtinfo">Frais de port pour la France métropolitaine :</h2>
-    <ul class="apropos_ul apropos_text">
-        <li >1 à 3 personnages <i class="fa fa-arrow-right fa-1x apropos_flech" aria-hidden="true"></i> articles = 2,50€</li>
+     <i class="fa fa-info-circle fa-2x apropospicinfo" aria-hidden="true"></i> <h2 class="apropos_txtinfo">Frais de port :</h2>
+        <!--Frais de port-->
+    <div class="container_general">
+        <div class="orderfrais_border">
+            <p class="orderfrais_title">Information frais de port</p>
+            <ol class="orderfrais_list">
+                <h3><i class="fa fa-globe" aria-hidden="true" style="color:#000;"> <span class="orderfraislist_title">France Métropolitaine</span></i></h3>
+                <li>1 à 3 personnages ( <span class="orderfrais_price">+ 2,50€</span> )</li>
+                <li>4 à 8 personnages ( <span class="orderfrais_price">+ 3,90€</span> )</li>
+                <li>au dela de 8 personnages ( <span class="orderfrais_price">+ 6.90€</span> )</li>
+                <li>pièces & customs en rèsine ou peints ( <span class="orderfrais_price">+ 6.90€</span> )</li>
+            </ol>
+        </div>
+    </div>
+    <!--End frais de port-->
+    <br><br>
 
-        <li>4 à 8 personnages <i class="fa fa-arrow-right fa-1x apropos_flech" aria-hidden="true"></i> articles = 3,90€</li>
-
-        <li>au delà <i class="fa fa-arrow-right fa-1x apropos_flech" aria-hidden="true"></i> forfait colissimo 6.90€</li>
-
-        <li>pièces en résine ou customs peints <i class="fa fa-arrow-right fa-1x apropos_flech" aria-hidden="true"></i> forfait colissimo 6.90€</li>
-    </ul>
     
      <i class="fa fa-info-circle fa-2x apropospicinfo" aria-hidden="true"></i> <h2 class="apropos_txtinfo">Paiement</h2>
     <br><br>
