@@ -76,7 +76,7 @@ class MessageController extends Controller
 		}elseif(isset($_GET['not-read'])){
 
 			$status = [
-				'statut' => 'Non lu'
+				'statut' => 'NonLu'
 			];
 			$updated = $update_status->update($status,$id);
 
@@ -144,7 +144,7 @@ class MessageController extends Controller
 				}else{
 					$success = true;
 					$status = [
-						'Statut' => 'lu', 
+						'Statut' => 'Lu', 
 					];
 					$updated = $update_status->update($status, $id);
 				}

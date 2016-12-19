@@ -18,7 +18,7 @@
 				<tbody>
 					<?php foreach($messages as $message) : ?>
 						<?php 
-							if ($message['statut'] == 'Non lu'){
+							if ($message['statut'] == 'NonLu'){
 								$bold = ' style="font-weight:bold;" ';
 							}else{
 								$bold = '';
