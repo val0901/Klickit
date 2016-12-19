@@ -25,9 +25,9 @@
 						<td>
 							<div class="form-group" id="selectStt">									<!-- <form method="post"> -->
 								  <div class="col-md-4">
-								    <select id="selectStatut" name="selectStatut" class="form-control" value>
+								    <select id="selectStatut" name="selectStatut" class="form-control">
 								    	<option value="Changer le statut" selected disabled>Changer le statut</option>
-								    	<option value="commandé" name="com">En attente de paiement</option>
+								    	<option value="commandé">En attente de paiement</option>
 								    	<option value="en préparation">En cours de préparation</option>
 								    	<option value="expédié">Expédiée</option>
 								    </select>

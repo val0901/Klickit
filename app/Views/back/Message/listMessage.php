@@ -76,7 +76,7 @@
 			  					url: '<?=$this->url('ajax_deleteMessage'); ?>',
 								type: 'post',
 								cache: false,
-								data: {id_message: idMessage},  // $_POST['id_user']
+								data: {id_message: idMessage},  // $_POST['id_message']
 								dataType: 'json',
 								success: function(out){
 									if(out.code == 'ok'){
