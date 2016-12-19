@@ -142,10 +142,10 @@ class BackController extends Controller
 				$contentEmail = 'Bonjour '.$name_user.'.<br> Lien pour réinitialiser votre mot de passe : '.'<a href="localhost'.$this->generateUrl('back_reset_pwd', ['id'=> $id_user, 'token' => $token]).'">Cliquez ici</a>';
 
 				$sendMail->isSMTP();                                      
-				$sendMail->Host = 'SSL0.OVH.NET';  									// Hôte du SMTP
+				$sendMail->Host = 'smpt.gmail.com';  									// Hôte du SMTP
 				$sendMail->SMTPAuth = true;                               				// SMTP Authentification
-				$sendMail->Username = 'sav@klickit.fr';          				// SMTP username
-				$sendMail->Password = 'silSAV33@';                    	 				// SMTP password
+				$sendMail->Username = 'duhfanofdoge@gmail.com';          				// SMTP username
+				$sendMail->Password = 'TheRevA7X';                    	 				// SMTP password
 				$sendMail->SMTPSecure = 'tls';                         					// Enable TLS encryption, `ssl` also accepted
 				$sendMail->Port = 587;                                					// TCP port to connect to
 				$sendMail->CharSet = 'UTF-8';
