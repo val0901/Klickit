@@ -24,8 +24,8 @@ class OrdersModel extends \W\Model\Model
 	{
 
 		$sql = 'SELECT ' .$this->table.'.*, i.name, i.quantity, i.price, i.newPrice FROM ' . $this->table . 
-		' LEFT JOIN item AS i ON '.$this->table.'.contenu = i.id 
-		  ';
+		' LEFT JOIN item AS i ON '.$this->table.'.contenu = i.id WHERE
+		FIND_IN_SET(1,orders.contenu)';
 		  // JOIN user AS u ON '.$this->table.'.idMember = u.id
 
 		$sth = $this->dbh->prepare($sql);
