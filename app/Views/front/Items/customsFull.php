@@ -67,9 +67,9 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 		
 		<!--viewcategory row2 col2-->
 		<div class="col-md-9">
-			<h4 class="viewcategory_pages">Home <span>></span> Customs <span>></span> Customs tampographiés</h4>
+			<h4 class="viewcategory_pages">Home <span>></span> Customs</h4>
 			<div class="row">
-				<?php foreach ($affiche as $product) : ?>
+				<?php foreach ($items as $product) : ?>
 					<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
 						<a href="#"><img src="<?=$this->assetUrl('art/'.$product['picture1']);?>" alt="photo de playmobil" class="img-thumbnail"></a>
 						<div class="viewcategorycaption">
