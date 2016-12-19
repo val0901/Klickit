@@ -11,19 +11,28 @@
 					<th>Contenu de la commande</th>
 					<th>Date de la commande</th>
 					<th>Statut</th>
-					<th id="thaction">Changer le statut</th>
+					<!-- <th id="thaction">Changer le statut</th> -->
 				</thead>
 
 				<tbody>
-				<?php foreach ($data as $value): ;?>
+				<?php foreach ($orders as $order): ;?>
 					<tr>
-						<td><?=$value['id']; ?></td>
-						<td><?=$value['lastname'].' '.$value['firstname'].'<br>'.$value['adress'].'<br>'.$value['zipcode'].' '.$value['city']; ?></td>
-						<td><?php ?>Gérer la liste des articles</td>
-						<td><?= date('d/m/Y', strtotime($value['date_creation']));?></td>
-						<td><?=$value['statut']; ?></td>
-						<td>
-							<div class="form-group" id="selectStt">									<!-- <form method="post"> -->
+						<td><?=$order['id']; ?></td>
+						<td><?=$order['lastname'].' '.$order['firstname'].'<br>'.$order['adress'].'<br>'.$order['zipcode'].' '.$order['city']; ?></td>
+						<td><?php $contents = explode(', ', $order['contenu']); ?>
+
+							<?php 
+								foreach ($contents as $value) : ?>
+									<?php 
+										$list_items = $items->findItems($value); 
+
+										echo '<a href="'.$this->url('updateItem', ['id'=>$list_items['id']]).'" style="color:white;">'.$list_items['name'].'</a> <br>';
+									?>
+							<?php endforeach; ?></td>
+						<td><?= date('d/m/Y', strtotime($order['date_creation']));?></td>
+						<td><?=$order['statut']; ?></td>
+						<!-- <td>
+							<div class="form-group" id="selectStt">									
 								  <div class="col-md-4">
 								    <select id="selectStatut" name="selectStatut" class="form-control">
 								    	<option value="Changer le statut" selected disabled>Changer le statut</option>
@@ -32,11 +41,11 @@
 								    	<option value="expédié">Expédiée</option>
 								    </select>
 								  </div>
-								  <input type="submit" style="display:none;" data-id="<?=$value['id']?>">
-								<!-- </form> -->
-							</div></td>
+								  <input type="submit" style="display:none;" data-id="<?//=$value['id']?>">
+								
+							</div></td> -->
 						<td>
-							<div> <a href="<?=$this->url('viewOrders', ['id'=>$value['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></i></a></div>
+							<div> <a href="<?=$this->url('viewOrders', ['id'=>$order['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></i></a></div>
 						</td>
 					</tr>
 				<?php endforeach; ?>			

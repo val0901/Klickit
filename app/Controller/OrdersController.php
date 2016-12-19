@@ -4,6 +4,7 @@ namespace Controller;
 
 use \W\Controller\Controller;
 use \Model\OrdersModel;
+use \Model\ItemModel;
 use \W\Security\AuthorizationModel;
 
 class OrdersController extends Controller 
@@ -27,10 +28,13 @@ class OrdersController extends Controller
 		$orders = new OrdersModel();
 		$list_orders = $orders->findAllOrders($page, $max);
 
+		$items = new ItemModel();
+
 
 		/***********ENVOI DES DONNEES POUR AFFICHER LA PAGE***********/
 			$data = [
-				'data'	=> $list_orders,
+				'orders'	=> $list_orders,
+				'items' => $items,
 				'max' => $max,
 				'page' => $page,
 				'nb' => $nb,
@@ -61,12 +65,12 @@ class OrdersController extends Controller
 			$affiche = new OrdersModel();
 			$viewOrders = $affiche->findOrdersAndCustom($id);
 
-			$items = new OrdersModel();
-			$viewItems = $items->findItemsFromOrder();
+			$items = new ItemModel();
+
 
 			$data= [
 			'orders' => $viewOrders,
-			'items' =>$viewItems,
+			'items' => $items,
 			];
 		}
 
