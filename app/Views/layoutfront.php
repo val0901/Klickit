@@ -113,6 +113,22 @@
                     <!--icon-shoppingcart-->
                     <li class="span_float">
                         <i class="fa fa-shopping-cart fa-5x icon_cursor navR_color" aria-hidden="true" id="shoppingicon_click"></i>
+						<div class="shoppingsoumenu_hidden">
+							<div class="row">
+								<div class="col-xs-6">
+									<p>Princess Playmo</p>
+								</div>
+								<div class="col-xs-6" style="text-align:right;">
+									<li style="float:left;">
+										<i class="fa fa-minus-circle" aria-hidden="true" style="color: #fe941e;"></i>
+									</li>
+									<li style="float:left;">3.00 €</li>
+									<li style="float:left;">
+										<i class="fa fa-plus-circle" aria-hidden="true" style="color: #7fc842;"></i>
+									</li>
+								</div>
+							</div>
+                        </div>
                     </li>
                     <!--End icon-shoppingcart-->
                 </ul>
@@ -469,6 +485,12 @@
         $(".usersoumenu_hidden").slideToggle();
     })
 })
+	
+	$(document).ready(function(){
+    $("#shoppingicon_click").click(function(){
+        $(".shoppingsoumenu_hidden").slideToggle();
+    })
+})	
 	
 	$(document).ready(function(){
 		$(".slidetoggle").click(function(){
