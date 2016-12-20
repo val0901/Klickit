@@ -1530,3 +1530,29 @@ td {
 .table-bordered {
     border: 2px solid #000;
 }
+
+/*favorite.php*/
+.favorite_price {
+    font-size: 30px;
+    color: #7dcd38;
+    font-weight: 600;
+    text-align: center;
+}
+
+.favorite_pricenormal {
+    font-size: 20px;
+    color: #3fa9f5;
+    font-weight: 600;
+    text-decoration: line-through;
+}
+
+.favorite_button_size {
+	background-color: #ff931e;
+    border: 0 none;
+    font-size: 1vw;
+	text-transform: uppercase;
+}
+
+.favorite_voirplus {
+    text-align: center;
+}
