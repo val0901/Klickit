@@ -31,8 +31,17 @@ class FrontController extends Controller
 
 		/************Affichage des articles dans le panier***********/
 		$getShoppingCart = new UserModel();
+		$getItems = new ItemModel();
 		$user = $this->getUser();
-		$shoppingCart = $getShoppingCart;
+		$shoppingCart = $getShoppingCart->find($user['id']);
+
+		if(!empty($user['cart_item'])){
+			$items = explode(', ', $user['cart_item']);
+			var_dump($items);
+		}else{
+			echo 'swag';
+		}
+		
 
 
 		$data = [

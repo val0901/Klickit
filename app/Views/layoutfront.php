@@ -524,7 +524,7 @@ $(document).ready(function(){
 				action: function(){
 	  				$.ajax({
 	  					url: '<?=$this->url('ajax_Flogout');?>',
-						type: 'post',
+						type: 'get',
 						cache: false,
 						data: {id_logout: logout},
 						dataType: 'json',
