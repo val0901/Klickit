@@ -24,8 +24,17 @@ class FrontController extends Controller
 	 */
 	public function index()
 	{	
+		/******************Affichage des commentaires*****************/
+
 		$getComment = new GuestbookModel();
 		$comments = $getComment->findAllMessageFront();
+
+		/************Affichage des articles dans le panier***********/
+		$getShoppingCart = new UserModel();
+		$user = $this->getUser();
+		$shoppingCart = $getShoppingCart;
+
+
 		$data = [
 			'comments' => $comments,
 			
