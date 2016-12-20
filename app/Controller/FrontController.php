@@ -31,7 +31,7 @@ class FrontController extends Controller
 			
 		];
 
-		$this->show('front/index');
+		$this->show('front/index', $data);
 	}
 
 	/**
