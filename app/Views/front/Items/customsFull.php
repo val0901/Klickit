@@ -69,31 +69,33 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 		<div class="col-md-9">
 			<h4 class="viewcategory_pages">Home <span>></span> Customs</h4>
 			<div class="row">
-				<?php foreach ($items as $product) : ?>
-					<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
-						<a href="#"><img src="<?=$this->assetUrl('art/'.$product['picture1']);?>" alt="photo de playmobil" class="img-thumbnail"></a>
-						<div class="viewcategorycaption">
-							<?php if($product['newPrice'] === 0) : ?>
-								<h4><?=$product['price'];?>€</h4>
-							<?php else : ?>
-								<h4><?=$product['newPrice'];?>€</h4>
-							<?php endif; ?>
+				<form method="post">
+					<?php foreach ($items as $product) : ?>
+						<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
+							<a href="#"><img src="<?=$this->assetUrl('art/'.$product['picture1']);?>" alt="photo de playmobil" class="img-thumbnail"></a>
+							<div class="viewcategorycaption">
+								<?php if($product['newPrice'] === 0) : ?>
+									<h4><?=$product['price'];?>€</h4>
+								<?php else : ?>
+									<h4><?=$product['newPrice'];?>€</h4>
+								<?php endif; ?>
 
-							<p><?=$product['name'];?></p>
+								<p><?=$product['name'];?></p>
 
-							<?php if($product['statut'] == 'nouveaute'):?>
-								<div class="viewcategory_nouveau"><?=$product['statut'];?></div>
-							<?php elseif($product['statut'] == 'promotion'):?>
-								<div class="viewcategory_promo"><?=$product['statut'];?></div>
-							<?php elseif($product['statut'] == 'defaut'): ?>
-								<div class="viewcategory_defaut"><?=$product['statut'];?></div>
-							<?php endif; ?>
-	                    </div>
-						<div class="viewcategory_button">
-							<button type="button" class="btn btn-primary viewcategory_button_size ">ajouter au panier</button>
+								<?php if($product['statut'] == 'nouveaute'):?>
+									<div class="viewcategory_nouveau"><?=$product['statut'];?></div>
+								<?php elseif($product['statut'] == 'promotion'):?>
+									<div class="viewcategory_promo"><?=$product['statut'];?></div>
+								<?php elseif($product['statut'] == 'defaut'): ?>
+									<div class="viewcategory_defaut"><?=$product['statut'];?></div>
+								<?php endif; ?>
+		                    </div>
+							<div class="viewcategory_button">
+								<button type="submit" class="btn btn-primary viewcategory_button_size add_to_shopping_cart" data-id="<?=$product['id']?>">ajouter au panier</button>
+							</div>
 						</div>
-					</div>
-				<?php endforeach; ?>
+					<?php endforeach; ?>
+					</form>
 			</div>
 		</div>
 		
@@ -222,3 +224,27 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 
 <?php $this->stop('main_content') ?>
 
+<?php $this->start('js')?>
+	<script>
+		$(document).ready(function(){
+			$('.add_to_shopping_cart').click(function(e){
+				e.preventDefault();
+
+				var idProduct = $(this).data('id');
+
+				$.ajax({
+  					url: '<?=$this->url('ajax_deleteShipping'); ?>',
+					type: 'post',
+					cache: false,
+					data: {id_product: idProduct},  // $_POST['id_product']
+					dataType: 'json',
+					success: function(out){
+						if(out.code == 'ok'){
+			  				//window.location.href=window.location.href;	
+						}
+					}
+  				});
+			});
+		});
+	</script>
+<?php $this->stop('js')?>
