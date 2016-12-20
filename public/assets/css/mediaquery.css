@@ -39,6 +39,10 @@
 	font-size: 1.5vw;
 }
 	
+    /*tête de person pour guestBook*/
+    .img-responsive-tete {
+        width: 6vw;
+    }
     
 }
 
@@ -72,6 +76,11 @@
 	
 	.img-responsive {
 		width: 100%;
+	}
+    
+    /*tête de person pour guestBook*/
+	.img-responsive-tete {
+		width: 76px;
 	}
 	
 	.viewcategorycaption h4 {
@@ -168,7 +177,11 @@
     .legalm_background {
 	padding: 20px;
 }
-
+    
+    /*tête de person pour guestBook*/
+	.img-responsive-tete {
+		width: 70px;
+	}
 	
 }
 
@@ -262,6 +275,11 @@
 	padding: 20px;
 }
 	
+    
+    /*tête de person pour guestBook*/
+	.img-responsive-tete {
+		width: 63px;
+	}
 	
     
 }

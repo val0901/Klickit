@@ -108,8 +108,16 @@
 
 /*liens navbar home*/
 a.dropdown-toggle.slidetoggle.linknav{
-color: white;
+    color: white;
 }
+
 a.linknav{
-color: white;
+    color: white;
+}
+    
+    /*tête de person pour guestBook*/
+.img-responsive-tete {
+    width: 6vw;
+}
+    
 }
