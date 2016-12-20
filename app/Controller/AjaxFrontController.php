@@ -27,8 +27,8 @@ class AjaxController extends Controller
 			if(is_numeric($_POST['id_product'])){
 				$userModel = new UserModel();
 
-				
-				
+
+
 				if($deleteOrder){
 					$json = ['code' => 'ok'];
 				}
@@ -38,4 +38,6 @@ class AjaxController extends Controller
 		}
 		$this->showJson($json);
 	}
+
+	//public function 
 }
