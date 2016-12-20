@@ -82,7 +82,7 @@
 		['GET|POST', '/contact', 'Front#contact', 'front_contact'],
 		['GET|POST', '/legalMention', 'Front#legalMention', 'front_legalMention'],
 		['GET|POST', '/events', 'Front#events', 'front_events'],
-		['GET|POST', '/event/createEvent', 'FrontEvent#createEvent', 'front_createEvent'],
+		// ['GET|POST', '/event/createEvent', 'FrontEvent#createEvent', 'front_createEvent'],
 		['GET|POST', '/team', 'Front#team', 'front_team'],
 
 		//Pages liées à UserController
