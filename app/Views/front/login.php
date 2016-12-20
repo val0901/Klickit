@@ -24,7 +24,7 @@
 				<input type="password" class="form-control" id="password" name="password">
 			  </div>
 			  <a href="<?=$this->url('front_faddUser');?>"><p>Créer un compte</p></a>
-              <a href=""><p>Vous avez oublié votre mot de passe?</p></a>
+              <a href="<?=$this->url('back_forgot_pwd')?>"><p>Vous avez oublié votre mot de passe?</p></a>
 			  <br>
 				<button type="submit" class="btn btn-default adduser_button orderlogin_button1"><span class="orderlogin_button1text"> Se connecter</span></button>
 			</form>

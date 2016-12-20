@@ -7,10 +7,10 @@
 
 		//Routes pour le back (classé par controller)
 		['GET|POST', '/admin/home', 'Back#index', 'back_index'],
-		['GET|POST', '/admin/forgot_password', 'Back#forgot_pwd', 'back_forgot_pwd'],
+		['GET|POST', '/forgot_password', 'Back#forgot_pwd', 'back_forgot_pwd'],
 
 		//Pages liées à ResetController
-		['GET|POST', '/admin/reset_password/[:id_token]/[:token]/', 'Reset#reset_pwd', 'back_reset_pwd'],
+		['GET|POST', '/reset_password/[:id_token]/[:token]/', 'Reset#reset_pwd', 'back_reset_pwd'],
 
 		// Les routes ajax
 		['GET|POST', '/ajax/logout', 'Ajax#logout', 'ajax_logout'],

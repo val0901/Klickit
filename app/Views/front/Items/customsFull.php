@@ -246,7 +246,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 					dataType: 'json',
 					success: function(out){
 						if(out.code == 'ok'){
-			  				//window.location.href=window.location.href;	
+			  				$().html();	
 						}
 					}
   				});
