@@ -233,7 +233,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 				var idProduct = $(this).data('id');
 
 				$.ajax({
-  					url: '<?=$this->url('ajax_deleteShipping'); ?>',
+  					url: '<?=$this->url('ajax_addToCart'); ?>',
 					type: 'post',
 					cache: false,
 					data: {id_product: idProduct},  // $_POST['id_product']

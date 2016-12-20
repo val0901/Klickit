@@ -72,6 +72,7 @@
 
 		// Routes en Ajax Front
 		['GET|POST', '/ajax/logout', 'AjaxFront#logout', 'ajax_Flogout'],
+		['GET|POST', '/ajax/addToCart', 'AjaxFront#addToCart', 'ajax_addToCart'],
 
 		//Pages liées à FrontController
 		['GET|POST', '/home', 'Front#index', 'front_index'],
