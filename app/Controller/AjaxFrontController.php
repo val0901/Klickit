@@ -61,5 +61,17 @@ class AjaxFrontController extends Controller
 		$this->showJson($json);
 	}
 
-	//public function 
+	/**
+	 * Déconnexion Front
+	 */
+	public function logout()
+	{
+		$logout = new AuthentificationModel();
+			
+		if(isset($_POST['id_logout'])) {
+			$logout->logUserOut();
+			
+			$this->showJson(['code' => 'ok']);
+		}
+	}
 }
