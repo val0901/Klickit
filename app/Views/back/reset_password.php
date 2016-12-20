@@ -3,7 +3,7 @@
 <?php $this->start('main_content') ?>
 
 	<?php if($success):?>
-		<p class="alert alert-success">Votre mot de passe a été mis à jour</p>
+		<p class="alert alert-success">Votre mot de passe a été mis à jour. Cliquez <a href="<?=$this->url('back_login')?>">ici</a> pour vous connecter</p>
 	<?php elseif(!empty($error)):?>
 		<p class="alert alert-danger"><?=$error?></p>
 	<?php endif;?>			
@@ -29,12 +29,5 @@
 <?php $this->stop('main_content') ?>
 
 <?php $this->start('js')?>
-<!-- 	<script>
-		$(document).ready(function(){
-			$('button[type="submit"]').click(function(e){
-				e.preventDefault();
 
-			});
-		});
-	</script> -->
 <?php $this->stop('js')?>
