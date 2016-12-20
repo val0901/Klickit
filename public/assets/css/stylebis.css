@@ -105,3 +105,11 @@
     margin: 0 5px;
     
 }
+
+/*liens navbar home*/
+a.dropdown-toggle.slidetoggle.linknav{
+color: white;
+}
+a.linknav{
+color: white;
+}

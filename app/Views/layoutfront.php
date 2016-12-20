@@ -176,7 +176,7 @@
         
         <!--menu tous les articles-->
 		<li class="navli_width TLA_bgcolor">
-          <a href="#" class="dropdown-toggle slidetoggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="padding: 15px;">Tous les articles
+          <a href="#" class="dropdown-toggle slidetoggle linknav" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="padding: 15px;">Tous les articles
           </a>
           <ul class="dropdown-menu TLA_dropdownbox_width">
 			  <div class="row">
@@ -250,15 +250,15 @@
 		<!--End menu tous les articles-->
         
         <!--menu a propos-->
-		<li class="navli_width AP_bgcolor"><a href="<?=$this->url('front_aPropos');?>">A propos</a></li>
+		<li class="navli_width AP_bgcolor"><a class=" linknav" href="<?=$this->url('front_aPropos');?>">A propos</a></li>
 		<!--End menu a propos-->
 		
 		<!--menu eventmentiel-->
-        <li class="navli_width EVT_bgcolor"><a href="<?=$this->url('front_events');?>">Evènementiel</a></li>
+        <li class="navli_width EVT_bgcolor"><a class=" linknav" href="<?=$this->url('front_events');?>">Evènementiel</a></li>
 		<!--End menu eventmentiel-->
         
 		<!--menu contact--> 
-        <li class="navli_width CT_bgcolor"><a href="<?=$this->url('front_contact');?>">Contact</a></li>
+        <li class="navli_width CT_bgcolor"><a class=" linknav" href="<?=$this->url('front_contact');?>">Contact</a></li>
 		<!--End menu contact-->
 		
 		<!--menu icon search-->
