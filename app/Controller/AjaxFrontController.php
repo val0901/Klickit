@@ -32,7 +32,7 @@ class AjaxFrontController extends Controller
 				if(!empty($loggedUser)){
 					$updateCart = new UserModel();
 
-					//On remplit le panier
+					//On remplit le panier avec l'id
 					$shoppingCart = [
 						'cart_item'	=>	$_POST['id_product'].', ',
 					];
