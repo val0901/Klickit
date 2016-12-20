@@ -55,4 +55,26 @@ class UserModel extends \W\Model\UsersModel
 
 		return $sth->fetchAll();
 	}
+
+	/**
+	* Modifie le mot de passe en fonction du mail de l'utilisateur
+	* @param string $password le nouveau mot de passe
+	* @param string $email l'adresse email
+	* @return true si update réussi, false sinon
+	*/
+	public function updateByMail($password, $email)
+	{
+		$sql = 'UPDATE '.$this->table.' SET password = :password WHERE email = :email';
+		$sth = $this->dbh->prepare($sql);
+
+		$sth->bindValue(':password', $password);
+		$sth->bindValue(':email', $email);
+
+		if($sth->execute()){
+			return true;
+		}
+
+		return false;
+	}
+
 }
