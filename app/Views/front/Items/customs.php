@@ -97,8 +97,11 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 			</div>
 		</div>
 		
-		
-		<div class="col-md-9">
+		<div class="row">
+			<div class="col-md-3">
+			
+			</div>
+			<div class="col-md-9">
 				<!--viewcategory row3 col1,2,3-->
 				<div class="row">
 					<div class="col-md-3 viewcategorypage_center">
@@ -123,6 +126,8 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 				</div>
 				<!--End viewcategory row3 col1,2,3-->
 			</div>
+		</div>
+		
 		</div>
 		<!--End viewcategory row2 col2-->
 	</div>
