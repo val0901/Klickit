@@ -70,11 +70,11 @@ class ItemController extends Controller
 		];
 
 		if(!empty($this->getUser())){
-
-			$this->show('back/Item/listItem', $data);
-			
 			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
+			}
+			else {
+				$this->show('back/Item/listItem', $data);
 			}
 		}
 		else {
@@ -229,11 +229,11 @@ class ItemController extends Controller
 		];
 
 		if(!empty($this->getUser())){
-
-			$this->show('back/Item/addItem', $params);
-			
 			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
+			}
+			else {
+				$this->show('back/Item/addItem', $params);
 			}
 		}
 		else {
@@ -433,11 +433,11 @@ class ItemController extends Controller
 			];
 
 			if(!empty($this->getUser())){
-
-				$this->show('back/Item/updateItem', $data);
-				
 				if ($verification->isGranted('Utilisateur')) {
 					$this->redirectToRoute('front_index');
+				}
+				else {
+					$this->show('back/Item/updateItem', $data);
 				}
 			}
 			else {

@@ -24,11 +24,11 @@ class SlideController extends Controller
 		];
 
 		if(!empty($this->getUser())){
-
-			$this->show('back/Slide/listSlide', $data);
-			
 			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
+			}
+			else {
+				$this->show('back/Slide/listSlide', $data);
 			}
 		}
 		else {
@@ -113,11 +113,11 @@ class SlideController extends Controller
 		];
 
 		if(!empty($this->getUser())){
-
-			$this->show('back/Slide/addSlide', $params);
-			
 			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
+			}
+			else {
+				$this->show('back/Slide/addSlide', $params);
 			}
 		}
 		else {
@@ -219,11 +219,11 @@ class SlideController extends Controller
 			];
 
 		if(!empty($this->getUser())){
-
-			$this->show('back/Slide/updateSlide', $data);
-			
 			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
+			}
+			else {
+				$this->show('back/Slide/updateSlide', $data);
 			}
 		}
 		else {

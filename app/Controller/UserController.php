@@ -35,11 +35,11 @@ class UserController extends Controller
 		];
 
 		if(!empty($this->getUser())){
-
-			$this->show('back/User/listUser', $data);
-			
 			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
+			}
+			else {
+				$this->show('back/User/listUser', $data);
 			}
 		}
 		else {
@@ -139,11 +139,11 @@ class UserController extends Controller
 		];	
 
 		if(!empty($this->getUser())){
-
-			$this->show('back/User/addUser', $params);
-			
 			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
+			}
+			else {
+				$this->show('back/User/addUser', $params);
 			}
 		}
 		else {
@@ -295,11 +295,11 @@ class UserController extends Controller
 		];
 
 		if(!empty($this->getUser())){
-
-			$this->show('back/User/updateUser', $data);
-			
 			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
+			}
+			else {
+				$this->show('back/User/updateUser', $data);
 			}
 		}
 		else {

@@ -34,11 +34,11 @@ class EventController extends Controller
 		];
 
 		if(!empty($this->getUser())){
-
-			$this->show('back/Event/listEvent', $data);
-			
 			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
+			}
+			else {
+				$this->show('back/Event/listEvent', $data);
 			}
 		}
 		else {
@@ -123,11 +123,11 @@ class EventController extends Controller
 		];
 
 		if(!empty($this->getUser())){
-
-			$this->show('back/Event/addEvent', $params);
-			
 			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
+			}
+			else {
+				$this->show('back/Event/addEvent', $params);
 			}
 		}
 		else {
@@ -228,11 +228,11 @@ class EventController extends Controller
 			];
 
 		if(!empty($this->getUser())){
-
-			$this->show('back/Event/updateEvent', $data);
-			
 			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
+			}
+			else {
+				$this->show('back/Event/updateEvent', $data);
 			}
 		}
 		else {

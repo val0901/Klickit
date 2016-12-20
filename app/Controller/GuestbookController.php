@@ -35,11 +35,11 @@ class GuestbookController extends Controller
 		];
 
 		if(!empty($this->getUser())){
-
-			$this->show('back/Guestbook/listGuestbook', $data);
-			
 			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
+			}
+			else {
+				$this->show('back/Guestbook/listGuestbook', $data);
 			}
 		}
 		else {
@@ -87,11 +87,11 @@ class GuestbookController extends Controller
 		}
 
 		if(!empty($this->getUser())){
-
-			$this->show('back/Guestbook/moderation', $data);
-			
 			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
+			}
+			else {
+				$this->show('back/Guestbook/moderation', $data);
 			}
 		}
 		else {

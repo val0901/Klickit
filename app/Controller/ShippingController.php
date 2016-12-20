@@ -22,11 +22,11 @@ class ShippingController extends Controller
 		];
 
 		if(!empty($this->getUser())){
-
-			$this->show('back/Shipping/listShipping',$data);
-			
 			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
+			}
+			else {
+				$this->show('back/Shipping/listShipping',$data);
 			}
 		}
 		else {
@@ -83,11 +83,11 @@ class ShippingController extends Controller
 		];
 
 		if(!empty($this->getUser())){
-
-			$this->show('back/Shipping/addShipping',$params);
-			
 			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
+			}
+			else {
+				$this->show('back/Shipping/addShipping',$params);
 			}
 		}
 		else {
@@ -168,11 +168,11 @@ class ShippingController extends Controller
 		];	
 
 		if(!empty($this->getUser())){
-
-			$this->show('back/Shipping/updateShipping', $data);
-			
 			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
+			}
+			else {
+				$this->show('back/Shipping/updateShipping', $data);
 			}
 		}
 		else {

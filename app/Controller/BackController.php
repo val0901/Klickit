@@ -46,11 +46,16 @@ class BackController extends Controller
 		if(!empty($this->getUser())){
 			$verification = new AuthorizationModel();
 
-			$this->show('back/index', $data);
 			
 			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
 			}
+			else {
+				$this->show('back/index', $data);
+			}
+		}
+		else {
+			$this->redirectToRoute('login');
 		}
 		
 	}

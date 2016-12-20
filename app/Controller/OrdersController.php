@@ -42,11 +42,11 @@ class OrdersController extends Controller
 				
 		//Sécurisation de la page		
 		if(!empty($this->getUser())){
-
-			$this->show('back/Orders/listOrders', $data);
-			
 			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
+			}
+			else {
+				$this->show('back/Orders/listOrders', $data);
 			}
 		}
 		else {
@@ -74,11 +74,11 @@ class OrdersController extends Controller
 		}
 
 		if(!empty($this->getUser())){
-
-			$this->show('back/Orders/viewOrders', $data);
-			
 			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
+			}
+			else {
+				$this->show('back/Orders/viewOrders', $data);
 			}
 		}
 		else {

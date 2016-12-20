@@ -32,11 +32,11 @@ class MessageController extends Controller
 		];
 
 		if(!empty($this->getUser())){
-
-			$this->show('back/Message/listMessage', $data);
-			
 			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
+			}
+			else {
+				$this->show('back/Message/listMessage', $data);
 			}
 		}
 		else {
@@ -158,11 +158,11 @@ class MessageController extends Controller
 		];
 
 		if(!empty($this->getUser())){
-
-			$this->show('back/Message/viewMessage', $data);
-			
 			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
+			}
+			else {
+				$this->show('back/Message/viewMessage', $data);
 			}
 		}
 		else {
