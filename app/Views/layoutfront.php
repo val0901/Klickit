@@ -154,7 +154,9 @@
 					
 					<!--icon-cog menu-->
                     <li class="span_float">
-                        <i class="fa fa-sign-out fa-5x icon_cursor navR_color" aria-hidden="true" id="cogicon_click" title="Deconnexion" style="color: #ea2229;"></i>
+                    	<?php if(!empty($_SESSION['user']) && isset($_SESSION['user'])): ?>
+                        	<form><button id="logout" type="submit" data-id="login_out"><i class="fa fa-sign-out fa-5x icon_cursor navR_color" aria-hidden="true" id="cogicon_click" title="Deconnexion" style="color: #ea2229;"></i></button></form>
+                        <?php endif; ?>
                     </li>
                     <!--End icon-cog menu-->
                 </ul>
@@ -491,13 +493,59 @@
 
 	<!--jquery js-->
     <script src="<?= $this->assetUrl('js/jquery-3.1.1.min.js') ?>"></script>   
+    <!--Plugin Jquery, confirm -->
+    <script src="<?= $this->assetUrl('js/jquery-confirm.min.js') ?>"></script>
     <!--bootstrap js-->
-    <script src="<?= $this->assetUrl('js/bootstrap.min.js') ?>"></script>
-	
+   <script src="<?= $this->assetUrl('js/bootstrap.min.js') ?>"></script>
+
     <?= $this->section('js')?>
-	
+
 	<!--Script-->
 	<script>
+
+	/*ICONE DE DECONNEXION*/
+$(document).ready(function(){
+	$('#logout').click(function(e){
+		e.preventDefault();
+		var logout = $(this).data('id');
+	$.confirm({
+
+		title: 'Déconnexion',
+
+		content: "Êtes-vous sûr de vouloir vous déconnecter ?",
+
+		theme: 'supervan',
+
+		buttons: {
+			ok: {
+				text: 'Se déconnecter',
+				btnClass: 'btn-danger',
+				keys: ['enter'],
+				action: function(){
+	  				$.ajax({
+	  					url: '<?=$this->url('ajax_Flogout');?>',
+						type: 'post',
+						cache: false,
+						data: {id_logout: logout},
+						dataType: 'json',
+						success: function(out){
+							if(out.code == 'ok'){
+				  				window.location.reload(true);	
+							}
+						}
+	  				});
+	  				
+  				}
+				},
+				cancel: function(button) {
+			   
+			}
+		}
+		});
+
+	});
+});
+
 	/*soumenu 4 categories*/
     $(document).ready(function(){
     $("#cogicon_click").click(function(){
@@ -665,7 +713,6 @@ $(document).ready(function(){
 
   })		*/
   /*End orderpayment radio click photo change*/
-		
 	
     </script>
 </body>

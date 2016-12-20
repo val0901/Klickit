@@ -23,7 +23,9 @@ class AjaxFrontController extends Controller
 	 */
 	public function addToCart()
 	{
+		$updateCart = new UserModel();
 		if(!empty($_POST)){
+
 
 			if(is_numeric($_POST['id_product'])){
 				$islogged = new Controller;
@@ -43,7 +45,6 @@ class AjaxFrontController extends Controller
 					}
 
 
-					$updateCart = new UserModel();
 
 					//On remplit le panier avec l'id
 					$shoppingCart = [
@@ -61,5 +62,17 @@ class AjaxFrontController extends Controller
 		$this->showJson($json);
 	}
 
-	//public function 
+	/**
+	 * Déconnexion Front
+	 */
+	public function logout()
+	{
+		$logout = new AuthentificationModel();
+			
+		if(isset($_GET['id_logout'])) {
+			$logout->logUserOut();
+			
+			$this->showJson(['code' => 'ok']);
+		}
+	}
 }

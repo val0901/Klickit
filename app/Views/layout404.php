@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-	<meta charset="utf-8">
-	<title>404</title>
-</head>
-<body>
+<?php $this->layout('layout404', ['title' => 'Perdu ?']) ?>
 
-Page 404 à personnaliser !
-
-</body>
-</html>
+<?php $this->start('main_content'); ?>
+<div>
+	<img class="img-responsive" src="<?=$this->assetUrl('/img/404imgtop.png');?>">
+</div>
+<?php $this->stop('main_content'); ?>
