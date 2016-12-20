@@ -437,7 +437,7 @@
 					<p class="footertitle">Société</p>
 						<a class="linknav" href="<?=$this->url('front_legalMention');?>"><p class="footertext">Mentions légales</p></a>				
 						<a class="linknav" href="<?=$this->url('front_cgv');?>"><p class="footertext">Condition Générales de Ventes</p></a>
-						<a class="linknav" href="<?=$this->url('front_contact');?>"><p class="footertext">Création d'évènement Playmobil</p></a>
+						<a class="linknav" href="<?=$this->url('front_createEvent');?>"><p class="footertext">Création d'évènement Playmobil</p></a>
 						<a class="linknav" href="<?=$this->url('front_contact');?>"><p class="footertext">Contact</p></a>
 						<a class="linknav" href="<?=$this->url('front_team');?>"><p class="footertext">Equipe de création</p></a>
 						<a class="linknav" href="<?=$this->url('fGuestbook');?>"><p class="footertext">Laissez nous votre avis</p></a>
