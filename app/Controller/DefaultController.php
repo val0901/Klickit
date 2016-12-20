@@ -15,4 +15,13 @@ class DefaultController extends Controller
 			$this->redirectToRoute('front_index');
 	}
 
+
+	/**
+	 * Page404
+	 */
+	public function notFound()
+	{
+			$this->showNotFound();
+	}
+
 }

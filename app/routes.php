@@ -2,6 +2,7 @@
 	
 	$w_routes = array(
 		['GET', '/', 'Default#home', 'default_home'],
+		['GET', 'errors/404', 'Default#notFound', 'default_notFound'],
 
 /******************** BACK *********************/
 
