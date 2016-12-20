@@ -105,12 +105,17 @@ class FrontUserController extends Controller
 
 	public function affCptUser($id){
 
-			$this->show('front/User/cptUser');
-		/*if(!empty($this->getUser())){
+		$user = $this->getUser();
+
+		if(isset($_SESSION['user']) && !empty($_SESSION['user'])){
+			$data = [
+				'user' => $user,
+			];
+			$this->show('front/User/cptUser', $data);
 		}
 		else {
 			$this->redirectToRoute('front_faddUser');
-		}*/
+		}
 	}
 
 	/**

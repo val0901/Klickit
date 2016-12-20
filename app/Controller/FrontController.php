@@ -29,8 +29,9 @@ class FrontController extends Controller
 		$data = [
 			'comments' => $comments,
 			
-		]; 
-		$this->show('front/index', $data);
+		];
+
+		$this->show('front/index');
 	}
 
 	/**
@@ -62,7 +63,7 @@ class FrontController extends Controller
 				}
 			}
 		}
-		
+
 		if(!empty($this->getUser())){
 			$verification = new AuthorizationModel();
 
@@ -74,10 +75,11 @@ class FrontController extends Controller
 			}
 		}
 		else {
-			$param = ['error' => $error];
-			$this->show('front/login', $param);			
+			$data = [
+				'error' => $error,
+			];
+			$this->show('front/login', $data);			
 		}
-
 	}
 
 	/**

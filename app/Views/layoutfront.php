@@ -91,22 +91,11 @@
                     
                     <!--icon-user menu-->
                     <li class="span_float">
-                        <a href="<?=$this->url('login');?>"><i class="fa fa-user fa-5x icon_cursor navR_color" aria-hidden="true" id="usericon_click"></i></a>
-                        <div class="usersoumenu_hidden">
-                          <form class="form_iconuser">
-                              <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                              </div>
-                              <div class="form-group">
-                                <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                              </div>
-                              <button type="submit" class="btn btn-default">Submit</button>
-                              <p>Creat an account?</p>
-                              <p>Forget your password?</p>
-                        </form>
-                        </div>
+                    	<?php if(empty($_SESSION['user']) && !isset($_SESSION['user'])) : ?>
+                        	<a href="<?=$this->url('login');?>"><i class="fa fa-user fa-5x icon_cursor navR_color" aria-hidden="true" id="usericon_click"></i></a>
+                        <?php elseif(isset($_SESSION['user']) && !empty($_SESSION['user'])) : ?>
+                        	<a href="<?=$this->url('front_affcptuser', ['id' => $_SESSION['user']['id']]);?>"><i class="fa fa-user fa-5x icon_cursor navR_color" aria-hidden="true" id="usericon_click"></i></a>
+                    	<?php endif; ?>
                     </li>
                     <!--End icon-user menu-->
                     
