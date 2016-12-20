@@ -11,7 +11,7 @@ html, body {
 
 a {
 	text-decoration: none;
-	color: #fff;
+	color: #fe941e;
 }
 
 a:hover {
@@ -1432,4 +1432,32 @@ td {
 /*viewart.php*/
 .container_viewart {
 	margin: 20px 150px;
+}
+
+.viewart_fontweight {
+	font-weight: 600;
+}
+
+.viewart_fontref {
+	font-size: 20px;
+}
+
+.viewart_fonttitle {
+	color: #391e20;
+}
+
+.viewart_fontpro {
+	font-size: 30px;
+	color: #3fa9f5;
+}
+
+.viewart_fontsolde {
+	font-size: 50px;
+	color: #7ac943;
+}
+
+.viewart_fontnormal {
+	font-size: 30px;
+	color: #3fa9f5;
+	text-decoration: line-through;
 }
