@@ -1428,3 +1428,8 @@ td {
 	background-color: #fff;
 	padding: 50px 30px 340px;
 }
+
+/*viewart.php*/
+.container_viewart {
+	margin: 20px 150px;
+}

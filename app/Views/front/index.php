@@ -214,4 +214,5 @@
 </div><!-- /.row --> 
 </div><!-- /.container -->
 <!--End Slide articles-->
+<br><br>
 <?php $this->stop('main_content') ?>
