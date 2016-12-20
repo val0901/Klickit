@@ -30,11 +30,24 @@ class AjaxFrontController extends Controller
 				$loggedUser = $islogged->getUser(); //On récupère l'utilisateur connecté
 
 				if(!empty($loggedUser)){
+
+					/************On stocke en session*************/ 
+
+					//Si notre panier est vide ou non défini, alors on rajoute notre produit au panier
+					if(!isset($_SESSION['shop']['cart_item']) || empty($_SESSION['shop']['cart_item'])){ 
+						$_SESSION['shop']['cart_item'] = $_POST['id_product'];
+					}
+					//Sinon, on récupère les valeurs stockées dans notre panier puis on rajoute la valeur sélectionnée en la concatennant
+					else {
+						$_SESSION['shop']['cart_item'] = $_SESSION['shop']['cart_item'].', '.$_POST['id_product'];
+					}
+
+
 					$updateCart = new UserModel();
 
 					//On remplit le panier avec l'id
 					$shoppingCart = [
-						'cart_item'	=>	$_POST['id_product'].', ',
+						'cart_item'	=>	$_SESSION['shop']['cart_item'],
 					];
 				}
 				
