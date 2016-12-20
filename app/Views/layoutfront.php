@@ -55,8 +55,9 @@
 
     
 </head>
+	
 <body>
-	<div class="container_general">
+<div class="container_general">
 		<header>
             <div class="nav_left">
             <a href="<?=$this->url('front_index');?>"><img src="<?=$this->assetUrl('/img/KLICKIT-logo-napoleon.png');?>"></a>
@@ -155,8 +156,7 @@
 					<!--icon-cog menu-->
                     <li class="span_float">
                         <form><button id="logout" type="submit" data-id="login_out"><i class="fa fa-sign-out fa-5x icon_cursor navR_color" aria-hidden="true" id="cogicon_click" title="Deconnexion" style="color: #ea2229;"></i></button></form>
-                    </li>
-                    <!--End icon-cog menu-->
+                    </li>			
                 </ul>
             </div>      
         </header>
@@ -488,6 +488,7 @@
 	</div>
     </footer>
 	<!--End footer-->
+	
 
 	<!--jquery js-->
     <script src="<?= $this->assetUrl('js/jquery-3.1.1.min.js') ?>"></script>   
