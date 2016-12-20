@@ -2,8 +2,15 @@
 
 <?php $this->start('main_content') ?>
 
-	<div id="viewOrder">
-		<form method="post">
+
+	<form method="post">
+		<div id="searchbtn">
+			<input type="text" class="form" placeholder="" name="search" id="search" value="">
+			<button type="submit" name="submit" id="submit" style="background:transparent;border:none;">
+			<i class="fa fa-search" aria-hidden="true"></i>	
+			</button>
+		</div>
+		<div id="viewOrder">
 			<table class="table table-responsive">
 				<thead>
 					<th>Numéro</th>
@@ -87,9 +94,11 @@
 				<?php endforeach; ?>			
 				</tbody>			
 			</table>
-		</form>
-			<?php $search = (isset($_GET['search']))? 'search='. $_GET['search'].'&' :'';?>
+		</div>
+	</form>
 			<div>
+				<?php $search = (isset($_GET['search']))? 'search='. $_GET['search'].'&' :'';?>
+			
 				<?= ($page!=1) ? '<a href="?'. $search .'page='. ($page - 1) .'"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>':''; ?>
 				Page <?= $page; ?> / <?= ceil($nb/$max); ?>
 				<?= $page!= ceil($nb/$max) ? '<a href="?'. $search .'page='. ($page + 1) .'"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>':''; ?>

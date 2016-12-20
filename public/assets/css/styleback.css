@@ -102,7 +102,7 @@ STYLE INDEX
 
 /*tableau commande*/
 
-#lastorder, #lastMessage, #lastGuestbook {
+#lastorder, #lastMessage, #lastGuestbook, #viewOrder {
 	border: 3px solid #bdbdbd;
 	width: 100%;
 	height: auto ;
@@ -270,3 +270,13 @@ span {
 .btn-info {
 	margin-bottom: 20px;
 }         
+
+
+
+/**************
+*BOUTON SEARCH*
+***************/
+
+#searchbtn {
+  margin-bottom: 30px;
+}
