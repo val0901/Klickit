@@ -11,6 +11,7 @@
 					<th>Contenu de la commande</th>
 					<th>Quantité</th>
 					<th>Prix</th>
+					<th>Prix TTC</th>
 					<th>Date de la commande</th>
 					<th>Statut</th>
 					<!-- <th id="thaction">Changer le statut</th> -->
@@ -39,6 +40,29 @@
             				<?php endforeach;?>	
 						</td>
 						<td>
+						<?php foreach ($contents as $value) : ?>
+							<?php $list_items = $items->findItems($value); ?>
+
+							<?php if($list_items['newPrice'] == 0) : ?>
+								<?=$list_items['price'];?>
+								<br>
+							<?php elseif($list_items['newPrice'] > 0) : ?>
+								<?=$list_items['newPrice'];?>
+								<br>
+							<?php endif; ?>
+						<?php endforeach ?>
+						</td>
+						<td><?php $quantity = explode(', ', $order['quantity']); ?>
+            				<?php foreach ($quantity as $value):?>
+            					<?php
+            						echo $value.'<br>';
+            					?>
+            				<?php endforeach;?>	
+						</td>
+						<td><?php foreach ($contents as $value) : ?>
+								          													
+							<?=\Tools\Utils::calculTtc($list_items['price'], $value); ?>
+							<?php endforeach;?>	
 							
 						</td>
 						<td><?= date('d/m/Y', strtotime($order['date_creation']));?></td>

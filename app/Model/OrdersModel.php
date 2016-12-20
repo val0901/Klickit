@@ -73,4 +73,17 @@ class OrdersModel extends \W\Model\Model
 		return $sth->fetchAll();
 	}
 
+	/* Requete pour trouver le prix en focntion de l'id*/
+	public function findPrice($id)
+	{
+		$sql = 'SELECT * FROM ' . $this->table . ' WHERE id = :id';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':id', $id);
+		$sth->execute();
+
+		return $sth->fetchAll();
+
+	}
+
 }
