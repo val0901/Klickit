@@ -1461,3 +1461,30 @@ td {
 	color: #3fa9f5;
 	text-decoration: line-through;
 }
+
+.viewart_fontfamily {
+	font-family: 'Advent Pro', sans-serif;
+}
+
+.viewart_savoirback {
+	background-image: url("../img/boxBackground.jpg");
+	height: 50px;
+}
+
+.viewart_savoirtitle {
+	font-size: 20px;
+	font-weight: 600;
+	padding-left: 10px;
+	padding-top: 10px;
+}
+
+.viewart_savoirboder {
+	border: 2px dotted #ddd;
+}
+
+.viewart_savoirtext {
+	font-size: 20px;
+	padding: 20px;
+	color: #999;
+	border: 2px dotted #ddd;
+}

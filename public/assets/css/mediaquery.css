@@ -110,6 +110,10 @@
 		width: 100%;
 	}
 	
+	.viewart_savoirwidth {
+		width: 100%;
+	}
+	
 }
 
 @media screen and (max-width: 990px) {
@@ -257,6 +261,7 @@
     .legalm_background {
 	padding: 20px;
 }
+	
 	
     
 }
