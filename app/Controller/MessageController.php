@@ -31,19 +31,17 @@ class MessageController extends Controller
 			'nb' => $nb,
 		];
 
-		//On sécurise la page, seulement accessible à l'Admin
-		if(!empty($_SESSION)){
+		if(!empty($this->getUser())){
 
 			$this->show('back/Message/listMessage', $data);
-
-			if($_SESSION['role'] == 'Utilisateur') {
+			
+			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
 			}
 		}
 		else {
 			$this->redirectToRoute('login');
 		}
-		
 	}
 
 	/**
@@ -159,11 +157,11 @@ class MessageController extends Controller
 			'success'	=> $success,
 		];
 
-		if(!empty($_SESSION)){
+		if(!empty($this->getUser())){
 
 			$this->show('back/Message/viewMessage', $data);
-
-			if($_SESSION['role'] == 'Utilisateur') {
+			
+			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
 			}
 		}
@@ -171,5 +169,4 @@ class MessageController extends Controller
 			$this->redirectToRoute('login');
 		}
 	}
-	
 }

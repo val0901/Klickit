@@ -21,18 +21,17 @@ class ShippingController extends Controller
 			'options'	=> $list
 		];
 
-		if(!empty($_SESSION)){
+		if(!empty($this->getUser())){
 
 			$this->show('back/Shipping/listShipping',$data);
-
-			if($_SESSION['role'] == 'Utilisateur') {
+			
+			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
 			}
 		}
 		else {
 			$this->redirectToRoute('login');
 		}
-		
 	}
 
 	/**
@@ -83,18 +82,17 @@ class ShippingController extends Controller
 			'errors'	=> $errors,
 		];
 
-		if(!empty($_SESSION)){
+		if(!empty($this->getUser())){
 
 			$this->show('back/Shipping/addShipping',$params);
-
-			if($_SESSION['role'] == 'Utilisateur') {
+			
+			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
 			}
 		}
 		else {
 			$this->redirectToRoute('login');
-		}
-		
+		}	
 	}
 
 	/**
@@ -169,17 +167,16 @@ class ShippingController extends Controller
 			'errors'	=> $errors
 		];	
 
-		if(!empty($_SESSION)){
+		if(!empty($this->getUser())){
 
 			$this->show('back/Shipping/updateShipping', $data);
-
-			if($_SESSION['role'] == 'Utilisateur') {
+			
+			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
 			}
 		}
 		else {
 			$this->redirectToRoute('login');
-		}
-		$this->show('back/Shipping/updateShipping');
+		}	
 	}
 }

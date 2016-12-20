@@ -34,11 +34,11 @@ class UserController extends Controller
 			'nb' => $nb,	
 		];
 
-		if(!empty($_SESSION)){
+		if(!empty($this->getUser())){
 
 			$this->show('back/User/listUser', $data);
-
-			if($_SESSION['role'] == 'Utilisateur') {
+			
+			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
 			}
 		}
@@ -138,18 +138,17 @@ class UserController extends Controller
 			'errors'	=> $errors
 		];	
 
-		if(!empty($_SESSION)){
+		if(!empty($this->getUser())){
 
 			$this->show('back/User/addUser', $params);
-
-			if($_SESSION['role'] == 'Utilisateur') {
+			
+			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
 			}
 		}
 		else {
 			$this->redirectToRoute('login');
-		}
-		
+		}	
 	}
 
 	/**
@@ -293,19 +292,18 @@ class UserController extends Controller
 			'user'		=> $user, //Va récupérer les infos de l'utilisateur pour préremplir les champs
 			'success'	=> $success, //success et errors vont nous servir à afficher les messages d'erreur ou de réussite
 			'errors'	=> $errors
-		];	
+		];
 
-		if(!empty($_SESSION)){
+		if(!empty($this->getUser())){
 
 			$this->show('back/User/updateUser', $data);
-
-			if($_SESSION['role'] == 'Utilisateur') {
+			
+			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
 			}
 		}
 		else {
 			$this->redirectToRoute('login');
-		}
-		
+		}	
 	}
 }

@@ -23,11 +23,11 @@ class SlideController extends Controller
 			'slide'	=> $slide,
 		];
 
-		if(!empty($_SESSION)){
+		if(!empty($this->getUser())){
 
 			$this->show('back/Slide/listSlide', $data);
-
-			if($_SESSION['role'] == 'Utilisateur') {
+			
+			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
 			}
 		}
@@ -112,11 +112,11 @@ class SlideController extends Controller
 			'errors'	=> $errors
 		];
 
-		if(!empty($_SESSION)){
+		if(!empty($this->getUser())){
 
 			$this->show('back/Slide/addSlide', $params);
-
-			if($_SESSION['role'] == 'Utilisateur') {
+			
+			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
 			}
 		}
@@ -218,11 +218,11 @@ class SlideController extends Controller
 				'errors'	=> $errors
 			];
 
-		if(!empty($_SESSION)){
+		if(!empty($this->getUser())){
 
 			$this->show('back/Slide/updateSlide', $data);
-
-			if($_SESSION['role'] == 'Utilisateur') {
+			
+			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
 			}
 		}

@@ -41,11 +41,11 @@ class OrdersController extends Controller
 			];
 				
 		//Sécurisation de la page		
-		if(!empty($_SESSION)){
+		if(!empty($this->getUser())){
 
 			$this->show('back/Orders/listOrders', $data);
-
-			if($_SESSION['role'] == 'Utilisateur') {
+			
+			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
 			}
 		}
@@ -73,9 +73,16 @@ class OrdersController extends Controller
 			];
 		}
 
-		$this->show('back/Orders/viewOrders', $data);
-		
+		if(!empty($this->getUser())){
+
+			$this->show('back/Orders/viewOrders', $data);
+			
+			if ($verification->isGranted('Utilisateur')) {
+				$this->redirectToRoute('front_index');
+			}
+		}
+		else {
+			$this->redirectToRoute('login');
+		}
 	}
-
-
 }

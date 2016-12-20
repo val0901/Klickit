@@ -42,17 +42,15 @@ class BackController extends Controller
 			'items' => $items,
 			'comments' => $list_guestbook,
 		];
-		
-		if(!empty($_SESSION)){
+
+		if(!empty($this->getUser())){
+			$verification = new AuthorizationModel();
 
 			$this->show('back/index', $data);
-
-			if($_SESSION['role'] == 'Utilisateur') {
+			
+			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
 			}
-		}
-		else {
-			$this->redirectToRoute('login');
 		}
 		
 	}

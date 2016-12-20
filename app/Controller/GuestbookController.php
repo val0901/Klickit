@@ -34,18 +34,17 @@ class GuestbookController extends Controller
 			'nb' => $nb,
 		];
 
-		if(!empty($_SESSION)){
+		if(!empty($this->getUser())){
 
 			$this->show('back/Guestbook/listGuestbook', $data);
-
-			if($_SESSION['role'] == 'Utilisateur') {
+			
+			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
 			}
 		}
 		else {
 			$this->redirectToRoute('login');
 		}
-		
 	}
 
 	/**
@@ -87,11 +86,11 @@ class GuestbookController extends Controller
 			$this->redirectToRoute('listGuestbook');
 		}
 
-		if(!empty($_SESSION)){
+		if(!empty($this->getUser())){
 
 			$this->show('back/Guestbook/moderation', $data);
-
-			if($_SESSION['role'] == 'Utilisateur') {
+			
+			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
 			}
 		}
@@ -99,21 +98,4 @@ class GuestbookController extends Controller
 			$this->redirectToRoute('login');
 		}
 	}
-
-	/**
-	 * Modification du Livre d'Or
-	 */
-	public function updateGuestbook()
-	{
-		$this->show('back/Guestbook/updateGuestbook');
-	}
-
-	/**
-	 * Suppression des messages du Livre d'Or
-	 */
-	public function deleteGuestbook()
-	{
-		$this->show('back/Guestbook/deleteGuestbook');
-	}
-
 }

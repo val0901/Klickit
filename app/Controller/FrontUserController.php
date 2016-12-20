@@ -124,12 +124,12 @@ class FrontUserController extends Controller
 
 	public function fupdateUser($id){
 
-			$this->show('front/User/UpdateUser');
-		/*if(!empty($this->getUser())){
+		if(!empty($this->getUser())){
+			$this->show('front/User/UpdateUser');	
 		}
 		else {
-			$this->redirectToRoute('front_faddUser');
-		}*/
+			$this->redirectToRoute('login');
+		}
 	}
 
 	/**

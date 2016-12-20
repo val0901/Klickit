@@ -69,11 +69,11 @@ class ItemController extends Controller
 			'nb3' => $nb3,
 		];
 
-		if(!empty($_SESSION)){
+		if(!empty($this->getUser())){
 
 			$this->show('back/Item/listItem', $data);
-
-			if($_SESSION['role'] == 'Utilisateur') {
+			
+			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
 			}
 		}
@@ -228,11 +228,11 @@ class ItemController extends Controller
 			'success' => $success,
 		];
 
-		if(!empty($_SESSION)){
+		if(!empty($this->getUser())){
 
 			$this->show('back/Item/addItem', $params);
-
-			if($_SESSION['role'] == 'Utilisateur') {
+			
+			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
 			}
 		}
@@ -432,11 +432,11 @@ class ItemController extends Controller
 				'errors'	=> $errors
 			];
 
-			if(!empty($_SESSION)){
+			if(!empty($this->getUser())){
 
 				$this->show('back/Item/updateItem', $data);
-
-				if($_SESSION['role'] == 'Utilisateur') {
+				
+				if ($verification->isGranted('Utilisateur')) {
 					$this->redirectToRoute('front_index');
 				}
 			}
