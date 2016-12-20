@@ -1,7 +1,7 @@
 <?php $this->layout('layoutfront', ['title' => 'Mentions légales Klickit']) ?>
 
 <?php $this->start('main_content') ?>
-<div class="container">
+<div class="container legalm_background">
 <p style="color: #b51a00;"><span style="color: rgb(0, 0, 0);"><b>Editeur du Site : </b></span></p>
 ©Klickit
 Numéro de SIRET :  753 966 464 00012

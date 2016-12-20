@@ -159,7 +159,12 @@
     .order_buttonscapR {
     text-align: center;
 }
-	
+
+    /*mentions légales*/
+    .legalm_background {
+	padding: 20px;
+}
+
 	
 }
 
@@ -247,6 +252,10 @@
 	
 	th {
 	font-size: 2.5vw;
+}
+    /*mentions légales*/
+    .legalm_background {
+	padding: 20px;
 }
 	
     
@@ -344,6 +353,10 @@
 	
 	.addusercol2_padding {
     padding: 20px 50px;
+}
+    /*mentions légales*/
+    .legalm_background {
+	padding: 30px;
 }
     
 	
