@@ -349,6 +349,17 @@ a:focus {
   border-color: #ef820b;
 }
 
+.shoppingcart_quantity {
+	background-color: #ea2229;
+    border-radius: 25px;
+    color: #fff;
+    margin-left: -25px;
+    padding: 1px 10px;
+    position: absolute;
+    vertical-align: top;
+    z-index: 10;
+}
+
 /*footer*/
 footer {
     background-color: #1f3a93;

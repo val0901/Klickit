@@ -364,6 +364,11 @@
 	padding: 30px;
 }
     
+	.shoppingcart_quantity {
+    border-radius: 18px;
+    margin-left: -15px;
+    padding: 0px 8px;
+}
 	
 }
 	

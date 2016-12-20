@@ -101,7 +101,8 @@
                     
                     <!--icon-shoppingcart-->
                     <li class="span_float">
-                        <i class="fa fa-shopping-cart fa-5x icon_cursor navR_color" aria-hidden="true" id="shoppingicon_click"></i>
+                        <i class="fa fa-shopping-cart fa-5x icon_cursor navR_color fa-fw" aria-hidden="true" id="shoppingicon_click"></i>
+						<span class="shoppingcart_quantity">1</span>
 						<div class="shoppingsoumenu_hidden">
 							<div class="row" style="margin: 0 10px;">
 								<div class="col-xs-6">
@@ -150,6 +151,12 @@
                         </div>
                     </li>
                     <!--End icon-shoppingcart-->
+					
+					<!--icon-cog menu-->
+                    <li class="span_float">
+                        <i class="fa fa-sign-out fa-5x icon_cursor navR_color" aria-hidden="true" id="cogicon_click" title="Deconnexion" style="color: #ea2229;"></i>
+                    </li>
+                    <!--End icon-cog menu-->
                 </ul>
             </div>      
         </header>
