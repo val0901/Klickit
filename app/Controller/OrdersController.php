@@ -42,6 +42,9 @@ class OrdersController extends Controller
 				
 		//Sécurisation de la page		
 		if(!empty($this->getUser())){
+
+			$verification = new AuthorizationModel();
+
 			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
 			}
@@ -74,6 +77,9 @@ class OrdersController extends Controller
 		}
 
 		if(!empty($this->getUser())){
+
+			$verification = new AuthorizationModel();
+
 			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
 			}

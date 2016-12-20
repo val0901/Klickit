@@ -32,6 +32,9 @@ class MessageController extends Controller
 		];
 
 		if(!empty($this->getUser())){
+
+			$verification = new AuthorizationModel();
+
 			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
 			}
@@ -158,6 +161,9 @@ class MessageController extends Controller
 		];
 
 		if(!empty($this->getUser())){
+
+			$verification = new AuthorizationModel();
+			
 			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
 			}

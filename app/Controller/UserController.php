@@ -35,6 +35,9 @@ class UserController extends Controller
 		];
 
 		if(!empty($this->getUser())){
+
+			$verification = new AuthorizationModel();
+
 			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
 			}
@@ -139,6 +142,9 @@ class UserController extends Controller
 		];	
 
 		if(!empty($this->getUser())){
+
+			$verification = new AuthorizationModel();
+
 			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
 			}
@@ -295,6 +301,9 @@ class UserController extends Controller
 		];
 
 		if(!empty($this->getUser())){
+
+			$verification = new AuthorizationModel();
+			
 			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
 			}

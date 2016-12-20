@@ -3,9 +3,18 @@
 namespace Controller;
 
 use \W\Controller\Controller;
+use \W\Model\UsersModel;
+use \Model\UserModel;
+use \Model\BackModel;
+use \Model\ResetModel;
+use \Model\OrdersModel;
 use \Model\ItemModel;
-use \W\Security\AuthorizationModel;
+use \Model\MessageModel;
+use \Model\GuestbookModel;
 use \W\Security\AuthentificationModel;
+use \W\Security\AuthorizationModel;
+use \W\Security\StringUtils;
+use \PHPMailer;
 use \Respect\Validation\Validator as v;
 use \Intervention\Image\ImageManagerStatic as Image;
 
@@ -70,6 +79,9 @@ class ItemController extends Controller
 		];
 
 		if(!empty($this->getUser())){
+
+			$verification = new AuthorizationModel();
+
 			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
 			}
@@ -229,6 +241,9 @@ class ItemController extends Controller
 		];
 
 		if(!empty($this->getUser())){
+
+			$verification = new AuthorizationModel();
+
 			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
 			}
@@ -433,6 +448,9 @@ class ItemController extends Controller
 			];
 
 			if(!empty($this->getUser())){
+
+				$verification = new AuthorizationModel();
+
 				if ($verification->isGranted('Utilisateur')) {
 					$this->redirectToRoute('front_index');
 				}

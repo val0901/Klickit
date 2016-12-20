@@ -24,6 +24,9 @@ class SlideController extends Controller
 		];
 
 		if(!empty($this->getUser())){
+
+			$verification = new AuthorizationModel();
+
 			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
 			}
@@ -113,6 +116,9 @@ class SlideController extends Controller
 		];
 
 		if(!empty($this->getUser())){
+
+			$verification = new AuthorizationModel();
+
 			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
 			}
@@ -219,6 +225,9 @@ class SlideController extends Controller
 			];
 
 		if(!empty($this->getUser())){
+
+			$verification = new AuthorizationModel();
+			
 			if ($verification->isGranted('Utilisateur')) {
 				$this->redirectToRoute('front_index');
 			}
