@@ -34,12 +34,11 @@ class FrontController extends Controller
 		$getItems = new ItemModel();
 		$user = $this->getUser();
 		$shoppingCart = $getShoppingCart->find($user['id']);
-
+		var_dump($shoppingCart);
 		if(!empty($user['cart_item'])){
 			$items = explode(', ', $user['cart_item']);
-			var_dump($items);
 		}else{
-			echo 'swag';
+			
 		}
 		
 
