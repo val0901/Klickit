@@ -39,6 +39,12 @@
 	font-size: 1.5vw;
 }
 	
+	.carousel-inner {
+    overflow: hidden;
+    position: relative;
+    width: 95%;
+}
+	
     
 }
 
@@ -113,6 +119,7 @@
 	.viewart_savoirwidth {
 		width: 100%;
 	}
+	
 	
 }
 
@@ -261,7 +268,6 @@
     .legalm_background {
 	padding: 20px;
 }
-	
 	
     
 }
