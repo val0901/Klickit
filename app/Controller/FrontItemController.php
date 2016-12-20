@@ -37,6 +37,9 @@ class FrontItemController extends Controller
 		$this->show('front/Items/customs', $data);
 	}
 
+	/**
+	* Affiche la page de tous les customs
+	*/
 	public function listCustomItemsFull()
 	{
 		$getCustomItems = new ItemModel();
@@ -87,5 +90,52 @@ class FrontItemController extends Controller
 	{
 		$this->show('front/Items/favorite');
 	}
+
+	/**
+	* Affiche la page de tous les classiques
+	*/
+	public function listClassicsItemsFull()
+	{
+		$getClassicsItems = new ItemModel();
+		$items = $getClassicsItems->findByCategory('PlaymobilClassique');
+
+		$data = [
+			'items'	=> $items
+		];
+
+		$this->show('front/Items/classicsFull', $data);
+	}
+
+	/**
+	* Affiche la page de tous les divers
+	*/
+	public function listDiversItemsFull()
+	{
+		$getDiversItems = new ItemModel();
+		$items = $getDiversItems->findByCategory('Divers');
+
+		$data = [
+			'items'	=> $items
+		];
+
+		$this->show('front/Items/diversFull', $data);
+	}
+
+	/**
+	* Affiche la page de toutes les pièces détachées
+	*/
+	public function listPiecesItemsFull()
+	{
+		$getPiecesItems = new ItemModel();
+		$items = $getPiecesItems->findByCategory('PiecesDetachees');
+
+		$data = [
+			'items'	=> $items
+		];
+
+		$this->show('front/Items/piecesFull', $data);
+	}
+
+
 
 }
