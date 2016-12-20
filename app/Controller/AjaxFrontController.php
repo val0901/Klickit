@@ -70,9 +70,12 @@ class AjaxFrontController extends Controller
 		$logout = new AuthentificationModel();
 			
 		if(isset($_GET['id_logout'])) {
-			$logout->logUserOut();
 			
-			$this->showJson(['code' => 'ok']);
+			if($logout->logUserOut()){
+			
+				$this->showJson(['code' => 'ok']);
+
+			}
 		}
 	}
 }
