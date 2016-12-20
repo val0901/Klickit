@@ -34,15 +34,9 @@ class FrontController extends Controller
 		$getItems = new ItemModel();
 		$user = $this->getUser();
 		$shoppingCart = $getShoppingCart->find($user['id']);
-		var_dump($shoppingCart);
-		if(!empty($user['cart_item'])){
-			$items = explode(', ', $user['cart_item']);
-		}else{
-			
-		}
+
+		var_dump(explode(', ', $shoppingCart['cart_item']));
 		
-
-
 		$data = [
 			'comments' => $comments,
 			
