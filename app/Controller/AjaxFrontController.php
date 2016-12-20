@@ -4,6 +4,7 @@ namespace Controller;
 
 use \W\Controller\Controller;
 use \W\Model\UsersModel;
+use \Model\UserModel;
 use \Model\ItemModel;
 use \Model\MessageModel;
 use \Model\EventModel;
@@ -15,7 +16,7 @@ use \W\Security\AuthentificationModel;
 
 use \Respect\Validation\Validator as v; 
 
-class AjaxController extends Controller
+class AjaxFrontController extends Controller
 {	
 	/**
 	 * Ajoute un produit au panier
@@ -25,11 +26,19 @@ class AjaxController extends Controller
 		if(!empty($_POST)){
 
 			if(is_numeric($_POST['id_product'])){
-				$userModel = new UserModel();
+				$islogged = new Controller;
+				$loggedUser = $islogged->getUser(); //On récupère l'utilisateur connecté
 
+				if(!empty($loggedUser)){
+					$updateCart = new UserModel();
 
-
-				if($deleteOrder){
+					//On remplit le panier
+					$shoppingCart = [
+						'cart_item'	=>	$_POST['id_product'].', ',
+					];
+				}
+				
+				if($updateCart->update($shoppingCart,$loggedUser['id'])){
 					$json = ['code' => 'ok'];
 				}
 			}else{
