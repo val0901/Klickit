@@ -18,7 +18,7 @@ class ResetController extends Controller
 
 			$verify = new ResetModel;
 			$getInfos = $verify->findByIdToken($id_token);
-			var_dump($getInfos);
+			
 			/**
 			 *
 			Vérification de la validité du token (pas sûr encore donc mis en commmentaire)
