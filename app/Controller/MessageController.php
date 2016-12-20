@@ -41,7 +41,7 @@ class MessageController extends Controller
 			}
 		}
 		else {
-			$this->redirectToRoute('back_login');
+			$this->redirectToRoute('login');
 		}
 		
 	}
@@ -168,7 +168,7 @@ class MessageController extends Controller
 			}
 		}
 		else {
-			$this->redirectToRoute('back_login');
+			$this->redirectToRoute('login');
 		}
 	}
 	

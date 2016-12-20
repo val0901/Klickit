@@ -50,7 +50,7 @@ class OrdersController extends Controller
 			}
 		}
 		else {
-			$this->redirectToRoute('back_login');
+			$this->redirectToRoute('login');
 		}
 	}
 

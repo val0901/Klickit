@@ -78,7 +78,7 @@ class ItemController extends Controller
 			}
 		}
 		else {
-			$this->redirectToRoute('back_login');
+			$this->redirectToRoute('login');
 		}
 	}
 
@@ -237,7 +237,7 @@ class ItemController extends Controller
 			}
 		}
 		else {
-			$this->redirectToRoute('back_login');
+			$this->redirectToRoute('login');
 		}
 	}
 
@@ -441,7 +441,7 @@ class ItemController extends Controller
 				}
 			}
 			else {
-				$this->redirectToRoute('back_login');
+				$this->redirectToRoute('login');
 			}
 	}
 }

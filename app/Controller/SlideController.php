@@ -32,7 +32,7 @@ class SlideController extends Controller
 			}
 		}
 		else {
-			$this->redirectToRoute('back_login');
+			$this->redirectToRoute('login');
 		}
 	}
 
@@ -121,7 +121,7 @@ class SlideController extends Controller
 			}
 		}
 		else {
-			$this->redirectToRoute('back_login');
+			$this->redirectToRoute('login');
 		}
 	}
 	
@@ -227,7 +227,7 @@ class SlideController extends Controller
 			}
 		}
 		else {
-			$this->redirectToRoute('back_login');
+			$this->redirectToRoute('login');
 		}
 	}
 }

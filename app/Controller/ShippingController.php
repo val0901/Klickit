@@ -30,7 +30,7 @@ class ShippingController extends Controller
 			}
 		}
 		else {
-			$this->redirectToRoute('back_login');
+			$this->redirectToRoute('login');
 		}
 		
 	}
@@ -92,7 +92,7 @@ class ShippingController extends Controller
 			}
 		}
 		else {
-			$this->redirectToRoute('back_login');
+			$this->redirectToRoute('login');
 		}
 		
 	}
@@ -178,7 +178,7 @@ class ShippingController extends Controller
 			}
 		}
 		else {
-			$this->redirectToRoute('back_login');
+			$this->redirectToRoute('login');
 		}
 		$this->show('back/Shipping/updateShipping');
 	}
