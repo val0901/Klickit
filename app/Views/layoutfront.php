@@ -191,7 +191,7 @@
 			  <div class="row">
 				  <div class="col-lg-3 col-md-6 soumenu_TLA_height">
 					  <div class="soumenu_TLA_text">
-						  <li style="float:left;">Classic<li>
+						  <li style="float:left;"><a href="<?=$this->url('listItemClassicsFull');?>">Classic</a><li>
 						  <li style="float:right;"><i class="fa fa-plus faplus_color plus_classic" aria-hidden="true" id="plusclassic_hide"></i><i class="fa fa-minus faminus_color" aria-hidden="true" id="faminus_hide"></i></li>
 						  <div class="clear"></div>
 						  <ul class="soumenu_classics_text">
@@ -211,7 +211,7 @@
 				  </div>
 				  <div class="col-lg-3 col-md-6 soumenu_TLA_height">
 					  <div class="soumenu_TLA_text">
-						  <li style="float:left;">Customs<li>
+						  <li style="float:left;"><li style="float:left;"><a href="<?=$this->url('listItemCustomFull');?>">Customs</a><li>
 						  <li style="float:right;"><i class="fa fa-plus faplus_color plus_customs" aria-hidden="true" id="pluscustoms_hide"></i><i class="fa fa-minus faminus_color" aria-hidden="true" id="faminus1_hide"></i></li>
 						  <div class="clear"></div>
 						  <ul class="soumenu_customs_text">
@@ -225,7 +225,7 @@
 				  </div>
 				  <div class="col-lg-3 col-md-6 soumenu_TLA_height">
 					  <div class="soumenu_TLA_text">
-						  <li style="float:left;">Pieces détachées<li>
+						  <li style="float:left;"><a href="<?=$this->url('listItemPiecesFull');?>">Pieces détachées</a><li>
 						  <li style="float:right;"><i class="fa fa-plus faplus_color plus_pieces" aria-hidden="true" id="pluspieces_hide"></i><i class="fa fa-minus faminus_color" aria-hidden="true" id="faminus2_hide"></i></li>
 						  <div class="clear"></div>
 						  <ul class="soumenu_pieces_text">
@@ -242,7 +242,7 @@
 				  </div>
 				  <div class="col-lg-3 col-md-6 soumenu_TLA_height">
 					  <div class="soumenu_TLA_text">
-						  <li style="float:left;">Boites/Set<li>
+						  <li style="float:left;"><a href="<?=$this->url('listItemDiversFull');?>">Boites/Set</a><li>
 						  <li style="float:right;"><i class="fa fa-plus faplus_color plus_boites" aria-hidden="true" id="plusboites_hide"></i><i class="fa fa-minus faminus_color" aria-hidden="true" id="faminus3_hide"></i></li>
 						  <div class="clear"></div>
 						  <ul class="soumenu_boites_text">
@@ -259,15 +259,15 @@
 		<!--End menu tous les articles-->
         
         <!--menu a propos-->
-		<li class="navli_width AP_bgcolor"><a class=" linknav" href="<?=$this->url('front_aPropos');?>">A propos</a></li>
+		<li class="navli_width AP_bgcolor"><a class="linknav" href="<?=$this->url('front_aPropos');?>">A propos</a></li>
 		<!--End menu a propos-->
 		
 		<!--menu eventmentiel-->
-        <li class="navli_width EVT_bgcolor"><a class=" linknav" href="<?=$this->url('front_events');?>">Evènementiel</a></li>
+        <li class="navli_width EVT_bgcolor"><a class="linknav" href="<?=$this->url('front_events');?>">Evènementiel</a></li>
 		<!--End menu eventmentiel-->
         
 		<!--menu contact--> 
-        <li class="navli_width CT_bgcolor"><a class=" linknav" href="<?=$this->url('front_contact');?>">Contact</a></li>
+        <li class="navli_width CT_bgcolor"><a class="linknav" href="<?=$this->url('front_contact');?>">Contact</a></li>
 		<!--End menu contact-->
 		
 		<!--menu icon search-->
@@ -435,12 +435,12 @@
 			<div class="row footerrow_margin">
 				<div class="col-md-4 etiq_width">
 					<p class="footertitle">Société</p>
-						<a href="<?=$this->url('front_legalMention');?>"><p class="footertext">Mentions légales</p></a>				
-						<a href="<?=$this->url('front_cgv');?>"><p class="footertext">Condition Générales de Ventes</p></a>
-						<a href="<?=$this->url('front_createEvent');?>"><p class="footertext">Création d'évènement Playmobil</p></a>
-						<a href="<?=$this->url('front_contact');?>"><p class="footertext">Contact</p></a>
-						<a href="<?=$this->url('front_team');?>"><p class="footertext">Equipe de création</p></a>
-						<a href="<?=$this->url('fGuestbook');?>"><p class="footertext">Laissez nous votre avis</p></a>
+						<a class="linknav" href="<?=$this->url('front_legalMention');?>"><p class="footertext">Mentions légales</p></a>				
+						<a class="linknav" href="<?=$this->url('front_cgv');?>"><p class="footertext">Condition Générales de Ventes</p></a>
+						<a class="linknav" href="<?=$this->url('front_createEvent');?>"><p class="footertext">Création d'évènement Playmobil</p></a>
+						<a class="linknav" href="<?=$this->url('front_contact');?>"><p class="footertext">Contact</p></a>
+						<a class="linknav" href="<?=$this->url('front_team');?>"><p class="footertext">Equipe de création</p></a>
+						<a class="linknav" href="<?=$this->url('fGuestbook');?>"><p class="footertext">Laissez nous votre avis</p></a>
 					</div>
 					<div class="col-md-4 etiq_width">
 						<p class="footertitle">Suivez-nous</p>
@@ -470,12 +470,12 @@
 				</div>
 				<div class="col-xs-6 etiq_width_small">
 					<p class="footertitle">Société</p>
-					<a href="<?=$this->url('front_legalMention');?>"><p class="footertext">Mentions légales</p></a>
-					<a href="<?=$this->url('front_cgv');?>"><p class="footertext">Condition Générales de Ventes</p></a>
+					<a class="linknav" href="<?=$this->url('front_legalMention');?>"><p class="footertext">Mentions légales</p></a>
+					<a class="linknav" href="<?=$this->url('front_cgv');?>"><p class="footertext">Condition Générales de Ventes</p></a>
 					<a href="<?=$this->url('front_createEvent');?>"><p class="footertext">Création d'évènement Playmobil</p></a>
-					<a href="<?=$this->url('front_contact');?>"><p class="footertext">Contact</p></a>
-					<a href="<?=$this->url('front_team');?>"><p class="footertext">Equipe de création</p></a>
-					<a href="<?=$this->url('fGuestbook');?>"><p class="footertext">Laissez nous votre avis</p></a>
+					<a class="linknav" href="<?=$this->url('front_contact');?>"><p class="footertext">Contact</p></a>
+					<a class="linknav" href="<?=$this->url('front_team');?>"><p class="footertext">Equipe de création</p></a>
+					<a class="linknav" href="<?=$this->url('fGuestbook');?>"><p class="footertext">Laissez nous votre avis</p></a>
 					<br>
 					<p class="footertitle">Suivez-nous</p>
 					<a href="https://www.facebook.com/Klickit-787164048000917/" target="_blank"><i class="fa fa-facebook-square fa-2x footer_neticon" aria-hidden="true"> <span class="footertext">Sur Facebook</span></i></a>
