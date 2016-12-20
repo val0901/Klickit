@@ -683,6 +683,12 @@ a:hover {
     text-decoration: none;
 }
 
+.carousel-inner {
+    overflow: hidden;
+    position: relative;
+    width: 95%;
+}
+
 /* Page Header */
 .page-header {
     background: #f9f9f9;
