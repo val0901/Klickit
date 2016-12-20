@@ -3,7 +3,18 @@
 namespace Controller;
 
 use \W\Controller\Controller;
+use \W\Model\UsersModel;
+use \Model\UserModel;
+use \Model\BackModel;
+use \Model\ResetModel;
+use \Model\OrdersModel;
+use \Model\ItemModel;
+use \Model\MessageModel;
 use \Model\GuestbookModel;
+use \W\Security\AuthentificationModel;
+use \W\Security\AuthorizationModel;
+use \W\Security\StringUtils;
+use \PHPMailer;
 
 class FrontController extends Controller
 {
@@ -28,7 +39,7 @@ class FrontController extends Controller
 	public function login()
 	{
 		$post = [];
-		$errors = [];
+		$error = [];
 
 		if(!empty($_POST)){
 			$post = array_map('trim', array_map('strip_tags', $_POST));
@@ -40,23 +51,30 @@ class FrontController extends Controller
 				$connexion = new AuthentificationModel();
 				$idConnexion = $connexion->isValidLoginInfo($post['pseudo'], $post['password']);
 
-				if($idConnexion){
+				if($idConnexion > 0){
 					$userModel = new UserModel();
 					$user = $userModel->find($idConnexion);
 
 					$connexion->logUserIn($user);
 				}
-				else {
+				elseif($idConnexion === 0) {
 					$error = 'Erreur d\'identifiant ou de mot de passe';
 				}
 			}
 		}
 		
 		if(!empty($this->getUser())){
-			$this->redirectToRoute('front/index');
+			$verification = new AuthorizationModel();
+
+			if($verification->isGranted('Admin')) {
+				$this->redirectToRoute('back_index');
+			}
+			elseif ($verification->isGranted('Utilisateur')) {
+				$this->redirectToRoute('front_index');
+			}
 		}
 		else {
-			$param = ['error' => $errors];
+			$param = ['error' => $error];
 			$this->show('front/login', $param);			
 		}
 

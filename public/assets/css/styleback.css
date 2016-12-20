@@ -111,10 +111,6 @@ STYLE INDEX
 	border-radius: 5px;
 }
 
-th,td {
-	text-align: center;
-}
-
 #selectStatut {
 	width: 200px;
 }

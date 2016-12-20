@@ -7,7 +7,6 @@
 
 		//Routes pour le back (classé par controller)
 		['GET|POST', '/admin/home', 'Back#index', 'back_index'],
-		['GET|POST', '/admin/login', 'Back#login', 'back_login'],
 		['GET|POST', '/admin/forgot_password', 'Back#forgot_pwd', 'back_forgot_pwd'],
 
 		//Pages liées à ResetController

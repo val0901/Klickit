@@ -91,7 +91,7 @@
                     
                     <!--icon-user menu-->
                     <li class="span_float">
-                        <i class="fa fa-user fa-5x icon_cursor navR_color" aria-hidden="true" id="usericon_click"></i>
+                        <a href="<?=$this->url('login');?>"><i class="fa fa-user fa-5x icon_cursor navR_color" aria-hidden="true" id="usericon_click"></i></a>
                         <div class="usersoumenu_hidden">
                           <form class="form_iconuser">
                               <div class="form-group">

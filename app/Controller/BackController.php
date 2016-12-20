@@ -52,56 +52,9 @@ class BackController extends Controller
 			}
 		}
 		else {
-			$this->redirectToRoute('back_login');
+			$this->redirectToRoute('login');
 		}
 		
-	}
-
-	/**
-	 * Page de connexion
-	 */
-	public function login()
-	{
-		$post = [];
-		$error = '';
-
-		if(!empty($_POST)){
-			$post = array_map('trim', array_map('strip_tags', $_POST));
-
-			if(empty($post['pseudo']) && empty($post['password'])) {
-				$error = 'Veuillez saisir un pseudo et un mot de passe';
-			}
-			else {
-				$connexion = new AuthentificationModel();
-				$idConnexion = $connexion->isValidLoginInfo($post['pseudo'], $post['password']);
-
-				if($idConnexion > 0){
-					$userModel = new UserModel();
-					$user = $userModel->find($idConnexion);
-
-					$connexion->logUserIn($user);
-				}
-				elseif($idConnexion === 0) {
-					$error = 'Erreur d\'identifiant ou de mot de passe';
-				}
-			}
-
-		}
-
-		if(!empty($this->getUser())){
-			$verification = new AuthorizationModel();
-
-			if($verification->isGranted('Admin')) {
-				$this->redirectToRoute('back_index');
-			}
-			elseif ($verification->isGranted('Utilisateur')) {
-				$this->redirectToRoute('front_index');
-			}
-		}
-		else {
-			$param = ['error' => $error];
-			$this->show('back/login', $param);			
-		}
 	}
 
 	/**
