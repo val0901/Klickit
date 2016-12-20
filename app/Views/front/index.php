@@ -29,8 +29,8 @@
 <!--End section 4 categories-->
 
 <!--La derniere commentaire-->
-<div class="vignetteEvent_hide">
-	<img class="img-responsive" src="<?=$this->assetUrl('/img/vignetteEvent1.png');?>">
+<div class="vignetteEvent_hide"><a class="linknav" href="<?=$this->url('front_contact');?>">
+	<img class="img-responsive" src="<?=$this->assetUrl('/img/vignetteEvent1.png');?>"></a>
 </div>
 <div class="row commtaire_back">
   <div class="col-md-2"></div>
@@ -47,12 +47,13 @@
 <!--End La derniere commentaire-->
 
 <!--La derniere evenement-->
-<div class="event_title">évènements</div>
+<div class="event_title">événements</div>
 <div class="evenement_img">
 <!--
     ../../../app/Views/front/Event/viewEvent.php
 -->
 	<a href="<?=$this->url('front_events');?>"> <img class="img-responsive" src="<?=$this->assetUrl('/img/slideEvent1.jpg');?>"></a>
+    <a href="<?=$this->url('front_events');?>"> <img class="img-responsive" src="<?=$this->assetUrl('/img/slideEvent2.jpg');?>" style="display: none;"></a>
 </div>
 <!--End La derniere evenement-->
 
