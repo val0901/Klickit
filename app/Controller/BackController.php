@@ -133,8 +133,8 @@ class BackController extends Controller
 				}
 
 				//Génération du token et de l'id correspondant
-				$token = $generateToken->randomString(30);
-				$id_token = $generateToken->randomString(10);
+				$token = $generateToken->randomString(80);
+				$id_token = $generateToken->randomString(40);
 
 				//Préparation de l'envoi du mail
 				$sendMail = new PHPMailer;
