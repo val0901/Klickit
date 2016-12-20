@@ -154,7 +154,9 @@
 					
 					<!--icon-cog menu-->
                     <li class="span_float">
-                        <form><button id="logout" type="submit" data-id="login_out"><i class="fa fa-sign-out fa-5x icon_cursor navR_color" aria-hidden="true" id="cogicon_click" title="Deconnexion" style="color: #ea2229;"></i></button></form>
+                    	<?php if(!empty($_SESSION['user']) && isset($_SESSION['user'])): ?>
+                        	<form><button id="logout" type="submit" data-id="login_out"><i class="fa fa-sign-out fa-5x icon_cursor navR_color" aria-hidden="true" id="cogicon_click" title="Deconnexion" style="color: #ea2229;"></i></button></form>
+                        <?php endif; ?>
                     </li>
                     <!--End icon-cog menu-->
                 </ul>
@@ -494,8 +496,8 @@
     <!--Plugin Jquery, confirm -->
     <script src="<?= $this->assetUrl('js/jquery-confirm.min.js') ?>"></script>
     <!--bootstrap js-->
-    <script src="<?= $this->assetUrl('js/bootstrap.min.js') ?>"></script>
-	
+   <script src="<?= $this->assetUrl('js/bootstrap.min.js') ?>"></script>
+
     <?= $this->section('js')?>
 
 	<!--Script-->
@@ -512,9 +514,7 @@ $(document).ready(function(){
 
 		content: "Êtes-vous sûr de vouloir vous déconnecter ?",
 
-		type: 'red',
-
-		theme: 'dark',
+		theme: 'supervan',
 
 		buttons: {
 			ok: {
@@ -524,7 +524,7 @@ $(document).ready(function(){
 				action: function(){
 	  				$.ajax({
 	  					url: '<?=$this->url('ajax_Flogout');?>',
-						type: 'get',
+						type: 'post',
 						cache: false,
 						data: {id_logout: logout},
 						dataType: 'json',
