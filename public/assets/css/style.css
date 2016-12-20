@@ -1505,3 +1505,27 @@ td {
 	color: #999;
 	border: 2px dotted #ddd;
 }
+
+/*viewuserorder.php*/
+.viewuserorder_title {
+    font-size: 40px;
+    font-weight: 800;
+    color: #ccc;
+    text-align: right;
+}
+
+.col-xs-6 p {
+    line-height: 10px;
+}
+
+.playmo_hide {
+    display: block;
+}
+
+.table-responsive {
+    border: 0px solid #ddd;
+}
+
+.table-bordered {
+    border: 2px solid #000;
+}

@@ -44,6 +44,10 @@
         width: 6vw;
     }
     
+    .playmo_hide {
+    display: none;
+}
+    
 }
 
 @media screen and (max-width: 1200px) {
@@ -122,6 +126,7 @@
 	.viewart_savoirwidth {
 		width: 100%;
 	}
+    
 	
 }
 
