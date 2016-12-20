@@ -2,6 +2,8 @@ html, body {
 	font-family: 'Advent Pro', sans-serif;
 	background-color: #ffffff;
 	color: #000000;
+	margin: 0;
+	padding: 0;
 }
 
 .container {
@@ -1505,3 +1507,5 @@ td {
 	color: #999;
 	border: 2px dotted #ddd;
 }
+
+/*404.php*/
