@@ -77,4 +77,20 @@ class UserModel extends \W\Model\UsersModel
 		return false;
 	}
 
+	/**
+	* Ajoute un article au panier de l'utilisateur connecté
+	*/
+	public function addToCart($id)
+	{
+
+		$islogged = new UserModel();
+		$user = $islogged->getUser()
+
+		if(!empty($user)){
+			$update = new UserModel();
+			$user_cart = $update->update()
+		}
+
+	}
+
 }
