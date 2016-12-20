@@ -73,5 +73,19 @@ class FrontItemController extends Controller
 		$this->show('front/Items/search');
 	}
 
+	/**
+	 * Affiche la page d'un article
+	 */
+	public function viewItem()
+	{
+		$this->show('front/Items/viewArt');
+	}
+	/**
+	 * Affiche la page des favoris
+	 */
+	public function viewFavorites()
+	{
+		$this->show('front/Items/favorite');
+	}
 
 }

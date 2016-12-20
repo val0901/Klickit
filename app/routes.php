@@ -99,6 +99,8 @@
 		['GET|POST', '/Divers/[a:sub_category]', 'FrontItem#listItemDivers', 'listItemDivers'],
 		['GET|POST', '/Pieces/[a:sub_category]', 'FrontItem#listItemPieces', 'listItemPieces'],
 		['GET|POST', '/searchItems', 'FrontItem#searchItems', 'searchItems'],
+		['GET|POST', '/viewArt', 'FrontItem#viewItem', 'viewArt'],
+		['GET|POST', '/favorite', 'FrontItem#viewFavorites', 'favorite'],
 
 		//Pages liées à FrontGuestbookController
 		['GET|POST', '/Guestbook', 'FrontGuestbook#affGuestbook', 'fGuestbook'],
