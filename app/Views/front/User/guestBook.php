@@ -32,7 +32,7 @@
 	   <!--underform img-->
 	   <br><br>
 	   <div>
-	   	<img class="img-responsive playmo_hide" src="<?=$this->assetUrl('/img/guestbookvalid.jpg');?>" style="margin:0 auto;">
+	   	<img class="img-responsive" src="<?=$this->assetUrl('/img/guestbookvalid.jpg');?>" style="margin:0 auto;">
 	   </div>
 	  <!-- End undeerform img-->
    </div>
