@@ -12,11 +12,11 @@
    	<img class="img-responsive" src="<?=$this->assetUrl('/img/napoPic.png');?>" id="categorycustoms_hover">
 	</li>
 	<li>
-	   	<h4 class="viewcategory_pages">Mon compte <span>></span> Commentaire</h4>
+	   	<h4 class="viewcategory_pages"><a href="<?=$this->url('front_affcptuser', ['id' => $_SESSION['user']['id']]);?>">Mon compte</a> <span>></span> <a href="<?=$this->url('fGuestbook');?>">Commentaire</a></h4>
 	</li>
 	<div class="clear"></div>
 	<br><br>
-	<p class="orderMC_title">MOM COMPTE</p>
+	<p class="orderMC_title">Commentaire</p>
 	<p class="orderMC_text">Merci d'être arrivé jusqu'ici ! Vous pouvez nous laisser vos commentaires.</p>
 	<hr>
 	<br>
