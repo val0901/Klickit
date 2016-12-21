@@ -105,12 +105,7 @@
 						<!--<span class="shoppingcart_quantity">1</span>-->
 						<div class="shoppingsoumenu_hidden">
 							<div class="row item_cart" style="margin: 10px 10px 0 10px;">
-								<div class="col-xs-6">
-									<p>Princess Playmo</p>
-								</div>
-								<div class="col-xs-6" style="text-align:right;">
-									<P> 3.00 € X 2</P>
-								</div>
+							<!-- Mise à jour du panier avec AJAX-->
 							</div>
 							<br><br>
 							<div class="row" style="margin: 0 10px;border-top:1px dotted #000;padding-top:10px;">
