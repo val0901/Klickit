@@ -34,7 +34,7 @@
 
 <!--La derniere commentaire-->
 <div class="vignetteEvent_hide">
-	<img class="img-responsive" src="<?=$this->assetUrl('/img/vignetteEvent1.png');?>">
+	<img class="img-responsive" src="<?=$this->assetUrl('/img/vignetteEvent1.png');?>" id="vignette_hover" onmouseover="vignettehover();" onmouseout="vignetteout();">
 </div>
 <div class="row commtaire_back">
   <div class="col-md-2"></div>

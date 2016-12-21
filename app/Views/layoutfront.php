@@ -741,9 +741,27 @@ $(document).ready(function(){
 	/*End 4 categories hover background-color change*/
 	
 	/*vignetteEvent position*/
-	$(document).ready(function(){
+	/*$(document).ready(function(){
 		$(".vignetteEvent_hide > img").hover(function () { $(this).attr("src", "<?=$this->assetUrl('/img/vignetteEvent2.png');?>") }, function () { $(this).attr("src", "<?=$this->assetUrl('/img/vignetteEvent1.png');?>") }); 
+	})*/
+	
+	function vignettehover() {
+		$(document).ready(function(){
+
+			$("#vignette_hover").hover(function(){
+			$(this).attr("src", "<?=$this->assetUrl('/img/vignetteEvent1.png');?>");
+		})			
 	})
+}
+		
+	function vignetteout() {
+		$(document).ready(function(){
+
+			$("#vignette_hover").hover(function(){
+			$(this).attr("src", "<?=$this->assetUrl('/img/vignetteEvent2.png');?>");
+		})			
+	})
+}
 	/*End vignetteEvent position*/
 	
 	/*contact button send*/
@@ -761,9 +779,27 @@ $(document).ready(function(){
 	/*End index.php slide article*/
 		
 	/*cptuser.php image change*/
-	$(document).ready(function(){
+	/*$(document).ready(function(){
 		$("#cptuser_hover").hover(function () { $(this).attr("src", "<?=$this->assetUrl('/img/gestbookvignhover.jpg');?>") }, function () { $(this).attr("src", "<?=$this->assetUrl('/img/gestbookvign.jpg');?>") }); 
-	})	
+	})*/
+		
+	function imghover() {
+		$(document).ready(function(){
+
+			$("#cptuser_hover").hover(function(){
+			$(this).attr("src", "<?=$this->assetUrl('/img/gestbookvign.jpg');?>");
+		})			
+	})
+}
+		
+	function imgout() {
+		$(document).ready(function(){
+
+			$("#cptuser_hover").hover(function(){
+			$(this).attr("src", "<?=$this->assetUrl('/img/gestbookvignhover.jpg');?>");
+		})			
+	})
+}
 	/*End cptuser.php image change*/
 		
   /*orderpayment radio click photo change*/
