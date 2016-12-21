@@ -45,7 +45,7 @@
 						<td><?= date('d/m/Y', strtotime($order['date_creation']));?></td>
 						<td><?=$order['statut']; ?></td>
 						<td>
-							<div> <a href="<?=$this->url('viewOrders')?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></i></a></div>
+							<div> <a href="<?=$this->url('viewOrders', ['id'=>$order['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></i></a></div>
 						</td>
 					</tr>
 				<?php endforeach; ?>			

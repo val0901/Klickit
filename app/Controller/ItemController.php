@@ -123,8 +123,8 @@ class ItemController extends Controller
 				$errors[] = 'Veuillez choisir une catégorie valide';
 			}
 
-			if(!v::notEmpty()->length(3,30)->validate($post['name'])){
-				$errors[] = 'Le nom du produit doit comporter entre 3 et 30 caractères';
+			if(!v::notEmpty()->length(3,50)->validate($post['name'])){
+				$errors[] = 'Le nom du produit doit comporter entre 3 et 50 caractères';
 			}
 
 			if(!v::notEmpty()->length(5,null)->validate($post['description'])){
@@ -326,8 +326,8 @@ class ItemController extends Controller
 			}
 
 			if(!empty($post['name']) && isset($post['name'])) {
-				if(!v::notEmpty()->length(3,30)->validate($post['name'])){
-					$errors[] = 'Le nom du produit doit comporter entre 3 et 30 caractères';
+				if(!v::notEmpty()->length(3,50)->validate($post['name'])){
+					$errors[] = 'Le nom du produit doit comporter entre 3 et 50 caractères';
 				}
 				else {
 					$afficheItem['name'] = $post['name'];
