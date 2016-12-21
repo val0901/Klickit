@@ -26,16 +26,7 @@
 							<?php elseif($value['newPrice'] > 0) : ?>
 								<td><?=$value['newPrice'];?></td>
 							<?php endif; ?>
-							<td>
-								<div class="col-md-4">
-								    <select id="selectStatut" name="selectStatut" class="form-control">
-								    	<option value="<?=$value['statut'];?>" selected disabled><?=$value['statut'];?></option>
-									    <option value="promotion">promotion</option>
-									    <option value="nouveauté">nouveauté</option>
-									    <option value="par defaut">par defaut</option>
-								    </select>
-							    </div>
-							</td>
+							<td><?=$value['statut'];?></td>
 							<td><a href="<?=$this->url('updateItem', ['id'=>$value['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>
 							<td><button class="btn btn-danger delete-item" data-id="<?=$value['id']?>">Effacer le produit</button></td>
 						</tr>	
@@ -75,16 +66,7 @@
 							<?php elseif($value['newPrice'] > 0) : ?>
 								<td><?=$value['newPrice'];?></td>
 							<?php endif; ?>
-							<td>
-								<div class="col-md-4">
-								    <select id="selectStatut" name="selectStatut" class="form-control">
-								    	<option value="<?=$value['statut'];?>" selected disabled><?=$value['statut'];?></option>
-									    <option value="promotion">promotion</option>
-									    <option value="nouveauté">nouveauté</option>
-									    <option value="par defaut">par defaut</option>
-								    </select>
-							    </div>
-							</td>
+							<td><?=$value['statut'];?></td>
 							<td><a href="<?=$this->url('updateItem', ['id'=>$value['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>
 							<td><button class="btn btn-danger delete-item" data-id="<?=$value['id']?>">Effacer le produit</button></td>
 						</tr>	
@@ -122,16 +104,7 @@
 							<?php elseif($value['newPrice'] > 0) : ?>
 								<td><?=$value['newPrice'];?></td>
 							<?php endif; ?>
-							<td>
-								<div class="col-md-4">
-								    <select id="selectStatut" name="selectStatut" class="form-control">
-								    	<option value="<?=$value['statut'];?>" selected disabled><?=$value['statut'];?></option>
-									    <option value="promotion">promotion</option>
-									    <option value="nouveauté">nouveauté</option>
-									    <option value="par defaut">par defaut</option>
-								    </select>
-							    </div>
-							</td>
+							<td><?=$value['statut'];?></td>
 							<td><a href="<?=$this->url('updateItem', ['id'=>$value['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>
 							<td><button class="btn btn-danger delete-item" data-id="<?=$value['id']?>">Effacer le produit</button></td>
 						</tr>	
@@ -169,16 +142,7 @@
 							<?php elseif($value['newPrice'] > 0) : ?>
 								<td><?=$value['newPrice'];?></td>
 							<?php endif; ?>
-							<td>
-								<div class="col-md-4">
-								    <select id="selectStatut" name="selectStatut" class="form-control">
-								    	<option value="<?=$value['statut'];?>" selected disabled><?=$value['statut'];?></option>
-									    <option value="promotion">promotion</option>
-									    <option value="nouveauté">nouveauté</option>
-									    <option value="par defaut">par defaut</option>
-								    </select>
-							    </div>
-							</td>
+							<td><?=$value['statut'];?></td>
 							<td><a href="<?=$this->url('updateItem', ['id'=>$value['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>
 							<td><button class="btn btn-danger delete-item" data-id="<?=$value['id']?>">Effacer le produit</button></td>
 						</tr>	
