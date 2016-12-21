@@ -9,19 +9,19 @@
   <div class="col-md-6 ordermidia_width">
    <div class="listorder_contenu">
 	<li style="float: left;">   
-   	<img class="img-responsive" src="<?=$this->assetUrl('/img/napoPic.png');?>" id="categorycustoms_hover">
+   	<img class="img-responsive" src="<?=$this->assetUrl('/img/napoPic.png');?>" id="categorycustoms">
 	</li>
 	<li>
-	   	<h4 class="viewcategory_pages">Mon compte <span>></span> Historique commandes</h4>
+	   	<h4 class="viewcategory_pages"><a href="<?=$this->url('front_affcptuser', ['id' => $_SESSION['user']['id']]);?>">Mon compte</a> <span>></span><a href="<?=$this->url('front_listOrders');?>"> Historique de commandes</a></h4>
 	</li>
 	<div class="clear"></div>
 	<br><br>
-	<p class="orderMC_title">MOM COMPTE</p>
-	<p class="orderMC_text">Vous trouverez ici vos commandes passées depuis la création de votre compte.</p>
-	<hr>
-	<br>
+	
 	   <p class="orderMC_title">HISTORI<span style="letter-spacing: 0.01em;">Q</span>UE DE COMMANDES</p>
-	   
+      <p class="orderMC_text">Vous trouverez ici vos commandes passées depuis la création de votre compte.</p>
+      <hr>
+	   <br>
+
 	   <table class="table">
             <thead> 
                 <tr> 
