@@ -27,7 +27,6 @@
 			   <p class="cptuser_textlien">histori<span style="letter-spacing: 0.01em;">q</span>mes favoris</p> 
 		   </div>
 		   <div class="col-md-3">
-		   	<img class="img-responsive" src="<?=$this->assetUrl('/img/gestbookvign.jpg');?>" id="cptuser_hover" style="cursor: pointer"> 
 		   </div>
 	   </div>
 	     
