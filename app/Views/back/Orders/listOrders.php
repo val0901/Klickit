@@ -25,7 +25,7 @@
 				</thead>
 
 				<tbody>
-				<?php foreach ($orders as $order): ;?>
+				<?php foreach($orders as $order): ;?>
 					<tr>
 						<td><?=$order['id']; ?></td>
 						<td><?=$order['lastname'].' '.$order['firstname'].'<br>'.$order['adress'].'<br>'.$order['zipcode'].' '.$order['city']; ?></td>
@@ -35,13 +35,13 @@
 							$quantity = explode(', ', $order['quantity']);
 
 							for($i=0;$i<count($contents);$i++){
-								$content_basket[$order['id']] = [
+								$content_basket[$order['id']][] = [
 									'content' 	=> $contents[$i],
 									'quantity' 	=> $quantity[$i],
 								];
 							}
 
-							foreach ($content_basket as $basket){
+							foreach ($content_basket[$order['id']] as $basket){
 								$list_items = $items->findItems($basket['content']); 
 
 								echo '<a href="'.$this->url('updateItem', ['id'=>$list_items['id']]).'" style="color:white;">'.$list_items['name'].'</a> <br>';
@@ -50,10 +50,8 @@
 						</td>
 						<td> 
         				<?php 
-        					foreach ($content_basket[$order['id']] as $key => $value){
-        						if($key == 'quantity'){
-            						echo $value.'<br>';
-        						}
+        					foreach ($content_basket[$order['id']] as $basket){
+        						echo $basket['quantity'].'<br>';
         					} 
         				?>
 						</td>
@@ -63,10 +61,10 @@
 								$list_items = $items->findItems($value);
 		
 								if($list_items['newPrice'] == 0){
-									echo $list_items['price'].'<br>';
+									echo $list_items['price'].' €<br>';
 								}
 								elseif($list_items['newPrice'] > 0) {
-									echo $list_items['newPrice'].'<br>';
+									echo $list_items['newPrice'].' €<br>';
 								}
 
 							}
@@ -74,7 +72,7 @@
 						</td>
 						<td>
 							<?php 
-								foreach ($content_basket as $basket) {
+								foreach ($content_basket[$order['id']] as $basket) {
 								    $price_items = $items->findItems($basket['content']); 
 
 								    if($price_items['newPrice'] == 0){
@@ -83,8 +81,7 @@
 								    elseif($price_items['newPrice'] > 0){
 								    	$price = $price_items['newPrice'];
 								    }
-									echo \Tools\Utils::calculTtc($price, $basket['quantity']);
-									echo '<br>';
+									echo \Tools\Utils::calculTtc($price, $basket['quantity']).' €<br>';
 								}
 							?>
 						</td>
