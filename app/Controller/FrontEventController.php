@@ -17,7 +17,7 @@ class FrontEventController extends Controller
 	*/
 	public function createEvent()
 	{
-		$this->show('front/Event/createEvent');
+		$this->show('front/Pages/contact');
 	}
 
 }
