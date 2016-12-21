@@ -15,6 +15,7 @@ use \W\Security\AuthentificationModel;
 use \W\Security\AuthorizationModel;
 use \W\Security\StringUtils;
 use \PHPMailer;
+use \Respect\Validation\Validator as v;
 
 class FrontController extends Controller
 {
@@ -120,8 +121,76 @@ class FrontController extends Controller
 	 * Page A propos
 	 */
 	public function contact()
-	{
-		$this->show('front/Pages/contact');
+	{	
+		$post = [];
+		$errors = [];
+		$success = false;
+
+		if(!empty($_POST)){
+
+			foreach($_POST as $key => $value){
+				$post[$key] = trim(strip_tags($value));
+			}
+
+			if(!v::notEmpty()->length(3,20)->validate($post['firstname'])){
+				$errors[] = 'Le prénom doit comporter entre 3 et 20 caractères';
+			}
+
+			if(!v::notEmpty()->length(3,20)->validate($post['lastname'])){
+				$errors[] = 'Le nom doit comporter entre 3 et 20 caractères';
+			}
+
+			if(!v::notEmpty()->length(3,null)->validate($post['subject'])){
+				$errors[] = 'Le sujet doit comporter au minimum 3 caractères';
+			}
+
+			if(!v::notEmpty()->length(10,null)->validate($post['message'])){
+				$errors[] = 'Le message doit comporter au minimum 10 caractères';
+			}
+
+			if(!v::notEmpty()->email()->validate($post['email'])){
+				$errors[] = 'L\'adresse email n\'est pas valide';
+			}
+
+			if(count($errors) === 0){
+				$insert = new MessageModel;
+				$user = $this->getUser();
+
+				if(!empty($user)){
+					$dataInsert = [
+						'username'		=> $user['username'],
+						'date_creation'	=> date('Y-m-d H:i:s'),
+						'subject'		=> $post['subject'],
+						'email'			=> $post['email'],
+						'statut'		=> 'NonLu',
+						'content'		=> nl2br($post['message']),
+						'idMember'		=> $user['id'],
+					];
+				}else{
+					$dataInsert = [
+						'username'		=> $post['firstname'].' '.$post['lastname'],
+						'date_creation'	=> date('Y-m-d H:i:s'),
+						'subject'		=> $post['subject'],
+						'email'			=> $post['email'],
+						'content'		=> nl2br($post['message']),
+						'statut'		=> 'NonLu',
+					];
+				}
+				
+
+				if($insert->insert($dataInsert)){
+					$success = true;
+				}else{
+					$errors[] = 'Erreur lors de l\'envoi de votre message';
+				}
+			}
+		}
+
+		$data = [
+			'errors'	=> $errors,
+			'success'	=> $success
+		];
+		$this->show('front/Pages/contact', $data);
 	}
 
 	/**

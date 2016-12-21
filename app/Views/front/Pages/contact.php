@@ -14,19 +14,39 @@
 		
 		<!--contact col2-->
 		<div class="col-xs-7">
-			<i class="fa fa-phone" aria-hidden="true"> <span class="telnumber" style="font-family: 'Advent Pro', sans-serif;">06 11 82 17 71</span></i>
-			<form style="margin-top:30px;">
+			<i class="fa fa-phone" aria-hidden="true"> <span class="telnumber" style="font-family: 'Advent Pro', sans-serif;">06 11 82 17 71</span></i><br>
+
+			<?php  if($success) : ?>
+				<p class="alert alert-success">Merci pour votre message. Nous vous répondrons dans les plus brefs délais</p>
+			<?php elseif(!empty($errors)) : ?>
+				<p class="alert alert-danger"><?=implode('<br>',$errors)?></p>
+			<?php endif;?>
+
+			<form style="margin-top:30px;" method="post">
+
+			  <?php if(empty($_SESSION)):?>
+			  	<div class="form-group">
+					<label for="firstname" class="formlabel">Prénom</label>
+					<input type="text" class="form-control" id="firstname" placeholder="votre prénom" name="firstname">
+			  	</div>
+
+			  	<div class="form-group">
+					<label for="lastname" class="formlabel">Nom</label>
+					<input type="text" class="form-control" id="lastname" placeholder="votre prénom" name="lastname">
+			  	</div>
+			  <?php endif;?>
+			  		
 			  <div class="form-group">
 				<label for="exampleInputEmail1" class="formlabel">Email</label>
-				<input type="email" class="form-control" id="exampleInputEmail1" placeholder="email@mail.fr">
+				<input type="email" class="form-control" id="exampleInputEmail1" placeholder="email@mail.fr" name="email">
 			  </div>
 			  <div class="form-group">
-				<label for="exampleInputPassword1" class="formlabel">Object</label>
-				<input type="text" class="form-control" id="exampleInputPassword1" placeholder="demande de renseignement">
+				<label for="exampleInputPassword1" class="formlabel">Objet</label>
+				<input type="text" class="form-control" id="exampleInputPassword1" placeholder="demande de renseignement" name="subject">
 			  </div>
 			  <div class="form-group">
-				<label for="exampleInputPassword1" class="formlabel">Message</label>
-				<textarea class="form-control" rows="10" placeholder="Bonjour, je souhaiterais savoir..."></textarea>
+				<label for="text" class="formlabel">Message</label>
+				<textarea id="text" class="form-control" rows="10" placeholder="Bonjour, je souhaiterais savoir..." name="message"></textarea>
 			  </div>	
 				
 			  <!--contact submit-->
