@@ -55,14 +55,14 @@ class AjaxFrontController extends Controller
 					/************Affichage des articles dans le panier***********/
 					if($updateCart->update($shoppingCart,$loggedUser['id'])){
 						
-						$getShoppingCart = new UserModel();
+						$getShoppingCart = new UserModel(); 
 						$getItems = new ItemModel();
 						$user = $this->getUser();
-						$shoppingCart = $getShoppingCart->find($user['id']);
+						$shoppingCart = $getShoppingCart->find($user['id']); //Je récupère le panier de l'utilisateur connecté
 
-						$panier = explode(', ', $shoppingCart['cart_item']);
+						$panier = explode(', ', $shoppingCart['cart_item']); //Je crées un tableau à partir des clés en string
 
-						foreach($panier as $value){
+						foreach($panier as $value){ //Je parcours tout mon panier et je cherche à afficher le nom et le prix de tous les articles (produit x Y pas encore pris en compte)
 
 							$list_items = $getItems->findItems($value);
 							$html.= '<div class="col-xs-6">'.$list_items['name'].'</div>';
@@ -72,11 +72,11 @@ class AjaxFrontController extends Controller
 								$html.= '<div class="col-xs-6" style="text-align:right;">'.$list_items['newPrice'].'€</div>';
 							}
 							
-
+							//Je stocke les résultats dans mon tableau json
 							$json = ['code' => 'ok', 'item_cart'=>$html];
-					}
-				}else{
-					$json = ['code' => 'error'];
+						}
+					}else{
+						$json = ['code' => 'error'];
 				}
 			}
 			$this->showJson($json);
