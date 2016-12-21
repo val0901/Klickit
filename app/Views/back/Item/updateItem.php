@@ -100,7 +100,7 @@
 		      <option selected disabled></option>
 		      <option value="promotion">promotion</option>
 		      <option value="nouveaute">nouveauté</option>
-		      <option value="defaut">par defaut</option>
+		      <option value="defaut" selected>par defaut</option>
 		    </select>
 		  </div>
 		</div>
