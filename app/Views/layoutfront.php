@@ -211,7 +211,7 @@
 				  </div>
 				  <div class="col-lg-3 col-md-6 soumenu_TLA_height">
 					  <div class="soumenu_TLA_text">
-						  <li style="float:left;">Customs<li>
+						  <li style="float:left;"><a href="<?=$this->url('listItemCustomFull');?>">Customs<li>
 						  <li style="float:right;"><i class="fa fa-plus faplus_color plus_customs" aria-hidden="true" id="pluscustoms_hide"></i><i class="fa fa-minus faminus_color" aria-hidden="true" id="faminus1_hide"></i></li>
 						  <div class="clear"></div>
 						  <ul class="soumenu_customs_text">
