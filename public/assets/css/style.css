@@ -515,7 +515,7 @@ footer {
 
 #categoryclassic_hover:hover {
 	background-color: #3fa9f5;
-	opacity: 0.4;
+	opacity: 0.5;
 	transition: background-color ease-in-out .2s;
 	cursor: pointer;
 }
