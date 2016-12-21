@@ -52,35 +52,35 @@ class AjaxFrontController extends Controller
 					];
 				}
 				
-				/************Affichage des articles dans le panier***********/
-				if($updateCart->update($shoppingCart,$loggedUser['id'])){
-					
-					$getShoppingCart = new UserModel();
-					$getItems = new ItemModel();
-					$user = $this->getUser();
-					$shoppingCart = $getShoppingCart->find($user['id']);
-
-					$panier = explode(', ', $shoppingCart['cart_item']);
-
-					foreach($panier as $value){
-
-						$list_items = $getItems->findItems($value);
-						$html.= '<div class="col-xs-6">'.$list_items['name'].'</div>';
-						if($list_items['newPrice'] == 0){
-							$html.= '<div class="col-xs-6" style="text-align:right;">'.$list_items['price'].'€</div>';
-						}else{
-							$html.= '<div class="col-xs-6" style="text-align:right;">'.$list_items['newPrice'].'€</div>';
-						}
+					/************Affichage des articles dans le panier***********/
+					if($updateCart->update($shoppingCart,$loggedUser['id'])){
 						
+						$getShoppingCart = new UserModel();
+						$getItems = new ItemModel();
+						$user = $this->getUser();
+						$shoppingCart = $getShoppingCart->find($user['id']);
 
-						$json = ['code' => 'ok', 'item_cart'=>$html];
+						$panier = explode(', ', $shoppingCart['cart_item']);
+
+						foreach($panier as $value){
+
+							$list_items = $getItems->findItems($value);
+							$html.= '<div class="col-xs-6">'.$list_items['name'].'</div>';
+							if($list_items['newPrice'] == 0){
+								$html.= '<div class="col-xs-6" style="text-align:right;">'.$list_items['price'].'€</div>';
+							}else{
+								$html.= '<div class="col-xs-6" style="text-align:right;">'.$list_items['newPrice'].'€</div>';
+							}
+							
+
+							$json = ['code' => 'ok', 'item_cart'=>$html];
+					}
+				}else{
+					$json = ['code' => 'error'];
 				}
-			}else{
-				$json = ['code' => 'error'];
 			}
+			$this->showJson($json);
 		}
-		$this->showJson($json);
-	}
 	}
 
 	/**
