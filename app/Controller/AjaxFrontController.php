@@ -22,7 +22,8 @@ class AjaxFrontController extends Controller
 	 * Ajoute un produit au panier
 	 */
 	public function addToCart()
-	{
+	{	
+		$html = '';
 		$updateCart = new UserModel();
 		if(!empty($_POST)){
 
@@ -51,8 +52,9 @@ class AjaxFrontController extends Controller
 					];
 				}
 				
+				/************Affichage des articles dans le panier***********/
 				if($updateCart->update($shoppingCart,$loggedUser['id'])){
-					/************Affichage des articles dans le panier***********/
+					
 					$getShoppingCart = new UserModel();
 					$getItems = new ItemModel();
 					$user = $this->getUser();
@@ -61,10 +63,15 @@ class AjaxFrontController extends Controller
 					$panier = explode(', ', $shoppingCart['cart_item']);
 
 					foreach($panier as $value){
+
 						$list_items = $getItems->findItems($value);
-						$html = '';
 						$html.= '<div class="col-xs-6">'.$list_items['name'].'</div>';
-						$html.= '<div class="col-xs-6" style="text-align:right;">'.$list_items['price'].'</div>';
+						if($list_items['newPrice'] == 0){
+							$html.= '<div class="col-xs-6" style="text-align:right;">'.$list_items['price'].'€</div>';
+						}else{
+							$html.= '<div class="col-xs-6" style="text-align:right;">'.$list_items['newPrice'].'€</div>';
+						}
+						
 
 						$json = ['code' => 'ok', 'item_cart'=>$html];
 				}

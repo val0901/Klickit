@@ -112,22 +112,6 @@
 									<P> 3.00 € X 2</P>
 								</div>
 							</div>
-							<div class="row" style="margin: 0 10px;">
-								<div class="col-xs-6">
-									<p>Fée violette</p>
-								</div>
-								<div class="col-xs-6" style="text-align:right;">
-									<P> 5.00 € X 3</P>
-								</div>
-							</div>
-							<div class="row" style="margin: 0 10px;">
-								<div class="col-xs-6">
-									<p>Chevalier bleu</p>
-								</div>
-								<div class="col-xs-6" style="text-align:right;">
-									<P> 10.00 € X 4</P>
-								</div>
-							</div>
 							<br><br>
 							<div class="row" style="margin: 0 10px;border-top:1px dotted #000;padding-top:10px;">
 								<div class="col-xs-6 shoppingmenu_total">
