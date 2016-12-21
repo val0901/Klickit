@@ -59,13 +59,6 @@
 							<?php endif; ?>
 						<?php endforeach ?>
 						</td>
-						<td><?php $quantity = explode(', ', $order['quantity']); ?>
-            				<?php foreach ($quantity as $value):?>
-            					<?php
-            						echo $value.'<br>';
-            					?>
-            				<?php endforeach;?>	
-						</td>
 						<td><?php foreach ($contents as $value) : ?>
 								          													
 							<?=\Tools\Utils::calculTtc($list_items['price'], $value); ?>

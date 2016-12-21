@@ -17,7 +17,7 @@
 	<div class="clear"></div>
 	<br><br>
 	<p class="orderMC_title">MOM COMPTE</p>
-	<p class="orderMC_text">Merci d'être arrivé jusqu'ici ! Vous pouvez nous laissez vos commentaires.</p>
+	<p class="orderMC_text">Merci d'être arrivé jusqu'ici ! Vous pouvez nous laisser vos commentaires.</p>
 	<hr>
 	<br>
 	   <!--place of comments-->
