@@ -104,7 +104,7 @@
                         <i class="fa fa-shopping-cart fa-5x icon_cursor navR_color fa-fw" aria-hidden="true" id="shoppingicon_click"></i>
 						<!--<span class="shoppingcart_quantity">1</span>-->
 						<div class="shoppingsoumenu_hidden">
-							<div class="row" style="margin: 0 10px;">
+							<div class="row" style="margin: 10px 10px 0 10px;">
 								<div class="col-xs-6">
 									<p>Princess Playmo</p>
 								</div>
@@ -129,7 +129,7 @@
 								</div>
 							</div>
 							<br><br>
-							<div class="row" style="margin: 0 10px;border-top:1px dotted #000;">
+							<div class="row" style="margin: 0 10px;border-top:1px dotted #000;padding-top:10px;">
 								<div class="col-xs-6 shoppingmenu_total">
 									<p>Expédition:</p>
 								</div>
