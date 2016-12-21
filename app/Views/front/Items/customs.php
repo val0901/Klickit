@@ -90,7 +90,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 							<?php elseif($product['statut'] == 'promotion'):?>
 								<div class="viewcategory_promo"><?=$product['statut'];?></div>
 							<?php elseif($product['statut'] == 'defaut'): ?>
-								<div class="viewcategory_defaut"><?=$product['statut'];?></div>
+								<div class="viewcategory_defaut"></div>
 							<?php endif; ?>
 	                    </div>
 						<div class="viewcategory_button">
