@@ -56,7 +56,7 @@
 			</div>
 			  <div class="form-group orderlogin_label has-error has-feedback">
 			  <label class="control-label" for="inputError2" style="color: #000;">Mot de passe</label>
-			  <p style="text-decoration:underline;text-align:center;">Réinitialisation de mot de passe par mail</p>
+			  <p style="text-decoration:underline;text-align:center;"><a href="<?=$this->url('back_forgot_pwd')?>">Réinitialisation de mot de passe par mail</a></p>
 			  <span id="inputError2Status" class="sr-only">(error)</span>
 			</div>
 			  <br>

@@ -42,14 +42,16 @@
 				<?php endif; ?>
 			</span>
 			<br><br><br><br>
-			<span class="viewart_fontref">Quantité </span>
-			<span>
-				<input type="number" name="number" id="number">
-			</span>
-			<br><br>
-			<div class="">
-				<button type="submit" class="btn btn-primary viewcategory_button_size ">ajouter au panier</button>
-			</div>
+			<form method="post">
+				<span class="viewart_fontref">Quantité </span>
+				<span>
+					<input type="number" name="number" id="number">
+				</span>
+				<br><br>
+				<div class="">
+					<button data-id="<?=$items['id']?>" type="submit" class="btn btn-primary viewcategory_button_size ">ajouter au panier</button>
+				</div>
+			</form>	
 			<br>
 			<i class="fa fa-heart-o fa-2x" aria-hidden="true" style="color:#999;"> <span class="viewart_fontfamily">Ajouter à mes favoris</span></i>
 			<br><br>
@@ -163,3 +165,29 @@
 </div><!-- /.container -->
 <br><br>
 <?php $this->stop('main_content') ?>
+
+<?php $this->start('js')?>
+	<script>
+		$(document).ready(function(){
+			$('button[type="submit"]').click(function(e){
+				e.preventDefault();
+
+				var idProduct = $(this).data('id');
+
+				$.ajax({
+  					url: '<?=$this->url('ajax_addToCartView'); ?>',
+					type: 'post',
+					cache: false,
+					data: {id_product_view: idProduct},  // $_POST['id_product']
+					dataType: 'json',
+					success: function(out){
+						if(out.code == 'ok'){
+			  				$('.item_cart').html(out.item_cart);
+			  				$('.price').html(out.price+2.60);	
+						}
+					}
+  				});
+			});
+		});
+	</script>
+<?php $this->stop('js')?>
