@@ -9,11 +9,15 @@
 			<img class="img-responsive" src="<?=$this->assetUrl('/img/art_classic_divers_000001.jpg');?>" id="categoryclassic_hover">
 			<div class="classic_text">Classics</div>
 		</div>
+
+        <a href="<?=$this->url('listItemCustomFull');?>">
 		<div class="col-lg-3 col-xs-6" id="categorycustoms_hover">
 			<div class="customs_text_show"><span>Customs</span></div>
 			<img class="img-responsive" src="<?=$this->assetUrl('/img/art_classic_divers_000002.jpg');?>" id="categorycustoms_hover">
 			<div class="customs_text">Customs</div>
 		</div>
+        </a>
+        
 		<div class="col-lg-3 col-xs-6" id="categorypieces_hover">
 			<div class="pieces_text_show"><span>Pièces</span></div>
 			<img class="img-responsive" src="<?=$this->assetUrl('/img/art_classic_divers_000003.jpg');?>" id="categorypieces_hover">
