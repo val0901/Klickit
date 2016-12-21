@@ -68,10 +68,10 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 		<!--viewcategory row2 col2-->
 		<div class="col-md-9">
 			<h4 class="viewcategory_pages"><a href="<?=$this->url('front_index');?>">Home</a> <span>></span><a href="<?=$this->url('listItemCustomFull');?>"> Customs</a> <span>></span> 
-			<?php if($sub_category == 'CustomsTampographies'): ?>
-						Customs Tampographiés
+				<?php if($afficheNewItem == 'CustomsTampographies'): ?>
+							<a>Customs Tampographiés</a> <span></span>
 				<?php endif; ?>
-				</h4>
+			</h4>
 			<div class="row">
 				<?php foreach ($affiche as $product) : ?>
 					<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
