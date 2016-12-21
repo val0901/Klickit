@@ -35,7 +35,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 			<div class="viewcategoryrow2col1customs_tirer"><a id="customsmenu_scat" href="<?=$this->url('listItemCustoms', ['sub_category'=>'PiecesEnResine']);?>">Pièces en résine</a></div>
 			<div class="viewcategoryrow2col1customs_tirer"><a id="customsmenu_scat" href="<?=$this->url('listItemCustoms', ['sub_category'=>'Stickers']);?>">Stickers</a></div>
 			<li>
-				<h3 class="viewcategoryrow2col1_title">fitres</h3>
+				<h3 class="viewcategoryrow2col1_title">filtres</h3>
 				<div class="form-group viewcategory_checkboxmargin">
 					<label class="viewcategorycheckbox_border">
 					<input type="checkbox"> <span class="viewcategorycheckbox_font"> 1er empire</span>
@@ -75,7 +75,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 			<div class="row">
 				<?php foreach ($affiche as $product) : ?>
 					<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
-						<a href="#"><img src="<?=$this->assetUrl('art/'.$product['picture1']);?>" alt="photo de playmobil" class="img-thumbnail"></a>
+						<a href="<?=$this->url('viewArt', ['id' => $product['id']]);?>"><img src="<?=$this->assetUrl('art/'.$product['picture1']);?>" alt="photo de playmobil" class="img-thumbnail"></a>
 						<div class="viewcategorycaption">
 							<?php if($product['newPrice'] === 0) : ?>
 								<h4><?=$product['price'];?>€</h4>
