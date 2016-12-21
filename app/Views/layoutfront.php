@@ -765,6 +765,42 @@ $(document).ready(function(){
 		})			
 	})
 }
+		
+		function vignettecustomshover() {
+		$(document).ready(function(){
+
+			$("#vignettecustoms_hover").hover(function(){
+			$(this).attr("src", "<?=$this->assetUrl('/img/vignetteEvent1.png');?>");
+		})			
+	})
+}
+		
+	function vignettecustomsfullout() {
+		$(document).ready(function(){
+
+			$("#vignettecustomsfull_hover").hover(function(){
+			$(this).attr("src", "<?=$this->assetUrl('/img/vignetteEvent2.png');?>");
+		})			
+	})
+}
+		
+		function vignettecustomsfullhover() {
+		$(document).ready(function(){
+
+			$("#vignettecustomsfull_hover").hover(function(){
+			$(this).attr("src", "<?=$this->assetUrl('/img/vignetteEvent1.png');?>");
+		})			
+	})
+}
+		
+	function vignettecustomsout() {
+		$(document).ready(function(){
+
+			$("#vignettecustoms_hover").hover(function(){
+			$(this).attr("src", "<?=$this->assetUrl('/img/vignetteEvent2.png');?>");
+		})			
+	})
+}
 	/*End vignetteEvent position*/
 	
 	/*contact button send*/

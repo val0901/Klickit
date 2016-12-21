@@ -21,7 +21,7 @@
 
 <!--vignetteEvent-->
 <div class="vignetteEvent_hide">
-	<img class="img-responsive" src="<?=$this->assetUrl('/img/vignetteEvent1.png');?>">
+	<a href="<?=$this->url('front_contact')?>"><img class="img-responsive" src="<?=$this->assetUrl('/img/vignetteEvent1.png');?>" id="vignettecustomsfull_hover" onmouseover="vignettecustomsfullhover();" onmouseout="vignettecustomsfullout();"></a>
 </div>
 <!--End vignetteEvent-->
 	
