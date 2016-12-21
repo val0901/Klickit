@@ -1453,6 +1453,10 @@ td {
 	color: #999;
 }
 
+.cptuser_textlien a{
+	color: #ff931e;
+}
+
 .cptuser_contenu {
 	background-color: #fff;
 	padding: 50px 30px 340px;
