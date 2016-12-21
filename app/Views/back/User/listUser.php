@@ -11,11 +11,11 @@
 		<table class="table table-responsive">
 			<thead>
 				<th>Civilité</th>
+				<th>Rôle</th>
 				<th>Nom</th>
 				<th>Prénom</th>
 				<th>Pseudonyme</th>
 				<th>Adresse email</th>
-				<th>Commandes</th>
 				<th colspan="3">Action</th>
 			</thead>
 
@@ -23,11 +23,11 @@
 				<?php foreach($users as $user) : ?>
 					<tr>
 						<td><?=$user['social_title'];?></td>
+						<td><?=$user['role'];?></td>
 						<td><?=$user['lastname'];?></td>
 						<td><?=$user['firstname'];?></td>
 						<td><?=$user['username'];?></td>
 						<td><?=$user['email'];?></td>
-						<td>Commande ici (avec une super jointure)</td>
 						<td><a href="<?=$this->url('front_affcptuser', ['id'=>$user['id']]);?>" target="_blank"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td> <!-- Mettre lien pour voir le profil sur le front -->
 						<td><a href="<?=$this->url('updateUser', ['id'=>$user['id']]);?>">Mettre à jour le profil</a></td>
 						<td><button class="btn btn-danger delete-user" data-id="<?=$user['id']?>">Effacer le profil</button></td>

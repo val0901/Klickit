@@ -120,8 +120,8 @@
 								<div class="col-xs-6 shoppingmenu_total">
 									<p>Total:</p>
 								</div>
-								<div class="col-xs-6 shoppingmenu_total" style="text-align:right;">
-									<p>11.60 €</p>
+								<div class="col-xs-6 shoppingmenu_total price" style="text-align:right;">
+									<!--ajout du prix en AJAX-->
 								</div>
 							</div>
 							<div>
