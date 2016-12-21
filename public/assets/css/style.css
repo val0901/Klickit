@@ -1039,6 +1039,10 @@ h4 {
 	height: 30px;
 }
 
+#pagination a {
+    font-size: 20px;
+
+}
 
 /*pieces.php*/
 .pieces_background {

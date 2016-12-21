@@ -42,19 +42,24 @@ class FrontItemController extends Controller
 	*/
 	public function listCustomItemsFull()
 	{
-		$newItems = new ItemModel();
-		$afficheNewItems = $newItems->findCategoryStatutCustom('PlaymobilCustom', 'nouveaute');
+		$nbpage= new ItemModel();
+		$nb=$nbpage->countResults();
+
+		$page = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
+		$max = 12;
 
 		$newItems = new ItemModel();
 		$afficheNewItems = $newItems->findCategoryStatutCustom('PlaymobilCustom', 'nouveaute');
-
 
 		$getCustomItems = new ItemModel();
-		$items = $getCustomItems->findByCategory('PlaymobilCustom');
+		$items = $getCustomItems->findByCategory('PlaymobilCustom', $page, $max);
 
 		$data = [
 			'afficheNewItem' => $afficheNewItems,
 			'items'	=> $items,
+			'max' => $max,
+			'page' => $page,
+			'nb' => $nb,
 		];
 
 		$this->show('front/Items/customsFull', $data);
@@ -117,6 +122,7 @@ class FrontItemController extends Controller
 	{
 		$getClassicsItems = new ItemModel();
 		$items = $getClassicsItems->findByCategory('PlaymobilClassique');
+		
 
 		$data = [
 			'items'	=> $items
