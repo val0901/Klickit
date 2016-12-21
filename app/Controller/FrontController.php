@@ -40,7 +40,7 @@ class FrontController extends Controller
 
 		foreach($panier as $value){
 			$list_items = $getItems->findItems($value);
-			$this->show('layoufront', $list_items);
+			var_dump($list_items);
 
 		}
 		
@@ -48,7 +48,6 @@ class FrontController extends Controller
 			'comments'		=>	$comments,
 		];	
 
-		var_dump($data);
 
 		$this->show('front/index', $data);
 	}
