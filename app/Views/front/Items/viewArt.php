@@ -67,7 +67,7 @@
 			</div>
 		</div>
 		<div class="col-md-9 viewart_savoirwidth">
-			<p class="viewart_savoirtext"><?=$items['description']?>His cognitis Gallus ut serpens adpetitus telo vel saxo iamque spes extremas opperiens et succurrens saluti suae quavis ratione colligi omnes iussit armatos et cum starent attoniti, districta dentium acie stridens adeste inquit viri fortes mihi periclitanti vobiscum.
+			<p class="viewart_savoirtext"><?=$items['description']?>
 			</p>
 		</div>
 	</div>
