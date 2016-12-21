@@ -93,11 +93,19 @@
 
 
 		//Pages liées à FrontItemController
-		['GET|POST', '/Customs', 'FrontItem#listCustomItemsFull', 'listItemCustomFull'],
+
+		['GET|POST', '/Classics', 'FrontItem#listClassicsItemsFull', 'listItemClassicsFull'],
 		['GET|POST', '/Classics/[a:sub_category]', 'FrontItem#listItemClassics', 'listItemClassics'],
+
+		['GET|POST', '/Customs', 'FrontItem#listCustomItemsFull', 'listItemCustomFull'],
 		['GET|POST', '/Customs/[a:sub_category]', 'FrontItem#listItemCustoms', 'listItemCustoms'],
+
+		['GET|POST', '/Divers', 'FrontItem#listDiversItemsFull', 'listItemDiversFull'],
 		['GET|POST', '/Divers/[a:sub_category]', 'FrontItem#listItemDivers', 'listItemDivers'],
+
+		['GET|POST', '/Pieces', 'FrontItem#listPiecesItemsFull', 'listItemPiecesFull'],
 		['GET|POST', '/Pieces/[a:sub_category]', 'FrontItem#listItemPieces', 'listItemPieces'],
+		
 		['GET|POST', '/searchItems', 'FrontItem#searchItems', 'searchItems'],
 		['GET|POST', '/viewArt', 'FrontItem#viewItem', 'viewArt'],
 		['GET|POST', '/favorite', 'FrontItem#viewFavorites', 'favorite'],

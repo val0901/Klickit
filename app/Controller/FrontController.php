@@ -24,6 +24,7 @@ class FrontController extends Controller
 	 */
 	public function index()
 	{	
+		$data = [];
 		/******************Affichage des commentaires*****************/
 
 		$getComment = new GuestbookModel();
@@ -35,12 +36,18 @@ class FrontController extends Controller
 		$user = $this->getUser();
 		$shoppingCart = $getShoppingCart->find($user['id']);
 
-		var_dump(explode(', ', $shoppingCart['cart_item']));
+		$panier = explode(', ', $shoppingCart['cart_item']);
+
+		foreach($panier as $value){
+			$list_items = $getItems->findItems($value);
+			var_dump($list_items);
+
+		}
 		
 		$data = [
-			'comments' => $comments,
-			
-		];
+			'comments'		=>	$comments,
+		];	
+
 
 		$this->show('front/index', $data);
 	}

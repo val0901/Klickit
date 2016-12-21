@@ -102,7 +102,7 @@
                     <!--icon-shoppingcart-->
                     <li class="span_float">
                         <i class="fa fa-shopping-cart fa-5x icon_cursor navR_color fa-fw" aria-hidden="true" id="shoppingicon_click"></i>
-						<span class="shoppingcart_quantity">1</span>
+						<!--<span class="shoppingcart_quantity">1</span>-->
 						<div class="shoppingsoumenu_hidden">
 							<div class="row" style="margin: 0 10px;">
 								<div class="col-xs-6">
