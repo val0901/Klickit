@@ -286,6 +286,10 @@
 		width: 63px;
 	}
 	
+	.table-responsive > .table-bordered {
+    border: 2px solid #000;
+}
+	
     
 }
 
