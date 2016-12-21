@@ -29,7 +29,7 @@
 					        <div class="navbar navbar-right">
 						        <ul>
 						        	<?php if(!empty($_SESSION)): ?>
-							        	<li><a href="<?=$this->url('front_affcptuser');?>" target="_blank">Bonjour <?=$_SESSION['user']['firstname'].' '.$_SESSION['user']['lastname'];?></a></li>
+							        	<li><a href="<?=$this->url('front_affcptuser', ['id' => $_SESSION['user']['id']]);?>" target="_blank">Bonjour <?=$_SESSION['user']['firstname'].' '.$_SESSION['user']['lastname'];?></a></li>
 							        	<li><form><button id="logout" type="submit" data-id="login_out">Se déconnecter</button></form></li>
 							        <?php endif; ?>
 						        </ul>
