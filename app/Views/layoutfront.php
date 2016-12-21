@@ -192,7 +192,7 @@
 				  <div class="col-lg-3 col-md-6 soumenu_TLA_height">
 					  <div class="soumenu_TLA_text">
 						  <li style="float:left;">Classic<li>
-						  <li style="float:right;"><i class="fa fa-plus faplus_color plus_classic" aria-hidden="true" id="plusclassic_hide"></i><i class="fa fa-minus faminus_color" aria-hidden="true" id="faminus_hide"></i></li>
+						  <li style="float:right;"><i class="fa fa-plus faplus_color plus_classic" aria-hidden="true" id="plusclassic_hide"></i><i class="fa fa-minus faminus_color minus_classic" aria-hidden="true" id="faminus_hide"></i></li>
 						  <div class="clear"></div>
 						  <ul class="soumenu_classics_text">
 							  <li>Chevaliers</li>
@@ -212,7 +212,7 @@
 				  <div class="col-lg-3 col-md-6 soumenu_TLA_height">
 					  <div class="soumenu_TLA_text">
 						  <li style="float:left;"><a href="<?=$this->url('listItemCustomFull');?>">Customs<li>
-						  <li style="float:right;"><i class="fa fa-plus faplus_color plus_customs" aria-hidden="true" id="pluscustoms_hide"></i><i class="fa fa-minus faminus_color" aria-hidden="true" id="faminus1_hide"></i></li>
+						  <li style="float:right;"><i class="fa fa-plus faplus_color plus_customs" aria-hidden="true" id="pluscustoms_hide"></i><i class="fa fa-minus faminus_color minus_customs" aria-hidden="true" id="faminus1_hide"></i></li>
 						  <div class="clear"></div>
 						  <ul class="soumenu_customs_text">
 							  <li><a id="customsmenu_scat" href="<?=$this->url('listItemCustoms', ['sub_category'=>'CustomsTampographies']);?>">Customs Tampographiés</a></li>
@@ -226,7 +226,7 @@
 				  <div class="col-lg-3 col-md-6 soumenu_TLA_height">
 					  <div class="soumenu_TLA_text">
 						  <li style="float:left;">Pieces détachées<li>
-						  <li style="float:right;"><i class="fa fa-plus faplus_color plus_pieces" aria-hidden="true" id="pluspieces_hide"></i><i class="fa fa-minus faminus_color" aria-hidden="true" id="faminus2_hide"></i></li>
+						  <li style="float:right;"><i class="fa fa-plus faplus_color plus_pieces" aria-hidden="true" id="pluspieces_hide"></i><i class="fa fa-minus faminus_color minus_pieces" aria-hidden="true" id="faminus2_hide"></i></li>
 						  <div class="clear"></div>
 						  <ul class="soumenu_pieces_text">
 							  <li>Armes</li>
@@ -243,7 +243,7 @@
 				  <div class="col-lg-3 col-md-6 soumenu_TLA_height">
 					  <div class="soumenu_TLA_text">
 						  <li style="float:left;">Boites/Set<li>
-						  <li style="float:right;"><i class="fa fa-plus faplus_color plus_boites" aria-hidden="true" id="plusboites_hide"></i><i class="fa fa-minus faminus_color" aria-hidden="true" id="faminus3_hide"></i></li>
+						  <li style="float:right;"><i class="fa fa-plus faplus_color plus_boites" aria-hidden="true" id="plusboites_hide"></i><i class="fa fa-minus faminus_color minus_boites" aria-hidden="true" id="faminus3_hide"></i></li>
 						  <div class="clear"></div>
 						  <ul class="soumenu_boites_text">
 							  <!--<li>fadsfdsf</li>
@@ -560,7 +560,7 @@ $(document).ready(function(){
         $(".usersoumenu_hidden").slideToggle();
     })
 })*/
-	
+	/*place de classics*/
 	$(document).ready(function(){
     $("#shoppingicon_click").click(function(){
         $(".shoppingsoumenu_hidden").slideToggle();
@@ -589,6 +589,26 @@ $(document).ready(function(){
 	})
 	
 	$(document).ready(function(){
+		$(".minus_classic").click(function(){
+			$(".soumenu_classics_text li").hide();
+			$(".soumenu_customs_text li").hide();
+			$(".soumenu_pieces_text li").hide();
+			$(".soumenu_boites_text li").hide();
+			$("#plusclassic_hide").show();
+			$("#pluscustoms_hide").show();
+			$("#pluspieces_hide").show();
+			$("#plusboites_hide").show();
+			$("#faminus_hide").hide();
+			$("#faminus1_hide").hide();
+			$("#faminus2_hide").hide();
+			$("#faminus3_hide").hide();
+			$(".TLA_dropdownbox_width").css("display", "block");
+		})
+	})
+	/*End place de classics*/
+	
+	/*place de customs*/
+	$(document).ready(function(){
 		$(".plus_customs").click(function(){
 			$(".soumenu_customs_text li").show();
 			$(".soumenu_classics_text li").hide();
@@ -606,6 +626,26 @@ $(document).ready(function(){
 		})
 	})
 	
+	$(document).ready(function(){
+		$(".minus_customs").click(function(){
+			$(".soumenu_customs_text li").hide();
+			$(".soumenu_classics_text li").hide();
+			$(".soumenu_pieces_text li").hide();
+			$(".soumenu_boites_text li").hide();
+			$("#pluspieces_hide").show();
+			$("#pluscustoms_hide").show();
+			$("#plusclassic_hide").show();
+			$("#plusboites_hide").show();
+			$("#faminus_hide").hide();
+			$("#faminus1_hide").show();
+			$("#faminus2_hide").hide();
+			$("#faminus3_hide").hide();
+			$(".TLA_dropdownbox_width").css("display", "block");
+		})
+	})
+	/*End place de customs*/
+	
+	/*place de pieces*/
 	$(document).ready(function(){
 		$(".plus_pieces").click(function(){
 			$(".soumenu_customs_text li").hide();
@@ -625,6 +665,26 @@ $(document).ready(function(){
 	})
 	
 	$(document).ready(function(){
+		$(".minus_pieces").click(function(){
+			$(".soumenu_customs_text li").hide();
+			$(".soumenu_classics_text li").hide();
+			$(".soumenu_boites_text li").hide();
+			$(".soumenu_pieces_text li").hide();
+			$("#pluspieces_hide").show();
+			$("#pluscustoms_hide").show();
+			$("#plusclassic_hide").show();
+			$("#plusboites_hide").show();
+			$("#faminus_hide").hide();
+			$("#faminus1_hide").hide();
+			$("#faminus3_hide").hide();
+			$("#faminus2_hide").hide();
+			$(".TLA_dropdownbox_width").css("display", "block");
+		})
+	})
+	/*End place de pieces*/
+	
+	/*place de boits*/
+	$(document).ready(function(){
 		$(".plus_boites").click(function(){
 			$(".soumenu_customs_text li").hide();
 			$(".soumenu_classics_text li").hide();
@@ -641,6 +701,25 @@ $(document).ready(function(){
 			$(".TLA_dropdownbox_width").css("display", "block");
 		})
 	})
+	
+	$(document).ready(function(){
+		$(".minus_boites").click(function(){
+			$(".soumenu_customs_text li").hide();
+			$(".soumenu_classics_text li").hide();
+			$(".soumenu_pieces_text li").hide();
+			$(".soumenu_boites_text li").show();
+			$("#plusboites_hide").show();
+			$("#pluscustoms_hide").show();
+			$("#plusclassic_hide").show();
+			$("#pluspieces_hide").show();
+			$("#faminus_hide").hide();
+			$("#faminus1_hide").hide();
+			$("#faminus2_hide").hide();
+			$("#faminus3_hide").hide();
+			$(".TLA_dropdownbox_width").css("display", "block");
+		})
+	})
+	/*End place de boits*/
 	/*End soumenu 4 categories*/
 	
 	/*4 categories hover background-color change*/
