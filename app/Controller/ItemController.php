@@ -101,10 +101,10 @@ class ItemController extends Controller
 	{
 		$post = [];
 		$errors = [];
-		$statut_product = ['promotion', 'nouveauté', 'par defaut'];
+		$statut_product = ['promotion', 'nouveaute', 'defaut'];
 		$category_product = ['PlaymobilClassique', 'PlaymobilCustom', 'PiecesDetachees', 'Divers'];
 		$subCategory_Classic = ['Chevaliers','Pirates','Antique','Western','Fantasy','XVIIIe','Fées Princesses','Police','Animaux','Sport', 'Divers'];
-		$subCategory_Custom = ['Customs tampographiés','Customs peints','Bustes tampographiés','Pièces en résine','Stickers'];
+		$subCategory_Custom = ['CustomsTampographies','CustomsPeints','BustesTampographies','PiecesEnResine','Stickers'];
 		$subCategory_Piece = ['Armes','Coiffes','Manchettes','Cols','Ceinturons','Têtes','Cheveux','Divers'];
 		$insert = new ItemModel();
 		$success = false;
@@ -270,10 +270,10 @@ class ItemController extends Controller
 
 		$post = [];
 		$errors = [];
-		$statut_product = ['promotion', 'nouveauté', 'par defaut'];
+		$statut_product = ['promotion', 'nouveaute', 'defaut'];
 		$category_product = ['PlaymobilClassique', 'PlaymobilCustom', 'PiecesDetachees', 'Divers'];
 		$subCategory_Classic = ['Chevaliers','Pirates','Antique','Western','Fantasy','XVIIIe','Fées Princesses','Police','Animaux','Sport', 'Divers'];
-		$subCategory_Custom = ['Customs tampographiés','Customs peints','Bustes tampographiés','Pièces en résine','Stickers'];
+		$subCategory_Custom = ['CustomsTampographies','CustomsPeints','BustesTampographies','PiecesEnResine','Stickers'];
 		$subCategory_Piece = ['Armes','Coiffes','Manchettes','Cols','Ceinturons','Têtes','Cheveux','Divers'];
 		$insert = new ItemModel();
 		$success = false;
