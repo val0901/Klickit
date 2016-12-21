@@ -45,23 +45,16 @@ class FrontItemController extends Controller
 		$newItems = new ItemModel();
 		$afficheNewItems = $newItems->findCategoryStatutCustom('PlaymobilCustom', 'nouveaute');
 
-		// $affiche = new ItemModel();
-		// $afficheItems = $affiche->findSubCategory($sub_category);
-
-		// $newItems = new ItemModel();
-		// $afficheNewItems = $newItems->findCategoryStatutCustom('PlaymobilCustom', 'nouveaute');
+		$newItems = new ItemModel();
+		$afficheNewItems = $newItems->findCategoryStatutCustom('PlaymobilCustom', 'nouveaute');
 
 
 		$getCustomItems = new ItemModel();
 		$items = $getCustomItems->findByCategory('PlaymobilCustom');
 
 		$data = [
-
-			'items'			 => $items,
-			'affiche' 		 => $afficheItems,
 			'afficheNewItem' => $afficheNewItems,
 			'items'	=> $items,
-
 		];
 
 		$this->show('front/Items/customsFull', $data);
