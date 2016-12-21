@@ -4,7 +4,7 @@
 <div class="listorder_back">
  <div class="row">
   <div class="col-md-3">
-  	<img class="img-responsive playmo_hide" src="<?=$this->assetUrl('/img/napoLeft.png');?>" id="categorycustoms_hover">
+  	<img class="img-responsive playmo_hide" src="<?=$this->assetUrl('/img/napoLeft.png');?>" id="categorycustoms">
   </div>
   <div class="col-md-6 ordermidia_width">
    <div class="listorder_contenu">
@@ -74,7 +74,7 @@
    </div>
   </div>
   <div class="col-md-3">
-  	<img class="img-responsive playmo_hide" src="<?=$this->assetUrl('/img/napoRight.png');?>" id="categorycustoms_hover" style="float:right;">
+  	<img class="img-responsive playmo_hide" src="<?=$this->assetUrl('/img/napoRight.png');?>" id="categorycustoms" style="float:right;">
   </div>
  </div>
  

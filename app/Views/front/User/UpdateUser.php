@@ -4,26 +4,27 @@
 <div class="listorder_back">
  <div class="row">
   <div class="col-md-3">
-  	<img class="img-responsive playmo_hide" src="<?=$this->assetUrl('/img/napoLeft.png');?>" id="categorycustoms_hover">
+  	<img class="img-responsive playmo_hide" src="<?=$this->assetUrl('/img/napoLeft.png');?>" id="categorycustoms">
   </div>
   <div class="col-md-6 ordermidia_width">
    <div class="listorder_contenu">
 	<li style="float: left;">   
-   	<img class="img-responsive" src="<?=$this->assetUrl('/img/napoPic.png');?>" id="categorycustoms_hover">
+   	<img class="img-responsive" src="<?=$this->assetUrl('/img/napoPic.png');?>" id="categorycustoms">
 	</li>
 	<li>
-	   	<h4 class="viewcategory_pages">Mon compte <span>></span> Historique commandes</h4>
+	   	<h4 class="viewcategory_pages"><a href="<?=$this->url('front_affcptuser', ['id' => $_SESSION['user']['id']]);?>">Mon compte </a><span>></span><a href="<?=$this->url('front_listOrders');?>"> Historique commandes</a></h4>
 	</li>
 	<div class="clear"></div>
 	<br><br>
-	<p class="orderMC_title">MOM COMPTE</p>
-	<p class="orderMC_text">Vous trouverez ici vos commandes passées depuis la création de votre compte.</p>
-	<hr>
-	<br>
+	<p class="orderMC_title"></p>
+	
+	
 	   
 	<div class="row">
 		<div class="updateuser_box">
 			<h1>mes informations personnelles</h1>
+			<p class="orderMC_text">Vous pouvez modifier ici vos informations personnelles.</p>
+			<hr>
 			<form>
 				<p>
 					<label class="orderlogin_label">Civilité</label>
@@ -55,7 +56,7 @@
 			</div>
 			  <div class="form-group orderlogin_label has-error has-feedback">
 			  <label class="control-label" for="inputError2" style="color: #000;">Mot de passe</label>
-			  <p style="text-decoration:underline;text-align:center;">Réinitialisation de mot de pass par mail</p>
+			  <p style="text-decoration:underline;text-align:center;">Réinitialisation de mot de passe par mail</p>
 			  <span id="inputError2Status" class="sr-only">(error)</span>
 			</div>
 			  <br>
@@ -64,12 +65,12 @@
     			<input type="text" class="form-control" id="exampleInputName2" placeholder="votre addresse">
 			  </div>
 			  <div class="form-group orderlogin_label">
-				<label for="exampleInputName2">complément Adresse</label>
-    			<input type="text" class="form-control" id="exampleInputName2" placeholder="votre complément Adresse">
+				<label for="exampleInputName2">Complément adresse</label>
+    			<input type="text" class="form-control" id="exampleInputName2" placeholder="votre complément adresse">
 			  </div>
 			  <div class="form-group orderlogin_label">
 				<label for="exampleInputName2">Code Postal</label>
-    			<input type="text" class="form-control" id="exampleInputName2" placeholder="votre Code Postal">
+    			<input type="text" class="form-control" id="exampleInputName2" placeholder="votre code Postal">
 			  </div>
 			  <div class="form-group orderlogin_label">
 				<label for="exampleInputName2">Pays</label>
@@ -80,10 +81,10 @@
 			  </div>
 			  <div class="form-group orderlogin_label">
 				<label for="exampleInputName2">Ville</label>
-    			<input type="text" class="form-control" id="exampleInputName2" placeholder="votre Ville">
+    			<input type="text" class="form-control" id="exampleInputName2" placeholder="votre ville">
 			  </div>
 			  <br>
-				<button type="submit" class="btn btn-default adduser_button orderlogin_button1"><i class="fa fa-user" aria-hidden="true"><span class="orderlogin_button1text"> mettre â jour</span></i></button>
+				<button type="submit" class="btn btn-default adduser_button orderlogin_button1"><i class="fa fa-user" aria-hidden="true"><span class="orderlogin_button1text"> mettre à jour</span></i></button>
 			</form>
 			<br><br>
 		</div>
@@ -93,7 +94,7 @@
    </div>
   </div>
   <div class="col-md-3">
-  	<img class="img-responsive playmo_hide" src="<?=$this->assetUrl('/img/napoRight.png');?>" id="categorycustoms_hover" style="float:right;">
+  	<img class="img-responsive playmo_hide" src="<?=$this->assetUrl('/img/napoRight.png');?>" id="categorycustom" style="float:right;">
   </div>
  </div>
  
