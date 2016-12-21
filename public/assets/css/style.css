@@ -1026,6 +1026,10 @@ h4 {
 	margin: 1px 0px;
 }
 
+.viewcategoryrow2col1customs_tirer a {
+	color: #fff;
+}
+
 .viewcategoryrow2col1customs_tirer:hover {
 	background-color: #f7860c;
 	cursor: pointer;
