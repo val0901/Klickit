@@ -768,6 +768,24 @@ $(document).ready(function(){
 		})			
 	})
 }
+		
+		function vignetteviewarthover() {
+		$(document).ready(function(){
+
+			$("#vignetteviewart_hover").hover(function(){
+			$(this).attr("src", "<?=$this->assetUrl('/img/vignetteEvent1.png');?>");
+		})			
+	})
+}
+		
+	function vignetteviewartout() {
+		$(document).ready(function(){
+
+			$("#vignetteviewart_hover").hover(function(){
+			$(this).attr("src", "<?=$this->assetUrl('/img/vignetteEvent2.png');?>");
+		})			
+	})
+}
 	/*End vignetteEvent position*/
 	
 	/*contact button send*/

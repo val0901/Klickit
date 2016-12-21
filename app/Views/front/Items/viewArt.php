@@ -2,7 +2,7 @@
 
 <?php $this->start('main_content') ?>
 <div class="vignetteEvent_hide">
-	<img class="img-responsive" src="<?=$this->assetUrl('/img/vignetteEvent1.png');?>">
+	<a href="<?=$this->url('front_contact')?>"><img class="img-responsive" src="<?=$this->assetUrl('/img/vignetteEvent1.png');?>" id="vignetteviewart_hover" onmouseover="vignetteviewarthover();" onmouseout="vignetteviewartout();"></a>
 </div>
 <div class="container_viewart">
 	<div class="row">
