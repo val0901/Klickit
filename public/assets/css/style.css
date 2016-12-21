@@ -1560,3 +1560,17 @@ td {
 .favorite_voirplus {
     text-align: center;
 }
+
+/*guestbook.php*/
+.guestbook_button {
+	text-transform: uppercase;
+	font-size: 20px;
+	background-color: #ff931e;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 0px;
+}	
+	
+.guestbook_button:hover {
+	background-color: #ec820f;
+}
