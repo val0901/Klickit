@@ -1,4 +1,4 @@
-<?php $this->layout('layoutback', ['title' => 'Message de '.$message['firstname'].' '.$message['lastname']]) ?>
+<?php $this->layout('layoutback', ['title' => 'Message de '.$message['username']]) ?>
 
 <?php $this->start('main_content') ?>
 	<?php if(empty($message)):?>
@@ -28,7 +28,7 @@
 
 		<form method="post" id="answer" class="form-horizontal" style="margin-top:10px;display:none;">
 
-		<h3> Répondre au message de <?=$message['firstname'].' '.$message['lastname']?></h3>
+		<h3> Répondre au message de <?=$message['username']?></h3>
 
 			<div class="form-group">
 		  		<label class="col-md-4 control-label" for="email">Votre adresse email</label>  

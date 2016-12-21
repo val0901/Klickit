@@ -94,7 +94,7 @@ class FrontUserController extends Controller
 		}
 		$params = [
 			'success'	=> $success,
-			'errors'	=> $errors
+			'errors'	=> $errors,
 		];	
 		$this->show('front/User/addUser', $params);
 	}

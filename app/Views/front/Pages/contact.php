@@ -22,19 +22,18 @@
 				<p class="alert alert-danger"><?=implode('<br>',$errors)?></p>
 			<?php endif;?>
 
-			<form style="margin-top:30px;" method="post">
+			  <form style="margin-top:30px;" method="post">
 
-			  <?php if(empty($_SESSION)):?>
-			  	<div class="form-group">
-					<label for="firstname" class="formlabel">Prénom</label>
-					<input type="text" class="form-control" id="firstname" placeholder="votre prénom" name="firstname">
-			  	</div>
+			  
+		  	  <div class="form-group">
+				<label for="firstname" class="formlabel">Prénom</label>
+				<input type="text" class="form-control" id="firstname" placeholder="votre prénom" name="firstname">
+		  	  </div>
 
-			  	<div class="form-group">
-					<label for="lastname" class="formlabel">Nom</label>
-					<input type="text" class="form-control" id="lastname" placeholder="votre prénom" name="lastname">
-			  	</div>
-			  <?php endif;?>
+		  	  <div class="form-group">
+				<label for="lastname" class="formlabel">Nom</label>
+				<input type="text" class="form-control" id="lastname" placeholder="votre prénom" name="lastname">
+		  	  </div>
 			  		
 			  <div class="form-group">
 				<label for="exampleInputEmail1" class="formlabel">Email</label>

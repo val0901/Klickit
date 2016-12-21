@@ -132,7 +132,7 @@ class MessageController extends Controller
 
 				$sendMail->setFrom('sav@klickit.fr', 'Klickit');		  		//Expéditeur
 				
-				$sendMail->addAddress($viewMessage['email'], $viewMessage['firstname'].' '.$viewMessage['lastname']); 	   	//Destinataire
+				$sendMail->addAddress($viewMessage['email'], $viewMessage['username']); 	   	//Destinataire
 				$sendMail->addCC('sav@klickit.fr'); 					//Copie envoyer à l'adresse souhaitée du mail
 
 				$sendMail->Subject = $post['subject'];
