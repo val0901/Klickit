@@ -40,11 +40,8 @@ class FrontItemController extends Controller
 	/**
 	* Affiche la page de tous les customs
 	*/
-	public function listCustomItemsFull($id)
+	public function listCustomItemsFull()
 	{
-		$affiche = new ItemModel();
-		$afficheItems = $affiche->findSubCategory($sub_category);
-
 		$newItems = new ItemModel();
 		$afficheNewItems = $newItems->findCategoryStatutCustom('PlaymobilCustom', 'nouveaute');
 
@@ -52,7 +49,7 @@ class FrontItemController extends Controller
 		$items = $getCustomItems->findByCategory('PlaymobilCustom');
 
 		$data = [
-			'items'	=> $items,
+			'items'			 => $items,
 			'affiche' 		 => $afficheItems,
 			'afficheNewItem' => $afficheNewItems,
 		];
@@ -87,9 +84,20 @@ class FrontItemController extends Controller
 	/**
 	 * Affiche la page d'un article
 	 */
-	public function viewItem()
+	public function viewItem($id)
 	{
-		$this->show('front/Items/viewArt');
+		$newItems = new ItemModel();
+		$afficheNewItems = $newItems->findCategoryStatutCustom('PlaymobilCustom', 'nouveaute');
+
+		$item = new ItemModel();
+		$items = $item->findItems($id);
+
+		$data = [
+			'afficheNewItem' => $afficheNewItems,
+			'items'=> $items,
+		];
+
+		$this->show('front/Items/viewArt', $data);
 	}
 	/**
 	 * Affiche la page des favoris

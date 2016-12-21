@@ -7,16 +7,40 @@
 <div class="container_viewart">
 	<div class="row">
 		<div class="col-md-7">
-			<img src="<?=$this->assetUrl('/img/art_classic_divers_000001.jpg');?>" style="width:98%;">
+			<img src="<?=$this->assetUrl('art/'.$items['picture1']);?>" style="width:98%;">
 		</div>
 		<div class="col-md-5 viewart_fontweight">
-			<p class="viewart_fontref">Référance 00016</p>
-			<h1 class="viewart_fonttitle">Soldat Playmo</h1>
-			<span class="viewart_fontref">Etat</span> 
-			<span class="viewart_fontpro"> PROMO !</span>
+
+			<p class="viewart_fontref">Référence <?=$items['id'] ;?></p>
+			<h1 class="viewart_fonttitle"><?=$items['name'] ;?></h1>
+			<span class="viewart_fontref"></span> 
+			<span class="viewart_fontpro"> 
+			<?php if($items['statut'] == 'nouveaute'):?>
+				<div class=""><?='Nouveauté';?></div>
+			<?php elseif($items['statut'] == 'promotion'):?>
+				<div class=""><?='Promotion';?></div>
+			<?php elseif($items['statut'] == 'defaut'): ?>
+				<div class=""></div>
+			<?php endif;  ?></span>
 			<br><br>
-			<span class="viewart_fontsolde">8 €</span>
-			<span class="viewart_fontnormal"> 10 €</span>
+									
+								
+									
+								
+			<span class="viewart_fontsolde">
+				<?php if($items['newPrice'] == 0): ?>
+					<?=$items['price'];?> €
+				<?php elseif($items['newPrice'] > 0): ?>
+					<?=$items['newPrice'];?> €
+				<?php endif; ?>
+			</span>
+			<span class="viewart_fontnormal">
+				<?php if($items['newPrice'] > 0): ?> 
+					<?=$items['price'];?> €
+				<?php elseif($items['newPrice'] == 0): ?>
+
+				<?php endif; ?>
+			</span>
 			<br><br><br><br>
 			<span class="viewart_fontref">Quantité </span>
 			<span>
@@ -24,7 +48,7 @@
 			</span>
 			<br><br>
 			<div class="">
-				<button type="button" class="btn btn-primary viewcategory_button_size ">ajouter au panier</button>
+				<button type="submit" class="btn btn-primary viewcategory_button_size ">ajouter au panier</button>
 			</div>
 			<br>
 			<i class="fa fa-heart-o fa-2x" aria-hidden="true" style="color:#999;"> <span class="viewart_fontfamily">Ajouter à mes favoris</span></i>
@@ -43,11 +67,8 @@
 			</div>
 		</div>
 		<div class="col-md-9 viewart_savoirwidth">
-			<p class="viewart_savoirtext">His cognitis Gallus ut serpens adpetitus telo vel saxo iamque spes extremas opperiens et succurrens saluti suae quavis ratione colligi omnes iussit armatos et cum starent attoniti, districta dentium acie stridens adeste inquit viri fortes mihi periclitanti vobiscum.
-
-			Cum autem commodis intervallata temporibus convivia longa et noxia coeperint apparari vel distributio sollemnium sportularum, anxia deliberatione tractatur an exceptis his quibus vicissitudo debetur, peregrinum invitari conveniet, et si digesto plene consilio id placuerit fieri, is adhibetur qui pro domibus excubat aurigarum aut artem tesserariam profitetur aut secretiora quaedam se nosse confingit.
-
-			Non ergo erunt homines deliciis diffluentes audiendi, si quando de amicitia, quam nec usu nec ratione habent cognitam, disputabunt. Nam quis est, pro deorum fidem atque hominum! qui velit, ut neque diligat quemquam nec ipse ab ullo diligatur, circumfluere omnibus copiis atque in omnium rerum abundantia vivere? Haec enim est tyrannorum vita nimirum, in qua nulla fides, nulla caritas, nulla stabilis benevolentiae potest esse fiducia, omnia semper suspecta atque sollicita, nullus locus amicitiae.</p>
+			<p class="viewart_savoirtext"><?=$items['description']?>His cognitis Gallus ut serpens adpetitus telo vel saxo iamque spes extremas opperiens et succurrens saluti suae quavis ratione colligi omnes iussit armatos et cum starent attoniti, districta dentium acie stridens adeste inquit viri fortes mihi periclitanti vobiscum.
+			</p>
 		</div>
 	</div>
 	<br><br>
