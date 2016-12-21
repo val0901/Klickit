@@ -29,11 +29,11 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 	<div class="row">
 		<div class="col-md-3">
 			<h3 class="viewcategoryrow2col1_title">sous-catégories</h3>
-			<div class="viewcategoryrow2col1customs_tirer"><a href="#">Customs tampographiés</a></div>
-			<div class="viewcategoryrow2col1customs_tirer"><a href="#">Customs peints</a></div>		
-			<div class="viewcategoryrow2col1customs_tirer"><a href="#">Bustes tampographiés</a></div>
-			<div class="viewcategoryrow2col1customs_tirer"><a href="#">Pièces en résine</a></div>
-			<div class="viewcategoryrow2col1customs_tirer"><a href="#">Stickers</a></div>
+			<div class="viewcategoryrow2col1customs_tirer"><a id="customsmenu_scat" href="<?=$this->url('listItemCustoms', ['sub_category'=>'CustomsTampographies']);?>">Customs tampographiés</a></div>
+			<div class="viewcategoryrow2col1customs_tirer"><a id="customsmenu_scat" href="<?=$this->url('listItemCustoms', ['sub_category'=>'CustomsPeints']);?>">Customs peints</a></div>		
+			<div class="viewcategoryrow2col1customs_tirer"><a id="customsmenu_scat" href="<?=$this->url('listItemCustoms', ['sub_category'=>'BustesTampographies']);?>">Bustes tampographiés</a></div>
+			<div class="viewcategoryrow2col1customs_tirer"><a id="customsmenu_scat" href="<?=$this->url('listItemCustoms', ['sub_category'=>'PiecesEnResine']);?>">Pièces en résine</a></div>
+			<div class="viewcategoryrow2col1customs_tirer"><a id="customsmenu_scat" href="<?=$this->url('listItemCustoms', ['sub_category'=>'Stickers']);?>">Stickers</a></div>
 			<li>
 				<h3 class="viewcategoryrow2col1_title">fitres</h3>
 				<div class="form-group viewcategory_checkboxmargin">
@@ -67,7 +67,11 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 		
 		<!--viewcategory row2 col2-->
 		<div class="col-md-9">
-			<h4 class="viewcategory_pages">Home <span>></span> Customs <span>></span> Customs tampographiés</h4>
+			<h4 class="viewcategory_pages"><a href="<?=$this->url('front_index');?>">Home</a> <span>></span><a href="<?=$this->url('listItemCustomFull');?>"> Customs</a> <span>></span> 
+			<?php if($sub_category == 'CustomsTampographies'): ?>
+						Customs Tampographiés
+				<?php endif; ?>
+				</h4>
 			<div class="row">
 				<?php foreach ($affiche as $product) : ?>
 					<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
