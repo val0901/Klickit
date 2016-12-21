@@ -27,7 +27,7 @@
 			   <p class="cptuser_textlien"><a href="#">mes favoris</a></p> 
 		   </div>
 		   <div class="col-md-3">
-		   	<a href="<?=$this->url('fGuestbook');?>"><img class="img-responsive" src="<?=$this->assetUrl('/img/gestbookvign.jpg');?>" id="cptuser_hover" style="cursor: pointer"></a> 
+		   	<a href="<?=$this->url('fGuestbook');?>"><img class="img-responsive" src="<?=$this->assetUrl('/img/gestbookvign.jpg');?>" id="cptuser_hover" style="cursor: pointer" onmouseover="imghover();" onmouseout="imgout();"></a> 
 		   </div>
 	   </div>
 	     

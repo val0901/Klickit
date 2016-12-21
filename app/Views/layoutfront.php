@@ -745,6 +745,12 @@ $(document).ready(function(){
 		$(".vignetteEvent_hide > img").hover(function () { $(this).attr("src", "<?=$this->assetUrl('/img/vignetteEvent2.png');?>") }, function () { $(this).attr("src", "<?=$this->assetUrl('/img/vignetteEvent1.png');?>") }); 
 	})*/
 	
+	/*$(document).ready(function(){
+		$("#vignette_hover").hover(function(){
+			alert("dfafdsf");
+		})
+	})*/
+	
 	function vignettehover() {
 		$(document).ready(function(){
 
