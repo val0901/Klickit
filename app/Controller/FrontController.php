@@ -30,20 +30,6 @@ class FrontController extends Controller
 
 		$getComment = new GuestbookModel();
 		$comments = $getComment->findAllMessageFront();
-
-		/************Affichage des articles dans le panier***********/
-		$getShoppingCart = new UserModel();
-		$getItems = new ItemModel();
-		$user = $this->getUser();
-		$shoppingCart = $getShoppingCart->find($user['id']);
-
-		$panier = explode(', ', $shoppingCart['cart_item']);
-
-		foreach($panier as $value){
-			$list_items = $getItems->findItems($value);
-			var_dump($list_items);
-
-		}
 		
 		$data = [
 			'comments'		=>	$comments,

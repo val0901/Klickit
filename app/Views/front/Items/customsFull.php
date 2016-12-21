@@ -246,7 +246,8 @@
 					dataType: 'json',
 					success: function(out){
 						if(out.code == 'ok'){
-			  				$().html();	
+			  				$('.item_cart').html(out.item_cart);
+			  				console.log(out.item_cart);	
 						}
 					}
   				});

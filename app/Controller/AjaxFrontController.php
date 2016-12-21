@@ -45,7 +45,6 @@ class AjaxFrontController extends Controller
 					}
 
 
-
 					//On remplit le panier avec l'id
 					$shoppingCart = [
 						'cart_item'	=>	$_SESSION['shop']['cart_item'],
@@ -53,13 +52,28 @@ class AjaxFrontController extends Controller
 				}
 				
 				if($updateCart->update($shoppingCart,$loggedUser['id'])){
-					$json = ['code' => 'ok'];
+					/************Affichage des articles dans le panier***********/
+					$getShoppingCart = new UserModel();
+					$getItems = new ItemModel();
+					$user = $this->getUser();
+					$shoppingCart = $getShoppingCart->find($user['id']);
+
+					$panier = explode(', ', $shoppingCart['cart_item']);
+
+					foreach($panier as $value){
+						$list_items = $getItems->findItems($value);
+						$html = '';
+						$html.= '<div class="col-xs-6">'.$list_items['name'].'</div>';
+						$html.= '<div class="col-xs-6" style="text-align:right;">'.$list_items['price'].'</div>';
+
+						$json = ['code' => 'ok', 'item_cart'=>$html];
 				}
 			}else{
 				$json = ['code' => 'error'];
 			}
 		}
 		$this->showJson($json);
+	}
 	}
 
 	/**
