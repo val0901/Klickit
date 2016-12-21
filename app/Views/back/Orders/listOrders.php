@@ -4,12 +4,12 @@
 
 
 	<form method="post">
-		<div id="searchbtn">
+		<!-- <div id="searchbtn">
 			<input type="text" class="form" placeholder="" name="search" id="search" value="">
 			<button type="submit" name="submit" id="submit" style="background:transparent;border:none;">
 			<i class="fa fa-search" aria-hidden="true"></i>	
 			</button>
-		</div>
+		</div> -->
 		<div id="viewOrder">
 			<table class="table table-responsive">
 				<thead>
