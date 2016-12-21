@@ -40,13 +40,21 @@ class FrontItemController extends Controller
 	/**
 	* Affiche la page de tous les customs
 	*/
-	public function listCustomItemsFull()
+	public function listCustomItemsFull($id)
 	{
+		$affiche = new ItemModel();
+		$afficheItems = $affiche->findSubCategory($sub_category);
+
+		$newItems = new ItemModel();
+		$afficheNewItems = $newItems->findCategoryStatutCustom('PlaymobilCustom', 'nouveaute');
+
 		$getCustomItems = new ItemModel();
 		$items = $getCustomItems->findByCategory('PlaymobilCustom');
 
 		$data = [
-			'items'	=> $items
+			'items'	=> $items,
+			'affiche' 		 => $afficheItems,
+			'afficheNewItem' => $afficheNewItems,
 		];
 
 		$this->show('front/Items/customsFull', $data);
