@@ -11,7 +11,7 @@ class MessageModel extends \W\Model\Model
 	public function findAllMessage($page, $max)
 	{
 		$debut = ($page - 1) * $max;
-		$sql = 'SELECT ' .$this->table.'.* FROM ' . $this->table . ' LEFT JOIN user AS u ON '.$this->table.'.idMember = u.id ORDER BY ' .$this->table.'.id DESC LIMIT :debut, :max';
+		$sql = 'SELECT ' .$this->table.'.* FROM ' . $this->table.' ORDER BY ' .$this->table.'.id DESC LIMIT :debut, :max';
 
 		$sth = $this->dbh->prepare($sql);
 		$sth->bindValue(':max', $max, \PDO::PARAM_INT);
@@ -27,7 +27,7 @@ class MessageModel extends \W\Model\Model
 	*/
 	public function findOneMessage($id)
 	{
-		$sql = 'SELECT ' .$this->table.'.*, user.email, user.firstname, user.lastname FROM ' . $this->table . ' LEFT JOIN user ON '.$this->table.'.idMember = user.id WHERE '.$this->table.'.id = :id';
+		$sql = 'SELECT * FROM ' .$this->table.' WHERE '.$this->table.'.id = :id';
 		$sth = $this->dbh->prepare($sql);
 		$sth->bindValue(':id', $id);
 		$sth->execute();

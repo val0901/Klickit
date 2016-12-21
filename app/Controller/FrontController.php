@@ -154,28 +154,16 @@ class FrontController extends Controller
 
 			if(count($errors) === 0){
 				$insert = new MessageModel;
-				$user = $this->getUser();
-
-				if(!empty($user)){
-					$dataInsert = [
-						'username'		=> $user['username'],
-						'date_creation'	=> date('Y-m-d H:i:s'),
-						'subject'		=> $post['subject'],
-						'email'			=> $post['email'],
-						'statut'		=> 'NonLu',
-						'content'		=> nl2br($post['message']),
-						'idMember'		=> $user['id'],
-					];
-				}else{
-					$dataInsert = [
-						'username'		=> $post['firstname'].' '.$post['lastname'],
-						'date_creation'	=> date('Y-m-d H:i:s'),
-						'subject'		=> $post['subject'],
-						'email'			=> $post['email'],
-						'content'		=> nl2br($post['message']),
-						'statut'		=> 'NonLu',
-					];
-				}
+				
+				$dataInsert = [
+					'username'		=> $post['firstname'].' '.$post['lastname'],
+					'date_creation'	=> date('Y-m-d H:i:s'),
+					'subject'		=> $post['subject'],
+					'email'			=> $post['email'],
+					'content'		=> nl2br($post['message']),
+					'statut'		=> 'NonLu',
+				];
+				
 				
 
 				if($insert->insert($dataInsert)){
