@@ -29,44 +29,67 @@
 					<tr>
 						<td><?=$order['id']; ?></td>
 						<td><?=$order['lastname'].' '.$order['firstname'].'<br>'.$order['adress'].'<br>'.$order['zipcode'].' '.$order['city']; ?></td>
-						<td><?php $contents = explode(', ', $order['contenu']); ?>
-
-							<?php foreach ($contents as $value) : ?>
-									<?php 
-										$list_items = $items->findItems($value); 
-
-										echo '<a href="'.$this->url('updateItem', ['id'=>$list_items['id']]).'" style="color:white;">'.$list_items['name'].'</a> <br>';
-									?>
-							<?php endforeach; ?></td>
 						<td>
-							<?php $quantity = explode(', ', $order['quantity']); ?>
-            				<?php foreach ($quantity as $value):?>
-            					<?php
+						<?php 
+							$contents = explode(', ', $order['contenu']); 
+							$quantity = explode(', ', $order['quantity']);
+
+							for($i=0;$i<count($contents);$i++){
+								$content_basket[$order['id']] = [
+									'content' 	=> $contents[$i],
+									'quantity' 	=> $quantity[$i],
+								];
+							}
+
+							foreach ($content_basket as $basket){
+								$list_items = $items->findItems($basket['content']); 
+
+								echo '<a href="'.$this->url('updateItem', ['id'=>$list_items['id']]).'" style="color:white;">'.$list_items['name'].'</a> <br>';
+							}
+						?>
+						</td>
+						<td> 
+        				<?php 
+        					foreach ($content_basket[$order['id']] as $key => $value){
+        						if($key == 'quantity'){
             						echo $value.'<br>';
-            					?>
-            				<?php endforeach;?>	
+        						}
+        					} 
+        				?>
 						</td>
 						<td>
-						<?php foreach ($contents as $value) : ?>
-							<?php $list_items = $items->findItems($value); ?>
+						<?php 
+							foreach ($contents as $value) {
+								$list_items = $items->findItems($value);
+		
+								if($list_items['newPrice'] == 0){
+									echo $list_items['price'].'<br>';
+								}
+								elseif($list_items['newPrice'] > 0) {
+									echo $list_items['newPrice'].'<br>';
+								}
 
-							<?php if($list_items['newPrice'] == 0) : ?>
-								<?=$list_items['price'];?>
-								<br>
-							<?php elseif($list_items['newPrice'] > 0) : ?>
-								<?=$list_items['newPrice'];?>
-								<br>
-							<?php endif; ?>
-						<?php endforeach ?>
+							}
+						?>
 						</td>
-						<td><?php foreach ($contents as $value) : ?>
-								          													
-							<?=\Tools\Utils::calculTtc($list_items['price'], $value); ?>
-							<?php endforeach;?>	
-							
+						<td>
+							<?php 
+								foreach ($content_basket as $basket) {
+								    $price_items = $items->findItems($basket['content']); 
+
+								    if($price_items['newPrice'] == 0){
+								    	$price = $price_items['price'];
+								    }
+								    elseif($price_items['newPrice'] > 0){
+								    	$price = $price_items['newPrice'];
+								    }
+									echo \Tools\Utils::calculTtc($price, $basket['quantity']);
+									echo '<br>';
+								}
+							?>
 						</td>
 						<td><?= date('d/m/Y', strtotime($order['date_creation']));?></td>
-						<td><?=$order['statut']; ?></td>
+						<td><?=$order['statut'];?></td>
 						<!-- <td>
 							<div class="form-group" id="selectStt">									
 								  <div class="col-md-4">
