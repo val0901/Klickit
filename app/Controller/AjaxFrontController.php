@@ -24,7 +24,9 @@ class AjaxFrontController extends Controller
 	public function addToCart()
 	{	
 		$html = '';
+		$price = 0;
 		$updateCart = new UserModel();
+
 		if(!empty($_POST)){
 
 
@@ -68,12 +70,14 @@ class AjaxFrontController extends Controller
 							$html.= '<div class="col-xs-6">'.$list_items['name'].'</div>';
 							if($list_items['newPrice'] == 0){
 								$html.= '<div class="col-xs-6" style="text-align:right;">'.$list_items['price'].'€</div>';
+								$price = $list_items['price'] + $price;
 							}else{
 								$html.= '<div class="col-xs-6" style="text-align:right;">'.$list_items['newPrice'].'€</div>';
+								$price = $list_items['newPrice'] + $price;
 							}
 							
 							//Je stocke les résultats dans mon tableau json
-							$json = ['code' => 'ok', 'item_cart'=>$html];
+							$json = ['code' => 'ok', 'item_cart'=>$html, 'price'=>$price];
 						}
 					}else{
 						$json = ['code' => 'error'];
