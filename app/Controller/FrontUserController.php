@@ -80,6 +80,7 @@ class FrontUserController extends Controller
 					'zipcode'	=> $post['zipcode'],
 					'city'	=> $post['city'],
 					'email'	=> $post['email'],
+					'role'	=> 'Utilisateur',
 					'password'	=> $hashPassword->hashPassword($post['password']),
 				];
 
