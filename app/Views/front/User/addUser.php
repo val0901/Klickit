@@ -12,7 +12,7 @@
 				<p class="adduserscol1_text">inscription</p>
 			</div>
 	
-			<form>
+			<form method="post">
 			  <div class="form-group adduser_label">
 				<label for="exampleInputName2">Nom</label>
     			<input type="text" class="form-control" id="exampleInputName2" placeholder="votre nom">
