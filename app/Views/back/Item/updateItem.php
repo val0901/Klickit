@@ -69,6 +69,15 @@
 
 		<!-- Text input-->
 		<div class="form-group">
+		  <label class="col-md-4 control-label" for="price">Prix</label>  
+		  <div class="col-md-4">
+		  <input id="price" name="price" placeholder="" class="form-control input-md" type="text">
+		    
+		  </div>
+		</div>
+
+		<!-- Text input-->
+		<div class="form-group">
 		  <label class="col-md-4 control-label" for="newPrice">Nouveau Prix</label>  
 		  <div class="col-md-4">
 		  <input id="newPrice" name="newPrice" placeholder="" class="form-control input-md" type="text">

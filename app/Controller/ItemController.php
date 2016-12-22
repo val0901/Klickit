@@ -352,6 +352,15 @@ class ItemController extends Controller
 				}
 			}
 
+			if(!empty($post['price']) && isset($post['price'])) {
+				if(!v::notEmpty()->digit()->length(1,null)->validate($post['price'])){
+					$errors[] = 'Le nouveau prix doit être supérieur à 0';
+				}
+				else {
+					$afficheItem['price'] = $post['price'];
+				}
+			}
+
 			if(!empty($post['newPrice']) && isset($post['newPrice'])) {
 				if(!v::notEmpty()->digit()->length(1,null)->validate($post['newPrice'])){
 					$errors[] = 'Le nouveau prix doit être supérieur à 0';
