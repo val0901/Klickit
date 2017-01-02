@@ -28,10 +28,7 @@
 	<div class="row">
 		<div class="col-md-3">
 			<h3 class="viewcategoryrow2col1_title">sous-catégories</h3>
-			<div class="viewcategoryrow2col1divers_tirer"><a href="#">Divers</a></div>
-			<div class="viewcategoryrow2col1divers_tirer"><a href="#">Divers</a></div>		
-			<div class="viewcategoryrow2col1divers_tirer"><a href="#">Divers</a></div>
-			<div class="viewcategoryrow2col1divers_tirer"><a href="#">Divers</a></div>
+			<!-- <div class="viewcategoryrow2col1customs_tirer"><a href="#"></a></div> --> <!-- à activer (ainsi qu'à dupliquer au nombre de sous-catégorie que nous aurons) lorsqu'on aura des sous-catégories pour cette catégorie -->
 			<li>
 				<h3 class="viewcategoryrow2col1_title">fitres</h3>
 				<div class="form-group viewcategory_checkboxmargin">
@@ -65,102 +62,41 @@
 		
 		<!--viewcategory row2 col2-->
 		<div class="col-md-9">
-			<h4 class="viewcategory_pages">Home <span>></span> Pièces <span>></span> Armes</h4>
+			<h4 class="viewcategory_pages"><a href="<?=$this->url('front_index');?>">Home </a> <span>></span> <a href="<?=$this->url('listItemDiversFull');?>"> Boites/Set</a><span>></span> <!-- sous-catégorie quand il y en aura --></h4>
 			<div class="row">
-				<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
-					<a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000004.jpg');?>" alt="" class="img-thumbnail"></a>
-					<div class="viewcategorycaption">
-						<h4>5 €</h4>
-						<p>Princess Playmo</p>
-						<div class="viewcategory_nouveau">nouveau !</div>
-                    </div>
-					<div class="viewcategory_button">
-						<button type="button" class="btn btn-primary viewcategory_button_size ">ajouter au panier</button>
-					</div>
-				</div>
-				<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
-					<a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000005.jpg');?>" alt="" class="img-thumbnail"></a>
-					<div class="viewcategorycaption">
-						<h4>15 €</h4>
-						<p>Princess Playmo</p>
-						<div class="viewcategory_nouveau">nouveau !</div>
-                    </div>
-					<div class="viewcategory_button">
-						<button type="button" class="btn btn-primary viewcategory_button_size ">ajouter au panier</button>
-					</div>
-				</div>
-				<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
-					<a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000006.jpg');?>" alt="" class="img-thumbnail"></a>
-					<div class="viewcategorycaption">
-						<h4><span class="viewcategoryprixpromo">8 € </span> <span class="viewcategoryprixdelete">10 €</span></h4>
-						<p>Princess Playmo</p>
-						<div class="viewcategory_promo">promo !</div>
-					<div class="viewcategory_button">
-						<button type="button" class="btn btn-primary viewcategory_button_size ">ajouter au panier</button>
-					</div>
-                    </div>
-				</div>
-				<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
-					<a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000007.jpg');?>" alt="" class="img-thumbnail"></a>
-					<div class="viewcategorycaption">
-						<h4>20 €</h4>
-						<p>Princess Playmo</p>
-						<div class="viewcategory_nouveau">nouveau !</div>
-					<div class="viewcategory_button">
-						<button type="button" class="btn btn-primary viewcategory_button_size ">ajouter au panier</button>
-					</div>
-                    </div>
-				</div>
+				<form method="post">
+					<?php foreach ($items as $product) : ?>
+						<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
+							<a href="#"><img src="<?=$this->assetUrl('art/'.$product['picture1']);?>" alt="photo de playmobil" class="img-thumbnail"></a>
+							<div class="viewcategorycaption">
+								<?php if($product['newPrice'] === 0) : ?>
+									<h4><?=$product['price'];?>€</h4>
+								<?php else : ?>
+									<h4><span class="viewcategoryprixpromo"><?=$product['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$product['price'];?>€</span></h4>
+								<?php endif; ?>
+
+								<p><?=$product['name'];?></p>
+
+								<?php if($product['statut'] == 'nouveaute'):?>
+									<div class="viewcategory_nouveau"><?=$product['statut'];?></div>
+								<?php elseif($product['statut'] == 'promotion'):?>
+									<div class="viewcategory_promo"><?=$product['statut'];?></div>
+								<?php elseif($product['statut'] == 'defaut'): ?>
+									<div class="viewcategory_defaut"><?=$product['statut'];?></div>
+								<?php endif; ?>
+		                    </div>
+							<div class="viewcategory_button">
+								<button type="submit" class="btn btn-primary viewcategory_button_size add_to_shopping_cart" data-id="<?=$product['id']?>">ajouter au panier</button>
+							</div>
+						</div>
+					<?php endforeach; ?>
+				</form>
 			</div>
 		</div>
 		
 		
 		<div class="col-md-9">
 			<div class="row">
-				<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
-					<a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000004.jpg');?>" alt="" class="img-thumbnail"></a>
-					<div class="viewcategorycaption">
-						<h4>5 €</h4>
-						<p>Princess Playmo</p>
-						<div class="viewcategory_nouveau">nouveau !</div>
-                    </div>
-					<div class="viewcategory_button">
-						<button type="button" class="btn btn-primary viewcategory_button_size ">ajouter au panier</button>
-					</div>
-				</div>
-				<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
-					<a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000005.jpg');?>" alt="" class="img-thumbnail"></a>
-					<div class="viewcategorycaption">
-						<h4>15 €</h4>
-						<p>Princess Playmo</p>
-						<div class="viewcategory_nouveau">nouveau !</div>
-                    </div>
-					<div class="viewcategory_button">
-						<button type="button" class="btn btn-primary viewcategory_button_size ">ajouter au panier</button>
-					</div>
-				</div>
-				<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
-					<a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000006.jpg');?>" alt="" class="img-thumbnail"></a>
-					<div class="viewcategorycaption">
-						<h4><span class="viewcategoryprixpromo">8 € </span> <span class="viewcategoryprixdelete">10 €</span></h4>
-						<p>Princess Playmo</p>
-						<div class="viewcategory_promo">promo !</div>
-					<div class="viewcategory_button">
-						<button type="button" class="btn btn-primary viewcategory_button_size ">ajouter au panier</button>
-					</div>
-                    </div>
-				</div>
-				<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
-					<a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000007.jpg');?>" alt="" class="img-thumbnail"></a>
-					<div class="viewcategorycaption">
-						<h4>20 €</h4>
-						<p>Princess Playmo</p>
-						<div class="viewcategory_nouveau">nouveau !</div>
-					<div class="viewcategory_button">
-						<button type="button" class="btn btn-primary viewcategory_button_size ">ajouter au panier</button>
-					</div>
-                    </div>
-				</div>
 				<!--viewcategory row3 col1,2,3-->
 				<div class="row">
 					<div class="col-md-3 viewcategorypage_center">
@@ -204,135 +140,65 @@
         <div class="carousel-inner">
             <div class="item active">
                     <ul class="thumbnails">
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000004.jpg');?>" alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4>5 €</h4>
-                				<p>Princess Playmo</p>
-								<div class="slidecontent_nouveau">nouveau !</div>
-                                <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
-                            </div>
-                        </li>
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000005.jpg');?>" alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4>4 €</h4>
-                				<p>Nullam Condimentum Nibh Etiam Sem</p>
-								<div class="slidecontent_nouveau">nouveau !</div>
-                            </div>
-                        </li>
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000006.jpg');?>" alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4>8 €</h4>
-                				<p>Princess Playmo</p>
-								<div class="slidecontent_nouveau">nouveau !</div>
-                            </div>
-                        </li>
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000007.jpg');?>" alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4>3 €</h4>
-                				<p>Princess Playmo</p>
-								<div class="slidecontent_nouveau">nouveau !</div>
-                            </div>
-                        </li>
+                        <?php foreach ($afficheNewItem as $newProduct) : ?>
+	                        <li class="span3">
+	                            <div class="thumbnail">
+	                                <a href="#"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
+	                            </div>
+	                            <div class="caption">
+	                            	<?php if($newProduct['newPrice'] === 0) : ?>
+	                            		<h4><?=$newProduct['price'];?></h4>
+	                            	<?php else : ?>
+	                            		<h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
+	                            	<?php endif; ?>
+	                				<p><?=$newProduct['name'];?></p>
+									<div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
+	                                <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
+	                            </div>
+	                        </li>
+	                    <?php endforeach; ?>
                     </ul>
               </div><!-- /Slide1 --> 
             <div class="item">
                     <ul class="thumbnails">
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_divers_000008.jpg');?>" alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4>5 €</h4>
-                				<p>Princess Playmo</p>
-								<div class="slidecontent_nouveau">nouveau !</div>
-                            </div>
-                        </li>
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_espacerobots_000001.jpg');?>" alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4>4 €</h4>
-                				<p>Princess Playmo</p>
-								<div class="slidecontent_nouveau">nouveau !</div>
-                            </div>
-                        </li>
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_espacerobots_000002.jpg');?>" alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4>8 €</h4>
-                				<p>Princess Playmo</p>
-								<div class="slidecontent_nouveau">nouveau !</div>
-                            </div>
-                        </li>
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_fantasy_000001.jpg');?>" alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4>3 €</h4>
-                				<p>Princess Playmo</p>
-								<div class="slidecontent_nouveau">nouveau !</div>
-                            </div>
-                        </li>
+                       <?php foreach ($afficheNewItem as $newProduct) : ?>
+	                        <li class="span3">
+	                            <div class="thumbnail">
+	                                <a href="#"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
+	                            </div>
+	                            <div class="caption">
+	                            	<?php if($newProduct['newPrice'] === 0) : ?>
+	                            		<h4><?=$newProduct['price'];?></h4>
+	                            	<?php else : ?>
+	                            		<h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
+	                            	<?php endif; ?>
+	                				<p><?=$newProduct['name'];?></p>
+									<div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
+	                                <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
+	                            </div>
+	                        </li>
+	                    <?php endforeach; ?>
                     </ul>
               </div><!-- /Slide2 --> 
             <div class="item">
                     <ul class="thumbnails">
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_fantasy_000002.jpg');?>" alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4>5 €</h4>
-                				<p>Princess Playmo</p>
-								<div class="slidecontent_nouveau">nouveau !</div>
-                            </div>
-                        </li>
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_fantasy_000003.jpg');?>" alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4>4 €</h4>
-                				<p>Princess Playmo</p>
-								<div class="slidecontent_nouveau">nouveau !</div>
-                            </div>
-                        </li>
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_fantasy_000004.jpg');?>" alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4>8 €</h4>
-                				<p>Princess Playmo</p>
-								<div class="slidecontent_nouveau">nouveau !</div>
-                            </div>
-                        </li>
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_feesprincesses_000001.jpg');?>" alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4>3 €</h4>
-                				<p>Princess Playmo</p>
-								<div class="slidecontent_nouveau">nouveau !</div>
-                            </div>
-                        </li>
+                        <?php foreach ($afficheNewItem as $newProduct) : ?>
+	                        <li class="span3">
+	                            <div class="thumbnail">
+	                                <a href="#"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
+	                            </div>
+	                            <div class="caption">
+	                            	<?php if($newProduct['newPrice'] === 0) : ?>
+	                            		<h4><?=$newProduct['price'];?></h4>
+	                            	<?php else : ?>
+	                            		<h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
+	                            	<?php endif; ?>
+	                				<p><?=$newProduct['name'];?></p>
+									<div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
+	                                <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
+	                            </div>
+	                        </li>
+	                    <?php endforeach; ?>
                     </ul>
               </div><!-- /Slide3 --> 
         </div>

@@ -68,8 +68,16 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 		<!--viewcategory row2 col2-->
 		<div class="col-md-9">
 			<h4 class="viewcategory_pages"><a href="<?=$this->url('front_index');?>">Home</a> <span>></span><a href="<?=$this->url('listItemCustomFull');?>"> Customs</a> <span>></span> 
-				<?php if($afficheNewItem == 'CustomsTampographies'): ?>
-							<a>Customs Tampographiés</a> <span></span>
+				<?php if($affiche == 'CustomsTampographies'): ?>
+							<a href="<?=$this->url('listItemCustoms', ['sub_category'=>'CustomsTampographies']);?>">Customs Tampographiés</a> <span></span>
+				<?php elseif($affiche == 'CustomsPeints'): ?>
+							<a href="<?=$this->url('listItemCustoms', ['sub_category'=>'CustomsPeints']);?>">Customs Peints</a> <span></span>
+				<?php elseif($affiche == 'BustesTampographies'): ?>
+							<a href="<?=$this->url('listItemCustoms', ['sub_category'=>'BustesTampographies']);?>">Bustes Tampographiés</a> <span></span>
+				<?php elseif($affiche == 'PiecesEnResine'): ?>
+							<a href="<?=$this->url('listItemCustoms', ['sub_category'=>'PiecesEnResine']);?>">Pièces en Résine</a> <span></span>
+				<?php elseif($affiche == 'Stickers'): ?>
+							<a href="<?=$this->url('listItemCustoms', ['sub_category'=>'Stickers']);?>">Stickers</a> <span></span>
 				<?php endif; ?>
 			</h4>
 			<div class="row">
@@ -80,7 +88,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 							<?php if($product['newPrice'] == 0) : ?>
 								<h4><?=$product['price'];?>€</h4>
 							<?php else : ?>
-								<h4><?=$product['newPrice'];?>€</h4>
+								<h4><span class="viewcategoryprixpromo"><?=$product['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$product['price'];?>€</span></h4>
 							<?php endif; ?>
 
 							<p><?=$product['name'];?></p>
@@ -160,7 +168,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 	                            	<?php if($newProduct['newPrice'] == 0) : ?>
 	                            		<h4><?=$newProduct['price'];?>€</h4>
 	                            	<?php else : ?>
-	                            		<h4><?=$newProduct['newPrice'];?>€</h4>
+	                            		<h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
 	                            	<?php endif; ?>
 	                				<p><?=$newProduct['name'];?></p>
 									<div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
@@ -181,7 +189,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
                        	            <?php if($newProduct['newPrice'] == 0) : ?>
                        	                <h4><?=$newProduct['price'];?>€</h4>
                        	            <?php else : ?>
-                       	                <h4><?=$newProduct['newPrice'];?>€</h4>
+                       	                <h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
                        	            <?php endif; ?>
                        	            <p><?=$newProduct['name'];?></p>
                        			<div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
@@ -202,7 +210,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 	                            	<?php if($newProduct['newPrice'] == 0) : ?>
 	                            		<h4><?=$newProduct['price'];?>€</h4>
 	                            	<?php else : ?>
-	                            		<h4><?=$newProduct['newPrice'];?>€</h4>
+	                            		<h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
 	                            	<?php endif; ?>
 	                				<p><?=$newProduct['name'];?></p>
 									<div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>

@@ -13,9 +13,48 @@ class FrontItemController extends Controller
 	/**
 	 * Affiche la page des items "Classiques"
 	 */
-	public function listItemClassics()
+	public function listItemClassics($sub_category)
 	{
-		$this->show('front/Items/classics');
+		$affiche = new ItemModel();
+		$afficheItems = $affiche->findSubCategory($sub_category);
+
+		$newItems = new ItemModel();
+		$afficheNewItems = $newItems->findCategoryStatutCustom('PlaymobilClassique', 'nouveaute');
+
+		$data = [
+			'affiche' 		 => $afficheItems,
+			'afficheNewItem' => $afficheNewItems,
+		];
+
+		$this->show('front/Items/classics', $data);
+	}
+
+	/**
+	 * Affiche la page de tous les classics
+	 */
+	public function listClassicsItemsFull()
+	{
+		$nbpage= new ItemModel();
+		$nb=$nbpage->countResults();
+
+		$page = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
+		$max = 12;
+
+		$newItems = new ItemModel();
+		$afficheNewItems = $newItems->findCategoryStatutCustom('PlaymobilClassique', 'nouveaute');
+
+		$getCustomItems = new ItemModel();
+		$items = $getCustomItems->findByCategory('PlaymobilClassique', $page, $max);
+
+		$data = [
+			'afficheNewItem' => $afficheNewItems,
+			'items'	=> $items,
+			'max' => $max,
+			'page' => $page,
+			'nb' => $nb,
+		];
+
+		$this->show('front/Items/customsFull', $data);
 	}
 
 	/**
@@ -51,8 +90,8 @@ class FrontItemController extends Controller
 		$newItems = new ItemModel();
 		$afficheNewItems = $newItems->findCategoryStatutCustom('PlaymobilCustom', 'nouveaute');
 
-		$getCustomItems = new ItemModel();
-		$items = $getCustomItems->findByCategory('PlaymobilCustom', $page, $max);
+		$getCLassicItems = new ItemModel();
+		$items = $getCLassicItems->findByCategory('PlaymobilCustom', $page, $max);
 
 		$data = [
 			'afficheNewItem' => $afficheNewItems,
@@ -66,6 +105,53 @@ class FrontItemController extends Controller
 	}
 
 	/**
+	 * Affiche la page des items "Pièces détachées"
+	 */
+	public function listItemPieces($sub_category)
+	{
+		$affiche = new ItemModel();
+		$afficheItems = $affiche->findSubCategory($sub_category);
+
+		$newItems = new ItemModel();
+		$afficheNewItems = $newItems->findCategoryStatutCustom('PiecesDetachees', 'nouveaute');
+
+		$data = [
+			'affiche' 		 => $afficheItems,
+			'afficheNewItem' => $afficheNewItems,
+		];
+
+		$this->show('front/Items/pieces', $data);
+	}
+
+	/**
+	* Affiche la page de toutes les pièces détachées
+	*/
+	public function listPiecesItemsFull()
+	{
+		$nbpage= new ItemModel();
+		$nb=$nbpage->countResults();
+
+		$page = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
+		$max = 12;
+
+		$newItems = new ItemModel();
+		$afficheNewItems = $newItems->findCategoryStatutCustom('PiecesDetachees', 'nouveaute');
+
+		$getCLassicItems = new ItemModel();
+		$items = $getCLassicItems->findByCategory('PiecesDetachees', $page, $max);
+
+		$data = [
+			'afficheNewItem' => $afficheNewItems,
+			'items'	=> $items,
+			'max' => $max,
+			'page' => $page,
+			'nb' => $nb,
+		];
+
+		$this->show('front/Items/piecesFull', $data);
+	}
+
+	/**
 	 * Affiche la page des items "Divers"
 	 */
 	public function listItemDivers()
@@ -74,11 +160,32 @@ class FrontItemController extends Controller
 	}
 
 	/**
-	 * Affiche la page des items "Pièces détachées"
-	 */
-	public function listItemPieces()
+	* Affiche la page de tous les divers
+	*/
+	public function listDiversItemsFull()
 	{
-		$this->show('front/Items/pieces');
+
+		$nbpage= new ItemModel();
+		$nb=$nbpage->countResults();
+
+		$page = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
+		$max = 12;
+
+		$newItems = new ItemModel();
+		$afficheNewItems = $newItems->findCategoryStatutCustom('Divers', 'nouveaute');
+
+		$getDiversItems = new ItemModel();
+		$items = $getDiversItems->findByCategory('Divers', $page, $max);
+
+		$data = [
+			'afficheNewItem' => $afficheNewItems,
+			'items'	=> $items,
+			'max' => $max,
+			'page' => $page,
+			'nb' => $nb,
+		];
+		
+		$this->show('front/Items/diversFull', $data);
 	}
 
 	/**
@@ -114,53 +221,5 @@ class FrontItemController extends Controller
 	{
 		$this->show('front/Items/favorite');
 	}
-
-	/**
-	* Affiche la page de tous les classiques
-	*/
-	public function listClassicsItemsFull()
-	{
-		$getClassicsItems = new ItemModel();
-		$items = $getClassicsItems->findByCategory('PlaymobilClassique');
-		
-
-		$data = [
-			'items'	=> $items
-		];
-
-		$this->show('front/Items/classicsFull', $data);
-	}
-
-	/**
-	* Affiche la page de tous les divers
-	*/
-	public function listDiversItemsFull()
-	{
-		$getDiversItems = new ItemModel();
-		$items = $getDiversItems->findByCategory('Divers');
-
-		$data = [
-			'items'	=> $items
-		];
-
-		$this->show('front/Items/diversFull', $data);
-	}
-
-	/**
-	* Affiche la page de toutes les pièces détachées
-	*/
-	public function listPiecesItemsFull()
-	{
-		$getPiecesItems = new ItemModel();
-		$items = $getPiecesItems->findByCategory('PiecesDetachees');
-
-		$data = [
-			'items'	=> $items
-		];
-
-		$this->show('front/Items/piecesFull', $data);
-	}
-
-
 
 }

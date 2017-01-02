@@ -29,11 +29,17 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 	<div class="row">
 		<div class="col-md-3">
 			<h3 class="viewcategoryrow2col1_title">sous-catégories</h3>
-			<div class="viewcategoryrow2col1customs_tirer"><a href="#"></a></div>
-			<div class="viewcategoryrow2col1customs_tirer"><a href="#"></a></div>		
-			<div class="viewcategoryrow2col1customs_tirer"><a href="#"></a></div>
-			<div class="viewcategoryrow2col1customs_tirer"><a href="#"></a></div>
-			<div class="viewcategoryrow2col1customs_tirer"><a href="#"></a></div>
+			<div class="viewcategoryrow2col1_tirer"><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Chevaliers']);?>">Chevaliers</a></div>
+			<div class="viewcategoryrow2col1_tirer"><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Pirates']);?>">Pirates</a></div>		
+			<div class="viewcategoryrow2col1_tirer"><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Antique']);?>">Antique</a></div>
+			<div class="viewcategoryrow2col1_tirer"><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Western']);?>">Western</a></div>
+			<div class="viewcategoryrow2col1_tirer"><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Fantasy']);?>">Fantasy</a></div>
+			<div class="viewcategoryrow2col1_tirer"><a href="<?=$this->url('listItemClassics', ['sub_category'=>'XVIIIe']);?>">XVIIIe</a></div>
+			<div class="viewcategoryrow2col1_tirer"><a href="<?=$this->url('listItemClassics', ['sub_category'=>'FeesPrincesses']);?>">Fée & Pincesses</a></div>
+			<div class="viewcategoryrow2col1_tirer"><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Police']);?>">Police</a></div>
+			<div class="viewcategoryrow2col1_tirer"><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Animaux']);?>">Animaux</a></div>
+			<div class="viewcategoryrow2col1_tirer"><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Sport']);?>">Sport</a></div>
+			<div class="viewcategoryrow2col1_tirer"><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Divers']);?>">Divers</a></div>
 			<li>
 				<h3 class="viewcategoryrow2col1_title">filtres</h3>
 				<div class="form-group viewcategory_checkboxmargin">
@@ -77,7 +83,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 								<?php if($product['newPrice'] === 0) : ?>
 									<h4><?=$product['price'];?>€</h4>
 								<?php else : ?>
-									<h4><?=$product['newPrice'];?>€</h4>
+									<h4><span class="viewcategoryprixpromo"><?=$product['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$product['price'];?>€</span></h4>
 								<?php endif; ?>
 
 								<p><?=$product['name'];?></p>
@@ -159,7 +165,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 	                            	<?php if($newProduct['newPrice'] === 0) : ?>
 	                            		<h4><?=$newProduct['price'];?></h4>
 	                            	<?php else : ?>
-	                            		<h4><?=$newProduct['newPrice'];?></h4>
+	                            		<h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
 	                            	<?php endif; ?>
 	                				<p><?=$newProduct['name'];?></p>
 									<div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
@@ -180,7 +186,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
                        	            <?php if($newProduct['newPrice'] === 0) : ?>
                        	                <h4><?=$newProduct['price'];?></h4>
                        	            <?php else : ?>
-                       	                <h4><?=$newProduct['newPrice'];?></h4>
+                       	                <h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
                        	            <?php endif; ?>
                        	            <p><?=$newProduct['name'];?></p>
                        			<div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
@@ -201,7 +207,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 	                            	<?php if($newProduct['newPrice'] === 0) : ?>
 	                            		<h4><?=$newProduct['price'];?></h4>
 	                            	<?php else : ?>
-	                            		<h4><?=$newProduct['newPrice'];?></h4>
+	                            		<h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
 	                            	<?php endif; ?>
 	                				<p><?=$newProduct['name'];?></p>
 									<div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>

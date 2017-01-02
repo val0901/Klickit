@@ -170,27 +170,27 @@
 			  <div class="row">
 				  <div class="col-lg-3 col-md-6 soumenu_TLA_height">
 					  <div class="soumenu_TLA_text">
-						  <li style="float:left;">Classic<li>
+						  <li style="float:left;"><a href="<?=$this->url('listItemClassicsFull');?>" style="color:#ea2127;">Classic</a><li>
 						  <li style="float:right;"><i class="fa fa-plus faplus_color plus_classic" aria-hidden="true" id="plusclassic_hide"></i><i class="fa fa-minus faminus_color minus_classic" aria-hidden="true" id="faminus_hide"></i></li>
 						  <div class="clear"></div>
 						  <ul class="soumenu_classics_text">
-							  <li>Chevaliers</li>
-							  <li>Pirates</li>
-							  <li>Antique</li>
-							  <li>Western</li>
-							  <li>Fantasy</li>
-							  <li>XVIIIe</li>
-							  <li>Fées & Princesses</li>
-							  <li>Police</li>
-							  <li>Animaux</li>
-							  <li>Sport</li>
-							  <li>Divers</li>
+							  <li><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Chevaliers']);?>" style="color:#000;">Chevaliers</a></li>
+							  <li><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Pirates']);?>" style="color:#000;">Pirates</a></li>
+							  <li><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Antique']);?>" style="color:#000;">Antique</a></li>
+							  <li><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Western']);?>" style="color:#000;">Western</a></li>
+							  <li><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Fantasy']);?>" style="color:#000;">Fantasy</a></li>
+							  <li><a href="<?=$this->url('listItemClassics', ['sub_category'=>'XVIIIe']);?>" style="color:#000;">XVIIIe</a></li>
+							  <li><a href="<?=$this->url('listItemClassics', ['sub_category'=>'FeesPrincesses']);?>" style="color:#000;">Fées & Princesses</a></li>
+							  <li><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Police']);?>" style="color:#000;">Police</a></li>
+							  <li><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Animaux']);?>" style="color:#000;">Animaux</a></li>
+							  <li><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Sport']);?>" style="color:#000;">Sport</a></li>
+							  <li><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Divers']);?>" style="color:#000;">Divers</a></li>
 					  	  </ul>
 					  </div>
 				  </div>
 				  <div class="col-lg-3 col-md-6 soumenu_TLA_height">
 					  <div class="soumenu_TLA_text">
-						  <li style="float:left;"><a href="<?=$this->url('listItemCustomFull');?>" style="color:#ea2127;">Customs<li>
+						  <li style="float:left;"><a href="<?=$this->url('listItemCustomFull');?>" style="color:#ea2127;">Customs</a><li>
 						  <li style="float:right;"><i class="fa fa-plus faplus_color plus_customs" aria-hidden="true" id="pluscustoms_hide"></i><i class="fa fa-minus faminus_color minus_customs" aria-hidden="true" id="faminus1_hide"></i></li>
 						  <div class="clear"></div>
 						  <ul class="soumenu_customs_text">
@@ -204,24 +204,24 @@
 				  </div>
 				  <div class="col-lg-3 col-md-6 soumenu_TLA_height">
 					  <div class="soumenu_TLA_text">
-						  <li style="float:left;">Pieces détachées<li>
+						  <li style="float:left;"><a href="<?=$this->url('listItemPiecesFull');?>" style="color:#ea2127;">Pieces détachées</a><li>
 						  <li style="float:right;"><i class="fa fa-plus faplus_color plus_pieces" aria-hidden="true" id="pluspieces_hide"></i><i class="fa fa-minus faminus_color minus_pieces" aria-hidden="true" id="faminus2_hide"></i></li>
 						  <div class="clear"></div>
 						  <ul class="soumenu_pieces_text">
-							  <li>Armes</li>
-							  <li>Coiffes</li>
-							  <li>Manchettes</li>
-							  <li>Cols</li>
-							  <li>Ceinturons</li>
-							  <li>Têtes</li>
-							  <li>Cheveux</li>
-							  <li>Divers</li>
+							  <li><a href="<?=$this->url('listItemPieces', ['sub_category'=>'Armes']);?>" style="color:#000;">Armes</a></li>
+							  <li><a href="<?=$this->url('listItemPieces', ['sub_category'=>'Coiffes']);?>" style="color:#000;">Coiffes</a></li>
+							  <li><a href="<?=$this->url('listItemPieces', ['sub_category'=>'Manchettes']);?>" style="color:#000;">Manchettes</a></li>
+							  <li><a href="<?=$this->url('listItemPieces', ['sub_category'=>'Cols']);?>" style="color:#000;">Cols</a></li>
+							  <li><a href="<?=$this->url('listItemPieces', ['sub_category'=>'Ceinturons']);?>" style="color:#000;">Ceinturons</a></li>
+							  <li><a href="<?=$this->url('listItemPieces', ['sub_category'=>'Tetes']);?>" style="color:#000;">Têtes</a></li>
+							  <li><a href="<?=$this->url('listItemPieces', ['sub_category'=>'Cheveux']);?>" style="color:#000;">Cheveux</a></li>
+							  <li><a href="<?=$this->url('listItemPieces', ['sub_category'=>'Divers']);?>" style="color:#000;">Divers</a></li>
 					  	  </ul>
 					  </div>
 				  </div>
 				  <div class="col-lg-3 col-md-6 soumenu_TLA_height">
 					  <div class="soumenu_TLA_text">
-						  <li style="float:left;">Boites/Set<li>
+						  <li style="float:left;"><a href="<?=$this->url('listItemDiversFull');?>" style="color:#ea2127;">Boites/Set</a><li>
 						  <li style="float:right;"><i class="fa fa-plus faplus_color plus_boites" aria-hidden="true" id="plusboites_hide"></i><i class="fa fa-minus faminus_color minus_boites" aria-hidden="true" id="faminus3_hide"></i></li>
 						  <div class="clear"></div>
 						  <ul class="soumenu_boites_text">

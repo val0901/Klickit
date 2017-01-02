@@ -77,7 +77,7 @@
 								<?php if($product['newPrice'] == 0) : ?>
 									<h4><?=$product['price'];?>€</h4>
 								<?php else : ?>
-									<h4><?=$product['newPrice'];?>€</h4>
+									<h4><span class="viewcategoryprixpromo"><?=$product['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$product['price'];?>€</span></h4>
 								<?php endif; ?>
 
 								<p><?=$product['name'];?></p>
@@ -154,7 +154,7 @@
 	                            	<?php if($newProduct['newPrice'] == 0) : ?>
 	                            		<h4><?=$newProduct['price'];?></h4>
 	                            	<?php else : ?>
-	                            		<h4><?=$newProduct['newPrice'];?></h4>
+	                            		<h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
 	                            	<?php endif; ?>
 	                				<p><?=$newProduct['name'];?></p>
 									<div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
@@ -175,7 +175,7 @@
                        	            <?php if($newProduct['newPrice'] == 0) : ?>
                        	                <h4><?=$newProduct['price'];?></h4>
                        	            <?php else : ?>
-                       	                <h4><?=$newProduct['newPrice'];?></h4>
+                       	                <h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
                        	            <?php endif; ?>
                        	            <p><?=$newProduct['name'];?></p>
                        			<div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
@@ -196,7 +196,7 @@
 	                            	<?php if($newProduct['newPrice'] == 0) : ?>
 	                            		<h4><?=$newProduct['price'];?></h4>
 	                            	<?php else : ?>
-	                            		<h4><?=$newProduct['newPrice'];?></h4>
+	                            		<h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
 	                            	<?php endif; ?>
 	                				<p><?=$newProduct['name'];?></p>
 									<div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>

@@ -22,13 +22,13 @@ class ItemModel extends \W\Model\Model
 	}
 
 	// Requête pour aller sélectionner tout les articles dans la table "Item" qui ont pour catégorie "Playmobil custom"
-	public function listItemCustom($page1, $max)
+	public function listItemCustom($page, $max)
 	{
-		$debut = ($page1 - 1) * $max;
+		$debut = ($page - 1) * $max;
 
-		$play2 = 'SELECT * FROM '.$this->table.' WHERE category = "PlaymobilCustom" LIMIT :debut, :max';
+		$play = 'SELECT * FROM '.$this->table.' WHERE category = "PlaymobilCustom" LIMIT :debut, :max';
 
-		$customPlay = $this->dbh->prepare($play2);
+		$customPlay = $this->dbh->prepare($play);
 		$customPlay->bindValue(':max', $max, \PDO::PARAM_INT);
 		$customPlay->bindValue(':debut', $debut, \PDO::PARAM_INT);
 
@@ -38,13 +38,13 @@ class ItemModel extends \W\Model\Model
 	}
 
 	// Requête pour aller sélectionner tout les articles dans la table "Item" qui ont pour catégorie "Pièces Détachées"
-	public function listItemPiece($page2, $max)
+	public function listItemPiece($page, $max)
 	{
-		$debut = ($page2 - 1) * $max;
+		$debut = ($page - 1) * $max;
 
-		$play3 = 'SELECT * FROM '.$this->table.' WHERE category = "PiecesDetachees" LIMIT :debut, :max';
+		$play = 'SELECT * FROM '.$this->table.' WHERE category = "PiecesDetachees" LIMIT :debut, :max';
 
-		$piecePlay = $this->dbh->prepare($play3);
+		$piecePlay = $this->dbh->prepare($play);
 		$piecePlay->bindValue(':max', $max, \PDO::PARAM_INT);
 		$piecePlay->bindValue(':debut', $debut, \PDO::PARAM_INT);
 
@@ -54,12 +54,12 @@ class ItemModel extends \W\Model\Model
 	}
 
 	// Requête pour aller sélectionner tout les articles dans la table "Item" qui ont pour catégorie "Divers"
-	public function listItemDivers($page3, $max)
+	public function listItemDivers($page, $max)
 	{
-		$debut = ($page3 - 1) * $max;
+		$debut = ($page - 1) * $max;
 
-		$play4 = 'SELECT * FROM '.$this->table.' WHERE category = "Divers" LIMIT :debut, :max';
-		$piecePlay = $this->dbh->prepare($play4);
+		$play = 'SELECT * FROM '.$this->table.' WHERE category = "Divers" LIMIT :debut, :max';
+		$piecePlay = $this->dbh->prepare($play);
 
 		$piecePlay->bindValue(':max', $max, \PDO::PARAM_INT);
 		$piecePlay->bindValue(':debut', $debut, \PDO::PARAM_INT);
