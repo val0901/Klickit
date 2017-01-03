@@ -178,3 +178,9 @@
 <!--End Slide articles-->
 <br><br>
 <?php $this->stop('main_content') ?>
+<?php $this->start('js') ?>
+    <script src="<?= $this->assetUrl('js/unslider.js') ?>"></script>
+    <script>
+        
+    </script>
+<?php $this->stop('js') ?>
