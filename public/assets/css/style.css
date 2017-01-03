@@ -756,7 +756,7 @@ a, a:focus, a:active, a:hover, object, embed { outline: none; }
 input::-moz-focus-inner { border: 0; }
 
 .span3 {
-	 width: 22%;
+	 width: 21.9%;
 	float: left;
 	margin: 0 20px;
 }
