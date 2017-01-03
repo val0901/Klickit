@@ -97,7 +97,7 @@
 	                            </div>
 	                            <div class="caption">
 	                            	<?php if($newProduct['newPrice'] == 0) : ?>
-	                            		<h4><?=$newProduct['price'];?></h4>
+	                            		<h4><?=$newProduct['price'];?>€</h4>
 	                            	<?php elseif($newProduct['newPrice'] > 0) : ?>
 	                            		<h4><span class="viewcategoryprixpromo"><?=$product['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$product['price'];?>€</span></h4>
 	                            	<?php endif; ?>
@@ -117,8 +117,8 @@
                        	            <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
                        	        </div>
                        	        <div class="caption">
-                       	            <?php if($newProduct['newPrice'] === 0) : ?>
-                       	                <h4><?=$newProduct['price'];?></h4>
+                       	            <?php if($newProduct['newPrice'] == 0) : ?>
+                       	                <h4><?=$newProduct['price'];?>€</h4>
                        	            <?php else : ?>
                        	                <h4><?=$newProduct['newPrice'];?></h4>
                        	            <?php endif; ?>
@@ -138,8 +138,8 @@
 	                                <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
 	                            </div>
 	                            <div class="caption">
-	                            	<?php if($newProduct['newPrice'] === 0) : ?>
-	                            		<h4><?=$newProduct['price'];?></h4>
+	                            	<?php if($newProduct['newPrice'] == 0) : ?>
+	                            		<h4><?=$newProduct['price'];?>€</h4>
 	                            	<?php else : ?>
 	                            		<h4><?=$newProduct['newPrice'];?></h4>
 	                            	<?php endif; ?>
