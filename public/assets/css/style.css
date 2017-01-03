@@ -1011,10 +1011,14 @@ h4 {
 	padding: 5px;
 }
 
-/*customs.php*/
-.classics_background {
-	background-color: rgba(255, 147, 30, 0.3);
+.viewcategorycol2classic_title {
+    font-size: 3em;
+	color: #3fa9f5;
 }
+/*customs.php*/
+/*.classics_background {
+	background-color: rgba(255, 147, 30, 0.3);
+}*/
 
 .viewcategorycol2customs_title {
     font-size: 3em;
