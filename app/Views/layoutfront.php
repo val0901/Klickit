@@ -414,12 +414,12 @@
 			<div class="row footerrow_margin">
 				<div class="col-md-4 etiq_width">
 					<p class="footertitle">Société</p>
-						<a href="<?=$this->url('front_legalMention');?>"><p class="footertext">Mentions légales</p></a>				
-						<a href="<?=$this->url('front_cgv');?>"><p class="footertext">Condition Générales de Ventes</p></a>
-						<a href="<?=$this->url('front_createEvent');?>"><p class="footertext">Création d'évènement Playmobil</p></a>
-						<a href="<?=$this->url('front_contact');?>"><p class="footertext">Contact</p></a>
-						<a href="<?=$this->url('front_team');?>"><p class="footertext">Equipe de création</p></a>
-						<a href="<?=$this->url('fGuestbook');?>"><p class="footertext">Laissez nous votre avis</p></a>
+						<a href="<?=$this->url('front_legalMention');?>"><p class="footertext" style="color: #fff;">Mentions légales</p></a>				
+						<a href="<?=$this->url('front_cgv');?>"><p class="footertext" style="color: #fff;">Condition Générales de Ventes</p></a>
+						<a href="<?=$this->url('front_createEvent');?>"><p class="footertext" style="color: #fff;">Création d'évènement Playmobil</p></a>
+						<a href="<?=$this->url('front_contact');?>"><p class="footertext" style="color: #fff;">Contact</p></a>
+						<a href="<?=$this->url('front_team');?>"><p class="footertext" style="color: #fff;">Equipe de création</p></a>
+						<a href="<?=$this->url('fGuestbook');?>"><p class="footertext" style="color: #fff;">Laissez nous votre avis</p></a>
 					</div>
 					<div class="col-md-4 etiq_width">
 						<p class="footertitle">Suivez-nous</p>
