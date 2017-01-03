@@ -4,7 +4,7 @@
 <!--section 4 categories-->
 <div class="">
 	<div class="row">
-        <a href="listItemClassicsFull">
+        <a href="<?=$this->url('listItemClassicsFull');?>">
     		<div class="col-lg-3 col-xs-6" style="position:relative;" id="categoryclassic_hover">
     			<div class="classic_text"><span>Classics</span></div>
     			<img class="img-responsive" src="<?=$this->assetUrl('/img/art_classic_divers_000001.jpg');?>" id="categoryclassic_hover">
@@ -20,7 +20,7 @@
     		</div>
         </a>
         
-        <a href="listItemPiecesFull">
+        <a href="<?=$this->url('listItemPiecesFull');?>">
     		<div class="col-lg-3 col-xs-6" id="categorypieces_hover">
     			<div class="pieces_text"><span>Pièces</span></div>
     			<img class="img-responsive" src="<?=$this->assetUrl('/img/art_classic_divers_000003.jpg');?>" id="categorypieces_hover">
@@ -28,7 +28,7 @@
     		</div>
         </a>
 
-        <a href="listItemDiversFull">
+        <a href="<?=$this->url('listItemDiversFull');?>">
     		<div class="col-lg-3 col-xs-6" id="categorydivers_hover">
     			<div class="divers_text"><span>Divers</span></div>
     			<img class="img-responsive" src="<?=$this->assetUrl('/img/art_divers_bte000001.jpg');?>" id="categorydivers_hover">
