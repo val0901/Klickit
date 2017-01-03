@@ -727,7 +727,14 @@ $(document).ready(function(){
 	
 	/*4 categories hover background-color change*/
 	$(document).ready(function(){
-		$("#categoryclassic_hover").hover(function () { $(".classic_text").hide(); $(".classic_text_show").show() }, function () { $(".classic_text").show(); $(".classic_text_show").hide() }); 
+		$("#categoryclassic_hover").hover(function () { $(".classic_text").hide(); $(".classic_text_show").show();
+        }, function () { $(".classic_text").show(); $(".classic_text_show").hide() }); 
+	})
+    
+    $(document).ready(function(){
+		$(".classic_text_show").hover(function(){
+        $("#categoryclassic_hover").css("background-color", "#3fa9f5"); 
+        })
 	})
 	
 	$(document).ready(function(){
