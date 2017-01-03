@@ -19,9 +19,9 @@
 	<!--End viewcategory row1 col1,2-->
 
 <!--vignetteEvent-->
-<div class="vignetteEvent_hide">
+<!--<div class="vignetteEvent_hide">
 	<img class="img-responsive" src="<?=$this->assetUrl('/img/vignetteEvent1.png');?>">
-</div>
+</div>-->
 <!--End vignetteEvent-->
 	
 	<!--viewcategory row2 col1-->
