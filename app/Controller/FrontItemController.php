@@ -54,7 +54,7 @@ class FrontItemController extends Controller
 			'nb' => $nb,
 		];
 
-		$this->show('front/Items/customsFull', $data);
+		$this->show('front/Items/classicsFull', $data);
 	}
 
 	/**
