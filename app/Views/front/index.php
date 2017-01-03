@@ -93,7 +93,14 @@
                                         <h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
                                     <?php endif; ?>
                                     <p><?=$newProduct['name'];?></p>
-                                    <div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
+
+                                    <?php if($newProduct['statut'] == 'nouveaute'):?>
+                                        <div class="viewcategory_nouveau"><?=$newProduct['statut'];?></div>
+                                    <?php elseif($newProduct['statut'] == 'promotion'):?>
+                                        <div class="viewcategory_promo"><?=$newProduct['statut'];?></div>
+                                    <?php elseif($newProduct['statut'] == 'defaut'): ?>
+                                        <div class="viewcategory_defaut"></div>
+                                    <?php endif; ?>
                                     <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
                                 </div>
                             </li>
@@ -114,7 +121,14 @@
                                         <h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
                                     <?php endif; ?>
                                     <p><?=$newProduct['name'];?></p>
-                                    <div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
+
+                                    <?php if($newProduct['statut'] == 'nouveaute'):?>
+                                        <div class="viewcategory_nouveau"><?=$newProduct['statut'];?></div>
+                                    <?php elseif($newProduct['statut'] == 'promotion'):?>
+                                        <div class="viewcategory_promo"><?=$newProduct['statut'];?></div>
+                                    <?php elseif($newProduct['statut'] == 'defaut'): ?>
+                                        <div class="viewcategory_defaut"></div>
+                                    <?php endif; ?>
                                     <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
                                 </div>
                             </li>
@@ -135,7 +149,14 @@
                                         <h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
                                     <?php endif; ?>
                                     <p><?=$newProduct['name'];?></p>
-                                    <div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
+
+                                    <?php if($newProduct['statut'] == 'nouveaute'):?>
+                                        <div class="viewcategory_nouveau"><?=$newProduct['statut'];?></div>
+                                    <?php elseif($newProduct['statut'] == 'promotion'):?>
+                                        <div class="viewcategory_promo"><?=$newProduct['statut'];?></div>
+                                    <?php elseif($newProduct['statut'] == 'defaut'): ?>
+                                        <div class="viewcategory_defaut"></div>
+                                    <?php endif; ?>
                                     <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
                                 </div>
                             </li>
