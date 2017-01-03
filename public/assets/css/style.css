@@ -904,6 +904,10 @@ h3 {
 	margin: 1px 0px;
 }
 
+.viewcategoryrow2col1_tirer a {
+    color: #fff;
+}
+
 .viewcategoryrow2col1_tirer:hover {
 	background-color: #289ff4;
 	cursor: pointer;
