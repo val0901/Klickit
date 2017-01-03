@@ -75,7 +75,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 				<form method="post">
 					<?php foreach ($items as $product) : ?>
 						<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
-							<a href="#"><img src="<?=$this->assetUrl('art/'.$product['picture1']);?>" alt="photo de playmobil" class="img-thumbnail"></a>
+							<a href="<?=$this->url('viewArt', ['id' => $product['id']]);?>"><img src="<?=$this->assetUrl('art/'.$product['picture1']);?>" alt="photo de playmobil" class="img-thumbnail"></a>
 							<div class="viewcategorycaption">
 								<?php if($product['newPrice'] === 0) : ?>
 									<h4><?=$product['price'];?>€</h4>
@@ -156,7 +156,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
                     	<?php foreach ($afficheNewItem as $newProduct) : ?>
 	                        <li class="span3">
 	                            <div class="thumbnail">
-	                                <a href="#"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
+	                                <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
 	                            </div>
 	                            <div class="caption">
 	                            	<?php if($newProduct['newPrice'] === 0) : ?>
@@ -177,7 +177,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
                         <?php foreach ($afficheNewItem as $newProduct) : ?>
                        	    <li class="span3">
                        	        <div class="thumbnail">
-                       	            <a href="#"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
+                       	            <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
                        	        </div>
                        	        <div class="caption">
                        	            <?php if($newProduct['newPrice'] === 0) : ?>
@@ -198,7 +198,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
                         <?php foreach ($afficheNewItem as $newProduct) : ?>
 	                        <li class="span3">
 	                            <div class="thumbnail">
-	                                <a href="#"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
+	                                <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
 	                            </div>
 	                            <div class="caption">
 	                            	<?php if($newProduct['newPrice'] === 0) : ?>

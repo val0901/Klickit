@@ -174,7 +174,7 @@
                        <?php foreach ($afficheNewItem as $newProduct) : ?>
 	                        <li class="span3">
 	                            <div class="thumbnail">
-	                                <a href="#"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
+	                                <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
 	                            </div>
 	                            <div class="caption">
 	                            	<?php if($newProduct['newPrice'] == 0) : ?>
@@ -195,7 +195,7 @@
                         <?php foreach ($afficheNewItem as $newProduct) : ?>
 	                        <li class="span3">
 	                            <div class="thumbnail">
-	                                <a href="#"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
+	                                <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
 	                            </div>
 	                            <div class="caption">
 	                            	<?php if($newProduct['newPrice'] == 0) : ?>
@@ -216,7 +216,7 @@
                         <?php foreach ($afficheNewItem as $newProduct) : ?>
 	                        <li class="span3">
 	                            <div class="thumbnail">
-	                                <a href="#"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
+	                                <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
 	                            </div>
 	                            <div class="caption">
 	                            	<?php if($newProduct['newPrice'] == 0) : ?>

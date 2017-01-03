@@ -43,8 +43,8 @@ class FrontItemController extends Controller
 		$newItems = new ItemModel();
 		$afficheNewItems = $newItems->findCategoryStatutCustom('PlaymobilClassique', 'nouveaute');
 
-		$getCustomItems = new ItemModel();
-		$items = $getCustomItems->findByCategory('PlaymobilClassique', $page, $max);
+		$getClassicItems = new ItemModel();
+		$items = $getClassicItems->findByCategory('PlaymobilClassique', $page, $max);
 
 		$data = [
 			'afficheNewItem' => $afficheNewItems,
