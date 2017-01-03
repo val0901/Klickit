@@ -80,7 +80,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 						<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
 							<a href="<?=$this->url('viewArt', ['id' => $product['id']]);?>"><img src="<?=$this->assetUrl('art/'.$product['picture1']);?>" alt="photo de playmobil" class="img-thumbnail"></a>
 							<div class="viewcategorycaption">
-								<?php if($product['newPrice'] === 0) : ?>
+								<?php if($product['newPrice'] == 0) : ?>
 									<h4><?=$product['price'];?>€</h4>
 								<?php else : ?>
 									<h4><span class="viewcategoryprixpromo"><?=$product['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$product['price'];?>€</span></h4>
