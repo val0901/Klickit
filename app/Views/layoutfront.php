@@ -52,7 +52,7 @@
     <!-- styles page event-->
     <link rel="stylesheet" href="<?= $this->assetUrl('css/stylebis.css') ?>">
     <link rel="stylesheet" href="<?= $this->assetUrl('css/eventmediaquery.css') ?>">
-    <link rel="stylesheet" href="<?= $this->assetUrl('css/slider.css')?>">
+    <link rel="stylesheet" href="<?= $this->assetUrl('css/unslider.css')?>">
     
 </head>
 <body>
