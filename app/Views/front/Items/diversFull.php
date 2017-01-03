@@ -152,8 +152,8 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 	                                <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
 	                            </div>
 	                            <div class="caption">
-	                            	<?php if($newProduct['newPrice'] === 0) : ?>
-	                            		<h4><?=$newProduct['price'];?></h4>
+	                            	<?php if($newProduct['newPrice'] == 0) : ?>
+	                            		<h4><?=$newProduct['price'];?>€</h4>
 	                            	<?php else : ?>
 	                            		<h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
 	                            	<?php endif; ?>
@@ -173,8 +173,8 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
                        	            <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
                        	        </div>
                        	        <div class="caption">
-                       	            <?php if($newProduct['newPrice'] === 0) : ?>
-                       	                <h4><?=$newProduct['price'];?></h4>
+                       	            <?php if($newProduct['newPrice'] == 0) : ?>
+                       	                <h4><?=$newProduct['price'];?>€</h4>
                        	            <?php else : ?>
                        	                <h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
                        	            <?php endif; ?>
@@ -194,8 +194,8 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 	                                <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
 	                            </div>
 	                            <div class="caption">
-	                            	<?php if($newProduct['newPrice'] === 0) : ?>
-	                            		<h4><?=$newProduct['price'];?></h4>
+	                            	<?php if($newProduct['newPrice'] == 0) : ?>
+	                            		<h4><?=$newProduct['price'];?>€</h4>
 	                            	<?php else : ?>
 	                            		<h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
 	                            	<?php endif; ?>
