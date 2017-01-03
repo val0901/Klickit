@@ -3,7 +3,7 @@
 <?php $this->start('main_content') ?>
 <div>
 	<!--viewcategory row1 col1,2-->
-	<div class="row classics_background">
+	<div class="row customs_background">
 		<div class="col-md-3" style="position:relative;">
 			<div class="classic_text_show"><span>Customs</span></div>
 			<img class="img-responsive" src="<?=$this->assetUrl('/img/art_classic_divers_000002.jpg');?>">
