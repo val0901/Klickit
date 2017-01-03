@@ -26,13 +26,19 @@ class FrontController extends Controller
 	public function index()
 	{	
 		$data = [];
-		/******************Affichage des commentaires*****************/
+		/******************Affichage des commentaires******************/
 
 		$getComment = new GuestbookModel();
 		$comments = $getComment->findAllMessageFront();
+
+		/*****************Affichage du slider nouveauté/promotion*****************/
+
+		$getStatut = new ItemModel();
+		$statut = $getStatut->findStatut('nouveaute', 'promotion');
 		
 		$data = [
 			'comments'		=>	$comments,
+			'statut'		=>  $statut,
 		];	
 
 

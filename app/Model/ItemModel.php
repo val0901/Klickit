@@ -115,7 +115,22 @@ class ItemModel extends \W\Model\Model
 		$sth->execute();
 
 		return $sth->fetchAll();
-	}	
+	}
+
+	/**
+	 * Requête d'affichage pour statut promotion et nouveauté
+	 */	
+	public function findStatut($statut1, $statut2)
+	{
+		$sql = 'SELECT * FROM '.$this->table.' WHERE statut = :statut1 OR statut = :statut2';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':statut1', $statut1);
+		$sth->bindValue(':statut2', $statut2);
+		$sth->execute();
+
+		return $sth->fetchAll();
+	}
 
 	/**
 	 * REQUÊTE D'AFFICHAGE D'UNE SUB_CATEGORY
