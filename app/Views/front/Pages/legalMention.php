@@ -19,7 +19,7 @@ Site Web :  <a href="http://http://www.ovh.com" style="color:#ff931e;">http://ww
 <p style="color: #b51a00;"><span style="color: rgb(0, 0, 0);"><b>Développement</b><b> : </b></span></p>
 Front-End : Jie Xu, Cécile Lafont - Back-End : Landy Razafindrabe, Valérie Baldy-Symezac, Théo Appelius
 Adresse : Equipe issue de WebForce3
-Site Web : <a href="http://http://www.klickit.fr/public/team" style="color:#ff931e;">http://www.klickit.fr/public/team</a>
+Site Web : <a href="http://http://www.klickit.fr/public/team" style="color:#ff931e;">voir l'équipe</a>
 </br>
 <p style="color: #b51a00;"><span style="color: rgb(0, 0, 0);"><b>Conditions d’utilisation : </b></span></p>
 Ce site (<a href="http://www.klickit.fr" style="color:#ff931e;">www.klickit.fr</a>) est proposé en différents langages web (HTML, HTML5, Javascript, CSS, etc…) pour un meilleur confort d'utilisation et un graphisme plus agréable, nous vous recommandons de recourir à des navigateurs modernes comme Internet explorer, Safari, Firefox, Google Chrome, etc…
