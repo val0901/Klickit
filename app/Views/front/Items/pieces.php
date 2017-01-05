@@ -99,7 +99,7 @@
 								<h4><span class="viewcategoryprixpromo"><?=$product['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$product['price'];?>€</span></h4>
 							<?php endif; ?>
 
-							<p><?=$product['name'];?></p>
+							<p><i class="fa fa-heart-o fa-fw" aria-hidden="true" style="color: #999;"></i> <?=$product['name'];?></p>
 
 							<?php if($product['statut'] == 'nouveaute'):?>
 								<div class="viewcategory_nouveau"><?=$product['statut'];?></div>
@@ -174,7 +174,7 @@
 	                            	<?php else : ?>
 	                            		<h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
 	                            	<?php endif; ?>
-	                				<p><?=$newProduct['name'];?></p>
+	                				<p><i class="fa fa-heart-o fa-fw" aria-hidden="true" style="color: #999;"></i> <?=$newProduct['name'];?></p>
 									<div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
 	                                <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
 	                            </div>
@@ -195,7 +195,7 @@
 	                            	<?php else : ?>
 	                            		<h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
 	                            	<?php endif; ?>
-	                				<p><?=$newProduct['name'];?></p>
+	                				<p><i class="fa fa-heart-o fa-fw" aria-hidden="true" style="color: #999;"></i> <?=$newProduct['name'];?></p>
 									<div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
 	                                <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
 	                            </div>
@@ -216,7 +216,7 @@
 	                            	<?php else : ?>
 	                            		<h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
 	                            	<?php endif; ?>
-	                				<p><?=$newProduct['name'];?></p>
+	                				<p><i class="fa fa-heart-o fa-fw" aria-hidden="true" style="color: #999;"></i> <?=$newProduct['name'];?></p>
 									<div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
 	                                <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
 	                            </div>

@@ -78,7 +78,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 				<form method="post">
 					<?php foreach ($items as $product) : ?>
 						<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
-							<a href="<?=$this->url('viewArt', ['id' => $product['id']]);?>"><img src="<?=$this->assetUrl('art/'.$product['picture1']);?>" alt="photo de playmobil" class="img-thumbnail"></a>
+                         <a href="<?=$this->url('viewArt', ['id' => $product['id']]);?>"><img src="<?=$this->assetUrl('art/'.$product['picture1']);?>" alt="photo de playmobil" class="img-thumbnail" style=""></a>
 							<div class="viewcategorycaption">
 								<?php if($product['newPrice'] == 0) : ?>
 									<h4><?=$product['price'];?>€</h4>
@@ -86,7 +86,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 									<h4><span class="viewcategoryprixpromo"><?=$product['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$product['price'];?>€</span></h4>
 								<?php endif; ?>
 
-								<p><?=$product['name'];?></p>
+								<p><i class="fa fa-heart-o fa-fw" aria-hidden="true" style="color: #999;"></i> <?=$product['name'];?></p>
 
 								<?php if($product['statut'] == 'nouveaute'):?>
 									<div class="viewcategory_nouveau"><?=$product['statut'];?></div>
@@ -167,7 +167,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 	                            	<?php else : ?>
 	                            		<h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
 	                            	<?php endif; ?>
-	                				<p><?=$newProduct['name'];?></p>
+	                				<p><i class="fa fa-heart-o fa-fw" aria-hidden="true" style="color: #999;"></i> <?=$newProduct['name'];?></p>
 									<div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
 	                                <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
 	                            </div>
@@ -188,7 +188,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
                        	            <?php else : ?>
                        	                <h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
                        	            <?php endif; ?>
-                       	            <p><?=$newProduct['name'];?></p>
+                       	            <p><i class="fa fa-heart-o fa-fw" aria-hidden="true" style="color: #999;"></i> <?=$newProduct['name'];?></p>
                        			<div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
                        	        <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
                        	        </div>
@@ -209,7 +209,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 	                            	<?php else : ?>
 	                            		<h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
 	                            	<?php endif; ?>
-	                				<p><?=$newProduct['name'];?></p>
+	                				<p><i class="fa fa-heart-o fa-fw" aria-hidden="true" style="color: #999;"></i> <?=$newProduct['name'];?></p>
 									<div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
 	                                <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
 	                            </div>
