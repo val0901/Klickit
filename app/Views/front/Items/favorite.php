@@ -49,7 +49,7 @@
                     </div>
                         <div class="viewcategory_button">
         				          <button type="button" class="btn btn-primary favorite_button_size ">ajouter au panier</button>
-        				        </div>
+        				        </div> 
                         <p class="favorite_voirplus">Voir même catégorie</p>
                 </div>
           <?php endforeach; ?> <!-- fin du foreach $favorite -->
