@@ -1,4 +1,4 @@
-<?php $this->layout('layout', ['title' => 'Perdu ?']) ?>
+<?php $this->layout('layoutfront', ['title' => 'Perdu ?']) ?>
 
 <?php $this->start('main_content'); ?>
 <div class="row">
