@@ -46,19 +46,37 @@
 <div class="row commtaire_back">
   <div class="col-md-2"></div>
   <div class="col-md-10 col2_commentaireback my-slider">
-    <ul>
-        <?php foreach($comments as $value) :?>
-                <?php if($value['published'] == 'oui'):?>
-                    <li>  
-                        <div class="commentaire">  
-                            <img class="img-responsive-tete" src="<?=$this->assetUrl('/img/avatarBoylarge.png');?>" style="float: left;">
-                              <span class="col2commtaire_margin commentaire_title"><?=$value['subject']?><span style="float:right;" class="quote_hide"><i class="fa fa-quote-right fa-4x" aria-hidden="true" style="color: #7bc942;"></i></span><span style="padding-left:50px;font-size:25px;font-weight:400;"><?=$value['content'].' '?></span><span style="font-size:25px;font-weight:400;"><?=' ...'.$value['firstname'].' '.ucfirst(substr($value['lastname'],0,1))?></span>
-                              </span>
-                        </div>
-                    </li>      
-                <?php endif;?>   
-        <?php endforeach;?>  
-    </ul>    
+<div id="myPageContent" class="container-fluid">
+    <section id="home">
+        <div id="textSlider" class="row">
+            <div class="col-md-9 slideCol">
+                <div class="scroller">
+                    <div class="inner">
+                        <ul>
+                        <?php foreach($comments as $value) :?>
+                                <?php if($value['published'] == 'oui'):?>
+                                    <li>  
+                                        <div class="commentaire">  
+                                            <img class="img-responsive-tete" src="<?=$this->assetUrl('/img/avatarBoylarge.png');?>" style="float: left;">
+                                              <span class="col2commtaire_margin commentaire_title"><?=$value['subject']?><span class="comment_text"><?=$value['content'].' '?></span><span class="comment_username"><?=' ...'.$value['firstname'].' '.ucfirst(substr($value['lastname'],0,1))?></span>
+                                              </span>
+                                        </div>
+                                    </li>      
+                                <?php endif;?>   
+                        <?php endforeach;?>
+                      </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="quote_hide">
+                <i class="fa fa-quote-right fa-fw" aria-hidden="true" style="color: #7bc942;font-size: 120px;"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+      
   </div>
 </div>
 <!--End La derniere commentaire-->

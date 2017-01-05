@@ -614,7 +614,8 @@ a#customsmenu_scat{
 
 .commentaire_title {
 	font-size: 30px;
-	font-weight: 600;
+	font-weight: 400;
+    line-height: 20px;
 }
 
 .quote_hide {
@@ -639,6 +640,114 @@ a#customsmenu_scat{
 
 .evenement_img > img {
 	width: 100%;
+}
+
+.comment_text {
+    padding-left:10px;
+    font-size:25px;
+    font-weight:400;
+}
+
+.comment_username {
+    font-size:25px;
+    font-weight:600;
+}
+/*commentaire slider*/
+/*.container-fluid {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}*/
+/*#myPageContent, section { 
+	height:100% !important; 
+	width:100% !important;
+}*/
+
+
+/* Slider */
+/*#textSlider.row {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100% !important;
+}*/
+/*#textSlider div {
+	color: #000;
+	font-family: 'Lato', sans-serif;
+	text-transform: uppercase;
+}*/
+
+/*.iamCol {
+    text-align: right;
+	float: left;
+	font-weight: 300;
+	font-size:30pt;
+}*/
+.iamCol p:nth-child(2) { margin-top: -20pt !important; }
+.slideCol {
+	text-align: left;
+    overflow: hidden;
+	font-weight: 900;
+	font-size:70pt;
+	display: block;
+	white-space: wrap;
+}
+.slideCol p { margin: 0px !important; }
+
+.scroller {
+   height: 100pt;
+   line-height: 30pt;
+   overflow: hidden;
+}
+.scroller .inner { animation: 10s normal infinite running scroll; }
+@keyframes scroll {
+   0%  	{margin-top: 0px;}
+   15% 	{margin-top: 0px;}
+
+   25%  {margin-top: -100pt;}
+   40%  {margin-top: -100pt;}
+   
+   50%  {margin-top: -200pt;}
+   65%  {margin-top: -200pt;}
+
+   75%  {margin-top: -300pt;}
+   90%  {margin-top: -300pt;}
+
+   100% {margin-top: 0px;}
+}
+
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */ 
+@media only screen and (min-width : 320px) and (max-width : 479px) {
+	#textSlider.row { margin-right: 0px !important; margin-left: 0px !important; }
+    .iamCol { text-align: center; font-size:20pt; }
+	.iamCol p { display: inline !important; }
+	.slideCol { font-size: 25pt; text-align: center; margin-top: -20px; }
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) and (max-width : 765px) {
+	#textSlider.row { margin-right: 0px !important; margin-left: 0px !important; }
+    .iamCol { text-align: center; font-size:25pt; }
+	.iamCol p { display: inline !important; }
+	.slideCol { font-size: 38pt; text-align: center; margin-top: -20px; }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) and (max-width : 992px) {
+	#textSlider.row { margin-right: 0px !important; margin-left: 0px !important; }
+	.iamCol { text-align: center; font-size:30pt; }
+	.iamCol p { display: inline !important; }
+	.slideCol { font-size: 50pt; text-align: center; margin-top: 5px; }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) and (max-width : 1200px) {
+	#textSlider.row { margin-right: 0px !important; margin-left: 0px !important; }
+	.iamCol { text-align: right; font-size:30pt; }
+	.slideCol { font-size: 55pt; text-align: left; }
 }
 
 /*index.php la derniere event*/
