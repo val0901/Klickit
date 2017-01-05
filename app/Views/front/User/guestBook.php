@@ -30,7 +30,7 @@
 
 	   <!--place of comments-->
 	   <form method="post">
-	   	<textarea class="form-control" name="content" rows="10" placeholder="votre commentaire..."></textarea>
+	   	<textarea class="form-control" name="content" rows="10" placeholder="Merci d'être arrivé jusqu'ici ! Vous pouvez nous laisser vos commentaires."></textarea>
 		<br><br>
 		<div style="text-align:center;">
 			<button type="submit" class="btn btn-primary guestbook_button"><strong>laissez votre commentaire</strong></button>
