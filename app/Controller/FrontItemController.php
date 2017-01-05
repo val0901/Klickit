@@ -4,6 +4,7 @@ namespace Controller;
 
 use \W\Controller\Controller;
 use \Model\ItemModel;
+use \Model\UserModel;
 use \W\Security\AuthorizationModel;
 use \W\Security\AuthentificationModel;
 use \Respect\Validation\Validator as v;
@@ -219,7 +220,22 @@ class FrontItemController extends Controller
 	 */
 	public function viewFavorites()
 	{
-		$this->show('front/Items/favorite');
+		$user = new UserModel();
+		$findUser = $user->findUser($_SESSION['user']['id']);
+
+		$items = new ItemModel();
+
+		$data = [
+				'user'	=> $findUser,
+				'items' => $items,
+			];
+
+		if(!empty($this->getUser())){
+			$this->show('front/Items/favorite', $data);	
+		}
+		else {
+			$this->redirectToRoute('login');
+		}
 	}
 
 }

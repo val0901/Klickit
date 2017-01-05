@@ -6,8 +6,7 @@ use \W\Model\UsersModel;
 class UserModel extends \W\Model\UsersModel 
 {
 	public function findAllUsers($page, $max)
-	{
-		
+	{	
 		$debut = ($page - 1) * $max;
 
 		$sql = 'SELECT * FROM '.$this->table.' ORDER BY lastname ASC LIMIT :debut, :max';
@@ -21,8 +20,23 @@ class UserModel extends \W\Model\UsersModel
 		return $sth->fetchAll();	
 	}
 
+	/**
+	 * Requête pour les user sans pagination 
+	 */
+	public function findUser($id)
+	{
+		$sql = 'SELECT * FROM '.$this->table.' WHERE id = :id';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':id', $id);
+
+		$sth->execute();
+
+		return $sth->fetch();
+	}
+
 	/** 
-	*Méthode pour compter le nombre de résultat 
+	* Méthode pour compter le nombre de résultat 
 	* @return le nombre de lignes contenu ds la table
 	*/
 
