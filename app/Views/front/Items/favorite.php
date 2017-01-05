@@ -23,62 +23,37 @@
 	   <p class="orderMC_title">MES FAVORIS</p>
 	   
        <div class="row">
-           <div class="col-lg-3 col-sm-6">
-                <div class="thumbnail">
-                    <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_espacerobots_000002.jpg');?>" alt=""></a>
-                </div>
-                <div class="caption">
-                    <div class="favorite_price">8 € <span class="favorite_pricenormal">10 €</span></div>
-                    <p>Princess Playmo</p>
-                 <div class="slidecontent_promo">promo !</div>
-                </div>
-                <div class="viewcategory_button">
-				    <button type="button" class="btn btn-primary favorite_button_size ">ajouter au panier</button>
-				</div>
-                <p class="favorite_voirplus">Voir meme catégorie</p>
-           </div>
-           <div class="col-lg-3 col-sm-6">
-            <div class="thumbnail">
-                    <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_espacerobots_000002.jpg');?>" alt=""></a>
-                </div>
-                <div class="caption">
-                    <div class="favorite_price">8 € <span class="favorite_pricenormal">10 €</span></div>
-                    <p>Princess Playmo</p>
-                    <div class="slidecontent_promo">promo !</div>
-                </div>
-                <div class="viewcategory_button">
-				    <button type="button" class="btn btn-primary favorite_button_size ">ajouter au panier</button>
-				</div>
-                <p class="favorite_voirplus">Voir meme catégorie</p>
-           </div>
-           <div class="col-lg-3 col-sm-6">
-            <div class="thumbnail">
-                    <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_espacerobots_000002.jpg');?>" alt=""></a>
-                </div>
-                <div class="caption">
-                    <div class="favorite_price">8 € <span class="favorite_pricenormal">10 €</span></div>
-                    <p>Princess Playmo</p>
-                    <div class="slidecontent_promo">promo !</div>
-                </div>
-                <div class="viewcategory_button">
-				    <button type="button" class="btn btn-primary favorite_button_size ">ajouter au panier</button>
-				</div>
-                <p class="favorite_voirplus">Voir meme catégorie</p>
-           </div>
-           <div class="col-lg-3 col-sm-6">
-            <div class="thumbnail">
-                    <a href="#"><img src="<?=$this->assetUrl('/img/art_classic_espacerobots_000002.jpg');?>" alt=""></a>
-                </div>
-                <div class="caption">
-                    <div class="favorite_price">8 € <span class="favorite_pricenormal">10 €</span></div>
-                    <p>Princess Playmo</p>
-                    <div class="slidecontent_promo">promo !</div>
-                </div>
-                <div class="viewcategory_button">
-				    <button type="button" class="btn btn-primary favorite_button_size ">ajouter au panier</button>
-				</div>
-                <p class="favorite_voirplus">Voir meme catégorie</p>
-           </div>
+           <div class="row">
+          <?php $favorite = explode(', ', $user['favorites']); ?>
+          <?php foreach($favorite as $value): ?>
+                <?php $list_items = $items->findItems($value); ?>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="thumbnail">
+                        <a href="<?=$this->url('viewArt', ['id' => $list_items['id']]);?>"><img src="<?=$this->assetUrl('art/'.$list_items['picture1']);?>" alt=""></a>
+                    </div>
+                    <div class="caption">
+                        <?php if($list_items['newPrice'] == 0) : ?>
+                          <h4><?=$list_items['price'];?>€</h4>
+                        <?php else : ?>
+                          <h4><span class="viewcategoryprixpromo"><?=$list_items['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$list_items['price'];?>€</span></h4>
+                        <?php endif; ?>
+
+                        <p><?=$list_items['name'];?></p>
+
+                        <?php if($list_items['statut'] == 'nouveaute'):?>
+                          <div class="viewcategory_nouveau"><?=$list_items['statut'];?></div>
+                        <?php elseif($list_items['statut'] == 'promotion'):?>
+                          <div class="viewcategory_promo"><?=$list_items['statut'];?></div>
+                        <?php elseif($list_items['statut'] == 'defaut'): ?>
+                          <div class="viewcategory_defaut"></div>
+                        <?php endif; ?>
+                    </div>
+                        <div class="viewcategory_button">
+                          <button type="button" class="btn btn-primary favorite_button_size ">ajouter au panier</button>
+                        </div>
+                        <p class="favorite_voirplus">Voir même catégorie</p>
+              </div>
+              <?php endforeach; ?> <!-- fin du foreach $favorite -->
        </div>
    </div>
   </div>
