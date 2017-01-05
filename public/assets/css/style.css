@@ -590,6 +590,11 @@ a#customsmenu_scat{
 }
 
 /*index.php commentaire*/
+
+.unslider-nav {
+    display:none;
+}
+
 .commtaire_back {
 	background-image: url("../img/boxBackground.jpg");
 }
