@@ -75,7 +75,7 @@
 									<h4><span class="viewcategoryprixpromo"><?=$product['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$product['price'];?>€</span></h4>
 								<?php endif; ?>
 
-								<p><i class="fa fa-heart-o fa-fw" aria-hidden="true" style="color: #999;"></i> <?=$product['name'];?></p>
+								<p><span style="cursor:pointer;"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></span> <?=$product['name'];?></p>
 
 								<?php if($product['statut'] == 'nouveaute'):?>
 									<div class="viewcategory_nouveau"><?=$product['statut'];?></div>
@@ -151,7 +151,7 @@
 	                            	<?php else : ?>
 	                            		<h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
 	                            	<?php endif; ?>
-	                				<p><i class="fa fa-heart-o fa-fw" aria-hidden="true" style="color: #999;"></i> <?=$newProduct['name'];?></p>
+	                				<p><span style="cursor:pointer;"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></span> <?=$newProduct['name'];?></p>
 									<div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
 	                                <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
 	                            </div>
@@ -172,7 +172,7 @@
 	                            	<?php else : ?>
 	                            		<h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
 	                            	<?php endif; ?>
-	                				<p><i class="fa fa-heart-o fa-fw" aria-hidden="true" style="color: #999;"></i> <?=$newProduct['name'];?></p>
+	                				<p><span style="cursor:pointer;"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></span> <?=$newProduct['name'];?></p>
 									<div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
 	                                <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
 	                            </div>
@@ -193,7 +193,7 @@
 	                            	<?php else : ?>
 	                            		<h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
 	                            	<?php endif; ?>
-	                				<p><i class="fa fa-heart-o fa-fw" aria-hidden="true" style="color: #999;"></i> <?=$newProduct['name'];?></p>
+	                				<p><span style="cursor:pointer;"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></span> <?=$newProduct['name'];?></p>
 									<div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
 	                                <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
 	                            </div>
