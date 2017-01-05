@@ -24,7 +24,7 @@
 		   <div class="col-md-9">
 		   	   <p class="cptuser_textlien"><a href="<?=$this->url('front_listOrders');?>">histori<span style="letter-spacing: 0.01em;">q</span>ue de mes commandes</a></p>
 			   <p class="cptuser_textlien"><a href="<?=$this->url('front_fUpdateUser', ['id' => $_SESSION['user']['id']]);?>">mes informations personnelles</a></p>   
-			   <p class="cptuser_textlien"><a href="#">mes favoris</a></p> 
+			   <p class="cptuser_textlien"><a href="<?=$this->url('favorite', ['id'=> $_SESSION['user']['id']]);?>">mes favoris</a></p> 
 		   </div>
 		   <div class="col-md-3">
 		   	<a href="<?=$this->url('fGuestbook');?>"><img class="img-responsive" src="<?=$this->assetUrl('/img/gestbookvign.jpg');?>" id="cptuser_hover" style="cursor: pointer" onmouseover="imghover();" onmouseout="imgout();"></a> 

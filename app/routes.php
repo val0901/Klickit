@@ -109,7 +109,7 @@
 		
 		['GET|POST', '/searchItems', 'FrontItem#searchItems', 'searchItems'],
 		['GET|POST', '/viewArt/[i:id]', 'FrontItem#viewItem', 'viewArt'],
-		['GET|POST', '/favorite', 'FrontItem#viewFavorites', 'favorite'],
+		['GET|POST', '/favorite/[i:id]', 'FrontItem#viewFavorites', 'favorite'],
 
 		//Pages liées à FrontGuestbookController
 		['GET|POST', '/Guestbook', 'FrontGuestbook#affGuestbook', 'fGuestbook'],
