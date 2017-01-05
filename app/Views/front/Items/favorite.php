@@ -30,7 +30,7 @@
                 <div class="caption">
                     <div class="favorite_price">8 € <span class="favorite_pricenormal">10 €</span></div>
                     <p>Princess Playmo</p>
-                 <div class="slidecontent_promo"><i class="fa fa-heart-o fa-fw" aria-hidden="true" style="color:#999;"></i> promo !</div>
+                 <div class="slidecontent_promo">promo !</div>
                 </div>
                 <div class="viewcategory_button">
 				    <button type="button" class="btn btn-primary favorite_button_size ">ajouter au panier</button>
@@ -44,7 +44,7 @@
                 <div class="caption">
                     <div class="favorite_price">8 € <span class="favorite_pricenormal">10 €</span></div>
                     <p>Princess Playmo</p>
-                    <div class="slidecontent_promo"><i class="fa fa-heart-o fa-fw" aria-hidden="true" style="color:#999;"></i>promo !</div>
+                    <div class="slidecontent_promo">promo !</div>
                 </div>
                 <div class="viewcategory_button">
 				    <button type="button" class="btn btn-primary favorite_button_size ">ajouter au panier</button>
@@ -58,7 +58,7 @@
                 <div class="caption">
                     <div class="favorite_price">8 € <span class="favorite_pricenormal">10 €</span></div>
                     <p>Princess Playmo</p>
-                    <div class="slidecontent_promo"><i class="fa fa-heart-o fa-fw" aria-hidden="true" style="color:#999;"></i>promo !</div>
+                    <div class="slidecontent_promo">promo !</div>
                 </div>
                 <div class="viewcategory_button">
 				    <button type="button" class="btn btn-primary favorite_button_size ">ajouter au panier</button>
@@ -72,7 +72,7 @@
                 <div class="caption">
                     <div class="favorite_price">8 € <span class="favorite_pricenormal">10 €</span></div>
                     <p>Princess Playmo</p>
-                    <div class="slidecontent_promo"><i class="fa fa-heart-o fa-fw" aria-hidden="true" style="color:#999;"></i>promo !</div>
+                    <div class="slidecontent_promo">promo !</div>
                 </div>
                 <div class="viewcategory_button">
 				    <button type="button" class="btn btn-primary favorite_button_size ">ajouter au panier</button>
