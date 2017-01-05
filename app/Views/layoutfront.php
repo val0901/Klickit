@@ -68,7 +68,7 @@
                     <!--icon-cog menu-->
                     <li class="span_float">
                         <i class="fa fa-cog fa-5x icon_cursor navR_color" aria-hidden="true" id="cogicon_click"></i>
-                        <div class="cogsoumenu_hidden">
+                        <div class="con cogsoumenu_hidden">
                             <div class="soumenu_text">
                                 <select class="form-control">
                                     <option selected disabled>--Language--</option>
@@ -551,13 +551,18 @@ $(document).ready(function(){
 
 	/*soumenu 4 categories*/
     $(document).ready(function(){
-    $("#cogicon_click").click(function(){
-        $(".cogsoumenu_hidden").slideToggle();
+    $("#cogicon_click").click(function(e){
+        $(".cogsoumenu_hidden").slideDown();
+        $(".shoppingsoumenu_hidden").hide();
+        e.stopPropagation(); 
     })
-    /*$(document).click(function(){
-        $(".cogsoumenu_hidden").hide();
-    })*/
+    
 })
+    $(document).click(function(e){
+        $(".cogsoumenu_hidden").hide();
+        e.stopPropagation(); 
+    })
+    
     /*$(document).ready(function(){
     $("#usericon_click").click(function(){
         $(".usersoumenu_hidden").slideToggle();
@@ -565,10 +570,17 @@ $(document).ready(function(){
 })*/
 	/*place de classics*/
 	$(document).ready(function(){
-    $("#shoppingicon_click").click(function(){
-        $(".shoppingsoumenu_hidden").slideToggle();
+    $("#shoppingicon_click").click(function(e){
+        $(".shoppingsoumenu_hidden").slideDown();
+        $(".cogsoumenu_hidden").hide();
+        e.stopPropagation(); 
     })
 })	
+    
+    $(document).click(function(e){
+        $(".shoppingsoumenu_hidden").hide();
+        e.stopPropagation(); 
+    })
 	
 	$(document).ready(function(){
 		$(".slidetoggle").click(function(){
@@ -904,7 +916,7 @@ $(document).ready(function(){
 
   })		*/
   /*End orderpayment radio click photo change*/
-	
+
     </script>
 </body>
 </html>
