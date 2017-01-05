@@ -16,11 +16,30 @@ class FrontItemController extends Controller
 	 */
 	public function listItemClassics($sub_category)
 	{
+		// Permet de récupéré la sous-catégorie sélectionner pour afficher uniquement les playmobils de cette sous-catégorie
 		$affiche = new ItemModel();
 		$afficheItems = $affiche->findSubCategory($sub_category);
 
+		// Permet de récupérer les playmobils qui sont de la catégorie annoncé avec le statut nouveauté pour les affichés dans le slider du bas de page
 		$newItems = new ItemModel();
 		$afficheNewItems = $newItems->findCategoryStatutCustom('PlaymobilClassique', 'nouveaute');
+
+		// Récupète la liste des favoris
+		$favorite = new UserModel();
+		$listFavorite = $favorite->findFavorite($_SESSION['user']['id']);
+		$existFavorite = $listFavorite['favorites'];
+
+		// Permet de gérer la liste des favoris des utilisateurs
+		$newFavorite = UserModel();
+		if(empty($existFavorite)){
+			$favorisNew = $_POST;
+			$newFavoris = $newFavorite->updateFavorites($favorisNew, $_SESSION['user']['id']);
+		}
+		elseif(!empty($existFavorite) && isset($existFavorite)){
+			$favorisNew = $_POST;
+			$fullFavorite = $existFavorite.', '.$favorisNew;
+			$newFavoris = $newFavorite->updateFavorites($fullFavorite, $_SESSION['user']['id']);
+		}
 
 		$data = [
 			'affiche' 		 => $afficheItems,

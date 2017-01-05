@@ -91,4 +91,38 @@ class UserModel extends \W\Model\UsersModel
 		return false;
 	}
 
+	/**
+	 * Récupère les favoris
+	 */
+	public function findFavorite($id)
+	{
+		$sql = 'SELECT * FROM '.$this->table.' WHERE id = :id';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':id', $id);
+
+		$sth->execute();
+
+		return $sth->fetch();
+	}
+
+	/**
+	 * Mis à jour de la colonne Favorites
+	 */
+	public function updateFavorites($favorites, $id)
+	{
+		$sql = 'UPDATE '.$this->table.' SET favorites = :favorites WHERE id = :id';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':id', $id);
+		$sth->bindValue(':favorites', $favorites);
+
+		if($sth->execute()){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+
 }

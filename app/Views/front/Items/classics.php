@@ -98,31 +98,33 @@
 				<?php endif; ?>
 			</h4>
 			<div class="row">
-				<?php foreach ($affiche as $product) : ?>
-					<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
-						<a href="<?=$this->url('viewArt', ['id' => $product['id']]);?>"><img src="<?=$this->assetUrl('art/'.$product['picture1']);?>" alt="photo de playmobil" class="img-thumbnail"></a>
-						<div class="viewcategorycaption">
-							<?php if($product['newPrice'] == 0) : ?>
-								<h4><?=$product['price'];?>€</h4>
-							<?php else : ?>
-								<h4><span class="viewcategoryprixpromo"><?=$product['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$product['price'];?>€</span></h4>
-							<?php endif; ?>
+				<form method="POST">
+					<?php foreach ($affiche as $product) : ?>
+						<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
+							<a href="<?=$this->url('viewArt', ['id' => $product['id']]);?>"><img src="<?=$this->assetUrl('art/'.$product['picture1']);?>" alt="photo de playmobil" class="img-thumbnail"></a>
+							<div class="viewcategorycaption">
+								<?php if($product['newPrice'] == 0) : ?>
+									<h4><?=$product['price'];?>€</h4>
+								<?php else : ?>
+									<h4><span class="viewcategoryprixpromo"><?=$product['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$product['price'];?>€</span></h4>
+								<?php endif; ?>
 
-							<p><?=$product['name'];?></p>
+								<p><?=$product['name'];?></p>
 
-							<?php if($product['statut'] == 'nouveaute'):?>
-								<div class="viewcategory_nouveau"><?=$product['statut'];?></div>
-							<?php elseif($product['statut'] == 'promotion'):?>
-								<div class="viewcategory_promo"><?=$product['statut'];?></div>
-							<?php elseif($product['statut'] == 'defaut'): ?>
-								<div class="viewcategory_defaut"></div>
-							<?php endif; ?>
-	                    </div>
-						<div class="viewcategory_button">
-							<button type="button" class="btn btn-primary viewcategory_button_size " data-id="<?=$product['id']?>">ajouter au panier</button>
+								<?php if($product['statut'] == 'nouveaute'):?>
+									<div class="viewcategory_nouveau"><?=$product['statut'];?></div>
+								<?php elseif($product['statut'] == 'promotion'):?>
+									<div class="viewcategory_promo"><?=$product['statut'];?></div>
+								<?php elseif($product['statut'] == 'defaut'): ?>
+									<div class="viewcategory_defaut"></div>
+								<?php endif; ?>
+		                    </div>
+							<div class="viewcategory_button">
+								<button type="submit" name="<?=str_replace(' ', '', $product['name']);?>" class="btn btn-primary viewcategory_button_size " data-id="<?=$product['id']?>">ajouter au panier</button>
+							</div>
 						</div>
-					</div>
-				<?php endforeach; ?>
+					<?php endforeach; ?>
+				</form>
 			</div>
 		</div>
 		

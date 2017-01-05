@@ -163,5 +163,4 @@ class ItemModel extends \W\Model\Model
 
 		return $sth->fetchAll();
 	}
-	
 }
