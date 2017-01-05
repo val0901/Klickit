@@ -120,7 +120,8 @@
 								<?php endif; ?>
 		                    </div>
 							<div class="viewcategory_button">
-								<button type="submit" name="<?=str_replace(' ', '', $product['name']);?>" class="btn btn-primary viewcategory_button_size " data-id="<?=$product['id']?>">ajouter au panier</button>
+								<button type="submit" class="btn btn-primary viewcategory_button_size " name="<?=str_replace(' ', '', $product['name']);?>" >Ajouter en Favoris</button>
+								<button type="button" class="btn btn-primary viewcategory_button_size " data-id="<?=$product['id']?>">ajouter au panier</button>
 							</div>
 						</div>
 					<?php endforeach; ?>
