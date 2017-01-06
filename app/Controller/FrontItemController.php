@@ -24,13 +24,13 @@ class FrontItemController extends Controller
 		$newItems = new ItemModel();
 		$afficheNewItems = $newItems->findCategoryStatutCustom('PlaymobilClassique', 'nouveaute');
 
+		$favoriteArray = []; // Instancie la variable qui servira à mettre existFavorite sous forme de tableau on l'instancie ici pour éviter une erreur
 		if(!empty($this->getUser())){
 			// Récupète la liste des favoris
 			$favorite = new UserModel();
 			$listFavorite = $favorite->findFavorite($_SESSION['user']['id']); // Utilise la fonction pour retrouver les favoris dans la bdd en fonction de l'id de l'utilisateur
 			$existFavorite = $listFavorite['favorites']; // Stock le contenu de la colonne favorites dans la variable existFavorite (qui est de type string !)
 			$favorisNew = ''; // Instancie la variable pour ajouter des nouveaux favoris
-			$favoriteArray = []; // Instancie la variable qui servira à mettre existFavorite sous forme de tableau
 
 			if(!empty($_POST) && isset($_POST)){ // Si $_POST n'est pas vide et qu'il est défini
 				$favorisNew = implode('', $_POST); // On transforme le tableau $_POST en string
@@ -40,12 +40,16 @@ class FrontItemController extends Controller
 			$newFavorite = new UserModel();
 			if(empty($existFavorite)){ // Si existFavorite est vide
 				// Cette condition est la pour entrer des favoris dans la colonne favoris QUE quand la colonne est vide
-				$newFavoris = $newFavorite->updateFavorites($favorisNew, $_SESSION['user']['id']); // On se sert de la fonction updateFavorite pour mettre les favoris à jour avec le contenu de la variable favorisNew et en fonction de l'id de l'utilisateur connecté 
+				if(!empty($favorisNew)){
+					$newFavoris = $newFavorite->updateFavorites($favorisNew, $_SESSION['user']['id']); // On se sert de la fonction updateFavorite pour mettre les favoris à jour avec le contenu de la variable favorisNew et en fonction de l'id de l'utilisateur connecté
+				}
 			}
 			elseif(!empty($existFavorite) && isset($existFavorite)){ // Si existFavorite n'est pas vide et qu'il est défini
-				// Cette condition est la pour entrer des favoris dans la colonne favoris QUE quand la colonne a déjà du contenu 
-				$fullFavorite = $existFavorite.', '.$favorisNew; // La variable est la pour concatener existFavorite et favorisNew avec entre les deux variables les séparateurs ', '
-				$newFavoris = $newFavorite->updateFavorites($fullFavorite, $_SESSION['user']['id']); // On se sert de la fonction updateFavorite pour mettre les favoris à jour avec le contenu de la variable favorisNew et en fonction de l'id de l'utilisateur connecté 
+				// Cette condition est la pour entrer des favoris dans la colonne favoris QUE quand la colonne a déjà du contenu
+				if(!empty($favorisNew)){
+					$fullFavorite = $existFavorite.', '.$favorisNew; // La variable est la pour concatener existFavorite et favorisNew avec entre les deux variables les séparateurs ', '
+					$newFavoris = $newFavorite->updateFavorites($fullFavorite, $_SESSION['user']['id']); // On se sert de la fonction updateFavorite pour mettre les favoris à jour avec le contenu de la variable favorisNew et en fonction de l'id de l'utilisateur connecté
+				}
 
 				$favoriteArray = explode(', ', $existFavorite); // Donc ici on défini la variable existFavorite dans favoriteArray
 				$favorisDelete = implode(', ', $_POST); // Ici on récupère le contenu de $_POST 
