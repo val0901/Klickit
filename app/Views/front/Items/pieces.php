@@ -37,7 +37,7 @@
 			<div class="viewcategoryrow2col1pieces_tirer"><a href="<?=$this->url('listItemPieces', ['sub_category'=>'Cheveux']);?>">Cheveux</a></div>
 			<div class="viewcategoryrow2col1pieces_tirer"><a href="<?=$this->url('listItemPieces', ['sub_category'=>'Divers']);?>">Divers</a></div>
 			<li>
-				<h3 class="viewcategoryrow2col1_title">fitres</h3>
+				<h3 class="viewcategoryrow2col1_title">filtres</h3>
 				<div class="form-group viewcategory_checkboxmargin">
 					<label class="viewcategorycheckbox_border">
 					<input type="checkbox"> <span class="viewcategorycheckbox_font"> 1er empire</span>
@@ -69,7 +69,7 @@
 		
 		<!--viewcategory row2 col2-->
 		<div class="col-md-9">
-			<h4 class="viewcategory_pages"><a href="<?=$this->url('front_index');?>">Home</a> <span>></span><a href="<?=$this->url('listItemPiecesFull');?>">Pièces</a> <span>></span> 
+			<h4 class="viewcategory_pages"><a href="<?=$this->url('front_index');?>">Home</a> <span>></span><a href="<?=$this->url('listItemPiecesFull');?>"> Pièces</a> <span>></span> 
 				<?php if($affiche == 'Armes'): ?>
 							<a href="<?=$this->url('listItemPieces', ['sub_category'=>'Armes']);?>">Armes</a> <span></span>
 				<?php elseif($affiche == 'Coiffes'): ?>
@@ -116,36 +116,18 @@
 				<?php endforeach; ?>
 			</div>
 		</div>
-		
-		
-		<div class="col-md-9">
-			<div class="row">
-				<!--viewcategory row3 col1,2,3-->
-				<div class="row">
-					<div class="col-md-3 viewcategorypage_center">
-						<h4 class="viewcategory_pages">Résultats 1-6 sur 20</h4>
-					</div>
-					<div class="col-md-6 viewcategorypage_center">
-						<nav aria-label="...">
-						  <ul class="pagination">
-							<li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
-							<li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
-							<li><a href="#">2 </a></li>
-							  <li><a href="#">3 </a></li>
-							  <li><a href="#">4 </a></li>
-							  <li><a href="#">5 </a></li>
-							  <li class="disabled"><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
-						  </ul>
-						</nav>
-					</div>
-					<div class="col-md-3 viewcategorypage_center">
-						<button type="button" class="btn btn-primary viewcategorypage_button">afficher tout</button>
-					</div>
-				</div>
-				<!--End viewcategory row3 col1,2,3-->
+	
+		<!--End viewcategory row2 col2-->
+		<div class="row">
+			<div class="col-md-6 viewcategorypage_center">
+			<?php $search = (isset($_GET['search']))? 'search='. $_GET['search'].'&' :'';?>
+			<div id="pagination">
+				<?= ($page!=1) ? '<a href="?'. $search .'page='. ($page - 1) .'"><i class="fa fa-arrow-left fa-fw" style="color:black;"></i></a>':''; ?>
+				Page <?= $page; ?> / <?= ceil($nb/$max); ?>
+				<?= $page!= ceil($nb/$max) ? '<a href="?'. $search .'page='. ($page + 1) .'"><i class="fa fa-arrow-right fa-fw" aria-hidden="true" style="color:black;"></i></a>':''; ?>
+			</div>
 			</div>
 		</div>
-		<!--End viewcategory row2 col2-->
 	</div>
 	
 	<!--nouveute slideshow-->
