@@ -56,8 +56,12 @@
                         <?php foreach($comments as $value) :?>
                                 <?php if($value['published'] == 'oui'):?>
                                     <li>  
-                                        <div class="commentaire">  
-                                            <img class="img-responsive-tete" src="<?=$this->assetUrl('/img/avatarBoylarge.png');?>" style="float: left;">
+                                        <div class="commentaire">
+                                            <?php if($value['social_title'] == 'M'):?>  
+                                                <img class="img-responsive-tete" src="<?=$this->assetUrl('/img/avatarBoylarge.png');?>" style="float: left;">
+                                            <?php elseif($value['social_title'] == 'Mme'):?>
+                                                <img class="img-responsive-tete" src="<?=$this->assetUrl('/img/avatarGirlslarge.png');?>" style="float: left;">
+                                            <?php endif;?>        
                                               <span class="col2commtaire_margin commentaire_title"><?=$value['subject']?><span class="comment_text"><?=$value['content'].' '?></span><span class="comment_username"><?=' ...'.$value['firstname'].' '.ucfirst(substr($value['lastname'],0,1))?></span>
                                               </span>
                                         </div>

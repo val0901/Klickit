@@ -66,7 +66,7 @@ class GuestbookModel extends \W\Model\Model
 		/*retourne tous les messages*/
 		public function findAllMessageFront()
 		{
-			$sql = 'SELECT ' .$this->table.'.*, u.firstname, u.lastname, u.username FROM ' . $this->table . ' LEFT JOIN user AS u ON '.$this->table.'.id_member = u.id ORDER BY ' .$this->table. '.id';
+			$sql = 'SELECT ' .$this->table.'.*, u.social_title, u.firstname, u.lastname, u.username FROM ' . $this->table . ' LEFT JOIN user AS u ON '.$this->table.'.id_member = u.id ORDER BY ' .$this->table. '.id';
 
 			$sth = $this->dbh->prepare($sql);		
 
