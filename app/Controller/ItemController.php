@@ -151,16 +151,18 @@ class ItemController extends Controller
 				$errors[] = 'Une erreur est survenue lors de l\'upload de l\'image dans "Image 1"';
 			}
 
-			if(!v::image()->validate($_FILES['picture2']['tmp_name'])){
-				$errors[] = 'Le fichier envoyé dans "Image 1" n\'est pas une image valide';
-			}
+			if(!empty($_POST['picture2']) && isset($_POST['picture2'])){
+				if(!v::image()->validate($_FILES['picture2']['tmp_name'])){
+					$errors[] = 'Le fichier envoyé dans "Image 1" n\'est pas une image valide';
+				}
 
-			if(!v::size(null, '2MB')->validate($_FILES['picture2']['tmp_name'])){
-				$errors[] = 'La taille de votre image dans "Image 1" doit être inférieur à 2MB';
-			}
+				if(!v::size(null, '2MB')->validate($_FILES['picture2']['tmp_name'])){
+					$errors[] = 'La taille de votre image dans "Image 1" doit être inférieur à 2MB';
+				}
 
-			if(!v::uploaded()->validate($_FILES['picture2']['tmp_name'])){
-				$errors[] = 'Une erreur est survenue lors de l\'upload de l\'image dans "Image 1"';
+				if(!v::uploaded()->validate($_FILES['picture2']['tmp_name'])){
+					$errors[] = 'Une erreur est survenue lors de l\'upload de l\'image dans "Image 1"';
+				}
 			}
 
 			if($post['category'] == 'PlaymobilClassique' && !in_array($post['subCategory'], $subCategory_Classic)){
@@ -177,7 +179,9 @@ class ItemController extends Controller
 
 			if(count($errors) === 0) {
 				$img1 = Image::make($_FILES['picture1']['tmp_name']);
-				$img2 = Image::make($_FILES['picture2']['tmp_name']);
+				if(!empty($_POST['picture2']) && isset($_POST['picture2'])){
+					$img2 = Image::make($_FILES['picture2']['tmp_name']);
+				}
 
 				switch($img1->mime()){
 					case 'image/jpg':
@@ -192,25 +196,34 @@ class ItemController extends Controller
 					break;
 				}
 
-				switch($img2->mime()){
-					case 'image/jpg':
-					case 'image/jpeg':
-						$extension2 = '.jpg';
-					break;
-					case 'image/png':
-						$extension2 = '.png';
-					break;
-					case 'image/gif':
-						$extension2 = '.gif';
-					break;
+				if(!empty($_POST['picture2']) && isset($_POST['picture2'])){
+					switch($img2->mime()){
+						case 'image/jpg':
+						case 'image/jpeg':
+							$extension2 = '.jpg';
+						break;
+						case 'image/png':
+							$extension2 = '.png';
+						break;
+						case 'image/gif':
+							$extension2 = '.gif';
+						break;
 
+					}
 				}
 
 				$imgName = uniqid('art_').$extension;
-				$imgName2 = uniqid('art_').$extension2;
+				if(!empty($_POST['picture2']) && isset($_POST['picture2'])){
+					$imgName2 = uniqid('art_').$extension2;
+				}
+				elseif(empty($_POST['picture2'])) {
+					$imgName2 = '';
+				}
 
 				$img1->save($fullFolderUpload.$imgName);
-				$img2->save($fullFolderUpload.$imgName2);
+				if(!empty($_POST['picture2']) && isset($_POST['picture2'])){
+					$img2->save($fullFolderUpload.$imgName2);
+				}
 
 				$itemModel = new ItemModel();
 
