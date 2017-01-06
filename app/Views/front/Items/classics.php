@@ -109,7 +109,7 @@
 									<h4><span class="viewcategoryprixpromo"><?=$product['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$product['price'];?>€</span></h4>
 								<?php endif; ?>
 
-								<p><span style="cursor:pointer;"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></span> <?=$product['name'];?></p>
+								<p><span style="cursor:pointer;"><button name="<?=str_replace(' ', '', $product['name']);?>" value="<?=$product['id']?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button></span> <?=$product['name'];?></p>
 
 								<?php if($product['statut'] == 'nouveaute'):?>
 									<div class="viewcategory_nouveau"><?=$product['statut'];?></div>
@@ -120,7 +120,6 @@
 								<?php endif; ?>
 		                    </div>
 							<div class="viewcategory_button">
-								<button type="submit" class="btn btn-primary viewcategory_button_size " name="<?=str_replace(' ', '', $product['name']);?>" value="<?=$product['id']?>">Ajouter en Favoris</button>
 								<button type="button" class="btn btn-primary viewcategory_button_size " data-id="<?=$product['id']?>">ajouter au panier</button>
 							</div>
 						</div>
