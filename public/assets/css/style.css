@@ -1713,6 +1713,20 @@ td {
     text-align: center;
 }
 
+.favoritedelete_button {
+    text-align: center;
+}
+
+.favoritedelete_button_size {
+	background-color: #391e20;
+    border: 0 none;
+    font-size: 1vw;
+	text-transform: uppercase;
+}
+
+.favoritedelete_button_size:hover {
+    background-color: #482b2d;
+}
 /*guestbook.php*/
 .guestbook_button {
 	text-transform: uppercase;

@@ -34,9 +34,9 @@
                     </div>
                     <div class="caption">
                         <?php if($list_items['newPrice'] == 0) : ?>
-                          <h4><?=$list_items['price'];?>€</h4>
+                          <h4><span style="cursor:pointer;"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></span> <?=$list_items['price'];?>€</h4>
                         <?php else : ?>
-                          <h4><span class="viewcategoryprixpromo"><?=$list_items['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$list_items['price'];?>€</span></h4>
+                          <h4><span style="cursor:pointer;"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></span> <span class="viewcategoryprixpromo"><?=$list_items['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$list_items['price'];?>€</span></h4>
                         <?php endif; ?>
 
                         <p><?=$list_items['name'];?></p>
@@ -55,6 +55,9 @@
                         <p class="favorite_voirplus">Voir même catégorie</p>
               </div>
               <?php endforeach; ?> <!-- fin du foreach $favorite -->
+              <div class="favoritedelete_button">
+                <button type="button" class="btn btn-primary favoritedelete_button_size">Supremmer touts mes favoris</button>
+              </div>
        </div>
    </div>
   </div>
