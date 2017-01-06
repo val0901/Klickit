@@ -40,6 +40,13 @@ class FrontItemController extends Controller
 				$favorisNew = implode('', $_POST);
 				$fullFavorite = $existFavorite.', '.$favorisNew;
 				$newFavoris = $newFavorite->updateFavorites($fullFavorite, $_SESSION['user']['id']);
+
+				$favoriteArray = explode(', ', $existFavorite);
+				$favorisDelete = implode(', ', $_POST);
+				if(in_array($favorisDelete, $favoriteArray)){
+					$deleteUpdate = substr(implode(', ', str_replace($favorisDelete, '', $favoriteArray)), 0, -2);
+					$newFavoriteDelete = $newFavorite->updateFavorites($deleteUpdate, $_SESSION['user']['id']);
+				}
 			}
 		}
 

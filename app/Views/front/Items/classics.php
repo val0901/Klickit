@@ -109,7 +109,7 @@
 									<h4><span class="viewcategoryprixpromo"><?=$product['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$product['price'];?>€</span></h4>
 								<?php endif; ?>
 
-								<p><span style="cursor:pointer;"><button name="<?=str_replace(' ', '', $product['name']);?>" value="<?=$product['id']?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button></span> <?=$product['name'];?></p>
+								<p><span style="cursor:pointer;"><button type="submit" name="<?=str_replace(' ', '', $product['name']);?>" value="<?=$product['id']?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button></span> <?=$product['name'];?></p>
 
 								<?php if($product['statut'] == 'nouveaute'):?>
 									<div class="viewcategory_nouveau"><?=$product['statut'];?></div>
