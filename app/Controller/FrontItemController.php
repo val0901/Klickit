@@ -53,6 +53,7 @@ class FrontItemController extends Controller
 		$data = [
 			'affiche' 		 => $afficheItems,
 			'afficheNewItem' => $afficheNewItems,
+			'favoris'		 => $favoriteArray,
 		];
 
 		$this->show('front/Items/classics', $data);
