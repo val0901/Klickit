@@ -29,15 +29,19 @@ class FrontItemController extends Controller
 			$favorite = new UserModel();
 			$listFavorite = $favorite->findFavorite($_SESSION['user']['id']);
 			$existFavorite = $listFavorite['favorites'];
+			$favorisNew = '';
+			$favoriteArray = [];
+
+			if(!empty($_POST) && isset($_POST)){
+				$favorisNew = implode('', $_POST);
+			}
 
 			// Permet de gérer la liste des favoris des utilisateurs
 			$newFavorite = new UserModel();
 			if(empty($existFavorite)){
-				$favorisNew = implode('', $_POST);
 				$newFavoris = $newFavorite->updateFavorites($favorisNew, $_SESSION['user']['id']);
 			}
 			elseif(!empty($existFavorite) && isset($existFavorite)){
-				$favorisNew = implode('', $_POST);
 				$fullFavorite = $existFavorite.', '.$favorisNew;
 				$newFavoris = $newFavorite->updateFavorites($fullFavorite, $_SESSION['user']['id']);
 
