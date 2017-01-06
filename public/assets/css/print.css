@@ -1,0 +1,12 @@
+/*<link rel="stylesheet" media="print" href="print.css" type="text/css" />
+*/
+
+@media print {
+  #menu, #footer, aside {
+    display:none;
+  }
+  body {
+    font-size:120%;
+    color:black;
+  }
+}
