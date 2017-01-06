@@ -51,7 +51,7 @@
         <div id="textSlider" class="row">
             <div class="col-md-9 slideCol">
                 <div class="scroller">
-                    <div class="inner">
+                    <div class="">
                         <ul>
                         <?php foreach($comments as $value) :?>
                                 <?php if($value['published'] == 'oui'):?>
@@ -207,9 +207,8 @@
     <script>
         $(document).ready(function(){
             $('.my-slider').unslider({
-                // animation: 'fade',
-                // autoplay: true,
-                // arrows: false,
+                autoplay: true,
+                arrows: false,
             });
         });
     </script>
