@@ -24,11 +24,11 @@
 	   
        <div class="row">
            <!--<div class="row">-->
-               <div class="col-lg-3 col-sm-6">
+               <!--<div class="col-lg-3 col-sm-6">-->
           <?php $favorite = explode(', ', $user['favorites']); ?>
           <?php foreach($favorite as $value): ?>
                 <?php $list_items = $items->findItems($value); ?>
-                <!--<div class="col-lg-3 col-sm-6">-->
+                <div class="col-lg-3 col-sm-6">
                     <div class="thumbnail">
                         <a href="<?=$this->url('viewArt', ['id' => $list_items['id']]);?>"><img src="<?=$this->assetUrl('art/'.$list_items['picture1']);?>" alt=""></a>
                     </div>
