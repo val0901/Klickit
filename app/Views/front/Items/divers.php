@@ -5,7 +5,7 @@
 	<!--viewcategory row1 col1,2-->
 	<div class="row divers_background">
 		<div class="col-md-3" style="position:relative;">
-			<div class="classic_text_show"><span>Pièces</span></div>
+			<div class="classic_text_show"><span>Divers</span></div>
 			<img class="img-responsive" src="<?=$this->assetUrl('/img/art_divers_bte000001.jpg');?>">
 			<div class="divers_text">Divers</div>
 		</div>
@@ -30,7 +30,7 @@
 			<h3 class="viewcategoryrow2col1_title">sous-catégories</h3>
 			<!-- <div class="viewcategoryrow2col1customs_tirer"><a href="#"></a></div> --> <!-- à activer (ainsi qu'à dupliquer au nombre de sous-catégorie que nous aurons) lorsqu'on aura des sous-catégories pour cette catégorie -->
 			<li>
-				<h3 class="viewcategoryrow2col1_title">fitres</h3>
+				<h3 class="viewcategoryrow2col1_title">filtres</h3>
 				<div class="form-group viewcategory_checkboxmargin">
 					<label class="viewcategorycheckbox_border">
 					<input type="checkbox"> <span class="viewcategorycheckbox_font"> 1er empire</span>
@@ -62,7 +62,7 @@
 		
 		<!--viewcategory row2 col2-->
 		<div class="col-md-9">
-			<h4 class="viewcategory_pages"><a href="<?=$this->url('front_index');?>">Home </a> <span>></span> <a href="<?=$this->url('listItemDiversFull');?>"> Boites/Set</a><span>></span> <!-- sous-catégorie quand il y en aura --></h4>
+			<h4 class="viewcategory_pages"><a href="<?=$this->url('front_index');?>">Home </a> <span>></span> <a href="<?=$this->url('listItemDiversFull');?>"> Boites/Set </a><span>></span> <!-- sous-catégorie quand il y en aura --></h4>
 			<div class="row">
 				<form method="post">
 					<?php foreach ($items as $product) : ?>

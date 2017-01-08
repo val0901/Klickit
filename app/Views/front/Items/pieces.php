@@ -106,7 +106,7 @@
 							<?php elseif($product['statut'] == 'promotion'):?>
 								<div class="viewcategory_promo"><?=$product['statut'];?></div>
 							<?php elseif($product['statut'] == 'defaut'): ?>
-								<div class="viewcategory_defaut"></div>
+									<div class="viewcategory_defaut"></div>
 							<?php endif; ?>
 	                    </div>
 						<div class="viewcategory_button">

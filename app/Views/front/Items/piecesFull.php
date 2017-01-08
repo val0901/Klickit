@@ -13,7 +13,7 @@
 			<div class="container_general">
 				<h1 class="viewcategorycol2pieces_title">Pièces détachées</h1>
 				<p class="viewcategorycol2_text">Les customs vendus dans la boutique KLICKIT sont des figurines de la marque PLAYMOBIL qui ont été modifiées. Ces transformations sont faites à l'aide de pièces en résine, tampographie, peinture, stickers... Les personnages modifiés par tampographie sont jouables comme des figurines d'origine. Les personnages modifiées à partir de pièces en résine et peinture ne sont plus considérées comme des jouets, mais comme des figurines de collection.
-Vous trouverez également des pièces détachées d'origine de la marque PLAYMOBIL, des pièces en résine à peindre soiy même, des stickers, pour réaliser vous même vos customs.</p>
+Vous trouverez également des pièces détachées d'origine de la marque PLAYMOBIL, des pièces en résine à peindre soit même, des stickers, pour réaliser vous même vos customs.</p>
 			</div>
 		</div>
 	</div>
@@ -70,7 +70,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 		
 		<!--viewcategory row2 col2-->
 		<div class="col-md-9">
-			<h4 class="viewcategory_pages"><a href="<?=$this->url('front_index');?>">Home</a> <span>></span><a href="<?=$this->url('listItemPiecesFull');?>"> Pièces</a></h4>
+			<h4 class="viewcategory_pages"><a href="<?=$this->url('front_index');?>">Home</a> <span>></span><a href="<?=$this->url('listItemPiecesFull');?>"> Pièces détachées</a></h4>
 			<div class="row">
 				<form method="post">
 					<?php foreach ($items as $product) : ?>
@@ -90,7 +90,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 								<?php elseif($product['statut'] == 'promotion'):?>
 									<div class="viewcategory_promo"><?=$product['statut'];?></div>
 								<?php elseif($product['statut'] == 'defaut'): ?>
-									<div class="viewcategory_defaut"><?=$product['statut'];?></div>
+									<div class="viewcategory_defaut"></div>
 								<?php endif; ?>
 		                    </div>
 							<div class="viewcategory_button">

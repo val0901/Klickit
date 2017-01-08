@@ -73,9 +73,9 @@ class FrontItemController extends Controller
 			'affiche' 		 => $afficheItems,
 			'afficheNewItem' => $afficheNewItems,
 			'favoris'		 => $favoriteArray,
-			'max' => $max,
-			'page' => $page,
-			'nb' => $nb,
+			'max' 			 => $max,
+			'page'			 => $page,
+			'nb'			 => $nb,
 		];
 
 		$this->show('front/Items/classics', $data);
@@ -86,6 +86,7 @@ class FrontItemController extends Controller
 	 */
 	public function listClassicsItemsFull()
 	{
+		/*pagination*/
 		$nbpage= new ItemModel();
 		$nb=$nbpage->countResults();
 
@@ -100,10 +101,10 @@ class FrontItemController extends Controller
 
 		$data = [
 			'afficheNewItem' => $afficheNewItems,
-			'items'	=> $items,
-			'max' => $max,
-			'page' => $page,
-			'nb' => $nb,
+			'items'			 => $items,
+			'max' 			 => $max,
+			'page' 			 => $page,
+			'nb'			 => $nb,
 		];
 
 		$this->show('front/Items/classicsFull', $data);
@@ -114,8 +115,15 @@ class FrontItemController extends Controller
 	 */
 	public function listItemCustoms($sub_category)
 	{
+		/*pagination*/
+		$nbpage= new ItemModel();
+		$nb=$nbpage->countResults();
+
+		$page = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
+		$max = 12;
+
 		$affiche = new ItemModel();
-		$afficheItems = $affiche->findSubCategory($sub_category);
+		$afficheItems = $affiche->findSubCategory($sub_category, $page, $max);
 
 		$newItems = new ItemModel();
 		$afficheNewItems = $newItems->findCategoryStatutCustom('PlaymobilCustom', 'nouveaute');
@@ -123,6 +131,9 @@ class FrontItemController extends Controller
 		$data = [
 			'affiche' 		 => $afficheItems,
 			'afficheNewItem' => $afficheNewItems,
+			'max' 			 => $max,
+			'page' 			 => $page,
+			'nb'			 => $nb,
 		];
 
 		$this->show('front/Items/customs', $data);
@@ -133,6 +144,7 @@ class FrontItemController extends Controller
 	*/
 	public function listCustomItemsFull()
 	{
+		/*pagination*/
 		$nbpage= new ItemModel();
 		$nb=$nbpage->countResults();
 
@@ -147,10 +159,10 @@ class FrontItemController extends Controller
 
 		$data = [
 			'afficheNewItem' => $afficheNewItems,
-			'items'	=> $items,
-			'max' => $max,
-			'page' => $page,
-			'nb' => $nb,
+			'items'			 => $items,
+			'max'			 => $max,
+			'page'			 => $page,
+			'nb'			 => $nb,
 		];
 
 		$this->show('front/Items/customsFull', $data);
@@ -161,8 +173,15 @@ class FrontItemController extends Controller
 	 */
 	public function listItemPieces($sub_category)
 	{
+		/*pagination*/
+		$nbpage= new ItemModel();
+		$nb=$nbpage->countResults();
+
+		$page = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
+		$max = 12;
+
 		$affiche = new ItemModel();
-		$afficheItems = $affiche->findSubCategory($sub_category);
+		$afficheItems = $affiche->findSubCategory($sub_category, $page, $max);
 
 		$newItems = new ItemModel();
 		$afficheNewItems = $newItems->findCategoryStatutCustom('PiecesDetachees', 'nouveaute');
@@ -170,6 +189,9 @@ class FrontItemController extends Controller
 		$data = [
 			'affiche' 		 => $afficheItems,
 			'afficheNewItem' => $afficheNewItems,
+			'max'			 => $max,
+			'page'			 => $page,
+			'nb'			 => $nb,
 		];
 
 		$this->show('front/Items/pieces', $data);
@@ -180,6 +202,7 @@ class FrontItemController extends Controller
 	*/
 	public function listPiecesItemsFull()
 	{
+		/*pagination*/
 		$nbpage= new ItemModel();
 		$nb=$nbpage->countResults();
 
@@ -194,10 +217,10 @@ class FrontItemController extends Controller
 
 		$data = [
 			'afficheNewItem' => $afficheNewItems,
-			'items'	=> $items,
-			'max' => $max,
-			'page' => $page,
-			'nb' => $nb,
+			'items'			 => $items,
+			'max'			 => $max,
+			'page'			 => $page,
+			'nb'			 => $nb,
 		];
 
 		$this->show('front/Items/piecesFull', $data);
@@ -206,9 +229,30 @@ class FrontItemController extends Controller
 	/**
 	 * Affiche la page des items "Divers"
 	 */
-	public function listItemDivers()
+	public function listItemDivers($sub_category)
 	{
-		$this->show('front/Items/divers');
+		/*pagination*/
+		$nbpage= new ItemModel();
+		$nb=$nbpage->countResults();
+
+		$page = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
+		$max = 12;
+
+		$affiche = new ItemModel();
+		$items = $affiche->findSubCategory($sub_category, $page, $max);
+
+		$newItems = new ItemModel();
+		$afficheNewItems = $newItems->findCategoryStatutCustom('Divers', 'nouveaute');
+
+		$data = [
+			'items' 		 => $items,
+			'afficheNewItem' => $afficheNewItems,
+			'max'			 => $max,
+			'page'			 => $page,
+			'nb'			 => $nb,
+		];
+
+		$this->show('front/Items/divers', $data);
 	}
 
 	/**
@@ -216,7 +260,7 @@ class FrontItemController extends Controller
 	*/
 	public function listDiversItemsFull()
 	{
-
+		/*pagination*/
 		$nbpage= new ItemModel();
 		$nb=$nbpage->countResults();
 
@@ -231,10 +275,10 @@ class FrontItemController extends Controller
 
 		$data = [
 			'afficheNewItem' => $afficheNewItems,
-			'items'	=> $items,
-			'max' => $max,
-			'page' => $page,
-			'nb' => $nb,
+			'items'			 => $items,
+			'max'			 => $max,
+			'page'			 => $page,
+			'nb'			 => $nb,
 		];
 		
 		$this->show('front/Items/diversFull', $data);
