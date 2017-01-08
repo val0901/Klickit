@@ -12,7 +12,7 @@
    	<img class="img-responsive" src="<?=$this->assetUrl('/img/napoPic.png');?>" id="categorycustoms">
 	</li>
 	<li>
-	   	<h4 class="viewcategory_pages"><a href="<?=$this->url('front_affcptuser', ['id' => $_SESSION['user']['id']]);?>">Mon compte </a><span>></span><a href="<?=$this->url('front_listOrders');?>"> Historique commandes</a></h4>
+	   	<h4 class="viewcategory_pages"><a href="<?=$this->url('front_affcptuser', ['id' => $_SESSION['user']['id']]);?>">Mon compte </a><span>></span><a href="<?=$this->url('front_fUpdateUser', ['id' => $_SESSION['user']['id']]);?>"> Mettre à jour</a></h4>
 	</li>
 	<div class="clear"></div>
 	<br><br>

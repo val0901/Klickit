@@ -305,7 +305,7 @@ class FrontItemController extends Controller
 
 		$data = [
 			'afficheNewItem' => $afficheNewItems,
-			'items'=> $items,
+			'items'			 => $items,
 		];
 
 		$this->show('front/Items/viewArt', $data);

@@ -4,23 +4,23 @@
 <div class="listorder_back">
  <div class="row">
   <div class="col-md-3">
-  	<img class="img-responsive playmo_hide" src="<?=$this->assetUrl('/img/napoLeft.png');?>" id="categorycustoms_hover">
+  	<img class="img-responsive playmo_hide" src="<?=$this->assetUrl('/img/napoLeft.png');?>" id="categorycustoms">
   </div>
   <div class="col-md-6 ordermidia_width">
    <div class="listorder_contenu">
 	<li style="float: left;">   
-   	<img class="img-responsive" src="<?=$this->assetUrl('/img/napoPic.png');?>" id="categorycustoms_hover">
+   	<img class="img-responsive" src="<?=$this->assetUrl('/img/napoPic.png');?>" id="categorycustoms">
 	</li>
 	<li>
-	   	<h4 class="viewcategory_pages">Mon compte <span>></span> Favoris</h4>
+	   	<h4 class="viewcategory_pages"><a href="<?=$this->url('front_affcptuser', ['id' => $_SESSION['user']['id']]);?>">Mon compte </a> <span>></span><a href="<?=$this->url('favorite', ['id'=> $_SESSION['user']['id']]);?>"> Favoris</a></h4>
 	</li>
 	<div class="clear"></div>
 	<br><br>
-	<p class="orderMC_title">MON COMPTE</p>
+	<p class="orderMC_title">MES FAVORIS</p>
 	<p class="orderMC_text">Vous trouverez ici tous vos favoris que vous pouvez ajouter directement dans votre panier. Vous serez averti par mail si un de vos articles préféré est en promotion.</p>
 	<hr>
 	<br>
-	   <p class="orderMC_title">MES FAVORIS</p>
+	   
 	   
        <div class="row">
            <!--<div class="row">-->
@@ -62,7 +62,7 @@
    </div>
   </div>
   <div class="col-md-3">
-  	<img class="img-responsive playmo_hide" src="<?=$this->assetUrl('/img/napoRight.png');?>" id="categorycustoms_hover" style="float:right;">
+  	<img class="img-responsive playmo_hide" src="<?=$this->assetUrl('/img/napoRight.png');?>" id="categorycustoms" style="float:right;">
   </div>
  </div>
  
