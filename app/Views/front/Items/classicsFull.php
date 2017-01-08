@@ -12,8 +12,8 @@
 		<div class="col-md-9">
 			<div class="container_general">
 				<h1 class="viewcategorycol2classic_title">Classics</h1>
-				<p class="viewcategorycol2_text">Les customs vendus dans la boutique KLICKIT sont des figurines de la marque PLAYMOBIL qui ont était modifiées. Ces transformations sont faites à l'aide de pièces en résine, tampographie, peinture, stickers... Les personnages modifiés par tampographie sont jouables comme des figurines d'origine. Les personnages modifiées à partir de pièces en résine et peinture ne sont plus considérées comme des jouets, mais comme des figurines de collection.
-Vous trouverez également des pièces détachées d'origine de la marque PLAYMOBIL, des pièces en résine à peindre sois même, des stickers, pour réaliser vous même vos customs.</p>
+				<p class="viewcategorycol2_text">Les customs vendus dans la boutique KLICKIT sont des figurines de la marque PLAYMOBIL qui ont été modifiées. Ces transformations sont faites à l'aide de pièces en résine, tampographie, peinture, stickers... Les personnages modifiés par tampographie sont jouables comme des figurines d'origine. Les personnages modifiées à partir de pièces en résine et peinture ne sont plus considérées comme des jouets, mais comme des figurines de collection.
+Vous trouverez également des pièces détachées d'origine de la marque PLAYMOBIL, des pièces en résine à peindre soit même, des stickers, pour réaliser vous même vos customs.</p>
 			</div>
 		</div>
 	</div>
@@ -105,7 +105,6 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 			</div>
 		</div>
 		
-		
 		<div class="row">
 			<div class="col-md-3">
 			
@@ -114,24 +113,17 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 				<!--viewcategory row3 col1,2,3-->
 				<div class="row">
 					<div class="col-md-3 viewcategorypage_center">
-						<h4 class="viewcategory_pages">Résultats 1-6 sur 20</h4>
+						
 					</div>
 					<div class="col-md-6 viewcategorypage_center">
-						<nav aria-label="...">
-						  <ul class="pagination">
-							<li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
-							<li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
-							<li><a href="#">2 </a></li>
-							  <li><a href="#">3 </a></li>
-							  <li><a href="#">4 </a></li>
-							  <li><a href="#">5 </a></li>
-							  <li class="disabled"><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
-						  </ul>
-						</nav>
+					<?php $search = (isset($_GET['search']))? 'search='. $_GET['search'].'&' :'';?>
+					<div id="pagination">
+						<?= ($page!=1) ? '<a href="?'. $search .'page='. ($page - 1) .'"><i class="fa fa-arrow-left fa-fw" style="color:black;"></i></a>':''; ?>
+						Page <?= $page; ?> / <?= ceil($nb/$max); ?>
+						<?= $page!= ceil($nb/$max) ? '<a href="?'. $search .'page='. ($page + 1) .'"><i class="fa fa-arrow-right fa-fw" aria-hidden="true" style="color:black;"></i></a>':''; ?>
 					</div>
-					<div class="col-md-3 viewcategorypage_center">
-						<button type="button" class="btn btn-primary viewcategorypage_button">afficher tout</button>
 					</div>
+					
 				</div>
 				<!--End viewcategory row3 col1,2,3-->
 			</div>
@@ -139,6 +131,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 		
 		</div>
 		<!--End viewcategory row2 col2-->
+		
 	</div>
 	
 	<!--nouveute slideshow-->

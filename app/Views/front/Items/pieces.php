@@ -1,17 +1,17 @@
-<?php $this->layout('layoutfront', ['title' => 'catégorie Classics', 'meta' => 'napoleon, Customs playmobil, customs Tampographiés, bustes playmobil, bustes tampographiés, pièces résine, stickers drapeau']) ?>
+<?php $this->layout('layoutfront', ['title' => 'catégorie Pièces détachées', 'meta' => 'napoleon, Customs playmobil, customs Tampographiés, bustes playmobil, bustes tampographiés, pièces résine, stickers drapeau']) ?>
 
 <?php $this->start('main_content') ?>
 <div>
 	<!--viewcategory row1 col1,2-->
 	<div class="row pieces_background">
 		<div class="col-md-3" style="position:relative;">
-			<div class="classic_text_show"><span>Pièces</span></div>
+			<div class="classic_text_show"><span>Pièces détachées</span></div>
 			<img class="img-responsive" src="<?=$this->assetUrl('/img/art_classic_divers_000003.jpg');?>">
-			<div class="pieces_text">Pièces</div>
+			<div class="pieces_text">Pièces détachées</div>
 		</div>
 		<div class="col-md-9">
 			<div class="container_general">
-				<h1 class="viewcategorycol2pieces_title">Pièces</h1>
+				<h1 class="viewcategorycol2pieces_title">Pièces détachées</h1>
 				<p class="viewcategorycol2_text">Ardeo, mihi credite, Patres conscripti (id quod vosmet de me existimatis et facitis ipsi) incredibili quodam amore patriae, qui me amor et subvenire olim impendentibus periculis maximis cum dimicatione capitis, et rursum, cum omnia tela undique esse intenta in patriam viderem, subire coegit atque excipere unum pro universis. Hic me meus in rem publicam animus pristinus ac perennis cum C. Caesare reducit, reconciliat, restituit in gratiam.</p>
 			</div>
 		</div>
@@ -69,7 +69,7 @@
 		
 		<!--viewcategory row2 col2-->
 		<div class="col-md-9">
-			<h4 class="viewcategory_pages"><a href="<?=$this->url('front_index');?>">Home</a> <span>></span><a href="<?=$this->url('listItemPiecesFull');?>"> Pièces</a> <span>></span> 
+			<h4 class="viewcategory_pages"><a href="<?=$this->url('front_index');?>">Home</a> <span>></span><a href="<?=$this->url('listItemPiecesFull');?>"> Pièces détachées</a> <span>></span> 
 				<?php if($affiche == 'Armes'): ?>
 							<a href="<?=$this->url('listItemPieces', ['sub_category'=>'Armes']);?>">Armes</a> <span></span>
 				<?php elseif($affiche == 'Coiffes'): ?>
@@ -116,18 +116,34 @@
 				<?php endforeach; ?>
 			</div>
 		</div>
-	
-		<!--End viewcategory row2 col2-->
+
 		<div class="row">
-			<div class="col-md-6 viewcategorypage_center">
-			<?php $search = (isset($_GET['search']))? 'search='. $_GET['search'].'&' :'';?>
-			<div id="pagination">
-				<?= ($page!=1) ? '<a href="?'. $search .'page='. ($page - 1) .'"><i class="fa fa-arrow-left fa-fw" style="color:black;"></i></a>':''; ?>
-				Page <?= $page; ?> / <?= ceil($nb/$max); ?>
-				<?= $page!= ceil($nb/$max) ? '<a href="?'. $search .'page='. ($page + 1) .'"><i class="fa fa-arrow-right fa-fw" aria-hidden="true" style="color:black;"></i></a>':''; ?>
+			<div class="col-md-3">
+			
 			</div>
+			<div class="col-md-9">
+				<!--viewcategory row3 col1,2,3-->
+				<div class="row">
+					<div class="col-md-3 viewcategorypage_center">
+						
+					</div>
+					<div class="col-md-6 viewcategorypage_center">
+					<?php $search = (isset($_GET['search']))? 'search='. $_GET['search'].'&' :'';?>
+					<div id="pagination">
+						<?= ($page!=1) ? '<a href="?'. $search .'page='. ($page - 1) .'"><i class="fa fa-arrow-left fa-fw" style="color:black;"></i></a>':''; ?>
+						Page <?= $page; ?> / <?= ceil($nb/$max); ?>
+						<?= $page!= ceil($nb/$max) ? '<a href="?'. $search .'page='. ($page + 1) .'"><i class="fa fa-arrow-right fa-fw" aria-hidden="true" style="color:black;"></i></a>':''; ?>
+					</div>
+					</div>
+					
+				</div>
+				<!--End viewcategory row3 col1,2,3-->
 			</div>
 		</div>
+		
+		</div>
+		<!--End viewcategory row2 col2-->
+	
 	</div>
 	
 	<!--nouveute slideshow-->

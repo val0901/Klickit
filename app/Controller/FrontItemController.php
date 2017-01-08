@@ -16,9 +16,18 @@ class FrontItemController extends Controller
 	 */
 	public function listItemClassics($sub_category)
 	{
+		/*Pagination*/
+		$nbpage= new ItemModel();
+		$nb=$nbpage->countResults();
+
+		$page = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
+		$max = 12;
+
+
+
 		// Permet de récupéré la sous-catégorie sélectionner pour afficher uniquement les playmobils de cette sous-catégorie
 		$affiche = new ItemModel();
-		$afficheItems = $affiche->findSubCategory($sub_category);
+		$afficheItems = $affiche->findSubCategory($sub_category, $page, $max);
 
 		// Permet de récupérer les playmobils qui sont de la catégorie annoncé avec le statut nouveauté pour les affichés dans le slider du bas de page
 		$newItems = new ItemModel();
@@ -64,6 +73,9 @@ class FrontItemController extends Controller
 			'affiche' 		 => $afficheItems,
 			'afficheNewItem' => $afficheNewItems,
 			'favoris'		 => $favoriteArray,
+			'max' => $max,
+			'page' => $page,
+			'nb' => $nb,
 		];
 
 		$this->show('front/Items/classics', $data);

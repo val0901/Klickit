@@ -1,4 +1,4 @@
-<?php $this->layout('layoutfront', ['title' => 'catégorie Classics', 'meta' => 'napoleon, Customs playmobil, customs Tampographiés, bustes playmobil, bustes tampographiés, pièces résine, stickers drapeau']) ?>
+<?php $this->layout('layoutfront', ['title' => 'catégorie Divers', 'meta' => 'napoleon, Customs playmobil, customs Tampographiés, bustes playmobil, bustes tampographiés, pièces résine, stickers drapeau']) ?>
 
 <?php $this->start('main_content') ?>
 <div>
@@ -11,7 +11,7 @@
 		</div>
 		<div class="col-md-9">
 			<div class="container_general">
-				<h1 class="viewcategorycol2divers_title">Pièces</h1>
+				<h1 class="viewcategorycol2divers_title">Divers</h1>
 				<p class="viewcategorycol2_text">Ardeo, mihi credite, Patres conscripti (id quod vosmet de me existimatis et facitis ipsi) incredibili quodam amore patriae, qui me amor et subvenire olim impendentibus periculis maximis cum dimicatione capitis, et rursum, cum omnia tela undique esse intenta in patriam viderem, subire coegit atque excipere unum pro universis. Hic me meus in rem publicam animus pristinus ac perennis cum C. Caesare reducit, reconciliat, restituit in gratiam.</p>
 			</div>
 		</div>
@@ -94,17 +94,32 @@
 			</div>
 		</div>
 		
-		<!--End viewcategory row2 col2-->
 		<div class="row">
-			<div class="col-md-6 viewcategorypage_center">
-			<?php $search = (isset($_GET['search']))? 'search='. $_GET['search'].'&' :'';?>
-			<div id="pagination">
-				<?= ($page!=1) ? '<a href="?'. $search .'page='. ($page - 1) .'"><i class="fa fa-arrow-left fa-fw" style="color:black;"></i></a>':''; ?>
-				Page <?= $page; ?> / <?= ceil($nb/$max); ?>
-				<?= $page!= ceil($nb/$max) ? '<a href="?'. $search .'page='. ($page + 1) .'"><i class="fa fa-arrow-right fa-fw" aria-hidden="true" style="color:black;"></i></a>':''; ?>
+			<div class="col-md-3">
+			
 			</div>
+			<div class="col-md-9">
+				<!--viewcategory row3 col1,2,3-->
+				<div class="row">
+					<div class="col-md-3 viewcategorypage_center">
+						
+					</div>
+					<div class="col-md-6 viewcategorypage_center">
+					<?php $search = (isset($_GET['search']))? 'search='. $_GET['search'].'&' :'';?>
+					<div id="pagination">
+						<?= ($page!=1) ? '<a href="?'. $search .'page='. ($page - 1) .'"><i class="fa fa-arrow-left fa-fw" style="color:black;"></i></a>':''; ?>
+						Page <?= $page; ?> / <?= ceil($nb/$max); ?>
+						<?= $page!= ceil($nb/$max) ? '<a href="?'. $search .'page='. ($page + 1) .'"><i class="fa fa-arrow-right fa-fw" aria-hidden="true" style="color:black;"></i></a>':''; ?>
+					</div>
+					</div>
+					
+				</div>
+				<!--End viewcategory row3 col1,2,3-->
 			</div>
 		</div>
+		
+		</div>
+		<!--End viewcategory row2 col2-->
 	</div>
 	
 	<!--nouveute slideshow-->

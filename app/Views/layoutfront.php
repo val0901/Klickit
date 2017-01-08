@@ -169,7 +169,7 @@
 			  <div class="row">
 				  <div class="col-lg-3 col-md-6 soumenu_TLA_height">
 					  <div class="soumenu_TLA_text">
-						  <li style="float:left;"><a href="<?=$this->url('listItemClassicsFull');?>" style="color:#ea2127;">Classic</a><li>
+						  <li style="float:left;"><a href="<?=$this->url('listItemClassicsFull');?>" style="color:#ea2127;">Classics</a><li>
 						  <li style="float:right;"><i class="fa fa-plus faplus_color plus_classic" aria-hidden="true" id="plusclassic_hide"></i><i class="fa fa-minus faminus_color minus_classic" aria-hidden="true" id="faminus_hide"></i></li>
 						  <div class="clear"></div>
 						  <ul class="soumenu_classics_text">

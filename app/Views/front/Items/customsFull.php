@@ -118,9 +118,7 @@
 						<?= $page!= ceil($nb/$max) ? '<a href="?'. $search .'page='. ($page + 1) .'"><i class="fa fa-arrow-right fa-fw" aria-hidden="true" style="color:black;"></i></a>':''; ?>
 					</div>
 					</div>
-					<div class="col-md-3 viewcategorypage_center">
-						<button type="button" class="btn btn-primary viewcategorypage_button">afficher tout</button>
-					</div>
+					
 				</div>
 				<!--End viewcategory row3 col1,2,3-->
 			</div>

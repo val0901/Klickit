@@ -16,7 +16,7 @@
 	</li>
 	<div class="clear"></div>
 	<br><br>
-	<p class="orderMC_title">MOM COMPTE</p>
+	<p class="orderMC_title">MON COMPTE</p>
 	<p class="orderMC_text">Vous trouverez ici tous vos favoris que vous pouvez ajouter directement dans votre panier. Vous serez averti par mail si un de vos articles préféré est en promotion.</p>
 	<hr>
 	<br>
@@ -56,7 +56,7 @@
               </div>
               <?php endforeach; ?> <!-- fin du foreach $favorite -->
               <div class="favoritedelete_button">
-                <button type="button" class="btn btn-primary favoritedelete_button_size">Supremmer touts mes favoris</button>
+                <button type="button" class="btn btn-primary favoritedelete_button_size">Supprimer tous mes favoris</button>
               </div>
        </div>
    </div>
