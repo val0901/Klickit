@@ -99,9 +99,43 @@ class FrontItemController extends Controller
 		$getClassicItems = new ItemModel();
 		$items = $getClassicItems->findByCategory('PlaymobilClassique', $page, $max);
 
+		// Permet de gérer les favoris, pour avoir les commentaires explicatif, rendez-vous dans la première fonction de la page
+		$favoriteArray = []; 
+		if(!empty($this->getUser())){
+			$favorite = new UserModel();
+			$listFavorite = $favorite->findFavorite($_SESSION['user']['id']); 
+			$existFavorite = $listFavorite['favorites']; 
+			$favorisNew = '';
+
+			if(!empty($_POST) && isset($_POST)){ 
+				$favorisNew = implode('', $_POST); 
+			}
+
+			$newFavorite = new UserModel();
+			if(empty($existFavorite)){ 
+				if(!empty($favorisNew)){
+					$newFavoris = $newFavorite->updateFavorites($favorisNew, $_SESSION['user']['id']);
+				}
+			}
+			elseif(!empty($existFavorite) && isset($existFavorite)){
+				if(!empty($favorisNew)){
+					$fullFavorite = $existFavorite.', '.$favorisNew;
+					$newFavoris = $newFavorite->updateFavorites($fullFavorite, $_SESSION['user']['id']); 
+				}
+
+				$favoriteArray = explode(', ', $existFavorite); 
+				$favorisDelete = implode(', ', $_POST); 
+				if(in_array($favorisDelete, $favoriteArray)){ 
+					$deleteUpdate = substr(implode(', ', str_replace($favorisDelete, '', $favoriteArray)), 0, -2); 
+					$newFavoriteDelete = $newFavorite->updateFavorites($deleteUpdate, $_SESSION['user']['id']);
+				}
+			}
+		}
+
 		$data = [
 			'afficheNewItem' => $afficheNewItems,
 			'items'			 => $items,
+			'favoris'		 => $favoriteArray,
 			'max' 			 => $max,
 			'page' 			 => $page,
 			'nb'			 => $nb,
@@ -128,9 +162,43 @@ class FrontItemController extends Controller
 		$newItems = new ItemModel();
 		$afficheNewItems = $newItems->findCategoryStatutCustom('PlaymobilCustom', 'nouveaute');
 
+		// Permet de gérer les favoris, pour avoir les commentaires explicatif, rendez-vous dans la première fonction de la page
+		$favoriteArray = []; 
+		if(!empty($this->getUser())){
+			$favorite = new UserModel();
+			$listFavorite = $favorite->findFavorite($_SESSION['user']['id']); 
+			$existFavorite = $listFavorite['favorites']; 
+			$favorisNew = '';
+
+			if(!empty($_POST) && isset($_POST)){ 
+				$favorisNew = implode('', $_POST); 
+			}
+
+			$newFavorite = new UserModel();
+			if(empty($existFavorite)){ 
+				if(!empty($favorisNew)){
+					$newFavoris = $newFavorite->updateFavorites($favorisNew, $_SESSION['user']['id']);
+				}
+			}
+			elseif(!empty($existFavorite) && isset($existFavorite)){
+				if(!empty($favorisNew)){
+					$fullFavorite = $existFavorite.', '.$favorisNew;
+					$newFavoris = $newFavorite->updateFavorites($fullFavorite, $_SESSION['user']['id']); 
+				}
+
+				$favoriteArray = explode(', ', $existFavorite); 
+				$favorisDelete = implode(', ', $_POST); 
+				if(in_array($favorisDelete, $favoriteArray)){ 
+					$deleteUpdate = substr(implode(', ', str_replace($favorisDelete, '', $favoriteArray)), 0, -2); 
+					$newFavoriteDelete = $newFavorite->updateFavorites($deleteUpdate, $_SESSION['user']['id']);
+				}
+			}
+		}
+
 		$data = [
 			'affiche' 		 => $afficheItems,
 			'afficheNewItem' => $afficheNewItems,
+			'favoris'		 => $favoriteArray,
 			'max' 			 => $max,
 			'page' 			 => $page,
 			'nb'			 => $nb,
@@ -157,9 +225,43 @@ class FrontItemController extends Controller
 		$getCLassicItems = new ItemModel();
 		$items = $getCLassicItems->findByCategory('PlaymobilCustom', $page, $max);
 
+		// Permet de gérer les favoris, pour avoir les commentaires explicatif, rendez-vous dans la première fonction de la page
+		$favoriteArray = []; 
+		if(!empty($this->getUser())){
+			$favorite = new UserModel();
+			$listFavorite = $favorite->findFavorite($_SESSION['user']['id']); 
+			$existFavorite = $listFavorite['favorites']; 
+			$favorisNew = '';
+
+			if(!empty($_POST) && isset($_POST)){ 
+				$favorisNew = implode('', $_POST); 
+			}
+
+			$newFavorite = new UserModel();
+			if(empty($existFavorite)){ 
+				if(!empty($favorisNew)){
+					$newFavoris = $newFavorite->updateFavorites($favorisNew, $_SESSION['user']['id']);
+				}
+			}
+			elseif(!empty($existFavorite) && isset($existFavorite)){
+				if(!empty($favorisNew)){
+					$fullFavorite = $existFavorite.', '.$favorisNew;
+					$newFavoris = $newFavorite->updateFavorites($fullFavorite, $_SESSION['user']['id']); 
+				}
+
+				$favoriteArray = explode(', ', $existFavorite); 
+				$favorisDelete = implode(', ', $_POST); 
+				if(in_array($favorisDelete, $favoriteArray)){ 
+					$deleteUpdate = substr(implode(', ', str_replace($favorisDelete, '', $favoriteArray)), 0, -2); 
+					$newFavoriteDelete = $newFavorite->updateFavorites($deleteUpdate, $_SESSION['user']['id']);
+				}
+			}
+		}
+
 		$data = [
 			'afficheNewItem' => $afficheNewItems,
 			'items'			 => $items,
+			'favoris'		 => $favoriteArray,
 			'max'			 => $max,
 			'page'			 => $page,
 			'nb'			 => $nb,
@@ -186,9 +288,43 @@ class FrontItemController extends Controller
 		$newItems = new ItemModel();
 		$afficheNewItems = $newItems->findCategoryStatutCustom('PiecesDetachees', 'nouveaute');
 
+		// Permet de gérer les favoris, pour avoir les commentaires explicatif, rendez-vous dans la première fonction de la page
+		$favoriteArray = []; 
+		if(!empty($this->getUser())){
+			$favorite = new UserModel();
+			$listFavorite = $favorite->findFavorite($_SESSION['user']['id']); 
+			$existFavorite = $listFavorite['favorites']; 
+			$favorisNew = '';
+
+			if(!empty($_POST) && isset($_POST)){ 
+				$favorisNew = implode('', $_POST); 
+			}
+
+			$newFavorite = new UserModel();
+			if(empty($existFavorite)){ 
+				if(!empty($favorisNew)){
+					$newFavoris = $newFavorite->updateFavorites($favorisNew, $_SESSION['user']['id']);
+				}
+			}
+			elseif(!empty($existFavorite) && isset($existFavorite)){
+				if(!empty($favorisNew)){
+					$fullFavorite = $existFavorite.', '.$favorisNew;
+					$newFavoris = $newFavorite->updateFavorites($fullFavorite, $_SESSION['user']['id']); 
+				}
+
+				$favoriteArray = explode(', ', $existFavorite); 
+				$favorisDelete = implode(', ', $_POST); 
+				if(in_array($favorisDelete, $favoriteArray)){ 
+					$deleteUpdate = substr(implode(', ', str_replace($favorisDelete, '', $favoriteArray)), 0, -2); 
+					$newFavoriteDelete = $newFavorite->updateFavorites($deleteUpdate, $_SESSION['user']['id']);
+				}
+			}
+		}
+
 		$data = [
 			'affiche' 		 => $afficheItems,
 			'afficheNewItem' => $afficheNewItems,
+			'favoris'		 => $favoriteArray,
 			'max'			 => $max,
 			'page'			 => $page,
 			'nb'			 => $nb,
@@ -215,9 +351,43 @@ class FrontItemController extends Controller
 		$getCLassicItems = new ItemModel();
 		$items = $getCLassicItems->findByCategory('PiecesDetachees', $page, $max);
 
+		// Permet de gérer les favoris, pour avoir les commentaires explicatif, rendez-vous dans la première fonction de la page
+		$favoriteArray = []; 
+		if(!empty($this->getUser())){
+			$favorite = new UserModel();
+			$listFavorite = $favorite->findFavorite($_SESSION['user']['id']); 
+			$existFavorite = $listFavorite['favorites']; 
+			$favorisNew = '';
+
+			if(!empty($_POST) && isset($_POST)){ 
+				$favorisNew = implode('', $_POST); 
+			}
+
+			$newFavorite = new UserModel();
+			if(empty($existFavorite)){ 
+				if(!empty($favorisNew)){
+					$newFavoris = $newFavorite->updateFavorites($favorisNew, $_SESSION['user']['id']);
+				}
+			}
+			elseif(!empty($existFavorite) && isset($existFavorite)){
+				if(!empty($favorisNew)){
+					$fullFavorite = $existFavorite.', '.$favorisNew;
+					$newFavoris = $newFavorite->updateFavorites($fullFavorite, $_SESSION['user']['id']); 
+				}
+
+				$favoriteArray = explode(', ', $existFavorite); 
+				$favorisDelete = implode(', ', $_POST); 
+				if(in_array($favorisDelete, $favoriteArray)){ 
+					$deleteUpdate = substr(implode(', ', str_replace($favorisDelete, '', $favoriteArray)), 0, -2); 
+					$newFavoriteDelete = $newFavorite->updateFavorites($deleteUpdate, $_SESSION['user']['id']);
+				}
+			}
+		}
+
 		$data = [
 			'afficheNewItem' => $afficheNewItems,
 			'items'			 => $items,
+			'favoris'		 => $favoriteArray,
 			'max'			 => $max,
 			'page'			 => $page,
 			'nb'			 => $nb,
@@ -244,9 +414,43 @@ class FrontItemController extends Controller
 		$newItems = new ItemModel();
 		$afficheNewItems = $newItems->findCategoryStatutCustom('Divers', 'nouveaute');
 
+		// Permet de gérer les favoris, pour avoir les commentaires explicatif, rendez-vous dans la première fonction de la page
+		$favoriteArray = []; 
+		if(!empty($this->getUser())){
+			$favorite = new UserModel();
+			$listFavorite = $favorite->findFavorite($_SESSION['user']['id']); 
+			$existFavorite = $listFavorite['favorites']; 
+			$favorisNew = '';
+
+			if(!empty($_POST) && isset($_POST)){ 
+				$favorisNew = implode('', $_POST); 
+			}
+
+			$newFavorite = new UserModel();
+			if(empty($existFavorite)){ 
+				if(!empty($favorisNew)){
+					$newFavoris = $newFavorite->updateFavorites($favorisNew, $_SESSION['user']['id']);
+				}
+			}
+			elseif(!empty($existFavorite) && isset($existFavorite)){
+				if(!empty($favorisNew)){
+					$fullFavorite = $existFavorite.', '.$favorisNew;
+					$newFavoris = $newFavorite->updateFavorites($fullFavorite, $_SESSION['user']['id']); 
+				}
+
+				$favoriteArray = explode(', ', $existFavorite); 
+				$favorisDelete = implode(', ', $_POST); 
+				if(in_array($favorisDelete, $favoriteArray)){ 
+					$deleteUpdate = substr(implode(', ', str_replace($favorisDelete, '', $favoriteArray)), 0, -2); 
+					$newFavoriteDelete = $newFavorite->updateFavorites($deleteUpdate, $_SESSION['user']['id']);
+				}
+			}
+		}
+
 		$data = [
 			'items' 		 => $items,
 			'afficheNewItem' => $afficheNewItems,
+			'favoris'		 => $favoriteArray,
 			'max'			 => $max,
 			'page'			 => $page,
 			'nb'			 => $nb,
@@ -273,9 +477,43 @@ class FrontItemController extends Controller
 		$getDiversItems = new ItemModel();
 		$items = $getDiversItems->findByCategory('Divers', $page, $max);
 
+		// Permet de gérer les favoris, pour avoir les commentaires explicatif, rendez-vous dans la première fonction de la page
+		$favoriteArray = []; 
+		if(!empty($this->getUser())){
+			$favorite = new UserModel();
+			$listFavorite = $favorite->findFavorite($_SESSION['user']['id']); 
+			$existFavorite = $listFavorite['favorites']; 
+			$favorisNew = '';
+
+			if(!empty($_POST) && isset($_POST)){ 
+				$favorisNew = implode('', $_POST); 
+			}
+
+			$newFavorite = new UserModel();
+			if(empty($existFavorite)){ 
+				if(!empty($favorisNew)){
+					$newFavoris = $newFavorite->updateFavorites($favorisNew, $_SESSION['user']['id']);
+				}
+			}
+			elseif(!empty($existFavorite) && isset($existFavorite)){
+				if(!empty($favorisNew)){
+					$fullFavorite = $existFavorite.', '.$favorisNew;
+					$newFavoris = $newFavorite->updateFavorites($fullFavorite, $_SESSION['user']['id']); 
+				}
+
+				$favoriteArray = explode(', ', $existFavorite); 
+				$favorisDelete = implode(', ', $_POST); 
+				if(in_array($favorisDelete, $favoriteArray)){ 
+					$deleteUpdate = substr(implode(', ', str_replace($favorisDelete, '', $favoriteArray)), 0, -2); 
+					$newFavoriteDelete = $newFavorite->updateFavorites($deleteUpdate, $_SESSION['user']['id']);
+				}
+			}
+		}
+
 		$data = [
 			'afficheNewItem' => $afficheNewItems,
 			'items'			 => $items,
+			'favoris'		 => $favoriteArray,
 			'max'			 => $max,
 			'page'			 => $page,
 			'nb'			 => $nb,
