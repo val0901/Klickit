@@ -1447,6 +1447,7 @@ td {
 .orderlist_total {
 	text-align: right;
 	font-size: 22px;
+    letter-spacing: 3px;
 }
 
 /*orderlogin.php*/
