@@ -70,7 +70,7 @@ class FrontItemController extends Controller
 		$data = [
 			'affiche' 		 => $afficheItems,
 			'afficheNewItem' => $afficheNewItems,
-			'favoris'		 => explode(', ', $favoriteList),
+			'favorite'		 => explode(', ', $favoriteList),
 			'max' 			 => $max,
 			'page'			 => $page,
 			'nb'			 => $nb,
@@ -196,7 +196,7 @@ class FrontItemController extends Controller
 		$data = [
 			'affiche' 		 => $afficheItems,
 			'afficheNewItem' => $afficheNewItems,
-			'favoris'		 => explode(', ', $favoriteList),
+			'favorite'		 => explode(', ', $favoriteList),
 			'max' 			 => $max,
 			'page' 			 => $page,
 			'nb'			 => $nb,
@@ -259,7 +259,7 @@ class FrontItemController extends Controller
 		$data = [
 			'afficheNewItem' => $afficheNewItems,
 			'items'			 => $items,
-			'favoris'		 => explode(', ', $favoriteList),
+			'favorite'		 => explode(', ', $favoriteList),
 			'max'			 => $max,
 			'page'			 => $page,
 			'nb'			 => $nb,
@@ -322,7 +322,7 @@ class FrontItemController extends Controller
 		$data = [
 			'affiche' 		 => $afficheItems,
 			'afficheNewItem' => $afficheNewItems,
-			'favoris'		 => explode(', ', $favoriteList),
+			'favorite'		 => explode(', ', $favoriteList),
 			'max'			 => $max,
 			'page'			 => $page,
 			'nb'			 => $nb,
@@ -385,7 +385,7 @@ class FrontItemController extends Controller
 		$data = [
 			'afficheNewItem' => $afficheNewItems,
 			'items'			 => $items,
-			'favoris'		 => explode(', ', $favoriteList),
+			'favorite'		 => explode(', ', $favoriteList),
 			'max'			 => $max,
 			'page'			 => $page,
 			'nb'			 => $nb,
@@ -448,7 +448,7 @@ class FrontItemController extends Controller
 		$data = [
 			'items' 		 => $items,
 			'afficheNewItem' => $afficheNewItems,
-			'favoris'		 => explode(', ', $favoriteList),
+			'favorite'		 => explode(', ', $favoriteList),
 			'max'			 => $max,
 			'page'			 => $page,
 			'nb'			 => $nb,
@@ -511,7 +511,7 @@ class FrontItemController extends Controller
 		$data = [
 			'afficheNewItem' => $afficheNewItems,
 			'items'			 => $items,
-			'favoris'		 => explode(', ', $favoriteList),
+			'favorite'		 => explode(', ', $favoriteList),
 			'max'			 => $max,
 			'page'			 => $page,
 			'nb'			 => $nb,

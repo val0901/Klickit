@@ -112,10 +112,10 @@
 								<p>
 									<span style="cursor:pointer;">
 										<?php if(!empty($_SESSION['user'])): ?>
-											<?php if(in_array($product['id'], $favoris)): ?>
+											<?php if(in_array($product['id'], $favorite)): ?>
 												<button class="favorite" type="submit" name="<?=str_replace(' ', '', $product['name']);?>" value="<?=$product['id']?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #999;" title="Ajouter à mes favoris"></i>ee</button> <!-- l'icône ne change pas de couleur, pour ça que j'ai mis 'ee' pour voir la différence lors du dev -->
-											<?php else : ?>
-												<button class="favorite" type="submit" name="<?=str_replace(' ', '', $product['name']);?>" value="<?=$product['id']?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button>
+											<?php else: ?>
+												<button class="favorite" type="submit" name="<?=str_replace(' ', '', $product['name']);?>" value="<?=$product['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button>
 											<?php endif; ?>
 										<?php else : ?>
 											<a href="<?=$this->url('login');?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></a>
