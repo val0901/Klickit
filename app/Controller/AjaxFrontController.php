@@ -10,6 +10,7 @@ use \Model\MessageModel;
 use \Model\EventModel;
 use \Model\GuestbookModel;
 use \Model\OrdersModel;
+use \Model\BasketModel;
 use \Model\SlideModel;
 use \Model\ShippingModel;
 use \W\Security\AuthentificationModel;
@@ -89,7 +90,7 @@ class AjaxFrontController extends Controller
 	{	
 		$html = '';
 		$price = 0;
-		$updateCart = new UserModel();
+		$insert = new BasketModel();
 
 		if(!empty($_POST)){
 
@@ -100,54 +101,41 @@ class AjaxFrontController extends Controller
 
 				if(!empty($loggedUser)){
 
-					/************On stocke en session*************/ 
+					if(isset($_POST['id_product'])){
+						$dataInsert = [
+							'id_member'	=>	$loggedUser['id'],
+							'id_item'	=>	$_POST['id_product'],
+							'quantity'	=>	'1',
+						];
 
-					//Si notre panier est vide ou non défini, alors on rajoute notre produit au panier
-					if(!isset($_SESSION['shop']['cart_item']) || empty($_SESSION['shop']['cart_item'])){ 
-						$_SESSION['shop']['cart_item'] = $_POST['id_product'];
-					}
-					//Sinon, on récupère les valeurs stockées dans notre panier puis on rajoute la valeur sélectionnée en la concatennant
-					else {
-						$_SESSION['shop']['cart_item'] = $_SESSION['shop']['cart_item'].', '.$_POST['id_product'];
-					}
+						if($insert->insert($dataInsert)){
+							$getItem = new BasketModel;
+							$items = $getItem->getShoppingCartItem($loggedUser['id']);
 
+							foreach($items as $item){
+								$html = '<div class="col-xs-6">'.$item['name'].'</div>';
 
-					//On remplit le panier avec l'id
-					$shoppingCart = [
-						'cart_item'	=>	$_SESSION['shop']['cart_item'],
-					];
-				}
-				
-					/************Affichage des articles dans le panier***********/
-					if($updateCart->update($shoppingCart,$loggedUser['id'])){
-						
-						$getShoppingCart = new UserModel(); 
-						$getItems = new ItemModel();
-						$user = $this->getUser();
-						$shoppingCart = $getShoppingCart->find($user['id']); //Je récupère le panier de l'utilisateur connecté
+								if($item['newPrice'] == 0){
+									$html.= '<div class="col-xs-6" style="text-align:right;">'.$item['price'].'€</div>';
+									$price = $item['price'] + $price;
+								}
+								else
+								{
+									$html.= '<div class="col-xs-6" style="text-align:right;">'.$item['newPrice'].'€</div>';
+									$price = $item['newPrice'] + $price;
+								}
 
-						$panier = explode(', ', $shoppingCart['cart_item']); //Je crées un tableau à partir des clés en string
-
-						foreach($panier as $value){ //Je parcours tout mon panier et je cherche à afficher le nom et le prix de tous les articles (produit x Y pas encore pris en compte)
-
-							$list_items = $getItems->findItems($value);
-							$html.= '<div class="col-xs-6">'.$list_items['name'].'</div>';
-							if($list_items['newPrice'] == 0){
-								$html.= '<div class="col-xs-6" style="text-align:right;">'.$list_items['price'].'€</div>';
-								$price = $list_items['price'] + $price;
-							}else{
-								$html.= '<div class="col-xs-6" style="text-align:right;">'.$list_items['newPrice'].'€</div>';
-								$price = $list_items['newPrice'] + $price;
-							}
-							
-							//Je stocke les résultats dans mon tableau json
-							$json = ['code' => 'ok', 'item_cart'=>$html, 'price'=>$price];
+								$json = ['code' => 'ok', 'item_cart'=>$html, 'price'=>$price];
+							}		
 						}
-					}else{
-						$json = ['code' => 'error'];
+						else
+						{
+							$json = ['code' => 'error'];
+						}	
+					}	
 				}
-			}
 			$this->showJson($json);
+			}
 		}
 	}
 
