@@ -58,7 +58,7 @@
 }
 
 @media screen and (max-width: 1200px) {
-.ipad_padding {
+	.ipad_padding {
 		padding-top: 10px;
 	}
 	
@@ -69,12 +69,12 @@
 	.event_title {
 	font-size: 35px;
 	padding: 8px 150px;
-}
+	}
 	
 	.slideartL_title {
 	font-size: 30px;
 	padding: 8px 150px;
-}
+	}
 
 	.slideartR_title {
 		font-size: 30px;
@@ -83,7 +83,7 @@
 	
 	.classic_text_show, .customs_text_show, .pieces_text_show, .divers_text_show {
     top: 20vw;
-}
+	}
 	
 	.img-responsive {
 		width: 100%;
@@ -96,27 +96,27 @@
 	
 	.viewcategorycaption h4 {
     font-size: 2vw;
-}
+	}
 
 	.viewcategorycaption p {
     font-size: 1.5vw;
-}
+	}
 	
 	.viewcategoryprixpromo {
 	font-size: 2vw;
-}
+	}
 	
 	.orderlogin_box {
     width: 97%;
 	padding-left: 0px;
     padding-right: 0px;
 	box-sizing: border-box;
-}
+	}
     
 	.orderlogin_box {
     padding-left: 15px;
     padding-right: 15px;
-}
+	}
 	
 	.col-md-6 {
 		width: 97%;
@@ -134,6 +134,7 @@
 		width: 100%;
 	}
     
+
 }
 
 @media screen and (max-width: 990px) {

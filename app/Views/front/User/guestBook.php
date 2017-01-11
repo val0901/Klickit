@@ -18,6 +18,7 @@
 	<br><br>
 	<p class="orderMC_title">Commentaire</p>
 	<p class="orderMC_text">Merci d'être arrivé jusqu'ici ! Vous pouvez nous laisser vos commentaires.</p>
+	<p class="orderMC_stitle">Votre commentaire sera affiché après modération.</p>
 	<hr>
 	<br>
 

@@ -32,7 +32,7 @@
 
 		  	  <div class="form-group">
 				<label for="lastname" class="formlabel">Nom</label>
-				<input type="text" class="form-control" id="lastname" placeholder="votre prénom" name="lastname">
+				<input type="text" class="form-control" id="lastname" placeholder="votre nom" name="lastname">
 		  	  </div>
 			  		
 			  <div class="form-group">
@@ -45,7 +45,7 @@
 			  </div>
 			  <div class="form-group">
 				<label for="text" class="formlabel">Message</label>
-				<textarea id="text" class="form-control" rows="10" placeholder="Bonjour, je souhaiterais savoir..." name="message"></textarea>
+				<textarea id="text" class="form-control" rows="10" placeholder="Bonjour, je souhaiterais ..." name="message"></textarea>
 			  </div>	
 				
 			  <!--contact submit-->

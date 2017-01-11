@@ -113,6 +113,7 @@ header {
 .shoppingmenu_total {
 	font-size: 22px;
 	color: #999;
+    letter-spacing: 3px;
 }
 
 .shoppingmenu_button {
@@ -382,7 +383,7 @@ footer {
 }
 
 .etiq_width_small > img {
-	width: 25vw;
+	width: 90%;
 	margin: 10px 0px;
 }
 
@@ -423,7 +424,7 @@ footer {
 
 .footer_neticon {
 	text-align: left;
-	margin: 0;
+	margin: 0 0 0 20px;
 }
 
 .footer_largestyle {
@@ -933,6 +934,7 @@ input::-moz-focus-inner { border: 0; }
 
 .form-control {
     height: 50px;
+    font-size: 1.2em;
 }
 
 .btn-default {
@@ -953,7 +955,7 @@ input::-moz-focus-inner { border: 0; }
 
 .contactbutton {
 	display: block;
-	width: 15vw;
+	width: 28vw;
 	cursor: pointer;
 }
 
@@ -1529,7 +1531,7 @@ td {
 
 .orderpayment_text {
 	padding: 10px;
-	font-size:18px;
+	font-size: 1.3em;
 	font-weight:600;
 }
 
@@ -1550,11 +1552,16 @@ td {
 }
 
 .orderMC_title {
-	font-size: 30px;
+	font-size: 2.2em;
+}
+.orderMC_stitle {
+    font-size: 1.1em;
+    color: silver;
+    margin: -5px 0 0 0;
 }
 
 .orderMC_text {
-	font-size: 18px;
+	font-size: 1.3em;
 }
 
 .ordertable_title {
@@ -1672,7 +1679,7 @@ td {
 }
 
 .col-xs-6 p {
-    line-height: 10px;
+    line-height: 0.8em;
 }
 
 .playmo_hide {
