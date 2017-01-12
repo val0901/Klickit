@@ -547,8 +547,43 @@ class FrontItemController extends Controller
 		$item = new ItemModel();
 		$items = $item->findItems($id);
 
+		$insertFavorite = new FavoriteModel();
+		$findFavorite = new FavoriteModel();
+		$deleteFavorite = new FavoriteModel();
+		$favorite = new FavoriteModel();
+
+		$favoriteList = '';
+		if(!empty($this->getUser())){
+			$userFavorite = $favorite->findFavorisItem($_SESSION['user']['id']);
+
+			$myFavorite = '';
+
+			foreach ($userFavorite as $favoris) {
+				foreach ($favoris as $value) {
+					$myFavorite.= $value.', ';
+				}
+			}
+
+			$favoriteList = substr($myFavorite, 0, -2);
+		
+			if(!empty($_POST) && isset($_POST)){
+				$post = implode('', $_POST);
+
+				if($findFavorite->findFavoriteByIdItem($post)){
+					$deleteFavorite->deleteFavorite($post);
+				}
+				else{
+					$insertFavorite->insert([
+						'id_member' => $_SESSION['user']['id'],
+						'id_item'	=> $post, 
+					]);
+				}
+			}
+		}
+
 		$data = [
 			'afficheNewItem' => $afficheNewItems,
+			'favorite'		 => explode(', ', $favoriteList),
 			'items'			 => $items,
 		];
 
@@ -563,7 +598,19 @@ class FrontItemController extends Controller
 		$findUser = $user->findUser($_SESSION['user']['id']);
 
 		$favorite = new FavoriteModel();
-		$findFavorite = $favorite->findFavoriteByUser($_SESSION['user']['id']); 
+		$findFavorite = $favorite->findFavoriteByUser($_SESSION['user']['id']);
+
+		$deleteFavorite = new FavoriteModel();
+		if(!empty($_POST) && isset($_POST)){
+			$post = implode('', $_POST);
+
+			$deleteFavorite->deleteFavorite($post);
+		}
+
+		$deleteAllFavorite = new FavoriteModel();
+		if(isset($_POST['allDelete'])){
+			$deleteAllFavorite->deleteAllFavorite($_SESSION['user']['id']);
+		}
 
 		$items = new ItemModel();
 

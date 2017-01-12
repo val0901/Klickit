@@ -1,6 +1,7 @@
 <?php $this->layout('layoutfront', ['title' => 'favorite']) ?>
 
 <?php $this->start('main_content') ?>
+<form method="post">
 <div class="listorder_back">
  <div class="row">
   <div class="col-md-3">
@@ -33,9 +34,9 @@
                     </div>
                     <div class="caption">
                         <?php if($list_items['newPrice'] == 0) : ?>
-                          <h4><span style="cursor:pointer;"><button type="submit" value="<?=$list_items['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button></span> <?=$list_items['price'];?>€</h4>
+                          <h4><span style="cursor:pointer;"><button class="favorite" type="submit" value="<?=$list_items['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button></span> <?=$list_items['price'];?>€</h4>
                         <?php else : ?>
-                          <h4><span style="cursor:pointer;"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></span> <span class="viewcategoryprixpromo"><?=$list_items['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$list_items['price'];?>€</span></h4>
+                          <h4><span style="cursor:pointer;"><button class="favorite" type="submit" value="<?=$list_items['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button></span> <span class="viewcategoryprixpromo"><?=$list_items['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$list_items['price'];?>€</span></h4>
                         <?php endif; ?>
 
                         <p><?=$list_items['name'];?></p>
@@ -55,7 +56,7 @@
               </div>
               <?php endforeach; ?> <!-- fin du foreach $favorite -->
               <div class="favoritedelete_button">
-                <button type="button" class="btn btn-primary favoritedelete_button_size">Supprimer tous mes favoris</button>
+                <button type="submit" name="allDelete" class="btn btn-primary favoritedelete_button_size">Supprimer tous mes favoris</button>
               </div>
        </div>
    </div>
@@ -67,6 +68,6 @@
  
  
 </div>
-
+</form>
 
 <?php $this->stop('main_content') ?>

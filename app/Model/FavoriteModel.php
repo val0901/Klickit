@@ -63,4 +63,17 @@ class FavoriteModel extends \W\Model\Model
 
 		return $sth->execute();
 	}
+
+	/**
+	 * Permet de supprimer tout les favoris d'un utilisateur
+	 */
+	public function deleteAllFavorite($id_member)
+	{
+		$sql = 'DELETE FROM '.$this->table.' WHERE id_member = :id_member';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':id_member', $id_member);
+
+		return $sth->execute();
+	}
 }

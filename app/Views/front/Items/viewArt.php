@@ -4,6 +4,7 @@
 <!--<div class="vignetteEvent_hide">
 	<a href="<?=$this->url('front_contact')?>"><img class="img-responsive" src="<?=$this->assetUrl('/img/vignetteEvent1.png');?>" id="vignetteviewart_hover" onmouseover="vignetteviewarthover();" onmouseout="vignetteviewartout();"></a>
 </div>-->
+<form method="post">
 <div class="container_viewart">
 	<div class="row">
 		<div class="col-md-7">
@@ -53,7 +54,19 @@
 				</div>
 			</form>	
 			<br>
-			<i class="fa fa-heart-o fa-2x" aria-hidden="true" style="color:#999;"> <span class="viewart_fontfamily">Ajouter à mes favoris</span></i>
+			<p>
+				<span style="cursor:pointer;">
+					<?php if(!empty($_SESSION['user'])): ?>
+						<?php if(in_array($items['id'], $favorite)): ?>
+							<button class="favorite" type="submit" name="<?=str_replace(' ', '', $items['name']);?>" value="<?=$items['id']?>"><i class="fa fa-heart-o fa-2x" aria-hidden="true" style="color: DarkRed;" title="Ajouter à mes favoris"><span class="viewart_fontfamily">Déjà en favoris</span></i></button> <!-- l'icône ne change pas de couleur, pour ça que j'ai mis 'ee' pour voir la différence lors du dev -->
+						<?php else: ?>
+							<button class="favorite" type="submit" name="<?=str_replace(' ', '', $items['name']);?>" value="<?=$items['id'];?>"><i class="fa fa-heart-o fa-2x" aria-hidden="true" style="color: #999;" title="Ajouter à mes favoris"><span class="viewart_fontfamily">Ajouter à mes favoris</span></i></button>
+						<?php endif; ?>
+					<?php else : ?>
+						<a href="<?=$this->url('login');?>"><i class="fa fa-heart-o fa-2x" aria-hidden="true" style="color: #999;" title="Ajouter à mes favoris"><span class="viewart_fontfamily">Ajouter à mes favoris</span></i></a>
+					<?php endif; ?>
+				</span>
+			</p>
 			<br><br>
 			<i class="fa fa-twitter-square fa-3x fa-fw" aria-hidden="true" style="color:#3fa9f5;"></i>
 			<i class="fa fa-facebook-square fa-3x fa-fw" aria-hidden="true" style="color:#335199;"></i>
@@ -101,7 +114,19 @@
 	                            	<?php elseif($newProduct['newPrice'] > 0) : ?>
 	                            		<h4><span class="viewcategoryprixpromo"><?=$product['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$product['price'];?>€</span></h4>
 	                            	<?php endif; ?>
-	                				<p><?=$newProduct['name'];?></p>
+	                				<p>
+	                					<span style="cursor:pointer;">
+										<?php if(!empty($_SESSION['user'])): ?>
+											<?php if(in_array($newProduct['id'], $favorite)): ?>
+												<button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id']?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #999;" title="Ajouter à mes favoris"></i>ee</button> <!-- l'icône ne change pas de couleur, pour ça que j'ai mis 'ee' pour voir la différence lors du dev -->
+											<?php else: ?>
+												<button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button>
+											<?php endif; ?>
+										<?php else : ?>
+											<a href="<?=$this->url('login');?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></a>
+										<?php endif; ?>
+										</span> <?=$newProduct['name'];?>
+	                				</p>
 									<div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
 	                                <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
 	                            </div>
@@ -122,7 +147,19 @@
                        	            <?php else : ?>
                        	                <h4><?=$newProduct['newPrice'];?></h4>
                        	            <?php endif; ?>
-                       	            <p><?=$newProduct['name'];?></p>
+                       	            <p>
+	                					<span style="cursor:pointer;">
+										<?php if(!empty($_SESSION['user'])): ?>
+											<?php if(in_array($newProduct['id'], $favorite)): ?>
+												<button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id']?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #999;" title="Ajouter à mes favoris"></i>ee</button> <!-- l'icône ne change pas de couleur, pour ça que j'ai mis 'ee' pour voir la différence lors du dev -->
+											<?php else: ?>
+												<button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button>
+											<?php endif; ?>
+										<?php else : ?>
+											<a href="<?=$this->url('login');?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></a>
+										<?php endif; ?>
+										</span> <?=$newProduct['name'];?>
+	                				</p>
                        			<div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
                        	        <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
                        	        </div>
@@ -143,7 +180,19 @@
 	                            	<?php else : ?>
 	                            		<h4><?=$newProduct['newPrice'];?></h4>
 	                            	<?php endif; ?>
-	                				<p><?=$newProduct['name'];?></p>
+	                				<p>
+	                					<span style="cursor:pointer;">
+										<?php if(!empty($_SESSION['user'])): ?>
+											<?php if(in_array($newProduct['id'], $favorite)): ?>
+												<button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id']?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #999;" title="Ajouter à mes favoris"></i>ee</button> <!-- l'icône ne change pas de couleur, pour ça que j'ai mis 'ee' pour voir la différence lors du dev -->
+											<?php else: ?>
+												<button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button>
+											<?php endif; ?>
+										<?php else : ?>
+											<a href="<?=$this->url('login');?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></a>
+										<?php endif; ?>
+										</span> <?=$newProduct['name'];?>
+	                				</p>
 									<div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
 	                                <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
 	                            </div>
@@ -164,13 +213,14 @@
 </div><!-- /.row --> 
 </div><!-- /.container -->
 <br><br>
+</form>
 <?php $this->stop('main_content') ?>
 
 <?php $this->start('js')?>
 	<script>
 		$(document).ready(function(){
 			$('button[type="submit"]').click(function(e){
-				e.preventDefault();
+				// e.preventDefault();
 
 				var idProduct = $(this).data('id');
 
