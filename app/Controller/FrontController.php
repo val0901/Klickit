@@ -8,6 +8,7 @@ use \Model\UserModel;
 use \Model\BackModel;
 use \Model\ResetModel;
 use \Model\OrdersModel;
+use \Model\BasketModel;
 use \Model\ItemModel;
 use \Model\MessageModel;
 use \Model\GuestbookModel;
@@ -17,7 +18,7 @@ use \W\Security\StringUtils;
 use \PHPMailer;
 use \Respect\Validation\Validator as v;
 
-class FrontController extends Controller
+class FrontController extends MasterController
 {
 	
 	/**
@@ -197,6 +198,22 @@ class FrontController extends Controller
 		$this->show('front/Pages/team');
 	}
 
+	/**
+	* Permet d'afficher le panier sur toutes les pages
+	*/
+	public function showBasket()
+	{
+		// $getBasket = new BasketModel;
+		// $user = $this->getUser(); //On récupère l'utilisateur connecté
 
+		// $userCart = $getBasket->getShoppingCartItem($user['id']); //On récupère son panier
+
+		// $data = [
+		//  	'items'	=> $userCart,
+		// ];
+
+		$this->showStuff('layoutfront');
+
+	}
 
 }
