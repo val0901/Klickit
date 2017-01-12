@@ -70,7 +70,7 @@ class ItemModel extends \W\Model\Model
 	}
 
 	/** 
-	*Méthode pour compter le nombre de résultat 
+	*Méthode pour compter le nombre de résultat par catégorie 
 	* @return le nombre de lignes contenu ds la table
 	*/
 
@@ -89,6 +89,25 @@ class ItemModel extends \W\Model\Model
     return $result['total'];
 	}
 
+		/** 
+		*Méthode pour compter le nombre de résultat par sous catégorie 
+		* @return le nombre de lignes contenu ds la table
+		*/
+
+		public function countResultssub($column = false)
+		{
+	    $sql = 'SELECT COUNT(*) as total FROM ' . $this->table ;
+
+	    if ($column) {
+	    	$sql.= ' WHERE sub_category = "' .$column .'"';
+	    }
+	    $sth = $this->dbh->prepare($sql);
+	    $sth->execute();
+
+	    $result = $sth->fetch();
+
+	    return $result['total'];
+		}
 	/*REQUÊTE SUR LA ITEM PAR ID*/
 	public function findItems($id)
 	{

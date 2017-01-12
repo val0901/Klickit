@@ -108,9 +108,10 @@
 					</div>
 				<?php endforeach; ?>
 			</div>
+		</div>		
 		</div>
-		
-		
+		<!--End viewcategory row2 col2-->
+
 		<div class="row">
 			<div class="col-md-3">
 			
@@ -134,9 +135,6 @@
 				<!--End viewcategory row3 col1,2,3-->
 			</div>
 		</div>
-		
-		</div>
-		<!--End viewcategory row2 col2-->
 	</div>
 	
 	<!--nouveute slideshow-->

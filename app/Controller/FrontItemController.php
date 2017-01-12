@@ -19,7 +19,7 @@ class FrontItemController extends Controller
 	{
 		/*Pagination*/
 		$nbpage= new ItemModel();
-		$nb=$nbpage->countResults();
+		$nb=$nbpage->countResultssub();
 
 		$page = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
 		$max = 12;
@@ -85,11 +85,11 @@ class FrontItemController extends Controller
 	/**
 	 * Affiche la page de tous les classics
 	 */
-	public function listClassicsItemsFull()
+	public function listClassicsItemsFull($column= 'PlaymobilClassique')
 	{
 		/*pagination*/
 		$nbpage= new ItemModel();
-		$nb=$nbpage->countResults();
+		$nb=$nbpage->countResults($column);
 
 		$page = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
 		$max = 12;
@@ -141,6 +141,7 @@ class FrontItemController extends Controller
 			'max' 			 => $max,
 			'page' 			 => $page,
 			'nb'			 => $nb,
+
 		];
 
 		$this->show('front/Items/classicsFull', $data);
@@ -213,11 +214,11 @@ class FrontItemController extends Controller
 	/**
 	* Affiche la page de tous les customs
 	*/
-	public function listCustomItemsFull()
+	public function listCustomItemsFull($column= 'PlaymobilCustom')
 	{
 		/*pagination*/
 		$nbpage= new ItemModel();
-		$nb=$nbpage->countResults();
+		$nb=$nbpage->countResults($column);
 
 		$page = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
 		$max = 12;
@@ -341,11 +342,11 @@ class FrontItemController extends Controller
 	/**
 	* Affiche la page de toutes les pièces détachées
 	*/
-	public function listPiecesItemsFull()
+	public function listPiecesItemsFull($column = 'PiecesDetachees' )
 	{
 		/*pagination*/
 		$nbpage= new ItemModel();
-		$nb=$nbpage->countResults();
+		$nb=$nbpage->countResults($column);
 
 		$page = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
 		$max = 12;
@@ -469,11 +470,11 @@ class FrontItemController extends Controller
 	/**
 	* Affiche la page de tous les divers
 	*/
-	public function listDiversItemsFull()
+	public function listDiversItemsFull($column = 'Divers')
 	{
 		/*pagination*/
 		$nbpage= new ItemModel();
-		$nb=$nbpage->countResults();
+		$nb=$nbpage->countResults($column);
 
 		$page = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
 		$max = 12;
