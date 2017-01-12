@@ -52,7 +52,17 @@
                         <div class="viewcategory_button">
                           <button type="button" class="btn btn-primary favorite_button_size ">ajouter au panier</button>
                         </div>
-                        <p class="favorite_voirplus">Voir même catégorie</p>
+                        <p class="favorite_voirplus">
+                          <?php if($list_items['category'] == 'PlaymobilClassique'): ?>
+                            <a href="<?=$this->url('listItemClassicsFull');?>">Voir même catégorie</a>
+                          <?php elseif($list_items['category'] == 'PlaymobilCustom'): ?>
+                            <a href="<?=$this->url('listItemCustomFull');?>">Voir même catégorie</a>
+                          <?php elseif($list_items['category'] == 'PiecesDetachees'): ?>
+                            <a href="<?=$this->url('listItemPiecesFull');?>">Voir même catégorie</a>
+                          <?php elseif($list_items['category'] == 'Divers'): ?>
+                            <a href="<?=$this->url('listItemDiversFull');?>">Voir même catégorie</a>
+                          <?php endif; ?>
+                        </p>
               </div>
               <?php endforeach; ?> <!-- fin du foreach $favorite -->
               <div class="favoritedelete_button">
