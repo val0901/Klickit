@@ -1,6 +1,7 @@
 <?php $this->layout('layoutfront', ['title' => 'catégorie Customs', 'meta' => 'napoleon, Customs playmobil, customs Tampographiés, bustes playmobil, bustes tampographiés, pièces résine, stickers drapeau']) ?>
 
 <?php $this->start('main_content') ?>
+<form method="POST">
 <div>
 	<!--viewcategory row1 col1,2-->
 	<div class="row customs_background">
@@ -24,7 +25,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 	<a href="<?=$this->url('front_contact')?>"><img class="img-responsive" src="<?=$this->assetUrl('/img/vignetteEvent1.png');?>" id="vignettecustoms_hover" onmouseover="vignettecustomshover();" onmouseout="vignettecustomsout();"></a>
 </div>-->
 <!--End vignetteEvent-->
-	
+
 	<!--viewcategory row2 col1-->
 	<div class="row">
 		<div class="col-md-3">
@@ -81,45 +82,43 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 				<?php endif; ?>
 			</h4>
 			<div class="row">
-				<form method="POST">
-					<?php foreach ($affiche as $product) : ?>
-						<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
-							<a href="<?=$this->url('viewArt', ['id' => $product['id']]);?>"><img src="<?=$this->assetUrl('art/'.$product['picture1']);?>" alt="photo de playmobil" class="img-thumbnail"></a>
-							<div class="viewcategorycaption">
-								<?php if($product['newPrice'] == 0) : ?>
-									<h4><?=$product['price'];?>€</h4>
-								<?php else : ?>
-									<h4><span class="viewcategoryprixpromo"><?=$product['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$product['price'];?>€</span></h4>
-								<?php endif; ?>
+				<?php foreach ($affiche as $product) : ?>
+					<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
+						<a href="<?=$this->url('viewArt', ['id' => $product['id']]);?>"><img src="<?=$this->assetUrl('art/'.$product['picture1']);?>" alt="photo de playmobil" class="img-thumbnail"></a>
+						<div class="viewcategorycaption">
+							<?php if($product['newPrice'] == 0) : ?>
+								<h4><?=$product['price'];?>€</h4>
+							<?php else : ?>
+								<h4><span class="viewcategoryprixpromo"><?=$product['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$product['price'];?>€</span></h4>
+							<?php endif; ?>
 
-								<p>
-									<span style="cursor:pointer;">
-										<?php if(!empty($_SESSION['user'])): ?>
-											<?php if(in_array($product['id'], $favorite)): ?>
-												<button class="favorite" type="submit" name="<?=str_replace(' ', '', $product['name']);?>" value="<?=$product['id']?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #999;" title="Ajouter à mes favoris"></i>ee</button> <!-- l'icône ne change pas de couleur, pour ça que j'ai mis 'ee' pour voir la différence lors du dev -->
-											<?php else: ?>
-												<button class="favorite" type="submit" name="<?=str_replace(' ', '', $product['name']);?>" value="<?=$product['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button>
-											<?php endif; ?>
-										<?php else : ?>
-											<a href="<?=$this->url('login');?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></a>
+							<p>
+								<span style="cursor:pointer;">
+									<?php if(!empty($_SESSION['user'])): ?>
+										<?php if(in_array($product['id'], $favorite)): ?>
+											<button class="favorite" type="submit" name="<?=str_replace(' ', '', $product['name']);?>" value="<?=$product['id']?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #999;" title="Ajouter à mes favoris"></i>ee</button> <!-- l'icône ne change pas de couleur, pour ça que j'ai mis 'ee' pour voir la différence lors du dev -->
+										<?php else: ?>
+											<button class="favorite" type="submit" name="<?=str_replace(' ', '', $product['name']);?>" value="<?=$product['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button>
 										<?php endif; ?>
-									</span> <?=$product['name'];?>
-								</p>
+									<?php else : ?>
+										<a href="<?=$this->url('login');?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></a>
+									<?php endif; ?>
+								</span> <?=$product['name'];?>
+							</p>
 
-								<?php if($product['statut'] == 'nouveaute'):?>
-									<div class="viewcategory_nouveau"><?=$product['statut'];?></div>
-								<?php elseif($product['statut'] == 'promotion'):?>
-									<div class="viewcategory_promo"><?=$product['statut'];?></div>
-								<?php elseif($product['statut'] == 'defaut'): ?>
-									<div class="viewcategory_defaut"></div>
-								<?php endif; ?>
-		                    </div>
-							<div class="viewcategory_button">
-								<button type="button" class="btn btn-primary viewcategory_button_size ">ajouter au panier</button>
-							</div>
+							<?php if($product['statut'] == 'nouveaute'):?>
+								<div class="viewcategory_nouveau"><?=$product['statut'];?></div>
+							<?php elseif($product['statut'] == 'promotion'):?>
+								<div class="viewcategory_promo"><?=$product['statut'];?></div>
+							<?php elseif($product['statut'] == 'defaut'): ?>
+								<div class="viewcategory_defaut"></div>
+							<?php endif; ?>
+	                    </div>
+						<div class="viewcategory_button">
+							<button type="button" class="btn btn-primary viewcategory_button_size ">ajouter au panier</button>
 						</div>
-					<?php endforeach; ?>
-				</form>
+					</div>
+				<?php endforeach; ?>
 			</div>
 		</div>
 		
@@ -177,7 +176,19 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 	                            	<?php else : ?>
 	                            		<h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
 	                            	<?php endif; ?>
-	                				<p><span style="cursor:pointer;"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></span> <?=$newProduct['name'];?></p>
+	                				<p>
+	                					<span style="cursor:pointer;">
+										<?php if(!empty($_SESSION['user'])): ?>
+											<?php if(in_array($newProduct['id'], $favorite)): ?>
+												<button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id']?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #999;" title="Ajouter à mes favoris"></i>ee</button> <!-- l'icône ne change pas de couleur, pour ça que j'ai mis 'ee' pour voir la différence lors du dev -->
+											<?php else: ?>
+												<button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button>
+											<?php endif; ?>
+										<?php else : ?>
+											<a href="<?=$this->url('login');?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></a>
+										<?php endif; ?>
+										</span> <?=$newProduct['name'];?>
+	                				</p>
 									<div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
 	                                <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
 	                            </div>
@@ -198,7 +209,19 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
                        	            <?php else : ?>
                        	                <h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
                        	            <?php endif; ?>
-                       	            <p><span style="cursor:pointer;"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></span> <?=$newProduct['name'];?></p>
+                       	            <p>
+	                					<span style="cursor:pointer;">
+										<?php if(!empty($_SESSION['user'])): ?>
+											<?php if(in_array($newProduct['id'], $favorite)): ?>
+												<button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id']?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #999;" title="Ajouter à mes favoris"></i>ee</button> <!-- l'icône ne change pas de couleur, pour ça que j'ai mis 'ee' pour voir la différence lors du dev -->
+											<?php else: ?>
+												<button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button>
+											<?php endif; ?>
+										<?php else : ?>
+											<a href="<?=$this->url('login');?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></a>
+										<?php endif; ?>
+										</span> <?=$newProduct['name'];?>
+	                				</p>
                        			<div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
                        	        <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
                        	        </div>
@@ -219,7 +242,19 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 	                            	<?php else : ?>
 	                            		<h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
 	                            	<?php endif; ?>
-	                				<p><span style="cursor:pointer;"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></span> <?=$newProduct['name'];?></p>
+	                				<p>
+	                					<span style="cursor:pointer;">
+										<?php if(!empty($_SESSION['user'])): ?>
+											<?php if(in_array($newProduct['id'], $favorite)): ?>
+												<button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id']?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #999;" title="Ajouter à mes favoris"></i>ee</button> <!-- l'icône ne change pas de couleur, pour ça que j'ai mis 'ee' pour voir la différence lors du dev -->
+											<?php else: ?>
+												<button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button>
+											<?php endif; ?>
+										<?php else : ?>
+											<a href="<?=$this->url('login');?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></a>
+										<?php endif; ?>
+										</span> <?=$newProduct['name'];?>
+	                				</p>
 									<div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
 	                                <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
 	                            </div>
@@ -242,7 +277,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 <br><br>
 <!--End Slide articles-->
 	<!--End nouveute slideshow-->
+</form>
 </div>
-
 <?php $this->stop('main_content') ?>
 

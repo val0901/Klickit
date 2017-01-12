@@ -39,19 +39,20 @@ class FrontItemController extends Controller
 		$deleteFavorite = new FavoriteModel();
 		$favorite = new FavoriteModel();
 
-		$userFavorite = $favorite->findFavorisItem($_SESSION['user']['id']);
-
-		$myFavorite = '';
-
-		foreach ($userFavorite as $favoris) {
-			foreach ($favoris as $value) {
-				$myFavorite.= $value.', ';
-			}
-		}
-
-		$favoriteList = substr($myFavorite, 0, -2);
-
+		$favoriteList = '';
 		if(!empty($this->getUser())){
+			$userFavorite = $favorite->findFavorisItem($_SESSION['user']['id']);
+
+			$myFavorite = '';
+
+			foreach ($userFavorite as $favoris) {
+				foreach ($favoris as $value) {
+					$myFavorite.= $value.', ';
+				}
+			}
+
+			$favoriteList = substr($myFavorite, 0, -2);
+		
 			if(!empty($_POST) && isset($_POST)){
 				$post = implode('', $_POST);
 
@@ -102,19 +103,20 @@ class FrontItemController extends Controller
 		$deleteFavorite = new FavoriteModel();
 		$favorite = new FavoriteModel();
 
-		$userFavorite = $favorite->findFavorisItem($_SESSION['user']['id']);
-
-		$myFavorite = '';
-
-		foreach ($userFavorite as $favoris) {
-			foreach ($favoris as $value) {
-				$myFavorite.= $value.', ';
-			}
-		}
-
-		$favoriteList = substr($myFavorite, 0, -2);
-
+		$favoriteList = '';
 		if(!empty($this->getUser())){
+			$userFavorite = $favorite->findFavorisItem($_SESSION['user']['id']);
+
+			$myFavorite = '';
+
+			foreach ($userFavorite as $favoris) {
+				foreach ($favoris as $value) {
+					$myFavorite.= $value.', ';
+				}
+			}
+
+			$favoriteList = substr($myFavorite, 0, -2);
+		
 			if(!empty($_POST) && isset($_POST)){
 				$post = implode('', $_POST);
 
@@ -165,19 +167,20 @@ class FrontItemController extends Controller
 		$deleteFavorite = new FavoriteModel();
 		$favorite = new FavoriteModel();
 
-		$userFavorite = $favorite->findFavorisItem($_SESSION['user']['id']);
-
-		$myFavorite = '';
-
-		foreach ($userFavorite as $favoris) {
-			foreach ($favoris as $value) {
-				$myFavorite.= $value.', ';
-			}
-		}
-
-		$favoriteList = substr($myFavorite, 0, -2);
-
+		$favoriteList = '';
 		if(!empty($this->getUser())){
+			$userFavorite = $favorite->findFavorisItem($_SESSION['user']['id']);
+
+			$myFavorite = '';
+
+			foreach ($userFavorite as $favoris) {
+				foreach ($favoris as $value) {
+					$myFavorite.= $value.', ';
+				}
+			}
+
+			$favoriteList = substr($myFavorite, 0, -2);
+		
 			if(!empty($_POST) && isset($_POST)){
 				$post = implode('', $_POST);
 
@@ -228,19 +231,20 @@ class FrontItemController extends Controller
 		$deleteFavorite = new FavoriteModel();
 		$favorite = new FavoriteModel();
 
-		$userFavorite = $favorite->findFavorisItem($_SESSION['user']['id']);
-
-		$myFavorite = '';
-
-		foreach ($userFavorite as $favoris) {
-			foreach ($favoris as $value) {
-				$myFavorite.= $value.', ';
-			}
-		}
-
-		$favoriteList = substr($myFavorite, 0, -2);
-
+		$favoriteList = '';
 		if(!empty($this->getUser())){
+			$userFavorite = $favorite->findFavorisItem($_SESSION['user']['id']);
+
+			$myFavorite = '';
+
+			foreach ($userFavorite as $favoris) {
+				foreach ($favoris as $value) {
+					$myFavorite.= $value.', ';
+				}
+			}
+
+			$favoriteList = substr($myFavorite, 0, -2);
+		
 			if(!empty($_POST) && isset($_POST)){
 				$post = implode('', $_POST);
 
@@ -291,19 +295,20 @@ class FrontItemController extends Controller
 		$deleteFavorite = new FavoriteModel();
 		$favorite = new FavoriteModel();
 
-		$userFavorite = $favorite->findFavorisItem($_SESSION['user']['id']);
-
-		$myFavorite = '';
-
-		foreach ($userFavorite as $favoris) {
-			foreach ($favoris as $value) {
-				$myFavorite.= $value.', ';
-			}
-		}
-
-		$favoriteList = substr($myFavorite, 0, -2);
-
+		$favoriteList = '';
 		if(!empty($this->getUser())){
+			$userFavorite = $favorite->findFavorisItem($_SESSION['user']['id']);
+
+			$myFavorite = '';
+
+			foreach ($userFavorite as $favoris) {
+				foreach ($favoris as $value) {
+					$myFavorite.= $value.', ';
+				}
+			}
+
+			$favoriteList = substr($myFavorite, 0, -2);
+		
 			if(!empty($_POST) && isset($_POST)){
 				$post = implode('', $_POST);
 
@@ -354,19 +359,20 @@ class FrontItemController extends Controller
 		$deleteFavorite = new FavoriteModel();
 		$favorite = new FavoriteModel();
 
-		$userFavorite = $favorite->findFavorisItem($_SESSION['user']['id']);
-
-		$myFavorite = '';
-
-		foreach ($userFavorite as $favoris) {
-			foreach ($favoris as $value) {
-				$myFavorite.= $value.', ';
-			}
-		}
-
-		$favoriteList = substr($myFavorite, 0, -2);
-
+		$favoriteList = '';
 		if(!empty($this->getUser())){
+			$userFavorite = $favorite->findFavorisItem($_SESSION['user']['id']);
+
+			$myFavorite = '';
+
+			foreach ($userFavorite as $favoris) {
+				foreach ($favoris as $value) {
+					$myFavorite.= $value.', ';
+				}
+			}
+
+			$favoriteList = substr($myFavorite, 0, -2);
+		
 			if(!empty($_POST) && isset($_POST)){
 				$post = implode('', $_POST);
 
@@ -417,19 +423,20 @@ class FrontItemController extends Controller
 		$deleteFavorite = new FavoriteModel();
 		$favorite = new FavoriteModel();
 
-		$userFavorite = $favorite->findFavorisItem($_SESSION['user']['id']);
-
-		$myFavorite = '';
-
-		foreach ($userFavorite as $favoris) {
-			foreach ($favoris as $value) {
-				$myFavorite.= $value.', ';
-			}
-		}
-
-		$favoriteList = substr($myFavorite, 0, -2);
-
+		$favoriteList = '';
 		if(!empty($this->getUser())){
+			$userFavorite = $favorite->findFavorisItem($_SESSION['user']['id']);
+
+			$myFavorite = '';
+
+			foreach ($userFavorite as $favoris) {
+				foreach ($favoris as $value) {
+					$myFavorite.= $value.', ';
+				}
+			}
+
+			$favoriteList = substr($myFavorite, 0, -2);
+		
 			if(!empty($_POST) && isset($_POST)){
 				$post = implode('', $_POST);
 
@@ -480,19 +487,20 @@ class FrontItemController extends Controller
 		$deleteFavorite = new FavoriteModel();
 		$favorite = new FavoriteModel();
 
-		$userFavorite = $favorite->findFavorisItem($_SESSION['user']['id']);
-
-		$myFavorite = '';
-
-		foreach ($userFavorite as $favoris) {
-			foreach ($favoris as $value) {
-				$myFavorite.= $value.', ';
-			}
-		}
-
-		$favoriteList = substr($myFavorite, 0, -2);
-
+		$favoriteList = '';
 		if(!empty($this->getUser())){
+			$userFavorite = $favorite->findFavorisItem($_SESSION['user']['id']);
+
+			$myFavorite = '';
+
+			foreach ($userFavorite as $favoris) {
+				foreach ($favoris as $value) {
+					$myFavorite.= $value.', ';
+				}
+			}
+
+			$favoriteList = substr($myFavorite, 0, -2);
+		
 			if(!empty($_POST) && isset($_POST)){
 				$post = implode('', $_POST);
 
