@@ -70,9 +70,34 @@ class OrdersController extends Controller
 
 			$items = new ItemModel();
 
-			$data= [
+			$update = new OrdersModel();
+			$errors = [];
+			$updateOrder = [];
+			$success = '';
+			$statut_product = ['commande', 'enPreparation', 'expedie'];
+			if(!empty($_POST)){
+				if(!in_array($_POST['selectStatut'], $statut_product)){
+					$errors[] = 'Veuillez choisir un statut valide';
+				}
+				else {
+					$updateOrder['statut'] = $_POST['selectStatut'];
+				}
+
+				if(count($errors) === 0){
+					if($update->update($updateOrder, $id)){
+						$success = true;
+					}
+					else {
+						$errors[] = 'Erreur lors de l\'ajout en base de données';
+					}
+				}
+			}
+
+			$data = [
 			'orders' => $viewOrders,
 			'items' => $items,
+			'errors'  => $errors,
+			'success' => $success,
 			];
 		}
 
