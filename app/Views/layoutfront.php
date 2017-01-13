@@ -108,8 +108,8 @@
                     <li class="span_float">
                         <i class="fa fa-shopping-cart fa-5x icon_cursor navR_color fa-fw" aria-hidden="true" id="shoppingicon_click"></i>
 						<!--<span class="shoppingcart_quantity">1</span>-->
-						<div class="shoppingsoumenu_hidden" id="view">
-							<div class="row item_cart" style="margin: 10px 10px 0 10px;">
+						<div class="shoppingsoumenu_hidden">
+							<div id="view" class="row item_cart" style="margin: 10px 10px 0 10px;">
 								<?php if(!empty($w_items)): ?>
 									<?php foreach($w_items as $item) : ?>
 										<div class="col-xs-6">
@@ -122,7 +122,7 @@
 											</div>
 										<?php else : ?>
 											<div class="col-xs-6">
-												<?= $item['newPrice'] ?>
+												<?= $item['newPrice'] ?>€
 											</div>
 										<?php endif; ?>
 									<?php endforeach; ?>
@@ -506,13 +506,14 @@
 
 	<!--Script-->
 	<script>
+		//var reload = document.getElementById('view');
+
 		//Ajout au panier d'un article
 		$(document).ready(function(){
 			$('.add_to_shopping_cart').click(function(e){
 				e.preventDefault();
 
 				var idProduct = $(this).data('id');
-				var reload = document.getElementById('view');
 
 				$.ajax({
   					url: '<?=$this->url('ajax_addToCart'); ?>',
@@ -522,7 +523,7 @@
 					dataType: 'json',
 					success: function(out){
 						if(out.code == 'ok'){
-			  				reload.location.href= reload.location.href;
+			  				window.location.href= window.location.href;
 						}
 					}
   				});

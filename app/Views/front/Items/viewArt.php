@@ -46,7 +46,7 @@
 			<form method="post">
 				<span class="viewart_fontref">Quantité </span>
 				<span>
-					<input type="number" name="number" id="number">
+					<input type="number" name="number" min="1" id="number">
 				</span>
 				<br><br>
 				<div class="">
@@ -223,17 +223,17 @@
 				// e.preventDefault();
 
 				var idProduct = $(this).data('id');
+				var idQuantity = $('#number').val();
 
 				$.ajax({
   					url: '<?=$this->url('ajax_addToCartView'); ?>',
 					type: 'post',
 					cache: false,
-					data: {id_product_view: idProduct},  // $_POST['id_product']
+					data: {id_product: idProduct, id_quantity: idQuantity},  // $_POST['id_product']
 					dataType: 'json',
 					success: function(out){
 						if(out.code == 'ok'){
-			  				$('.item_cart').html(out.item_cart);
-			  				$('.price').html(out.price+2.60);	
+			  				window.location.href=window.location.href;
 						}
 					}
   				});
