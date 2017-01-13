@@ -108,7 +108,7 @@
                     <li class="span_float">
                         <i class="fa fa-shopping-cart fa-5x icon_cursor navR_color fa-fw" aria-hidden="true" id="shoppingicon_click"></i>
 						<!--<span class="shoppingcart_quantity">1</span>-->
-						<div class="shoppingsoumenu_hidden">
+						<div class="shoppingsoumenu_hidden" id="view">
 							<div class="row item_cart" style="margin: 10px 10px 0 10px;">
 								<?php if(!empty($w_items)): ?>
 									<?php foreach($w_items as $item) : ?>
@@ -512,6 +512,7 @@
 				e.preventDefault();
 
 				var idProduct = $(this).data('id');
+				var reload = document.getElementById('view');
 
 				$.ajax({
   					url: '<?=$this->url('ajax_addToCart'); ?>',
@@ -521,7 +522,7 @@
 					dataType: 'json',
 					success: function(out){
 						if(out.code == 'ok'){
-			  				$('.item_cart').location.href=$('.item_cart').location.href;
+			  				reload.location.href= reload.location.href;
 						}
 					}
   				});
