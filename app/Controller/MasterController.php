@@ -9,6 +9,11 @@ class MasterController extends Controller
 {
 
 	/**
+	 * Constante du chemin du dossier des vues
+	 */
+	const PATH_VIEWS = '../app/Views';
+	
+	/**
 	 * Affiche un template
 	 * @param string $file Chemin vers le template, relatif à app/Views/
 	 * @param array  $data Données à rendre disponibles à la vue

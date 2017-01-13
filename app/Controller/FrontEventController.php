@@ -9,7 +9,7 @@ use \W\Security\AuthentificationModel;
 use \Respect\Validation\Validator as v;
 use \Intervention\Image\ImageManagerStatic as Image;
 
-class FrontEventController extends Controller 
+class FrontEventController extends MasterController 
 {
 	
 	/**
@@ -17,7 +17,7 @@ class FrontEventController extends Controller
 	*/
 	public function createEvent()
 	{
-		$this->show('front/Pages/contact');
+		$this->showStuff('front/Pages/contact');
 	}
 
 }

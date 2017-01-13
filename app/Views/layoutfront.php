@@ -110,15 +110,15 @@
 						<!--<span class="shoppingcart_quantity">1</span>-->
 						<div class="shoppingsoumenu_hidden">
 							<div class="row item_cart" style="margin: 10px 10px 0 10px;">
-								<?php if(!empty($items)): ?>
-									<?php foreach($items as $item) : ?>
+								<?php if(!empty($w_items)): ?>
+									<?php foreach($w_items as $item) : ?>
 										<div class="col-xs-6">
 											<?=$item['name']?>
 										</div>
 
 										<?php if($item['newPrice'] == 0) : ?>
 											<div class="col-xs-6">
-												<?= $item['price'] ?>
+												<?= $item['price'] ?>€
 											</div>
 										<?php else : ?>
 											<div class="col-xs-6">
@@ -521,7 +521,7 @@
 					dataType: 'json',
 					success: function(out){
 						if(out.code == 'ok'){
-			  				console.log('Yes');
+			  				$('.item_cart').location.href=$('.item_cart').location.href;
 						}
 					}
   				});

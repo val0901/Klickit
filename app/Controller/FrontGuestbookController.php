@@ -7,7 +7,7 @@ use \Model\GuestbookModel;
 use \W\Security\AuthorizationModel;
 use \Respect\Validation\Validator as v;
 
-class FrontGuestbookController extends Controller 
+class FrontGuestbookController extends MasterController 
 {
 
 
@@ -59,7 +59,7 @@ class FrontGuestbookController extends Controller
 			];	
 
 		if(!empty($_SESSION)){
-			$this->show('front/User/guestbook', $params);
+			$this->showStuff('front/User/guestbook', $params);
 		}else {
 			$this->redirectToRoute('login');
 		}

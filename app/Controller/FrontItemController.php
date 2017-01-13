@@ -10,7 +10,7 @@ use \W\Security\AuthorizationModel;
 use \W\Security\AuthentificationModel;
 use \Respect\Validation\Validator as v;
 
-class FrontItemController extends Controller 
+class FrontItemController extends MasterController 
 {
 	/**
 	 * Affiche la page des items "Classiques"
@@ -79,7 +79,7 @@ class FrontItemController extends Controller
 			'nb'			 => $nb,
 		];
 
-		$this->show('front/Items/classics', $data);
+		$this->showStuff('front/Items/classics', $data);
 	}
 
 	/**
@@ -144,7 +144,7 @@ class FrontItemController extends Controller
 
 		];
 
-		$this->show('front/Items/classicsFull', $data);
+		$this->showStuff('front/Items/classicsFull', $data);
 	}
 
 	/**
@@ -208,7 +208,7 @@ class FrontItemController extends Controller
 			'nb'			 => $nb,
 		];
 
-		$this->show('front/Items/customs', $data);
+		$this->showStuff('front/Items/customs', $data);
 	}
 
 	/**
@@ -272,7 +272,7 @@ class FrontItemController extends Controller
 			'nb'			 => $nb,
 		];
 
-		$this->show('front/Items/customsFull', $data);
+		$this->showStuff('front/Items/customsFull', $data);
 	}
 
 	/**
@@ -336,7 +336,7 @@ class FrontItemController extends Controller
 			'nb'			 => $nb,
 		];
 
-		$this->show('front/Items/pieces', $data);
+		$this->showStuff('front/Items/pieces', $data);
 	}
 
 	/**
@@ -400,7 +400,7 @@ class FrontItemController extends Controller
 			'nb'			 => $nb,
 		];
 
-		$this->show('front/Items/piecesFull', $data);
+		$this->showStuff('front/Items/piecesFull', $data);
 	}
 
 	/**
@@ -464,7 +464,7 @@ class FrontItemController extends Controller
 			'nb'			 => $nb,
 		];
 
-		$this->show('front/Items/divers', $data);
+		$this->showStuff('front/Items/divers', $data);
 	}
 
 	/**
@@ -528,7 +528,7 @@ class FrontItemController extends Controller
 			'nb'			 => $nb,
 		];
 		
-		$this->show('front/Items/diversFull', $data);
+		$this->showStuff('front/Items/diversFull', $data);
 	}
 
 	/**
@@ -590,7 +590,7 @@ class FrontItemController extends Controller
 			'items'			 => $items,
 		];
 
-		$this->show('front/Items/viewArt', $data);
+		$this->showStuff('front/Items/viewArt', $data);
 	}
 	/**
 	 * Affiche la page des favoris
@@ -624,7 +624,7 @@ class FrontItemController extends Controller
 			];
 
 		if(!empty($this->getUser())){
-			$this->show('front/Items/favorite', $data);	
+			$this->showStuff('front/Items/favorite', $data);	
 		}
 		else {
 			$this->redirectToRoute('login');

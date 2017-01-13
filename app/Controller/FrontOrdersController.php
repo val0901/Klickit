@@ -6,7 +6,7 @@ use \W\Controller\Controller;
 use \Model\OrdersModel;
 use \W\Security\AuthorizationModel;
 
-class FrontOrdersController extends Controller 
+class FrontOrdersController extends MasterController 
 {
 
 	/**
@@ -15,7 +15,7 @@ class FrontOrdersController extends Controller
 	public function frontListOrders()
 	{
 		
-		$this->show('front/User/listOrders');
+		$this->showStuff('front/User/listOrders');
 	}
 
 	/**
@@ -23,7 +23,7 @@ class FrontOrdersController extends Controller
 	 */
 	public function frontViewOrders() 
 	{
-		$this->show('front/User/viewUserOrder');
+		$this->showStuff('front/User/viewUserOrder');
 	}
 
 	/**
@@ -31,14 +31,14 @@ class FrontOrdersController extends Controller
 	 */
 	public function frontOrderPaie() 
 	{
-		$this->show('front/Order/orderPayment');
+		$this->showStuff('front/Order/orderPayment');
 	}
 	/**
 	 * Page choix de l'adresse de livraison
 	 */
 	public function frontOrderAddress() 
 	{
-		$this->show('front/Order/orderAddress');
+		$this->showStuff('front/Order/orderAddress');
 	}
 	/**
 	 * Vu unique d'une commande avec possibilité de changer son statut
@@ -59,7 +59,7 @@ class FrontOrdersController extends Controller
 	 */
 	public function frontPanier() 
 	{
-		$this->show('front/Order/orderList');
+		$this->showStuff('front/Order/orderList');
 	}
 
 }

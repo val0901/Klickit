@@ -8,7 +8,7 @@ use \W\Security\AuthorizationModel;
 use \W\Security\AuthentificationModel;
 use \Respect\Validation\Validator as v;
 
-class FrontUserController extends Controller 
+class FrontUserController extends MasterController 
 {
 
 
@@ -97,7 +97,7 @@ class FrontUserController extends Controller
 			'success'	=> $success,
 			'errors'	=> $errors,
 		];	
-		$this->show('front/User/addUser', $params);
+		$this->showStuff('front/User/addUser', $params);
 	}
 
 	/**
@@ -112,7 +112,7 @@ class FrontUserController extends Controller
 			$data = [
 				'user' => $user,
 			];
-			$this->show('front/User/cptUser', $data);
+			$this->showStuff('front/User/cptUser', $data);
 		}
 		else {
 			$this->redirectToRoute('front_faddUser');
@@ -126,7 +126,7 @@ class FrontUserController extends Controller
 	public function fupdateUser($id){
 
 		if(!empty($this->getUser())){
-			$this->show('front/User/UpdateUser');	
+			$this->showStuff('front/User/UpdateUser');	
 		}
 		else {
 			$this->redirectToRoute('login');
@@ -138,6 +138,6 @@ class FrontUserController extends Controller
 	 */
 
 	public function fconnectUser(){
-		$this->show('front/Order/orderLogin');
+		$this->showStuff('front/Order/orderLogin');
 	}
 }

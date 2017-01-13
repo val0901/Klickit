@@ -43,7 +43,7 @@ class FrontController extends MasterController
 		];	
 
 
-		$this->show('front/index', $data);
+		$this->showStuff('front/index', $data);
 	}
 
 	/**
@@ -90,7 +90,7 @@ class FrontController extends MasterController
 			$data = [
 				'error' => $error,
 			];
-			$this->show('front/login', $data);			
+			$this->showStuff('front/login', $data);			
 		}
 	}
 
@@ -99,7 +99,7 @@ class FrontController extends MasterController
 	 */
 	public function about()
 	{
-		$this->show('front/Pages/aPropos');
+		$this->showStuff('front/Pages/aPropos');
 	}
 
 	/**
@@ -107,7 +107,7 @@ class FrontController extends MasterController
 	 */
 	public function cgv()
 	{
-		$this->show('front/Pages/cgv');
+		$this->showStuff('front/Pages/cgv');
 	}
 
 	/**
@@ -171,7 +171,7 @@ class FrontController extends MasterController
 			'errors'	=> $errors,
 			'success'	=> $success
 		];
-		$this->show('front/Pages/contact', $data);
+		$this->showStuff('front/Pages/contact', $data);
 	}
 
 	/**
@@ -179,7 +179,7 @@ class FrontController extends MasterController
 	 */
 	public function legalMention()
 	{
-		$this->show('front/Pages/legalMention');
+		$this->showStuff('front/Pages/legalMention');
 	}
 
 	/**
@@ -187,7 +187,7 @@ class FrontController extends MasterController
 	 */
 	public function events()
 	{
-		$this->show('front/Event/viewEvent');
+		$this->showStuff('front/Event/viewEvent');
 	}
 
 	/**
@@ -195,7 +195,7 @@ class FrontController extends MasterController
 	 */
 	public function team()
 	{
-		$this->show('front/Pages/team');
+		$this->showStuff('front/Pages/team');
 	}
 
 	/**
