@@ -30,24 +30,37 @@
                     <th></th>
                 </tr> 
             </thead> 
-            <tbody> 
-                <tr> 
-                    <td scope="row"><img class="img-responsive" src="<?=$this->assetUrl('/img/orderimg_example.png');?>" style="width: 15vw;margin:0 auto;"></td> 
-                    <td>
-                        <li class="ordertable_title">Princess Playmo<li>
-                        <li class="ordertable_text">Référence: 0001<li>
-                    </td> 
-                    <td><p class="ordertable_title">5 €<p></td>  
-                    <td><p class="ordertable_title"><input type="number" name="number" id="number"><p></td> 
-                    <td><p class="ordertable_title">5 €<p></td>
-                    <td><p class="ordertable_title"><i class="fa fa-trash" aria-hidden="true" style="color: #000;"></i><p></td>
-                </tr>
+            <tbody>
+                <?php foreach($w_items as $item) :?> 
+                    <tr> 
+                        <td scope="row"><img class="img-responsive" src="<?=$this->assetUrl('art/'.$item['picture1']);?>" style="width: 15vw;margin:0 auto;"></td> 
+                        <td>
+                            <li class="ordertable_title"><?=$item['name']?><li>
+                            <li class="ordertable_text">Référence: <?=$item['id']?><li>
+                        </td>
+
+                        <?php if($item['newPrice'] == 0) :?> 
+                            <td><p class="ordertable_title"><?=$item['price']?> €<p></td>
+                        <?php elseif($item['newPrice'] > 0) :?>
+                            <td><p class="ordertable_title"><?=$item['newPrice']?> €<p></td>
+                        <?php endif;?> 
+
+                        <td><p class="ordertable_title"><input type="number" name="number" id="number" value="<?=$item['quantity']?>"><p></td>
+
+                        <?php if($item['newPrice'] == 0) :?>  
+                            <td><p class="ordertable_title"><?=$item['quantity']*$item['price']?> €<p></td>
+                        <?php elseif($item['newPrice'] > 0) :?>
+                            <td><p class="ordertable_title"><?=$item['quantity']*$item['newPrice']?> €<p></td>
+                        <?php endif; ?>       
+                        <td><p class="ordertable_title"><i class="fa fa-trash" aria-hidden="true" style="color: #000;"></i><p></td>
+                    </tr>
+                <?php endforeach; ?>    
             </tbody> 
         </table>
 		<div class="orderlist_total">
 			<ul  style="float:right;">
 				<li>
-					<p>17.00 €</p>
+					<p><?=$total?> €</p>
 					<p>2.60 €</p>
 					<p><strong>19.60 €</strong></p>
 				</li>

@@ -4,6 +4,7 @@ namespace Controller;
 
 use \W\Controller\Controller;
 use \Model\OrdersModel;
+use \Model\BasketModel;
 use \W\Security\AuthorizationModel;
 
 class FrontOrdersController extends MasterController 
@@ -58,8 +59,16 @@ class FrontOrdersController extends MasterController
 	 * Vu du panier de commande
 	 */
 	public function frontPanier() 
-	{
-		$this->showStuff('front/Order/orderList');
+	{	
+		$getTotal = new BasketModel;
+		$user = $this->getUser();
+
+		$total = $getTotal->getTotal($user['id']);
+
+		$data = [
+			'total'	=>	$total,
+		];
+		$this->showStuff('front/Order/orderList', $data);
 	}
 
 }

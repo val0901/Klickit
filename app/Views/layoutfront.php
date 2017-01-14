@@ -150,7 +150,7 @@
 								</div>
 							</div>
 							<div>
-								<button type="button" class="btn btn-primary shoppingmenu_button">VOIR PANIER</button>
+								<a href="<?=$this->url('front_orderList')?>"><button type="button" class="btn btn-primary shoppingmenu_button">VOIR PANIER</button></a>
 							</div>
                         </div>
                     </li>
