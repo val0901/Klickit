@@ -76,27 +76,28 @@ class ItemModel extends \W\Model\Model
 
 	public function countResults($column = false)
 	{
-    $sql = 'SELECT COUNT(*) as total FROM ' . $this->table ;
+	    $sql = 'SELECT COUNT(*) as total FROM ' . $this->table ;
 
-    if ($column) {
-    	$sql.= ' WHERE category = "' .$column .'"';
-    }
-    $sth = $this->dbh->prepare($sql);
-    $sth->execute();
+	    if ($column) {
+	    	$sql.= ' WHERE category = "' .$column .'"';
+	    }
+	    $sth = $this->dbh->prepare($sql);
+	    $sth->execute();
 
-    $result = $sth->fetch();
+	    $result = $sth->fetch();
 
-    return $result['total'];
+	    return $result['total'];
 	}
 
-		/** 
-		*Méthode pour compter le nombre de résultat par sous catégorie 
-		* @return le nombre de lignes contenu ds la table
-		*/
+	/** 
+	*Méthode pour compter le nombre de résultat par sous catégorie 
+	* @return le nombre de lignes contenu ds la table
+	*/
 
-		public function countResultssub($column = false)
-		{
-	    $sql = 'SELECT COUNT(*) as total FROM ' . $this->table ;
+	public function countResultssub($column = false)
+
+    {
+	    $sql = 'SELECT COUNT(*) as total FROM ' . $this->table;
 
 	    if ($column) {
 	    	$sql.= ' WHERE sub_category = "' .$column .'"';
@@ -107,7 +108,9 @@ class ItemModel extends \W\Model\Model
 	    $result = $sth->fetch();
 
 	    return $result['total'];
-		}
+	}
+
+
 	/*REQUÊTE SUR LA ITEM PAR ID*/
 	public function findItems($id)
 	{

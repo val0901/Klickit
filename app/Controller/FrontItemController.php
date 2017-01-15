@@ -19,7 +19,7 @@ class FrontItemController extends MasterController
 	{
 		/*Pagination*/
 		$nbpage= new ItemModel();
-		$nb=$nbpage->countResultssub();
+		$nb=$nbpage->countResultssub($sub_category);
 
 		$page = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
 		$max = 12;
@@ -154,7 +154,7 @@ class FrontItemController extends MasterController
 	{
 		/*pagination*/
 		$nbpage= new ItemModel();
-		$nb=$nbpage->countResults();
+		$nb=$nbpage->countResultssub($sub_category);
 
 		$page = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
 		$max = 12;
@@ -282,7 +282,7 @@ class FrontItemController extends MasterController
 	{
 		/*pagination*/
 		$nbpage= new ItemModel();
-		$nb=$nbpage->countResults();
+		$nb=$nbpage->countResultssub($sub_category);
 
 		$page = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
 		$max = 12;
@@ -410,7 +410,7 @@ class FrontItemController extends MasterController
 	{
 		/*pagination*/
 		$nbpage= new ItemModel();
-		$nb=$nbpage->countResults();
+		$nb=$nbpage->countResultssub($sub_category);
 
 		$page = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
 		$max = 12;
