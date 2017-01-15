@@ -134,8 +134,8 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 					<div id="pagination">
 
 						<?= ($page!=1) ? '<a href="?'. $search .'page='. ($page - 1) .'"><i class="fa fa-arrow-left fa-fw" style="color:black;"></i></a>':''; ?>
-						Page <?= $page; ?> <?php if ($nb>=1) {echo '/'.ceil($nb/$max);} ?>
-						<?=  ($page= 1) ? '' : ($page!= ceil($nb/$max)) ? '<a href="?'. $search .'page='. ($page + 1) .'"><i class="fa fa-arrow-right fa-fw" aria-hidden="true" style="color:black;"></i></a>':'';?>
+						Page <?= $page; ?> <?= ($nb>=1) ? '/'.ceil($nb/$max) :''; ?>
+						<?= ($nb < 1 ) ? '' : ($page!= ceil($nb/$max) ? '<a href="?'. $search .'page='. ($page + 1) .'"><i class="fa fa-arrow-right fa-fw" aria-hidden="true" style="color:black;"></i></a>':''); ?>
 						<br>	
 					</div>
 					</div>
