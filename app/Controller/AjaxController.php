@@ -276,8 +276,8 @@ class AjaxController extends Controller
 					$viewSearch.='<td>'.$value['firstname'].'</td>';
 					$viewSearch.='<td>'.$value['username'].'</td>';
 					$viewSearch.='<td>'.$value['email'].'</td>';
-					$viewSearch.='<td><a href="<?=$this->url("front_affcptuser", ["id"=>'.$value['id'].']);?>" target="_blank"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>';
-					$viewSearch.='<td><a href="<?=$this->url("updateUser", ["id"=>'.$value['id'].']);?>">Mettre à jour le profil</a></td>';
+					$viewSearch.='<td><a href="<?=$this->url(\'front_affcptuser\', [\'id\'=>'.$value['id'].']);?>" target="_blank"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>';
+					$viewSearch.='<td><a href="<?=$this->url(\'updateUser\', [\'id\'=>'.$value['id'].']);?>">Mettre à jour le profil</a></td>';
 					$viewSearch.='<td><button class="btn btn-danger delete-user" data-id="'.$value['id'].'">Effacer le profil</button></td>';
 				}
 			}
