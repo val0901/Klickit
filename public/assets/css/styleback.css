@@ -269,7 +269,11 @@ span {
 
 .btn-info {
 	margin-bottom: 20px;
-}         
+}  
+
+#submit {
+  margin-bottom: 0;
+}       
 
 
 
