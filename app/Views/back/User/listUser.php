@@ -53,7 +53,6 @@
 
 <script>
 	$(document).ready(function(){
-		
 		$('.delete-user').click(function(e){
 			e.preventDefault();
 
@@ -106,7 +105,7 @@
 				url: '<?=$this->url('ajax_searchUser');?>',
 				type: 'get',
 				cache: false,
-				data:  $('form').serialize(),
+				data:  $('#search'),
 				dataType: 'json',
 				success: function(search){
 					$('#result').html(search.msg);
@@ -115,5 +114,4 @@
 		});
 	});
 </script>
-
 <?php $this->stop('js')?>
