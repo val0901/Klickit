@@ -16,6 +16,10 @@
 			<link rel="stylesheet" href="<?= $this->assetUrl('css/font-awesome.min.css') ?>">
 			<link rel="stylesheet" href="<?= $this->assetUrl('css/styleback.css') ?>">
 			<link rel="stylesheet" href="<?= $this->assetUrl('css/jquery-confirm.min.css') ?>">
+
+			<!-- favicon-->
+		    <link rel="icon" type="image/x-icon" href="<?= $this->assetUrl('img/KLICKIT-favicon.ico')?>">
+		    <link rel="shortcut icon" type="image/x-icon" href="<?= $this->assetUrl('img/KLICKIT-favicon.ico')?>">
 		</head>
 
 		<body>
