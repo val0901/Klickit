@@ -45,12 +45,12 @@
                             <td><p class="ordertable_title"><?=$item['newPrice']?> €<p></td>
                         <?php endif;?> 
 
-                        <td><p class="ordertable_title"><input type="number" name="number" id="number" value="<?=$item['quantity']?>"><p></td>
+                        <td><p class="ordertable_title"><input type="number" name="number" id="number" value="<?=$item['qt']?>"><p></td>
 
                         <?php if($item['newPrice'] == 0) :?>  
-                            <td><p class="ordertable_title"><?=$item['quantity']*$item['price']?> €<p></td>
+                            <td><p class="ordertable_title"><?=$item['qt']*$item['price']?> €<p></td>
                         <?php elseif($item['newPrice'] > 0) :?>
-                            <td><p class="ordertable_title"><?=$item['quantity']*$item['newPrice']?> €<p></td>
+                            <td><p class="ordertable_title"><?=$item['qt']*$item['newPrice']?> €<p></td>
                         <?php endif; ?>       
                         <td><p class="ordertable_title"><i class="fa fa-trash" aria-hidden="true" style="color: #000;"></i><p></td>
                     </tr>
