@@ -258,27 +258,26 @@ class AjaxController extends Controller
 	public function searchUser()
 	{
 		$json = [];
-		$post = [];
+		$get = [];
 		$viewSearch = null;
 
-		if(!empty($_POST)){
-			$post = array_map('trim', array_map('strip_tags', $_POST));
+		if(!empty($_GET)){
+			$get = array_map('trim', array_map('strip_tags', $_GET));
 
 			$searchUser = new UserModel();
 
-			$search = $searchUser->searchUser($post['search']);
+			$search = $searchUser->searchUser($get['search']);
 
 			if(!empty($search)){	
 				foreach ($search as $value) {
-					$viewSearch.= '<td>'.$value['social_title'].'</td>';
+					$viewSearch.= '<tr><td>'.$value['social_title'].'</td>';
 					$viewSearch.= '<td>'.$value['role'].'</td>';
-					$viewSearch.= '<td>'.$value['lastname'].'<td>';
-					$viewSearch.='<td>'.$value['firstname'].'</td>';
-					$viewSearch.='<td>'.$value['username'].'</td>';
-					$viewSearch.='<td>'.$value['email'].'</td>';
-					$viewSearch.='<td><a href="'.$this->generateUrl('front_affcptuser', ['id'=> $value['id']]).'" target="_blank"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>';
-					$viewSearch.='<td><a href="'.$this->generateUrl('updateUser', ['id'=> $value['id']]).'">Mettre à jour le profil</a></td>';
-					$viewSearch.='<td><button class="btn btn-danger delete-user" data-id="'.$value['id'].'">Effacer le profil</button></td>';
+					$viewSearch.= '<td>'.$value['lastname'].'</td>';
+					$viewSearch.= '<td>'.$value['firstname'].'</td>';
+					$viewSearch.= '<td>'.$value['username'].'</td>';
+					$viewSearch.= '<td>'.$value['email'].'</td>';
+					$viewSearch.= '<td><a href="'.$this->generateUrl('front_affcptuser', ['id'=> $value['id']]).'" target="_blank"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>';
+					$viewSearch.= '<td><button class="btn btn-danger delete-user" data-id="'.$value['id'].'">Effacer le profil</button></td></tr>';
 				}
 			}
 			else {
