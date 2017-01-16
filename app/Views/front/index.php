@@ -62,7 +62,7 @@
                                             <?php elseif($value['social_title'] == 'Mme'):?>
                                                 <img class="img-responsive-tete" src="<?=$this->assetUrl('/img/avatarGirlslarge.png');?>" style="float: left;">
                                             <?php endif;?>        
-                                              <span class="col2commtaire_margin commentaire_title"><?=$value['subject']?><span class="comment_text"><?=$value['content'].' '?></span><span class="comment_username"><?=' ...'.$value['firstname'].' '.ucfirst(substr($value['lastname'],0,1))?></span>
+                                              <span class="col2commtaire_margin commentaire_title"><span class="comment_text"><?=$value['content'].' '?></span><span class="comment_username"><?=' ...'.$value['firstname'].' '.ucfirst(substr($value['lastname'],0,1))?></span>
                                               </span>
                                         </div>
                                     </li>      
