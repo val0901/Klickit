@@ -7,7 +7,10 @@
 	<p class="alert alert-danger">Aucun utilisateur trouvé</p>
 
 <?php else:?>
-	<form>	
+	<form>
+			<input type="text" class="form-control" id="search" name="search" placeholder="Recherche ...">
+			<button type="submit" id="submit" class="btn btn-info search_user">Rechercher</button>
+		<br><br>
 		<table class="table table-responsive">
 			<thead>
 				<th>Civilité</th>
@@ -19,7 +22,7 @@
 				<th colspan="3">Action</th>
 			</thead>
 
-			<tbody>
+			<tbody id="result">
 				<?php foreach($users as $user) : ?>
 					<tr>
 						<td><?=$user['social_title'];?></td>
@@ -94,6 +97,22 @@
 				}
 			});
 
+		});
+
+		// AJAX POUR LA RECHERCHE
+		$('.search_user').click(function(e){
+			e.preventDefault();
+
+			$.ajax({
+				url: '<?=$this->url('ajax_searchUser');?>',
+				type: 'post',
+				cache: false,
+				data:  $('form').serialize(),
+				dataType: 'json',
+				success: function(search){
+					$('#result').html(search.msg);
+				}
+			});
 		});
 	});
 </script>

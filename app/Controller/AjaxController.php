@@ -5,6 +5,7 @@ namespace Controller;
 use \W\Controller\Controller;
 use \W\Model\UsersModel;
 use \Model\ItemModel;
+use \Model\UserModel;
 use \Model\MessageModel;
 use \Model\EventModel;
 use \Model\GuestbookModel;
@@ -249,5 +250,39 @@ class AjaxController extends Controller
 		}
 			
 		$this->showJson($json);
+	}
+
+	/**
+	 * Requête de recherche d'utilisateur
+	 */
+	public function searchUser()
+	{
+		$json = [];
+		$post = [];
+		$viewSearch = null;
+
+		if(!empty($_POST)){
+			$post = array_map('trim', array_map('strip_tags', $_POST));
+
+			$searchUser = new UserModel();
+
+			$search = $searchUser->searchUser($post['search']);
+
+			if(!empty($search)){	
+				foreach ($search as $value) {
+					$viewSearch.= '<td>'.$value['social_title'].'</td> <td>'.$value['role'].'</td> <td>'.$value['lastname'].'<td> <td>'.$value['firstname'].'</td> <td>'.$value['username'].'</td> <td>'.$value['email'].'</td> <td><a href="<?=$this->url("front_affcptuser", ["id"=>'.$value['id'].']);?>" target="_blank"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td> <td><a href="<?=$this->url("updateUser", ["id"=>'.$value['id'].']);?>">Mettre à jour le profil</a></td> <td><button class="btn btn-danger delete-user" data-id="'.$value['id'].'">Effacer le profil</button></td>';
+				}
+			}
+			else {
+				$viewSearch.= '<td>Aucun utilisateur correspondant à votre recherche</td>';
+			}
+
+			$json = [
+				'code' => 'success',
+				'msg'  => $viewSearch
+			];
+		}
+
+		echo json_encode($json);
 	}
 }

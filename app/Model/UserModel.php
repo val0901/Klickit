@@ -125,4 +125,27 @@ class UserModel extends \W\Model\UsersModel
 		}
 	}
 
+	/**
+	 * Recherche d'utilisateur
+	 */
+	public function searchUser($search)
+	{
+		$sql = '';
+
+		if(isset($search) && !empty($search)) {
+		$sql = ' WHERE lastname LIKE :search OR firstname LIKE :search OR username LIKE :search OR email LIKE :search OR city LIKE :search OR zipcode LIKE :search';
+		}
+
+		$query = 'SELECT * FROM '.$this->table.$sql;
+
+		$sth = $this->dbh->prepare($query);
+
+		if(!empty($sql)) {
+			$sth->bindValue(':search', '%'.$search.'%');
+		}
+
+		if($sth->execute()) {
+			return $sth->fetchAll();
+		}
+	}
 }
