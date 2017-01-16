@@ -7,9 +7,11 @@
 	<p class="alert alert-danger">Aucun utilisateur trouvé</p>
 
 <?php else:?>
-	<form>
+	<form class="form-inline">
+		 <div class="form-group">
 			<input type="text" class="form-control" id="search" name="search" placeholder="Recherche ...">
-			<button type="submit" id="submit" class="btn btn-info search_user">Rechercher</button>
+		</div>
+		<button type="submit" id="submit" class="btn btn-info search_user">Rechercher</button>
 		<br><br>
 		<table class="table table-responsive">
 			<thead>
