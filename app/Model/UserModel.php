@@ -133,7 +133,7 @@ class UserModel extends \W\Model\UsersModel
 		$sql = '';
 
 		if(isset($search) && !empty($search)) {
-		$sql = ' WHERE lastname LIKE :search OR firstname LIKE :search OR username LIKE :search OR email LIKE :search OR city LIKE :search OR zipcode LIKE :search';
+			$sql = ' WHERE lastname LIKE :search OR firstname LIKE :search OR username LIKE :search OR email LIKE :search OR city LIKE :search OR zipcode LIKE :search';
 		}
 
 		$query = 'SELECT * FROM '.$this->table.$sql;
