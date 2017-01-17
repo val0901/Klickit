@@ -3,13 +3,12 @@
 <?php $this->start('main_content') ?>
 
 
-	<form method="post">
-		<!-- <div id="searchbtn">
-			<input type="text" class="form" placeholder="" name="search" id="search" value="">
-			<button type="submit" name="submit" id="submit" style="background:transparent;border:none;">
-			<i class="fa fa-search" aria-hidden="true"></i>	
-			</button>
-		</div> -->
+	<form method="post" class="form-inline">
+		<div class="form-group">
+			<input type="text" class="form-control" id="search" name="search" placeholder="Recherche ...">
+		</div>
+		<button type="submit" id="submit" class="btn btn-info search_order">Rechercher</button>
+		<br><br>
 		<div id="viewOrder">
 			<table class="table table-responsive">
 				<thead>
@@ -24,7 +23,7 @@
 					<!-- <th id="thaction">Changer le statut</th> -->
 				</thead>
 
-				<tbody>
+				<tbody id="result">
 				<?php foreach($orders as $order): ;?>
 					<tr>
 						<td><?=$order['id']; ?></td>
@@ -149,6 +148,22 @@
 						}
 					}
 				});
+			});
+		});
+
+		// AJAX POUR LA RECHERCHE
+		$('.search_order').click(function(e){
+			e.preventDefault();
+
+			$.ajax({
+				url: '<?=$this->url('ajax_searchOrder');?>',
+				type: 'get',
+				cache: false,
+				data:  $('#search'),
+				dataType: 'json',
+				success: function(search){
+					$('#result').html(search.msg);
+				}
 			});
 		});
 	</script>

@@ -26,6 +26,7 @@
 		['GET|POST', '/ajax/deleteOrder', 'Ajax#deleteOrder', 'ajax_deleteOrder'],
 		['GET|POST', '/ajax/searchUser', 'Ajax#searchUser', 'ajax_searchUser'],
 		['GET|POST', '/ajax/searchMessage', 'Ajax#searchMessage', 'ajax_searchMessage'],
+		['GET|POST', '/ajax/searchOrder', 'Ajax#searchOrder', 'ajax_searchOrder'],
 
 		//Pages liées à UserController
 		['GET|POST', '/admin/listUser', 'User#listUser', 'listUser'],

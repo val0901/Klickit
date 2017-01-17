@@ -86,4 +86,27 @@ class OrdersModel extends \W\Model\Model
 
 	}
 
+	/**
+	 * Recherche de commande
+	 */
+	public function searchOrder($search)
+	{
+		$sql = '';
+
+		if(isset($search) && !empty($search)) {
+			$sql = ' WHERE statut LIKE :search OR payment';
+		}
+
+		$query = 'SELECT * FROM '.$this->table.$sql;
+
+		$sth = $this->dbh->prepare($query);
+
+		if(!empty($sql)) {
+			$sth->bindValue(':search', '%'.$search.'%');
+		}
+
+		if($sth->execute()) {
+			return $sth->fetchAll();
+		}
+	}
 }

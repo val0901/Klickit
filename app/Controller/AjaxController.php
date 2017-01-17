@@ -339,4 +339,99 @@ class AjaxController extends Controller
 
 		echo json_encode($json);
 	}
+
+	/**
+	 * Requête pour les commandes
+	 */
+	public function searchOrder()
+	{
+		$json = [];
+		$get = [];
+		$viewSearch = null;
+
+		if(!empty($_GET)){
+			$get = array_map('trim', array_map('strip_tags', $_GET));
+
+			$searchOrders = new OrdersModel();
+			$items = new ItemModel();
+
+			$search = $searchOrders->searchOrder($get['search']);
+
+			if(!empty($search)){	
+				foreach ($search as $value) {
+					$viewSearch.= '<tr><td>'.$value['id'].'</td>';
+
+					$findUser = new UserModel();
+					$user = $findUser->findUser($value['id']);
+					$viewSearch.= '<td>'.$user['lastname'].' '.$user['firstname'].'<br>'.$user['adress'].'<br>'.$user['zipcode'].' '.$user['city'].'</td>';
+
+					$contents = explode(', ', $value['contenu']); 
+					$quantity = explode(', ', $value['quantity']);
+
+					for($i=0;$i<count($contents);$i++){
+						$content_basket[$value['id']][] = [
+							'content' 	=> $contents[$i],
+							'quantity' 	=> $quantity[$i],
+						];
+					}
+
+					$itemsContent = '';
+					foreach ($content_basket[$value['id']] as $basket){
+						$list_items = $items->findItems($basket['content']); 
+
+						$itemsContent.= '<a href="'.$this->generateUrl('updateItem', ['id'=>$list_items['id']]).'" style="color:white;">'.$list_items['name'].'</a> <br>';
+					}
+					$viewSearch.= '<td>'.$itemsContent.'</td>';
+
+					$quantityContent = '';
+					foreach ($content_basket[$value['id']] as $basket){
+						$quantityContent.= $basket['quantity'].'<br>';
+					}
+					$viewSearch.= '<td>'.$quantityContent.'</td>';
+
+					$priceContent = '';
+					foreach ($contents as $content) {
+						$list_items = $items->findItems($content);
+					
+						if($list_items['newPrice'] == 0){
+							$priceContent.= $list_items['price'].' €<br>';
+						}
+						elseif($list_items['newPrice'] > 0) {
+							$priceContent.= $list_items['newPrice'].' €<br>';
+						}
+
+					}
+					$viewSearch.= '<td>'.$priceContent.'</td>';
+
+					$totalContent = '';
+					foreach ($content_basket[$value['id']] as $basket) {
+					    $price_items = $items->findItems($basket['content']); 
+
+					    if($price_items['newPrice'] == 0){
+					    	$price = $price_items['price'];
+					    }
+					    elseif($price_items['newPrice'] > 0){
+					    	$price = $price_items['newPrice'];
+					    }
+						$totalContent.= \Tools\Utils::calculTtc($price, $basket['quantity']).' €<br>';
+					}
+					$viewSearch.= '<td>'.$totalContent.'</td>';
+
+					$viewSearch.= '<td>'.date('d/m/Y', strtotime($value['date_creation'])).'</td>';
+					$viewSearch.= '<td>'.$value['statut'].'</td>';
+					$viewSearch.= '<td><a href="'.$this->generateUrl('viewOrders', ['id'=> $value['id']]).'"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>';
+				}
+			}
+			else {
+				$viewSearch.= '<td>Aucun message correspondant à votre recherche</td>';
+			}
+
+			$json = [
+				'code' => 'success',
+				'msg'  => $viewSearch
+			];
+		}
+
+		echo json_encode($json);
+	}
 }
