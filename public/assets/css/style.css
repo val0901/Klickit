@@ -1450,6 +1450,11 @@ td {
     letter-spacing: 3px;
 }
 
+a#breadcrumb:hover{
+    opacity: 1;
+    color:black;
+}
+
 /*orderlogin.php*/
 .orderlogin_box {
 	width: 48%;
