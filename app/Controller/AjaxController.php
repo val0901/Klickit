@@ -292,4 +292,51 @@ class AjaxController extends Controller
 
 		echo json_encode($json);
 	}
+
+	/**
+	 * Requête pour les messages
+	 */
+	public function searchMessage()
+	{
+		$json = [];
+		$get = [];
+		$bold = '';
+		$viewSearch = null;
+
+		if(!empty($_GET)){
+			$get = array_map('trim', array_map('strip_tags', $_GET));
+
+			$searchMessage = new MessageModel();
+
+			$search = $searchMessage->searchMessage($get['search']);
+
+			if(!empty($search)){	
+				foreach ($search as $value) {
+					if ($value['statut'] == 'NonLu'){
+						$bold = ' style="font-weight:bold;" ';
+					}else{
+						$bold = '';
+					}
+
+					$viewSearch.= '<tr><td'.$bold.'>'.$value['username'].'</td>';
+					$viewSearch.= '<td'.$bold.'>'.$value['email'].'</td>';
+					$viewSearch.= '<td'.$bold.'>'.$value['subject'].'</td>';
+					$viewSearch.= '<td'.$bold.'>'.$value['content'].'</td>';
+					$viewSearch.= '<td'.$bold.'>'.$value['statut'].'</td>';
+					$viewSearch.= '<td><a href="'.$this->generateUrl('viewMessage', ['id'=> $value['id']]).'"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>';
+					$viewSearch.= '<td><button class="btn btn-danger delete-message" data-id="'.$value['id'].'">Effacer le message</button></td></tr>';
+				}
+			}
+			else {
+				$viewSearch.= '<td>Aucun message correspondant à votre recherche</td>';
+			}
+
+			$json = [
+				'code' => 'success',
+				'msg'  => $viewSearch
+			];
+		}
+
+		echo json_encode($json);
+	}
 }

@@ -25,6 +25,7 @@
 		['GET|POST', '/ajax/updateStatut', 'Ajax#updateStatus', 'ajax_updateStatus'], // /ajax/updateOrder' que j'ai modifié en '/ajax/updateStatut' pour éviter les conflits
 		['GET|POST', '/ajax/deleteOrder', 'Ajax#deleteOrder', 'ajax_deleteOrder'],
 		['GET|POST', '/ajax/searchUser', 'Ajax#searchUser', 'ajax_searchUser'],
+		['GET|POST', '/ajax/searchMessage', 'Ajax#searchMessage', 'ajax_searchMessage'],
 
 		//Pages liées à UserController
 		['GET|POST', '/admin/listUser', 'User#listUser', 'listUser'],

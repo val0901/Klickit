@@ -4,7 +4,12 @@
 	<?php if(empty($messages)):?>
 		<p class="alert alert-danger">Aucun message trouvé</p>
 	<?php else:?>
-		<form>	
+		<form class="form-inline">
+			<div class="form-group">
+				<input type="text" class="form-control" id="search" name="search" placeholder="Recherche ...">
+			</div>
+			<button type="submit" id="submit" class="btn btn-info search_message">Rechercher</button>
+			<br><br>	
 			<table class="table table-responsive">
 				<thead>
 					<th>Pseudonyme</th>
@@ -15,7 +20,7 @@
 					<th colspan="2">Action</th>
 				</thead>
 
-				<tbody>
+				<tbody id="result">
 					<?php foreach($messages as $message) : ?>
 						<?php 
 							if ($message['statut'] == 'NonLu'){
@@ -93,6 +98,65 @@
 				}
 			});
 
+		});
+
+		// AJAX POUR LA RECHERCHE
+		$('.search_message').click(function(e){
+			e.preventDefault();
+
+			$.ajax({
+				url: '<?=$this->url('ajax_searchMessage');?>',
+				type: 'get',
+				cache: false,
+				data:  $('#search'),
+				dataType: 'json',
+				success: function(search){
+					$('#result').html(search.msg);
+					$('.delete-message').click(function(e){
+						e.preventDefault();
+
+						var idMessage = $(this).data('id');
+
+						$.confirm({
+
+							title: 'Supprimer un message',
+
+							content: "Êtes-vous sûr de vouloir supprimer cet message ?",
+
+							type: 'red',
+
+							theme: 'dark',
+
+							buttons: {
+								ok: {
+									text: 'Effacer le message',
+									btnClass: 'btn-danger',
+									keys: ['enter'],
+									action: function(){
+						  				$.ajax({
+						  					url: '<?=$this->url('ajax_deleteMessage'); ?>',
+											type: 'post',
+											cache: false,
+											data: {id_message: idMessage},  // $_POST['id_message']
+											dataType: 'json',
+											success: function(out){
+												if(out.code == 'ok'){
+									  				window.location.href=window.location.href;	
+												}
+											}
+						  				});
+						  				
+					  				}
+								},
+								cancel: function(button) {
+								   
+								}
+							}
+						});
+
+					});
+				}
+			});
 		});
 	});
 </script>

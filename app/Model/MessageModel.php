@@ -68,4 +68,27 @@ class MessageModel extends \W\Model\Model
     return $result['total'];
 	}
 
+	/**
+	 * Recherche d'utilisateur
+	 */
+	public function searchMessage($search)
+	{
+		$sql = '';
+
+		if(isset($search) && !empty($search)) {
+			$sql = ' WHERE username LIKE :search OR email LIKE :search OR subject LIKE :search OR content LIKE :search OR statut LIKE :search';
+		}
+
+		$query = 'SELECT * FROM '.$this->table.$sql;
+
+		$sth = $this->dbh->prepare($query);
+
+		if(!empty($sql)) {
+			$sth->bindValue(':search', '%'.$search.'%');
+		}
+
+		if($sth->execute()) {
+			return $sth->fetchAll();
+		}
+	}
 }

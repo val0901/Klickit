@@ -8,7 +8,7 @@
 
 <?php else:?>
 	<form class="form-inline">
-		 <div class="form-group">
+		<div class="form-group">
 			<input type="text" class="form-control" id="search" name="search" placeholder="Recherche ...">
 		</div>
 		<button type="submit" id="submit" class="btn btn-info search_user">Rechercher</button>
