@@ -23,24 +23,24 @@
 			<h1>VOTRE ADDRESSE DE LIVRAISON</h1>
 			<form>
 				<div class="form-group orderlogin_label">
-				<label for="exampleInputName2">Nom</label>
-    			<input type="text" class="form-control" id="exampleInputName2" placeholder="votre nom">
+				<label for="exampleInputName2">Adresse</label>
+    			<input type="text" class="form-control" id="exampleInputName2">
 			  </div>
 			  <div class="form-group orderlogin_label">
-				<label for="exampleInputName2">Prénom</label>
-    			<input type="text" class="form-control" id="exampleInputName2" placeholder="votre prénom">
+				<label for="exampleInputName2">Complément adresse</label>
+    			<input type="text" class="form-control" id="exampleInputName2">
 			  </div>
 			  <div class="form-group orderlogin_label">
-				<label for="exampleInputName2">Pseudo</label>
-    			<input type="text" class="form-control" id="exampleInputName2" placeholder="votre pseudo">
+				<label for="exampleInputName2">Code Postal</label>
+    			<input type="text" class="form-control" id="exampleInputName2">
 			  </div>
 			  <div class="form-group orderlogin_label">
-				<label for="exampleInputName2">Nom</label>
-    			<input type="text" class="form-control" id="exampleInputName2" placeholder="votre nom">
+				<label for="exampleInputName2">Pays</label>
+    			<input type="text" class="form-control" id="exampleInputName2">
 			  </div>
 			  <div class="form-group orderlogin_label">
-				<label for="exampleInputName2">Prénom</label>
-    			<input type="text" class="form-control" id="exampleInputName2" placeholder="votre prénom">
+				<label for="exampleInputName2">Ville</label>
+    			<input type="text" class="form-control" id="exampleInputName2">
 			  </div>
 			  <br>
 				<button type="submit" class="btn btn-default adduser_button orderlogin_button1"><i class="fa fa-car" aria-hidden="true"><span class="orderlogin_button1text"> valider votre addresse</span></i></button>
