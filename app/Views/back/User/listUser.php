@@ -55,6 +55,7 @@
 
 <script>
 	$(document).ready(function(){
+		
 		$('.delete-user').click(function(e){
 			e.preventDefault();
 
@@ -111,6 +112,49 @@
 				dataType: 'json',
 				success: function(search){
 					$('#result').html(search.msg);
+					$('.delete-user').click(function(e){
+						e.preventDefault();
+
+						var idUser = $(this).data('id');
+
+						$.confirm({
+
+							title: 'Supprimer un utilisateur',
+
+							content: "Êtes-vous sûr de vouloir supprimer cet utilisateur ?",
+
+							type: 'red',
+
+							theme: 'dark',
+
+							buttons: {
+								ok: {
+									text: 'Effacer l\'utilisateur',
+									btnClass: 'btn-danger',
+									keys: ['enter'],
+									action: function(){
+						  				$.ajax({
+						  					url: '<?=$this->url('ajax_deleteUser'); ?>',
+											type: 'post',
+											cache: false,
+											data: {id_user: idUser},  // $_POST['id_user']
+											dataType: 'json',
+											success: function(out){
+												if(out.code == 'ok'){
+									  				window.location.href=window.location.href;	
+												}
+											}
+						  				});
+						  				
+					  				}
+								},
+								cancel: function(button) {
+								   
+								}
+							}
+						});
+
+					});
 				}
 			});
 		});
