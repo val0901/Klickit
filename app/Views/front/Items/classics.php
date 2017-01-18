@@ -115,9 +115,9 @@
 								<span style="cursor:pointer;">
 									<?php if(!empty($_SESSION['user'])): ?>
 										<?php if(in_array($product['id'], $favorite)): ?>
-											<button class="favorite" type="submit" name="<?=str_replace(' ', '', $product['name']);?>" value="<?=$product['id']?>"><i class="fa fa-heart fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #c11131;" title="Ajouter à mes favoris"></i></button> <!-- l'icône ne change pas de couleur, pour ça que j'ai mis 'ee' pour voir la différence lors du dev -->
+											<button class="favorite" type="submit" name="<?=str_replace(' ', '', $product['name']);?>" value="<?=$product['id']?>" data-id="<?=$product['id'];?>"><i class="fa fa-heart fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #c11131;" title="Ajouter à mes favoris"></i></button>
 										<?php else: ?>
-											<button class="favorite" type="submit" name="<?=str_replace(' ', '', $product['name']);?>" value="<?=$product['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button>
+											<button class="favorite" type="submit" name="<?=str_replace(' ', '', $product['name']);?>" value="<?=$product['id'];?>" data-id="<?=$product['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button>
 										<?php endif; ?>
 									<?php else : ?>
 										<a href="<?=$this->url('login');?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></a>
@@ -302,5 +302,60 @@
 <?php $this->stop('main_content') ?>
 
 <?php $this->start('js') ?>
+	<script>
+		$(document).ready(function(){
+			$('.favorite').click(function(e){
+				e.preventDefault();
 
+				var idFavorite = $(this).data('id');
+
+				console.log(window.location);
+
+				$.ajax({
+					url: '<?=$this->url('ajax_favorite');?>',
+					type: 'post',
+					cache: false,
+					data: {id_item: idFavorite},
+					dataType: 'json',
+					success: function(add){
+						if(add.msg == 'ok'){
+							if(window.location.pathname == '/Klickit/public/Classics/Chevaliers'){
+								$('body').load('<?=$this->url('listItemClassics', ['sub_category' =>'Chevaliers']);?>');
+							}
+							else if(window.location.pathname == '/Klickit/public/Classics/Pirates'){
+								$('body').load('<?=$this->url('listItemClassics', ['sub_category' =>'Pirates']);?>');
+							}
+							else if(window.location.pathname == '/Klickit/public/Classics/Antique'){
+								$('body').load('<?=$this->url('listItemClassics', ['sub_category' =>'Antique']);?>');
+							}
+							else if(window.location.pathname == '/Klickit/public/Classics/Western'){
+								$('body').load('<?=$this->url('listItemClassics', ['sub_category' =>'Western']);?>');
+							}
+							else if(window.location.pathname == '/Klickit/public/Classics/Fantasy'){
+								$('body').load('<?=$this->url('listItemClassics', ['sub_category' =>'Fantasy']);?>');
+							}
+							else if(window.location.pathname == '/Klickit/public/Classics/XVIIIe'){
+								$('body').load('<?=$this->url('listItemClassics', ['sub_category' =>'XVIIIe']);?>');
+							}
+							else if(window.location.pathname == '/Klickit/public/Classics/FeesPrincesses'){
+								$('body').load('<?=$this->url('listItemClassics', ['sub_category' =>'FeesPrincesses']);?>');
+							}
+							else if(window.location.pathname == '/Klickit/public/Classics/Police'){
+								$('body').load('<?=$this->url('listItemClassics', ['sub_category' =>'Police']);?>');
+							}
+							else if(window.location.pathname == '/Klickit/public/Classics/Animaux'){
+								$('body').load('<?=$this->url('listItemClassics', ['sub_category' =>'Animaux']);?>');
+							}
+							else if(window.location.pathname == '/Klickit/public/Classics/Sport'){
+								$('body').load('<?=$this->url('listItemClassics', ['sub_category' =>'Sport']);?>');
+							}
+							else if(window.location.pathname == '/Klickit/public/Classics/Divers'){
+								$('body').load('<?=$this->url('listItemClassics', ['sub_category' =>'Divers']);?>');
+							}
+						}
+					}
+				});
+			});
+		});
+	</script>
 <?php $this->stop('js') ?>

@@ -35,12 +35,9 @@ class FrontItemController extends MasterController
 		$afficheNewItems = $newItems->findCategoryStatutCustom('PlaymobilClassique', 'nouveaute');
 
 		// On instancie nos différentes class pour la gestion des Favoris
-		$insertFavorite = new FavoriteModel(); // cette variable servira pour l'insertion d'un item en Favoris
-		$findFavorite = new FavoriteModel(); // Cette variable servira à vérifier qu'un item est déjà, ou non, en favoris
-		$deleteFavorite = new FavoriteModel(); // Cette variable servira pour la suppression d'un favoris
 		$favorite = new FavoriteModel(); // Cette variable servira pour stock la liste des favoris d'un utilisateur
-
 		$favoriteList = ''; // On instancie cette variable à l'avance pour éviter les erreurs
+
 		if(!empty($this->getUser())){ // Si $_SESSION['user'] n'est pas vide ...
 			$userFavorite = $favorite->findFavorisItem($_SESSION['user']['id']); // Alors on stock tout les favoris de l'utilisateur en question dans $userFavorite
 
@@ -54,20 +51,6 @@ class FrontItemController extends MasterController
 			}
 
 			$favoriteList = substr($myFavorite, 0, -2); // Ensuite ici on défini notre variable instencié plus haut avec le contenu de $myFavorite et on supprime les deux derniers caractère inutile qui sont une virgule et un espace donc : ', '
-		
-			if(!empty($_POST) && isset($_POST)){ // Donc si $_POST n'est pas vide et qu'il est défini ... On fait en sorte que les favoris rentre en bdd UNIQUEMENT à l'activation des boutons
-				$post = implode('', $_POST); // Ici on stock le contenu de $_POST dans $post, $_POST étant un tableau on veut le résultat sous forme de string, vu que les différents boutons sont de types submit, l'utilisateur ne pourra pas rentrer plusieurs favoris en même temps et donc nous n'avons pas besoin d'un délimiteur, au contraire il serait gênant 
-
-				if($findFavorite->findFavoriteByIdItem($post)){ // Ici grâce à la fonction findFavorite on vérifie si le favoris envoyé existe dans la bdd et si c'est le cas ...
-					$deleteFavorite->deleteFavorite($post); // On le supprime grâce à son id
-				}
-				else{ // Sinon ...
-					$insertFavorite->insert([ // On insère dans la table Favorite une nouvelle ligne, en stockant d'une part l'id du membre(qui n'est pas unique, un membre peut avoir autant de favoris qu'il souhaite) et d'autre part l'id de l'article (qui lui est unique, on ne peut pas avoir deux fois le même favoris en bdd)
-						'id_member' => $_SESSION['user']['id'],
-						'id_item'	=> $post, 
-					]);
-				}
-			}
 		}
 
 		$data = [
@@ -100,11 +83,8 @@ class FrontItemController extends MasterController
 		$getClassicItems = new ItemModel();
 		$items = $getClassicItems->findByCategory('PlaymobilClassique', $page, $max);
 
-		$insertFavorite = new FavoriteModel();
-		$findFavorite = new FavoriteModel();
-		$deleteFavorite = new FavoriteModel();
-		$favorite = new FavoriteModel();
 
+		$favorite = new FavoriteModel();
 		$favoriteList = '';
 		if(!empty($this->getUser())){
 			$userFavorite = $favorite->findFavorisItem($_SESSION['user']['id']);
@@ -118,20 +98,6 @@ class FrontItemController extends MasterController
 			}
 
 			$favoriteList = substr($myFavorite, 0, -2);
-			/************************************************************/
-			if(!empty($_POST) && isset($_POST)){
-				$post = implode('', $_POST);
-
-				if($findFavorite->findFavoriteByIdItem($post)){
-					$deleteFavorite->deleteFavorite($post);
-				}
-				else{
-					$insertFavorite->insert([
-						'id_member' => $_SESSION['user']['id'],
-						'id_item'	=> $post, 
-					]);
-				}
-			}
 		}
 
 		$data = [
