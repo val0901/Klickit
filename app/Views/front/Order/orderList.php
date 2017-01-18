@@ -52,7 +52,7 @@
                         <?php elseif($item['newPrice'] > 0) :?>
                             <td><p class="ordertable_title"><?=$item['qt']*$item['newPrice']?> €<p></td>
                         <?php endif; ?>       
-                        <td><p class="ordertable_title"><i class="fa fa-trash" aria-hidden="true" style="color: #000;"></i><p></td>
+                        <td><p class="ordertable_title"><i class="fa fa-trash" aria-hidden="true" style="color: #000;" data-id="<?=$item['id']?>"></i><p></td>
                     </tr>
                 <?php endforeach; ?>    
             </tbody> 
@@ -105,3 +105,28 @@
 </div>
 <br><br>
 <?php $this->stop('main_content') ?>
+
+<?php $this->start('js') ?>
+    <script>
+        $(document).ready(function(){
+            $('.fa-trash').click(function(e){
+                e.preventDefault();
+
+                var idDelete = $(this).data('id');
+
+                $.ajax({
+                    url: '<?=$this->url('ajax_deleteArt'); ?>',
+                    type: 'post',
+                    cache: false,
+                    data: {id_delete: idDelete},  // $_POST['id_product']
+                    dataType: 'json',
+                    success: function(out){
+                        if(out.code == 'ok'){
+                            window.location.href= window.location.href;
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+<?php $this->stop('js') ?>

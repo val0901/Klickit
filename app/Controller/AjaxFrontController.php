@@ -158,4 +158,22 @@ class AjaxFrontController extends Controller
 		}
 		$this->showJson($json); // On renvoie le tableau $json sur notre page
 	}
+
+	public function deleteArt()
+	{	
+		$delete = new BasketModel;
+		$user = $this->getUser();
+		$json = [];
+
+		if(!empty($_POST)){
+
+			if(is_numeric($_POST['id_delete'])){
+
+				if($delete->deleteItem($user['id'], $_POST['id_delete'])){
+					$json = ['code' => 'ok'];
+				}			
+			}
+		}
+		$this->showJson($json);
+	}
 }

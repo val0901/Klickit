@@ -57,6 +57,22 @@ class BasketModel extends \W\Model\Model
 
 		return $sth->fetchAll();
 
+	}
+
+	/**
+	* Suppression d'un article dans le panier
+	*/
+
+	public function deleteItem($id_member, $id_item)
+	{
+		$sql = 'DELETE FROM '.$this->table.' WHERE id_item = :id_item AND id_member = :id_member';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':id_member', $id_member);
+		$sth->bindValue(':id_item', $id_item);
+
+		return $sth->execute();
+
 	}	
 
 }
