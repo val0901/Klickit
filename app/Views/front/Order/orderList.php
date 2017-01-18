@@ -61,8 +61,8 @@
 			<ul  style="float:right;">
 				<li>
 					<p><?=$total?> €</p>
-					<p>2.60 €</p>
-					<p><strong>19.60 €</strong></p>
+					<p><?=$fdp?> €</p>
+					<p><strong><?=$fdp + $total?> €</strong></p>
 				</li>
 			</ul>
 			<ul>

@@ -134,7 +134,7 @@
 							<?php endif; ?>
 	                    </div>
 						<div class="viewcategory_button">
-							<button type="button" class="btn btn-primary viewcategory_button_size " data-id="<?=$product['id']?>">ajouter au panier</button>
+							<button type="button" class="btn btn-primary viewcategory_button_size add_to_shopping_cart" data-id="<?=$product['id']?>">ajouter au panier</button>
 						</div>
 					</div>
 				<?php endforeach; ?>

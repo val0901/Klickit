@@ -41,25 +41,22 @@ class BasketModel extends \W\Model\Model
 		return $price;
 	}
 
-	public function optimizeCart($id)
-	{
-		//On récupère le panier tel quel
-		$shoppingCart = $this->getShoppingCartItem($id);
+	/**
+	* Compte le nombre d'objet dans le dans le panier pour gérer les frais de ports
+	* @param int $id_member = l'id du membre
+	*/
 
-		$sql = 'SELECT item.name, item.id, '.$this->table.'.id_item, '.$this->table.'.quantity FROM '.$this->table.' LEFT JOIN item ON '.$this->table.'.id_item = item.id WHERE id_member = :id ';
+	public function countFDP($id_member)
+	{
+
+		$sql = 'SELECT item.sub_category, SUM('.$this->table.'.quantity) AS somme FROM '.$this->table.' LEFT JOIN item ON '.$this->table.'.id_item = item.id WHERE id_member = :id_member ';
 
 		$sth = $this->dbh->prepare($sql);
-		$sth->bindValue(':id', $id);
-		$sth->execute();		
-		$myCart = $sth->fetchAll();
+		$sth->bindValue(':id_member', $id_member);
+		$sth->execute();
 
-		//On va le nettoyer
-		// if(in_array($shoppingCart['name'], $myCart['name'])){
+		return $sth->fetchAll();
 
-			
-		// }
-
-	}
-	
+	}	
 
 }

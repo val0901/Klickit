@@ -60,13 +60,39 @@ class FrontOrdersController extends MasterController
 	 */
 	public function frontPanier() 
 	{	
-		$getTotal = new BasketModel;
+		$getInfos = new BasketModel;
 		$user = $this->getUser();
 
-		$total = $getTotal->getTotal($user['id']);
+		$total = $getInfos->getTotal($user['id']);
+		$fdp = $getInfos->countFDP($user['id']);
+
+		//S'il y a un Custom, on rajoute 6.90
+		if(in_array('CustomsPeints', $fdp) || in_array('PiecesEnResine', $fdp)){
+			$customFDP = 6.90;
+		}else{
+			$customFDP = 0;
+		}
+
+		//Gestion de la quantité des objets
+		foreach ($fdp as $value){
+
+			if($value['somme'] >= 1 && $value['somme'] <= 3 ){
+				$finalFDP = $customFDP + 2.50;
+
+			}elseif($value['somme'] >= 4 && $value['somme'] <= 8){
+				$finalFDP = $customFDP + 3.90;
+
+			}elseif($value['somme'] > 8){
+				$finalFDP = $customFDP + 6.90;
+			}
+
+		}
+		
+		
 
 		$data = [
 			'total'	=>	$total,
+			'fdp'	=>	$finalFDP,
 		];
 		$this->showStuff('front/Order/orderList', $data);
 	}
