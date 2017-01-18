@@ -131,11 +131,8 @@ class FrontItemController extends MasterController
 		$newItems = new ItemModel();
 		$afficheNewItems = $newItems->findCategoryStatutCustom('PlaymobilCustom', 'nouveaute');
 
-		$insertFavorite = new FavoriteModel();
-		$findFavorite = new FavoriteModel();
-		$deleteFavorite = new FavoriteModel();
-		$favorite = new FavoriteModel();
 
+		$favorite = new FavoriteModel();
 		$favoriteList = '';
 		if(!empty($this->getUser())){
 			$userFavorite = $favorite->findFavorisItem($_SESSION['user']['id']);
@@ -149,20 +146,6 @@ class FrontItemController extends MasterController
 			}
 
 			$favoriteList = substr($myFavorite, 0, -2);
-		
-			if(!empty($_POST) && isset($_POST)){
-				$post = implode('', $_POST);
-
-				if($findFavorite->findFavoriteByIdItem($post)){
-					$deleteFavorite->deleteFavorite($post);
-				}
-				else{
-					$insertFavorite->insert([
-						'id_member' => $_SESSION['user']['id'],
-						'id_item'	=> $post, 
-					]);
-				}
-			}
 		}
 
 		$data = [
