@@ -28,7 +28,7 @@ class AjaxFrontController extends Controller
 	{	
 
 		$insert = new BasketModel();
-
+		
 		if(!empty($_POST)){
 
 
