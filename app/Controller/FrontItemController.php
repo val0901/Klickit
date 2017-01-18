@@ -118,7 +118,7 @@ class FrontItemController extends MasterController
 			}
 
 			$favoriteList = substr($myFavorite, 0, -2);
-		
+			/************************************************************/
 			if(!empty($_POST) && isset($_POST)){
 				$post = implode('', $_POST);
 
@@ -630,5 +630,4 @@ class FrontItemController extends MasterController
 			$this->redirectToRoute('login');
 		}
 	}
-
 }

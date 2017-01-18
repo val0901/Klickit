@@ -82,6 +82,7 @@
 		['GET|POST', '/ajax/logout', 'AjaxFront#logout', 'ajax_Flogout'],
 		['GET|POST', '/ajax/addToCart', 'AjaxFront#addToCart', 'ajax_addToCart'],
 		['GET|POST', '/ajax/addToCartView', 'AjaxFront#addToCartView', 'ajax_addToCartView'],
+		['GET|POST', '/ajax/favorite', 'AjaxFront#favorite', 'ajax_favorite'],
 
 		//Pages liées à FrontController
 		['GET|POST', '/home', 'Front#index', 'front_index'],

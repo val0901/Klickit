@@ -300,3 +300,7 @@
 </form>
 </div>
 <?php $this->stop('main_content') ?>
+
+<?php $this->start('js') ?>
+
+<?php $this->stop('js') ?>

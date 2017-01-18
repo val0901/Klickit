@@ -39,12 +39,13 @@ class FavoriteModel extends \W\Model\Model
 	/**
 	 * Permet de rechercher un favoris en fonction de l'id_item
 	 */
-	public function findFavoriteByIdItem($id_item)
+	public function findFavoriteByIdItem($id_item, $id_member)
 	{
-		$sql = 'SELECT * FROM '.$this->table.' WHERE id_item = :id_item';
+		$sql = 'SELECT * FROM '.$this->table.' WHERE id_item = :id_item AND id_member = :id_member';
 
 		$sth = $this->dbh->prepare($sql);
 		$sth->bindValue(':id_item', $id_item);
+		$sth->bindValue(':id_member', $id_member);
 
 		$sth->execute();
 
@@ -52,14 +53,15 @@ class FavoriteModel extends \W\Model\Model
 	}
 
 	/**
-	 * Permet de supprimer un favoris en fonction de l'id_item
+	 * Permet de supprimer un favoris en fonction de l'id_item et du membre
 	 */
-	public function deleteFavorite($id_item)
+	public function deleteFavorite($id_item, $id_member)
 	{
-		$sql = 'DELETE FROM '.$this->table.' WHERE id_item = :id_item';
+		$sql = 'DELETE FROM '.$this->table.' WHERE id_item = :id_item AND id_member = :id_member';
 
 		$sth = $this->dbh->prepare($sql);
 		$sth->bindValue(':id_item', $id_item);
+		$sth->bindValue(':id_member', $id_member);
 
 		return $sth->execute();
 	}

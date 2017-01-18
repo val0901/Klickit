@@ -72,7 +72,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 		</div>
 		<!--End viewcategory row2 col1-->
 		<!--viewcategory row2 col2-->
-		<div class="col-md-9">
+		<div id="refresh_list" class="col-md-9">
 			<h4 class="viewcategory_pages"><a href="<?=$this->url('front_index');?>">Home </a><span>></span><a href="<?=$this->url('listItemClassicsFull');?>"> Classics</a></h4>
 			<div class="row">
 				<?php foreach ($items as $product) : ?>
@@ -85,13 +85,13 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 								<h4><span class="viewcategoryprixpromo"><?=$product['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$product['price'];?>€</span></h4>
 							<?php endif; ?>
 
-							<p>
+							<p class="iconeFavorite">
 								<span style="cursor:pointer;">
 									<?php if(!empty($_SESSION['user'])): ?>
 										<?php if(in_array($product['id'], $favorite)): ?>
-											<button class="favorite" type="submit" name="<?=str_replace(' ', '', $product['name']);?>" value="<?=$product['id']?>"><i class="fa fa-heart fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #c11131;" title="Ajouter à mes favoris"></i></button> <!-- l'icône ne change pas de couleur, pour ça que j'ai mis 'ee' pour voir la différence lors du dev -->
+											<button class="favorite" type="submit" name="<?=str_replace(' ', '', $product['name']);?>" value="<?=$product['id']?>" data-id="<?=$product['id'];?>"><i class="fa fa-heart fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #c11131;" title="Ajouter à mes favoris"></i></button> <!-- l'icône ne change pas de couleur, pour ça que j'ai mis 'ee' pour voir la différence lors du dev -->
 										<?php else: ?>
-											<button class="favorite" type="submit" name="<?=str_replace(' ', '', $product['name']);?>" value="<?=$product['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button>
+											<button class="favorite" type="submit" name="<?=str_replace(' ', '', $product['name']);?>" value="<?=$product['id'];?>" data-id="<?=$product['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button>
 										<?php endif; ?>
 									<?php else : ?>
 										<a href="<?=$this->url('login');?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></a>
@@ -272,3 +272,28 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 </form>
 </div>
 <?php $this->stop('main_content') ?>
+
+<?php $this->start('js') ?>
+	<script>
+		$(document).ready(function(){
+			$('.favorite').click(function(e){
+				e.preventDefault();
+
+				var idFavorite = $(this).data('id');
+
+				$.ajax({
+					url: '<?=$this->url('ajax_favorite');?>',
+					type: 'post',
+					cache: false,
+					data: {id_item: idFavorite},
+					dataType: 'json',
+					success: function(add){
+						if(add.msg == 'ok'){
+							$('body').load('<?=$this->url('listItemClassicsFull');?>');
+						}
+					}
+				});
+			});
+		});
+	</script>
+<?php $this->stop('js') ?>

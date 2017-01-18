@@ -13,6 +13,7 @@ use \Model\OrdersModel;
 use \Model\BasketModel;
 use \Model\SlideModel;
 use \Model\ShippingModel;
+use \Model\FavoriteModel;
 use \W\Security\AuthentificationModel;
 
 use \Respect\Validation\Validator as v; 
@@ -117,5 +118,44 @@ class AjaxFrontController extends Controller
 
 			}
 		}
+	}
+
+	/**
+	 * Ajoût en Favoris
+	 */
+	public function favorite()
+	{
+		$insertFavorite = new FavoriteModel();
+		$findFavorite = new FavoriteModel();
+		$deleteFavorite = new FavoriteModel();
+
+		$json = [];
+
+		if(!empty($this->getUser())){
+			if(!empty($_POST) && isset($_POST)){
+				$post = implode('', $_POST);
+
+				if($findFavorite->findFavoriteByIdItem($post, $_SESSION['user']['id'])){
+					if($deleteFavorite->deleteFavorite($post, $_SESSION['user']['id'])){
+						$json = [
+							'msg' => 'ok',
+						];
+					}
+				}
+				else{
+					$result = $insertFavorite->insert([
+						'id_member' => $_SESSION['user']['id'],
+						'id_item'	=> $post, 
+					]);
+
+					if($result){
+						$json = [
+							'msg' => 'ok',
+						];
+					}
+				}
+			}
+		}
+		$this->showJson($json);
 	}
 }
