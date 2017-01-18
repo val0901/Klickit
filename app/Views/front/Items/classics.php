@@ -309,8 +309,6 @@
 
 				var idFavorite = $(this).data('id');
 
-				console.log(window.location);
-
 				$.ajax({
 					url: '<?=$this->url('ajax_favorite');?>',
 					type: 'post',
