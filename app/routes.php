@@ -67,6 +67,11 @@
 		['GET|POST', '/admin/listGuestbook', 'Guestbook#listGuestbook', 'listGuestbook'],
 		['GET|POST', '/admin/moderation/[i:id]', 'Guestbook#moderation', 'moderation'],
 
+		//Pages liées à FilterController
+		['GET|POST', '/admin/listFilter', 'Filter#listFilter', 'listFilter'],
+		['GET|POST', '/admin/addFilter', 'Filter#addFilter', 'addFilter'],
+		['GET|POST', '/admin/updateFilter/[i:id]', 'Filter#updateFilter', 'updateFilter'],
+
 
 
 /******************** FRONT *********************/
