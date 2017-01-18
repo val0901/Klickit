@@ -104,9 +104,9 @@
 								<span style="cursor:pointer;">
 									<?php if(!empty($_SESSION['user'])): ?>
 										<?php if(in_array($product['id'], $favorite)): ?>
-											<button class="favorite" type="submit" name="<?=str_replace(' ', '', $product['name']);?>" value="<?=$product['id']?>"><i class="fa fa-heart fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #c11131;" title="Ajouter à mes favoris"></i></button> <!-- l'icône ne change pas de couleur, pour ça que j'ai mis 'ee' pour voir la différence lors du dev -->
+											<button class="favorite" type="submit" name="<?=str_replace(' ', '', $product['name']);?>" value="<?=$product['id']?>" data-id="<?=$product['id'];?>"><i class="fa fa-heart fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #c11131;" title="Ajouter à mes favoris"></i></button> <!-- l'icône ne change pas de couleur, pour ça que j'ai mis 'ee' pour voir la différence lors du dev -->
 										<?php else: ?>
-											<button class="favorite" type="submit" name="<?=str_replace(' ', '', $product['name']);?>" value="<?=$product['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button>
+											<button class="favorite" type="submit" name="<?=str_replace(' ', '', $product['name']);?>" value="<?=$product['id'];?>" data-id="<?=$product['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button>
 										<?php endif; ?>
 									<?php else : ?>
 										<a href="<?=$this->url('login');?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></a>
@@ -289,4 +289,50 @@
 </div>
 <?php $this->stop('main_content') ?>
 
+<?php $this->start('js') ?>
+	<script>
+		$(document).ready(function(){
+			$('.favorite').click(function(e){
+				e.preventDefault();
 
+				var idFavorite = $(this).data('id');
+
+				$.ajax({
+					url: '<?=$this->url('ajax_favorite');?>',
+					type: 'post',
+					cache: false,
+					data: {id_item: idFavorite},
+					dataType: 'json',
+					success: function(add){
+						if(add.msg == 'ok'){
+							if(window.location.pathname == '/Klickit/public/Pieces/Armes'){
+								$('body').load('<?=$this->url('listItemPieces', ['sub_category' =>'Armes']);?>');
+							}
+							else if(window.location.pathname == '/Klickit/public/Pieces/Coiffes'){
+								$('body').load('<?=$this->url('listItemPieces', ['sub_category' =>'Coiffes']);?>');
+							}
+							else if(window.location.pathname == '/Klickit/public/Pieces/Manchettes'){
+								$('body').load('<?=$this->url('listItemPieces', ['sub_category' =>'Manchettes']);?>');
+							}
+							else if(window.location.pathname == '/Klickit/public/Pieces/Cols'){
+								$('body').load('<?=$this->url('listItemPieces', ['sub_category' =>'Cols']);?>');
+							}
+							else if(window.location.pathname == '/Klickit/public/Pieces/Ceinturons'){
+								$('body').load('<?=$this->url('listItemPieces', ['sub_category' =>'Ceinturons']);?>');
+							}
+							else if(window.location.pathname == '/Klickit/public/Pieces/Tetes'){
+								$('body').load('<?=$this->url('listItemPieces', ['sub_category' =>'Tetes']);?>');
+							}
+							else if(window.location.pathname == '/Klickit/public/Pieces/Cheveux'){
+								$('body').load('<?=$this->url('listItemPieces', ['sub_category' =>'Cheveux']);?>');
+							}
+							else if(window.location.pathname == '/Klickit/public/Pieces/Divers'){
+								$('body').load('<?=$this->url('listItemPieces', ['sub_category' =>'Divers']);?>');
+							}
+						}
+					}
+				});
+			});
+		});
+	</script>
+<?php $this->stop('js') ?>
