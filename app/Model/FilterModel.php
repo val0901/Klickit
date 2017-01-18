@@ -1,7 +1,7 @@
 <?php
 namespace Model;
 
-class ShippingModel extends \W\Model\Model 
+class FilterModel extends \W\Model\Model 
 {
 
 

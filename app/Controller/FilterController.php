@@ -18,7 +18,54 @@ class FilterController extends Controller
 	/*Ajout des filtres*/
 	public function addFilter()
 	{
-		$this->show('back/Filter/addFilter');
+		$post = [];
+		$errors = [];
+		$insert = new FilterModel();
+		$success = false;
+
+		if(!empty($_POST)){
+
+			foreach ($_POST as $key => $value) {
+				$post[$key] = trim(strip_tags($value));
+			}
+
+			if(strlen($post['name']) < 3 || strlen($post['name']) > 25){
+				$errors[] = 'Le nom du filtre doit comporter entre 3 et 25 caractères';
+			}
+
+			if(count($errors) === 0){
+				$dataInsert = [
+					'name'		=> $post['name'],
+				];
+
+				if($insert->insert($dataInsert)){
+					$success = true;
+				}else{
+					$errors[] = 'Erreur lors de l\'ajout en base de données';
+				}
+			}
+		}
+
+		$params = [
+			'success'	=> $success,
+			'errors'	=> $errors,
+		];
+
+		if(!empty($this->getUser())){
+
+			$verification = new AuthorizationModel();
+
+			if ($verification->isGranted('Utilisateur')) {
+				$this->redirectToRoute('front_index');
+			}
+			else {
+				$this->show('back/Filter/addFilter', $params);
+			}
+		}
+		else {
+			$this->redirectToRoute('login');
+		}
+		
 	}
 
 	/*Mise à jour des filtres*/
