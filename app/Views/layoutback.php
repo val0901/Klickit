@@ -61,6 +61,7 @@
 						            <li><a href="<?=$this->url('listItem');?>">Article</a></li>
 						            <li><a href="<?=$this->url('listOrders');?>">Commande</a></li>
 						            <li><a href="<?=$this->url('listShipping');?>">Option d'envoi</a></li>
+						            <li><a href="<?=$this->url('listFilter');?>">Filtres</a></li>
 						            <li><a href="<?=$this->url('listGuestbook');?>">Livre d'Or</a></li>
 						          </ul>
 						        </div><!-- /.navbar-collapse -->

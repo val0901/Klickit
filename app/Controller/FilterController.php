@@ -24,7 +24,7 @@ class FilterController extends Controller
 	/*Mise à jour des filtres*/
 	public function updateFilter($id)
 	{
-		$this->show('back/Filter/updateFilter')
+		$this->show('back/Filter/updateFilter');
 
 	}
 
