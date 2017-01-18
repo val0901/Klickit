@@ -333,6 +333,41 @@
 					}
 				});
 			});
+
+			// Sécurisation de la page, on ne peut plus écrire ce que l'on veut dans l'URL
+
+			var locationOk = true;
+
+			if(window.location.pathname == '/Klickit/public/Pieces/Armes'){
+				var locationOk = true;
+			}
+			else if(window.location.pathname == '/Klickit/public/Pieces/Coiffes'){
+				var locationOk = true;
+			}
+			else if(window.location.pathname == '/Klickit/public/Pieces/Manchettes'){
+				var locationOk = true;
+			}
+			else if(window.location.pathname == '/Klickit/public/Pieces/Cols'){
+				var locationOk = true;
+			}
+			else if(window.location.pathname == '/Klickit/public/Pieces/Ceinturons'){
+				var locationOk = true;
+			}
+			else if(window.location.pathname == '/Klickit/public/Pieces/Tetes'){
+				var locationOk = true;
+			}
+			else if(window.location.pathname == '/Klickit/public/Pieces/Cheveux'){
+				var locationOk = true;
+			}
+			else if(window.location.pathname == '/Klickit/public/Pieces/Divers'){
+				var locationOk = true;
+			}
+			else {
+				locationOk = false;
+				if(locationOk == false){
+					document.location.href="<?=$this->url('listItemPiecesFull');?>";
+				}
+			}
 		});
 	</script>
 <?php $this->stop('js') ?>

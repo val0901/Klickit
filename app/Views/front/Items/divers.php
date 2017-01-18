@@ -279,6 +279,7 @@
 					dataType: 'json',
 					success: function(add){
 						if(add.msg == 'ok'){
+							// Ici vu que la catégorie Divers n'a toujours pas de sous catégorie j'ai mis des ?, les remplacer si on ajoute des sous-catégories
 							if(window.location.pathname == '/Klickit/public/Divers/?'){
 								$('body').load('<?=$this->url('listItemDivers', ['sub_category' =>'?']);?>');
 							}
@@ -289,6 +290,23 @@
 					}
 				});
 			});
+
+			// Sécurisation de la page, on ne peut plus écrire ce que l'on veut dans l'URL, pour les "?" voir commentaire dans l'ajax juste au dessus, ligne 282
+
+			var locationOk = true;
+
+			if(window.location.pathname == '/Klickit/public/Divers/?'){
+				var locationOk = true;
+			}
+			else if(window.location.pathname == '/Klickit/public/Divers/?'){
+				var locationOk = true;
+			}
+			else {
+				locationOk = false;
+				if(locationOk == false){
+					document.location.href="<?=$this->url('listItemDiversFull');?>";
+				}
+			}
 		});
 	</script>
 <?php $this->stop('js') ?>

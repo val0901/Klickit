@@ -315,6 +315,32 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 					}
 				});
 			});
+
+			// Sécurisation de la page, on ne peut plus écrire ce que l'on veut dans l'URL
+			
+			var locationOk = true;
+
+			if(window.location.pathname == '/Klickit/public/Customs/CustomsTampographies'){
+				var locationOk = true;
+			}
+			else if(window.location.pathname == '/Klickit/public/Customs/CustomsPeints'){
+				var locationOk = true;
+			}
+			else if(window.location.pathname == '/Klickit/public/Customs/BustesTampographies'){
+				var locationOk = true;
+			}
+			else if(window.location.pathname == '/Klickit/public/Customs/PiecesEnResine'){
+				var locationOk = true;
+			}
+			else if(window.location.pathname == '/Klickit/public/Customs/Stickers'){
+				var locationOk = true;
+			}
+			else {
+				locationOk = false;
+				if(locationOk == false){
+					document.location.href="<?=$this->url('listItemCustomFull');?>";
+				}
+			}
 		});
 	</script>
 <?php $this->stop('js') ?>
