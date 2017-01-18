@@ -354,6 +354,48 @@
 					}
 				});
 			});
+
+			var locationOk = true;
+
+			if(window.location.pathname == '/Klickit/public/Classics/Chevaliers'){
+				locationOk = true;
+			}
+			else if(window.location.pathname == '/Klickit/public/Classics/Pirates'){
+				locationOk = true;
+			}
+			else if(window.location.pathname == '/Klickit/public/Classics/Antique'){
+				locationOk = true;
+			}
+			else if(window.location.pathname == '/Klickit/public/Classics/Western'){
+				locationOk = true;
+			}
+			else if(window.location.pathname == '/Klickit/public/Classics/Fantasy'){
+				locationOk = true;
+			}
+			else if(window.location.pathname == '/Klickit/public/Classics/XVIIIe'){
+				locationOk = true;
+			}
+			else if(window.location.pathname == '/Klickit/public/Classics/FeesPrincesses'){
+				locationOk = true;
+			}
+			else if(window.location.pathname == '/Klickit/public/Classics/Police'){
+				locationOk = true;
+			}
+			else if(window.location.pathname == '/Klickit/public/Classics/Animaux'){
+				locationOk = true;
+			}
+			else if(window.location.pathname == '/Klickit/public/Classics/Sport'){
+				locationOk = true;
+			}
+			else if(window.location.pathname == '/Klickit/public/Classics/Divers'){
+				locationOk = true;
+			}
+			else {
+				locationOk = false;
+				if(locationOk == false){
+					document.location.href="<?=$this->url('listItemClassicsFull');?>";
+				}
+			}
 		});
 	</script>
 <?php $this->stop('js') ?>
