@@ -20,6 +20,19 @@
 	  </div>
 	</div>
 
+	<!-- Select Basic -->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="category">Catégorie</label>
+	  <div class="col-md-4">
+	    <select id="category" name="category" class="form-control">
+	      <option value="PlaymobilClassique">Playmobil Classique</option>
+	      <option value="PlaymobilCustom">Playmobil Custom</option>
+	      <option value="PiecesDetachees">Pièces Detachées</option>
+	      <option value="Divers">Divers</option>
+	    </select>
+	  </div>
+	</div>
+
 	<div class="form-group">
 	  <label class="col-md-4 control-label" for="id"></label>
 	  <div class="col-md-4">
