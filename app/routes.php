@@ -84,6 +84,7 @@
 		['GET|POST', '/ajax/addToCart', 'AjaxFront#addToCart', 'ajax_addToCart'],
 		['GET|POST', '/ajax/addToCartView', 'AjaxFront#addToCartView', 'ajax_addToCartView'],
 		['GET|POST', '/ajax/favorite', 'AjaxFront#favorite', 'ajax_favorite'],
+		['GET|POST', '/ajax/deleteAllFavorite', 'AjaxFront#deleteAllFavorite', 'ajax_deleteAllFavorite'],
 		['GET|POST', '/ajax/deleteArt', 'AjaxFront#deleteArt', 'ajax_deleteArt'],
 
 		//Pages liées à FrontController
