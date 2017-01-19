@@ -12,6 +12,7 @@ use \Model\GuestbookModel;
 use \Model\OrdersModel;
 use \Model\SlideModel;
 use \Model\ShippingModel;
+use \Model\FilterModel;
 use \W\Security\AuthentificationModel;
 
 use \Respect\Validation\Validator as v; 
@@ -433,5 +434,26 @@ class AjaxController extends Controller
 		}
 
 		echo json_encode($json);
+	}
+
+	/**
+	 * Efface un filtre en Ajax
+	 */
+	public function deleteFilter()
+	{
+		if(!empty($_POST)){
+
+			if(is_numeric($_POST['id_filter'])){
+				$filterModel = new FilterModel();
+				$deleteFilter = $filterModel->delete($_POST['id_filter']);
+
+				if($deleteFilter){
+					$json = ['code' => 'ok'];
+				}
+			}else{
+				$json = ['code' => 'error'];
+			}
+		}
+		$this->showJson($json);
 	}
 }

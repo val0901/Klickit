@@ -13,7 +13,7 @@
 	<div class="form-group">
 	  <label class="col-md-4 control-label" for="name">Filtre</label>  
 	  <div class="col-md-4">
-	  <input id="name" name="name" placeholder="Nom de l'option" class="form-control input-md" required="" type="text">
+	  <input id="name" name="name" placeholder="Nom du filtre" class="form-control input-md" required="" type="text">
 	    
 	  </div>
 	</div>
@@ -24,8 +24,7 @@
 	    <button id="id" name="id" class="btn btn-info">Ajouter un filtre</button>
 	  </div>
 	</div>
-
-	</fieldset>
+	
 </form>
 
 <?php $this->stop('main_content') ?>
