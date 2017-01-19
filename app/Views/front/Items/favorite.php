@@ -122,6 +122,15 @@
           }
         });
       });
+
+      /* Début dé sécurisation pour vérifier que l'URL est bien un chiffre après le / ... à voir plus tard. 
+      var number = [];
+      locationOk = true;
+
+      for(var i = 1; i <= 99999; i++){
+        number.push(i);
+      }*/
+
     });
   </script>
 <?php $this->stop('js') ?>
