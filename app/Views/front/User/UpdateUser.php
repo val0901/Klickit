@@ -62,20 +62,20 @@
 			  <br>
 			  <div class="form-group orderlogin_label">
 				<label for="exampleInputName2">Adresse</label>
-    			<input type="text" class="form-control" id="exampleInputName2" placeholder="votre addresse">
+    			<input type="text" class="form-control" id="exampleInputName2" placeholder="votre adresse">
 			  </div>
 			  <div class="form-group orderlogin_label">
 				<label for="exampleInputName2">Complément adresse</label>
-    			<input type="text" class="form-control" id="exampleInputName2" placeholder="votre complément adresse">
+    			<input type="text" class="form-control" id="exampleInputName2" placeholder="votre complément d'adresse">
 			  </div>
 			  <div class="form-group orderlogin_label">
 				<label for="exampleInputName2">Code Postal</label>
-    			<input type="text" class="form-control" id="exampleInputName2" placeholder="votre code Postal">
+    			<input type="text" class="form-control" id="exampleInputName2" placeholder="votre code postal">
 			  </div>
 			  <div class="form-group orderlogin_label">
 				<label for="exampleInputName2">Pays</label>
     			<select class="form-control">
-				  <option selected disabled>--Selectionez--</option>
+				  <option selected disabled>--Selectionnez--</option>
 				  <option>France Métropolitaine</option>
 				</select>
 			  </div>

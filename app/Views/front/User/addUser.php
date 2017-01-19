@@ -42,15 +42,15 @@
 			  </div>
 			  <div class="form-group adduser_label">
 				<label for="exampleInputName2">Adresse</label>
-    			<input type="text" class="form-control" id="exampleInputName2" placeholder="votre addresse" name="address">
+    			<input type="text" class="form-control" id="exampleInputName2" placeholder="votre adresse" name="address">
 			  </div>
 			  <div class="form-group adduser_label">
-				<label for="exampleInputName2">Code postale</label>
-    			<input type="text" class="form-control" id="exampleInputName2" placeholder="ex: 33000" name="zipcode">
+				<label for="exampleInputName2">Code postal</label>
+    			<input type="text" class="form-control" id="exampleInputName2" placeholder="ex : 33000" name="zipcode">
 			  </div>
 			  <div class="form-group adduser_label">
 				<label for="exampleInputName2">Ville</label>
-    			<input type="text" class="form-control" id="exampleInputName2" placeholder="ex: bordeaux" name="city">
+    			<input type="text" class="form-control" id="exampleInputName2" placeholder="ex : Bordeaux" name="city">
 			  </div>
 			  <div class="form-group adduser_label">
 				<label for="exampleInputEmail1">Email</label>
@@ -58,9 +58,9 @@
 			  </div>
 			  <div class="form-group adduser_label">
 				<label for="exampleInputPassword1">Mot de passe</label>
-				<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+				<input type="password" class="form-control" id="exampleInputPassword1" placeholder="votre mot de passe" name="password">
 			  </div>
-			  <button type="submit" class="btn btn-default adduser_button">Ajouter</button>
+			  <button type="submit" class="btn btn-default adduser_button">S'inscrire</button>
 			</form>
 		</div>
 	</div>
