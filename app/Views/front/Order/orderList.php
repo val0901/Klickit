@@ -22,7 +22,7 @@
         <table class="table">
             <thead> 
                 <tr> 
-                    <th>Product</th> 
+                    <th>Article</th> 
                     <th>Description</th> 
                     <th>Prix unitaire</th> 
                     <th>Quantité</th>
@@ -68,7 +68,7 @@
 			<ul>
 				<li>
 					<p>Total articles :</p>
-					<p>frais de port :</p>
+					<p>Frais de port :</p>
 					<p>TOTAL COMMANDE :</p>
 				</li>
 			</ul>

@@ -6,7 +6,7 @@
 	<div class="row">
 		<ul class="breadcrumb">
     		<li class="completed"><a id="breadcrumb" href="javascript:void(0);">Récapitulatif</a></li>
-			<li class="completed"><a id="breadcrumb" href="javascript:void(0);">Conexion</a></li>
+			<li class="completed"><a id="breadcrumb" href="javascript:void(0);">Connexion</a></li>
 			<li><a id="breadcrumb" href="javascript:void(0);">Adresse</a></li>
 			<li><a id="breadcrumb" href="javascript:void(0);">Paiement</a></li>
 		</ul>

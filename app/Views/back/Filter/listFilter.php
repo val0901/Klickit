@@ -1,4 +1,4 @@
-<?php $this->layout('layoutback', ['title' => 'liste des filtres']) ?>
+<?php $this->layout('layoutback', ['title' => 'Liste des filtres']) ?>
 
 <?php $this->start('main_content') ?>
 
