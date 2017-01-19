@@ -35,9 +35,11 @@
 				<div class="form-group viewcategory_checkboxmargin">
 					<div class="form-group viewcategory_checkboxmargin">
 						<?php foreach ($filters as $filter) : ?>
-							<label class="viewcategorycheckbox_border">
-							<input type="checkbox"> <span class="viewcategorycheckbox_font"><?=ucfirst($filter['name']);?></span>
-							</label>
+							<?php if ($filter['category'] == 'Divers') :?>
+								<label class="viewcategorycheckbox_border">
+								<input type="checkbox"> <span class="viewcategorycheckbox_font"><?=ucfirst($filter['name']);?></span>
+								</label>
+							<?php endif; ?>
 						<?php endforeach; ?>
 					</div>
 				</div>
