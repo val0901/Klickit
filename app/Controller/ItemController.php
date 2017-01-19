@@ -166,15 +166,15 @@ class ItemController extends Controller
 			}
 
 			if($post['category'] == 'PlaymobilClassique' && !in_array($post['subCategory'], $subCategory_Classic)){
-				$errors[] = 'Vous avez entré une sous-catégorie qui n\'est pas lié à la catégorie Classique';
+				$errors[] = 'Vous avez entré une sous-catégorie qui n\'est pas liée à la catégorie Classique';
 			}
 
 			if($post['category'] == 'PlaymobilCustom' && !in_array($post['subCategory'], $subCategory_Custom)){
-				$errors[] = 'Vous avez entré une sous-catégorie qui n\'est pas lié à la catégorie Custom';
+				$errors[] = 'Vous avez entré une sous-catégorie qui n\'est pas liée à la catégorie Custom';
 			}
 
 			if($post['category'] == 'PiecesDetachees' && !in_array($post['subCategory'], $subCategory_Piece)){
-				$errors[] = 'Vous avez entré une sous-catégorie qui n\'est pas lié à la catégorie Pièces Detachées';
+				$errors[] = 'Vous avez entré une sous-catégorie qui n\'est pas liée à la catégorie Pièces Detachées';
 			}
 
 			if(count($errors) === 0) {
@@ -317,21 +317,21 @@ class ItemController extends Controller
 
 			if(!empty($post['subCategory']) && isset($post['subCategory'])) {
 				if($post['category'] == 'PlaymobilClassique' && !in_array($post['subCategory'], $subCategory_Classic)){
-					$errors[] = 'Vous avez entré une sous-catégorie qui n\'est pas lié à la catégorie Classique';
+					$errors[] = 'Vous avez entré une sous-catégorie qui n\'est pas liée à la catégorie Classique';
 				}
 				else {
 					$afficheItem['sub_category'] = $post['subCategory'];
 				}
 
 				if($post['category'] == 'PlaymobilCustom' && !in_array($post['subCategory'], $subCategory_Custom)){
-					$errors[] = 'Vous avez entré une sous-catégorie qui n\'est pas lié à la catégorie Custom';
+					$errors[] = 'Vous avez entré une sous-catégorie qui n\'est pas liée à la catégorie Custom';
 				}
 				else {
 					$afficheItem['sub_category'] = $post['subCategory'];
 				}
 
 				if($post['category'] == 'PiecesDetachees' && !in_array($post['subCategory'], $subCategory_Piece)){
-					$errors[] = 'Vous avez entré une sous-catégorie qui n\'est pas lié à la catégorie Pièces Detachées';
+					$errors[] = 'Vous avez entré une sous-catégorie qui n\'est pas liée à la catégorie Pièces Detachées';
 				}
 				else {
 					$afficheItem['sub_category'] = $post['subCategory'];

@@ -41,6 +41,7 @@ class FilterController extends Controller
 		$post = [];
 		$errors = [];
 		$insert = new FilterModel();
+		$category_product = ['PlaymobilClassique', 'PlaymobilCustom', 'PiecesDetachees', 'Divers'];
 		$success = false;
 
 		if(!empty($_POST)){
@@ -53,9 +54,14 @@ class FilterController extends Controller
 				$errors[] = 'Le nom du filtre doit comporter entre 3 et 25 caractères';
 			}
 
+			if(!in_array($post['category'], $category_product)){
+				$errors[] = 'Veuillez choisir une catégorie valide';
+			}
+
 			if(count($errors) === 0){
 				$dataInsert = [
-					'name'		=> $post['name'],
+					'name'			=> $post['name'],
+					'category'		=> $post['category'],
 				];
 
 				if($insert->insert($dataInsert)){
@@ -94,6 +100,7 @@ class FilterController extends Controller
 		$success = false;
 		$post = [];
 		$errors = [];
+		$category_product = ['PlaymobilClassique', 'PlaymobilCustom', 'PiecesDetachees', 'Divers'];
 		if(!is_numeric($id) || empty($id)){
 			$this->showNotFound();
 		}else{
@@ -116,6 +123,15 @@ class FilterController extends Controller
 				}
 				else{
 					$filter['name'] = $post['name'];
+				}
+			}
+
+			if(!empty($post['category']) && isset($post['category'])) {
+				if(!in_array($post['category'], $category_product)){
+					$errors[] = 'Veuillez choisir une catégorie valide';
+				}
+				else{
+					$filter['category'] = $post['category'];
 				}
 			}
 				

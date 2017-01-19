@@ -12,6 +12,7 @@
 			<table class="table table-responsive">
 				<thead>
 					<th>Nom du filtre</th>
+					<th>Catégorie</th>
 					<th colspan="2">Action</th>
 				</thead>
 
@@ -19,6 +20,7 @@
 					<?php foreach($filters as $filter) : ?>
 						<tr>
 							<td><?=ucfirst($filter['name']);?></td>
+							<td><?=$filter['category'] ?></td>
 							<td><a href="<?=$this->url('updateFilter', ['id'=>$filter['id']])?>">Mettre à jour le filtre</a></td>
 							<td><button class="btn btn-danger delete-filter" data-id="<?=$filter['id']?>">Effacer le filtre</button></td>
 						</tr>	
