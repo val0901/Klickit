@@ -54,6 +54,10 @@ class FrontItemController extends MasterController
 			$favoriteList = substr($myFavorite, 0, -2); // Ensuite ici on défini notre variable instencié plus haut avec le contenu de $myFavorite et on supprime les deux derniers caractère inutile qui sont une virgule et un espace donc : ', '
 		}
 
+		// affichage des filtres
+		$getfilters = new FilterModel();
+		$filters= $getfilters->findAll();
+
 		$data = [
 			'affiche' 		 => $afficheItems,
 			'afficheNewItem' => $afficheNewItems,
@@ -61,6 +65,7 @@ class FrontItemController extends MasterController
 			'max' 			 => $max,
 			'page'			 => $page,
 			'nb'			 => $nb,
+			'filters'		 => $filters,
 		];
 
 		$this->showStuff('front/Items/classics', $data);
@@ -101,6 +106,7 @@ class FrontItemController extends MasterController
 			$favoriteList = substr($myFavorite, 0, -2);
 		}
 
+		// affichage des filtres
 		$getfilters = new FilterModel();
 		$filters= $getfilters->findAll();
 
@@ -153,6 +159,10 @@ class FrontItemController extends MasterController
 			$favoriteList = substr($myFavorite, 0, -2);
 		}
 
+		// affichage des filtres
+		$getfilters = new FilterModel();
+		$filters= $getfilters->findAll();
+
 		$data = [
 			'affiche' 		 => $afficheItems,
 			'afficheNewItem' => $afficheNewItems,
@@ -160,6 +170,7 @@ class FrontItemController extends MasterController
 			'max' 			 => $max,
 			'page' 			 => $page,
 			'nb'			 => $nb,
+			'filters'		 => $filters,
 		];
 
 		$this->showStuff('front/Items/customs', $data);
@@ -200,6 +211,10 @@ class FrontItemController extends MasterController
 			$favoriteList = substr($myFavorite, 0, -2);
 		}
 
+		// affichage des filtres
+		$getfilters = new FilterModel();
+		$filters= $getfilters->findAll();
+
 		$data = [
 			'afficheNewItem' => $afficheNewItems,
 			'items'			 => $items,
@@ -207,6 +222,7 @@ class FrontItemController extends MasterController
 			'max'			 => $max,
 			'page'			 => $page,
 			'nb'			 => $nb,
+			'filters'		 => $filters,
 		];
 
 		$this->showStuff('front/Items/customsFull', $data);
@@ -247,6 +263,10 @@ class FrontItemController extends MasterController
 			$favoriteList = substr($myFavorite, 0, -2);
 		}
 
+		// affichage des filtres
+		$getfilters = new FilterModel();
+		$filters= $getfilters->findAll();
+
 		$data = [
 			'affiche' 		 => $afficheItems,
 			'afficheNewItem' => $afficheNewItems,
@@ -254,6 +274,7 @@ class FrontItemController extends MasterController
 			'max'			 => $max,
 			'page'			 => $page,
 			'nb'			 => $nb,
+			'filters'		 => $filters,
 		];
 
 		$this->showStuff('front/Items/pieces', $data);
@@ -294,6 +315,10 @@ class FrontItemController extends MasterController
 			$favoriteList = substr($myFavorite, 0, -2);
 		}
 
+		// affichage des filtres
+		$getfilters = new FilterModel();
+		$filters= $getfilters->findAll();
+
 		$data = [
 			'afficheNewItem' => $afficheNewItems,
 			'items'			 => $items,
@@ -301,6 +326,7 @@ class FrontItemController extends MasterController
 			'max'			 => $max,
 			'page'			 => $page,
 			'nb'			 => $nb,
+			'filters'		 => $filters,
 		];
 
 		$this->showStuff('front/Items/piecesFull', $data);
@@ -341,6 +367,10 @@ class FrontItemController extends MasterController
 			$favoriteList = substr($myFavorite, 0, -2);
 		}
 
+		// affichage des filtres
+		$getfilters = new FilterModel();
+		$filters= $getfilters->findAll();
+
 		$data = [
 			'items' 		 => $items,
 			'afficheNewItem' => $afficheNewItems,
@@ -348,6 +378,7 @@ class FrontItemController extends MasterController
 			'max'			 => $max,
 			'page'			 => $page,
 			'nb'			 => $nb,
+			'filters'		 => $filters,
 		];
 
 		$this->showStuff('front/Items/divers', $data);
@@ -388,6 +419,10 @@ class FrontItemController extends MasterController
 			$favoriteList = substr($myFavorite, 0, -2);
 		}
 
+		// affichage des filtres
+		$getfilters = new FilterModel();
+		$filters= $getfilters->findAll();
+
 		$data = [
 			'afficheNewItem' => $afficheNewItems,
 			'items'			 => $items,
@@ -395,6 +430,7 @@ class FrontItemController extends MasterController
 			'max'			 => $max,
 			'page'			 => $page,
 			'nb'			 => $nb,
+			'filters'		 => $filters,
 		];
 		
 		$this->showStuff('front/Items/diversFull', $data);
