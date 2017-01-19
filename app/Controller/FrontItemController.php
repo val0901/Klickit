@@ -6,6 +6,7 @@ use \W\Controller\Controller;
 use \Model\ItemModel;
 use \Model\UserModel;
 use \Model\FavoriteModel;
+use \Model\FilterModel;
 use \W\Security\AuthorizationModel;
 use \W\Security\AuthentificationModel;
 use \Respect\Validation\Validator as v;
@@ -100,6 +101,9 @@ class FrontItemController extends MasterController
 			$favoriteList = substr($myFavorite, 0, -2);
 		}
 
+		$getfilters = new FilterModel();
+		$filters= $getfilters->findAll();
+
 		$data = [
 			'afficheNewItem' => $afficheNewItems,
 			'items'			 => $items,
@@ -107,6 +111,7 @@ class FrontItemController extends MasterController
 			'max' 			 => $max,
 			'page' 			 => $page,
 			'nb'			 => $nb,
+			'filters'		 => $filters,
 
 		];
 

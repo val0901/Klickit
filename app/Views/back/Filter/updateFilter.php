@@ -1,6 +1,9 @@
-<?php $this->layout('layoutback', ['title' => 'mise à jour des filtres']) ?>
+<?php $this->layout('layoutback', ['title' => 'Mise à jour des filtres']) ?>
 
 <?php $this->start('main_content') ?>
+
+	<a href="<?=$this->url('listFilter');?>"><button class="btn btn-info">Retour liste des filtres</button></a>
+
 	<?php if($success):?>
 		<p class="alert alert-success">Filtre modifié</p>
 

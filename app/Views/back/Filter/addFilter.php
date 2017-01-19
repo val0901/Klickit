@@ -1,6 +1,8 @@
-<?php $this->layout('layoutback', ['title' => 'ajout des filtres']) ?>
+<?php $this->layout('layoutback', ['title' => 'Ajout des filtres']) ?>
 
 <?php $this->start('main_content') ?>
+
+<a href="<?=$this->url('listFilter');?>"><button class="btn btn-info">Retour liste des commandes</button></a>
 
 <?php if($success):?>
 	<p class="alert alert-success">Filtre ajouté</p>
@@ -24,7 +26,7 @@
 	    <button id="id" name="id" class="btn btn-info">Ajouter un filtre</button>
 	  </div>
 	</div>
-	
+
 </form>
 
 <?php $this->stop('main_content') ?>
