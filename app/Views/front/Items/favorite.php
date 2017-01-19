@@ -34,9 +34,9 @@
                     </div>
                     <div class="caption">
                         <?php if($list_items['newPrice'] == 0) : ?>
-                          <h4><span style="cursor:pointer;"><button class="favorite" type="submit" name="<?=str_replace(' ', '', $list_items['name']);?>" value="<?=$list_items['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button></span> <?=$list_items['price'];?>€</h4>
+                          <h4><span style="cursor:pointer;"><button class="favorite" type="submit" name="<?=str_replace(' ', '', $list_items['name']);?>" value="<?=$list_items['id'];?>" data-id="<?=$list_items['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button></span> <?=$list_items['price'];?>€</h4>
                         <?php else : ?>
-                          <h4><span style="cursor:pointer;"><button class="favorite" type="submit" name="<?=str_replace(' ', '', $list_items['name']);?>" value="<?=$list_items['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button></span> <span class="viewcategoryprixpromo"><?=$list_items['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$list_items['price'];?>€</span></h4>
+                          <h4><span style="cursor:pointer;"><button class="favorite" type="submit" name="<?=str_replace(' ', '', $list_items['name']);?>" value="<?=$list_items['id'];?>" data-id="<?=$list_items['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button></span> <span class="viewcategoryprixpromo"><?=$list_items['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$list_items['price'];?>€</span></h4>
                         <?php endif; ?>
 
                         <p><?=$list_items['name'];?></p>
@@ -66,7 +66,7 @@
               </div>
               <?php endforeach; ?> <!-- fin du foreach $favorite -->
               <div class="favoritedelete_button">
-                <button type="submit" name="allDelete" class="btn btn-primary favoritedelete_button_size">Supprimer tous mes favoris</button>
+                <button type="submit" id="allDelete" name="allDelete" value="<?=$_SESSION['user']['id'];?>" class="btn btn-primary favoritedelete_button_size">Supprimer tous mes favoris</button>
               </div>
        </div>
    </div>
@@ -81,3 +81,47 @@
 </form>
 
 <?php $this->stop('main_content') ?>
+
+<?php $this->start('js') ?>
+  <script>
+    $(document).ready(function(){
+      // Suppression d'un seul favoris
+      $('.favorite').click(function(e){
+        e.preventDefault();
+
+        var idFavorite = $(this).data('id');
+
+        $.ajax({
+          url: '<?=$this->url('ajax_favorite');?>',
+          type: 'post',
+          cache: false,
+          data: {id_item: idFavorite},
+          dataType: 'json',
+          success: function(add){
+            if(add.msg == 'ok'){
+              $('body').load('<?=$this->url('favorite', ['id' => $_SESSION['user']['id']]);?>');
+            }
+          }
+        });
+      });
+
+      // Suppression de TOUT les favoris
+      $('#allDelete').click(function(e){
+        e.preventDefault();
+
+        $.ajax({
+          url: '<?=$this->url('ajax_deleteAllFavorite');?>',
+          type: 'post',
+          cache: false,
+          data: $('#allDelete'),
+          dataType: 'json',
+          success: function(del){
+            if(del.msg == 'ok'){
+              $('body').load('<?=$this->url('favorite', ['id' => $_SESSION['user']['id']]);?>');
+            }
+          }
+        });
+      });
+    });
+  </script>
+<?php $this->stop('js') ?>

@@ -491,18 +491,6 @@ class FrontItemController extends MasterController
 		$favorite = new FavoriteModel();
 		$findFavorite = $favorite->findFavoriteByUser($_SESSION['user']['id']);
 
-		$deleteFavorite = new FavoriteModel();
-		if(!empty($_POST) && isset($_POST)){
-			$post = implode('', $_POST);
-
-			$deleteFavorite->deleteFavorite($post);
-		}
-
-		$deleteAllFavorite = new FavoriteModel();
-		if(isset($_POST['allDelete'])){
-			$deleteAllFavorite->deleteAllFavorite($_SESSION['user']['id']);
-		}
-
 		$items = new ItemModel();
 
 		$data = [

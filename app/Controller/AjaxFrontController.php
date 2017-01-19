@@ -159,6 +159,28 @@ class AjaxFrontController extends Controller
 		$this->showJson($json); // On renvoie le tableau $json sur notre page
 	}
 
+	/**
+	 * Suppression de TOUT les favoris
+	 */
+	public function deleteAllFavorite()
+	{
+		$json = [];
+
+		$deleteAllFavorite = new FavoriteModel();
+		
+		if(isset($_POST['allDelete'])){
+			if($deleteAllFavorite->deleteAllFavorite($_SESSION['user']['id'])){
+				$json = [
+					'msg' => 'ok',
+				];
+			}
+		}
+		$this->showJson($json);
+	}
+
+	/**
+	 * Suppression d'un article dans le panier
+	 */
 	public function deleteArt()
 	{	
 		$delete = new BasketModel;
