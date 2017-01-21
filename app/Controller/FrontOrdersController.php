@@ -41,21 +41,8 @@ class FrontOrdersController extends MasterController
 	{
 		$this->showStuff('front/Order/orderAddress');
 	}
+	
 	/**
-	 * Vu unique d'une commande avec possibilité de changer son statut
-	 */
-/*	public function frontOrderRecap() 
-	{
-		$this->show('front/Order/orderRecap');
-	}
-*/	/**
-	 * Vu unique d'une commande avec possibilité de changer son statut
-	 */
-/*	public function frontOrderValid() 
-	{
-		$this->show('front/Order/orderValidPaie');
-	}
-*/	/**
 	 * Vu du panier de commande
 	 */
 	public function frontPanier() 
