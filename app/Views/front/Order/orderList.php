@@ -215,21 +215,39 @@
     </div>
     <!--End frais de port-->
     
-    <!--order buttons-->
-    <br><br>
-    <div class="row">
-        <div class="col-md-6 order_buttonscapL">
-            <button type="button" class="btn btn-primary order_buttonpadding ordercontinu_color">CONTINUER MES ACHATS</button>
+    <?php if($order['order_process'] == 'EnCours'): ?> <!-- ***************** SI L'UTILISATEUR A UNE COMMANDE EN COURS ***************** -->
+        <!--order buttons-->
+        <br><br>
+        <div class="row">
+            <div class="col-md-6 order_buttonscapL">
+                <button type="button" class="btn btn-primary order_buttonpadding ordercontinu_color">CONTINUER MES ACHATS</button>
+            </div>
+            <div class="col-md-6 order_buttonscapR">
+                <?php if($country['0']['country'] == ''): ?>
+                    <button type="button" disabled="disabled" class="btn btn-primary order_buttonpadding ordercommander_color poursuit-order">POURSUIVRE MA COMMANDE</button>
+                <?php else: ?>
+                    <button type="button" class="btn btn-primary order_buttonpadding ordercommander_color poursuit-order">POURSUIVRE MA COMMANDE</button>
+                <?php endif; ?>
+            </div>
         </div>
-        <div class="col-md-6 order_buttonscapR">
-            <?php if($country['0']['country'] == ''): ?>
-                <button type="button" disabled="disabled" class="btn btn-primary order_buttonpadding ordercommander_color get-order">COMMANDER</button>
-            <?php else: ?>
-                <button type="button" class="btn btn-primary order_buttonpadding ordercommander_color get-order">COMMANDER</button>
-            <?php endif; ?>
+        <!--End order buttons-->
+    <?php else: ?> <!-- **************** SI L'UTILISATEUR N'A PAS DE COMMANDE EN COURS *************** -->
+        <!--order buttons-->
+        <br><br>
+        <div class="row">
+            <div class="col-md-6 order_buttonscapL">
+                <button type="button" class="btn btn-primary order_buttonpadding ordercontinu_color">CONTINUER MES ACHATS</button>
+            </div>
+            <div class="col-md-6 order_buttonscapR">
+                <?php if($country['0']['country'] == ''): ?>
+                    <button type="button" disabled="disabled" class="btn btn-primary order_buttonpadding ordercommander_color get-order">COMMANDER</button>
+                <?php else: ?>
+                    <button type="button" class="btn btn-primary order_buttonpadding ordercommander_color get-order">COMMANDER</button>
+                <?php endif; ?>
+            </div>
         </div>
-    </div>
-    <!--End order buttons-->
+        <!--End order buttons-->
+    <?php endif; ?>
 </div>
 <br><br>
 <?php $this->stop('main_content') ?>
