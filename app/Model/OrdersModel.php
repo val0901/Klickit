@@ -115,7 +115,7 @@ class OrdersModel extends \W\Model\Model
 	 */
 	public function processOrder($id)
 	{
-		$sql = 'SELECT * FROM '.$this->table.' WHERE id = :id AND order_process = "EnCours"';
+		$sql = 'SELECT * FROM '.$this->table.' WHERE idMember = :id AND order_process = "EnCours"';
 
 		$sth = $this->dbh->prepare($sql);
 		$sth->bindValue(':id', $id);

@@ -199,6 +199,9 @@ class AjaxFrontController extends Controller
 		$this->showJson($json);
 	}
 
+	/**
+	 * Nouvelle commande
+	 */
 	public function newOrder()
 	{	
 		$insert = new OrdersModel;
@@ -235,6 +238,24 @@ class AjaxFrontController extends Controller
 			}
 		}	
 		$this->showJson($json);
+	}
 
+	/**
+	 * Mise à jour du pays dans Basket
+	 */
+	public function updateCountry()
+	{
+		$update = new BasketModel;
+		$user = $this->getUser();
+		$json = [];
+
+		if(!empty($_POST) && isset($_POST)){
+			if($update->updateAllBasket($user['id'], $_POST['country_choice'])){
+				$json = [
+					'code'=> 'ok'
+				];
+			}
+		}
+		$this->showJson($json);
 	}
 }
