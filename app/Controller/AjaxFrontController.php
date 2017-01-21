@@ -226,6 +226,7 @@ class AjaxFrontController extends Controller
 					'address'	=>	$user['adress'],
 					'zipcode'	=>	$user['zipcode'],
 					'city'		=>	$user['city'],
+					'country'	=>  $post['country'],
 
 				];
 

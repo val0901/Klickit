@@ -86,9 +86,9 @@
                         <button type="button" id="selectCountry">Enregistrer le pays</button>
                     </li>
                 <?php elseif($country['0']['country'] == 'France'): ?>
+                    <input type="hidden" name="country" value="<?=$country['0']['country']?>">
                     <ul  style="float:right;">
             				<li>
-                                <input type="hidden" name="country" value="<?=$country['0']['country']?>">
             					<p><?=$total?> €</p>
                                 <input type="hidden" name="sub_total" value="<?=$total?>">
             					<p><?=$fdp?> €</p>
