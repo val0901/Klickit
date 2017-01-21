@@ -109,4 +109,18 @@ class OrdersModel extends \W\Model\Model
 			return $sth->fetchAll();
 		}
 	}
+
+	/**
+	 * Recherche d'une commande par id member et order_process
+	 */
+	public function processOrder($id)
+	{
+		$sql = 'SELECT * FROM '.$this->table.' WHERE id = :id AND order_process = "EnCours"';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':id', $id);
+		$sth->execute();
+
+		return $sth->fetch();
+	}
 }

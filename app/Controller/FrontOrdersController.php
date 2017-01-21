@@ -39,9 +39,23 @@ class FrontOrdersController extends MasterController
 	 */
 	public function frontOrderAddress() 
 	{
-		$this->showStuff('front/Order/orderAddress');
+		$process = new OrdersModel();
+		$user = $this->getUser();
+
+		if(!empty($this->getUser())){
+			if($process->processOrder($user['id'])){
+				$this->showStuff('front/Order/orderAddress');
+			}
+			else{
+				// $this->redirectToRoute('front_index');
+				$this->showStuff('front/Order/orderAddress');
+			}
+		}
+		else {
+			$this->redirectToRoute('login');
+		}
 	}
-	
+
 	/**
 	 * Vu du panier de commande
 	 */
