@@ -146,14 +146,14 @@
                 e.preventDefault();
 
                 $.ajax({
-                    url: '<?=$this->url('ajax_deleteArt'); ?>',
+                    url: '<?=$this->url('ajax_newOrder'); ?>',
                     type: 'post',
                     cache: false,
                     data: $('form').serialize(),  // $_POST['id_product']
                     dataType: 'json',
                     success: function(out){
                         if(out.code == 'ok'){
-                            console.log('yes');
+                            window.location.assign('<?=$this->url('front_orderAddress');?>');
                         }
                     }
                 });

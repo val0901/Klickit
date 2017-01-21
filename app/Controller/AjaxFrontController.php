@@ -198,4 +198,12 @@ class AjaxFrontController extends Controller
 		}
 		$this->showJson($json);
 	}
+
+	public function newOrder()
+	{
+
+		$json = ['code'=> 'ok'];
+		$this->showJson($json);
+
+	}
 }
