@@ -69,26 +69,24 @@ class FrontOrdersController extends MasterController
 		//Gestion de la quantité des objets
 		foreach ($fdp as $value){
 
-			//S'il y a un Custom, on rajoute 6.90
-			if(in_array('CustomsPeints', $value) || in_array('PiecesEnResine', $value)){
-				$customFDP = 6.90;
-			}else{
-				$customFDP = 0;
-			}
-
-			if($value['somme'] >= 1 && $value['somme'] <= 3 ){
-				$finalFDP = $customFDP + 2.50;
-
-			}elseif($value['somme'] >= 4 && $value['somme'] <= 8){
-				$finalFDP = $customFDP + 3.90;
-
-			}elseif($value['somme'] > 8){
-				$finalFDP = $customFDP + 6.90;
-			}
-
 		}
-		
-		
+
+		//S'il y a un Custom, on rajoute 6.90
+		if(in_array('CustomsPeints', $value) || in_array('PiecesEnResine', $value)){
+			$customFDP = 6.90;
+		}else{
+			$customFDP = 0;
+		}
+
+		if($value['somme'] >= 1 && $value['somme'] <= 3 ){
+			$finalFDP = $customFDP + 2.50;
+
+		}elseif($value['somme'] >= 4 && $value['somme'] <= 8){
+			$finalFDP = $customFDP + 3.90;
+
+		}elseif($value['somme'] > 8){
+			$finalFDP = $customFDP + 6.90;
+		}
 
 		$data = [
 			'total'	=>	$total,
