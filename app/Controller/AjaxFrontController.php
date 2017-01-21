@@ -209,11 +209,15 @@ class AjaxFrontController extends Controller
 			
 			foreach($_POST as $key => $value){
 				$post[$key] = trim(strip_tags($value));
+			}
+
+				$content = substr($post['id'], 0, -1);
+				$quantity = substr($post['quantity'], 0, -1);
 
 				$data = [
 					'idMember'	=>	$user['id'],
-					'contenu'	=>	substr($post['id'], 0, -2),
-					'quantity'	=>	substr($post['quantity'], 0, -2),
+					'contenu'	=>	$content,
+					'quantity'	=>	$quantity,
 					'date_creation'	=> date('Y-m-d H:i:s'),
 					'statut'	=>	'commande',
 					'sub_total'	=>	$post['sub_total'],
@@ -224,7 +228,6 @@ class AjaxFrontController extends Controller
 					'city'		=>	$user['city'],
 
 				];
-			}
 
 			if($insert->insert($data)){
 				$json = ['code'=> 'ok'];

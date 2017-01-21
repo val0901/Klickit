@@ -31,14 +31,24 @@
                         <th></th>
                     </tr> 
                 </thead> 
-                <tbody>    
+                <tbody>
+                    <?php 
+                        $content = ''; // J'instancie la variable qui contiendra tout les id des articles
+                        $qyt = ''; // J'instancie la variable qui contiendra toute les quantités des articles
+
+                        foreach ($quantity as $allQuantity) { // Ici grâce à la fonction que j'ai crée dans le BasketModel je récupère toute les quantité dans la table Basket en fonction de l'utilisateur, je la foreach une fois ... Tableau multidimensionnel oblige
+                            foreach ($allQuantity as $all) { // Je foreach une deuxième fois pour contenir le tout sous forme de sring dans la BDD avec pour séparateur ', ' ... la fonction trim enlèvera le dernier espèce  
+                                $qyt.= $all.', '; // Et donc la variable $qyt contient toute les quantités séparé par ', ' 
+                            }
+                        }
+                    ?>
                     <?php foreach($w_items as $item) :?> 
+                        <?php $content.= $item['id'].', '; // Et la, comme au dessus, le foreach me permet de stock tout les id des articles sous forme de string avec comme séparateur ', '?> 
                         <tr> 
                             <td scope="row"><img class="img-responsive" src="<?=$this->assetUrl('art/'.$item['picture1']);?>" style="width: 15vw;margin:0 auto;"></td> 
                             <td>
                                 <li class="ordertable_title"><?=$item['name']?><li>
                                 <li class="ordertable_text">Référence: <?=$item['id']?><li>
-                                <input type="hidden" name="id" value="<?=$item['id']?>">
                             </td>
 
                             <?php if($item['newPrice'] == 0) :?> 
@@ -47,7 +57,7 @@
                                 <td><p class="ordertable_title"><?=$item['newPrice']?> €<p></td>
                             <?php endif;?> 
 
-                            <td><p class="ordertable_title"><input type="number" name="quantity" id="number" value="<?=$item['qt']?>"><p></td>
+                            <td><p class="ordertable_title"><input type="number" name="quantityBasket" id="number" value="<?=$item['qt']?>"><p></td>
 
                             <?php if($item['newPrice'] == 0) :?>  
                                 <td><p class="ordertable_title"><?=$item['qt']*$item['price']?> €<p></td>
@@ -60,6 +70,9 @@
                 </tbody> 
             </table>
     		<div class="orderlist_total">
+                <!-- Et donc ici on met les deux input hidden, en dehors du foreach au dessus, avec pour value les variables qui stock tout les ID des articles ainsi que toute les quantités liées  -->
+                <input type="hidden" name="id" value="<?=$content;?>">
+                <input type="hidden" name="quantity" value="<?=$qyt;?>">
                 <?php if($country['0']['country'] == ''): ?>
                     <li>
                         <select name="country">
@@ -96,7 +109,7 @@
         </div>
     </form>  
     <!--End title et border-->
-    
+
     <!--Frais de port-->
     <div class="container_general">
         <div class="orderfrais_border">
@@ -164,7 +177,7 @@
                     url: '<?=$this->url('ajax_newOrder'); ?>',
                     type: 'post',
                     cache: false,
-                    data: $('form').serialize(),  // $_POST['id_product']
+                    data: $('form').serialize(),  
                     dataType: 'json',
                     success: function(out){
                         if(out.code == 'ok'){

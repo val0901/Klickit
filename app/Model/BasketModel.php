@@ -90,6 +90,20 @@ class BasketModel extends \W\Model\Model
 	}
 
 	/**
+	 * Sélection des quantity par id_member
+	 */
+	public function selectQuantity($id)
+	{
+		$sql = 'SELECT quantity FROM '.$this->table.' WHERE id_member = :id_member';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':id_member', $id);
+		$sth->execute();
+
+		return $sth->fetchAll();
+	}
+
+	/**
 	 * Mise à jour de tout les articles dans le panier
 	 */
 	public function updateAllBasket($id_member, $country)

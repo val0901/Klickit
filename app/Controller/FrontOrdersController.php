@@ -76,6 +76,9 @@ class FrontOrdersController extends MasterController
 		$country = new BasketModel;
 		$selectForCountry = $country->selectCountry($user['id']);
 
+		$quantity = new BasketModel;
+		$selectAllQuantity = $quantity->selectQuantity($user['id']);
+
 		$total = $getInfos->getTotal($user['id']);
 		$fdp = $getInfos->countFDP($user['id']);
 
@@ -102,10 +105,11 @@ class FrontOrdersController extends MasterController
 		}
 
 		$data = [
-			'total'	  => $total,
-			'fdp'	  => $finalFDP,
-			'order'   => $order_process,
-			'country' => $selectForCountry,
+			'total'	   => $total,
+			'fdp'	   => $finalFDP,
+			'order'    => $order_process,
+			'country'  => $selectForCountry,
+			'quantity' => $selectAllQuantity,
 		];
 		if(!empty($this->getUser())){
 			$this->showStuff('front/Order/orderList', $data);	
