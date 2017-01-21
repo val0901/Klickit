@@ -92,7 +92,12 @@ class FrontOrdersController extends MasterController
 			'total'	=>	$total,
 			'fdp'	=>	$finalFDP,
 		];
-		$this->showStuff('front/Order/orderList', $data);
+		if(!empty($this->getUser())){
+			$this->showStuff('front/Order/orderList', $data);	
+		}
+		else {
+			$this->redirectToRoute('login');
+		}
 	}
 
 }
