@@ -200,9 +200,32 @@ class AjaxFrontController extends Controller
 	}
 
 	public function newOrder()
-	{
+	{	
+		$insert = new OrdersModel;
+		$user = $this->getUser();
+		$json = [];
 
-		$json = ['code'=> 'ok'];
+		if(!empty($_POST)){
+			
+			foreach($_POST as $key => $value){
+				$post[$key] = trim(strip_tags($value));
+
+				$data = [
+					'idMember'	=>	$user['id'],
+					'contenu'	=>	substr(implode(', ' ,$post['id']), 0, -2),
+					'quantity'	=>	substr(implode(', ' ,$post['quantity']), 0, -2),
+					'date_creation'	=> date('Y-m-d H:i:s'),
+					'statut'	=>	'commande',
+					'sub_total'	=>	$post['sub_total'],
+					'shipping'	=>	$post['shipping'],
+					'total'		=>	$post['total'],
+				];
+			}
+
+			if($insert->insert($data)){
+				$json = ['code'=> 'ok'];
+			}
+		}	
 		$this->showJson($json);
 
 	}

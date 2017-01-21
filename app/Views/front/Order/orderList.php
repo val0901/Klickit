@@ -38,7 +38,7 @@
                             <td>
                                 <li class="ordertable_title"><?=$item['name']?><li>
                                 <li class="ordertable_text">Référence: <?=$item['id']?><li>
-                                <input type="hidden" name="id" value="<?=$item['id'].', '?>">
+                                <input type="hidden" name="id" value="<?=$item['id']?>">
                             </td>
 
                             <?php if($item['newPrice'] == 0) :?> 
@@ -47,7 +47,7 @@
                                 <td><p class="ordertable_title"><?=$item['newPrice']?> €<p></td>
                             <?php endif;?> 
 
-                            <td><p class="ordertable_title"><input type="number" name="quantity" id="number" value="<?=$item['qt'].', '?>"><p></td>
+                            <td><p class="ordertable_title"><input type="number" name="quantity" id="number" value="<?=$item['qt']?>"><p></td>
 
                             <?php if($item['newPrice'] == 0) :?>  
                                 <td><p class="ordertable_title"><?=$item['qt']*$item['price']?> €<p></td>
