@@ -17,7 +17,7 @@ class FrontEventController extends MasterController
 	*/
 	public function createEvent()
 	{
-		$this->showStuff('front/Pages/contact');
+		$this->redirectToRoute('front_contact');
 	}
 
 }
