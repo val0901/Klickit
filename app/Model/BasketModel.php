@@ -88,4 +88,22 @@ class BasketModel extends \W\Model\Model
 
 		return $sth->fetchAll();
 	}
+
+	/**
+	 * Mise à jour de tout les articles dans le panier
+	 */
+	public function updateAllBasket($id_member, $country)
+	{
+		$sql = 'UPDATE '.$this->table.' SET country = :country WHERE id_member = :id_member';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue('id_member', $id_member);
+		$sth->bindValue(':country', $country);
+
+		if($sth->execute()){
+			return true;
+		}
+
+		return false;
+	}
 }
