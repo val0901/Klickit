@@ -24,7 +24,7 @@
 			<form>
 				<div class="form-group orderlogin_label">
 				<label for="exampleInputName2">Adresse</label>
-    			<input type="text" class="form-control" id="exampleInputName2" value="<?=$_SESSION['user']['adress'];?>">
+    			<input type="text" class="form-control" id="exampleInputName2" value="<?=$order['address'];?>">
 			  </div>
 			  <div class="form-group orderlogin_label">
 				<label for="exampleInputName2">Complément adresse</label>
@@ -32,15 +32,15 @@
 			  </div>
 			  <div class="form-group orderlogin_label">
 				<label for="exampleInputName2">Code Postal</label>
-    			<input type="text" class="form-control" id="exampleInputName2" value="<?=$_SESSION['user']['zipcode'];?>">
+    			<input type="text" class="form-control" id="exampleInputName2" value="<?=$order['zipcode'];?>">
 			  </div>
 			  <div class="form-group orderlogin_label">
 				<label for="exampleInputName2">Pays</label>
-    			<input type="text" class="form-control" id="exampleInputName2" value="">
+    			<input type="text" class="form-control" id="exampleInputName2" value="<?=$order['country'];?>">
 			  </div>
 			  <div class="form-group orderlogin_label">
 				<label for="exampleInputName2">Ville</label>
-    			<input type="text" class="form-control" id="exampleInputName2" value="<?=$_SESSION['user']['city'];?>">
+    			<input type="text" class="form-control" id="exampleInputName2" value="<?=$order['city'];?>">
 			  </div>
 			  <br>
 				<button type="submit" class="btn btn-default adduser_button orderlogin_button1"><i class="fa fa-car" aria-hidden="true"><span class="orderlogin_button1text"> valider votre adresse</span></i></button>

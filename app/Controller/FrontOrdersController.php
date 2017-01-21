@@ -45,7 +45,7 @@ class FrontOrdersController extends MasterController
 		$order_process = $process->processOrder($user['id']);
 
 		$data = [
-			'order' = $order_process,
+			'order' => $order_process,
 		];
 
 		if(!empty($this->getUser())){
