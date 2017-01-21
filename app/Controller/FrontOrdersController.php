@@ -42,13 +42,19 @@ class FrontOrdersController extends MasterController
 		$process = new OrdersModel();
 		$user = $this->getUser();
 
+		$order_process = $process->processOrder($user['id']);
+
+		$data = [
+			'order' = $order_process,
+		];
+
 		if(!empty($this->getUser())){
 			if($process->processOrder($user['id'])){
-				$this->showStuff('front/Order/orderAddress');
+				$this->showStuff('front/Order/orderAddress', $data);
 			}
 			else{
 				// $this->redirectToRoute('front_index');
-				$this->showStuff('front/Order/orderAddress');
+				$this->showStuff('front/Order/orderAddress', $data);
 			}
 		}
 		else {
