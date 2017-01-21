@@ -72,31 +72,37 @@
 		<!--viewcategory row2 col2-->
 		<div class="col-md-9">
 		<!-- fil d'ariane -->
-			<h4 class="viewcategory_pages"><a href="<?=$this->url('front_index');?>">Home </a><span>></span><a href="<?=$this->url('listItemClassicsFull');?>"> Classics </a>
+			<h4 class="viewcategory_pages"><a href="<?=$this->url('front_index');?>">Home </a><span>></span><a href="<?=$this->url('listItemClassicsFull');?>"> Classics </a><span>></span>
+			<?php if(!empty($affiche) && isset($affiche)): ?>
+				<?php 
+					foreach ($affiche as $category) {
 
-				<?php if($affiche == 'Chevaliers'): ?>
-							<a href="<?=$this->url('listItemClassics', ['sub_category'=>'Chevaliers']);?>">Chevaliers</a> <span></span>
-				<?php elseif($affiche == 'Pirates'): ?>
-							<a href="<?=$this->url('listItemClassics', ['sub_category'=>'Pirates']);?>">Pirates</a> <span></span>
-				<?php elseif($affiche == 'Antique'): ?>
-							<a href="<?=$this->url('listItemClassics', ['sub_category'=>'Antique']);?>">Antique</a> <span></span>
-				<?php elseif($affiche == 'Western'): ?>
-							<a href="<?=$this->url('listItemClassics', ['sub_category'=>'Western']);?>">Western</a> <span></span>
-				<?php elseif($affiche == 'Fantasy'): ?>
-							<a href="<?=$this->url('listItemClassics', ['sub_category'=>'Fantasy']);?>">Fantasy</a> <span></span>
-				<?php elseif($affiche == 'XVIIIe'): ?>
-							<a href="<?=$this->url('listItemClassics', ['sub_category'=>'XVIIIe']);?>">XVIIIe</a> <span></span>
-				<?php elseif($affiche == 'FeesPrincesses'): ?>
-							<a href="<?=$this->url('listItemClassics', ['sub_category'=>'FeesPrincesses']);?>">Fées & Princesses</a> <span></span>
-				<?php elseif($affiche == 'Police'): ?>
-							<a href="<?=$this->url('listItemClassics', ['sub_category'=>'Police']);?>">Police</a> <span></span>
-				<?php elseif($affiche == 'Animaux'): ?>
-							<a href="<?=$this->url('listItemClassics', ['sub_category'=>'Animaux']);?>">Animaux</a> <span></span>
-				<?php elseif($affiche == 'Sport'): ?>
-							<a href="<?=$this->url('listItemClassics', ['sub_category'=>'Sport']);?>">Sport</a> <span></span>
-				<?php elseif($affiche == 'Divers'): ?>
-							<a href="<?=$this->url('listItemClassics', ['sub_category'=>'Divers']);?>">Divers</a> <span></span>
-				<?php endif; ?>
+					}
+				?>
+					<?php if($category['sub_category'] == 'Chevaliers'): ?>
+								<a href="<?=$this->url('listItemClassics', ['sub_category'=>'Chevaliers']);?>"> Chevaliers</a> <span></span>
+					<?php elseif($category['sub_category'] == 'Pirates'): ?>
+								<a href="<?=$this->url('listItemClassics', ['sub_category'=>'Pirates']);?>"> Pirates</a> <span></span>
+					<?php elseif($category['sub_category'] == 'Antique'): ?>
+								<a href="<?=$this->url('listItemClassics', ['sub_category'=>'Antique']);?>"> Antique</a> <span></span>
+					<?php elseif($category['sub_category'] == 'Western'): ?>
+								<a href="<?=$this->url('listItemClassics', ['sub_category'=>'Western']);?>"> Western</a> <span></span>
+					<?php elseif($category['sub_category'] == 'Fantasy'): ?>
+								<a href="<?=$this->url('listItemClassics', ['sub_category'=>'Fantasy']);?>"> Fantasy</a> <span></span>
+					<?php elseif($category['sub_category'] == 'XVIIIe'): ?>
+								<a href="<?=$this->url('listItemClassics', ['sub_category'=>'XVIIIe']);?>"> XVIIIe</a> <span></span>
+					<?php elseif($category['sub_category'] == 'FeesPrincesses'): ?>
+								<a href="<?=$this->url('listItemClassics', ['sub_category'=>'FeesPrincesses']);?>"> Fées & Princesses</a> <span></span>
+					<?php elseif($category['sub_category'] == 'Police'): ?>
+								<a href="<?=$this->url('listItemClassics', ['sub_category'=>'Police']);?>"> Police</a> <span></span>
+					<?php elseif($category['sub_category'] == 'Animaux'): ?>
+								<a href="<?=$this->url('listItemClassics', ['sub_category'=>'Animaux']);?>"> Animaux</a> <span></span>
+					<?php elseif($category['sub_category'] == 'Sport'): ?>
+								<a href="<?=$this->url('listItemClassics', ['sub_category'=>'Sport']);?>"> Sport</a> <span></span>
+					<?php elseif($category['sub_category'] == 'Divers'): ?>
+								<a href="<?=$this->url('listItemClassics', ['sub_category'=>'Divers']);?>"> Divers</a> <span></span>
+					<?php endif; ?>
+			<?php endif; ?>
 			</h4>
 			<div class="row">
 				<?php foreach ($affiche as $product) : ?>

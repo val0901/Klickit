@@ -66,18 +66,25 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 		
 		<!--viewcategory row2 col2-->
 		<div class="col-md-9">
-			<h4 class="viewcategory_pages"><a href="<?=$this->url('front_index');?>">Home</a> <span>></span><a href="<?=$this->url('listItemCustomFull');?>"> Customs</a> <span>></span> 
-				<?php if($affiche == 'CustomsTampographies'): ?>
-							<a href="<?=$this->url('listItemCustoms', ['sub_category'=>'CustomsTampographies']);?>">Customs Tampographiés</a> <span></span>
-				<?php elseif($affiche == 'CustomsPeints'): ?>
-							<a href="<?=$this->url('listItemCustoms', ['sub_category'=>'CustomsPeints']);?>">Customs Peints</a> <span></span>
-				<?php elseif($affiche == 'BustesTampographies'): ?>
-							<a href="<?=$this->url('listItemCustoms', ['sub_category'=>'BustesTampographies']);?>">Bustes Tampographiés</a> <span></span>
-				<?php elseif($affiche == 'PiecesEnResine'): ?>
-							<a href="<?=$this->url('listItemCustoms', ['sub_category'=>'PiecesEnResine']);?>">Pièces en Résine</a> <span></span>
-				<?php elseif($affiche == 'Stickers'): ?>
-							<a href="<?=$this->url('listItemCustoms', ['sub_category'=>'Stickers']);?>">Stickers</a> <span></span>
-				<?php endif; ?>
+			<h4 class="viewcategory_pages"><a href="<?=$this->url('front_index');?>">Home</a> <span>></span><a href="<?=$this->url('listItemCustomFull');?>"> Customs</a> <span>></span>
+			<?php if(!empty($affiche) && isset($affiche)): ?>
+				<?php 
+					foreach ($affiche as $category) {
+
+					}
+				?>
+					<?php if($category['sub_category'] == 'CustomsTampographies'): ?>
+								<a href="<?=$this->url('listItemCustoms', ['sub_category'=>'CustomsTampographies']);?>"> Customs Tampographiés</a> <span></span>
+					<?php elseif($category['sub_category'] == 'CustomsPeints'): ?>
+								<a href="<?=$this->url('listItemCustoms', ['sub_category'=>'CustomsPeints']);?>"> Customs Peints</a> <span></span>
+					<?php elseif($category['sub_category'] == 'BustesTampographies'): ?>
+								<a href="<?=$this->url('listItemCustoms', ['sub_category'=>'BustesTampographies']);?>"> Bustes Tampographiés</a> <span></span>
+					<?php elseif($category['sub_category'] == 'PiecesEnResine'): ?>
+								<a href="<?=$this->url('listItemCustoms', ['sub_category'=>'PiecesEnResine']);?>"> Pièces en Résine</a> <span></span>
+					<?php elseif($category['sub_category'] == 'Stickers'): ?>
+								<a href="<?=$this->url('listItemCustoms', ['sub_category'=>'Stickers']);?>"> Stickers</a> <span></span>
+					<?php endif; ?>
+			<?php endif; ?>
 			</h4>
 			<div class="row">
 				<?php foreach ($affiche as $product) : ?>

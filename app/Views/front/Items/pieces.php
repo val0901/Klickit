@@ -68,24 +68,32 @@
 		
 		<!--viewcategory row2 col2-->
 		<div class="col-md-9">
-			<h4 class="viewcategory_pages"><a href="<?=$this->url('front_index');?>">Home</a> <span>></span><a href="<?=$this->url('listItemPiecesFull');?>"> Pièces détachées</a> <span>></span> 
-				<?php if($affiche == 'Armes'): ?>
-							<a href="<?=$this->url('listItemPieces', ['sub_category'=>'Armes']);?>">Armes</a> <span></span>
-				<?php elseif($affiche == 'Coiffes'): ?>
-							<a href="<?=$this->url('listItemPieces', ['sub_category'=>'Coiffes']);?>">Coiffes</a> <span></span>
-				<?php elseif($affiche == 'Manchettes'): ?>
-							<a href="<?=$this->url('listItemPieces', ['sub_category'=>'Manchettes']);?>">Manchettes</a> <span></span>
-				<?php elseif($affiche == 'Cols'): ?>
-							<a href="<?=$this->url('listItemPieces', ['sub_category'=>'Cols']);?>">Cols</a> <span></span>
-				<?php elseif($affiche == 'Ceinturons'): ?>
-							<a href="<?=$this->url('listItemPieces', ['sub_category'=>'Ceinturons']);?>">Ceinturons</a> <span></span>
-				<?php elseif($affiche == 'Tetes'): ?>
-							<a href="<?=$this->url('listItemPieces', ['sub_category'=>'Tetes']);?>">Têtes</a> <span></span>
-				<?php elseif($affiche == 'Cheveux'): ?>
-							<a href="<?=$this->url('listItemPieces', ['sub_category'=>'Cheveux']);?>">Cheveux</a> <span></span>
-				<?php elseif($affiche == 'Divers'): ?>
-							<a href="<?=$this->url('listItemPieces', ['sub_category'=>'Divers']);?>">Divers</a> <span></span>
-				<?php endif; ?>
+			<h4 class="viewcategory_pages"><a href="<?=$this->url('front_index');?>">Home</a> <span>></span><a href="<?=$this->url('listItemPiecesFull');?>"> Pièces détachées</a> <span>></span>
+			<?php if(!empty($affiche) && isset($affiche)): ?>
+				<?php 
+					foreach ($affiche as $category) {
+
+					}
+
+				?>
+					<?php if($category['sub_category'] == 'Armes'): ?>
+								<a href="<?=$this->url('listItemPieces', ['sub_category'=>'Armes']);?>"> Armes</a> <span></span>
+					<?php elseif($category['sub_category'] == 'Coiffes'): ?>
+								<a href="<?=$this->url('listItemPieces', ['sub_category'=>'Coiffes']);?>"> Coiffes</a> <span></span>
+					<?php elseif($category['sub_category'] == 'Manchettes'): ?>
+								<a href="<?=$this->url('listItemPieces', ['sub_category'=>'Manchettes']);?>"> Manchettes</a> <span></span>
+					<?php elseif($category['sub_category'] == 'Cols'): ?>
+								<a href="<?=$this->url('listItemPieces', ['sub_category'=>'Cols']);?>"> Cols</a> <span></span>
+					<?php elseif($category['sub_category'] == 'Ceinturons'): ?>
+								<a href="<?=$this->url('listItemPieces', ['sub_category'=>'Ceinturons']);?>"> Ceinturons</a> <span></span>
+					<?php elseif($category['sub_category'] == 'Tetes'): ?>
+								<a href="<?=$this->url('listItemPieces', ['sub_category'=>'Tetes']);?>"> Têtes</a> <span></span>
+					<?php elseif($category['sub_category'] == 'Cheveux'): ?>
+								<a href="<?=$this->url('listItemPieces', ['sub_category'=>'Cheveux']);?>"> Cheveux</a> <span></span>
+					<?php elseif($category['sub_category'] == 'Divers'): ?>
+								<a href="<?=$this->url('listItemPieces', ['sub_category'=>'Divers']);?>"> Divers</a> <span></span>
+					<?php endif; ?>
+			<?php endif; ?>
 			</h4>
 			<div class="row">
 				<?php foreach ($affiche as $product) : ?>
