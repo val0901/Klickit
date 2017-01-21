@@ -151,7 +151,7 @@
                     dataType: 'json',
                     success: function(out){
                         if(out.code == 'ok'){
-                            //window.location.assign('<?=//$this->url('front_orderAddress');?>');
+                            //window.location.assign('//$this->url('front_orderAddress');');
                             $('body').load('<?=$this->url('front_orderAddress');?>');
                         }
                     }
