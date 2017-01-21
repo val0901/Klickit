@@ -86,6 +86,7 @@
 		['GET|POST', '/ajax/favorite', 'AjaxFront#favorite', 'ajax_favorite'],
 		['GET|POST', '/ajax/deleteAllFavorite', 'AjaxFront#deleteAllFavorite', 'ajax_deleteAllFavorite'],
 		['GET|POST', '/ajax/deleteArt', 'AjaxFront#deleteArt', 'ajax_deleteArt'],
+		['GET|POST', '/ajax/newOrder', 'AjaxFront#newOrder', 'ajax_newOrder'],
 
 		//Pages liées à FrontController
 		['GET|POST', '/home', 'Front#index', 'front_index'],
