@@ -75,6 +75,7 @@
                 <?php elseif($country['0']['country'] == 'France'): ?>
                     <ul  style="float:right;">
             				<li>
+                                <input type="hidden" name="country" value="<?=$country['0']['country']?>">
             					<p><?=$total?> €</p>
                                 <input type="hidden" name="sub_total" value="<?=$total?>">
             					<p><?=$fdp?> €</p>
@@ -118,7 +119,11 @@
             <button type="button" class="btn btn-primary order_buttonpadding ordercontinu_color">CONTINUER MES ACHATS</button>
         </div>
         <div class="col-md-6 order_buttonscapR">
-            <button type="button" class="btn btn-primary order_buttonpadding ordercommander_color get-order">COMMANDER</button>
+            <?php if($country['0']['country'] == ''): ?>
+                <button type="button" disabled="disabled" class="btn btn-primary order_buttonpadding ordercommander_color get-order">COMMANDER</button>
+            <?php else: ?>
+                <button type="button" class="btn btn-primary order_buttonpadding ordercommander_color get-order">COMMANDER</button>
+            <?php endif; ?>
         </div>
     </div>
     <!--End order buttons-->
