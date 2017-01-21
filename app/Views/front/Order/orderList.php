@@ -60,25 +60,37 @@
                 </tbody> 
             </table>
     		<div class="orderlist_total">
-    			<ul  style="float:right;">
-    				<li>
-    					<p><?=$total?> €</p>
-                        <input type="hidden" name="sub_total" value="<?=$total?>">
-    					<p><?=$fdp?> €</p>
-                        <input type="hidden" name="shipping" value="<?=$fdp?>">
-    					<p><strong><?=$fdp + $total?> €</strong></p>
-                        <input type="hidden" name="total" value="<?=$fdp+$total?>">
-
-
-    				</li>
-    			</ul>
-    			<ul>
-    				<li>
-    					<p>Total articles :</p>
-    					<p>Frais de port :</p>
-    					<p>TOTAL COMMANDE :</p>
-    				</li>
-    			</ul>
+                <?php if($country['0']['country'] == ''): ?>
+                    <li>
+                        <select name="country">
+                            <option value="France">France</option>
+                            <option value="Belgique">Belgique</option>
+                            <option value="Suisse">Suisse</option>
+                            <option value="Chine">Chine</option>
+                            <option value="Etat-Unis">Etat-Unis</option>
+                        </select>
+                        <br>
+                        <button type="button" id="selectCountry">Enregistrer le pays</button>
+                    </li>
+                <?php elseif($country['0']['country'] == 'France'): ?>
+                    <ul  style="float:right;">
+            				<li>
+            					<p><?=$total?> €</p>
+                                <input type="hidden" name="sub_total" value="<?=$total?>">
+            					<p><?=$fdp?> €</p>
+                                <input type="hidden" name="shipping" value="<?=$fdp?>">
+            					<p><strong><?=$fdp + $total?> €</strong></p>
+                                <input type="hidden" name="total" value="<?=$fdp+$total?>">
+            				</li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <p>Total articles :</p>
+                            <p>Frais de port :</p>
+                            <p>TOTAL COMMANDE :</p>
+                        </li>
+                    </ul>
+            <?php endif; ?>
     		</div>
         </div>
     </form>  

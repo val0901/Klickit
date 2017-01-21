@@ -73,6 +73,19 @@ class BasketModel extends \W\Model\Model
 
 		return $sth->execute();
 
-	}	
+	}
 
+	/**
+	 * Sélection des articles par id_member
+	 */
+	public function selectCountry($id)
+	{
+		$sql = 'SELECT country FROM '.$this->table.' WHERE id_member = :id_member';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':id_member', $id);
+		$sth->execute();
+
+		return $sth->fetchAll();
+	}
 }

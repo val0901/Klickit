@@ -39,7 +39,7 @@ class FrontOrdersController extends MasterController
 	 */
 	public function frontOrderAddress() 
 	{
-		$process = new OrdersModel();
+		$process = new OrdersModel;
 		$user = $this->getUser();
 
 		$order_process = $process->processOrder($user['id']);
@@ -70,6 +70,12 @@ class FrontOrdersController extends MasterController
 		$getInfos = new BasketModel;
 		$user = $this->getUser();
 
+		$process = new OrdersModel;
+		$order_process = $process->processOrder($user['id']);
+
+		$country = new BasketModel;
+		$selectForCountry = $country->selectCountry($user['id']);
+
 		$total = $getInfos->getTotal($user['id']);
 		$fdp = $getInfos->countFDP($user['id']);
 
@@ -96,8 +102,10 @@ class FrontOrdersController extends MasterController
 		}
 
 		$data = [
-			'total'	=>	$total,
-			'fdp'	=>	$finalFDP,
+			'total'	  => $total,
+			'fdp'	  => $finalFDP,
+			'order'   => $order_process,
+			'country' => $selectForCountry,
 		];
 		if(!empty($this->getUser())){
 			$this->showStuff('front/Order/orderList', $data);	
