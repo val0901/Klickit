@@ -38,18 +38,16 @@
                             <td>
                                 <li class="ordertable_title"><?=$item['name']?><li>
                                 <li class="ordertable_text">Référence: <?=$item['id']?><li>
-                                <input type="hidden" name="id" value="<?=$item['id']?>">
+                                <input type="hidden" name="id" value="<?=$item['id'].', '?>">
                             </td>
 
                             <?php if($item['newPrice'] == 0) :?> 
                                 <td><p class="ordertable_title"><?=$item['price']?> €<p></td>
-                                <input type="hidden" name="price" value="<?=$item['price']?>">
                             <?php elseif($item['newPrice'] > 0) :?>
                                 <td><p class="ordertable_title"><?=$item['newPrice']?> €<p></td>
-                                <input type="hidden" name="price" value="<?=$item['newPrice']?>">
                             <?php endif;?> 
 
-                            <td><p class="ordertable_title"><input type="number" name="quantity" id="number" value="<?=$item['qt']?>"><p></td>
+                            <td><p class="ordertable_title"><input type="number" name="quantity" id="number" value="<?=$item['qt'].', '?>"><p></td>
 
                             <?php if($item['newPrice'] == 0) :?>  
                                 <td><p class="ordertable_title"><?=$item['qt']*$item['price']?> €<p></td>
@@ -153,7 +151,8 @@
                     dataType: 'json',
                     success: function(out){
                         if(out.code == 'ok'){
-                            window.location.assign('<?=$this->url('front_orderAddress');?>');
+                            //window.location.assign('<?=//$this->url('front_orderAddress');?>');
+                            $('body').load('<?=$this->url('front_orderAddress');?>');
                         }
                     }
                 });
