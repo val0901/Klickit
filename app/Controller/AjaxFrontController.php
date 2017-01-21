@@ -212,13 +212,17 @@ class AjaxFrontController extends Controller
 
 				$data = [
 					'idMember'	=>	$user['id'],
-					'contenu'	=>	substr(implode(', ' ,$post['id']), 0, -2),
-					'quantity'	=>	substr(implode(', ' ,$post['quantity']), 0, -2),
+					'contenu'	=>	substr($post['id'], 0, -2),
+					'quantity'	=>	substr($post['quantity'], 0, -2),
 					'date_creation'	=> date('Y-m-d H:i:s'),
 					'statut'	=>	'commande',
 					'sub_total'	=>	$post['sub_total'],
 					'shipping'	=>	$post['shipping'],
 					'total'		=>	$post['total'],
+					'address'	=>	$user['adress'],
+					'zipcode'	=>	$user['zipcode'],
+					'city'		=>	$user['city'],
+
 				];
 			}
 
