@@ -17,7 +17,7 @@
     <!--Title et border-->
 	<div class="row">
 		<div class="col-md-3">
-		
+			<p id="error"></p>
 		</div>
 		<div class="col-md-6 orderlogin_box">
 			<h1>VOTRE ADRESSE DE LIVRAISON</h1>
@@ -43,7 +43,7 @@
     			<input type="text" class="form-control" name="city" id="city" value="<?=$order['city'];?>">
 			  </div>
 			  <br>
-				<button type="submit" class="btn btn-default adduser_button orderlogin_button1"><i class="fa fa-car" aria-hidden="true"><span class="orderlogin_button1text address_valid"> valider votre adresse</span></i></button>
+				<button type="button" class="btn btn-default adduser_button orderlogin_button1 address_valid"><i class="fa fa-car" aria-hidden="true"><span class="orderlogin_button1text"> valider votre adresse</span></i></button>
 			</form>
 			<br><br>
 		</div>
@@ -61,6 +61,22 @@
 	$(document).ready(function(){
 		$('.address_valid').click(function(e){
 			e.preventDefault();
+
+			$.ajax({
+				url: '<?=$this->url('ajax_updateOrderAddress'); ?>',
+				type: 'post',
+				cache: false,
+				data: $('form').serialize(),
+				dataType: 'json',
+				success: function(up){
+					if(up.code == 'ok'){
+						$('body').load('<?=$this->url('front_orderPayment');?>');
+					}
+					else if(up.code == 'error'){
+						$('.error').html(up.msg);
+					}
+				}
+			});
 		});
 	});
 </script>

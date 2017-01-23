@@ -279,8 +279,10 @@ class AjaxFrontController extends Controller
 				$errors[] = 'Votre adresse doit comporter au moins 5 caractères <br>';
 			}
 
-			if(!v::notEmpty()->length(3,null)->validate($post['address_complement'])){
-				$errors[] = 'Votre adresse doit comporter au moins 5 caractères <br>';
+			if(!empty($post['address_complement']) && isset($post['address_complement'])){
+				if(!v::notEmpty()->length(3,null)->validate($post['address_complement'])){
+					$errors[] = 'Votre adresse doit comporter au moins 5 caractères <br>';
+				}
 			}
 
 			if(!v::notEmpty()->digit()->length(5,5)->validate($post['zipcode'])){
@@ -295,11 +297,11 @@ class AjaxFrontController extends Controller
 				$errors[] = 'Votre adresse doit comporter au moins 3 caractères <br>';
 			}
 
-			if(!empty($post['address_complement'])){
+			if(!empty($post['address_complement']) && isset($post['address_complement'])){
 				$address = $post['address'].' / '.$post['address_complement'];
 			}
 
-			if(!empty($post['address_complement'])){
+			if(!empty($post['address_complement']) && isset($post['address_complement'])){
 				if($update->updateAddressOrder($user['id'], $address, $post['zipcode'], $post['city'], $post['country'])){
 					$json = [
 						'code'=> 'ok'
@@ -307,7 +309,8 @@ class AjaxFrontController extends Controller
 				}
 				else{
 					$json = [
-						'code'=> $errors
+						'code' => 'error',
+						'msg'  => $errors
 					];
 				}
 			}
@@ -319,7 +322,8 @@ class AjaxFrontController extends Controller
 				}
 				else{
 					$json = [
-						'code'=> $errors
+						'code' => 'error',
+						'msg'  => $errors
 					];
 				}
 			}
