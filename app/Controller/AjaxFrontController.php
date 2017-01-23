@@ -69,34 +69,61 @@ class AjaxFrontController extends Controller
 	public function addToCart()
 	{	
 
-		$insert = new BasketModel();
+		$insert = new BasketModel;
+		$find = new BasketModel;
+		$update = new BasketModel;
+		$islogged = new Controller;
+		$loggedUser = $islogged->getUser(); //On récupère l'utilisateur connecté
 
 		if(!empty($_POST)){
 
+			if($find->getBasketByUser($loggedUser['id'], $_POST['id_product'])){
+				if(is_numeric($_POST['id_product'])){
 
-			if(is_numeric($_POST['id_product'])){
-				$islogged = new Controller;
-				$loggedUser = $islogged->getUser(); //On récupère l'utilisateur connecté
+					$quantity = $find->getBasketByUser($loggedUser['id'], $_POST['id_product']);
 
-				if(!empty($loggedUser)){
+					$updateQuantity = $quantity['quantity'] + 1;
 
-					if(isset($_POST['id_product'])){
-						$dataInsert = [
-							'id_member'	=>	$loggedUser['id'],
-							'id_item'	=>	$_POST['id_product'],
-							'quantity'	=>	'1',
-						];
+					if(!empty($loggedUser)){
 
-						if($insert->insert($dataInsert)){
-							
-							$json = ['code' => 'ok'];
-									
-						}
-						else
-						{
-							$json = ['code' => 'error'];
+						if(isset($_POST['id_product'])){
+
+							if($update->updateQuantityBasket($loggedUser['id'], $_POST['id_product'], $updateQuantity)){
+								
+								$json = ['code' => 'ok'];
+										
+							}
+							else
+							{
+								$json = ['code' => 'error'];
+							}	
 						}	
-					}	
+					}
+				}
+			}
+			else{
+				if(is_numeric($_POST['id_product'])){
+
+					if(!empty($loggedUser)){
+
+						if(isset($_POST['id_product'])){
+							$dataInsert = [
+								'id_member'	=>	$loggedUser['id'],
+								'id_item'	=>	$_POST['id_product'],
+								'quantity'	=>	'1',
+							];
+
+							if($insert->insert($dataInsert)){
+								
+								$json = ['code' => 'ok'];
+										
+							}
+							else
+							{
+								$json = ['code' => 'error'];
+							}	
+						}	
+					}
 				}
 			}
 		}

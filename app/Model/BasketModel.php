@@ -20,6 +20,40 @@ class BasketModel extends \W\Model\Model
 	}
 
 	/**
+	 * Permet de cherche si un article est déjà au panier en fonction de l'utilisateur
+	 */
+	public function getBasketByUser($id_member, $id_item)
+	{
+		$sql = 'SELECT * FROM '.$this->table.' WHERE id_member = :id_member AND id_item = :id_item';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':id_member', $id_member);
+		$sth->bindValue(':id_item', $id_item);
+		$sth->execute();
+
+		return $sth->fetch();
+	}
+
+	/**
+	 * Permet de mettre à jour la quantité si l'article est déjà dans le panier de l'utilisateur
+	 */
+	public function updateQuantityBasket($id_member, $id_item, $quantity)
+	{
+		$sql = 'UPDATE '.$this->table.' SET quantity = :quantity WHERE id_member = :id_member AND id_item = :id_item';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':quantity', $quantity);
+		$sth->bindValue(':id_member', $id_member);
+		$sth->bindValue(':id_item', $id_item);
+
+		if($sth->execute()){
+			return true;
+		}
+
+		return false;
+	}
+
+	/**
 	* Permet de calculer le prix total d'un panier
 	* @param int $id = l'id du membre
 	*/
