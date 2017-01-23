@@ -32,7 +32,27 @@ class FrontOrdersController extends MasterController
 	 */
 	public function frontOrderPaie() 
 	{
-		$this->showStuff('front/Order/orderPayment');
+		$process = new OrdersModel;
+		$user = $this->getUser();
+
+		$order_process = $process->processOrder($user['id']);
+
+		$data = [
+			'order' => $order_process,
+		];
+
+		if(!empty($this->getUser())){
+			if($process->processOrder($user['id'])){
+				$this->showStuff('front/Order/orderPayment', $data);
+			}
+			else{
+				// $this->redirectToRoute('front_index');
+				$this->showStuff('front/Order/orderPayment', $data);
+			}
+		}
+		else {
+			$this->redirectToRoute('login');
+		}
 	}
 	/**
 	 * Page choix de l'adresse de livraison
@@ -53,8 +73,7 @@ class FrontOrdersController extends MasterController
 				$this->showStuff('front/Order/orderAddress', $data);
 			}
 			else{
-				// $this->redirectToRoute('front_index');
-				$this->showStuff('front/Order/orderAddress', $data);
+				$this->redirectToRoute('front_index');
 			}
 		}
 		else {

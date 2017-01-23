@@ -145,7 +145,7 @@ class OrdersModel extends \W\Model\Model
 	}
 
 	/**
-	 * Mise à jour d'une commande
+	 * Mise à jour de l'adresse d'une commande
 	 */
 	public function updateAddressOrder($id_member, $address, $zipcode, $city, $country)
 	{
@@ -156,6 +156,24 @@ class OrdersModel extends \W\Model\Model
 		$sth->bindValue(':zipcode', $zipcode);
 		$sth->bindValue(':city', $city);
 		$sth->bindValue(':country', $country);
+		$sth->bindValue(':id', $id_member);
+
+		if($sth->execute()){
+			return true;
+		}
+
+		return false;
+	}
+
+	/**
+	 * Mise à jour du paiement d'une commande
+	 */
+	public function updatePaymentOrder($id_member, $payment)
+	{
+		$sql = 'UPDATE '.$this->table.' SET payment = :payment WHERE idMember = :id AND order_process = "EnCours"';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':payment', $payment);
 		$sth->bindValue(':id', $id_member);
 
 		if($sth->execute()){

@@ -5,9 +5,9 @@
 	<!--order progress steps bar-->
 	<div class="row">
 		<ul class="breadcrumb">
-    		<li class="completed"><a id="breadcrumb" href="javascript:void(0);">Récapitulatif</a></li>
-			<li class="completed"><a id="breadcrumb" href="javascript:void(0);">Connexion</a></li>
-			<li class="completed"><a id="breadcrumb" href="javascript:void(0);">Adresse</a></li>
+    		<li class="completed"><a id="breadcrumb" href="<?=$this->url('front_orderList');?>">Récapitulatif</a></li>
+			<!-- <li class="completed"><a id="breadcrumb" href="javascript:void(0);">Connexion</a></li> -->
+			<li class="completed"><a id="breadcrumb" href="<?=$this->url('front_orderAddress');?>">Adresse</a></li>
 			<li><a id="breadcrumb" href="javascript:void(0);">Paiement</a></li>
 		</ul>
 	</div>
@@ -26,7 +26,7 @@
 			  <div class="orderpaymentradio_margin">
 			  <div class="radio">
 				  <label>
-					<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" class="orderpayment_checked1">
+					<input type="radio" name="payment" id="paypal" value="paypal" class="orderpayment_checked1">
 					  <div class="clear"></div>
 					<li style="float: left;margin:0 20px;">
 					  <img class="img-responsive" src="<?=$this->assetUrl('/img/paypal.png');?>" id="orderpaypal_hover">
@@ -37,7 +37,7 @@
 			<br>
 			<div class="radio">
 				  <label>
-					<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" class="orderpayment_checked2">
+					<input type="radio" name="payment" id="cheque" value="cheque" class="orderpayment_checked2">
 					  <div class="clear"></div>
 					<li style="float: left;margin:0 20px;">
 					  <img class="img-responsive" src="<?=$this->assetUrl('/img/paychq.png');?>" id="ordercheque_hover">
@@ -48,7 +48,7 @@
 			<br>
 			<div class="radio">
 				  <label>
-					<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" class="orderpayment_checked3">
+					<input type="radio" name="payment" id="virement" value="virement" class="orderpayment_checked3">
 					  <div class="clear"></div>
 					<li style="float: left;margin:0 20px;">
 					  <img class="img-responsive" src="<?=$this->assetUrl('/img/payvir.png');?>" id="ordervirement_hover">
@@ -77,9 +77,9 @@
 			<div class="orderlist_total">
 			<ul  style="float:right;">
 				<li>
-					<p>17.00 €</p>
-					<p>2.60 €</p>
-					<p><strong>19.60 €</strong></p>
+					<p><?=$order['sub_total'];?></p>
+					<p><?=$order['shipping'];?></p>
+					<p><strong><?=$order['total'];?></strong></p>
 				</li>
 			</ul>
 			<ul>
@@ -102,6 +102,4 @@
 </div>
 <br><br>
 <?php $this->stop('main_content') ?>
-
-
 
