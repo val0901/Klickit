@@ -73,6 +73,7 @@
 						$('body').load('<?=$this->url('front_orderPayment');?>');
 					}
 					else if(up.code == 'error'){
+						$('body').load('<?=$this->url('front_orderAddress');?>');
 						$('.error').html(up.msg);
 					}
 				}
