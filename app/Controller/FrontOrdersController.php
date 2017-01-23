@@ -101,6 +101,10 @@ class FrontOrdersController extends MasterController
 		$total = $getInfos->getTotal($user['id']);
 		$fdp = $getInfos->countFDP($user['id']);
 
+		$getBasket = new BasketModel;
+
+		$finalFDP = '';
+
 		//Gestion de la quantité des objets
 		foreach ($fdp as $value){
 
@@ -131,7 +135,12 @@ class FrontOrdersController extends MasterController
 			'quantity' => $selectAllQuantity,
 		];
 		if(!empty($this->getUser())){
-			$this->showStuff('front/Order/orderList', $data);	
+			if(!empty($getBasket->getShoppingCartItem($user['id']))){
+				$this->showStuff('front/Order/orderList', $data);	
+			}
+			else{
+				$this->redirectToRoute('front_affcptuser', ['id' => $user['id']]);
+			}
 		}
 		else {
 			$this->redirectToRoute('login');

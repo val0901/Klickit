@@ -171,7 +171,7 @@ class OrdersModel extends \W\Model\Model
 	 */
 	public function updatePaymentOrder($id_member, $payment)
 	{
-		$sql = 'UPDATE '.$this->table.' SET payment = :payment WHERE idMember = :id AND order_process = "EnCours"';
+		$sql = 'UPDATE '.$this->table.' SET payment = :payment, order_process = "Fini" WHERE idMember = :id AND order_process = "EnCours"';
 
 		$sth = $this->dbh->prepare($sql);
 		$sth->bindValue(':payment', $payment);
