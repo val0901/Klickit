@@ -138,7 +138,7 @@
 
 		//Pages liées à FrontOrdersController du PROCESS COMMANDE
 			//commande du panier
-		['GET|POST', '/orderList', 'FrontOrders#frontPanier', 'front_orderList'],
+		['GET|POST', '/my_order', 'FrontOrders#frontPanier', 'front_orderList'],
 			//choix du mode de paiement
 		['GET|POST', '/orderPayment', 'FrontOrders#frontOrderPaie', 'front_orderPayment'],
 			//Page choix de l'adresse de livraison
