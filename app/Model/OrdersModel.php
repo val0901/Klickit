@@ -123,4 +123,24 @@ class OrdersModel extends \W\Model\Model
 
 		return $sth->fetch();
 	}
+
+	/**
+	 * Mise à jour d'une commande
+	 */
+	{
+		$sql = 'UPDATE '.$this->table.' SET address = :address, zipcode = :zipcode, city = :city, country = :country WHERE idMember = :id AND order_process = "EnCours"';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':address', $address);
+		$sth->bindValue(':zipcode', $zipcode);
+		$sth->bindValue(':city', $city);
+		$sth->bindValue(':country', $country);
+		$sth->bindValue(':id', $id);
+
+		if($sth->execute()){
+			return true;
+		}
+
+		return false;
+	}
 }
