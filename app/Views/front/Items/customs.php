@@ -66,25 +66,8 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 		
 		<!--viewcategory row2 col2-->
 		<div class="col-md-9">
-			<h4 class="viewcategory_pages"><a href="<?=$this->url('front_index');?>">Home</a> <span>></span><a href="<?=$this->url('listItemCustomFull');?>"> Customs</a> <span>></span>
-			<?php if(!empty($affiche) && isset($affiche)): ?>
-				<?php 
-					foreach ($affiche as $category) {
-
-					}
-				?>
-					<?php if($category['sub_category'] == 'CustomsTampographies'): ?>
-								<a href="<?=$this->url('listItemCustoms', ['sub_category'=>'CustomsTampographies']);?>"> Customs Tampographiés</a> <span></span>
-					<?php elseif($category['sub_category'] == 'CustomsPeints'): ?>
-								<a href="<?=$this->url('listItemCustoms', ['sub_category'=>'CustomsPeints']);?>"> Customs Peints</a> <span></span>
-					<?php elseif($category['sub_category'] == 'BustesTampographies'): ?>
-								<a href="<?=$this->url('listItemCustoms', ['sub_category'=>'BustesTampographies']);?>"> Bustes Tampographiés</a> <span></span>
-					<?php elseif($category['sub_category'] == 'PiecesEnResine'): ?>
-								<a href="<?=$this->url('listItemCustoms', ['sub_category'=>'PiecesEnResine']);?>"> Pièces en Résine</a> <span></span>
-					<?php elseif($category['sub_category'] == 'Stickers'): ?>
-								<a href="<?=$this->url('listItemCustoms', ['sub_category'=>'Stickers']);?>"> Stickers</a> <span></span>
-					<?php endif; ?>
-			<?php endif; ?>
+			<h4 class="viewcategory_pages"><a href="<?=$this->url('front_index');?>">Home</a> <span>></span><a href="<?=$this->url('listItemCustomFull');?>"> Customs</a> <span>></span> <a id="arianne_js" href=""> </a> <span></span>
+			
 			</h4>
 			<div class="row">
 				<?php foreach ($affiche as $product) : ?>
@@ -345,6 +328,28 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 				if(locationOk == false){
 					document.location.href="<?=$this->url('listItemCustomFull');?>";
 				}
+			}
+
+			/********************* FIL D'ARIANNE *********************/
+			if(window.location.pathname == '/Klickit/public/Customs/CustomsTampographies'){
+				$('#arianne_js').text('Customs Tampographiés');
+				$('#arianne_js').attr('<?=$this->url('listItemCustoms', ['sub_category' =>'CustomsTampographies']);?>');
+			}
+			else if(window.location.pathname == '/Klickit/public/Customs/CustomsPeints'){
+				$('#arianne_js').text('Customs Peints');
+				$('#arianne_js').attr('<?=$this->url('listItemCustoms', ['sub_category' =>'CustomsPeints']);?>');
+			}
+			else if(window.location.pathname == '/Klickit/public/Customs/BustesTampographies'){
+				$('#arianne_js').text('Bustes Tampographiés');
+				$('#arianne_js').attr('<?=$this->url('listItemCustoms', ['sub_category' =>'BustesTampographies']);?>');
+			}
+			else if(window.location.pathname == '/Klickit/public/Customs/PiecesEnResine'){
+				$('#arianne_js').text('Pièces En Résine');
+				$('#arianne_js').attr('<?=$this->url('listItemCustoms', ['sub_category' =>'PiecesEnResine']);?>');
+			}
+			else if(window.location.pathname == '/Klickit/public/Customs/Stickers'){
+				$('#arianne_js').text('Stickers');
+				$('#arianne_js').attr('<?=$this->url('listItemCustoms', ['sub_category' =>'Stickers']);?>');
 			}
 		});
 	</script>

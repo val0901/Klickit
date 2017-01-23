@@ -72,37 +72,7 @@
 		<!--viewcategory row2 col2-->
 		<div class="col-md-9">
 		<!-- fil d'ariane -->
-			<h4 class="viewcategory_pages"><a href="<?=$this->url('front_index');?>">Home </a><span>></span><a href="<?=$this->url('listItemClassicsFull');?>"> Classics </a><span>></span>
-			<?php if(!empty($affiche) && isset($affiche)): ?>
-				<?php 
-					foreach ($affiche as $category) {
-
-					}
-				?>
-					<?php if($category['sub_category'] == 'Chevaliers'): ?>
-								<a href="<?=$this->url('listItemClassics', ['sub_category'=>'Chevaliers']);?>"> Chevaliers</a> <span></span>
-					<?php elseif($category['sub_category'] == 'Pirates'): ?>
-								<a href="<?=$this->url('listItemClassics', ['sub_category'=>'Pirates']);?>"> Pirates</a> <span></span>
-					<?php elseif($category['sub_category'] == 'Antique'): ?>
-								<a href="<?=$this->url('listItemClassics', ['sub_category'=>'Antique']);?>"> Antique</a> <span></span>
-					<?php elseif($category['sub_category'] == 'Western'): ?>
-								<a href="<?=$this->url('listItemClassics', ['sub_category'=>'Western']);?>"> Western</a> <span></span>
-					<?php elseif($category['sub_category'] == 'Fantasy'): ?>
-								<a href="<?=$this->url('listItemClassics', ['sub_category'=>'Fantasy']);?>"> Fantasy</a> <span></span>
-					<?php elseif($category['sub_category'] == 'XVIIIe'): ?>
-								<a href="<?=$this->url('listItemClassics', ['sub_category'=>'XVIIIe']);?>"> XVIIIe</a> <span></span>
-					<?php elseif($category['sub_category'] == 'FeesPrincesses'): ?>
-								<a href="<?=$this->url('listItemClassics', ['sub_category'=>'FeesPrincesses']);?>"> Fées & Princesses</a> <span></span>
-					<?php elseif($category['sub_category'] == 'Police'): ?>
-								<a href="<?=$this->url('listItemClassics', ['sub_category'=>'Police']);?>"> Police</a> <span></span>
-					<?php elseif($category['sub_category'] == 'Animaux'): ?>
-								<a href="<?=$this->url('listItemClassics', ['sub_category'=>'Animaux']);?>"> Animaux</a> <span></span>
-					<?php elseif($category['sub_category'] == 'Sport'): ?>
-								<a href="<?=$this->url('listItemClassics', ['sub_category'=>'Sport']);?>"> Sport</a> <span></span>
-					<?php elseif($category['sub_category'] == 'Divers'): ?>
-								<a href="<?=$this->url('listItemClassics', ['sub_category'=>'Divers']);?>"> Divers</a> <span></span>
-					<?php endif; ?>
-			<?php endif; ?>
+			<h4 class="viewcategory_pages"><a href="<?=$this->url('front_index');?>">Home </a><span>></span><a href="<?=$this->url('listItemClassicsFull');?>"> Classics </a><span>></span> <a id="arianne_js" href=""> </a> <span></span>
 			</h4>
 			<div class="row">
 				<?php foreach ($affiche as $product) : ?>
@@ -401,6 +371,52 @@
 				if(locationOk == false){
 					document.location.href="<?=$this->url('listItemClassicsFull');?>";
 				}
+			}
+
+			/********************* FIL D'ARIANNE *********************/
+			if(window.location.pathname == '/Klickit/public/Classics/Chevaliers'){
+				$('#arianne_js').text('Chevaliers');
+				$('#arianne_js').attr('<?=$this->url('listItemClassics', ['sub_category'=>'Chevaliers']);?>');
+			}
+			else if(window.location.pathname == '/Klickit/public/Classics/Pirates'){
+				$('#arianne_js').text('Pirates');
+				$('#arianne_js').attr('<?=$this->url('listItemClassics', ['sub_category'=>'Pirates']);?>');
+			}
+			else if(window.location.pathname == '/Klickit/public/Classics/Antique'){
+				$('#arianne_js').text('Antique');
+				$('#arianne_js').attr('<?=$this->url('listItemClassics', ['sub_category' =>'Antique']);?>');
+			}
+			else if(window.location.pathname == '/Klickit/public/Classics/Western'){
+				$('#arianne_js').text('Western');
+				$('#arianne_js').attr('<?=$this->url('listItemClassics', ['sub_category' =>'Western']);?>');
+			}
+			else if(window.location.pathname == '/Klickit/public/Classics/Fantasy'){
+				$('#arianne_js').text('Fantasy');
+				$('#arianne_js').attr('<?=$this->url('listItemClassics', ['sub_category' =>'Fantasy']);?>');
+			}
+			else if(window.location.pathname == '/Klickit/public/Classics/XVIIIe'){
+				$('#arianne_js').text('XVIIIe');
+				$('#arianne_js').attr('<?=$this->url('listItemClassics', ['sub_category' =>'XVIIIe']);?>');
+			}
+			else if(window.location.pathname == '/Klickit/public/Classics/FeesPrincesses'){
+				$('#arianne_js').text('Fées & Princesses');
+				$('#arianne_js').attr('<?=$this->url('listItemClassics', ['sub_category' =>'FeesPrincesses']);?>');
+			}
+			else if(window.location.pathname == '/Klickit/public/Classics/Police'){
+				$('#arianne_js').text('Police');
+				$('#arianne_js').attr('<?=$this->url('listItemClassics', ['sub_category' =>'Police']);?>');
+			}
+			else if(window.location.pathname == '/Klickit/public/Classics/Animaux'){
+				$('#arianne_js').text('Animaux');
+				$('#arianne_js').attr('<?=$this->url('listItemClassics', ['sub_category' =>'Animaux']);?>');
+			}
+			else if(window.location.pathname == '/Klickit/public/Classics/Sport'){
+				$('#arianne_js').text('Sport');
+				$('#arianne_js').attr('<?=$this->url('listItemClassics', ['sub_category' =>'Sport']);?>');
+			}
+			else if(window.location.pathname == '/Klickit/public/Classics/Divers'){
+				$('#arianne_js').text('Divers');
+				$('#arianne_js').attr('<?=$this->url('listItemClassics', ['sub_category' =>'Divers']);?>');
 			}
 		});
 	</script>

@@ -68,32 +68,8 @@
 		
 		<!--viewcategory row2 col2-->
 		<div class="col-md-9">
-			<h4 class="viewcategory_pages"><a href="<?=$this->url('front_index');?>">Home</a> <span>></span><a href="<?=$this->url('listItemPiecesFull');?>"> Pièces détachées</a> <span>></span>
-			<?php if(!empty($affiche) && isset($affiche)): ?>
-				<?php 
-					foreach ($affiche as $category) {
-
-					}
-
-				?>
-					<?php if($category['sub_category'] == 'Armes'): ?>
-								<a href="<?=$this->url('listItemPieces', ['sub_category'=>'Armes']);?>"> Armes</a> <span></span>
-					<?php elseif($category['sub_category'] == 'Coiffes'): ?>
-								<a href="<?=$this->url('listItemPieces', ['sub_category'=>'Coiffes']);?>"> Coiffes</a> <span></span>
-					<?php elseif($category['sub_category'] == 'Manchettes'): ?>
-								<a href="<?=$this->url('listItemPieces', ['sub_category'=>'Manchettes']);?>"> Manchettes</a> <span></span>
-					<?php elseif($category['sub_category'] == 'Cols'): ?>
-								<a href="<?=$this->url('listItemPieces', ['sub_category'=>'Cols']);?>"> Cols</a> <span></span>
-					<?php elseif($category['sub_category'] == 'Ceinturons'): ?>
-								<a href="<?=$this->url('listItemPieces', ['sub_category'=>'Ceinturons']);?>"> Ceinturons</a> <span></span>
-					<?php elseif($category['sub_category'] == 'Tetes'): ?>
-								<a href="<?=$this->url('listItemPieces', ['sub_category'=>'Tetes']);?>"> Têtes</a> <span></span>
-					<?php elseif($category['sub_category'] == 'Cheveux'): ?>
-								<a href="<?=$this->url('listItemPieces', ['sub_category'=>'Cheveux']);?>"> Cheveux</a> <span></span>
-					<?php elseif($category['sub_category'] == 'Divers'): ?>
-								<a href="<?=$this->url('listItemPieces', ['sub_category'=>'Divers']);?>"> Divers</a> <span></span>
-					<?php endif; ?>
-			<?php endif; ?>
+			<h4 class="viewcategory_pages"><a href="<?=$this->url('front_index');?>">Home</a> <span>></span><a href="<?=$this->url('listItemPiecesFull');?>"> Pièces détachées</a> <span>></span> <a id="arianne_js" href=""> </a> <span></span>
+			
 			</h4>
 			<div class="row">
 				<?php foreach ($affiche as $product) : ?>
@@ -373,6 +349,40 @@
 				if(locationOk == false){
 					document.location.href="<?=$this->url('listItemPiecesFull');?>";
 				}
+			}
+
+			/********************* FIL D'ARIANNE *********************/
+			if(window.location.pathname == '/Klickit/public/Pieces/Armes'){
+				$('#arianne_js').text('Armes');
+				$('#arianne_js').attr('<?=$this->url('listItemPieces', ['sub_category' =>'Armes']);?>');
+			}
+			else if(window.location.pathname == '/Klickit/public/Pieces/Coiffes'){
+				$('#arianne_js').text('Coiffes');
+				$('#arianne_js').attr('<?=$this->url('listItemPieces', ['sub_category' =>'Coiffes']);?>');
+			}
+			else if(window.location.pathname == '/Klickit/public/Pieces/Manchettes'){
+				$('#arianne_js').text('Manchettes');
+				$('#arianne_js').attr('<?=$this->url('listItemPieces', ['sub_category' =>'Manchettes']);?>');
+			}
+			else if(window.location.pathname == '/Klickit/public/Pieces/Cols'){
+				$('#arianne_js').text('Cols');
+				$('#arianne_js').attr('<?=$this->url('listItemPieces', ['sub_category' =>'Cols']);?>');
+			}
+			else if(window.location.pathname == '/Klickit/public/Pieces/Ceinturons'){
+				$('#arianne_js').text('Ceinturons');
+				$('#arianne_js').attr('<?=$this->url('listItemPieces', ['sub_category' =>'Ceinturons']);?>');
+			}
+			else if(window.location.pathname == '/Klickit/public/Pieces/Tetes'){
+				$('#arianne_js').text('Têtes');
+				$('#arianne_js').attr('<?=$this->url('listItemPieces', ['sub_category' =>'Tetes']);?>');
+			}
+			else if(window.location.pathname == '/Klickit/public/Pieces/Cheveux'){
+				$('#arianne_js').text('Cheveux');
+				$('#arianne_js').attr('<?=$this->url('listItemPieces', ['sub_category' =>'Cheveux']);?>');
+			}
+			else if(window.location.pathname == '/Klickit/public/Pieces/Divers'){
+				$('#arianne_js').text('Divers');
+				$('#arianne_js').attr('<?=$this->url('listItemPieces', ['sub_category' =>'Divers']);?>');
 			}
 		});
 	</script>

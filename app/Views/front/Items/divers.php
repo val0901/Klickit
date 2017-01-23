@@ -61,7 +61,7 @@
 		
 		<!--viewcategory row2 col2-->
 		<div class="col-md-9">
-			<h4 class="viewcategory_pages"><a href="<?=$this->url('front_index');?>">Home </a> <span>></span> <a href="<?=$this->url('listItemDiversFull');?>"> Boites/Set </a><span>></span> <!-- sous-catégorie quand il y en aura --></h4>
+			<h4 class="viewcategory_pages"><a href="<?=$this->url('front_index');?>">Home </a> <span>></span> <a href="<?=$this->url('listItemDiversFull');?>"> Boites/Set </a><span>></span> <!-- sous-catégorie si un jour il y en a --></h4>
 			<div class="row">
 				<?php foreach ($items as $product) : ?>
 					<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
