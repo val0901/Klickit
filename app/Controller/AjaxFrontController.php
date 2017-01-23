@@ -26,7 +26,6 @@ class AjaxFrontController extends Controller
 	 */
 	public function addToCartView()
 	{	
-
 		$insert = new BasketModel;
 		$find = new BasketModel;
 		$update = new BasketModel;
@@ -68,6 +67,7 @@ class AjaxFrontController extends Controller
 							'id_member'	=>	$loggedUser['id'],
 							'id_item'	=>	$_POST['id_product'],
 							'quantity'	=>	$_POST['id_quantity'],
+							'country'	=> '',
 						];
 
 						if($insert->insert($dataInsert)){	
@@ -88,14 +88,11 @@ class AjaxFrontController extends Controller
 		$this->showJson($json);
 	}
 	
-
-
 	/**
 	 * Ajoute un produit au panier depuis toutes les pages sauf viewArt
 	 */
 	public function addToCart()
 	{	
-
 		$insert = new BasketModel;
 		$find = new BasketModel;
 		$update = new BasketModel;

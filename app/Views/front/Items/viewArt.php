@@ -45,11 +45,11 @@
 			<br><br><br><br>
 				<span class="viewart_fontref">Quantité </span>
 				<span>
-					<input type="number" name="number" min="1" id="number">
+					<input type="number" name="number" min="1" id="number" placeholder="1">
 				</span>
 				<br><br>
 				<div class="">
-					<button data-id="<?=$items['id']?>" type="submit" class="btn btn-primary viewcategory_button_size ">ajouter au panier</button>
+					<button data-id="<?=$items['id']?>" type="submit" class="btn btn-primary viewcategory_button_size addBasket">ajouter au panier</button>
 				</div>
 			<br>
 			<p>
@@ -217,8 +217,8 @@
 <?php $this->start('js')?>
 	<script>
 		$(document).ready(function(){
-			$('button[type="submit"]').click(function(e){
-				// e.preventDefault();
+			$('.addBasket').click(function(e){
+				e.preventDefault();
 
 				var idProduct = $(this).data('id');
 				var idQuantity = $('#number').val();
@@ -231,7 +231,7 @@
 					dataType: 'json',
 					success: function(out){
 						if(out.code == 'ok'){
-			  				window.location.href=window.location.href;
+			  				//window.location.href=window.location.href;
 						}
 					}
   				});
