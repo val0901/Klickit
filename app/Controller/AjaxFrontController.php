@@ -242,6 +242,36 @@ class AjaxFrontController extends Controller
 	}
 
 	/**
+	* Mise à jour de la commande
+	*/
+	public function updateOrder()
+	{
+		$do = new OrdersModel;
+		$json = [];
+		$user = $this->getUser();
+
+
+		if(!empty($_POST)){
+
+			foreach($_POST as $key => $value){
+				$post[$key] = trim(strip_tags($value));
+			}
+
+			$content = substr($post['u_id'], 0, -1);
+			$quantity = substr($post['u_quantity'], 0, -1);
+
+			if($do->updateOrder($user['id'], $content, $quantity, $post['u_sub_total'], $post['u_shipping'], $post['u_total'])){
+				$json = ['code' => 'ok'];
+			}else{
+				$json = ['code' => 'nope'];
+			}
+
+		}
+		$this->showJson($json);
+		
+	}
+
+	/**
 	 * Mise à jour du pays dans Basket
 	 */
 	public function updateCountry()

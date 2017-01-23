@@ -136,7 +136,7 @@
                             <tr> 
                                 <td scope="row"><img class="img-responsive" src="<?=$this->assetUrl('art/'.$item['picture1']);?>" style="width: 15vw;margin:0 auto;"></td> 
                                 <td>
-                                    <li class="ordertable_title"><?=$item['name']?><li>
+                                    <li class="ordertable_title">P <?=$item['name']?><li>
                                     <li class="ordertable_text">Référence: <?=$item['id']?><li>
                                 </td>
 
@@ -268,7 +268,7 @@
                     dataType: 'json',
                     success: function(out){
                         if(out.code == 'ok'){
-                            window.location.href= window.location.href;
+                            $('body').load('<?=$this->url('front_orderList');?>');
                         }
                     }
                 });
@@ -277,6 +277,7 @@
     </script>
 
     <script>
+        //Pour une nouvelle commande
         $(document).ready(function(){
             $('.get-order').click(function(e){
                 e.preventDefault();
@@ -308,6 +309,28 @@
                     type: 'post',
                     cache: false,
                     data: $('.country_choice'),
+                    dataType: 'json',
+                    success: function(up){
+                        if(up.code == 'ok'){
+                            $('body').load('<?=$this->url('front_orderList');?>');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script>
+        //Update d'une commande
+        $(document).ready(function(){
+            $('.poursuit-order').click(function(e){
+                e.preventDefault();
+
+                $.ajax({
+                    url: '<?=$this->url('ajax_updateOrder');?>',
+                    type: 'post',
+                    cache: false,
+                    data: $('form').serialize(),
                     dataType: 'json',
                     success: function(up){
                         if(up.code == 'ok'){
