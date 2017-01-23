@@ -24,11 +24,11 @@
 			<form>
 				<div class="form-group orderlogin_label">
 				<label for="exampleInputName2">Adresse</label>
-    			<input type="text" class="form-control" id="exampleInputName2" value="<?=$order['address'];?>">
+    			<input type="text" class="form-control" name="address" id="address" value="<?=$order['address'];?>">
 			  </div>
 			  <div class="form-group orderlogin_label">
 				<label for="exampleInputName2">Complément adresse</label>
-    			<input type="text" class="form-control" id="exampleInputName2">
+    			<input type="text" class="form-control" name="address_complement" id="exampleInputName2">
 			  </div>
 			  <div class="form-group orderlogin_label">
 				<label for="exampleInputName2">Code Postal</label>
@@ -55,3 +55,9 @@
 </div>
 <br><br>
 <?php $this->stop('main_content') ?>
+
+<?php $this->start('js') ?>
+<script>
+	
+</script>
+<?php $this->stop('js') ?>

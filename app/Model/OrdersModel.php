@@ -127,6 +127,7 @@ class OrdersModel extends \W\Model\Model
 	/**
 	 * Mise à jour d'une commande
 	 */
+	public function updateAddressOrder($id_member, $address, $zipcode, $city, $country)
 	{
 		$sql = 'UPDATE '.$this->table.' SET address = :address, zipcode = :zipcode, city = :city, country = :country WHERE idMember = :id AND order_process = "EnCours"';
 
