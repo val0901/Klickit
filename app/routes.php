@@ -88,6 +88,7 @@
 		['GET|POST', '/ajax/deleteArt', 'AjaxFront#deleteArt', 'ajax_deleteArt'],
 		['GET|POST', '/ajax/newOrder', 'AjaxFront#newOrder', 'ajax_newOrder'],
 		['GET|POST', '/ajax/updateCountry', 'AjaxFront#updateCountry', 'ajax_updateCountry'],
+		['GET|POST', '/ajax/updateOrderAddress', 'AjaxFront#updateOrderAddress', 'ajax_updateOrderAddress'],
 
 		//Pages liées à FrontController
 		['GET|POST', '/home', 'Front#index', 'front_index'],

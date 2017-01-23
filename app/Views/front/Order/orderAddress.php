@@ -28,22 +28,22 @@
 			  </div>
 			  <div class="form-group orderlogin_label">
 				<label for="exampleInputName2">Complément adresse</label>
-    			<input type="text" class="form-control" name="address_complement" id="exampleInputName2">
+    			<input type="text" class="form-control" name="address_complement" id="address_complement">
 			  </div>
 			  <div class="form-group orderlogin_label">
 				<label for="exampleInputName2">Code Postal</label>
-    			<input type="text" class="form-control" id="exampleInputName2" value="<?=$order['zipcode'];?>">
+    			<input type="text" class="form-control" name="zipcode" id="zipcode" value="<?=$order['zipcode'];?>">
 			  </div>
 			  <div class="form-group orderlogin_label">
 				<label for="exampleInputName2">Pays</label>
-    			<input type="text" class="form-control" id="exampleInputName2" value="<?=$order['country'];?>">
+    			<input type="text" class="form-control" name="country" id="country" value="<?=$order['country'];?>">
 			  </div>
 			  <div class="form-group orderlogin_label">
 				<label for="exampleInputName2">Ville</label>
-    			<input type="text" class="form-control" id="exampleInputName2" value="<?=$order['city'];?>">
+    			<input type="text" class="form-control" name="city" id="city" value="<?=$order['city'];?>">
 			  </div>
 			  <br>
-				<button type="submit" class="btn btn-default adduser_button orderlogin_button1"><i class="fa fa-car" aria-hidden="true"><span class="orderlogin_button1text"> valider votre adresse</span></i></button>
+				<button type="submit" class="btn btn-default adduser_button orderlogin_button1"><i class="fa fa-car" aria-hidden="true"><span class="orderlogin_button1text address_valid"> valider votre adresse</span></i></button>
 			</form>
 			<br><br>
 		</div>
@@ -58,6 +58,10 @@
 
 <?php $this->start('js') ?>
 <script>
-	
+	$(document).ready(function(){
+		$('.address_valid').click(function(e){
+			e.preventDefault();
+		});
+	});
 </script>
 <?php $this->stop('js') ?>

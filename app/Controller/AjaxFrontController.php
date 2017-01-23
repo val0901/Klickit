@@ -259,4 +259,71 @@ class AjaxFrontController extends Controller
 		}
 		$this->showJson($json);
 	}
+
+	/**
+	 * Mise à jour table order avec address, zipcode, city, country
+	 */
+	public function updateOrderAddress()
+	{
+		$update = new OrdersModel;
+		$user = $this->getUser();
+		$json = [];
+		$post = [];
+		$errors = [];
+		$address = '';
+
+		if(!empty($_POST) && isset($_POST)){
+			$post = array_map('trim', array_map('strip_tags', $_POST));
+
+			if(!v::notEmpty()->length(5,null)->validate($post['address'])){
+				$errors[] = 'Votre adresse doit comporter au moins 5 caractères <br>';
+			}
+
+			if(!v::notEmpty()->length(3,null)->validate($post['address_complement'])){
+				$errors[] = 'Votre adresse doit comporter au moins 5 caractères <br>';
+			}
+
+			if(!v::notEmpty()->digit()->length(5,5)->validate($post['zipcode'])){
+				$errors[] = 'Votre adresse doit comporter au moins 5 caractères <br>';
+			}
+
+			if(!v::notEmpty()->length(3,null)->validate($post['city'])){
+				$errors[] = 'Votre adresse doit comporter au moins 3 caractères <br>';
+			}
+
+			if(!v::notEmpty()->length(3,null)->validate($post['country'])){
+				$errors[] = 'Votre adresse doit comporter au moins 3 caractères <br>';
+			}
+
+			if(!empty($post['address_complement'])){
+				$address = $post['address'].' / '.$post['address_complement'];
+			}
+
+			if(!empty($post['address_complement'])){
+				if($update->updateAddressOrder($user['id'], $address, $post['zipcode'], $post['city'], $post['country'])){
+					$json = [
+						'code'=> 'ok'
+					];
+				}
+				else{
+					$json = [
+						'code'=> $errors
+					];
+				}
+			}
+			else{
+				if($update->updateAddressOrder($user['id'], $post['address'], $post['zipcode'], $post['city'], $post['country'])){
+					$json = [
+						'code'=> 'ok'
+					];
+				}
+				else{
+					$json = [
+						'code'=> $errors
+					];
+				}
+			}
+		}
+		$this->showJson($json);
+	}
 }
