@@ -19,6 +19,9 @@
 					<th>Adresse</th>
 					<th>Contenu de la commande</th>
 					<th>Quantité</th>
+					<th>Sous-Total</th>
+					<th>Frais de port</th>
+					<th>Total</th>
 					<th>Date de la commande</th>
 					<th>Statut</th>
 					<th>Type de paiement</th>
@@ -48,6 +51,9 @@
 								<p><?=$quanti;?></p><br>
 							<?php endforeach; ?>
 						</td>
+						<td><?=$order['sub_total'];?></td>
+						<td><?=$order['shipping'];?></td>
+						<td><?=$order['total'];?></td>
 						<td><?= date('d/m/Y', strtotime($order['date_creation']));?></td>
 						<td>
 							<div class="form-group" id="selectStt">									

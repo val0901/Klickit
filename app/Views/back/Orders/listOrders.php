@@ -16,8 +16,8 @@
 					<th>Client</th>
 					<th>Contenu de la commande</th>
 					<th>Quantité</th>
-					<th>Prix</th>
-					<th>Prix TTC</th>
+					<th>Sous-Total</th>
+					<th>Total</th>
 					<th>Date de la commande</th>
 					<th>Statut</th>
 					<!-- <th id="thaction">Changer le statut</th> -->
@@ -54,51 +54,19 @@
         					} 
         				?>
 						</td>
-						<td>
-						<?php 
-							foreach ($contents as $value) {
-								$list_items = $items->findItems($value);
-		
-								if($list_items['newPrice'] == 0){
-									echo $list_items['price'].' €<br>';
-								}
-								elseif($list_items['newPrice'] > 0) {
-									echo $list_items['newPrice'].' €<br>';
-								}
-
-							}
-						?>
-						</td>
-						<td>
-							<?php 
-								foreach ($content_basket[$order['id']] as $basket) {
-								    $price_items = $items->findItems($basket['content']); 
-
-								    if($price_items['newPrice'] == 0){
-								    	$price = $price_items['price'];
-								    }
-								    elseif($price_items['newPrice'] > 0){
-								    	$price = $price_items['newPrice'];
-								    }
-									echo \Tools\Utils::calculTtc($price, $basket['quantity']).' €<br>';
-								}
-							?>
-						</td>
+						<td><?=$order['sub_total'];?></td>
+						<td><?=$order['total'];?></td>
+						
 						<td><?= date('d/m/Y', strtotime($order['date_creation']));?></td>
-						<td><?=$order['statut'];?></td>
-						<!-- <td>
-							<div class="form-group" id="selectStt">									
-								  <div class="col-md-4">
-								    <select id="selectStatut" name="selectStatut" class="form-control">
-								    	<option value="Changer le statut" selected disabled>Changer le statut</option>
-								    	<option value="commande">En attente de paiement</option>
-								    	<option value="enPreparation">En cours de préparation</option>
-								    	<option value="expedie">Expédiée</option>
-								    </select>
-								  </div>
-								  <input type="submit" style="display:none;" data-id="<?//=$value['id']?>">
-								
-							</div></td> -->
+						<td>
+						<?php if ($order['statut'] == 'enPreparation') :
+							 		echo 'En préparation';
+							  elseif ($order['statut'] == 'commande') :
+							  		echo 'Commandé';
+							  elseif ($order['statut'] == 'expedie') :
+							  		echo 'Expédiée';
+							 endif; ?>
+						</td>						
 						<td>
 							<div> <a href="<?=$this->url('viewOrders', ['id'=>$order['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></i></a></div>
 						</td>

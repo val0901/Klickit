@@ -12,6 +12,8 @@
 				<th>Client</th>
 				<th>Contenu de la commande</th>
 				<th>Quantité</th>
+				<th>Sous-Total</th>
+				<th>Total</th>
 				<th>Date de la commande</th>
 				<th>Statut</th>
 				<th>Action</th>
@@ -42,8 +44,18 @@
             					?>
             				<?php endforeach;?>	
             			</td>
+            			<td><?=$order['sub_total'];?></td>
+            			<td><?=$order['total'];?></td>
 						<td><?= date('d/m/Y', strtotime($order['date_creation']));?></td>
-						<td><?=$order['statut']; ?></td>
+						<td>
+						<?php if ($order['statut'] == 'enPreparation') :
+							 		echo 'En préparation';
+							  elseif ($order['statut'] == 'commande') :
+							  		echo 'Commandé';
+							  elseif ($order['statut'] == 'expedie') :
+							  		echo 'Expédiée';
+							 endif; ?>
+						</td>						
 						<td>
 							<div> <a href="<?=$this->url('viewOrders', ['id'=>$order['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></i></a></div>
 						</td>
