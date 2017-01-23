@@ -331,31 +331,27 @@ class AjaxFrontController extends Controller
 				$address = $post['address'].' / '.$post['address_complement'];
 			}
 
-			if(!empty($post['address_complement']) && isset($post['address_complement'])){
-				if($update->updateAddressOrder($user['id'], $address, $post['zipcode'], $post['city'], $post['country'])){
-					$json = [
-						'code'=> 'ok'
-					];
+			if(count($errors) === 0){
+				if(!empty($post['address_complement']) && isset($post['address_complement'])){
+					if($update->updateAddressOrder($user['id'], $address, $post['zipcode'], $post['city'], $post['country'])){
+						$json = [
+							'code'=> 'ok'
+						];
+					}
 				}
 				else{
-					$json = [
-						'code' => 'error',
-						'msg'  => $errors
-					];
+					if($update->updateAddressOrder($user['id'], $post['address'], $post['zipcode'], $post['city'], $post['country'])){
+						$json = [
+							'code'=> 'ok'
+						];
+					}
 				}
 			}
 			else{
-				if($update->updateAddressOrder($user['id'], $post['address'], $post['zipcode'], $post['city'], $post['country'])){
-					$json = [
-						'code'=> 'ok'
-					];
-				}
-				else{
-					$json = [
-						'code' => 'error',
-						'msg'  => $errors
-					];
-				}
+				$json = [
+					'code' => 'error',
+					'msg'  => $errors
+				];
 			}
 		}
 		$this->showJson($json);

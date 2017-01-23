@@ -334,7 +334,7 @@
                     dataType: 'json',
                     success: function(up){
                         if(up.code == 'ok'){
-                            $('body').load('<?=$this->url('front_orderList');?>');
+                            $('body').load('<?=$this->url('front_orderAddress');?>');
                         }
                     }
                 });
