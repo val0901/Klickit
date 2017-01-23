@@ -27,32 +27,59 @@ class AjaxFrontController extends Controller
 	public function addToCartView()
 	{	
 
-		$insert = new BasketModel();
+		$insert = new BasketModel;
+		$find = new BasketModel;
+		$update = new BasketModel;
+		$islogged = new Controller;
+		$loggedUser = $islogged->getUser(); //On récupère l'utilisateur connecté
+		$updateQuantity = 0;
 		
 		if(!empty($_POST)){
+			if(!empty($loggedUser)){
 
+				if($find->getBasketByUser($loggedUser['id'], $_POST['id_product'])){
+					$quantity = $find->getBasketByUser($loggedUser['id'], $_POST['id_product']);
 
-			if(is_numeric($_POST['id_product']) && is_numeric($_POST['id_quantity']) && $_POST['id_quantity'] >= 1){
-				$islogged = new Controller;
-				$loggedUser = $islogged->getUser(); //On récupère l'utilisateur connecté
-
-				if(!empty($loggedUser)){
+					if(empty($_POST['id_quantity'])){
+						$updateQuantity = $quantity['quantity'] + 1;
+					}
+					else {
+						$updateQuantity = $quantity['quantity'] + $_POST['id_quantity'];
+					}
 
 					if(isset($_POST['id_product'])){
+						if($update->updateQuantityBasket($loggedUser['id'], $_POST['id_product'], $updateQuantity)){
+							$json = [
+								'code' => 'ok'
+							];
+						}
+						else
+						{
+							$json = [
+								'code' => 'error'
+							];
+						}		
+					}
+				}
+				else {
+					if(isset($_POST['id_product'])){
+
 						$dataInsert = [
 							'id_member'	=>	$loggedUser['id'],
 							'id_item'	=>	$_POST['id_product'],
 							'quantity'	=>	$_POST['id_quantity'],
 						];
 
-						if($insert->insert($dataInsert)){
-							
-							$json = ['code' => 'ok'];
-									
+						if($insert->insert($dataInsert)){	
+							$json = [
+								'code' => 'ok'
+							];		
 						}
 						else
 						{
-							$json = ['code' => 'error'];
+							$json = [
+								'code' => 'error'
+							];
 						}	
 					}	
 				}

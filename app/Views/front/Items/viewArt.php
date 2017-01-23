@@ -43,7 +43,6 @@
 				<?php endif; ?>
 			</span>
 			<br><br><br><br>
-			<form method="post">
 				<span class="viewart_fontref">Quantité </span>
 				<span>
 					<input type="number" name="number" min="1" id="number">
@@ -52,7 +51,6 @@
 				<div class="">
 					<button data-id="<?=$items['id']?>" type="submit" class="btn btn-primary viewcategory_button_size ">ajouter au panier</button>
 				</div>
-			</form>	
 			<br>
 			<p>
 				<span style="cursor:pointer;">
