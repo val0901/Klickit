@@ -124,6 +124,26 @@ class OrdersModel extends \W\Model\Model
 		return $sth->fetch();
 	}
 
+	public function updateOrder($id, $contenu, $quantity, $sub_total, $shipping, $total)
+	{
+		$sql = 'UPDATE '.$this->table.' SET contenu = :contenu, quantity = :quantity, date_creation = :date_creation, sub_total = :sub_total, shipping = :shipping, total = :total WHERE idMember = :id AND order_process = "EnCours"';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':contenu', $contenu);
+		$sth->bindValue(':quantity', $quantity);
+		$sth->bindValue(':date_creation', date('Y-m-d H:i:s'));
+		$sth->bindValue(':sub_total', $sub_total);
+		$sth->bindValue(':shipping', $shipping);
+		$sth->bindValue(':total', $total);
+
+		if($sth->execute()){
+			return true;
+		}
+
+		return false;
+
+	}
+
 	/**
 	 * Mise à jour d'une commande
 	 */
@@ -136,7 +156,7 @@ class OrdersModel extends \W\Model\Model
 		$sth->bindValue(':zipcode', $zipcode);
 		$sth->bindValue(':city', $city);
 		$sth->bindValue(':country', $country);
-		$sth->bindValue(':id', $id);
+		$sth->bindValue(':id', $id_member);
 
 		if($sth->execute()){
 			return true;
