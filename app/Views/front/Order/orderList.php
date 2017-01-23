@@ -58,7 +58,7 @@
                                     <td><p class="ordertable_title"><?=$item['newPrice']?> €<p></td>
                                 <?php endif;?> 
 
-                                <td><p class="ordertable_title"><?=$item['qt']?><p></td>
+                                <td><p class="ordertable_title"><input type="number" name="u_quantityBasket" id="number" value="<?=$item['qt']?>"><p><button type="button" class="quantity_item">nvll quantité</button><p></td>
 
                                 <?php if($item['newPrice'] == 0) :?>  
                                     <td><p class="ordertable_title"><?=$item['qt']*$item['price']?> €<p></td>
@@ -146,7 +146,7 @@
                                     <td><p class="ordertable_title"><?=$item['newPrice']?> €<p></td>
                                 <?php endif;?> 
 
-                                <td><p class="ordertable_title"><input type="number" name="quantityBasket" id="number" value="<?=$item['qt']?>"><p></td>
+                                <td><p class="ordertable_title"><input type="number" name="quantityBasket" id="number" value="<?=$item['qt']?>"><p><button type="button" class="quantity_item">nvll quantité</button></td>
 
                                 <?php if($item['newPrice'] == 0) :?>  
                                     <td><p class="ordertable_title"><?=$item['qt']*$item['price']?> €<p></td>
