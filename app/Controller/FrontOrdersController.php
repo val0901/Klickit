@@ -4,6 +4,7 @@ namespace Controller;
 
 use \W\Controller\Controller;
 use \Model\OrdersModel;
+use \Model\ItemModel;
 use \Model\BasketModel;
 use \W\Security\AuthorizationModel;
 
@@ -16,15 +17,39 @@ class FrontOrdersController extends MasterController
 	public function frontListOrders()
 	{
 		
-		$this->showStuff('front/User/listOrders');
+		$show = new OrdersModel;
+		$user = $this->getUser();
+
+		$orders = $show->showOrders($user['id']);
+
+		$data = [
+			'orders' => $orders,
+		];
+
+		$this->showStuff('front/User/listOrders', $data);
 	}
 
 	/**
 	 * Vue unique d'une commande
 	 */
-	public function frontViewOrders() 
-	{
-		$this->showStuff('front/User/viewUserOrder');
+	public function frontViewOrders($id) 
+	{	
+		$data = [];
+		$show = new OrdersModel();
+
+		if(!is_numeric($id) || empty($id)){
+			$this->showNotFound();
+
+		}else{
+			$order = $show->find($id);
+			$get = new ItemModel;			
+							
+			$data = [
+				'get'	=> $get,
+				'order' => $order
+			];
+		}
+		$this->showStuff('front/User/viewUserOrder', $data);
 	}
 
 	/**

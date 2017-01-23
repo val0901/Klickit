@@ -27,14 +27,20 @@
                       <p>Téléphone 06 11 82 17 71</p>
                   </div>
                   <div class="col-xs-6">
-                      <p><strong>DATE :</strong></p>
-                      <p><strong>No. FACTURE :</strong></p>
+                  <?php if(!empty($order)) : ?>
+                      <p><strong>DATE : 
+                            <?php
+                              $date = date_create($order['date_creation']);
+                              echo date_format($date, 'd-m-Y');
+                            ?>   
+                          </strong></p>
+                      <p><strong>No. FACTURE : <?=$order['id']?></strong></p>
                   </div>
               </div>
               <br>
               <p>No. SERET: 753 966 464 00012</p>
               <br><br>
-              <p><strong>Facturé a :</strong></p>
+              <p><strong>Facturé a : </strong></p>
           </div>
           
           <!--viewuserorder table-->
@@ -49,15 +55,30 @@
                       </tr>
                   </thead>
                   <tbody>
+                  <?php $content =  explode(', ', $order['contenu']);?>
+                  <?php $qte = explode(', ', $order['quantity']); ?>
+                  <?php foreach($content as $value) : ?>
                       <tr>
-                          <td>dfdsf</td>
-                          <td>dsfdsf</td>
-                          <td>dsfdsf</td>
-                          <td>€</td>
+                          
+                        <?php $item = $get->findItems($value)?>
+
+                        <td><?= $item['name'] ?> </td> 
+
+                        <?php if($item['newPrice'] == 0 ) : ?>
+                          <td><?=$item['price'] ?></td>
+
+                        <?php elseif($item['newPrice'] > 0 ) : ?> 
+                          <td><?=$item['newPrice']?></td>
+                        <?php endif; ?> 
+
+                        <?php foreach($qte as $qt) :?>
+                          <td><?=$qt?></td>
+                        <?php endforeach; ?>      
                       </tr>
+                  <?php endforeach; ?> 
                       <tr>
                           <td colspan="3" style="text-align:right;font-weight:600;"><stong>TOTAL :</stong></td>
-                          <td>€</td>
+                          <td><?=$order['total']?>€</td>
                       </tr>
                   </tbody>
               </table>
@@ -73,6 +94,7 @@
                 </div>
               </div>
           </div>
+        <?php endif; ?>
           <!--End viewuserorder table-->
       </div>
   </div>

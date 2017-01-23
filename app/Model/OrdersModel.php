@@ -183,4 +183,19 @@ class OrdersModel extends \W\Model\Model
 
 		return false;
 	}
+
+	/**
+	* Affichage des commandes 
+	*/
+	public function showOrders($id)
+	{
+
+		$sql = 'SELECT * FROM '.$this->table.' WHERE idMember = :idMember AND order_process = "Fini"';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':idMember', $id);
+		$sth->execute();
+
+		return $sth->fetchAll();
+	}
 }

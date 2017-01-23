@@ -135,7 +135,7 @@
 			//liste des commandes
 		['GET|POST', '/listOrders', 'FrontOrders#frontListOrders', 'front_listOrders'],
 			//vue d'une commande
-		['GET|POST', '/viewOrder', 'FrontOrders#frontViewOrders', 'front_viewUserOrder'],
+		['GET|POST', '/viewOrder/[i:id]', 'FrontOrders#frontViewOrders', 'front_viewUserOrder'],
 
 
 		//Pages liées à FrontOrdersController du PROCESS COMMANDE

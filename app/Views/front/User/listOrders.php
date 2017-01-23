@@ -34,42 +34,36 @@
 					<th></th>
                 </tr> 
             </thead> 
-            <tbody> 
+            <tbody>
+            <?php if(!empty($orders)) : ?>
+              <?php foreach($orders as $order) : ?>
                 <tr> 
-                    <td scope="row">No. 000012</td> 
+                    <td scope="row">No. <?=$order['id']?></td> 
                     <td>
-                        <li>19-10-2016<li>
+                        <li>
+                          <?php
+                            $date = date_create($order['date_creation']);
+                            echo date_format($date, 'd-m-Y');
+                          ?>
+                        <li>
                     </td> 
-                    <td><p>17.00 €<p></td>  
-                    <td><p>Chèque<p></td> 
-					<td><p><i class="fa fa-circle" aria-hidden="true" style="color: #56b621;"> <span class="ordertable_statut">Commande Expédiée</span></i><p></td>
+                    <td><p><?=$order['total']?> €<p></td>  
+                    <td><p><?=$order['payment']?><p></td>
+
+                    <?php if($order['statut'] == 'enPreparation') : ?>
+                      <td><p><i class="fa fa-circle" aria-hidden="true" style="color: #fe941e;"> <span class="ordertable_statut">End cours de préparation</span></i><p></td>
+                    <?php elseif($order['statut'] == 'expedie') :?>
+                      <td><p><i class="fa fa-circle" aria-hidden="true" style="color: #56b621;"> <span class="ordertable_statut">Commande Expédiée</span></i><p></td>
+                    <?php elseif($order['statut'] == 'commande') : ?>
+                      <td><p><i class="fa fa-circle" aria-hidden="true" style="color: #999;"> <span class="ordertable_statut">En attente paiement</span></i><p></td>  
+					          <?php endif; ?>
+
                     <td><p>PDF<p></td>
-					<td><p style="color:#fe941e;">détail<p></td>
+					          <td><p style="color:#fe941e;"><a href="<?=$this->url('front_viewUserOrder', ['id' => $order['id']]);?>">détail</a><p></td>
                 </tr>
-				<tr> 
-                    <td scope="row">No. 000012</td> 
-                    <td>
-                        <li>19-10-2016<li>
-                    </td> 
-                    <td><p>17.00 €<p></td>  
-                    <td><p>Chèque<p></td> 
-					<td><p><i class="fa fa-circle" aria-hidden="true" style="color: #999;"> <span class="ordertable_statut">En attente paiement</span></i><p></td>
-                    <td><p>PDF<p></td>
-					<td><p style="color:#fe941e;">détail<p></td>
-                </tr>
-				<tr> 
-                    <td scope="row">No. 000012</td> 
-                    <td>
-                        <li>19-10-2016<li>
-                    </td> 
-                    <td><p>17.00 €<p></td>  
-                    <td><p>Chèque<p></td> 
-					<td><p><i class="fa fa-circle" aria-hidden="true" style="color: #fe941e;"> <span class="ordertable_statut">End cours de préparation</span></i><p></td>
-                    <td><p>PDF<p></td>
-					<td><p style="color:#fe941e;">détail<p></td>
-                </tr>
-				
+              <?php endforeach; ?>  
             </tbody> 
+           <?php endif; ?> 
         </table>
    </div>
   </div>
