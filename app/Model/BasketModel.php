@@ -120,4 +120,17 @@ class BasketModel extends \W\Model\Model
 
 		return false;
 	}
+
+	/**
+	 * Suppression de tout les articles d'un utilisateur
+	 */
+	public function deleteAllBasket($id_member)
+	{
+		$sql = 'DELETE FROM '.$this->table.' WHERE id_member = :id_member';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':id_member', $id_member);
+
+		return $sth->execute();
+	}
 }

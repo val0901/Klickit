@@ -103,3 +103,33 @@
 <br><br>
 <?php $this->stop('main_content') ?>
 
+<?php $this->start('js') ?>
+<script>
+	$(document).ready(function(){
+		$('.orderpayment_button').click(function(e){
+			e.preventDefault();
+
+			$.ajax({
+				url: '<?=$this->url('ajax_updateOrderPayment'); ?>',
+				type: 'post',
+				cache: false,
+				data: $('form').serialize(),
+				dataType: 'json',
+				success: function(up){
+					if(up.code == 'paypal'){
+						//window.location.assign('//$this->url('front_orderAddress');'); Mettre le lien vers l'API ...
+					}
+					else if(up.code == 'cheque'){
+						// + Code de l'envoie d'email ...
+						window.location.assign("<?=$this->url('front_affcptuser', ['id' => $_SESSION['user']['id']]);?>");
+					}
+					else if(up.code == 'virement'){
+						// + Code de l'envoie d'email ...
+						window.location.assign("<?=$this->url('front_affcptuser', ['id' => $_SESSION['user']['id']]);?>");
+					}
+				}
+			});
+		});
+	});
+</script>
+<?php $this->stop('js') ?>

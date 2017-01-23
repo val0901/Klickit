@@ -87,9 +87,10 @@
 		['GET|POST', '/ajax/deleteAllFavorite', 'AjaxFront#deleteAllFavorite', 'ajax_deleteAllFavorite'],
 		['GET|POST', '/ajax/deleteArt', 'AjaxFront#deleteArt', 'ajax_deleteArt'],
 		['GET|POST', '/ajax/newOrder', 'AjaxFront#newOrder', 'ajax_newOrder'],
+		['GET|POST', '/ajax/updateOrder', 'AjaxFront#updateOrder', 'ajax_updateOrder'],
 		['GET|POST', '/ajax/updateCountry', 'AjaxFront#updateCountry', 'ajax_updateCountry'],
 		['GET|POST', '/ajax/updateOrderAddress', 'AjaxFront#updateOrderAddress', 'ajax_updateOrderAddress'],
-		['GET|POST', '/ajax/updateOrder', 'AjaxFront#updateOrder', 'ajax_updateOrder'],
+		['GET|POST', '/ajax/updateOrderPayment', 'AjaxFront#updateOrderPayment', 'ajax_updateOrderPayment'],
 
 		//Pages liées à FrontController
 		['GET|POST', '/home', 'Front#index', 'front_index'],

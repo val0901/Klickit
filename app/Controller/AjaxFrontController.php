@@ -360,4 +360,46 @@ class AjaxFrontController extends Controller
 		}
 		$this->showJson($json);
 	}
+
+	/**
+	 * Mise à jour table order pour^payment
+	 */
+	public function updateOrderPayment()
+	{
+		$updateOrder = new OrdersModel;
+		$deleteBasket = new BasketModel;
+		$user = $this->getUser();
+		$json = [];
+
+		if(!empty($_POST) && isset($_POST)){
+			if($_POST['payment'] == 'paypal'){
+				if($updateOrder->updatePaymentOrder($user['id'], $_POST['payment'])){
+					if($deleteBasket->deleteAllBasket($user['id'])){
+						$json = [
+							'code' => 'paypal'
+						];
+					}
+				}
+			}
+			elseif ($_POST['payment'] == 'cheque') {
+				if($updateOrder->updatePaymentOrder($user['id'], $_POST['payment'])){
+					if($deleteBasket->deleteAllBasket($user['id'])){
+						$json = [
+							'code' => 'cheque'
+						];
+					}
+				}
+			}
+			elseif($_POST['payment'] == 'virement') {
+				if($updateOrder->updatePaymentOrder($user['id'], $_POST['payment'])){
+					if($deleteBasket->deleteAllBasket($user['id'])){
+						$json = [
+							'code' => 'virement'
+						];
+					}
+				}
+			}
+		}
+		$this->showJson($json);
+	}
 }
