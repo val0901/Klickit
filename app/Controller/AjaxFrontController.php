@@ -511,7 +511,6 @@ class AjaxFrontController extends Controller
 							'code' => 'ok'
 						];
 					}
-
 				}
 
 				if($updateQuantity > 0){
