@@ -10,7 +10,7 @@ class BasketModel extends \W\Model\Model
 	*/
 	public function getShoppingCartItem($id)
 	{
-		$sql = 'SELECT item.id, item.name, item.price, item.newPrice, item.picture1, '.$this->table.'.id_item, '.$this->table.'.id_member, SUM('.$this->table.'.quantity) AS qt FROM '.$this->table.' LEFT JOIN item ON '.$this->table.'.id_item = item.id WHERE id_member = :id GROUP BY item.name';
+		$sql = 'SELECT item.id, item.name, item.price, item.newPrice, item.picture1, '.$this->table.'.id_item, '.$this->table.'.id_member, '.$this->table.'.quantity AS qt FROM '.$this->table.' LEFT JOIN item ON '.$this->table.'.id_item = item.id WHERE id_member = :id';
 
 		$sth = $this->dbh->prepare($sql);
 		$sth->bindValue(':id', $id);

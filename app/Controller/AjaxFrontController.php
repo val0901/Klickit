@@ -449,4 +449,32 @@ class AjaxFrontController extends Controller
 		}
 		$this->showJson($json);
 	}
+
+	/**
+	* Mise à jour des quantités depuis my_order
+	*/
+	public function updateQuantity()
+	{
+		$do = new BasketModel;
+		$user = $this->getUser();
+		$json = [];
+
+		if(!empty($_POST)){
+			if(is_numeric($_POST['id_product'])){
+				$quantity = $do->getBasketByUser($user['id'], $_POST['id_product']);
+
+				if(is_numeric($_POST['qt']) && !empty($quantity)){
+					$update = $do->updateQuantityBasket($user['id'], $_POST['id_product'], $_POST['qt']);
+
+					if($update){
+						$json = ['code' => 'ok'];
+					}
+				}
+			}else{
+				$json = ['code' => 'no'];
+			}
+
+		}
+		$this->showJson($json);
+	}
 }

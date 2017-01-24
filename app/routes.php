@@ -91,6 +91,7 @@
 		['GET|POST', '/ajax/updateCountry', 'AjaxFront#updateCountry', 'ajax_updateCountry'],
 		['GET|POST', '/ajax/updateOrderAddress', 'AjaxFront#updateOrderAddress', 'ajax_updateOrderAddress'],
 		['GET|POST', '/ajax/updateOrderPayment', 'AjaxFront#updateOrderPayment', 'ajax_updateOrderPayment'],
+		['GET|POST', '/ajax/updateQuantity', 'AjaxFront#updateQuantity', 'ajax_updateQuantity'],
 
 		//Pages liées à FrontController
 		['GET|POST', '/home', 'Front#index', 'front_index'],

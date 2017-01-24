@@ -146,7 +146,7 @@
                                     <td><p class="ordertable_title"><?=$item['newPrice']?> €<p></td>
                                 <?php endif;?> 
 
-                                <td><p class="ordertable_title"><input type="number" name="quantityBasket" id="number" value="<?=$item['qt']?>"><p><button type="button" class="quantity_item">nvll quantité</button></td>
+                                <td><p class="ordertable_title"><input type="number" name="quantityBasket" class="number" data-qt="<?=$item['id']?>" value="<?=$item['qt']?>"><p><button type="button" data-id="<?=$item['id']?>" class="quantity_item">nvll quantité</button></td>
 
                                 <?php if($item['newPrice'] == 0) :?>  
                                     <td><p class="ordertable_title"><?=$item['qt']*$item['price']?> €<p></td>
@@ -338,6 +338,34 @@
                         }
                     }
                 });
+            });
+        });
+    </script>
+
+    <script>
+        //Mise à jour des quantités depuis my_order
+        $(document).ready(function(){
+            $('.quantity_item').click(function(e){
+                e.preventDefault();
+
+                var quantity = $(this).data('qt');
+                var idProduct = $(this).data('id');
+
+                $.ajax({
+                    url: '<?=$this->url('ajax_updateQuantity');?>',
+                    type: 'post',
+                    cache: false,
+                    data: {id_product: idProduct, qt: quantity},
+                    dataType: 'json',
+                    success: function(up){
+                        if(up.code == 'ok'){
+                            $('body').load('<?=$this->url('front_orderAddress');?>');
+                        }else if(up.code == 'no'){
+                            console.log('nooooooooo');
+                        }
+                    }
+                });
+
             });
         });
     </script>
