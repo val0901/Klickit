@@ -492,16 +492,29 @@ class AjaxFrontController extends Controller
 	public function updateQuantitySubtraction()
 	{
 		$add = new BasketModel;
+		$delete = new BasketModel;
 		$user = $this->getUser();
 		$json = [];
+		$updateQuantity = 0;
 
 		if(!empty($_POST)){
 			if(is_numeric($_POST['id_product'])){
 
 				$quantity = $add->getBasketByUser($user['id'], $_POST['id_product']);
 
-				$updateQuantity = $quantity['quantity'] - 1;
+				if($quantity['quantity'] > 1){
+					$updateQuantity = $quantity['quantity'] - 1;
+				}
+				elseif($quantity['quantity'] == 1){
+					if($delete->deleteItem($user['id'], $_POST['id_product'])){
+						$json = [
+							'code' => 'ok'
+						];
+					}
 
+				}
+
+				if($updateQuantity > 0){
 					if($update = $add->updateQuantityBasket($user['id'], $_POST['id_product'], $updateQuantity)){
 						$json = [
 							'code' => 'ok'
@@ -512,6 +525,7 @@ class AjaxFrontController extends Controller
 							'code' => 'no'
 						];
 					}
+				}
 			}else{
 				$json = [
 					'code' => 'no'

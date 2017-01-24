@@ -136,7 +136,7 @@
                             <tr> 
                                 <td scope="row"><img class="img-responsive" src="<?=$this->assetUrl('art/'.$item['picture1']);?>" style="width: 15vw;margin:0 auto;"></td> 
                                 <td>
-                                    <li class="ordertable_title">P <?=$item['name']?><li>
+                                    <li class="ordertable_title"><?=$item['name']?><li>
                                     <li class="ordertable_text">Référence: <?=$item['id']?><li>
                                 </td>
 
