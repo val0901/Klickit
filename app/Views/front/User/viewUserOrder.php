@@ -57,11 +57,12 @@
                   <tbody>
                   <?php $content =  explode(', ', $order['contenu']);?>
                   <?php $qte = explode(', ', $order['quantity']); ?>
-                  <?php foreach($content as $value) : ?>
+  
+                  <?php foreach($content as $key => $value) : ?>
                       <tr>
                           
                         <?php $item = $get->findItems($value)?>
-
+                        
                         <td><?= $item['name'] ?> </td> 
 
                         <?php if($item['newPrice'] == 0 ) : ?>
@@ -71,9 +72,17 @@
                           <td><?=$item['newPrice']?></td>
                         <?php endif; ?> 
 
-                        <?php foreach($qte as $qt) :?>
-                          <td><?=$qt?></td>
-                        <?php endforeach; ?>      
+                        
+                        <td><?=$qte[$key]?></td>
+
+                        <?php if($item['newPrice'] == 0 ) : ?>
+                          <td><?=$item['price'] ?></td>
+
+                        <?php elseif($item['newPrice'] > 0 ) : ?> 
+                          <td><?=$item['newPrice']?></td>
+                        <?php endif; ?> 
+
+
                       </tr>
                   <?php endforeach; ?> 
                       <tr>
