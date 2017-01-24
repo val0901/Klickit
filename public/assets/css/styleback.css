@@ -98,6 +98,7 @@ STYLE NAVBAR
 	margin: 10px;
 	margin-bottom: 5px;
 	height: 50px;
+    background-color: rgba(248, 248, 248, 0.93);
 }
 
 .navbar-right, .navbar-right a {
