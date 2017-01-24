@@ -146,7 +146,7 @@
                                     <td><p class="ordertable_title"><?=$item['newPrice']?> €<p></td>
                                 <?php endif;?> 
 
-                                <td><p class="ordertable_title"><input type="number" name="quantityBasket" class="number" data-qt="<?=$item['id']?>" value="<?=$item['qt']?>"><p><button type="button" data-id="<?=$item['id']?>" class="quantity_item">nvll quantité</button></td>
+                                <td><p class="ordertable_title"><?=$item['qt']?></p><button type="button" data-id="<?=$item['id']?>" class="plus_quantity"><i class="fa fa-plus" style="color:black;" aria-hidden="true"></i></button><button type="button" data-id="<?=$item['id']?>" class="moins_quantity"><i class="fa fa-minus" style="color:black;" aria-hidden="true"></i></td>
 
                                 <?php if($item['newPrice'] == 0) :?>  
                                     <td><p class="ordertable_title"><?=$item['qt']*$item['price']?> €<p></td>
@@ -343,29 +343,53 @@
     </script>
 
     <script>
-        //Mise à jour des quantités depuis my_order
+        //+1 quantités depuis my_order
         $(document).ready(function(){
-            $('.quantity_item').click(function(e){
+            $('.plus_quantity').click(function(e){
                 e.preventDefault();
 
-                var quantity = $(this).data('qt');
                 var idProduct = $(this).data('id');
 
                 $.ajax({
                     url: '<?=$this->url('ajax_updateQuantity');?>',
                     type: 'post',
                     cache: false,
-                    data: {id_product: idProduct, qt: quantity},
+                    data: {id_product: idProduct},
                     dataType: 'json',
                     success: function(up){
                         if(up.code == 'ok'){
-                            $('body').load('<?=$this->url('front_orderAddress');?>');
+                           $('body').load('<?=$this->url('front_orderList');?>');
                         }else if(up.code == 'no'){
                             console.log('nooooooooo');
                         }
                     }
                 });
+            });
+        });
+    </script>
 
+    <script>
+        // -1 quantités depuis my_order 
+        $(document).ready(function(){
+            $('.moins_quantity').click(function(e){
+                e.preventDefault();
+
+                var idProduct = $(this).data('id');
+
+                $.ajax({
+                    url: '<?=$this->url('ajax_updateQuantitySubtraction');?>',
+                    type: 'post',
+                    cache: false,
+                    data: {id_product: idProduct},
+                    dataType: 'json',
+                    success: function(up){
+                        if(up.code == 'ok'){
+                           $('body').load('<?=$this->url('front_orderList');?>');
+                        }else if(up.code == 'no'){
+                            console.log('nooooooooo');
+                        }
+                    }
+                });
             });
         });
     </script>

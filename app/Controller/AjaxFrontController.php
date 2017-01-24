@@ -455,23 +455,67 @@ class AjaxFrontController extends Controller
 	*/
 	public function updateQuantity()
 	{
-		$do = new BasketModel;
+		$add = new BasketModel;
 		$user = $this->getUser();
 		$json = [];
 
 		if(!empty($_POST)){
 			if(is_numeric($_POST['id_product'])){
-				$quantity = $do->getBasketByUser($user['id'], $_POST['id_product']);
 
-				if(is_numeric($_POST['qt']) && !empty($quantity)){
-					$update = $do->updateQuantityBasket($user['id'], $_POST['id_product'], $_POST['qt']);
+				$quantity = $add->getBasketByUser($user['id'], $_POST['id_product']);
 
-					if($update){
-						$json = ['code' => 'ok'];
+				$updateQuantity = $quantity['quantity'] + 1;
+
+					if($update = $add->updateQuantityBasket($user['id'], $_POST['id_product'], $updateQuantity)){
+						$json = [
+							'code' => 'ok'
+						];
 					}
-				}
+					else{
+						$json = [	
+							'code' => 'no'
+						];
+					}
 			}else{
-				$json = ['code' => 'no'];
+				$json = [
+					'code' => 'no'
+				];
+			}
+
+		}
+		$this->showJson($json);
+	}
+
+	/**
+	* Mise à jour des quantités depuis my_order
+	*/
+	public function updateQuantitySubtraction()
+	{
+		$add = new BasketModel;
+		$user = $this->getUser();
+		$json = [];
+
+		if(!empty($_POST)){
+			if(is_numeric($_POST['id_product'])){
+
+				$quantity = $add->getBasketByUser($user['id'], $_POST['id_product']);
+
+				$updateQuantity = $quantity['quantity'] - 1;
+
+					if($update = $add->updateQuantityBasket($user['id'], $_POST['id_product'], $updateQuantity)){
+						$json = [
+							'code' => 'ok'
+						];
+					}
+					else{
+						$json = [	
+							'code' => 'no'
+						];
+					}
+			}else{
+				$json = [
+					'code' => 'no'
+				];
 			}
 
 		}
