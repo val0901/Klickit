@@ -76,12 +76,11 @@
                         <td><?=$qte[$key]?></td>
 
                         <?php if($item['newPrice'] == 0 ) : ?>
-                          <td><?=$item['price'] ?></td>
+                          <td><?=$item['price']*$qte[$key] ?></td>
 
                         <?php elseif($item['newPrice'] > 0 ) : ?> 
-                          <td><?=$item['newPrice']?></td>
+                          <td><?=$item['newPrice']*$qte[$key]?></td>
                         <?php endif; ?> 
-
 
                       </tr>
                   <?php endforeach; ?> 
