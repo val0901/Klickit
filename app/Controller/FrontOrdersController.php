@@ -36,19 +36,23 @@ class FrontOrdersController extends MasterController
 	{	
 		$data = [];
 		$show = new OrdersModel();
+		$user = $this->getUser();
 
 		if(!is_numeric($id) || empty($id)){
 			$this->showNotFound();
 
+		}elseif(empty($show->findOrderByID($user['id'], $id))){
+			$this->showNotFound();
 		}else{
-			$order = $show->find($id);
+			$order = $show->findOrderByID($user['id'], $id);
 			$get = new ItemModel;			
 							
 			$data = [
 				'get'	=> $get,
 				'order' => $order
 			];
-		}
+		}	
+
 		$this->showStuff('front/User/viewUserOrder', $data);
 	}
 

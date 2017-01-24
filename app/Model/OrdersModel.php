@@ -198,4 +198,20 @@ class OrdersModel extends \W\Model\Model
 
 		return $sth->fetchAll();
 	}
+
+	/**
+	* Affichage d'une seul commande pour l'utilisateur
+	*/
+
+	public function findOrderByID($id_member, $id_order)
+	{
+		$sql = 'SELECT * FROM '.$this->table.' WHERE idMember = :id_member AND id = :id_order';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':id_member', $id_member);
+		$sth->bindValue(':id_order', $id_order);
+		$sth->execute();
+
+		return $sth->fetch();
+	}
 }
