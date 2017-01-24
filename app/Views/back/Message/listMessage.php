@@ -33,7 +33,7 @@
 							<td <?=$bold?> ><?=$message['username'];?></td>
 							<td <?=$bold?> ><?=$message['email'];?></td>
 							<td <?=$bold?> ><?=$message['subject'];?></td> 
-							<td <?=$bold?> ><?=$message['content'];?></td>
+							<td <?=$bold?> ><?=substr($message['content'], 0, 30).'...';?></td>
 							<td <?=$bold?> ><?=$message['statut'];?></td>
 							<td><a href="<?=$this->url('viewMessage', ['id'=>$message['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>
 							<td><button class="btn btn-danger delete-message" data-id="<?=$message['id']?>">Effacer le message</button></td>
