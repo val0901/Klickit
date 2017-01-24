@@ -23,6 +23,13 @@
 		</head>
 
 		<body>
+		    <div class="deco">
+	            <div class="block1"></div>
+	            <div class="block2"></div>
+	            <div class="block3"></div>
+	            <div class="block4"></div>
+	            <div class="block5"></div>
+            </div>
 			<div class="cont">
 				<header>
 					<nav class="navbar navbar-default">

@@ -7,7 +7,7 @@
 	<div id="lastorder">
 		
 		<table class="table">
-			<thead>
+			<thead class="backgthead">
 				<th>Numéro</th>
 				<th>Client</th>
 				<th>Contenu de la commande</th>
@@ -19,7 +19,7 @@
 				<th>Action</th>
 			</thead>
 
-			<tbody>
+			<tbody class="backgtbody">
 				<?php foreach ($orders as $order): ?>
 					<tr>
 						<td><?=$order['id']; ?></td>
@@ -62,10 +62,24 @@
 					</tr>
 				<?php endforeach; ?>			
 						</tbody>			
+            <tfoot id="voirplus">
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <td rowspan="9">
+                        <a href="<?= $this->url('listOrders')?>" >Voir plus</a>
+                    </td>
+                   
+                </tr>
+            </tfoot>	
+
 					</table>
-					<div id="voirplus">
-					<a href="<?= $this->url('listOrders')?>" >Voir plus</a>
-					</div>	
 	</div>
 
 	<!--Dernières Commandes  -->
@@ -103,10 +117,10 @@
 						</tr>	
 					<?php endforeach;?>
 				</tbody>
-			</table>
-			<div id="voirplus">
-				<a href="<?= $this->url('listMessage')?>" >Voir plus</a>
-			</div>
+			<tfoot id="voirplus">
+				<th><a href="<?= $this->url('listMessage')?>" >Voir plus</a></th>
+			</tfoot>
+            </table>
 		</form>
 	</div>	
 
