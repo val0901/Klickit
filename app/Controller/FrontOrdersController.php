@@ -6,6 +6,7 @@ use \W\Controller\Controller;
 use \Model\OrdersModel;
 use \Model\ItemModel;
 use \Model\BasketModel;
+use \Model\UserModel;
 use \W\Security\AuthorizationModel;
 
 class FrontOrdersController extends MasterController 
@@ -36,6 +37,7 @@ class FrontOrdersController extends MasterController
 	{	
 		$data = [];
 		$show = new OrdersModel();
+		$find = new UserModel;
 		$user = $this->getUser();
 
 		if(!is_numeric($id) || empty($id)){
@@ -45,9 +47,12 @@ class FrontOrdersController extends MasterController
 			$this->showNotFound();
 		}else{
 			$order = $show->findOrderByID($user['id'], $id);
-			$get = new ItemModel;			
+
+			$get = new ItemModel;
+			$user_data = $find->findUser($user['id']);			
 							
 			$data = [
+				'user'	=> $user_data,
 				'get'	=> $get,
 				'order' => $order
 			];

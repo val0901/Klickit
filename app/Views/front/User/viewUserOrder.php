@@ -40,7 +40,7 @@
               <br>
               <p>No. SERET: 753 966 464 00012</p>
               <br><br>
-              <p><strong>Facturé a : </strong></p>
+              <p><strong>Facturé a : <?=$user['firstname'].' '.$user['lastname']?></strong></p>
           </div>
           
           <!--viewuserorder table-->
