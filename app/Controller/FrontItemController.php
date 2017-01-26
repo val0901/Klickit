@@ -7,6 +7,7 @@ use \Model\ItemModel;
 use \Model\UserModel;
 use \Model\FavoriteModel;
 use \Model\FilterModel;
+use \Model\FiltrearticleModel;
 use \W\Security\AuthorizationModel;
 use \W\Security\AuthentificationModel;
 use \Respect\Validation\Validator as v;
@@ -503,7 +504,50 @@ class FrontItemController extends MasterController
 	 * Option de recherche
 	 */
 	public function searchItems()
-	{
-		$this->show('front/Items/search');
+	{	
+		$findFavorite = new FiltrearticleModel();
+		$json = [];
+		$idFilter = '';
+		$contentSearch = '';
+
+		/*$test = [ // Remplacer $_POST pour tester
+			'Filtre1',
+			'Filtre2',
+			'Filtre3',
+		];*/
+
+		if(!empty($_POST)){
+			foreach ($_POST as $value) {
+				foreach($findFavorite->findItemByFilter($value) as $filter){
+					foreach ($filter as $fil) {
+						$idFilter.= $fil.', ';
+					}
+				}
+			}
+			$contentSearch = substr($idFilter, 0, -2);
+
+			if(!empty($contentSearch)){
+				$json = [
+					'code' => 'ok',
+				];
+			}
+			else{
+				$json = [
+					'code' => 'no',
+				];
+			}
+		}
+		else{
+			$json = [
+				'code' => 'empty',
+			];
+		}
+
+		$data = [
+			'items' => $contentSearch,
+		];
+
+		$this->showJson($json);
+		$this->showStuff('front/Items/search', $data);
 	}
 }

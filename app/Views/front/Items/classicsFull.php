@@ -47,9 +47,10 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 					<div class="form-group viewcategory_checkboxmargin">
 						<?php foreach ($filters as $filter) : ?>
 							<label class="viewcategorycheckbox_border">
-							<input type="checkbox"> <span class="viewcategorycheckbox_font"><?=ucfirst($filter['name']);?></span>
+							<input type="checkbox" value='<?=$filter['name'];?>'> <span class="viewcategorycheckbox_font"><?=ucfirst($filter['name']);?></span>
 							</label>
 						<?php endforeach; ?>
+						<button type="button" id="searchFilter">Rechercher</button>
 					</div>
 				</div>
 			</li>
@@ -286,6 +287,33 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 					success: function(add){
 						if(add.msg == 'ok'){
 							$('body').load('<?=$this->url('listItemClassicsFull');?>');
+						}
+					}
+				});
+			});
+		});
+	</script>
+
+	<script>
+		$(document).ready(function(){
+			$('#searchFilter').click(function(e){
+				e.preventDefault();
+
+				$.ajax({
+					url: '<?=$this->url('searchItems');?>',
+					type: 'post',
+					cache: false,
+					data: $('form').serialize(),
+					dataType: 'json',
+					success: function(search){
+						if(search.code == 'ok'){
+							$('body').load('<?=$this->url('searchItems');?>');
+						}
+						else if(search.code == 'no'){
+
+						}
+						else if(search.code == 'empty'){
+
 						}
 					}
 				});
