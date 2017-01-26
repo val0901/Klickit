@@ -43,9 +43,10 @@
 					<div class="form-group viewcategory_checkboxmargin">
 						<?php foreach ($filters as $filter) : ?>
 							<label class="viewcategorycheckbox_border">
-							<input type="checkbox"> <span class="viewcategorycheckbox_font"><?=ucfirst($filter['name']);?></span>
+							<input type="checkbox" class="filter_value" value='<?=$filter['name'];?>'> <span class="viewcategorycheckbox_font"><?=ucfirst($filter['name']);?></span>
 							</label>
 						<?php endforeach; ?>
+						<button type="button" id="searchFilter">Rechercher</button>
 					</div>
 				</div>
 			</li>
