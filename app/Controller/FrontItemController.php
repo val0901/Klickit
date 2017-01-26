@@ -510,6 +510,23 @@ class FrontItemController extends MasterController
 		$idFilter = '';
 		$contentSearch = '';
 		$find = new FiltrearticleModel();
+		$findItem = new ItemModel();
+
+		$favorite = new FavoriteModel();
+		$favoriteList = '';
+		if(!empty($this->getUser())){
+			$userFavorite = $favorite->findFavorisItem($_SESSION['user']['id']);
+
+			$myFavorite = '';
+
+			foreach ($userFavorite as $favoris) {
+				foreach ($favoris as $value) {
+					$myFavorite.= $value.', ';
+				}
+			}
+
+			$favoriteList = substr($myFavorite, 0, -2);
+		}
 
 		/*$test = [ // Remplacer $_POST pour tester
 			'Filtre1',
@@ -518,13 +535,18 @@ class FrontItemController extends MasterController
 		];*/
 
 		if(!empty($_POST)){
-			foreach ($_POST as $value) {
+			$filterPost = substr($_POST['data'], 0, -2);
+
+			$post = explode(', ', $filterPost);
+
+			foreach ($post as $value) {
 				foreach($findFavorite->findItemByFilter($value) as $filter){
 					foreach ($filter as $fil) {
 						$idFilter.= $fil.', ';
 					}
 				}
 			}
+
 			$contentSearch = substr($idFilter, 0, -2);
 
 			if(!empty($contentSearch)){
@@ -537,19 +559,16 @@ class FrontItemController extends MasterController
 					'code' => 'no',
 				];
 			}
-		}
-		else{
-			$json = [
-				'code' => 'empty',
-			];
+			$this->showJson($json);
 		}
 
 		$data = [
-			'items' => $contentSearch,
-			'find'	=> $find,
+			'items'    => explode(', ', $contentSearch),
+			'find'	   => $find,
+			'findItem' => $findItem,
+			'favorite' => $findFavorite,
 		];
 
-		$this->showJson($json);
 		$this->showStuff('front/Items/search', $data);
 	}
 }

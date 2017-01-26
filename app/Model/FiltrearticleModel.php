@@ -8,7 +8,7 @@ class FiltrearticleModel extends \W\Model\Model
 	 */
 	public function findItemByFilter($filter)
 	{
-		$sql = 'SELECT id FROM '.$this->table.' WHERE name_filter = :name_filter';
+		$sql = 'SELECT id_item FROM '.$this->table.' WHERE name_filter = :name_filter';
 
 		 $sth = $this->dbh->prepare($sql);
 		 $sth->bindValue(':name_filter', $filter);

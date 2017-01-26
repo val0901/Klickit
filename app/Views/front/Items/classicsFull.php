@@ -299,11 +299,22 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 			$('#searchFilter').click(function(e){
 				e.preventDefault();
 
+				var filter = '';
+
+				var idCheck = new Array();
+				$("input:checked").each(function (i) {
+					idCheck[i] = $(this).val();
+				});
+
+				for (let i of idCheck) {
+				    filter += i+', ';
+				}
+
 				$.ajax({
 					url: '<?=$this->url('searchItems');?>',
 					type: 'post',
 					cache: false,
-					data: $('.filter_value').serialize(),
+					data: {data: filter},
 					dataType: 'json',
 					success: function(search){
 						if(search.code == 'ok'){
