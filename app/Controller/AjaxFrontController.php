@@ -555,7 +555,7 @@ class AjaxFrontController extends Controller
 		$favorite = new FavoriteModel();
 		$favoriteList = '';
 		if(!empty($this->getUser())){
-			$userFavorite = $favorite->findFavorisItem($_SESSION['user']['id']);
+			$userFavorite = $favorite->findFavorisItem($user['id']);
 
 			$myFavorite = '';
 
@@ -589,17 +589,45 @@ class AjaxFrontController extends Controller
 
 				$viewSearch.= '<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">';
 				$viewSearch.= '<a href="'.$this->generateUrl('viewArt', ['id' => $item['id']]).'"><img src="'.$picutreLink->assetUrl('art/'.$item['picture1']).'" alt="photo de playmobil" class="img-thumbnail" style=""></a>';
-				$viewSearch.= '<div class="viewcategorycaption"><?php if('.$item['newPrice'].' == 0) : ?><h4>'.$item['price'].'€</h4><?php else : ?><h4><span class="viewcategoryprixpromo">'.$item['newPrice'].'€</span><span class="viewcategoryprixdelete">'.$item['price'].'€</span></h4><?php endif; ?>';
-				$viewSearch.= '<p class="iconeFavorite"><span style="cursor:pointer;"><?php if(!empty('.$user['id'].'].)): ?><?php if(in_array('.$item['id'].', $favorite)): ?><button class="favorite" type="submit" name="'.str_replace(' ', '', $item['name']).'" value="'.$item['id'].'" data-id="'.$item['id'].'"><i class="fa fa-heart fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #c11131;" title="Ajouter à mes favoris"></i></button><?php else: ?><button class="favorite" type="submit" name="'.str_replace(' ', '', $item['name']).'" value="'.$item['id'].'" data-id="'.$item['id'].'"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button><?php endif; ?><?php else : ?><a href="'.$this->generateUrl('login').'"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></a><?php endif; ?></span> '.$item['name'].'</p>';
-				$viewSearch.= '<?php if('.$item['statut'].' == \'nouveaute\'):?><div class="viewcategory_nouveau">'.$item['statut'].'</div><?php elseif('.$item['statut'].' == \'promotion\'):?><div class="viewcategory_promo">'.$item['statut'].'</div><?php elseif('.$item['statut'].' == \'defaut\'): ?><div class="viewcategory_defaut"></div><?php endif; ?></div>';
-				$viewSearch.= '<div class="viewcategory_button"><button type="submit" class="btn btn-primary viewcategory_button_size add_to_shopping_cart" data-id="'.$item['id'].'">ajouter au panier</button></div></div>';
+
+				if($item['newPrice'] == 0){
+					$viewSearch.= '<div class="viewcategorycaption"><h4>'.$item['price'].'€</h4>';
+				}
+				else {
+					$viewSearch.= '<h4><span class="viewcategoryprixpromo">'.$item['newPrice'].'€</span><span class="viewcategoryprixdelete">'.$item['price'].'€</span></h4>';
+				}
+
+				$viewSearch.='<p class="iconeFavorite"><span style="cursor:pointer;">';
+				if(!empty($user)){
+					if(in_array($item['id'], $favorite)){
+						$viewSearch.= '<button class="favorite" type="submit" name="'.str_replace(' ', '', $item['name']).'" value="'.$item['id'].'" data-id="'.$item['id'].'"><i class="fa fa-heart fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #c11131;" title="Ajouter à mes favoris"></i></button>';
+					}
+					else{
+						$viewSearch.= '<button class="favorite" type="submit" name="'.str_replace(' ', '', $item['name']).'" value="'.$item['id'].'" data-id="'.$item['id'].'"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button>';
+					}
+				}
+				else{
+					$viewSearch.= '<a href="'.$this->generateUrl('login').'"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></a>';
+				}
+				$viewSearch.= '</span> '.$item['name'].'</p>';
+				
+				if($item['statut'] == 'nouveaute'){
+					$viewSearch.= '<div class="viewcategory_nouveau">'.$item['statut'].'</div>';
+				}
+				elseif($item['statut'] == 'promotion'){
+					$viewSearch.= '<div class="viewcategory_promo">'.$item['statut'].'</div>';
+				}
+				elseif($item['statut'] == 'defaut'){
+					$viewSearch.= '<div class="viewcategory_defaut"></div>';
+				}
+
+				$viewSearch.= '</div><div class="viewcategory_button"><button type="submit" class="btn btn-primary viewcategory_button_size add_to_shopping_cart" data-id="'.$item['id'].'">ajouter au panier</button></div></div>';
 			}
 
 			if(!empty($viewSearch)){
 				$json = [
 					'code'     => 'ok',
 					'msg'      => $viewSearch,
-					'favorite' => $favorite,
 				];
 			}
 			else{
