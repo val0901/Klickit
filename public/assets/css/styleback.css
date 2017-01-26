@@ -24,7 +24,7 @@ h3 {
 }
 
 h2 {
-	color: #409c99;
+	color: #7ca7a5;
 	text-align: center;	
 	margin-bottom: 50px;
 }
@@ -98,7 +98,7 @@ STYLE NAVBAR
 	margin: 10px;
 	margin-bottom: 5px;
 	height: 50px;
-    background-color: rgba(248, 248, 248, 0.93);
+    background-color: rgba(248, 248, 248, 0.8);
 }
 
 .navbar-right, .navbar-right a {

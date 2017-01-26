@@ -64,15 +64,7 @@
 						</tbody>			
             <tfoot id="voirplus">
                 <tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <td rowspan="9">
+                    <td colspan="9">
                         <a href="<?= $this->url('listOrders')?>" >Voir plus</a>
                     </td>
                    
@@ -87,7 +79,7 @@
 	<div id="lastMessage">
 		<form>	
 			<table class="table table-responsive">
-				<thead>
+				<thead class="backgthead">
 					<th>Pseudonyme</th>
 					<th>Adresse email</th>
 					<th>Date</th>
@@ -97,7 +89,7 @@
 					<th colspan="2">Action</th>
 				</thead>
 
-				<tbody>
+				<tbody class="backgtbody">
 					<?php foreach($messages as $message) : ?>
 						<?php 
 							if ($message['statut'] == 'Non lu'){
@@ -118,7 +110,10 @@
 					<?php endforeach;?>
 				</tbody>
 			<tfoot id="voirplus">
-				<th><a href="<?= $this->url('listMessage')?>" >Voir plus</a></th>
+				<tr>
+                    <td colspan="7"><a href="<?= $this->url('listMessage')?>" >Voir plus</a>
+                    </td>
+                </tr>    
 			</tfoot>
             </table>
 		</form>
@@ -129,7 +124,7 @@
 	<div id="lastGuestbook">
 		<form>
 			<table class="table table-responsive">
-				<thead>
+				<thead class="backgthead">
 					<th>Prénom</th>
 					<th>Nom</th>
 					<th>Pseudonyme</th>
@@ -138,7 +133,7 @@
 					<th colspan="2">Action</th>
 				</thead>
 
-				<tbody>
+				<tbody class="backgtbody">
 					<?php foreach($comments as $comment) : ?>
 						<tr>
 							<td><?=$comment['firstname'];?></td>
@@ -150,11 +145,16 @@
 						</tr>	
 					<?php endforeach;?>
 				</tbody>
+			<tfoot id="voirplus">
+				<tr>
+                    <td colspan="6"><a href="<?= $this->url('listGuestbook')?>" >Voir plus</a>
+                    </td>    
+                </tr>
+            </tfoot>
+		</div>
+
 			</table>
 		</form>	
-		<div id="voirplus">
-				<a href="<?= $this->url('listGuestbook')?>" >Voir plus</a>
-		</div>
 
 	</div>
 	
