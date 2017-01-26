@@ -437,14 +437,6 @@ class FrontItemController extends MasterController
 	}
 
 	/**
-	 * Option de recherche
-	 */
-	public function searchItems()
-	{
-		$this->show('front/Items/search');
-	}
-
-	/**
 	 * Affiche la page d'un article
 	 */
 	public function viewItem($id)
@@ -505,5 +497,13 @@ class FrontItemController extends MasterController
 		else {
 			$this->redirectToRoute('login');
 		}
+	}
+
+	/**
+	 * Option de recherche
+	 */
+	public function searchItems()
+	{
+		$this->show('front/Items/search');
 	}
 }
