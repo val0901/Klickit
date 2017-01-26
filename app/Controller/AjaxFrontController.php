@@ -3,6 +3,7 @@
 namespace Controller;
 
 use \W\Controller\Controller;
+use \W\View\Plates\PlatesExtensions;
 use \W\Model\UsersModel;
 use \Model\UserModel;
 use \Model\ItemModel;
@@ -14,6 +15,8 @@ use \Model\BasketModel;
 use \Model\SlideModel;
 use \Model\ShippingModel;
 use \Model\FavoriteModel;
+use \Model\FilterModel;
+use \Model\FiltrearticleModel;
 use \W\Security\AuthentificationModel;
 
 use \Respect\Validation\Validator as v; 
@@ -531,6 +534,79 @@ class AjaxFrontController extends Controller
 				];
 			}
 
+		}
+		$this->showJson($json);
+	}
+
+	/**
+	 * Recherche par Filtre
+	 */
+	public function SearchByFilter()
+	{
+		$json = [];
+		$idFilter = '';
+		$contentSearch = '';
+		$user = $this->getUser();
+		$find = new FiltrearticleModel();
+		$findItem = new ItemModel();
+		$viewSearch = null;
+		$picutreLink = new PlatesExtensions();
+
+		$favorite = new FavoriteModel();
+		$favoriteList = '';
+		if(!empty($this->getUser())){
+			$userFavorite = $favorite->findFavorisItem($_SESSION['user']['id']);
+
+			$myFavorite = '';
+
+			foreach ($userFavorite as $favoris) {
+				foreach ($favoris as $value) {
+					$myFavorite.= $value.', ';
+				}
+			}
+
+			$favoriteList = substr($myFavorite, 0, -2);
+			$favorite = explode(', ', $favoriteList);
+		}
+
+		if(!empty($_POST)){
+			$filterPost = substr($_POST['filter'], 0, -2);
+			$post = explode(', ', $filterPost);
+
+			foreach ($post as $value) {
+				foreach($find->findItemByFilter($value) as $filter){
+					foreach ($filter as $fil) {
+						$idFilter.= $fil.', ';
+					}
+				}
+			}
+			$contentSearch = substr($idFilter, 0, -2);
+			$contentSearchArray = explode(', ', $contentSearch);
+
+
+			foreach ($contentSearchArray as $searchItem) {
+				$item = $findItem->findItems($searchItem);
+
+				$viewSearch.= '<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">';
+				$viewSearch.= '<a href="'.$this->generateUrl('viewArt', ['id' => $item['id']]).'"><img src="'.$picutreLink->assetUrl('art/'.$item['picture1']).'" alt="photo de playmobil" class="img-thumbnail" style=""></a>';
+				$viewSearch.= '<div class="viewcategorycaption"><?php if('.$item['newPrice'].' == 0) : ?><h4>'.$item['price'].'€</h4><?php else : ?><h4><span class="viewcategoryprixpromo">'.$item['newPrice'].'€</span><span class="viewcategoryprixdelete">'.$item['price'].'€</span></h4><?php endif; ?>';
+				$viewSearch.= '<p class="iconeFavorite"><span style="cursor:pointer;"><?php if(!empty('.$user['id'].'].)): ?><?php if(in_array('.$item['id'].', $favorite)): ?><button class="favorite" type="submit" name="'.str_replace(' ', '', $item['name']).'" value="'.$item['id'].'" data-id="'.$item['id'].'"><i class="fa fa-heart fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #c11131;" title="Ajouter à mes favoris"></i></button><?php else: ?><button class="favorite" type="submit" name="'.str_replace(' ', '', $item['name']).'" value="'.$item['id'].'" data-id="'.$item['id'].'"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button><?php endif; ?><?php else : ?><a href="'.$this->generateUrl('login').'"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></a><?php endif; ?></span> '.$item['name'].'</p>';
+				$viewSearch.= '<?php if('.$item['statut'].' == \'nouveaute\'):?><div class="viewcategory_nouveau">'.$item['statut'].'</div><?php elseif('.$item['statut'].' == \'promotion\'):?><div class="viewcategory_promo">'.$item['statut'].'</div><?php elseif('.$item['statut'].' == \'defaut\'): ?><div class="viewcategory_defaut"></div><?php endif; ?></div>';
+				$viewSearch.= '<div class="viewcategory_button"><button type="submit" class="btn btn-primary viewcategory_button_size add_to_shopping_cart" data-id="'.$item['id'].'">ajouter au panier</button></div></div>';
+			}
+
+			if(!empty($viewSearch)){
+				$json = [
+					'code' => 'ok',
+					'msg'  => $viewSearch,
+				];
+			}
+			else{
+				$json = [
+					'code' => 'no',
+					'msg'  => 'Aucun résultat',
+				];
+			}
 		}
 		$this->showJson($json);
 	}

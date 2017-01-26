@@ -93,6 +93,7 @@
 		['GET|POST', '/ajax/updateOrderPayment', 'AjaxFront#updateOrderPayment', 'ajax_updateOrderPayment'],
 		['GET|POST', '/ajax/updateQuantity', 'AjaxFront#updateQuantity', 'ajax_updateQuantity'],
 		['GET|POST', '/ajax/updateQuantitySubtraction', 'AjaxFront#updateQuantitySubtraction', 'ajax_updateQuantitySubtraction'],
+		['GET|POST', '/ajax/SearchByFilter', 'AjaxFront#SearchByFilter', 'ajax_SearchByFilter'],
 
 		//Pages liées à FrontController
 		['GET|POST', '/home', 'Front#index', 'front_index'],

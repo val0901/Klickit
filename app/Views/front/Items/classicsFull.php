@@ -71,7 +71,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 		<!--viewcategory row2 col2-->
 		<div id="refresh_list" class="col-md-9">
 			<h4 class="viewcategory_pages"><a href="<?=$this->url('front_index');?>">Home </a><span>></span><a href="<?=$this->url('listItemClassicsFull');?>"> Classics</a></h4>
-			<div class="row">
+			<div class="row replace">
 				<?php foreach ($items as $product) : ?>
 					<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
                      <a href="<?=$this->url('viewArt', ['id' => $product['id']]);?>"><img src="<?=$this->assetUrl('art/'.$product['picture1']);?>" alt="photo de playmobil" class="img-thumbnail" style=""></a>
@@ -311,20 +311,17 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 				}
 
 				$.ajax({
-					url: '<?=$this->url('searchItems');?>',
+					url: '<?=$this->url('ajax_SearchByFilter');?>',
 					type: 'post',
 					cache: false,
-					data: {data: filter},
+					data: {filter: filter},
 					dataType: 'json',
 					success: function(search){
 						if(search.code == 'ok'){
-							$('body').load('<?=$this->url('searchItems');?>');
+							$('#replace').html(search.msg);
 						}
 						else if(search.code == 'no'){
-
-						}
-						else if(search.code == 'empty'){
-
+							$('#replace').html(search.msg);
 						}
 					}
 				});

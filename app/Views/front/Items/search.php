@@ -3,6 +3,7 @@
 <?php $this->start('main_content') ?>
 <div class="container_general">
 	<div class="row">
+	<?php var_dump($items); ?>
 		<?php foreach ($items as $value) : ?>
 			<?php $product = $findItem->findItems($value); ?>
 			<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
