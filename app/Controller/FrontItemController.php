@@ -509,6 +509,7 @@ class FrontItemController extends MasterController
 		$json = [];
 		$idFilter = '';
 		$contentSearch = '';
+		$find = new FiltrearticleModel();
 
 		/*$test = [ // Remplacer $_POST pour tester
 			'Filtre1',
@@ -545,6 +546,7 @@ class FrontItemController extends MasterController
 
 		$data = [
 			'items' => $contentSearch,
+			'find'	=> $find,
 		];
 
 		$this->showJson($json);

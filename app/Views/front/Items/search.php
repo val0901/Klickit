@@ -3,7 +3,8 @@
 <?php $this->start('main_content') ?>
 <div class="container_general">
 	<div class="row">
-		<?php foreach ($items as $product) : ?>
+		<?php foreach ($items as $value) : ?>
+			<?php $product = $find->find($value); ?>
 			<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
              <a href="<?=$this->url('viewArt', ['id' => $product['id']]);?>"><img src="<?=$this->assetUrl('art/'.$product['picture1']);?>" alt="photo de playmobil" class="img-thumbnail" style=""></a>
 				<div class="viewcategorycaption">
