@@ -597,8 +597,9 @@ class AjaxFrontController extends Controller
 
 			if(!empty($viewSearch)){
 				$json = [
-					'code' => 'ok',
-					'msg'  => $viewSearch,
+					'code'     => 'ok',
+					'msg'      => $viewSearch,
+					'favorite' => $favorite,
 				];
 			}
 			else{
