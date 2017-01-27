@@ -5,29 +5,34 @@
 	<h3 class="titleItem">Vu du produit</h3>
 	<div id="view" class="row">
 		<div class="preview col-lg-6">
-			
-				<div class="preview-pic row">
-					<div class="tab-pane active col-sm-6" id="pic-1"><img src="<?=$this->assetUrl('art/'.$affichage['picture1']);?>" /></div>
-					<div class="tab-pane active col-sm-6" id="pic-2"><img src="<?=$this->assetUrl('art/'.$affichage['picture2']);?>" /></div>
-				</div>
-			
+			<div class="preview-pic row">
+				<div class="tab-pane active col-sm-6" id="pic-1"><img src="<?=$this->assetUrl('art/'.$affichage['picture1']);?>" /></div>
+				<div class="tab-pane active col-sm-6" id="pic-2"><img src="<?=$this->assetUrl('art/'.$affichage['picture2']);?>" /></div>
+			</div>
 		</div>
-		
-					
-						<div class="details col-lg-6">
-							<h3 class="titleArt"><?=$affichage['name'];?></h3>
-							
-							<p class="price"><?=$affichage['description'];?></p>
-							<p class="price"><span>Prix d'origine : </span> <?=$affichage['price'];?> €</p>
-							<?php if($affichage['newPrice'] > 0) : ?>
-								<p class="price"><span>Nouveau prix : </span><?=$affichage['newPrice'];?> €</p>
-							<?php elseif($affichage['newPrice'] == 0) : ?>
-								<p class="price"><span>Nouveau prix :</span> Pas de nouveau prix</p>
-							<?php endif; ?>
-							
-							<p class="price"><span>Statut du produit : </span> <?=$affichage['statut'];?></p>
-							<p class="price"><span>Catégorie du produit : </span> <?=$affichage['category'];?></p>
-						</div>
+			<div class="details col-lg-6">
+				<h3 class="titleArt"><?=$affichage['name'];?></h3>
+				
+				<p class="price"><?=$affichage['description'];?></p>
+				<p class="price"><span>Prix d'origine : </span> <?=$affichage['price'];?> €</p>
+				<?php if($affichage['newPrice'] > 0) : ?>
+					<p class="price"><span>Nouveau prix : </span><?=$affichage['newPrice'];?> €</p>
+				<?php elseif($affichage['newPrice'] == 0) : ?>
+					<p class="price"><span>Nouveau prix :</span> Pas de nouveau prix</p>
+				<?php endif; ?>
+				
+				<p class="price"><span>Statut du produit : </span> <?=$affichage['statut'];?></p>
+				<p class="price"><span>Catégorie du produit : </span> <?=$affichage['category'];?></p>
+
+				<?php $allFilter = $ItemFilter->findByIdItem($affichage['id']);?>
+				<p class="filter"><span>Filtres du produit : </span>
+					<ul>
+						<?php foreach($allFilter as $allfil): ?>
+							<li><?=$allfil['name_filter'];?></li>
+						<?php endforeach; ?>
+					</ul>
+				</p>
+			</div>
 	</div>
 	<br><br>
 
@@ -159,6 +164,21 @@
 			  	  <option value="Cheveux">Cheveux</option>
 			  	  <option value="Divers">Divers</option>
 		    </select>
+		  </div>
+		</div>
+
+		<!-- Multiple Checkboxes -->
+		<div class="form-group">
+		  <label class="col-md-4 control-label" for="checkboxes">Filtre :</label>
+		  <div class="col-md-4">
+		  <?php foreach($filter as $value): ?>
+			  <div class="checkbox">
+			    <label for="checkboxes-0">
+			      <input name="checkboxe" class="checkboxe" value="<?=$value['name'];?>" type="checkbox">
+			      <?=$value['name'];?>
+			    </label>
+			  </div>
+		  <?php endforeach; ?>
 		  </div>
 		</div>
 

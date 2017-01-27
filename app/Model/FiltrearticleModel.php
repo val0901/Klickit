@@ -4,7 +4,7 @@ namespace Model;
 class FiltrearticleModel extends \W\Model\Model 
 {
 	/**
-	 * Recherchez articles en fonction du nom du filtre
+	 * Rechercher articles en fonction du nom du filtre
 	 */
 	public function findItemByFilter($filter)
 	{
@@ -15,5 +15,19 @@ class FiltrearticleModel extends \W\Model\Model
 		 $sth->execute();
 
 		 return $sth->fetchAll();
+	}
+
+	/**
+	 * Rechercher les différents filtre par l'id_item
+	 */
+	public function findByIdItem($id)
+	{
+		$sql = 'SELECT * FROM '.$this->table.' WHERE id_item = :id_item';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':id_item', $id);
+		$sth->execute();
+
+		return $sth->fetchAll();
 	}
 }

@@ -478,10 +478,18 @@ class ItemController extends Controller
 			}
 
 		}
+
+			$findFilterItem = new FiltrearticleModel();
+
+			$findFilter = new FilterModel();
+			$filter = $findFilter->findAll();
+
 			$data = [
-				'affichage' => $afficheItem,
-				'success'	=> $success,
-				'errors'	=> $errors
+				'filter'	 => $filter,
+				'ItemFilter' => $findFilterItem,
+				'affichage'  => $afficheItem,
+				'success'	 => $success,
+				'errors'	 => $errors
 			];
 
 			if(!empty($this->getUser())){
