@@ -119,6 +119,21 @@
 		  </div>
 		</div>
 
+		<!-- Multiple Checkboxes -->
+		<div class="form-group">
+		  <label class="col-md-4 control-label" for="checkboxes">Multiple Checkboxes</label>
+		  <div class="col-md-4">
+		  <?php foreach($filter as $value): ?>
+			  <div class="checkbox">
+			    <label for="checkboxes-0">
+			      <input name="checkboxe" class="checkboxe" value="<?=$value['name'];?>" type="checkbox">
+			      <?=$value['name'];?>
+			    </label>
+			  </div>
+		  <?php endforeach; ?>
+		  </div>
+		</div>
+
 		<!-- Button -->
 		<div class="form-group">
 		  <label class="col-md-4 control-label" for="submit"></label>

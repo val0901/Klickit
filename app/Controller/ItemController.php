@@ -11,6 +11,8 @@ use \Model\OrdersModel;
 use \Model\ItemModel;
 use \Model\MessageModel;
 use \Model\GuestbookModel;
+use \Model\FilterModel;
+use \Model\FiltrearticleModel;
 use \W\Security\AuthentificationModel;
 use \W\Security\AuthorizationModel;
 use \W\Security\StringUtils;
@@ -248,7 +250,12 @@ class ItemController extends Controller
 			}
 		}
 
+		$findFilter = new FilterModel();
+
+		$filter = $findFilter->findAll();
+
 		$params = [
+			'filter'  => $filter,
 			'errors'  => $errors,
 			'success' => $success,
 		];
