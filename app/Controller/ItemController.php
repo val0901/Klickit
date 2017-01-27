@@ -243,6 +243,14 @@ class ItemController extends Controller
 
 				if($insert){
 					$success = true;
+
+					$lastItem = $itemModel->lastInsertId();
+
+					$filtre_article->insert([
+						'id_item'	=>	$lastItem['id'],
+						
+
+					]);
 				}
 				else {
 					$errors[] = 'Erreur lors de l\'ajout en base de données';
