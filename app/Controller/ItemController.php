@@ -242,15 +242,28 @@ class ItemController extends Controller
 				]);
 
 				if($insert){
-					$success = true;
-
+					$filtre_article = new FiltrearticleModel;
 					$lastItem = $itemModel->lastInsertId();
+					$checked  = '';
 
-					$filtre_article->insert([
-						'id_item'	=>	$lastItem['id'],
-						
+					foreach($post['checkboxe'] as $value){
+						$checked.= $value.', ';
+					}
+
+					$filters = substr($checked, 0, -2);
+
+					$insert_filter = $filtre_article->insert([
+						'id_item'		=>	$lastItem['id'],
+						'name_filter'	=>	$filters,
 
 					]);
+
+					if($insert_filter){
+						$success = true;
+					}
+					else {
+						$errors[] = 'Erreur lors de l\'ajout en base de données';
+					}
 				}
 				else {
 					$errors[] = 'Erreur lors de l\'ajout en base de données';
