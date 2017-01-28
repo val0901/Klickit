@@ -182,11 +182,14 @@
 	  			});
 			});
 
+			var filterSession = '<?=$_SESSION['filter'];?>';
+
 			if($('#insert_filter').text() == 'Produit créé'){
 				$.ajax({
-  					url: '<?=$this->url('ajax_addFilter'); ?>',
+  					url: '<?=$this->url('ajax_UpdateItemFilter'); ?>',
 					type: 'post',
 					cache: false,
+					data: {fil: filterSession},
 					dataType: 'json',
 					success: function(out){
 						if(out.code == 'ok'){

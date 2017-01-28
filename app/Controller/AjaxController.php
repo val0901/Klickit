@@ -465,7 +465,7 @@ class AjaxController extends Controller
 	{
 		$post = [];
 		$getInfos = new ItemModel;
-		$update = new ItemModel;
+		$insert = new FiltrearticleModel;
 		$json = [];
 
 		$lastItem = $getInfos->RealLastInsertId();
@@ -477,20 +477,26 @@ class AjaxController extends Controller
 				$post[$key] = trim(strip_tags($value));
 			}
 
-			$my_filters = substr($post['filters'], 0, -1 );
+			$my_filters = explode(', ', $post['fil']);
+			$my_filters2 = '';
 
-			$update_filter = $update->update([
-				'filter'	=>	$my_filters,
-			], $RealLastItem);
-
-				if($update_filter){
-					$json = ['code'	=>	'ok'];
-				}else{
-					$json = ['code'	=>	'no'];
-				}
+			foreach($my_filters as $value){
+				$insert_filter = $insert->insert([
+					'id_item'		=>  $RealLastItem,
+					'name_filter'	=>	$my_filters,
+				]);
+				$filters2.= $value.', ';
 			}
 
+			$my_filters2 = substr($filters1, 0, -2);
+
+			if($my_filters2 == $post['fil']){
+				$json = ['code'	=>	'ok'];
+			}else{
+				$json = ['code'	=>	'no'];
+			}
 		}
+		$this->showJson($json);
 	}
 
 	/**
@@ -511,7 +517,7 @@ class AjaxController extends Controller
 
 			$_SESSION['filter'] = $my_filters;
 
-			if($_SESSION['filter']){
+			if(!empty($_SESSION['filter'])){
 				$json = [
 					'code'	=>	'ok',
 					'msg'	=>  'Fitre(s) enregistré(s), veuillez continuer la création de l\'article',
