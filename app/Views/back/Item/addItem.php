@@ -149,7 +149,7 @@
 	<script>
 		$(document).ready(function(){
 			$('#submit').click(function(e){
-				e.preventDefault();
+				// e.preventDefault();
 
 				var filter = '';
 

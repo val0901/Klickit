@@ -13,7 +13,7 @@ use \Model\OrdersModel;
 use \Model\SlideModel;
 use \Model\ShippingModel;
 use \Model\FilterModel;
-use \Model\FiltrearticleModel
+use \Model\FiltrearticleModel;
 use \W\Security\AuthentificationModel;
 
 use \Respect\Validation\Validator as v; 
