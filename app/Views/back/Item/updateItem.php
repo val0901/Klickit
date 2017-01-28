@@ -180,6 +180,9 @@
 			  </div>
 		  <?php endforeach; ?>
 		  </div>
+		  <div class="col-md-4">
+		  	<button id="addFilter" style="color:black;" type="button">Ajouter les filtres</button>
+		  </div>
 		</div>
 
 		<!-- Button -->
