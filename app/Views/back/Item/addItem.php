@@ -8,6 +8,8 @@
 	<?php elseif(isset($errors) && !empty($errors)):?>
 		<p class="alert alert-danger"><?=implode('<br>', $errors);?></p>	
 	<?php endif;?>
+	<br>
+	<p id="message_filter" class=""></p>
 
 	<form class="form-horizontal" method="post" enctype="multipart/form-data">
 		<!-- Text input-->
@@ -173,10 +175,8 @@
 					dataType: 'json',
 					success: function(out){
 						if(out.code == 'ok'){
-			  				//window.location.href=window.location.href;
-			  				console.log('yessssss');	
-						}else{
-							console.log('nooooooo');
+							$('#message_filter').addClass('#message_filter');
+			  				$('#message_filter').html(out.msg);	
 						}
 					}
 	  			});
@@ -184,7 +184,9 @@
 
 			var filterSession = '<?=$_SESSION['filter'];?>';
 
-			if($('#insert_filter').text() == 'Produit créé'){
+			var existInsertFilter = $('#insert_filter');
+
+			if(existInsertFilter.length > 0){
 				$.ajax({
   					url: '<?=$this->url('ajax_UpdateItemFilter'); ?>',
 					type: 'post',
@@ -193,7 +195,6 @@
 					dataType: 'json',
 					success: function(out){
 						if(out.code == 'ok'){
-			  				//window.location.href=window.location.href;
 			  				console.log('yessssss');	
 						}else{
 							console.log('nooooooo');

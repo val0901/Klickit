@@ -467,6 +467,7 @@ class AjaxController extends Controller
 		$getInfos = new ItemModel;
 		$insert = new FiltrearticleModel;
 		$json = [];
+		$my_filters2 = '';
 
 		$lastItem = $getInfos->RealLastInsertId();
 
@@ -478,19 +479,16 @@ class AjaxController extends Controller
 			}
 
 			$my_filters = explode(', ', $post['fil']);
-			$my_filters2 = '';
-
+			
 			foreach($my_filters as $value){
 				$insert_filter = $insert->insert([
-					'id_item'		=>  $RealLastItem,
-					'name_filter'	=>	$my_filters,
+					'id_item'		=>  implode('', $RealLastItem),
+					'name_filter'	=>	$value,
 				]);
-				$filters2.= $value.', ';
+				$my_filters2.= $value.', ';
 			}
 
-			$my_filters2 = substr($filters1, 0, -2);
-
-			if($my_filters2 == $post['fil']){
+			if(!empty($my_filters2)){
 				$json = ['code'	=>	'ok'];
 			}else{
 				$json = ['code'	=>	'no'];
