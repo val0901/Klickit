@@ -5,7 +5,7 @@
 	<!--order progress steps bar-->
 	<div class="row">
 		<ul class="breadcrumb">
-    		<li class="completed"><a id="breadcrumb" href="<?=$this->url('front_orderList');?>">Récapitulatif</a></li>
+    		<li class="completed"><a id="breadcrumb" class="js_orderList" href="">Récapitulatif</a></li>
 			<!-- <li class="completed"><a id="breadcrumb" href="javascript:void(0);">Connexion</a></li> -->
 			<li class="completed"><a id="breadcrumb" href="javascript:void(0);">Adresse</a></li>
 			<li><a id="breadcrumb" href="javascript:void(0);">Paiement</a></li>
@@ -77,6 +77,16 @@
 					}
 				}
 			});
+		});
+	});
+</script>
+
+<script>
+	$(document).ready(function(){
+		$('.js_orderList').click(function(e){
+			e.preventDefault();
+
+			$('body').load('<?=$this->url('front_orderList');?>');
 		});
 	});
 </script>

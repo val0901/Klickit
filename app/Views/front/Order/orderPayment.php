@@ -5,10 +5,10 @@
 	<!--order progress steps bar-->
 	<div class="row">
 		<ul class="breadcrumb">
-    		<li class="completed"><a id="breadcrumb" href="<?=$this->url('front_orderList');?>">Récapitulatif</a></li>
+    		<li class="completed"><a id="breadcrumb" class="js_orderList" href="">Récapitulatif</a></li>
 			<!-- <li class="completed"><a id="breadcrumb" href="javascript:void(0);">Connexion</a></li> -->
-			<li class="completed"><a id="breadcrumb" href="<?=$this->url('front_orderAddress');?>">Adresse</a></li>
-			<li><a id="breadcrumb" href="javascript:void(0);">Paiement</a></li>
+			<li class="completed"><a id="breadcrumb" class="js_orderAddress" href="">Adresse</a></li>
+			<li class="completed"><a id="breadcrumb" href="javascript:void(0);">Paiement</a></li>
 		</ul>
 	</div>
 	<!--End order progress steps bar-->
@@ -129,6 +129,22 @@
 					}
 				}
 			});
+		});
+	});
+</script>
+
+<script>
+	$(document).ready(function(){
+		$('.js_orderList').click(function(e){
+			e.preventDefault();
+
+			$('body').load('<?=$this->url('front_orderList');?>');
+		});
+
+		$('.js_orderAddress').click(function(e){
+			e.preventDefault();
+
+			$('body').load('<?=$this->url('front_orderAddress');?>');
 		});
 	});
 </script>
