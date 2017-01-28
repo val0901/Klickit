@@ -147,6 +147,37 @@
 
 <?php $this->start('js') ?>
 	<script>
-		
+		$(document).ready(function(){
+			$('#submit').click(function(e){
+				e.preventDefault();
+
+				var filter = '';
+
+				var idCheck = new Array();
+				$("input:checked").each(function (i) {
+					idCheck[i] = $(this).val();
+				});
+
+				for (let i of idCheck) {
+				    filter += i+', ';
+				}
+
+				$.ajax({
+  					url: '<?=$this->url('ajax_addFilter'); ?>',
+					type: 'post',
+					cache: false,
+					data: {filters: filter},
+					dataType: 'json',
+					success: function(out){
+						if(out.code == 'ok'){
+			  				//window.location.href=window.location.href;
+			  				console.log('yessssss');	
+						}else{
+							console.log('nooooooo');
+						}
+					}
+  				});
+			});
+		});
 	</script>
 <?php $this->stop('js') ?>

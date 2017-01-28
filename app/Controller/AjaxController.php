@@ -13,6 +13,7 @@ use \Model\OrdersModel;
 use \Model\SlideModel;
 use \Model\ShippingModel;
 use \Model\FilterModel;
+use \Model\FiltrearticleModel
 use \W\Security\AuthentificationModel;
 
 use \Respect\Validation\Validator as v; 
@@ -453,6 +454,44 @@ class AjaxController extends Controller
 			}else{
 				$json = ['code' => 'error'];
 			}
+		}
+		$this->showJson($json);
+	}
+
+	/**
+	* Ajout des filtres lors de l'ajout d'un article en bdd
+	*/
+
+	public function addFilter()
+	{	
+		$post = [];
+		$getInfos = new ItemModel;
+		$insert = new FiltrearticleModel;
+		$json = [];
+
+		if(!empty($_POST)){
+			foreach($_POST as $key => $value){
+				$post[$key] = trim(strip_tags($value));
+			}
+
+			$my_filters = substr($post['filters'], 0, -1 );
+			$filters = explode(', ', $my_filters);
+
+			$lastItem = $getInfos->lastInsertId() + 1;
+
+			foreach($filters as $value){
+				$add_filter = $insert->insert([
+					'id_item'		=> $lastItem,
+					'name_filter'	=>	$value,
+				]);
+
+				if($add_filter){
+					$json = ['code'	=>	'ok'];
+				}else{
+					$json = ['code'	=>	'no'];
+				}
+			}
+
 		}
 		$this->showJson($json);
 	}
