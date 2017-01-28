@@ -185,4 +185,32 @@ class ItemModel extends \W\Model\Model
 
 		return $sth->fetchAll();
 	}
+
+	/**
+	 * Récupère tout les ID
+	 */
+	public function RealLastInsertId()
+	{
+		$sql = 'SELECT id FROM '.$this->table.' ORDER BY id ASC';
+
+		$sth = $this->dbh->prepare($sql);
+
+		$sth->execute();
+
+		return $sth->fetchAll();
+	}
+
+	/**
+	 * Récupère la ligne filter en fonction de l'id
+	 */
+	public function findFilterItem($id)
+	{
+		$sql = 'SELECT filter FROM '.$this->table.' WHERE id = :id';
+
+		$sth = $this->dbh->prepare($sql);
+
+		$sth->execute();
+
+		return $sth->fetch();
+	}
 }

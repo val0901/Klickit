@@ -4,7 +4,7 @@
 	<a href="<?=$this->url('listItem');?>"><button class="btn btn-info">Retour à la liste des articles</button></a>
 	<br>
 	<?php if($success): ?>
-		<p class="alert alert-success">Produit créé</p>
+		<p id="insert_filter" class="alert alert-success">Produit créé</p>
 	<?php elseif(isset($errors) && !empty($errors)):?>
 		<p class="alert alert-danger"><?=implode('<br>', $errors);?></p>	
 	<?php endif;?>
@@ -132,6 +132,9 @@
 			  </div>
 		  <?php endforeach; ?>
 		  </div>
+		  <div class="col-md-4">
+		  	<button id="addFilter" style="color:black;" type="button">Ajouter les filtres</button>
+		  </div>
 		</div>
 
 		<!-- Button -->
@@ -148,8 +151,8 @@
 <?php $this->start('js') ?>
 	<script>
 		$(document).ready(function(){
-			$('#submit').click(function(e){
-				// e.preventDefault();
+			$('#addFilter').click(function(e){
+				e.preventDefault();
 
 				var filter = '';
 
@@ -176,8 +179,25 @@
 							console.log('nooooooo');
 						}
 					}
-  				});
+	  			});
 			});
+
+			if($('#insert_filter').text() == 'Produit créé'){
+				$.ajax({
+  					url: '<?=$this->url('ajax_addFilter'); ?>',
+					type: 'post',
+					cache: false,
+					dataType: 'json',
+					success: function(out){
+						if(out.code == 'ok'){
+			  				//window.location.href=window.location.href;
+			  				console.log('yessssss');	
+						}else{
+							console.log('nooooooo');
+						}
+					}
+  				});
+			}
 		});
 	</script>
 <?php $this->stop('js') ?>

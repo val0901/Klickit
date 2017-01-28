@@ -459,14 +459,47 @@ class AjaxController extends Controller
 	}
 
 	/**
+	 * Update table item pour stocker filtre
+	 */
+	public function UpdateItemFilter()
+	{
+		$post = [];
+		$getInfos = new ItemModel;
+		$update = new ItemModel;
+		$json = [];
+
+		$lastItem = $getInfos->RealLastInsertId();
+
+		$RealLastItem = end($lastItem);
+
+		if(!empty($_POST)){
+			foreach($_POST as $key => $value){
+				$post[$key] = trim(strip_tags($value));
+			}
+
+			$my_filters = substr($post['filters'], 0, -1 );
+
+			$update_filter = $update->update([
+				'filter'	=>	$my_filters,
+			], $RealLastItem);
+
+				if($update_filter){
+					$json = ['code'	=>	'ok'];
+				}else{
+					$json = ['code'	=>	'no'];
+				}
+			}
+
+		}
+	}
+
+	/**
 	* Ajout des filtres lors de l'ajout d'un article en bdd
 	*/
 
 	public function addFilter()
 	{	
 		$post = [];
-		$getInfos = new ItemModel;
-		$insert = new FiltrearticleModel;
 		$json = [];
 
 		if(!empty($_POST)){
@@ -475,23 +508,17 @@ class AjaxController extends Controller
 			}
 
 			$my_filters = substr($post['filters'], 0, -1 );
-			$filters = explode(', ', $my_filters);
 
-			$lastItem = $getInfos->lastInsertId() + 1;
+			$_SESSION['filter'] = $my_filters;
 
-			foreach($filters as $value){
-				$add_filter = $insert->insert([
-					'id_item'		=> $lastItem,
-					'name_filter'	=>	$value,
-				]);
-
-				if($add_filter){
-					$json = ['code'	=>	'ok'];
-				}else{
-					$json = ['code'	=>	'no'];
-				}
+			if($_SESSION['filter']){
+				$json = [
+					'code'	=>	'ok',
+					'msg'	=>  'Fitre(s) enregistré(s), veuillez continuer la création de l\'article',
+				];
+			}else{
+				$json = ['code'	=>	'no'];
 			}
-
 		}
 		$this->showJson($json);
 	}
