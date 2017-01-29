@@ -537,41 +537,18 @@ $(document).ready(function(){
 	$('#logout').click(function(e){
 		e.preventDefault();
 		var logout = $(this).data('id');
-	$.confirm({
-
-		title: 'Déconnexion',
-
-		content: "Êtes-vous sûr de vouloir vous déconnecter ?",
-
-		theme: 'supervan',
-
-		buttons: {
-			ok: {
-				text: 'Se déconnecter',
-				btnClass: 'btn-danger',
-				keys: ['enter'],
-				action: function(){
-	  				$.ajax({
-	  					url: '<?=$this->url('ajax_Flogout');?>',
-						type: 'post',
-						cache: false,
-						data: {id_logout: logout},
-						dataType: 'json',
-						success: function(out){
-							if(out.code == 'ok'){
-				  				window.location.reload(true);	
-							}
-						}
-	  				});
-	  				
-  				}
-				},
-				cancel: function(button) {
-			   
+		$.ajax({
+			url: '<?=$this->url('ajax_Flogout');?>',
+			type: 'post',
+			cache: false,
+			data: {id_logout: logout},
+			dataType: 'json',
+			success: function(out){
+				if(out.code == 'ok'){
+	  				window.location.reload(true);	
+				}
 			}
-		}
 		});
-
 	});
 });
 
