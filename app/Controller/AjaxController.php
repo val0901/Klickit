@@ -459,7 +459,7 @@ class AjaxController extends Controller
 	}
 
 	/**
-	 * Update table item pour stocker filtre
+	 * Insert dans la table FiltrearticleModel
 	 */
 	public function UpdateItemFilter()
 	{
@@ -498,9 +498,8 @@ class AjaxController extends Controller
 	}
 
 	/**
-	* Ajout des filtres lors de l'ajout d'un article en bdd
+	* Ajout des filtres sur la SESSION
 	*/
-
 	public function addFilter()
 	{	
 		$post = [];
@@ -522,6 +521,41 @@ class AjaxController extends Controller
 				];
 			}else{
 				$json = ['code'	=>	'no'];
+			}
+		}
+		$this->showJson($json);
+	}
+
+	/**
+	 * Mise à jour des filtres d'un article
+	 */
+	public function updateFilter()
+	{
+		$post = [];
+		$json = [];
+		$deleteFilter = new FiltrearticleModel();
+		$insert = new FiltrearticleModel();
+		$my_filters2 = '';
+
+		if(!empty($_POST)){
+			$post = array_map('trim', array_map('strip_tags', $_POST));
+
+			$my_filters = explode(', ', substr($post['filters'], 0, -1));
+
+			if($deleteFilter->deleteByItem($post['item'])){
+				foreach($my_filters as $value){
+					$insert->insert([
+						'id_item'		=>  $post['item'],
+						'name_filter'	=>	$value,
+					]);
+					$my_filters2.= $value.', ';
+				}
+
+				if(!empty($my_filters2)){
+					$json = ['code'	=>	'ok'];
+				}else{
+					$json = ['code'	=>	'no'];
+				}
 			}
 		}
 		$this->showJson($json);

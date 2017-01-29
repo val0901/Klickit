@@ -181,7 +181,7 @@
 		  <?php endforeach; ?>
 		  </div>
 		  <div class="col-md-4">
-		  	<button id="addFilter" style="color:black;" type="button">Ajouter les filtres</button>
+		  	<button id="updateFilter" data-id="<?=$affichage['id'];?>" style="color:black;" type="button">Modifier les filtres</button>
 		  </div>
 		</div>
 
@@ -197,10 +197,36 @@
 
 <?php $this->start('js') ?>
 	<script>
-		var affichage = document.getElementById('view');
+		$(document).ready(function(){
+			$('#updateFilter').click(function(e){
+				e.preventDefault();
 
-		if (document.getElementById('reload')) {
-			affichage.location.href=affichage.location.href;
-		}
+				var idItem = $(this).data('id');
+
+				var filter = '';
+
+				var idCheck = new Array();
+				$("input:checked").each(function (i) {
+					idCheck[i] = $(this).val();
+				});
+
+				for (let i of idCheck) {
+				    filter += i+', ';
+				}
+
+				$.ajax({
+  					url: '<?=$this->url('ajax_updateFilter'); ?>',
+					type: 'post',
+					cache: false,
+					data: {filters: filter, item: idItem},
+					dataType: 'json',
+					success: function(out){
+						if(out.code == 'ok'){
+							$('body').load('<?=$this->url('updateItem', ['id' => $affichage['id']]);?>');
+						}
+					}
+	  			});
+			});
+		});
 	</script>
 <?php $this->stop('js') ?>

@@ -30,4 +30,17 @@ class FiltrearticleModel extends \W\Model\Model
 
 		return $sth->fetchAll();
 	}
+
+	/**
+	 * Suppression par l'id_item
+	 */
+	public function deleteByItem($id)
+	{
+		$sql = 'DELETE FROM '.$this->table.' WHERE id_item = :id_item';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':id_item', $id);
+
+		return $sth->execute();
+	}
 }

@@ -29,6 +29,7 @@
 		['GET|POST', '/ajax/searchOrder', 'Ajax#searchOrder', 'ajax_searchOrder'],
 		['GET|POST', '/ajax/deleteFilter', 'Ajax#deleteFilter', 'ajax_deleteFilter'],
 		['GET|POST', '/ajax/addFilter', 'Ajax#addFilter', 'ajax_addFilter'],
+		['GET|POST', '/ajax/updateFilter', 'Ajax#updateFilter', 'ajax_updateFilter'],
 		['GET|POST', '/ajax/UpdateItemFilter', 'Ajax#UpdateItemFilter', 'ajax_UpdateItemFilter'],
 
 		//Pages liées à UserController
