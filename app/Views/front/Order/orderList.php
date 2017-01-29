@@ -104,6 +104,7 @@
                                 <p>TOTAL COMMANDE :</p>
                             </li>
                         </ul>
+                        <button type="button" class="resetCountry">Changer de pays</button>
                     <?php endif; ?>
                 </div>
                     <!-- *************************************************************************************************** -->
@@ -193,6 +194,7 @@
                                 <p>TOTAL COMMANDE :</p>
                             </li>
                         </ul>
+                        <button type="button" class="resetCountry">Changer de pays</button>
                 <?php endif; ?>
         		</div>
             <?php endif; ?>
@@ -385,8 +387,29 @@
                     success: function(up){
                         if(up.code == 'ok'){
                            $('body').load('<?=$this->url('front_orderList');?>');
-                        }else if(up.code == 'no'){
-                            console.log('nooooooooo');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            $('.resetCountry').click(function(e){
+                e.preventDefault();
+
+                var idUser = '<?=$_SESSION['user']['id'];?>';
+
+                $.ajax({
+                    url: '<?=$this->url('ajax_resetCountryOrder');?>',
+                    type: 'post',
+                    cache: false,
+                    data: {user: idUser},
+                    dataType: 'json',
+                    success: function(count){
+                        if(count.code == 'ok'){
+                            $('body').load('<?=$this->url('front_orderList');?>');
                         }
                     }
                 });

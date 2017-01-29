@@ -639,4 +639,22 @@ class AjaxFrontController extends Controller
 		}
 		$this->showJson($json);
 	}
+
+	/**
+	 * Pour reset le pays
+	 */
+	public function resetCountryOrder()
+	{
+		$json = [];
+		$reset = new BasketModel();
+
+		if(!empty($_POST)){
+			if($reset->resetCountry($_POST['user'])){
+				$json = [
+					'code' => 'ok'
+				];
+			}
+		}
+		$this->showJson($json);
+	}
 }

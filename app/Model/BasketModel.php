@@ -167,4 +167,21 @@ class BasketModel extends \W\Model\Model
 
 		return $sth->execute();
 	}
+
+	/**
+	 * Update des pays
+	 */
+	public function resetCountry($id)
+	{
+		$sql = 'UPDATE '.$this->table.' SET country = "" WHERE id_member = :id_member';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue('id_member', $id);
+
+		if($sth->execute()){
+			return true;
+		}
+
+		return false;
+	}
 }
