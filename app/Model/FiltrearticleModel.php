@@ -55,7 +55,7 @@ class FiltrearticleModel extends \W\Model\Model
 			$sql = ' WHERE name_filter LIKE :search';
 		}
 
-		$query = 'SELECT * FROM '.$this->table.$sql;
+		$query = 'SELECT item.*, '.$this->table.'.* FROM '.$this->table.' LEFT JOIN item ON '.$this->table.'.id_item = item.id'.$sql;
 
 		$sth = $this->dbh->prepare($query);
 
@@ -67,4 +67,5 @@ class FiltrearticleModel extends \W\Model\Model
 			return $sth->fetchAll();
 		}
 	}
+
 }
