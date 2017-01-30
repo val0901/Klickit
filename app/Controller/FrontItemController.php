@@ -505,6 +505,27 @@ class FrontItemController extends MasterController
 	 */
 	public function searchItems()
 	{	
-		$this->showStuff('front/Items/search');
+		$findItem = new ItemModel();
+		$searchByItemTable = new ItemModel();
+		$searchByFilter = new FiltrearticleModel();
+		$data = [
+			'findItem' => $findItem,
+		];
+
+		if($searchByItemTable->globalSearch($_SESSION['general_search'])){
+			$data['items']  = $searchByItemTable->globalSearch($_SESSION['general_search']);
+			$data['countItem']	= count($searchByItemTable->globalSearch($_SESSION['general_search']));
+		}
+		else{
+			$data['items'] = $searchByFilter->globalSearchByFilter($_SESSION['general_search']);
+			$data['countItem']	= count($searchByItemTable->globalSearch($_SESSION['general_search']));
+		}
+
+		if(!empty($_SESSION['general_search'])){
+			$this->showStuff('front/Items/search', $data);
+		}
+		else {
+			$this->redirectToRoute('front_index');
+		}
 	}
 }

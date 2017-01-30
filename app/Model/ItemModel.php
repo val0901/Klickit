@@ -225,7 +225,7 @@ class ItemModel extends \W\Model\Model
 			$sql = ' WHERE name LIKE :search OR description LIKE :search OR statut LIKE :search OR category LIKE :search OR sub_category LIKE :search';
 		}
 
-		$query = 'SELECT * FROM '.$this->table.$sql;
+		$query = 'SELECT id FROM '.$this->table.$sql;
 
 		$sth = $this->dbh->prepare($query);
 
