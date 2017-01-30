@@ -55,7 +55,7 @@ class FiltrearticleModel extends \W\Model\Model
 			$sql = ' WHERE name_filter LIKE :search';
 		}
 
-		$query = 'SELECT item.*, '.$this->table.'.* FROM '.$this->table.' LEFT JOIN item ON '.$this->table.'.id_item = item.id'.$sql;
+		$query = 'SELECT id_item FROM '.$this->table.$sql;
 
 		$sth = $this->dbh->prepare($query);
 

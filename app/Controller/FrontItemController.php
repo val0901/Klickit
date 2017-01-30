@@ -508,18 +508,50 @@ class FrontItemController extends MasterController
 		$findItem = new ItemModel();
 		$searchByItemTable = new ItemModel();
 		$searchByFilter = new FiltrearticleModel();
-		$data = [
-			'findItem' => $findItem,
-		];
+
+		$idItem = '';
+		$countItem = null;
 
 		if($searchByItemTable->globalSearch($_SESSION['general_search'])){
-			$data['items']  = $searchByItemTable->globalSearch($_SESSION['general_search']);
-			$data['countItem']	= count($searchByItemTable->globalSearch($_SESSION['general_search']));
+			foreach ($searchByItemTable->globalSearch($_SESSION['general_search']) as $valueByitem) {
+				foreach ($valueByitem as $itemID) {
+					$idItem.= $itemID.', ';
+				}
+			}
+
+			$countItem = count($searchByItemTable->globalSearch($_SESSION['general_search']));
 		}
 		else{
-			$data['items'] = $searchByFilter->globalSearchByFilter($_SESSION['general_search']);
-			$data['countItem']	= count($searchByItemTable->globalSearch($_SESSION['general_search']));
+			foreach($searchByFilter->globalSearchByFilter($_SESSION['general_search']) as $valueByFilter){
+				foreach ($valueByFilter as $item_id){
+					$idItem.= $item_id.', ';
+				}
+			}
+			$countItem = count($searchByFilter->globalSearchByFilter($_SESSION['general_search']));
 		}
+
+		$favorite = new FavoriteModel();
+		$favoriteList = '';
+		if(!empty($this->getUser())){
+			$userFavorite = $favorite->findFavorisItem($_SESSION['user']['id']);
+
+			$myFavorite = '';
+
+			foreach ($userFavorite as $favoris) {
+				foreach ($favoris as $value) {
+					$myFavorite.= $value.', ';
+				}
+			}
+
+			$favoriteList = substr($myFavorite, 0, -2);
+		}
+
+		$data = [
+			'findItem'  => $findItem,
+			'items'     => explode(', ', substr($idItem, 0, -2)),
+			'countItem' => $countItem,
+			'favorite'  => explode(', ', $favoriteList),
+		];
 
 		if(!empty($_SESSION['general_search'])){
 			$this->showStuff('front/Items/search', $data);
