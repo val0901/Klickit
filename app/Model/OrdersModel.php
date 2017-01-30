@@ -202,7 +202,6 @@ class OrdersModel extends \W\Model\Model
 	/**
 	* Affichage d'une seul commande pour l'utilisateur
 	*/
-
 	public function findOrderByID($id_member, $id_order)
 	{
 		$sql = 'SELECT * FROM '.$this->table.' WHERE idMember = :id_member AND id = :id_order';
@@ -213,5 +212,23 @@ class OrdersModel extends \W\Model\Model
 		$sth->execute();
 
 		return $sth->fetch();
+	}
+
+	/**
+	 * Mise à jour du statut de la commande
+	 */
+	public function updateStatutOrder($id, $statut)
+	{
+		$sql = 'UPDATE '.$this->table.' SET statut = :statut WHERE id = :id';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':statut', $statut);
+		$sth->bindValue(':id', $id);
+
+		if($sth->execute()){
+			return true;
+		}
+
+		return false;
 	}
 }

@@ -560,4 +560,25 @@ class AjaxController extends Controller
 		}
 		$this->showJson($json);
 	}
+
+	/**
+	 * Mise à jour du statut d'une commande
+	 */
+	public function orderUpdateStatut()
+	{
+		$updateOrder = new OrdersModel();
+		$json = [];
+		$post = [];
+
+		if(!empty($_POST)){
+			$post = array_map('trim', array_map('strip_tags', $_POST));
+
+			if($updateOrder->updateStatutOrder($post['id'], $post['statut'])){
+				$json = [
+					'code' => 'ok',
+				];
+			}
+		}
+		$this->showJson($json);
+	}
 }

@@ -59,13 +59,15 @@
 						
 						<td><?= date('d/m/Y', strtotime($order['date_creation']));?></td>
 						<td>
-						<?php if ($order['statut'] == 'enPreparation') :
-							 		echo 'En préparation';
-							  elseif ($order['statut'] == 'commande') :
-							  		echo 'Commandé';
-							  elseif ($order['statut'] == 'expedie') :
-							  		echo 'Expédiée';
-							 endif; ?>
+							<?php   if ($order['statut'] == 'enPreparation') : ?>
+								 		<p>En préparation</p>
+								 		<button type="button" data-id="<?=$order['id']?>" class="order_sent" style="color:black;">Commande expédiée</button>
+							<?php	elseif ($order['statut'] == 'commande') : ?>
+								  		<p>Commandé</p>
+								  		<button type="button" data-id="<?=$order['id']?>" class="order_prepare" style="color:black;">Commande en préparation</button>
+							<?php	elseif ($order['statut'] == 'expedie') : ?>
+								  		<p>Expédiée</p>
+							<?php   endif; ?>
 						</td>						
 						<td>
 							<div> <a href="<?=$this->url('viewOrders', ['id'=>$order['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></i></a></div>
@@ -93,6 +95,52 @@
 
 <?php $this->start('js')?>
 	<script>
+		$(document).ready(function(){
+			// Code pour passer le statut d'une commande de commandé à En préparation
+			$('.order_prepare').click(function(e){
+				e.preventDefault();
+
+				var id_statut = $(this).data('id');
+				var statut_proccess = 'enPreparation';
+
+				$.ajax({
+					url: '<?=$this->url('ajax_orderUpdateStatut');?>',
+					type: 'post',
+					cache: false,
+					data: {id: id_statut, statut: statut_proccess},
+					dataType: 'json',
+					success: function(order){
+						if(order.code == 'ok'){
+							 $('body').load('<?=$this->url('listOrders');?>');
+						}
+					}
+				});
+			});
+
+			// Code pour passer le statut d'une commande de En préparation à Expédiée
+			$('.order_sent').click(function(e){
+				e.preventDefault();
+
+				var id_statut2 = $(this).data('id');
+				var statut_proccess2 = 'expedie';
+
+				$.ajax({
+					url: '<?=$this->url('ajax_orderUpdateStatut');?>',
+					type: 'post',
+					cache: false,
+					data: {id: id_statut2, statut: statut_proccess2},
+					dataType: 'json',
+					success: function(order){
+						if(order.code == 'ok'){
+							 $('body').load('<?=$this->url('listOrders');?>');
+						}
+					}
+				});
+			});
+		});
+	</script>
+
+	<script>
 
 		$(document).ready(function(){
 
@@ -111,8 +159,6 @@
 					success: function(out){
 						if(out.code == 'ok'){
 							window.location.href=window.location.href;	
-						}else if(out.code =='no'){
-
 						}
 					}
 				});
