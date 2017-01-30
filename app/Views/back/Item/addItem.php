@@ -1,6 +1,7 @@
 <?php $this->layout('layoutback', ['title' => 'Ajouter un article ']) ?>
 
 <?php $this->start('main_content') ?>
+	<?php $_SESSION['filter'] = ''; ?>
 	<a href="<?=$this->url('listItem');?>"><button class="btn btn-info">Retour à la liste des articles</button></a>
 	<br>
 	<?php if($success): ?>
