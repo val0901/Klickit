@@ -50,3 +50,26 @@
 		<?php endforeach; ?>
 	</div>
 <?php $this->stop('main_content') ?>
+
+<script>
+	$(document).ready(function(){
+		$('.favorite').click(function(e){
+			e.preventDefault();
+
+			var idFavorite = $(this).data('id');
+
+			$.ajax({
+				url: '<?=$this->url('ajax_favorite');?>',
+				type: 'post',
+				cache: false,
+				data: {id_item: idFavorite},
+				dataType: 'json',
+				success: function(add){
+					if(add.msg == 'ok'){
+						
+					}
+				}
+			});
+		});
+	});
+</script>
