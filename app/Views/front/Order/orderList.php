@@ -43,12 +43,12 @@
                                 }
                             }
                         ?>
-                        <?php foreach($w_items as $item) :?> '
-                                                    <?php $content.= $item['id'].', '; ?> 
-                                                    <tr> 
-                                                        <td scope="row"><a href="<?=$this->url('viewArt', ['id' => $item['id']])?>"><img class="img-responsive" src="<?=$this->assetUrl('art/'.$item['picture1']);?>" style="width: 15vw;margin:0 auto;"></a></td> 
-                                                        <td>
-                                                            <li class="ordertable_title"><a href="<?=$this->url('viewArt', ['id' => $item['id']])?>"><?=$item['name']?></a><li>
+                        <?php foreach($w_items as $item) :?> 
+                            <?php $content.= $item['id'].', '; ?> 
+                            <tr> 
+                                <td scope="row"><a href="<?=$this->url('viewArt', ['id' => $item['id']])?>"><img class="img-responsive" src="<?=$this->assetUrl('art/'.$item['picture1']);?>" style="width: 15vw;margin:0 auto;"></a></td> 
+                                <td>
+                                    <li class="ordertable_title"><a href="<?=$this->url('viewArt', ['id' => $item['id']])?>"><?=$item['name']?></a><li>
                                     <li class="ordertable_text">Référence: <?=$item['id']?><li>
                                 </td>
 
