@@ -43,4 +43,28 @@ class FiltrearticleModel extends \W\Model\Model
 
 		return $sth->execute();
 	}
+
+	/**
+	 * Recherche globale par filtre
+	 */
+	public function globalSearchByFilter($search)
+	{
+		$sql = '';
+
+		if(isset($search) && !empty($search)) {
+			$sql = ' WHERE name_filter LIKE :search';
+		}
+
+		$query = 'SELECT * FROM '.$this->table.$sql;
+
+		$sth = $this->dbh->prepare($query);
+
+		if(!empty($sql)) {
+			$sth->bindValue(':search', '%'.$search.'%');
+		}
+
+		if($sth->execute()) {
+			return $sth->fetchAll();
+		}
+	}
 }

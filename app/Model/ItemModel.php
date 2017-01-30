@@ -213,4 +213,28 @@ class ItemModel extends \W\Model\Model
 
 		return $sth->fetch();
 	}
+
+	/**
+	 * Recherche globale d'article
+	 */
+	public function globalSearch($search)
+	{
+		$sql = '';
+
+		if(isset($search) && !empty($search)) {
+			$sql = ' WHERE name LIKE :search OR description LIKE :search OR statut LIKE :search OR category LIKE :search OR sub_category LIKE :search';
+		}
+
+		$query = 'SELECT * FROM '.$this->table.$sql;
+
+		$sth = $this->dbh->prepare($query);
+
+		if(!empty($sql)) {
+			$sth->bindValue(':search', '%'.$search.'%');
+		}
+
+		if($sth->execute()) {
+			return $sth->fetchAll();
+		}
+	}
 }
