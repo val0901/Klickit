@@ -657,4 +657,26 @@ class AjaxFrontController extends Controller
 		}
 		$this->showJson($json);
 	}
+
+	/**
+	 * Recherche globale
+	 */
+	public function globalSearch()
+	{
+		$post = [];
+		$json = [];
+
+		if(!empty($_POST)){
+			$post = array_map('trim', array_map('strip_tags', $_POST));
+
+			$_SESSION['general_search'] = $post['search'];
+
+			if(!empty($_SESSION['general_search'])){
+				$json = [
+					'code' => 'ok',
+				];
+			}
+		}
+		$this->showJson($json);
+	}
 }

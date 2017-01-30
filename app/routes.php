@@ -101,6 +101,7 @@
 		['GET|POST', '/ajax/updateQuantitySubtraction', 'AjaxFront#updateQuantitySubtraction', 'ajax_updateQuantitySubtraction'],
 		['GET|POST', '/ajax/SearchByFilter', 'AjaxFront#SearchByFilter', 'ajax_SearchByFilter'],
 		['GET|POST', '/ajax/resetCountryOrder', 'AjaxFront#resetCountryOrder', 'ajax_resetCountryOrder'],
+		['GET|POST', '/ajax/globalSearch', 'AjaxFront#globalSearch', 'ajax_globalSearch'],
 
 		//Pages liées à FrontController
 		['GET|POST', '/home', 'Front#index', 'front_index'],

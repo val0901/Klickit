@@ -61,6 +61,13 @@
  
 </head>
 <body>
+	<?php 
+		$_SESSION['general_search'] = '';
+
+		if(isset($_POST['submit_search'])){
+			$_SESSION['general_search'] = $_POST['search'];
+		}
+	?>
 	<div class="container_general">
 		<header>
             <div class="nav_left">
@@ -281,127 +288,24 @@
 			  </a>
 			  <ul class="dropdown-menu soumenu_search">
 				  <div class="row" style="margin:0;padding:0;">
-					  <div class="col-md-3 col3_back">
-						  <div class="colmarginL colLtitle_fontsize">Résultat :</div>
-						  <p class="colLtext_fontsize"><span class="colmarginL colLtitle_fontsize">10 articles </span>correspondent à votre recherche</p>
+				    <div class="col-md-3 col3_back">
+				    </div>
+				    <div class="col-md-9 colmarginL colR_back">
+					  <div class="colmarginL ipad_padding"> 
+					    <div class="form-group">
+					   	 <form>
+							<div class="input-group searchbar_margin">
+								<input type="text" class="form-control" placeholder="Cherchez de filtres..." name="search" id="search" value="">
+								<div class="input-group-addon btn btn-primary">
+									<button type="submit" name="submit_search" id="submit_search" style="background:transparent;border:none;">
+								<i class="fa fa-search" aria-hidden="true"></i>	
+								</button>
+							  </div>
+							</div>
+						 </form>
+						</div>  
 					  </div>
-					  <div class="col-md-9 colmarginL colR_back">
-						  <div class="colmarginL ipad_padding"> <div class="form-group">
-								<div class="input-group searchbar_margin">
-									<input type="text" class="form-control" placeholder="Cherchez de filtres..." name="search" id="search" value="">
-									<div class="input-group-addon btn btn-primary">
-									<button type="submit" name="submit" id="submit" style="background:transparent;border:none;">
-									<i class="fa fa-search" aria-hidden="true"></i>	
-									</button>
-								  </div>
-								</div>
-  							</div>  
-						  </div>
-						  <!--search details-->
-						  <div class="row colmarginL">
-							  <!--search detail col1-->
-							  <div class="col-lg-4 col-md-6">
-								  <form class="form-horizontal">
-									  <div class="form-group">
-										<div class="col-sm-offset-2 col-sm-10 checkbox_height">
-											<label class="checkbox_border">
-												<input type="checkbox"> <span class="checkbox_font"> Customs Tampographiés</span>
-											</label>
-										</div>
-										<div class="col-sm-offset-2 col-sm-10 checkbox_height">
-											<label class="checkbox_border">
-												<input type="checkbox"> <span class="checkbox_font"> Customs peints</span>
-											</label>
-										</div>
-										<div class="col-sm-offset-2 col-sm-10 checkbox_height">
-											<label class="checkbox_border">
-												<input type="checkbox"> <span class="checkbox_font"> Bustes tampographiés</span>
-											</label>
-										</div>
-										<div class="col-sm-offset-2 col-sm-10 checkbox_height">
-											<label class="checkbox_border">
-												<input type="checkbox"> <span class="checkbox_font"> Pièces en résine</span>
-											</label>
-										</div>
-										<div class="col-sm-offset-2 col-sm-10 checkbox_height">
-											<label class="checkbox_border">
-												<input type="checkbox"> <span class="checkbox_font"> Stickers</span>
-											</label>
-										</div>
-									  </div>
-								  </form>
-							  </div>
-							  <!--End search detail col1-->
-							  
-							  <!--search detail col2-->
-							  	<div class="col-lg-4 col-md-6">
-								  <form class="form-horizontal">
-									  <div class="form-group">
-										<div class="col-sm-offset-2 col-sm-10 checkbox_height">
-											<label class="checkbox_border">
-												<input type="checkbox"> <span class="checkbox_font"> Customs Tampographiés</span>
-											</label>
-										</div>
-										<div class="col-sm-offset-2 col-sm-10 checkbox_height">
-											<label class="checkbox_border">
-												<input type="checkbox"> <span class="checkbox_font"> Customs peints</span>
-											</label>
-										</div>
-										<div class="col-sm-offset-2 col-sm-10 checkbox_height">
-											<label class="checkbox_border">
-												<input type="checkbox"> <span class="checkbox_font"> Bustes tampographiés</span>
-											</label>
-										</div>
-										<div class="col-sm-offset-2 col-sm-10 checkbox_height">
-											<label class="checkbox_border">
-												<input type="checkbox"> <span class="checkbox_font"> Pièces en résine</span>
-											</label>
-										</div>
-										<div class="col-sm-offset-2 col-sm-10 checkbox_height">
-											<label class="checkbox_border">
-												<input type="checkbox"> <span class="checkbox_font"> Stickers</span>
-											</label>
-										</div>
-									  </div>
-								  </form>
-							  </div>
-							  <!--End search detail col2-->
-							  
-							  <!--search detail col3-->
-							  <div class="col-lg-4 col-md-6">
-								  <form class="form-horizontal">
-									  <div class="form-group">
-										<div class="col-sm-offset-2 col-sm-10 checkbox_height">
-											<label class="checkbox_border">
-												<input type="checkbox"> <span class="checkbox_font"> Customs Tampographiés</span>
-											</label>
-										</div>
-										<div class="col-sm-offset-2 col-sm-10 checkbox_height">
-											<label class="checkbox_border">
-												<input type="checkbox"> <span class="checkbox_font"> Customs peints</span>
-											</label>
-										</div>
-										<div class="col-sm-offset-2 col-sm-10 checkbox_height">
-											<label class="checkbox_border">
-												<input type="checkbox"> <span class="checkbox_font"> Bustes tampographiés</span>
-											</label>
-										</div>
-										<div class="col-sm-offset-2 col-sm-10 checkbox_height">
-											<label class="checkbox_border">
-												<input type="checkbox"> <span class="checkbox_font"> Pièces en résine</span>
-											</label>
-										</div>
-										<div class="col-sm-offset-2 col-sm-10 checkbox_height">
-											<label class="checkbox_border">
-												<input type="checkbox"> <span class="checkbox_font"> Stickers</span>
-											</label>
-										</div>
-									  </div>
-								  </form>
-							  </div>
-							  <!--End search detail col3-->
-						  </div>
-					  </div>
+					</div>
 				  </div>
 			  </ul>
 			</li>
@@ -505,6 +409,26 @@
     <?= $this->section('js')?>
 
 	<!--Script-->
+	<script>
+		$(document).ready(function(){
+			$('#submit_search').click(function(e){
+				e.preventDefault();
+
+				$.ajax({
+					url: '<?=$this->url('ajax_globalSearch');?>',
+					type: 'post',
+					cache: false,
+					data: $('form').serialize(),
+					dataType: 'json',
+					success: function(search){
+						if(search.code == 'ok'){
+							window.location.assign('<?=$this->url('searchItems');?>');
+						}
+					}
+				});
+			});
+		});
+	</script>
 	<script>
 		//var reload = document.getElementById('view');
 
