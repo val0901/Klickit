@@ -111,7 +111,7 @@
 					dataType: 'json',
 					success: function(order){
 						if(order.code == 'ok'){
-							 $('body').load('<?=$this->url('listOrders');?>');
+							$('body').load('<?=$this->url('listOrders');?>');
 						}
 					}
 				});
@@ -132,7 +132,7 @@
 					dataType: 'json',
 					success: function(order){
 						if(order.code == 'ok'){
-							 $('body').load('<?=$this->url('listOrders');?>');
+							$('body').load('<?=$this->url('listOrders');?>');
 						}
 					}
 				});
