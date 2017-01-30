@@ -257,6 +257,14 @@
 <?php $this->start('js') ?>
     <script>
         $(document).ready(function(){
+            $('.ordercontinu_color').click(function(e){
+                window.location.assign('<?=$this->url('front_index');?>');
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function(){
             $('.fa-trash').click(function(e){
                 e.preventDefault();
 
