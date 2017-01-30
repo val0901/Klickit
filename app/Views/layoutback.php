@@ -61,6 +61,7 @@
 						          <ul class="nav navbar-nav navbar-justified
 						          ">
 							        <li><a href="<?=$this->url('back_index');?>">Accueil</a></li>
+							        <li><a href="<?=$this->url('listSales');?>">Chiffre d'affaires</a></li>
 							        <li><a href="<?=$this->url('listUser');?>">Utilisateur</a></li>
 						            <li><a href="<?=$this->url('listMessage');?>">Message</a></li>
 						            <li><a href="<?=$this->url('listEvent');?>">Evènement</a></li>

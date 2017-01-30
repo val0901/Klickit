@@ -76,6 +76,9 @@
 		['GET|POST', '/admin/addFilter', 'Filter#addFilter', 'addFilter'],
 		['GET|POST', '/admin/updateFilter/[i:id]', 'Filter#updateFilter', 'updateFilter'],
 
+		// Pages chiffre d'affaire
+		['GET|POST', '/admin/listSales', 'sales#listSales', 'listSales'],
+
 
 
 /******************** FRONT *********************/
