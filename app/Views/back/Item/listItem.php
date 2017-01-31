@@ -35,12 +35,11 @@
 			</table>
 
 			<?php $search = (isset($_GET['search']))? 'search='. $_GET['search'].'&' :'';?>
-			<div>
-				<?= ($page!=1) ? '<a href="?'. $search .'page='. ($page - 1) .'"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>':''; ?>
-				Page <?= $page; ?> / <?= ceil($nb/$max);
-				 ?>
-				<?= $page!= ceil($nb/$max) ? '<a href="?'. $search .'page='. ($page + 1) .'"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>':''; ?>
-			</div>	
+				<div id="pagination">
+					<?= ($page!=1) ? '<a href="?'. $search .'page='. ($page - 1) .'"><i class="fa fa-arrow-left fa-fw"></i></a>':''; ?>
+					Page <?= $page; ?> <?= ($nb>=1) ? '/ '.ceil($nb/$max) :''; ?>
+					<?= ($nb < 1 ) ? '' : ($page!= ceil($nb/$max) ? '<a href="?'. $search .'page='. ($page + 1) .'"><i class="fa fa-arrow-right fa-fw" aria-hidden="true"></i></a>':''); ?>
+				</div>	
 
 			<br><br>
 
@@ -73,12 +72,12 @@
 					<?php endforeach;?>
 				</tbody>
 			</table>
-			<?php $search = (isset($_GET['search']))? 'search='. $_GET['search'].'&' :'';?>
-			<div>
-				<?= ($page1!=1) ? '<a href="?'. $search .'page='. ($page1 - 1) .'"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>':''; ?>
-				Page <?= $page1; ?> / <?= ceil($nb1/$max); ?>
-				<?= $page1!= ceil($nb1/$max) ? '<a href="?'. $search .'page='. ($page1 + 1) .'"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>':''; ?>
-			</div>	
+			
+				<div id="pagination">
+					<?= ($page!=1) ? '<a href="?'. $search .'page='. ($page - 1) .'"><i class="fa fa-arrow-left fa-fw"></i></a>':''; ?>
+					Page <?= $page; ?> <?= ($nb1>=1) ? '/ '.ceil($nb1/$max) :''; ?>
+					<?= ($nb1 < 1 ) ? '' : ($page!= ceil($nb1/$max) ? '<a href="?'. $search .'page='. ($page + 1) .'"><i class="fa fa-arrow-right fa-fw" aria-hidden="true"></i></a>':''); ?>
+				</div>	
 
 			<br><br>
 
@@ -111,12 +110,12 @@
 					<?php endforeach;?>
 				</tbody>
 			</table>
-			<?php $search = (isset($_GET['search']))? 'search='. $_GET['search'].'&' :'';?>
-			<div>
-				<?= ($page!=1) ? '<a href="?'. $search .'page='. ($page - 1) .'"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>':''; ?>
-				Page <?= $page; ?> / <?= ceil($nb2/$max); ?>
-				<?= $page!= ceil($nb2/$max) ? '<a href="?'. $search .'page='. ($page + 1) .'"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>':''; ?>
-			</div>	
+
+			<div id="pagination">
+				<?= ($page!=1) ? '<a href="?'. $search .'page='. ($page - 1) .'"><i class="fa fa-arrow-left fa-fw"></i></a>':''; ?>
+				Page <?= $page; ?> <?= ($nb2>=1) ? '/ '.ceil($nb2/$max) :''; ?>
+				<?= ($nb2 < 1 ) ? '' : ($page!= ceil($nb2/$max) ? '<a href="?'. $search .'page='. ($page + 1) .'"><i class="fa fa-arrow-right fa-fw" aria-hidden="true"></i></a>':''); ?>
+			</div>
 
 			<br><br>
 
@@ -149,13 +148,15 @@
 					<?php endforeach;?>
 				</tbody>
 			</table>
+
+			<div id="pagination">
+				<?= ($page!=1) ? '<a href="?'. $search .'page='. ($page - 1) .'"><i class="fa fa-arrow-left fa-fw"></i></a>':''; ?>
+				Page <?= $page; ?> <?= ($nb3>=1) ? '/ '.ceil($nb3/$max) :''; ?>
+				<?= ($nb3 < 1 ) ? '' : ($page!= ceil($nb3/$max) ? '<a href="?'. $search .'page='. ($page + 1) .'"><i class="fa fa-arrow-right fa-fw" aria-hidden="true"></i></a>':''); ?>
+			</div>
+
 		</form>
-		<?php $search = (isset($_GET['search']))? 'search='. $_GET['search'].'&' :'';?>
-		<div>
-			<?= ($page!=1) ? '<a href="?'. $search .'page='. ($page - 1) .'"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>':''; ?>
-			Page <?= $page; ?> / <?= ceil($nb3/$max); ?>
-			<?= $page!= ceil($nb3/$max) ? '<a href="?'. $search .'page='. ($page + 1) .'"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>':''; ?>
-		</div>	
+			
 <?php $this->stop('main_content') ?>
 
 <?php $this->start('js')?>
