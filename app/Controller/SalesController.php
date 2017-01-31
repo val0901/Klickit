@@ -14,7 +14,38 @@ class SalesController extends Controller
 	 */
 	public function listSales()
 	{
-		$this->show('back/Sales/listSales');
+		/*PAGINATION*/
+		$nbpage= new SalesModel();
+			$nb=$nbpage->countResults();
+
+		$page = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
+		$max = 15;
+
+		$sales = new SalesModel();
+		$list_sales = $sales->findAllSales($page, $max);
+
+		$data = [			
+			'max' => $max,
+			'page' => $page,
+			'nb' => $nb,
+		];
+
+		//Sécurisation de la page		
+		if(!empty($this->getUser())){
+
+			$verification = new AuthorizationModel();
+
+			if ($verification->isGranted('Utilisateur')) {
+				$this->redirectToRoute('front_index');
+			}
+			else {
+				$this->show('back/Sales/listSales', $data);
+			}
+		}
+		else {
+			$this->redirectToRoute('login');
+		}
+		
 		
 	}
 }
