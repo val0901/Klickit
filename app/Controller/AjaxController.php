@@ -420,6 +420,19 @@ class AjaxController extends Controller
 					$viewSearch.= '<td>'.$totalContent.'</td>';
 
 					$viewSearch.= '<td>'.date('d/m/Y', strtotime($value['date_creation'])).'</td>';
+
+					$viewSearch.= '<td>';
+					if ($value['statut'] == 'enPreparation'){
+						$viewSearch.= '<p>En préparation</p>';
+						$viewSearch.= '<button type="button" data-id="'.$value['id'].'" class="order_sent" style="color:black;">Commande expédiée</button>';
+
+					}elseif ($value['statut'] == 'commande'){
+						$viewSearch.= '<p>Commandé</p>';
+						$viewSearch.= '<button type="button" data-id="'.$value['id'].'" class="order_prepare" style="color:black;">Commande en préparation</button>';
+					}elseif ($value['statut'] == 'expedie'){
+						$viewSearch.= '<p>Expédiée</p>';
+					}
+					$viewSearch.= '</td>';
 					$viewSearch.= '<td>'.$value['statut'].'</td>';
 					$viewSearch.= '<td><a href="'.$this->generateUrl('viewOrders', ['id'=> $value['id']]).'"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>';
 				}

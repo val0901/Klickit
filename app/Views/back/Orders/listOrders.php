@@ -177,6 +177,47 @@
 				dataType: 'json',
 				success: function(search){
 					$('#result').html(search.msg);
+
+					$('.order_prepare').click(function(e){
+						e.preventDefault();
+
+						var id_statut = $(this).data('id');
+						var statut_proccess = 'enPreparation';
+
+						$.ajax({
+							url: '<?=$this->url('ajax_orderUpdateStatut');?>',
+							type: 'post',
+							cache: false,
+							data: {id: id_statut, statut: statut_proccess},
+							dataType: 'json',
+							success: function(order){
+								if(order.code == 'ok'){
+									$('body').load('<?=$this->url('listOrders');?>');
+								}
+							}
+						});
+					});
+
+					// Code pour passer le statut d'une commande de En préparation à Expédiée
+					$('.order_sent').click(function(e){
+						e.preventDefault();
+
+						var id_statut2 = $(this).data('id');
+						var statut_proccess2 = 'expedie';
+
+						$.ajax({
+							url: '<?=$this->url('ajax_orderUpdateStatut');?>',
+							type: 'post',
+							cache: false,
+							data: {id: id_statut2, statut: statut_proccess2},
+							dataType: 'json',
+							success: function(order){
+								if(order.code == 'ok'){
+									$('body').load('<?=$this->url('listOrders');?>');
+								}
+							}
+						});
+					});
 				}
 			});
 		});
