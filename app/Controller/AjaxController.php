@@ -15,6 +15,7 @@ use \Model\ShippingModel;
 use \Model\FilterModel;
 use \Model\FiltrearticleModel;
 use \W\Security\AuthentificationModel;
+use \PHPMailer;
 
 use \Respect\Validation\Validator as v; 
 
@@ -580,16 +581,89 @@ class AjaxController extends Controller
 	public function orderUpdateStatut()
 	{
 		$updateOrder = new OrdersModel();
+		$find = new OrdersModel;
 		$json = [];
 		$post = [];
+		$success = false;
+		$sendMail = new PHPMailer;
 
 		if(!empty($_POST)){
 			$post = array_map('trim', array_map('strip_tags', $_POST));
+			$infos = $find->findOrdersAndCustom($post['id']);
 
-			if($updateOrder->updateStatutOrder($post['id'], $post['statut'])){
-				$json = [
-					'code' => 'ok',
-				];
+			foreach($infos as $user){
+
+			}
+
+
+			if($updateOrder->updateStatutOrder($post['id'], $post['statut'])){		
+
+				if($post['statut'] == 'enPreparation'){
+					$contentEmail = 'commande en préparation';
+
+					$sendMail->isSMTP();                                      
+					$sendMail->Host = 'ssl0.ovh.net';  									// Hôte du SMTP
+					$sendMail->SMTPAuth = true;                               				// SMTP Authentification
+					$sendMail->Username = 'sav@klickit.fr'; //Username         				// SMTP username
+					$sendMail->Password = 'silSAV33@'; //mot de passe                    	 				// SMTP password
+					$sendMail->SMTPSecure = 'tls';                         					// Enable TLS encryption, `ssl` also accepted
+					$sendMail->Port = 587;                                					// TCP port to connect to
+					$sendMail->CharSet = 'UTF-8';
+
+					$sendMail->setFrom('sav@klickit.fr', 'Klickit');		  		//Expéditeur
+					
+					$sendMail->addAddress($user['email'], $user['firstname'].' '.$user['lastname']); 	   	//$user['email']
+					//$sendMail->addCC(''); 					//Copie envoyer à l'adresse souhaitée du mail
+
+					$sendMail->Subject = 'commande en préparation';
+					$sendMail->Body    = $contentEmail; //On envoi le message éventuellement en HTML
+					$sendMail->AltBody = $contentEmail; //On envoi le message sans HTML
+
+					if($sendMail->send()){
+
+						$success = true;
+
+						$json = [
+							'code' => 'ok',
+
+						];
+
+					}
+				}
+				elseif($post['statut'] == 'expedie'){
+					$contentEmail = 'commande expédiée';
+
+					$sendMail->isSMTP();                                      
+					$sendMail->Host = 'ssl0.ovh.net';  									// Hôte du SMTP
+					$sendMail->SMTPAuth = true;                               				// SMTP Authentification
+					$sendMail->Username = 'sav@klickit.fr'; //Username         				// SMTP username
+					$sendMail->Password = 'silSAV33@'; //mot de passe                    	 				// SMTP password
+					$sendMail->SMTPSecure = 'tls';                         					// Enable TLS encryption, `ssl` also accepted
+					$sendMail->Port = 587;                                					// TCP port to connect to
+					$sendMail->CharSet = 'UTF-8';
+
+					$sendMail->setFrom('sav@klickit.fr', 'Klickit');		  		//Expéditeur
+					
+					$sendMail->addAddress('duhfanofdoge@gmail.com', $user['firstname'].' '.$user['lastname']); 	   	//$user['email']
+					//$sendMail->addCC(''); 					//Copie envoyer à l'adresse souhaitée du mail
+
+					$sendMail->Subject = 'commande expédiée';
+					$sendMail->Body    = $contentEmail; //On envoi le message éventuellement en HTML
+					$sendMail->AltBody = $contentEmail; //On envoi le message sans HTML
+
+					if($sendMail->send()){
+
+						$success = true;
+
+						$json = [
+							'code' => 'ok',
+
+						];
+
+					}
+				}
+				
+				
 			}
 		}
 		$this->showJson($json);

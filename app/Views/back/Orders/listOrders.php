@@ -111,7 +111,16 @@
 					dataType: 'json',
 					success: function(order){
 						if(order.code == 'ok'){
-							$('body').load('<?=$this->url('listOrders');?>');
+							$.alert({
+						        title: 'Email Envoyé',
+						        content: 'Le client a été averti du changement de statut de sa commande',
+						        theme: 'dark',
+						        buttons: {
+						        	Ok: function(){
+							        	$('body').load('<?=$this->url('listOrders');?>');
+							        }
+							    }
+						    });
 						}
 					}
 				});
@@ -132,7 +141,17 @@
 					dataType: 'json',
 					success: function(order){
 						if(order.code == 'ok'){
-							$('body').load('<?=$this->url('listOrders');?>');
+						    $.alert({
+						        title: 'Email Envoyé',
+						        content: 'Le client a été averti du changement de statut de sa commande',
+						        theme: 'dark',
+						        buttons: {
+						        	Ok: function(){
+							        	$('body').load('<?=$this->url('listOrders');?>');
+							        }
+							    }
+						    });
+							
 						}
 					}
 				});
@@ -192,7 +211,14 @@
 							dataType: 'json',
 							success: function(order){
 								if(order.code == 'ok'){
-									$('body').load('<?=$this->url('listOrders');?>');
+									$.alert({
+								        title: 'Email Envoyé',
+								        content: 'Le client a été averti du changement de statut de sa commande',
+								        theme: 'dark',
+								        buttons: function(){
+								        	$('body').load('<?=$this->url('listOrders');?>');
+								        }
+								    });
 								}
 							}
 						});
@@ -213,7 +239,16 @@
 							dataType: 'json',
 							success: function(order){
 								if(order.code == 'ok'){
-									$('body').load('<?=$this->url('listOrders');?>');
+									$.alert({
+								        title: 'Email Envoyé',
+								        content: 'Le client a été averti du changement de statut de sa commande',
+								        theme: 'dark',
+								        buttons: {
+								        	Ok: function(){
+									        	$('body').load('<?=$this->url('listOrders');?>');
+									        }
+									    }
+								    });
 								}
 							}
 						});
