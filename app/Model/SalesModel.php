@@ -18,10 +18,7 @@ class SalesModel extends \W\Model\Model
 			
 			$sth->execute(); 
 
-
-			return $sth->fetchAll();
-			
-			
+			return $sth->fetchAll();	
 		}
 
 		/** 
@@ -40,7 +37,6 @@ class SalesModel extends \W\Model\Model
 	    $result = $sth->fetch();
 
 	    return $result['total'];
-
 
 		}
 
