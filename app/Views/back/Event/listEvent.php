@@ -25,6 +25,9 @@
 
 	<?php $search = (isset($_GET['search']))? 'search='. $_GET['search'].'&' :'';?>
 	<div id="pagination">
+		<?= ($page!=1) ? '<a href="?'. $search .'page='. ($page - 1) .'"><i class="fa fa-arrow-left fa-fw"></i></a>':''; ?>
+		Page <?= $page; ?> <?= ($nb>=1) ? '/ '.ceil($nb/$max) :''; ?>
+		<?= ($nb < 1 ) ? '' : ($page!= ceil($nb/$max) ? '<a href="?'. $search .'page='. ($page + 1) .'"><i class="fa fa-arrow-right fa-fw" aria-hidden="true"></i></a>':''); ?>
 	</div>
 					
 <?php $this->stop('main_content') ?>
