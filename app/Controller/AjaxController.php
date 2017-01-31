@@ -364,7 +364,7 @@ class AjaxController extends Controller
 					$viewSearch.= '<tr><td>'.$value['id'].'</td>';
 
 					$findUser = new UserModel();
-					$user = $findUser->findUser($value['id']);
+					$user = $findUser->findUser($value['idMember']);
 					$viewSearch.= '<td>'.$user['lastname'].' '.$user['firstname'].'<br>'.$user['adress'].'<br>'.$user['zipcode'].' '.$user['city'].'</td>';
 
 					$contents = explode(', ', $value['contenu']); 

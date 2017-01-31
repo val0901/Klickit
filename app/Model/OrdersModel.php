@@ -94,10 +94,10 @@ class OrdersModel extends \W\Model\Model
 		$sql = '';
 
 		if(isset($search) && !empty($search)) {
-			$sql = ' WHERE statut LIKE :search OR payment';
+			$sql = ' WHERE '.$this->table.'.id LIKE :search OR user.firstname LIKE :search OR user.lastname LIKE :search';
 		}
 
-		$query = 'SELECT * FROM '.$this->table.$sql;
+		$query = 'SELECT user.*, '.$this->table.'.* FROM '.$this->table.' LEFT JOIN user ON '.$this->table.'.idMember = user.id'.$sql;
 
 		$sth = $this->dbh->prepare($query);
 
