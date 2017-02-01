@@ -2,13 +2,15 @@
 
 <?php $this->start('main_content') ?>
 
-	<h1>Présentation de l'équipe de création</h1>
+	<div id="titleTeam">
+		<h1>Présentation de l'équipe de création</h1>
+	</div>
 
 	<div class="containerTeam">
 
 	<div class="childTeam">
 		<div class="wrap">
-		  <div class="text-part">
+		  <div class="text-part text-color1">
 		    Valérie Baldy-Symezac
 		  </div>
 		  <div class="image-part">
@@ -22,7 +24,7 @@
 
 	<div class="childTeam">
 		<div class="wrap">
-		  <div class="text-part">
+		  <div class="text-part text-color2">
 		    Valérie Baldy-Symezac
 		  </div>
 		  <div class="image-part">
@@ -36,7 +38,7 @@
 
 	<div class="childTeam">
 		<div class="wrap">
-		  <div class="text-part">
+		  <div class="text-part text-color3">
 		    Valérie Baldy-Symezac
 		  </div>
 		  <div class="image-part">
@@ -50,7 +52,7 @@
 
 	<div class="childTeam">
 		<div class="wrap">
-		  <div class="text-part">
+		  <div class="text-part text-color4">
 		    Valérie Baldy-Symezac
 		  </div>
 		  <div class="image-part">
@@ -64,7 +66,7 @@
 
 	<div class="childTeam">
 		<div class="wrap">
-		  <div class="text-part">
+		  <div class="text-part text-color5">
 		    Valérie Baldy-Symezac
 		  </div>
 		  <div class="image-part">

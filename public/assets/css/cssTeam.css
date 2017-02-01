@@ -1,8 +1,15 @@
+#titleTeam{
+  text-align: center;
+
+}
+
 .containerTeam {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 .text-description{
@@ -62,3 +69,25 @@
   -webkit-transform: translateX(-120%);
   transform: translateX(-120%);
 }
+
+.text-color1{
+  background-color: #ff931e;
+}
+
+.text-color2{
+  background-color: #ea232a;
+}
+
+.text-color3{
+  background-color: #7bc942;
+}
+
+.text-color4{
+  background-color: #3fa9f5;
+}
+
+.text-color5{
+  background-color: #1f3a93;
+}
+
+
