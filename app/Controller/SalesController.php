@@ -4,6 +4,7 @@ namespace Controller;
 
 use \W\Controller\Controller;
 use \Model\SalesModel;
+use \Model\OrdersModel;
 use \W\Security\AuthorizationModel;
 
 class SalesController extends Controller 
@@ -23,11 +24,23 @@ class SalesController extends Controller
 
 		$sales = new SalesModel();
 		$list_sales = $sales->findAllSales($page, $max);
+		
+		$orders = new OrdersModel();
 
-		$data = [			
-			'max' => $max,
-			'page' => $page,
-			'nb' => $nb,
+		$price = 0;
+		foreach($find_sales as $value){
+		 $price = $value['total'] + $price;
+		}
+
+		$insert = $sales->insert([
+			'revenue' => $price,
+			]);
+
+		$data = [
+			'price'		=> $price,
+			'max'		=> $max,
+			'page'		=> $page,
+			'nb'		=> $nb,
 		];
 
 		//Sécurisation de la page		

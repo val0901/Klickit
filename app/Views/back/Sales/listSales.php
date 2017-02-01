@@ -16,7 +16,10 @@
 						<th>Chiffre d'affaire</th>
 					</thead>
 
-					<tbody id="result">			
+					<tbody id="result">	
+					<th></th>
+					<th></th>
+					<th><?=$price; var_dump($price);?></th>		
 					</tbody>			
 				</table>
 			</div>

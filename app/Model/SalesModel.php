@@ -9,8 +9,8 @@ class SalesModel extends \W\Model\Model
 			//on definit la page de démarrage
 			$debut = ($page - 1) * $max;
 
-			// requête  où on definit les variables de la page de démarrage($debut) et là le nombre de lignes par page($max)
-			$sql = 'SELECT * FROM '.$this->table.' ORDER BY id ASC LIMIT :debut, :max';
+			// requête sur la table  où on definit les variables de la page de démarrage($debut) et là le nombre de lignes par page($max)
+			$sql = 'SELECT * from '.$this->table. ' ORDER BY id ASC LIMIT :debut, :max '; 
 
 			$sth = $this->dbh->prepare($sql);
 			$sth->bindValue(':max', $max, \PDO::PARAM_INT);

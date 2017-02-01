@@ -231,4 +231,15 @@ class OrdersModel extends \W\Model\Model
 
 		return false;
 	}
+
+	{
+
+		$sth = $this->dbh->prepare($sql);
+
+		if($sth->execute()){
+			return true;
+		}
+
+		return false;
+	}
 }

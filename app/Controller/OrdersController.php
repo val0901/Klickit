@@ -30,6 +30,11 @@ class OrdersController extends Controller
 
 		$items = new ItemModel();
 
+		$price = 0;
+		foreach($orders as $value){
+		 $price = $value['total'] + $price;
+		};
+
 
 		/***********ENVOI DES DONNEES POUR AFFICHER LA PAGE***********/
 			$data = [
