@@ -26,6 +26,7 @@ class SalesController extends Controller
 		$list_sales = $sales->findAllSales($page, $max);
 		
 		$orders = new OrdersModel();
+		$find_sales = $orders->findSalesRevenue();
 
 		$price = 0;
 		foreach($find_sales as $value){

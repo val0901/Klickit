@@ -232,7 +232,9 @@ class OrdersModel extends \W\Model\Model
 		return false;
 	}
 
+	public function findSalesRevenue()
 	{
+		$sql = 'SELECT * from '.$this->table.' WHERE statut = "expedie"';
 
 		$sth = $this->dbh->prepare($sql);
 
