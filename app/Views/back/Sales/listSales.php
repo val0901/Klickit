@@ -19,7 +19,7 @@
 					<tbody id="result">	
 					<th></th>
 					<th></th>
-					<th><?=$price; var_dump($price);?></th>		
+					<th><?=$price;?></th>		
 					</tbody>			
 				</table>
 			</div>

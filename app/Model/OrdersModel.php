@@ -237,11 +237,24 @@ class OrdersModel extends \W\Model\Model
 		$sql = 'SELECT * from '.$this->table.' WHERE statut = "expedie"';
 
 		$sth = $this->dbh->prepare($sql);
+		$sth->execute();
 
-		if($sth->execute()){
-			return true;
-		}
+		return $sth->fetchAll();
 
-		return false;
+
 	}
+
+	//en cours 
+	// public function calculSalesRevenue($year, $month)
+	// 	{
+	// 		$sql = 'SELECT * FROM '.$this->table.' WHERE year = :year AND month = :month';
+
+	// 		$sth = $this->dbh->prepare($sql);
+	// 		$sth->bindValue(':year', $year);
+	// 		$sth->bindValue(':month', $month);
+	// 		$sth->execute();
+
+	// 		$result = $sth->fetchAll();
+
+	// 	}
 }

@@ -1,7 +1,7 @@
 <?php
 namespace Model;
 
-class SalesModel extends \W\Model\Model 
+class SalesrevenueModel extends \W\Model\Model 
 {
 		/*Requête popour afficher le CA*/
 		public function findAllSales($page, $max)
@@ -39,6 +39,5 @@ class SalesModel extends \W\Model\Model
 	    return $result['total'];
 
 		}
-
 
 }
