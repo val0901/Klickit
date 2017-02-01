@@ -53,6 +53,7 @@
     <link rel="stylesheet" href="<?= $this->assetUrl('css/stylebis.css') ?>">
     <link rel="stylesheet" href="<?= $this->assetUrl('css/eventmediaquery.css') ?>">
     <link rel="stylesheet" href="<?= $this->assetUrl('css/unslider.css')?>"> 
+    <!-- style page Team --> 
     <link rel="stylesheet" href="<?= $this->assetUrl('css/cssTeam.css')?>">
     <!-- favicon-->
     <link rel="icon" type="image/x-icon" href="<?= $this->assetUrl('img/KLICKIT-favicon.ico')?>">
