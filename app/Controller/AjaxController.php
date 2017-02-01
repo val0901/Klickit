@@ -644,7 +644,7 @@ class AjaxController extends Controller
 
 					$sendMail->setFrom('sav@klickit.fr', 'Klickit');		  		//Expéditeur
 					
-					$sendMail->addAddress('duhfanofdoge@gmail.com', $user['firstname'].' '.$user['lastname']); 	   	//$user['email']
+					$sendMail->addAddress($user['email'], $user['firstname'].' '.$user['lastname']); 	   	//$user['email']
 					//$sendMail->addCC(''); 					//Copie envoyer à l'adresse souhaitée du mail
 
 					$sendMail->Subject = 'commande expédiée';

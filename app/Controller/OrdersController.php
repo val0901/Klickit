@@ -99,6 +99,7 @@ class OrdersController extends Controller
 			}
 
 			$data = [
+			'id_order'=>$id,
 			'orders' => $viewOrders,
 			'items' => $items,
 			'errors'  => $errors,

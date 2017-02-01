@@ -3,14 +3,7 @@
 <?php $this->start('main_content') ?>
 <a href="<?=$this->url('listOrders');?>"><button class="btn btn-info">Retour liste des commandes</button></a>
 
-<br><br>
-	<?php if($success): ?>
-		<p id="reload" class="alert alert-success">Commande modifié</p>
-	<?php elseif(isset($errors) && !empty($errors)):?>
-		<p class="alert alert-danger"><?=implode('<br>', $errors);?></p>	
-	<?php endif;?>
-<br><br>
-<form method="post">
+<form>
 	<div id="viewOrder">
 			<table class="table">
 				<thead>
@@ -31,7 +24,7 @@
 				<tbody>
 				<?php foreach ($orders as $order): ;?>
 					<tr>
-						<td><?=$order['id']; ?></td>
+						<td><?=$id_order; ?></td>
 						<td><?=$order['lastname'].' '.$order['firstname'].'<br>'; ?></td>
 						<td><?= $order['adress'].'<br>'.$order['zipcode'].' '.$order['city'] ?></td>
 						<td>
@@ -57,24 +50,26 @@
 						<td><?= date('d/m/Y', strtotime($order['date_creation']));?></td>
 						<td>
 							<div class="form-group" id="selectStt">									
-								  <div class="col-md-4">
-								    <select id="selectStatut" name="selectStatut" class="form-control">
-								    	<option selected disabled><?=$order['statut']; ?></option>
-								    	<option value="commande">En attente de paiement</option>
-								    	<option value="enPreparation">En cours de préparation</option>
-								    	<option value="expedie">Expédiée</option>
-								    </select>
-								  </div>
+								<?php   if ($order['statut'] == 'enPreparation') : ?>
+							 		<p>En préparation</p>
+							 		<button type="button" data-id="<?=$id_order?>" class="order_sent" style="color:black;">Commande expédiée</button>
+								<?php	elseif ($order['statut'] == 'commande') : ?>
+							  		<p>Commandé</p>
+							  		<button type="button" data-id="<?=$id_order?>" class="order_prepare" style="color:black;">Commande en préparation</button>
+								<?php	elseif ($order['statut'] == 'expedie') : ?>
+							  		<p>Expédiée</p>
+								<?php   endif; ?>
+
 							</div>
 						</td>
 						<td><?=$order['payment'];?></td>
-						<td><button class="btn btn-danger delete-order" data-id="<?=$order['id']?>">Effacer la commande</button></td>
+						<td><button class="btn btn-danger delete-order" data-id="<?=$id_order?>">Effacer la commande</button></td>
 					</tr>
 				<?php endforeach; ?>			
 				</tbody>			
 			</table>
 	</div>
-	<button class="btn btn-info" type="submit" name="id_order" value="<?=$order['id'];?>">Modifier le statut de la commande</button>
+	
 </form>
 	
 <?php $this->stop('main_content') ?>
@@ -133,5 +128,70 @@
 		if (document.getElementById('reload')) {
 			affichage.location.href=affichage.location.href;
 		}
+	</script>
+
+	<script>
+		$(document).ready(function(){
+			// Code pour passer le statut d'une commande de commandé à En préparation
+			$('.order_prepare').click(function(e){
+				e.preventDefault();
+
+				var id_statut = $(this).data('id');
+				var statut_proccess = 'enPreparation';
+
+				$.ajax({
+					url: '<?=$this->url('ajax_orderUpdateStatut');?>',
+					type: 'post',
+					cache: false,
+					data: {id: id_statut, statut: statut_proccess},
+					dataType: 'json',
+					success: function(order){
+						if(order.code == 'ok'){
+							$.alert({
+						        title: 'Email Envoyé',
+						        content: 'Le client a été averti du changement de statut de sa commande',
+						        theme: 'dark',
+						        buttons: {
+						        	Ok: function(){
+							        	window.location.href="<?=$this->url('listOrders');?>";
+							        }
+							    }
+						    });
+						}
+					}
+				});
+			});
+
+			// Code pour passer le statut d'une commande de En préparation à Expédiée
+			$('.order_sent').click(function(e){
+				e.preventDefault();
+
+				var id_statut2 = $(this).data('id');
+				var statut_proccess2 = 'expedie';
+
+				$.ajax({
+					url: '<?=$this->url('ajax_orderUpdateStatut');?>',
+					type: 'post',
+					cache: false,
+					data: {id: id_statut2, statut: statut_proccess2},
+					dataType: 'json',
+					success: function(order){
+						if(order.code == 'ok'){
+						    $.alert({
+						        title: 'Email Envoyé',
+						        content: 'Le client a été averti du changement de statut de sa commande',
+						        theme: 'dark',
+						        buttons: {
+						        	Ok: function(){
+							        	window.location.href="<?=$this->url('listOrders');?>";
+							        }
+							    }
+						    });
+							
+						}
+					}
+				});
+			});
+		});
 	</script>
 <?php $this->stop('js')?>
