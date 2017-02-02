@@ -4,7 +4,7 @@
 <div class="listorder_back">
  <div class="row">
   <div class="col-md-3">
-  	<img class="img-responsive playmo_hide" src="<?=$this->assetUrl('/img/napoLeft.png');?>" id="categorycustoms_hover">
+  	<img class="img-responsive playmo_hide" src="<?=$this->assetUrl('/img/napoLeft.png');?>" id="categorycustoms">
   </div>
   <div class="col-md-6 ordermidia_width">
       <div class="listorder_contenu">
@@ -34,13 +34,13 @@
                               echo date_format($date, 'd-m-Y');
                             ?>   
                           </strong></p>
-                      <p><strong>No. FACTURE : <?=$order['id']?></strong></p>
+                      <p><strong>FACTURE N° <?=$order['id']?></strong></p>
                   </div>
               </div>
               <br>
-              <p>No. SERET: 753 966 464 00012</p>
+              <p>N° SIRET : 753 966 464 00012</p>
               <br><br>
-              <p><strong>Facturé a : <?=$user['firstname'].' '.$user['lastname']?></strong></p>
+              <p><strong>Facturé à : <?=$user['firstname'].' '.$user['lastname']?></strong></p>
           </div>
           
           <!--viewuserorder table-->
@@ -49,8 +49,8 @@
                   <thead style="background-color: #ccc;">
                       <tr>
                           <th>DESCRIPTION</th>
-                          <th>Prix U.</th>
-                          <th>Qté</th>
+                          <th>Prix Unitaire</th>
+                          <th>Quantité</th>
                           <th>MONTANT</th>
                       </tr>
                   </thead>
@@ -83,20 +83,24 @@
                         <?php endif; ?> 
 
                       </tr>
-                  <?php endforeach; ?> 
+                  <?php endforeach; ?>
+                       <tr>
+                          <td colspan="3" style="text-align:right;"><strong>Frais de port : </strong></td>
+                          <td><?=$order['shipping']?>€</td>
+                      </tr> 
                       <tr>
-                          <td colspan="3" style="text-align:right;font-weight:600;"><stong>TOTAL :</stong></td>
+                          <td colspan="3" style="text-align:right;"><strong>TOTAL : </strong></td>
                           <td><?=$order['total']?>€</td>
                       </tr>
                   </tbody>
               </table>
               
               <div>
-                <p style="text-align:right;">TVA on applicable. art. 293 B du CGI</p>
+                <p style="text-align:right;">TVA non applicable, art. 293 B du CGI</p>
                 <br>
                 <div>
-                    <p style="line-height: 10px;">Veuillez libellé votre chèque a l'ordre de Lafont Laurent.</p>
-                    <p style="line-height: 10px;">Pour toute question concement cette facture.  Merci de me contacter a contact@klickit.fr</p>
+                    <p style="line-height: 10px;">Veuillez libeller votre chèque à l'ordre de Lafont Laurent.</p>
+                    <p style="line-height: 10px;">Pour toutes questions concernant cette facture, merci de me contacter à <a id=" linknav-order" href="<?=$this->url('front_contact');?>">  contact@klickit.fr</a></p>
                     <br><br>
                     <p style="text-align:center;"><strong>MERCI DE VOTRE CONFIANCE !</strong></p>
                 </div>
@@ -107,7 +111,7 @@
       </div>
   </div>
   <div class="col-md-3">
-  	<img class="img-responsive playmo_hide" src="<?=$this->assetUrl('/img/napoRight.png');?>" id="categorycustoms_hover" style="float:right;">
+  	<img class="img-responsive playmo_hide" src="<?=$this->assetUrl('/img/napoRight.png');?>" id="categorycustoms" style="float:right;">
   </div>
  </div>
  
