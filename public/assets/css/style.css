@@ -1700,6 +1700,11 @@ a#breadcrumb:hover{
     border: 2px solid #000;
 }
 
+#linknav-order a:hover{
+    color: #fe941e;
+}
+
+
 /*favorite.php*/
 .favorite_price {
     font-size: 30px;

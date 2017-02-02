@@ -38,7 +38,7 @@
             <?php if(!empty($orders)) : ?>
               <?php foreach($orders as $order) : ?>
                 <tr> 
-                    <td scope="row">No. <?=$order['id']?></td> 
+                    <td scope="row">N° <?=$order['id']?></td> 
                     <td>
                         <li>
                           <?php
@@ -55,7 +55,7 @@
                     <?php elseif($order['statut'] == 'expedie') :?>
                       <td><p><i class="fa fa-circle" aria-hidden="true" style="color: #56b621;"> <span class="ordertable_statut">Commande Expédiée</span></i><p></td>
                     <?php elseif($order['statut'] == 'commande') : ?>
-                      <td><p><i class="fa fa-circle" aria-hidden="true" style="color: #999;"> <span class="ordertable_statut">En attente paiement</span></i><p></td>  
+                      <td><p><i class="fa fa-circle" aria-hidden="true" style="color: #999;"> <span class="ordertable_statut">En attente de paiement</span></i><p></td>  
 					          <?php endif; ?>
 
                     <td><p>PDF<p></td>
