@@ -51,7 +51,7 @@
                     <td><p><?=$order['payment']?><p></td>
 
                     <?php if($order['statut'] == 'enPreparation') : ?>
-                      <td><p><i class="fa fa-circle" aria-hidden="true" style="color: #fe941e;"> <span class="ordertable_statut">End cours de préparation</span></i><p></td>
+                      <td><p><i class="fa fa-circle" aria-hidden="true" style="color: #fe941e;"> <span class="ordertable_statut">En cours de préparation</span></i><p></td>
                     <?php elseif($order['statut'] == 'expedie') :?>
                       <td><p><i class="fa fa-circle" aria-hidden="true" style="color: #56b621;"> <span class="ordertable_statut">Commande Expédiée</span></i><p></td>
                     <?php elseif($order['statut'] == 'commande') : ?>

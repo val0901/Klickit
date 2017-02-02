@@ -11,14 +11,14 @@
 	<div class="childTeam">
 		<div class="wrap">
 		  <div class="text-part text-color1">
-		    Valérie Baldy-Symezac
+		    Théo Appelius
 		  </div>
 		  <div class="image-part">
 		    <img src="<?=$this->assetUrl('/img/valerie.png');?>">
 		  </div>
 		</div>
 		<div class=text-description>
-		  	Développeuse Back-End
+		  	Développeur Back-End  
 		</div>
 	</div>
 
@@ -39,42 +39,42 @@
 	<div class="childTeam">
 		<div class="wrap">
 		  <div class="text-part text-color3">
-		    Valérie Baldy-Symezac
+		    Cécile Lafont
 		  </div>
 		  <div class="image-part">
 		    <img src="<?=$this->assetUrl('/img/valerie.png');?>">
 		  </div>
 		</div>
 		<div class=text-description>
-		  	Développeuse Back-End
+		  	Développeuse Front-End
 		</div>
 	</div>
 
 	<div class="childTeam">
 		<div class="wrap">
 		  <div class="text-part text-color4">
-		    Valérie Baldy-Symezac
+		    Landy Razafindrabe
 		  </div>
 		  <div class="image-part">
 		    <img src="<?=$this->assetUrl('/img/valerie.png');?>">
 		  </div>
 		</div>
 		<div class=text-description>
-		  	Développeuse Back-End
+		  	Développeur Back-End
 		</div>
 	</div>
 
 	<div class="childTeam">
 		<div class="wrap">
 		  <div class="text-part text-color5">
-		    Valérie Baldy-Symezac
+		    Jie Xu
 		  </div>
 		  <div class="image-part">
 		    <img src="<?=$this->assetUrl('/img/valerie.png');?>">
 		  </div>
 		</div>
 		<div class=text-description>
-		  	Développeuse Back-End
+		  	Développeuse Front-End
 		</div>
 	</div>
 
