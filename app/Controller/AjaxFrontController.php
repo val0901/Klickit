@@ -18,6 +18,7 @@ use \Model\FavoriteModel;
 use \Model\FilterModel;
 use \Model\FiltrearticleModel;
 use \W\Security\AuthentificationModel;
+use \PHPMailer;
 
 use \Respect\Validation\Validator as v; 
 
@@ -419,6 +420,7 @@ class AjaxFrontController extends Controller
 		$updateOrder = new OrdersModel;
 		$deleteBasket = new BasketModel;
 		$user = $this->getUser();
+		$sendMail = new PHPMailer;
 		$json = [];
 
 		if(!empty($_POST) && isset($_POST)){
@@ -434,18 +436,63 @@ class AjaxFrontController extends Controller
 			elseif ($_POST['payment'] == 'cheque') {
 				if($updateOrder->updatePaymentOrder($user['id'], $_POST['payment'])){
 					if($deleteBasket->deleteAllBasket($user['id'])){
-						$json = [
-							'code' => 'cheque'
-						];
+						$contentEmail = 'mode de paiement chèque';
+
+						$sendMail->isSMTP();                                      
+						$sendMail->Host = 'ssl0.ovh.net';  									// Hôte du SMTP
+						$sendMail->SMTPAuth = true;                               				// SMTP Authentification
+						$sendMail->Username = 'sav@klickit.fr'; //Username         				// SMTP username
+						$sendMail->Password = 'silSAV33@'; //mot de passe                    	 				// SMTP password
+						$sendMail->SMTPSecure = 'tls';                         					// Enable TLS encryption, `ssl` also accepted
+						$sendMail->Port = 587;                                					// TCP port to connect to
+						$sendMail->CharSet = 'UTF-8';
+
+						$sendMail->setFrom('sav@klickit.fr', 'Klickit');		  		//Expéditeur
+						
+						$sendMail->addAddress($user['email'], $user['firstname'].' '.$user['lastname']); 	   	//$user['email']
+						//$sendMail->addCC(''); 					//Copie envoyer à l'adresse souhaitée du mail
+
+						$sendMail->Subject = 'paiement chèque';
+						$sendMail->Body    = $contentEmail; //On envoi le message éventuellement en HTML
+						$sendMail->AltBody = $contentEmail; //On envoi le message sans HTML
+
+						if($sendMail->send()){
+							$json = [
+								'code' => 'cheque'
+							];
+						}
+						
 					}
 				}
 			}
 			elseif($_POST['payment'] == 'virement') {
 				if($updateOrder->updatePaymentOrder($user['id'], $_POST['payment'])){
 					if($deleteBasket->deleteAllBasket($user['id'])){
-						$json = [
-							'code' => 'virement'
-						];
+						$contentEmail = 'mode de paiement virement';
+
+						$sendMail->isSMTP();                                      
+						$sendMail->Host = 'ssl0.ovh.net';  									// Hôte du SMTP
+						$sendMail->SMTPAuth = true;                               				// SMTP Authentification
+						$sendMail->Username = 'sav@klickit.fr'; //Username         				// SMTP username
+						$sendMail->Password = 'silSAV33@'; //mot de passe                    	 				// SMTP password
+						$sendMail->SMTPSecure = 'tls';                         					// Enable TLS encryption, `ssl` also accepted
+						$sendMail->Port = 587;                                					// TCP port to connect to
+						$sendMail->CharSet = 'UTF-8';
+
+						$sendMail->setFrom('sav@klickit.fr', 'Klickit');		  		//Expéditeur
+						
+						$sendMail->addAddress($user['email'], $user['firstname'].' '.$user['lastname']); 	   	//$user['email']
+						//$sendMail->addCC(''); 					//Copie envoyer à l'adresse souhaitée du mail
+
+						$sendMail->Subject = 'paiement virement';
+						$sendMail->Body    = $contentEmail; //On envoi le message éventuellement en HTML
+						$sendMail->AltBody = $contentEmail; //On envoi le message sans HTML
+
+						if($sendMail->send()){
+							$json = [
+								'code' => 'virement'
+							];
+						}
 					}
 				}
 			}
