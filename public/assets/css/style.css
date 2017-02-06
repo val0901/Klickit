@@ -116,6 +116,11 @@ header {
     letter-spacing: 3px;
 }
 
+div#view {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 .shoppingmenu_button {
 	background-color:#fe941e;
 	border:none;
