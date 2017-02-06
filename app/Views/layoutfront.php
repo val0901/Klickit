@@ -80,6 +80,7 @@
             <div class="nav_right">
                 <ul>
                     <!--icon-cog menu-->
+<!-- GESTION MULTILANGUE
                     <li class="span_float">
                         <i class="fa fa-cog fa-5x icon_cursor navR_color" aria-hidden="true" id="cogicon_click"></i>
                         <div class="con cogsoumenu_hidden">
@@ -101,6 +102,7 @@
                             </div>
                         </div>
                     </li>
+-->
                     <!--End icon-cog menu-->
                     
                     <!--icon-user menu-->
