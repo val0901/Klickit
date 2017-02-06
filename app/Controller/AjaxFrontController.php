@@ -647,10 +647,10 @@ class AjaxFrontController extends Controller
 				$viewSearch.='<p class="iconeFavorite"><span style="cursor:pointer;">';
 				if(!empty($user)){
 					if(in_array($item['id'], $favorite)){
-						$viewSearch.= '<button class="favorite" type="submit" name="'.str_replace(' ', '', $item['name']).'" value="'.$item['id'].'" data-id="'.$item['id'].'"><i class="fa fa-heart fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #c11131;" title="Ajouter à mes favoris"></i></button>';
+						$viewSearch.= '<button class="favorite" type="submit" name="'.str_replace(' ', '', $item['name']).'" value="'.$item['id'].'" data-id="'.$item['id'].'"><span id="'.$item['id'].'" class="fa fa-heart fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #c11131;" title="Retirer de mes favoris"></span></button>';
 					}
 					else{
-						$viewSearch.= '<button class="favorite" type="submit" name="'.str_replace(' ', '', $item['name']).'" value="'.$item['id'].'" data-id="'.$item['id'].'"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button>';
+						$viewSearch.= '<button class="favorite" type="submit" name="'.str_replace(' ', '', $item['name']).'" value="'.$item['id'].'" data-id="'.$item['id'].'"><span id="'.$item['id'].'" class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></span></button>';
 					}
 				}
 				else{

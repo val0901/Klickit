@@ -83,9 +83,9 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 								<span style="cursor:pointer;">
 									<?php if(!empty($_SESSION['user'])): ?>
 										<?php if(in_array($product['id'], $favorite)): ?>
-											<button class="favorite" type="submit" name="<?=str_replace(' ', '', $product['name']);?>" value="<?=$product['id']?>" data-id="<?=$product['id'];?>"><i class="fa fa-heart fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #c11131;" title="Ajouter à mes favoris"></i></button>
+											<button class="favorite" type="submit" name="<?=str_replace(' ', '', $product['name']);?>" value="<?=$product['id']?>" data-id="<?=$product['id'];?>"><span id="<?=$product['id'];?>" class="fa fa-heart fa-fw favoriteicon_original favoriteicon_click favHeart" aria-hidden="true" style="color: #c11131;" title="Retirer de mes favoris"></span></button>
 										<?php else: ?>
-											<button class="favorite" type="submit" name="<?=str_replace(' ', '', $product['name']);?>" value="<?=$product['id'];?>" data-id="<?=$product['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button>
+											<button class="favorite" type="submit" name="<?=str_replace(' ', '', $product['name']);?>" value="<?=$product['id'];?>" data-id="<?=$product['id'];?>"><span id="<?=$product['id'];?>" class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click favHeart" aria-hidden="true" title="Ajouter à mes favoris"></span></button>
 										<?php endif; ?>
 									<?php else : ?>
 										<a href="<?=$this->url('login');?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></a>
@@ -166,9 +166,9 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 	                					<span style="cursor:pointer;">
 										<?php if(!empty($_SESSION['user'])): ?>
 											<?php if(in_array($newProduct['id'], $favorite)): ?>
-												<button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id']?>" data-id="<?=$newProduct['id'];?>"><i class="fa fa-heart fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #c11131;" title="Ajouter à mes favoris"></i></button>
+												<button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id']?>" data-id="<?=$newProduct['id'];?>"><span id="<?=$newProduct['id'];?>" class="fa fa-heart fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #c11131;" title="Retirer de mes favoris"></span></button>
 											<?php else: ?>
-												<button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id'];?>" data-id="<?=$newProduct['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button>
+												<button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id'];?>" data-id="<?=$newProduct['id'];?>"><span id="<?=$newProduct['id'];?>" class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></span></button>
 											<?php endif; ?>
 										<?php else : ?>
 											<a href="<?=$this->url('login');?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></a>
@@ -199,9 +199,9 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 	                					<span style="cursor:pointer;">
 										<?php if(!empty($_SESSION['user'])): ?>
 											<?php if(in_array($newProduct['id'], $favorite)): ?>
-												<button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id']?>" data-id="<?=$newProduct['id'];?>"><i class="fa fa-heart fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #c11131;" title="Ajouter à mes favoris"></i></button>
+												<button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id']?>" data-id="<?=$newProduct['id'];?>"><span id="<?=$newProduct['id'];?>" class="fa fa-heart fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #c11131;" title="Retirer de mes favoris"></span></button>
 											<?php else: ?>
-												<button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id'];?>" data-id="<?=$newProduct['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button>
+												<button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id'];?>" data-id="<?=$newProduct['id'];?>"><span id="<?=$newProduct['id'];?>" class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></span></button>
 											<?php endif; ?>
 										<?php else : ?>
 											<a href="<?=$this->url('login');?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></a>
@@ -232,9 +232,9 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 	                					<span style="cursor:pointer;">
 										<?php if(!empty($_SESSION['user'])): ?>
 											<?php if(in_array($newProduct['id'], $favorite)): ?>
-												<button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id']?>" data-id="<?=$newProduct['id'];?>"><i class="fa fa-heart fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #c11131;" title="Ajouter à mes favoris"></i></button>
+												<button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id']?>" data-id="<?=$newProduct['id'];?>"><span id="<?=$newProduct['id'];?>" class="fa fa-heart fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #c11131;" title="Retirer de mes favoris"></span></button>
 											<?php else: ?>
-												<button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id'];?>" data-id="<?=$newProduct['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button>
+												<button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id'];?>" data-id="<?=$newProduct['id'];?>"><span id="<?=$newProduct['id'];?>" class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></span></button>
 											<?php endif; ?>
 										<?php else : ?>
 											<a href="<?=$this->url('login');?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></a>
@@ -275,6 +275,20 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 
 				var idFavorite = $(this).data('id');
 
+				function favIcon() // Change l'îcone favoris sans recharger la page
+				{
+					if($('#'+idFavorite).hasClass('fa-heart-o')){ // On vérifie que l'élement avec l'ID contenu dans idFavorite a la class fa-heart-o
+						$('#'+idFavorite).removeClass('fa-heart-o'); // On vire la class
+						$('#'+idFavorite).addClass('fa-heart'); // On rajoute une nouvelle
+						$('#'+idFavorite).css('color', '#c11131'); // On change la couleur
+					}
+					else if($('#'+idFavorite).hasClass('fa-heart')){ // On vérifie que l'élement avec l'ID contenu dans idFavorite a la class fa-heart
+						$('#'+idFavorite).removeClass('fa-heart'); // On vire la class
+						$('#'+idFavorite).addClass('fa-heart-o'); // On rajoute une nouvelle
+						$('#'+idFavorite).css('color', '#999999'); // On change la couleur
+					}
+				}
+
 				$.ajax({
 					url: '<?=$this->url('ajax_favorite');?>',
 					type: 'post',
@@ -283,21 +297,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 					dataType: 'json',
 					success: function(add){
 						if(add.msg == 'ok'){
-							if(window.location.pathname == '/Klickit/public/Customs/CustomsTampographies'){
-								$('body').load('<?=$this->url('listItemCustoms', ['sub_category' =>'CustomsTampographies']);?>');
-							}
-							else if(window.location.pathname == '/Klickit/public/Customs/CustomsPeints'){
-								$('body').load('<?=$this->url('listItemCustoms', ['sub_category' =>'CustomsPeints']);?>');
-							}
-							else if(window.location.pathname == '/Klickit/public/Customs/BustesTampographies'){
-								$('body').load('<?=$this->url('listItemCustoms', ['sub_category' =>'BustesTampographies']);?>');
-							}
-							else if(window.location.pathname == '/Klickit/public/Customs/PiecesEnResine'){
-								$('body').load('<?=$this->url('listItemCustoms', ['sub_category' =>'PiecesEnResine']);?>');
-							}
-							else if(window.location.pathname == '/Klickit/public/Customs/Stickers'){
-								$('body').load('<?=$this->url('listItemCustoms', ['sub_category' =>'Stickers']);?>');
-							}
+							favIcon(); 
 						}
 					}
 				});
@@ -383,6 +383,20 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 
 								var idFavorite = $(this).data('id');
 
+								function favIcon() // Change l'îcone favoris sans recharger la page
+								{
+									if($('#'+idFavorite).hasClass('fa-heart-o')){ // On vérifie que l'élement avec l'ID contenu dans idFavorite a la class fa-heart-o
+										$('#'+idFavorite).removeClass('fa-heart-o'); // On vire la class
+										$('#'+idFavorite).addClass('fa-heart'); // On rajoute une nouvelle
+										$('#'+idFavorite).css('color', '#c11131'); // On change la couleur
+									}
+									else if($('#'+idFavorite).hasClass('fa-heart')){ // On vérifie que l'élement avec l'ID contenu dans idFavorite a la class fa-heart
+										$('#'+idFavorite).removeClass('fa-heart'); // On vire la class
+										$('#'+idFavorite).addClass('fa-heart-o'); // On rajoute une nouvelle
+										$('#'+idFavorite).css('color', '#999999'); // On change la couleur
+									}
+								}
+
 								$.ajax({
 									url: '<?=$this->url('ajax_favorite');?>',
 									type: 'post',
@@ -391,7 +405,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 									dataType: 'json',
 									success: function(add){
 										if(add.msg == 'ok'){
-											// $('body').load('$this->url('listItemClassicsFull')');
+											favIcon(); 
 										}
 									}
 								});
