@@ -449,7 +449,7 @@
 					dataType: 'json',
 					success: function(out){
 						if(out.code == 'ok'){
-			  				window.location.href= window.location.href;
+			  				// window.location.href= window.location.href;
 						}
 					}
   				});
