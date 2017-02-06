@@ -58,7 +58,7 @@ class FrontGuestbookController extends MasterController
 			'errors'	=> $errors,
 			];	
 
-		if(!empty($_SESSION)){
+		if(!empty($this->getUser())){
 			$this->showStuff('front/User/guestbook', $params);
 		}else {
 			$this->redirectToRoute('login');
