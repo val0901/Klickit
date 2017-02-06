@@ -48,7 +48,7 @@
                             <tr> 
                                 <td scope="row"><a href="<?=$this->url('viewArt', ['id' => $item['id']])?>"><img class="img-responsive" src="<?=$this->assetUrl('art/'.$item['picture1']);?>" style="width: 15vw;margin:0 auto;"></a></td> 
                                 <td>
-                                    <li class="ordertable_title"><a href="<?=$this->url('viewArt', ['id' => $item['id']])?>"><?=$item['name']?></a><li>
+                                    <li class="ordertable_title"><a href="<?=$this->url('viewArt', ['id' => $item['id']])?>" style="color:black;"><?=$item['name']?></a><li>
                                     <li class="ordertable_text">Référence: <?=$item['id']?><li>
                                 </td>
 
@@ -135,9 +135,9 @@
                         <?php foreach($w_items as $item) :?> 
                             <?php $content.= $item['id'].', '; // Et la, comme au dessus, le foreach me permet de stock tout les id des articles sous forme de string avec comme séparateur ', '?> 
                             <tr> 
-                                <td scope="row"><img class="img-responsive" src="<?=$this->assetUrl('art/'.$item['picture1']);?>" style="width: 15vw;margin:0 auto;"></td> 
+                                <td scope="row"><a href="<?=$this->url('viewArt', ['id' => $item['id']])?>"><img class="img-responsive" src="<?=$this->assetUrl('art/'.$item['picture1']);?>" style="width: 15vw;margin:0 auto;"></a></td>
                                 <td>
-                                    <li class="ordertable_title"><?=$item['name']?><li>
+                                    <li class="ordertable_title"><a href="<?=$this->url('viewArt', ['id' => $item['id']])?>" style="color:black;"><?=$item['name']?></a><li>
                                     <li class="ordertable_text">Référence: <?=$item['id']?><li>
                                 </td>
 
