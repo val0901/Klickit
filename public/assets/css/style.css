@@ -970,6 +970,14 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
     cursor: pointer;
 }
 
+/*mentions légales*/
+
+.container.legalm_background{
+    font-size: 1.2em;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
 /*cgv.php*/
 .cgv_background {
 	background-color: #f8f8f8;
