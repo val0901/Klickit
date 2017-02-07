@@ -58,8 +58,8 @@
                       <td><p><i class="fa fa-circle" aria-hidden="true" style="color: #999;"> <span class="ordertable_statut">En attente de paiement</span></i><p></td>  
 					          <?php endif; ?>
 
-                    <td><p><a href="<?=$this->url('front_pdfOrder', ['id' => $order['id']]);?>">PDF</a><p></td>
-					          <td><p style="color:#fe941e;"><a href="<?=$this->url('front_viewUserOrder', ['id' => $order['id']]);?>">détail</a><p></td>
+                    <td><p><a class="hoverlinkorange" href="<?=$this->url('front_pdfOrder', ['id' => $order['id']]);?>">PDF</a><p></td>
+					          <td><p style="color:#fe941e;"><a class="hoverlinkorange" href="<?=$this->url('front_viewUserOrder', ['id' => $order['id']]);?>">détail</a><p></td>
                 </tr>
               <?php endforeach; ?>  
             </tbody> 

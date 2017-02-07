@@ -100,7 +100,7 @@
                 <br>
                 <div>
                     <p style="line-height: 10px;">Veuillez libeller votre chèque à l'ordre de Lafont Laurent.</p>
-                    <p style="line-height: 10px;">Pour toutes questions concernant cette facture, merci de me contacter à <a id=" linknav-order" href="<?=$this->url('front_contact');?>">  contact@klickit.fr</a></p>
+                    <p style="line-height: 10px;">Pour toutes questions concernant cette facture, merci de me contacter à <a class="hoverlinkorange" id=" linknav-order" href="<?=$this->url('front_contact');?>">  contact@klickit.fr</a></p>
                     <br><br>
                     <p style="text-align:center;"><strong>MERCI DE VOTRE CONFIANCE !</strong></p>
                 </div>

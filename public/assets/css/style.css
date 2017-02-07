@@ -117,8 +117,14 @@ header {
 }
 
 div#view {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 }
 .shoppingmenu_button {
@@ -526,6 +532,7 @@ footer {
 #categoryclassic_hover:hover {
 	background-color: #3fa9f5;
 	opacity: 0.5;
+	-webkit-transition: background-color ease-in-out .2s;
 	transition: background-color ease-in-out .2s;
 	cursor: pointer;
 }
@@ -533,6 +540,7 @@ footer {
 #categorycustoms_hover:hover {
 	background-color: #ff931e;
 	opacity: 0.4;
+	-webkit-transition: background-color ease-in-out .2s;
 	transition: background-color ease-in-out .2s;
 	cursor: pointer;
 }
@@ -540,6 +548,7 @@ footer {
 #categorypieces_hover:hover {
 	background-color: #7ac943;
 	opacity: 0.4;
+	-webkit-transition: background-color ease-in-out .2s;
 	transition: background-color ease-in-out .2s;
 	cursor: pointer;
 }
@@ -547,6 +556,7 @@ footer {
 #categorydivers_hover:hover {
 	background-color: #ea2229;
 	opacity: 0.4;
+	-webkit-transition: background-color ease-in-out .2s;
 	transition: background-color ease-in-out .2s;
 	cursor: pointer;
 }
@@ -705,7 +715,22 @@ a#customsmenu_scat{
    line-height: 30pt;
    overflow: hidden;
 }
-.scroller .inner { animation: 10s normal infinite running scroll; }
+.scroller .inner { -webkit-animation: 10s normal infinite running scroll; animation: 10s normal infinite running scroll; }
+@-webkit-keyframes scroll {
+   0%  	{margin-top: 0px;}
+   15% 	{margin-top: 0px;}
+
+   25%  {margin-top: -100pt;}
+   40%  {margin-top: -100pt;}
+   
+   50%  {margin-top: -200pt;}
+   65%  {margin-top: -200pt;}
+
+   75%  {margin-top: -300pt;}
+   90%  {margin-top: -300pt;}
+
+   100% {margin-top: 0px;}
+}
 @keyframes scroll {
    0%  	{margin-top: 0px;}
    15% 	{margin-top: 0px;}
@@ -797,9 +822,6 @@ img { max-width:100%; }
 
 a {
 	-webkit-transition: all 150ms ease;
-	-moz-transition: all 150ms ease;
-	-ms-transition: all 150ms ease;
-	-o-transition: all 150ms ease;
 	transition: all 150ms ease; 
 	}
 
@@ -872,6 +894,7 @@ a:hover {
 
 /* ADD-ON
 -------------------------------------------------- */
+::-moz-selection { background: #ff5e99; color: #FFFFFF; text-shadow: 0; }
 ::selection { background: #ff5e99; color: #FFFFFF; text-shadow: 0; }
 ::-moz-selection { background: #ff5e99; color: #FFFFFF; }
 
@@ -890,11 +913,13 @@ input::-moz-focus-inner { border: 0; }
 }
 
 .carousel-control.left {
+    background-image: -webkit-linear-gradient(left, rgba(255, 147, 30, 1) 100%, rgba(255, 147, 30, 1) 100%);
     background-image: linear-gradient(to right, rgba(255, 147, 30, 1) 100%, rgba(255, 147, 30, 1) 100%);
     background-repeat: repeat-x;
 }
 
 .carousel-control.right {
+    background-image: -webkit-linear-gradient(left, rgba(255, 147, 30, 1) 100%, rgba(255, 147, 30, 1) 100%);
     background-image: linear-gradient(to right, rgba(255, 147, 30, 1) 100%, rgba(255, 147, 30, 1) 100%);
     background-repeat: repeat-x;
 }
@@ -955,6 +980,7 @@ input::-moz-focus-inner { border: 0; }
   background-color: #1f3a93;
   border-color: #1f3a93;
   opacity: 0.8;
+  -webkit-transition: opacity ease-in-out .3s;
   transition: opacity ease-in-out .3s;
 }
 
@@ -1519,6 +1545,7 @@ a#breadcrumb:hover{
 	color: #999;
 	font-weight: 600;
 	text-decoration: underline;
+	-webkit-text-decoration-style: dotted;
 	text-decoration-style: dotted;
 	padding: 10px 0px;
 }
@@ -1568,6 +1595,10 @@ a#breadcrumb:hover{
 	z-index:5;*/
 	background-color: #fff;
 	padding: 50px 30px 250px;
+}
+
+a.hoverlinkorange:hover{
+    color: #ffa700;
 }
 
 .orderMC_title {
