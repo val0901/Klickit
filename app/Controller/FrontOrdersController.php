@@ -181,4 +181,35 @@ class FrontOrdersController extends MasterController
 		}
 	}
 
+	/**
+	 * Vue pdf d'une commande
+	 */
+	public function frontpdfOrders($id) 
+	{	
+		$data = [];
+		$show = new OrdersModel();
+		$find = new UserModel;
+		$user = $this->getUser();
+
+		if(!is_numeric($id) || empty($id)){
+			$this->showNotFound();
+
+		}elseif(empty($show->findOrderByID($user['id'], $id))){
+			$this->showNotFound();
+		}else{
+			$order = $show->findOrderByID($user['id'], $id);
+
+			$get = new ItemModel;
+			$user_data = $find->findUser($user['id']);			
+							
+			$data = [
+				'user'	=> $user_data,
+				'get'	=> $get,
+				'order' => $order
+			];
+		}	
+
+		$this->showStuff('front/User/pdfOrder', $data);
+	}
+
 }

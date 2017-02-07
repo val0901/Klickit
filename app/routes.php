@@ -148,6 +148,7 @@
 		['GET|POST', '/listOrders', 'FrontOrders#frontListOrders', 'front_listOrders'],
 			//vue d'une commande
 		['GET|POST', '/viewOrder/[i:id]', 'FrontOrders#frontViewOrders', 'front_viewUserOrder'],
+		['GET|POST', '/pdfOrder/[i:id]', 'FrontOrders#frontpdfOrders', 'front_pdfOrder'],
 
 
 		//Pages liées à FrontOrdersController du PROCESS COMMANDE
