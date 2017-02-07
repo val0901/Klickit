@@ -19,6 +19,16 @@ use \Model\FilterModel;
 use \Model\FiltrearticleModel;
 use \W\Security\AuthentificationModel;
 use \PHPMailer;
+use \PayPal\Rest\ApiContext as APIContext;
+use \PayPal\Auth\OAuthTokenCredential as TokenCredential;
+use \PayPal\Api\Payer;
+use \PayPal\Api\Item;
+use \PayPal\Api\ItemList;
+use \PayPal\Api\Details;
+use \PayPal\Api\Amount;
+use \PayPal\Api\Transaction;
+use \PayPal\Api\RedirectUrls;
+use \PayPal\Api\Payment;
 
 use \Respect\Validation\Validator as v; 
 
@@ -418,7 +428,9 @@ class AjaxFrontController extends Controller
 	public function updateOrderPayment()
 	{
 		$updateOrder = new OrdersModel;
+		$getOrder = new UserModel;
 		$deleteBasket = new BasketModel;
+		$getItem = new ItemModel;
 		$user = $this->getUser();
 		$sendMail = new PHPMailer;
 		$json = [];
@@ -427,6 +439,68 @@ class AjaxFrontController extends Controller
 			if($_POST['payment'] == 'paypal'){
 				if($updateOrder->updatePaymentOrder($user['id'], $_POST['payment'])){
 					if($deleteBasket->deleteAllBasket($user['id'])){
+
+						$paypal = new APIContext(
+							new TokenCredential(
+								'AbZj79OCZKQQW7fUqhkL5oEqwQelg8KnLSkgRfceq4s33OAssaIge9dxeS--Cy-pS5uDXHqBthIjugS5',
+								'EPF9t-DUzYMQmXG9eXhiDDLTGFNUpAC05WQMYyW-ho-dxC4VLlcpKVCEFXQ72IYbRh9qW3bBC7dWKhd8')
+							);
+
+						$current_order = $getOrder->getCurrentOrderById($user['id']);
+
+						$payer = new Payer();
+						$payer->setPaymentMethod('paypal');
+
+						$item[] = new Item();
+
+						for($i = 0; $i <= count($current_order); $i++){
+							foreach($current_order as $value){
+								$quantity = explode(', ',$value['quantity']);
+								$content = explode(', ', $value['contenu']);
+								
+
+								foreach($content as $key => $value){
+									$item_property = $getItem->findItems($key);
+									$qte = $quantity[$key];
+
+									if($item_property['newPrice'] == 0){
+										$item[$i]->setName($item_property)->setCurrency('EUR')->setQuantity($qte)->setPrice($item_property['price']);
+									}elseif($item_property['newPrice'] > 0){
+										$item[$i]->setName($item_property)->setCurrency('EUR')->setQuantity($qte)->setPrice($item_property['newPrice']);
+									}
+									
+								}
+							}
+
+							$itemList = new ItemList();
+							$itemList->setItems([$item[$i]]);
+							
+						}
+
+						$details = new Details();
+						$details->setShipping($value['shipping'])->setSubTotal($value['sub_total']);
+
+						$amount = new Amount();
+						$amount->setCurrency('EUR')->setTotal($value['total'])->setDetails($details);
+
+						$transaction = new Transaction();
+						$transaction->setAmount($amount)->setItemList($itemList)->setDescription('Votre commande')->setInvoiceNumber(uniqid());
+
+						$redirectUrls = new RedirectUrls();
+						$redirectUrls->setReturnUrl('http://google.com')->setCancelUrl('http://facebook.com');
+
+						$payment = new Payment();
+						$payment->setIntent('sale')->setPayer($payer)->setRedirectUrls($redirectUrls)->setTransactions([$transaction]);	
+
+						try {
+							$payment->create($paypal);
+						} catch (Exception $e) {
+							die($e);
+						}
+
+						$approvalUrl = $payment->getApprovalLink();
+						header("Location: {$approvalUrl}") ;
+
 						$json = [
 							'code' => 'paypal'
 						];

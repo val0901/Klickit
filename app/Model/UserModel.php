@@ -148,4 +148,21 @@ class UserModel extends \W\Model\UsersModel
 			return $sth->fetchAll();
 		}
 	}
+
+	/**
+	* Récupère la commande en cours d'un utilisateur
+	*/
+
+	public function getCurrentOrderById($id_member)
+	{
+		$sql = 'SELECT orders.*, '.$this->table.'.* FROM '.$this->table.' LEFT JOIN orders ON '.$this->table.'.id = orders.idMember WHERE '.$this->table.'.id = :id AND orders.order_process = "EnCours"';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':id', $id_member);
+		$sth->execute();
+
+		return $sth->fetch();
+	}
+
+
 }
