@@ -7,7 +7,7 @@
 	<div class="row pieces_background">
 		<div class="col-md-3" style="position:relative;">
 			<div class="classic_text_show"><span>Pièces détachées</span></div>
-			<img class="img-responsive" src="<?=$this->assetUrl('/img/art_classic_divers_000003.jpg');?>">
+			<img class="img-responsive" src="<?=$this->assetUrl('/img/img_pieces.jpg');?>">
 			<div class="pieces_text">Pièces détachées</div>
 		</div>
 		<div class="col-md-9">

@@ -7,13 +7,13 @@
 	<div class="row classics_background">
 		<div class="col-md-3" style="position:relative;">
 			<div class="classic_text_show"><span>Classics</span></div>
-			<img class="img-responsive" src="<?=$this->assetUrl('/img/art_classic_divers_000001.jpg');?>">
+			<img class="img-responsive" src="<?=$this->assetUrl('/img/img_classic.jpg');?>">
 			<div class="classic_text">Classics</div>
 		</div>
 		<div class="col-md-9">
 			<div class="container_general">
 				<h1 class="viewcategorycol2_title">Classics</h1>
-				<p class="viewcategorycol2_text">Ardeo, mihi credite, Patres conscripti (id quod vosmet de me existimatis et facitis ipsi) incredibili quodam amore patriae, qui me amor et subvenire olim impendentibus periculis maximis cum dimicatione capitis, et rursum, cum omnia tela undique esse intenta in patriam viderem, subire coegit atque excipere unum pro universis. Hic me meus in rem publicam animus pristinus ac perennis cum C. Caesare reducit, reconciliat, restituit in gratiam.</p>
+				<p class="viewcategorycol2_text">Les personnages de la catégorie "Classic" sont issus de la gamme PLAYMOBIL d'origine et Ils n'ont subi aucune transformation. Ils peuvent provenir de boites, sachets séries, blisters ou autre. Certains personnages ne sont plus commercialisés ou sont des exclusivités d'autres pays.</p>
 			</div>
 		</div>
 	</div>

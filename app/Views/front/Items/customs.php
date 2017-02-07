@@ -7,7 +7,7 @@
 	<div class="row customs_background">
 		<div class="col-md-3" style="position:relative;">
 			<div class="classic_text_show"><span>Customs</span></div>
-			<img class="img-responsive" src="<?=$this->assetUrl('/img/art_classic_divers_000002.jpg');?>">
+			<img class="img-responsive" src="<?=$this->assetUrl('/img/img_custom.jpg');?>">
 			<div class="customs_text">Customs</div>
 		</div>
 		<div class="col-md-9">

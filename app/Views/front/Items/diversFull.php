@@ -7,7 +7,7 @@
 	<div class="row divers_background">
 		<div class="col-md-3" style="position:relative;">
 			<div class="divers_text_show"><span>Divers</span></div>
-			<img class="img-responsive" src="<?=$this->assetUrl('/img/art_divers_bte000001.jpg');?>">
+			<img class="img-responsive" src="<?=$this->assetUrl('/img/img_boitessets.jpg');?>">
 			<div class="divers_text">Divers</div>
 		</div>
 		<div class="col-md-9">
