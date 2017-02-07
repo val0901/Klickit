@@ -142,8 +142,9 @@
 										Vous n'avez pas d'article dans votre panier.
 									</div>	
 								<?php endif; ?>			
-							</div>
-							<br><br>
+                            </div>
+<!-- EXPEDITION PANIER
+							<br>
 							<div class="row" style="margin: 0 10px;border-top:1px dotted #000;padding-top:10px;">
 								<div class="col-xs-6 shoppingmenu_total">
 									<p>Expédition:</p>
@@ -152,7 +153,8 @@
 									<p>2.60 €</p>
 								</div>
 							</div>
-							<div class="row" style="margin: 0 10px;">
+-->
+							<div class="row" style="margin: 0 10px;border-top:1px dotted #000;padding-top:10px;">
 								<div class="col-xs-6 shoppingmenu_total">
 									<p>Total:</p>
 								</div>
