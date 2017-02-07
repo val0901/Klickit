@@ -34,7 +34,7 @@ class ItemController extends Controller
 		$nb2=$nbpage->countResults('PiecesDetachees');
 		$nb3=$nbpage->countResults('Divers');
 
-		$max = 2;
+		$max = 15;
 
 		$page = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
 		

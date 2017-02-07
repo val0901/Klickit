@@ -53,7 +53,7 @@
 					</div>
 				</div>
 			</li>
-			<li>
+			<!-- <li>
 				<h3 class="viewcategoryrow2col1_title">état</h3>
 				<div class="form-group viewcategory_checkboxmargin">
 					<label class="viewcategorycheckbox_border">
@@ -64,7 +64,7 @@
 					<input type="checkbox"> <span class="viewcategorycheckbox_font"> Promo</span>
 					</label>
 				</div>
-			</li>
+			</li> -->
 		</div>
 		<!--End viewcategory row2 col1-->
 
