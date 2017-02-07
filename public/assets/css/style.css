@@ -621,7 +621,7 @@ a#customsmenu_scat{
 
 .col2_commentaireback {
 	background-color: #fff;
-	padding: 80px;
+	padding: 16vh;
 }
 
 .col2commtaire_margin {
@@ -660,7 +660,7 @@ a#customsmenu_scat{
 
 .comment_text {
     padding-left:10px;
-    font-size:25px;
+    font-size:1em;
     font-weight:400;
 }
 
