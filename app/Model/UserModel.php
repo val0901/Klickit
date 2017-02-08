@@ -155,13 +155,13 @@ class UserModel extends \W\Model\UsersModel
 
 	public function getCurrentOrderById($id_member)
 	{
-		$sql = 'SELECT orders.*, '.$this->table.'.* FROM '.$this->table.' LEFT JOIN orders ON '.$this->table.'.id = orders.idMember WHERE '.$this->table.'.id = :id AND orders.order_process = "EnCours"';
+		$sql = 'SELECT orders.*, '.$this->table.'.* FROM '.$this->table.' LEFT JOIN orders ON '.$this->table.'.id = orders.idMember WHERE '.$this->table.'.id = :id';
 
 		$sth = $this->dbh->prepare($sql);
 		$sth->bindValue(':id', $id_member);
 		$sth->execute();
 
-		return $sth->fetch();
+		return $sth->fetchAll();
 	}
 
 

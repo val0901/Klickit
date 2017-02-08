@@ -27,7 +27,12 @@ class FrontOrdersController extends MasterController
 			'orders' => $orders,
 		];
 
-		$this->showStuff('front/User/listOrders', $data);
+		if(!empty($this->getUser())){
+			$this->showStuff('front/User/listOrders', $data);
+		}
+		else {
+			$this->redirectToRoute('login');
+		}
 	}
 
 	/**
@@ -58,7 +63,12 @@ class FrontOrdersController extends MasterController
 			];
 		}	
 
-		$this->showStuff('front/User/viewUserOrder', $data);
+		if(!empty($this->getUser())){
+			$this->showStuff('front/User/viewUserOrder', $data);
+		}
+		else {
+			$this->redirectToRoute('login');
+		}
 	}
 
 	/**

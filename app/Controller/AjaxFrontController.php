@@ -434,6 +434,17 @@ class AjaxFrontController extends Controller
 		$user = $this->getUser();
 		$sendMail = new PHPMailer;
 		$json = [];
+		$orderContent = '';
+
+		$getOrderByID = $getOrder->getCurrentOrderById($user['id']);
+
+		$current_order = end($getOrderByID);
+
+		$findItem = new ItemModel();
+
+		foreach ($current_order as $value) {
+			$orderContent = explode(', ', $value['contenu']);
+		}
 
 		if(!empty($_POST) && isset($_POST)){
 			if($_POST['payment'] == 'paypal'){
@@ -446,14 +457,11 @@ class AjaxFrontController extends Controller
 								'EPF9t-DUzYMQmXG9eXhiDDLTGFNUpAC05WQMYyW-ho-dxC4VLlcpKVCEFXQ72IYbRh9qW3bBC7dWKhd8')
 							);
 
-						$current_order = $getOrder->getCurrentOrderById($user['id']);
-
 						$payer = new Payer();
 						$payer->setPaymentMethod('paypal');
 
-						$item[] = new Item();
-
 						for($i = 0; $i <= count($current_order); $i++){
+							$item[$i] = new Item();
 							foreach($current_order as $value){
 								$quantity = explode(', ',$value['quantity']);
 								$content = explode(', ', $value['contenu']);
@@ -471,11 +479,10 @@ class AjaxFrontController extends Controller
 									
 								}
 							}
-
-							$itemList = new ItemList();
-							$itemList->setItems([$item[$i]]);
-							
+							$items[] = $item[$i];
 						}
+							$itemList = new ItemList();
+							$itemList->setItems($items);
 
 						$details = new Details();
 						$details->setShipping($value['shipping'])->setSubTotal($value['sub_total']);
@@ -510,7 +517,24 @@ class AjaxFrontController extends Controller
 			elseif ($_POST['payment'] == 'cheque') {
 				if($updateOrder->updatePaymentOrder($user['id'], $_POST['payment'])){
 					if($deleteBasket->deleteAllBasket($user['id'])){
-						$contentEmail = 'mode de paiement chèque';
+						if($user['social_title'] == 'Mme'){
+							$contentEmail = 'Bonjour Madame '.$user['lastname'].' '.$user['firstname'].', vous avez choisi le mode de paiement par chèque pour votre commande n°'.$current_order['id'].' qui contient : <br> <ul>';
+
+							foreach ($orderContent as $contentMail) {
+								$contentEmail.= '<li>'.$contentMail.'</li>';
+							}
+							
+							$contentEmail.= '</ul> <br> <br> Merci de votre confiance, à très bientôt sur Klickit ! <br><br> L\'équipe Klickit.'
+						}
+						elseif($user['social_title'] == 'M'){
+							$contentEmail = 'Bonjour Monsieur '.$user['lastname'].' '.$user['firstname'].', vous avez choisi le mode de paiement par chèque pour votre commande n°'.$current_order['id'].' qui contient : <br> <ul>';
+
+							foreach ($orderContent as $contentMail) {
+								$contentEmail.= '<li>'.$contentMail.'</li>';
+							}
+							
+							$contentEmail.= '</ul> <br> <br> Merci de votre confiance, à très bientôt sur Klickit ! <br><br> L\'équipe Klickit.'
+						}
 
 						$sendMail->isSMTP();                                      
 						$sendMail->Host = 'ssl0.ovh.net';  									// Hôte du SMTP
@@ -542,7 +566,24 @@ class AjaxFrontController extends Controller
 			elseif($_POST['payment'] == 'virement') {
 				if($updateOrder->updatePaymentOrder($user['id'], $_POST['payment'])){
 					if($deleteBasket->deleteAllBasket($user['id'])){
-						$contentEmail = 'mode de paiement virement';
+						if($user['social_title'] == 'Mme'){
+							$contentEmail = 'Bonjour Madame '.$user['lastname'].' '.$user['firstname'].', vous avez choisi le mode de paiement par virement pour votre commande n°'.$current_order['id'].' qui contient : <br> <ul>';
+
+							foreach ($orderContent as $contentMail) {
+								$contentEmail.= '<li>'.$contentMail.'</li>';
+							}
+							
+							$contentEmail.= '</ul> <br> <br> Merci de votre confiance, à très bientôt sur Klickit ! <br><br> L\'équipe Klickit.'
+						}
+						elseif($user['social_title'] == 'M'){
+							$contentEmail = 'Bonjour Monsieur '.$user['lastname'].' '.$user['firstname'].', vous avez choisi le mode de paiement par virement pour votre commande n°'.$current_order['id'].' qui contient : <br> <ul>';
+
+							foreach ($orderContent as $contentMail) {
+								$contentEmail.= '<li>'.$contentMail.'</li>';
+							}
+							
+							$contentEmail.= '</ul> <br> <br> Merci de votre confiance, à très bientôt sur Klickit ! <br><br> L\'équipe Klickit.'
+						}
 
 						$sendMail->isSMTP();                                      
 						$sendMail->Host = 'ssl0.ovh.net';  									// Hôte du SMTP
