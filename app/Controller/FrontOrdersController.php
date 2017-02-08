@@ -144,30 +144,34 @@ class FrontOrdersController extends MasterController
 
 		$total = $getInfos->getTotal($user['id']);
 		$fdp = $getInfos->countFDP($user['id']);
+		$sub = $getInfos->sub_categoryFDP($user['id']);
 
 		$getBasket = new BasketModel;
 
 		$finalFDP = '';
 
-		//Gestion de la quantité des objets
-		foreach ($fdp as $value){
-
+		//Gestion des sous-catégories
+		$subCat = '';
+		foreach ($sub as $category) {
+				$subCat.= $category['sub_category'].', ';
 		}
 
+		$arraySub_category = explode(', ', substr($subCat, 0, -2));
+
 		//S'il y a un Custom, on rajoute 6.90
-		if(in_array('CustomsPeints', $value) || in_array('PiecesEnResine', $value)){
+		if(in_array('CustomsPeints', $arraySub_category) || in_array('PiecesEnResine', $arraySub_category)){
 			$customFDP = 6.90;
 		}else{
 			$customFDP = 0;
 		}
 
-		if($value['somme'] >= 1 && $value['somme'] <= 3 ){
+		if($fdp['somme'] >= 1 && $fdp['somme'] <= 3 ){
 			$finalFDP = $customFDP + 2.50;
 
-		}elseif($value['somme'] >= 4 && $value['somme'] <= 8){
+		}elseif($fdp['somme'] >= 4 && $fdp['somme'] <= 8){
 			$finalFDP = $customFDP + 3.90;
 
-		}elseif($value['somme'] > 8){
+		}elseif($fdp['somme'] > 8){
 			$finalFDP = $customFDP + 6.90;
 		}
 

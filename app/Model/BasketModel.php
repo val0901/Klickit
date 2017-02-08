@@ -83,14 +83,28 @@ class BasketModel extends \W\Model\Model
 	public function countFDP($id_member)
 	{
 
-		$sql = 'SELECT item.sub_category, SUM('.$this->table.'.quantity) AS somme FROM '.$this->table.' LEFT JOIN item ON '.$this->table.'.id_item = item.id WHERE id_member = :id_member ';
+		$sql = 'SELECT SUM('.$this->table.'.quantity) AS somme FROM '.$this->table.' WHERE id_member = :id_member ';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':id_member', $id_member);
+		$sth->execute();
+
+		return $sth->fetch();
+
+	}
+
+	/**
+	 * Permet de récupérer les sous catégorier
+	 */
+	public function sub_categoryFDP($id_member)
+	{
+		$sql = 'SELECT item.sub_category, '.$this->table.'.id_item FROM '.$this->table.' LEFT JOIN item ON '.$this->table.'.id_item = item.id WHERE id_member = :id_member';
 
 		$sth = $this->dbh->prepare($sql);
 		$sth->bindValue(':id_member', $id_member);
 		$sth->execute();
 
 		return $sth->fetchAll();
-
 	}
 
 	/**
