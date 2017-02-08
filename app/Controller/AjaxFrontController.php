@@ -443,10 +443,10 @@ class AjaxFrontController extends Controller
 		$findItem = new ItemModel();
 
 		foreach ($current_order as $v1) {
-			foreach ($v1 as $v2) {
-				$orderContent = explode(', ', $v2['contenu']);
-			}
+				$orderContent = explode(', ', $v1['contenu']);
 		}
+
+		var_dump($orderContent);
 
 		if(!empty($_POST) && isset($_POST)){
 			if($_POST['payment'] == 'paypal'){
