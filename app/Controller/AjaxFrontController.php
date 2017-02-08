@@ -442,8 +442,10 @@ class AjaxFrontController extends Controller
 
 		$findItem = new ItemModel();
 
-		foreach ($current_order as $value) {
-			$orderContent = explode(', ', $value['contenu']);
+		foreach ($current_order as $v1) {
+			foreach ($v1 as $v2) {
+				$orderContent = explode(', ', $v2['contenu']);
+			}
 		}
 
 		if(!empty($_POST) && isset($_POST)){
