@@ -471,9 +471,9 @@ class AjaxFrontController extends Controller
 									$qte = $quantity[$key];
 
 									if($item_property['newPrice'] == 0){
-										$item[$i]->setName($item_property)->setCurrency('EUR')->setQuantity($qte)->setPrice($item_property['price']);
+										$item[$i]->setName($item_property['name'])->setCurrency('EUR')->setQuantity($qte)->setPrice($item_property['price']);
 									}elseif($item_property['newPrice'] > 0){
-										$item[$i]->setName($item_property)->setCurrency('EUR')->setQuantity($qte)->setPrice($item_property['newPrice']);
+										$item[$i]->setName($item_property['name'])->setCurrency('EUR')->setQuantity($qte)->setPrice($item_property['newPrice']);
 									}
 									
 								}
