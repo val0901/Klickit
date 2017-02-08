@@ -442,11 +442,7 @@ class AjaxFrontController extends Controller
 
 		$findItem = new ItemModel();
 
-		foreach ($current_order as $v1) {
-				$orderContent = explode(', ', $v1['contenu']);
-		}
-
-		var_dump($orderContent);
+		$orderContent = explode(', ', $current_order['contenu']);
 
 		if(!empty($_POST) && isset($_POST)){
 			if($_POST['payment'] == 'paypal'){
@@ -462,13 +458,14 @@ class AjaxFrontController extends Controller
 						$payer = new Payer();
 						$payer->setPaymentMethod('paypal');
 
-						for($i = 0; $i <= count($current_order); $i++){
-							$item[$i] = new Item();
-							foreach($current_order as $value){
-								$quantity = explode(', ',$value['quantity']);
-								$content = explode(', ', $value['contenu']);
-								
+						$quantity = explode(', ',$current_order['quantity']);
+						$content = explode(', ', $current_order['contenu']);
 
+						for($i = 0; $i <= count($orderContent); $i++){
+							
+							$item[$i] = new Item();
+
+							foreach($current_order as $value){
 								foreach($content as $key => $value){
 									$item_property = $getItem->findItems($key);
 									$qte = $quantity[$key];
