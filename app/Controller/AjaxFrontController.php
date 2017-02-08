@@ -484,10 +484,10 @@ class AjaxFrontController extends Controller
 							$itemList->setItems($items);
 
 						$details = new Details();
-						$details->setShipping($value['shipping'])->setSubTotal($value['sub_total']);
+						$details->setShipping($current_order['shipping'])->setSubTotal($current_order['sub_total']);
 
 						$amount = new Amount();
-						$amount->setCurrency('EUR')->setTotal($value['total'])->setDetails($details);
+						$amount->setCurrency('EUR')->setTotal($current_order['total'])->setDetails($details);
 
 						$transaction = new Transaction();
 						$transaction->setAmount($amount)->setItemList($itemList)->setDescription('Votre commande')->setInvoiceNumber(uniqid());
