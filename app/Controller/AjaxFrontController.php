@@ -434,7 +434,7 @@ class AjaxFrontController extends Controller
 		$user = $this->getUser();
 		$sendMail = new PHPMailer;
 		$json = [];
-		$orderContent = '';
+		$orderContent = [];
 
 		$getOrderByID = $getOrder->getCurrentOrderById($user['id']);
 
