@@ -508,7 +508,7 @@ class AjaxFrontController extends Controller
 						header("Location: {$approvalUrl}") ;
 
 						$json = [
-							'code' => 'paypal'
+							'code' => 'paypal',
 						];
 					}
 				}
