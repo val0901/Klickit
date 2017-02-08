@@ -524,7 +524,7 @@ class AjaxFrontController extends Controller
 								$contentEmail.= '<li>'.$contentMail.'</li>';
 							}
 							
-							$contentEmail.= '</ul> <br> Votre commande vous sera expédié dès réception du chèque <br> <br> Merci de votre confiance, à très bientôt sur Klickit ! <br><br> L\'équipe Klickit.'
+							$contentEmail.= '</ul> <br> Votre commande vous sera expédié dès réception du chèque <br> <br> Merci de votre confiance, à très bientôt sur Klickit ! <br><br> L\'équipe Klickit.';
 						}
 						elseif($user['social_title'] == 'M'){
 							$contentEmail = 'Bonjour Monsieur '.$user['lastname'].' '.$user['firstname'].', vous avez choisi le mode de paiement par chèque pour votre commande n°'.$current_order['id'].' qui contient : <br> <ul>';
@@ -533,7 +533,7 @@ class AjaxFrontController extends Controller
 								$contentEmail.= '<li>'.$contentMail.'</li>';
 							}
 							
-							$contentEmail.= '</ul> <br> Votre commande vous sera expédié dès réception du chèque <br>  <br> Merci de votre confiance, à très bientôt sur Klickit ! <br><br> L\'équipe Klickit.'
+							$contentEmail.= '</ul> <br> Votre commande vous sera expédié dès réception du chèque <br>  <br> Merci de votre confiance, à très bientôt sur Klickit ! <br><br> L\'équipe Klickit.';
 						}
 
 						$sendMail->isSMTP();                                      
@@ -573,7 +573,7 @@ class AjaxFrontController extends Controller
 								$contentEmail.= '<li>'.$contentMail.'</li>';
 							}
 							
-							$contentEmail.= '</ul> <br> Votre commande vous sera expédié dès validation du virement <br> <br> Merci de votre confiance, à très bientôt sur Klickit ! <br><br> L\'équipe Klickit.'
+							$contentEmail.= '</ul> <br> Votre commande vous sera expédié dès validation du virement <br> <br> Merci de votre confiance, à très bientôt sur Klickit ! <br><br> L\'équipe Klickit.';
 						}
 						elseif($user['social_title'] == 'M'){
 							$contentEmail = 'Bonjour Monsieur '.$user['lastname'].' '.$user['firstname'].', vous avez choisi le mode de paiement par virement pour votre commande n°'.$current_order['id'].' qui contient : <br> <ul>';
@@ -582,7 +582,7 @@ class AjaxFrontController extends Controller
 								$contentEmail.= '<li>'.$contentMail.'</li>';
 							}
 							
-							$contentEmail.= '</ul> <br> Votre commande vous sera expédié dès validation du virement <br> <br> Merci de votre confiance, à très bientôt sur Klickit ! <br><br> L\'équipe Klickit.'
+							$contentEmail.= '</ul> <br> Votre commande vous sera expédié dès validation du virement <br> <br> Merci de votre confiance, à très bientôt sur Klickit ! <br><br> L\'équipe Klickit.';
 						}
 
 						$sendMail->isSMTP();                                      
