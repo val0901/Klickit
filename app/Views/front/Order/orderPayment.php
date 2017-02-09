@@ -118,6 +118,7 @@
 				success: function(up){
 					if(up.code == 'paypal'){
 						//window.location.assign('//$this->url('front_orderAddress');'); Mettre le lien vers l'API ...
+						window.location.assign(up.link);
 					}
 					else if(up.code == 'cheque'){
 						// + Code de l'envoie d'email ...
