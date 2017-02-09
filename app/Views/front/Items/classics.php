@@ -290,11 +290,13 @@
 
 <!--BOUTON AJOUTER AU PANIER-->
 <script>
-$('#simple').on('click',function(){
-  $('#simple').toggleClass('submitName');
-  $('#first').toggleClass('goodToGo').fadeOut(200,function(){
-  	$('#first').text('Thank you!').fadeIn(200);
-  });
+$(document).ready(function(){
+    $('.simple').on('click',function(){
+      $('.simple').toggleClass('submitName');
+      $('#first').toggleClass('goodToGo').fadeOut(200,function(){
+      	$('#first').text('Thank you!').fadeIn(200);
+      });
+    });
 });
 </script>
 <!--FIN BOUTON AJOUTER AU PANIER-->
