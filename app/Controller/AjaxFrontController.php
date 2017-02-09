@@ -461,22 +461,21 @@ class AjaxFrontController extends Controller
 						$quantity = explode(', ',$current_order['quantity']);
 						$content = explode(', ', $current_order['contenu']);
 
-						for($i = 0; $i <= count($orderContent); $i++){
-							
-							$item[$i] = new Item();
+						$items = [];
 
-							foreach($content as $key => $value){
-								$item_property = $getItem->findItemsForAPI($value);
-								$qte = $quantity[$key];
+						foreach($content as $key => $value){
+							$item = new Item();
 
-								if($item_property['newPrice'] == 0){
-									$item[$i]->setName($item_property['name'])->setCurrency('EUR')->setQuantity($qte)->setPrice($item_property['price']);
-								}elseif($item_property['newPrice'] > 0){
-									$item[$i]->setName($item_property['name'])->setCurrency('EUR')->setQuantity($qte)->setPrice($item_property['newPrice']);
-								}
+							$item_property = $getItem->findItemsForAPI($value);
+							$qte = $quantity[$key];
+
+							if($item_property['newPrice'] == 0){
+								$items[] = $item->setName($item_property['name'])->setCurrency('EUR')->setQuantity($qte)->setPrice($item_property['price']);
+							}elseif($item_property['newPrice'] > 0){
+								$items[] = $item->setName($item_property['name'])->setCurrency('EUR')->setQuantity($qte)->setPrice($item_property['newPrice']);
 							}
-							$items[] = $item[$i];
 						}
+
 							var_dump($item_property);
 							var_dump($items);
 							$itemList = new ItemList();
