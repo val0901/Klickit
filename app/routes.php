@@ -158,5 +158,6 @@
 		['GET|POST', '/orderPayment', 'FrontOrders#frontOrderPaie', 'front_orderPayment'],
 			//Page choix de l'adresse de livraison
 		['GET|POST', '/orderAddress', 'FrontOrders#frontOrderAddress', 'front_orderAddress'],
+		['GET|POST', '/pay', 'FrontOrders#pay', 'front_pay'],
 
 	);

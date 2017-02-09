@@ -8,6 +8,10 @@ use \Model\ItemModel;
 use \Model\BasketModel;
 use \Model\UserModel;
 use \W\Security\AuthorizationModel;
+use \PayPal\Rest\ApiContext as APIContext;
+use \PayPal\Auth\OAuthTokenCredential as TokenCredential;
+use \PayPal\Api\Payment;
+use \PayPal\Api\PaymentExecution;
 
 class FrontOrdersController extends MasterController 
 {
@@ -224,6 +228,14 @@ class FrontOrdersController extends MasterController
 		}	
 
 		$this->showStuff('front/User/pdfOrder', $data);
+	}
+
+	//Page de réussite après paiement
+	public function pay()
+	{		
+
+		$this->showStuff('front/Order/pay');
+
 	}
 
 }

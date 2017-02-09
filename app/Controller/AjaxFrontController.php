@@ -433,6 +433,7 @@ class AjaxFrontController extends Controller
 		$getItem = new ItemModel;
 		$user = $this->getUser();
 		$sendMail = new PHPMailer;
+		$findItems = new ItemModel;
 		$json = [];
 		$orderContent = [];
 
@@ -489,7 +490,7 @@ class AjaxFrontController extends Controller
 						$transaction->setAmount($amount)->setItemList($itemList)->setDescription('Votre commande')->setInvoiceNumber(uniqid());
 
 						$redirectUrls = new RedirectUrls();
-						$redirectUrls->setReturnUrl('http://google.com')->setCancelUrl('http://facebook.com');
+						$redirectUrls->setReturnUrl('http://localhost/Klickit/public/pay?success=true')->setCancelUrl('http://localhost/Klickit/public/pay?success=false');
 
 						$payment = new Payment();
 						$payment->setIntent('sale')->setPayer($payer)->setRedirectUrls($redirectUrls)->setTransactions([$transaction]);	
