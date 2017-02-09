@@ -125,6 +125,20 @@ class ItemModel extends \W\Model\Model
 	}
 
 	/**
+	 * Requête spéciale pour l'API PayPal
+	 */
+	public function findItemsForAPI($id)
+	{
+		$sql = 'SELECT name, price, newPrice FROM '.$this->table.' WHERE id = :id';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':id', $id);
+		$sth->execute();
+
+		return $sth->fetch();
+	}
+
+	/**
 	 * REQUÊTE D'AFFICHAGE EN FONCTION DU STATUT
 	 */
 	public function findCategoryStatutCustom($category, $statut)

@@ -465,21 +465,20 @@ class AjaxFrontController extends Controller
 							
 							$item[$i] = new Item();
 
-							foreach($current_order as $value){
-								foreach($content as $key => $value){
-									$item_property = $getItem->findItems($key);
-									$qte = $quantity[$key];
+							foreach($content as $key => $value){
+								$item_property = $getItem->findItemsForAPI($value);
+								$qte = $quantity[$key];
 
-									if($item_property['newPrice'] == 0){
-										$item[$i]->setName($item_property['name'])->setCurrency('EUR')->setQuantity($qte)->setPrice($item_property['price']);
-									}elseif($item_property['newPrice'] > 0){
-										$item[$i]->setName($item_property['name'])->setCurrency('EUR')->setQuantity($qte)->setPrice($item_property['newPrice']);
-									}
-									
+								if($item_property['newPrice'] == 0){
+									$item[$i]->setName($item_property['name'])->setCurrency('EUR')->setQuantity($qte)->setPrice($item_property['price']);
+								}elseif($item_property['newPrice'] > 0){
+									$item[$i]->setName($item_property['name'])->setCurrency('EUR')->setQuantity($qte)->setPrice($item_property['newPrice']);
 								}
 							}
 							$items[] = $item[$i];
 						}
+							var_dump($item_property);
+							var_dump($items);
 							$itemList = new ItemList();
 							$itemList->setItems($items);
 
