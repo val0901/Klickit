@@ -504,6 +504,47 @@ class AjaxFrontController extends Controller
 						$approvalUrl = $payment->getApprovalLink();
 
 						if(!empty($approvalUrl)){
+							if($user['social_title'] == 'Mme'){
+								$contentEmail = 'Bonjour Madame '.$user['lastname'].' '.$user['firstname'].', vous avez choisi le mode de paiement par PayPal pour votre commande n°'.$current_order['id'].' qui contient : <br> <ul>';
+
+								foreach ($orderContent as $contentMail) {
+									$product = $findItems->findItems($contentMail);
+									$contentEmail.= '<li>'.$product['name'].'</li>';
+								}
+								
+								$contentEmail.= '</ul> <br> Votre commande vous sera expédié dès validation du paiement <br> <br> Merci de votre confiance, à très bientôt sur Klickit ! <br><br> L\'équipe Klickit.';
+							}
+							elseif($user['social_title'] == 'M'){
+								$contentEmail = 'Bonjour Monsieur '.$user['lastname'].' '.$user['firstname'].', vous avez choisi le mode de paiement par PayPal pour votre commande n°'.$current_order['id'].' qui contient : <br> <ul>';
+
+								foreach ($orderContent as $contentMail) {
+									$product = $findItems->findItems($contentMail);
+									$contentEmail.= '<li>'.$product['name'].'</li>';
+								}
+								
+								$contentEmail.= '</ul> <br> Votre commande vous sera expédié dès validation du paiement <br>  <br> Merci de votre confiance, à très bientôt sur Klickit ! <br><br> L\'équipe Klickit.';
+							}
+
+							$sendMail->isSMTP();                                      
+							$sendMail->Host = 'ssl0.ovh.net';  									// Hôte du SMTP
+							$sendMail->SMTPAuth = true;                               				// SMTP Authentification
+							$sendMail->Username = 'sav@klickit.fr'; //Username         				// SMTP username
+							$sendMail->Password = 'silSAV33@'; //mot de passe                    	 				// SMTP password
+							$sendMail->SMTPSecure = 'tls';                         					// Enable TLS encryption, `ssl` also accepted
+							$sendMail->Port = 587;                                					// TCP port to connect to
+							$sendMail->CharSet = 'UTF-8';
+
+							$sendMail->setFrom('sav@klickit.fr', 'Klickit');		  		//Expéditeur
+							
+							$sendMail->addAddress($user['email'], $user['firstname'].' '.$user['lastname']); 	   	//$user['email']
+							//$sendMail->addCC(''); 					//Copie envoyer à l'adresse souhaitée du mail
+
+							$sendMail->Subject = 'paiement chèque';
+							$sendMail->Body    = $contentEmail; //On envoi le message éventuellement en HTML
+							$sendMail->AltBody = $contentEmail; //On envoi le message sans HTML
+
+							$sendMail->send();
+							
 							$json = [
 								'code' => 'paypal',
 								'link' => $approvalUrl,
