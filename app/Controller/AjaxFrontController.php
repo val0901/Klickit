@@ -475,7 +475,7 @@ class AjaxFrontController extends Controller
 								$items[] = $item->setName($item_property['name'])->setCurrency('EUR')->setQuantity($qte)->setPrice($item_property['newPrice']);
 							}
 						}
-						
+
 						$itemList = new ItemList();
 						$itemList->setItems($items);
 
@@ -500,12 +500,15 @@ class AjaxFrontController extends Controller
 							die($e);
 						}
 
+						$approvalUrl = null;
 						$approvalUrl = $payment->getApprovalLink();
 
-						$json = [
-							'code' => 'paypal',
-							'link' => $approvalUrl,
-						];
+						if(!empty($approvalUrl)){
+							$json = [
+								'code' => 'paypal',
+								'link' => $approvalUrl,
+							];
+						}
 					}
 				}
 			}
