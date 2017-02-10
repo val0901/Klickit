@@ -239,6 +239,8 @@ class FrontOrdersController extends MasterController
 	{		
 		$getOrder = new UserModel;
 		$user = $this->getUser();
+		$data = [];
+		$get = new ItemModel;
 
 		$getOrderByID = $getOrder->getCurrentOrderById($user['id']);
 		$current_order = end($getOrderByID);
@@ -252,43 +254,40 @@ class FrontOrdersController extends MasterController
 
 		if(isset($_GET['paymentId'], $_GET['PayerID'], $_GET['success'])){
 			
-			if((bool)$_GET['success'] === true){
+			if($_GET['success'] == 'true'){
 
 				$paymentId = $_GET['paymentId'];
-				$PayerID = $_GET['PayerID'];
-
 				$payment = Payment::get($paymentId, $paypal);
 
-				$execute = new PaymentExecution;
-				$execute->setPayerId($PayerID);
-
-				$transaction = new Transaction();
-			    $amount = new Amount();
-			    $details = new Details();
-
-			    $details->setShipping($current_order['shipping'])->setSubtotal($current_order['sub_total']);
-
-			    $amount->setCurrency('EUR');
-			    $amount->setTotal($current_order['total']);
-			    $amount->setDetails($details);
-			    $transaction->setAmount($amount);
-
-
-			    $execute->addTransaction($transaction);
+				$PayerID = $_GET['PayerID'];
+				$execution = new PaymentExecution;
+				$execution->setPayerId($PayerID);		
 
 				try {
 
-					$result = $payment->execute($execute, $paypal);
+					$result = $payment->execute($execution, $paypal);
+					var_dump($result);
+
+				} catch (PayPal\Exception\PayPalConnectionException $e) {
+
+					//var_dump($e->getCode());
+					var_dump($e->getData());
+					die($e);
 
 				} catch (Exception $e) {
-					$data = json_decode($e->getData());
+					die($e);
 				}
 
-			}	
-			$this->showStuff('front/Order/pay');
-			return $payment;
-		}else{
+			}
 
+			$data = [
+				'user'	=> $user,
+				'get'	=> $get,
+				'order' => $current_order,
+			];
+
+			$this->showStuff('front/Order/pay', $data);
+			//var_dump($payment);
 		}	
 		
 
