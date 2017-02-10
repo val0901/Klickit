@@ -1,8 +1,9 @@
 <?php $this->layout('layoutback', ['title' => 'Chiffre d\'affaires']) ?>
 
 <?php $this->start('main_content') ?>
-
+		<div id="errorUpdate" style="color:white;"></div>
 		<form method="post" class="form-inline">
+			<button id="salesRevenu" type="button" class="btn btn-info">Mettre à jour le chiffre d'affaire</button>
 			<div class="form-group">
 				<input type="text" class="form-control" id="search" name="search" placeholder="Recherche ...">
 			</div>
@@ -16,10 +17,14 @@
 						<th>Chiffre d'affaire</th>
 					</thead>
 
-					<tbody id="result">	
-					<th></th>
-					<th></th>
-					<th><?=$price;?></th>		
+					<tbody id="result">
+						<?php foreach($sales as $salesValue) : ?>
+							<tr>
+								<td><?=$salesValue['month'];?></td>
+								<td><?=$salesValue['year'];?></td>
+								<td><?=$salesValue['revenue'];?></td>
+							</tr>
+						<?php endforeach; ?>	
 					</tbody>			
 				</table>
 			</div>
@@ -37,3 +42,30 @@
 
 <?php $this->stop('main_content') ?>
 
+<?php $this->start('js') ?>
+	<script>
+		$(document).ready(function(){
+			$('#salesRevenu').click(function(e){
+				e.preventDefault();
+
+				var ok = '';
+
+				$.ajax({
+					url: '<?=$this->url('ajax_salesRevenu');?>',
+					type: 'post',
+					cache: false,
+					data: {update: ok},
+					dataType: 'json',
+					success: function(ok){
+						if(ok.code == 'ok'){
+							$('body').load('<?=$this->url('listSales');?>');
+						}
+						else if(ok.code == 'no'){
+							$('#errorUpdate').html(ok.msg);
+						}
+					}
+				});
+			});
+		});
+	</script>
+<?php $this->stop('js') ?>

@@ -15,6 +15,11 @@ class SalesController extends Controller
 	 */
 	public function listSales()
 	{
+		$salesValue = [
+			'month'   => '',
+			'year' 	  => '',
+			'revenue' => '',
+		];
 		/*PAGINATION*/
 		$nbpage= new SalesrevenueModel();
 			$nb=$nbpage->countResults();
@@ -23,26 +28,10 @@ class SalesController extends Controller
 		$max = 15;
 
 		$sales = new SalesrevenueModel();
-		$list_sales = $sales->findAllSales($page, $max);
-		
-		$orders = new OrdersModel();
-		$find_sales = $orders->findSalesRevenue();
-
-		$price = 0;
-		foreach($find_sales as $value){
-		 $price = $value['total'] + $price;
-		 // $month = date('m', strtotime($value['date_creation']));
-		 // $year = date('Y', strtotime($value['date_creation']));
-		}
-
-		$insert = $sales->insert([
-			// 'month'	=> $month,
-			// 'year'	=> $year,
-			'revenue' => $price,
-			]);
+		$allSales = $sales->findAllSales($page, $max);
 
 		$data = [
-			'price'		=> $price,
+			'sales'		=> $allSales,
 			'max'		=> $max,
 			'page'		=> $page,
 			'nb'		=> $nb,

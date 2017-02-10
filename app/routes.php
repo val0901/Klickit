@@ -32,6 +32,7 @@
 		['GET|POST', '/ajax/updateFilter', 'Ajax#updateFilter', 'ajax_updateFilter'],
 		['GET|POST', '/ajax/UpdateItemFilter', 'Ajax#UpdateItemFilter', 'ajax_UpdateItemFilter'],
 		['GET|POST', '/ajax/orderUpdateStatut', 'Ajax#orderUpdateStatut', 'ajax_orderUpdateStatut'],
+		['GET|POST', '/ajax/salesRevenu', 'Ajax#salesRevenu', 'ajax_salesRevenu'],
 
 		//Pages liées à UserController
 		['GET|POST', '/admin/listUser', 'User#listUser', 'listUser'],

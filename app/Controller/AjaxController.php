@@ -14,6 +14,7 @@ use \Model\SlideModel;
 use \Model\ShippingModel;
 use \Model\FilterModel;
 use \Model\FiltrearticleModel;
+use \Model\SalesrevenueModel;
 use \W\Security\AuthentificationModel;
 use \PHPMailer;
 
@@ -666,6 +667,109 @@ class AjaxController extends Controller
 				
 			}
 		}
+		$this->showJson($json);
+	}
+
+	/**
+	 * Création des sales revenues
+	 */
+	public function salesRevenu()
+	{
+		$json = [];
+		$salesRevenu = null;
+
+		$getOrder = new OrdersModel();
+		$sales = new SalesrevenueModel();
+
+		$allOrder = $getOrder->findOrderForsales();
+
+		if(empty($allOrder)){
+			$json = [
+				'code' => 'no',
+				'msg'  => 'Aucune mise à jour du chiffre d\'affaire disponible, réessayez quand vous aurez vendu quelque chose ;)',
+			];
+			$this->showJson($json);
+		}
+
+		foreach($allOrder as $dateValue){
+			$year = date_format(date_create($dateValue['date_creation']), 'Y');
+
+			if(date_format(date_create($dateValue['date_creation']), 'm') == 01){
+				$month = 1;
+			}
+			elseif(date_format(date_create($dateValue['date_creation']), 'm') == 02){
+				$month = 2;
+			}
+			elseif(date_format(date_create($dateValue['date_creation']), 'm') == 03){
+				$month = 3;
+			}
+			elseif(date_format(date_create($dateValue['date_creation']), 'm') == 04){
+				$month = 4;
+			}
+			elseif(date_format(date_create($dateValue['date_creation']), 'm') == 05){
+				$month = 5;
+			}
+			elseif(date_format(date_create($dateValue['date_creation']), 'm') == 06){
+				$month = 6;
+			}
+			elseif(date_format(date_create($dateValue['date_creation']), 'm') == 07){
+				$month = 7;
+			}
+			elseif(date_format(date_create($dateValue['date_creation']), 'm') == 08){
+				$month = 8;
+			}
+			elseif(date_format(date_create($dateValue['date_creation']), 'm') == 09){
+				$month = 9;
+			}
+			elseif(date_format(date_create($dateValue['date_creation']), 'm') == 10){
+				$month = 10;
+			}
+			elseif(date_format(date_create($dateValue['date_creation']), 'm') == 11){
+				$month = 11;
+			}
+			elseif(date_format(date_create($dateValue['date_creation']), 'm') == 12){
+				$month = 12;
+			}
+
+			$monthAndYear = $sales->monthAndYear($month, $year);
+
+			foreach ($monthAndYear as $rMAY) {
+				$realMonthAndYear = implode('', $rMAY);
+			}
+
+			if($monthAndYear){
+				$revenue = $realMonthAndYear + $dateValue['total'];
+				$salesRevenu = $sales->updateRevenu($month, $year, $revenue);
+
+				if(isset($salesRevenu)){
+					$getOrder->updateAccounted($dateValue['id']);
+				}
+			}
+			else {
+				$salesRevenu = $sales->insert([
+					'month'   => $month,
+					'year' 	  => $year,
+					'revenue' => $dateValue['total'],
+ 				]);
+
+ 				if(isset($salesRevenu)){
+ 					$getOrder->updateAccounted($dateValue['id']);
+ 				}
+			}
+		}
+
+		if(isset($salesRevenu)){
+			$json = [
+				'code' => 'ok',
+			];
+		}
+		else {
+			$json = [
+				'code' => 'no',
+				'msg'  => 'Erreur lors de la mise à jour du chiffre d\'affaire',
+			];
+		}
+
 		$this->showJson($json);
 	}
 }

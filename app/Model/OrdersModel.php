@@ -240,8 +240,34 @@ class OrdersModel extends \W\Model\Model
 		$sth->execute();
 
 		return $sth->fetchAll();
+	}
 
+	/**
+	 * Récupère la date et le total pour le chiffre d'affaire
+	 */
+	public function findOrderForsales()
+	{
+		$sql = 'SELECT id, date_creation, total FROM '.$this->table.' WHERE statut = "expedie" AND accounted = "No"';
 
+		$sth = $this->dbh->prepare($sql);
+		$sth->execute();
+
+		return $sth->fetchAll();
+	}
+
+	/**
+	 * update de la colonne accounted
+	 */
+	public function updateAccounted($id)
+	{
+		$sql = 'UPDATE '.$this->table.' SET accounted = "Yes" WHERE id = :id';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':id', $id);
+
+		if($sth->execute()){
+			return true;
+		}
 	}
 
 	//en cours 
