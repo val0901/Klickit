@@ -216,4 +216,8 @@ class FrontController extends MasterController
 
 	}
 
+	public function reloadBasket()
+	{
+		$this->showStuff('front/reloadBasket');
+	}
 }

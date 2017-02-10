@@ -114,6 +114,7 @@
 		['GET|POST', '/events', 'Front#events', 'front_events'],
 		['GET|POST', '/event/createEvent', 'FrontEvent#createEvent', 'front_createEvent'],
 		['GET|POST', '/team', 'Front#team', 'front_team'],
+		['GET|POST', '/reloadBasket', 'Front#reloadBasket', 'reloadBasket'],
 
 		//Pages liées à UserController
 		['GET|POST', '/inscription', 'FrontUser#faddUser', 'front_faddUser'],

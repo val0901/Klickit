@@ -112,6 +112,7 @@ class AjaxFrontController extends Controller
 		$update = new BasketModel;
 		$islogged = new Controller;
 		$loggedUser = $islogged->getUser(); //On récupère l'utilisateur connecté
+		$json = [];
 
 		if(!empty($_POST)){
 
