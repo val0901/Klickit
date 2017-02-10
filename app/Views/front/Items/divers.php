@@ -95,7 +95,17 @@
 							<?php endif; ?>
 	                    </div>
 						<div class="viewcategory_button">
-							<button type="submit" class="btn btn-primary viewcategory_button_size add_to_shopping_cart" data-id="<?=$product['id']?>">ajouter au panier</button>
+							<?php if(!empty($_SESSION['user'])): ?>
+                                <button type="button" class="changeArrow btn viewcategory_button_size add_to_shopping_cart" data-id="<?=$product['id']?>">  <span class="name">
+                                    Ajouter au panier
+                                    </span>
+                                </button>
+                            <?php else : ?>
+                                <a href="<?=$this->url('login');?>" target="_blank"><button id="simple" type="button" class="changeArrow btn viewcategory_button_size" data-id="<?=$product['id']?>">  <span class="name">
+                                    Ajouter au panier
+                                    </span>
+                                </button></a>
+                            <?php endif; ?>
 						</div>
 					</div>
 				<?php endforeach; ?>

@@ -112,11 +112,17 @@
                         <div class="bottom viewcategory_button">
                             
                             <!--j'ai supprimé .btn-primary dans la class button-->
-                            <button id="simple" type="button" class="changeArrow btn viewcategory_button_size add_to_shopping_cart" data-id="<?=$product['id']?>">  <span class="name">
-                                Ajouter au panier
-                                </span>
-                            </button>
-                            
+                            <?php if(!empty($_SESSION['user'])): ?>
+                                <button id="simple" type="button" class="changeArrow btn viewcategory_button_size add_to_shopping_cart" data-id="<?=$product['id']?>">  <span class="name">
+                                    Ajouter au panier
+                                    </span>
+                                </button>
+                            <?php else : ?>
+                                <a href="<?=$this->url('login');?>" target="_blank"><button id="simple" type="button" class="changeArrow btn viewcategory_button_size" data-id="<?=$product['id']?>">  <span class="name">
+                                    Ajouter au panier
+                                    </span>
+                                </button></a>
+                            <?php endif; ?>
                         </div>
                         
                         <!--fin BOUTON AJOUTER AU PANIER-->

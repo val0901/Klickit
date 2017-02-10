@@ -49,7 +49,17 @@
 				</span>
 				<br><br>
 				<div class="">
-					<button data-id="<?=$items['id']?>" type="submit" class="btn btn-primary viewcategory_button_size addBasket">ajouter au panier</button>
+					<?php if(!empty($_SESSION['user'])): ?>
+                        <button data-id="<?=$items['id']?>" type="submit" class="btn btn-primary viewcategory_button_size addBasket">  <span class="name">
+                            Ajouter au panier
+                            </span>
+                        </button>
+                    <?php else : ?>
+                        <a href="<?=$this->url('login');?>" target="_blank"><button data-id="<?=$items['id']?>" type="submit" class="btn btn-primary viewcategory_button_size addBasket">  <span class="name">
+                            Ajouter au panier
+                            </span>
+                        </button></a>
+                    <?php endif; ?>
 				</div>
 			<br>
 			<p>
