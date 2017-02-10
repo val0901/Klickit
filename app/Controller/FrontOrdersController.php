@@ -10,8 +10,12 @@ use \Model\UserModel;
 use \W\Security\AuthorizationModel;
 use \PayPal\Rest\ApiContext as APIContext;
 use \PayPal\Auth\OAuthTokenCredential as TokenCredential;
-use \PayPal\Api\Payment;
-use \PayPal\Api\PaymentExecution;
+use PayPal\Api\Amount; 
+use PayPal\Api\Details; 
+use PayPal\Api\ExecutePayment; 
+use PayPal\Api\Payment; 
+use PayPal\Api\PaymentExecution; 
+use PayPal\Api\Transaction;
 
 class FrontOrdersController extends MasterController 
 {
@@ -233,8 +237,60 @@ class FrontOrdersController extends MasterController
 	//Page de réussite après paiement
 	public function pay()
 	{		
+		$getOrder = new UserModel;
+		$user = $this->getUser();
 
-		$this->showStuff('front/Order/pay');
+		$getOrderByID = $getOrder->getCurrentOrderById($user['id']);
+		$current_order = end($getOrderByID);
+
+
+		$paypal = new APIContext(
+			new TokenCredential(
+				'Ac7zciJxbLPkLZS_B42CXjunY2-l7-HwXQ4bOYMrLdVEGsaLezI7x6X3hfLjLXhjbGjDxPOUhrhH2C0p',
+				'EFSWbLVH2RRDm-EwAAgKe7Ondurs3_bh3FmYbWLhCyYoJQAsPTP4R6B0uNgRb5kTmW2CbDcRsIhtkt2h')
+			);
+
+		if(isset($_GET['paymentId'], $_GET['PayerID'], $_GET['success'])){
+			
+			if((bool)$_GET['success'] === true){
+
+				$paymentId = $_GET['paymentId'];
+				$PayerID = $_GET['PayerID'];
+
+				$payment = Payment::get($paymentId, $paypal);
+
+				$execute = new PaymentExecution;
+				$execute->setPayerId($PayerID);
+
+				$transaction = new Transaction();
+			    $amount = new Amount();
+			    $details = new Details();
+
+			    $details->setShipping($current_order['shipping'])->setSubtotal($current_order['sub_total']);
+
+			    $amount->setCurrency('EUR');
+			    $amount->setTotal($current_order['total']);
+			    $amount->setDetails($details);
+			    $transaction->setAmount($amount);
+
+
+			    $execute->addTransaction($transaction);
+
+				try {
+
+					$result = $payment->execute($execute, $paypal);
+
+				} catch (Exception $e) {
+					$data = json_decode($e->getData());
+				}
+
+			}	
+			$this->showStuff('front/Order/pay');
+			return $payment;
+		}else{
+
+		}	
+		
 
 	}
 
