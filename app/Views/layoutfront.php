@@ -418,13 +418,6 @@
 
 	<!--Script-->
 	<script>
-	$(document).ready(function(){
-		setInterval(function(){
-			$('#reloadBasket').load('<?=$this->url('reloadBasket');?>') 
-		}, 3000);
-	});
-	</script>
-	<script>
 		$(document).ready(function(){
 			$('#submit_search').click(function(e){
 				e.preventDefault();
@@ -462,7 +455,7 @@
 					dataType: 'json',
 					success: function(out){
 						if(out.code == 'ok'){
-			  				// window.location.href= window.location.href;
+			  				$('#reloadBasket').load('<?=$this->url('reloadBasket');?>');
 						}
 					}
   				});
