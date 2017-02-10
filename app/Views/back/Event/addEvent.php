@@ -20,14 +20,6 @@
 		  </div>
 		</div>
 
-		<!-- Textarea -->
-		<div class="form-group">
-		  <label class="col-md-4 control-label" for="content">Contenu</label>
-		  <div class="col-md-4">                     
-		    <textarea class="form-control" id="content" name="content"></textarea>
-		  </div>
-		</div>
-
 		<!-- File Button --> 
 		<div class="form-group">
 		  <label class="col-md-4 control-label" for="picture">Affiche de l'évènement</label>

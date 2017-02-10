@@ -1,10 +1,10 @@
 <?php $this->layout('layoutback', ['title' => 'Ajouter des slides']) ?>
 
 <?php $this->start('main_content') ?>
-	<a href="<?=$this->url('listSlide');?>"><button class="btn btn-info">Retour à la liste des slides</button></a>
+	<a href="<?=$this->url('listSlide');?>"><button class="btn btn-info">Retour à la liste des bandeaux</button></a>
 	<br>
 	<?php if($success): ?>
-		<p class="alert alert-success">Slide créé</p>
+		<p class="alert alert-success">Bandeau créé</p>
 	<?php elseif(isset($errors) && !empty($errors)):?>
 		<p class="alert alert-danger"><?=implode('<br>', $errors);?></p>	
 	<?php endif;?>
@@ -27,19 +27,11 @@
 		  </div>
 		</div>
 
-		<!-- File Button --> 
-		<div class="form-group">
-		  <label class="col-md-4 control-label" for="link">Url de l'évènement lié</label>
-		  <div class="col-md-4">
-		    <input id="link" name="link" class="input-file" type="text" placeholder="http://www.votrelien.com" style="color:black;"> <!-- Sans le style le champ s'écrit en blanc -->
-		  </div>
-		</div>
-
 		<!-- Button -->
 		<div class="form-group">
 		  <label class="col-md-4 control-label" for="submit"></label>
 		  <div class="col-md-4">
-		    <button id="submit" name="submit" class="btn btn-info">Enregistrer le Slide</button>
+		    <button id="submit" name="submit" class="btn btn-info">Enregistrer le Bandeau</button>
 		  </div>
 		</div>
 	</form>

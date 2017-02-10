@@ -93,7 +93,7 @@
     <!--
 ../../../app/Views/front/Event/viewEvent.php
 -->
-    <a href="<?=$this->url('front_events');?>"> <img class="img-responsive" src="<?=$this->assetUrl('/img/slideEvent1.jpg');?>"></a>
+    <a href="<?=$this->url('front_events');?>"> <img class="img-responsive" src="<?=$this->assetUrl('slide/'.$slide['picture']);?>"></a>
 </div>
 <!--End Le dernier évènement-->
 

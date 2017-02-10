@@ -6,8 +6,7 @@
      évènements
 </div>
 <div class="event_poster">
-	<img class="img-responsive" src="<?=$this->assetUrl('/events/expo_2016_noirmoutier.jpg');?>">
-
+	<img class="img-responsive" src="<?=$this->assetUrl('events/'.$event['picture']);?>">
 </div>
 <div class="event_shareRS">
     <!--https://developers.facebook.com/docs/plugins/share-button/#configurator-->

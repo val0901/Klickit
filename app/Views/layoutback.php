@@ -65,7 +65,7 @@
 							        <li><a href="<?=$this->url('listUser');?>">Utilisateur</a></li>
 						            <li><a href="<?=$this->url('listMessage');?>">Message</a></li>
 						            <li><a href="<?=$this->url('listEvent');?>">Evènement</a></li>
-						            <li><a href="<?=$this->url('listSlide');?>">Slide</a></li>
+						            <li><a href="<?=$this->url('listSlide');?>">Bandeau</a></li>
 						            <li><a href="<?=$this->url('listItem');?>">Article</a></li>
 						            <li><a href="<?=$this->url('listOrders');?>">Commande</a></li>
 						            <li><a href="<?=$this->url('listShipping');?>">Option d'envoi</a></li>

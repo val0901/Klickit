@@ -15,8 +15,6 @@
 					
 						<div class="details col-lg-6">
 							<h3 class="titleArt"><?=$affichage['title'];?></h3>
-							
-							<p class="price"><strong>Contenu de l'évènement : </strong><?=$affichage['content'];?></p>
 						</div>
 	</div>
 	<br><br>
@@ -38,14 +36,6 @@
 		  <div class="col-md-4">
 		  <input id="title" name="title" placeholder="" class="form-control input-md" type="text">
 		    
-		  </div>
-		</div>
-
-		<!-- Textarea -->
-		<div class="form-group">
-		  <label class="col-md-4 control-label" for="content">Contenu</label>
-		  <div class="col-md-4">                     
-		    <textarea class="form-control" id="content" name="content"></textarea>
 		  </div>
 		</div>
 

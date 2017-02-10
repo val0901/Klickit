@@ -1,7 +1,7 @@
 <?php $this->layout('layoutback', ['title' => 'Liste des slides']) ?>
 
 <?php $this->start('main_content') ?>
-	<a href="<?=$this->url('addSlide');?>"><button class="btn btn-info">Ajout de slide</button></a>
+	<a href="<?=$this->url('addSlide');?>"><button class="btn btn-info">Ajout d'un bandeau</button></a>
 	<form>
 		<table class="table table-responsive">
 			<thead>
@@ -16,7 +16,7 @@
 						<td><?=$value['id'];?></td>
 						<td><?=$value['title'];?></td>
 						<td><a href="<?=$this->url('updateSlide', ['id'=>$value['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>
-						<td><button class="btn btn-danger delete-slide" data-id="<?=$value['id']?>">Effacer le slide</button></td>
+						<td><button class="btn btn-danger delete-slide" data-id="<?=$value['id']?>">Effacer le bandeau</button></td>
 					</tr>	
 				<?php endforeach;?>
 			</tbody>
@@ -34,9 +34,9 @@
 
 				$.confirm({
 
-					title: 'Supprimer ce Slide',
+					title: 'Supprimer ce bandeau',
 
-					content: "Êtes-vous sûr de vouloir supprimer ce slide ?",
+					content: "Êtes-vous sûr de vouloir supprimer ce bandeau ?",
 
 					type: 'red',
 
@@ -44,7 +44,7 @@
 
 					buttons: {
 						ok: {
-							text: 'Effacer le slide',
+							text: 'Effacer le bandeau',
 							btnClass: 'btn-danger',
 							keys: ['enter'],
 							action: function(){
@@ -56,7 +56,7 @@
 									dataType: 'json',
 									success: function(out){
 										if(out.code == 'ok'){
-							  				window.location.href=window.location.href;	
+							  				$('body').load('<?=$this->url('listSlide');?>');
 										}
 									}
 				  				});

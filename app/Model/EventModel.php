@@ -39,5 +39,16 @@ class EventModel extends \W\Model\Model
     return $result['total'];
 	}
 
+	/**
+	 * Requête pour sélectionner uniquement les ID de la table
+	 */
+	public function realLastEvent(){
+		$sql = $sql = 'SELECT id FROM '.$this->table.' ORDER BY id ASC';
 
+		$sth = $this->dbh->prepare($sql);
+
+		$sth->execute();
+
+		return $sth->fetchAll();
+	}
 }

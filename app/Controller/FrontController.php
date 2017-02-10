@@ -12,6 +12,8 @@ use \Model\BasketModel;
 use \Model\ItemModel;
 use \Model\MessageModel;
 use \Model\GuestbookModel;
+use \Model\EventModel;
+use \Model\SlideModel;
 use \W\Security\AuthentificationModel;
 use \W\Security\AuthorizationModel;
 use \W\Security\StringUtils;
@@ -37,9 +39,16 @@ class FrontController extends MasterController
 		$getStatut = new ItemModel();
 		$statut = $getStatut->findStatut('nouveaute', 'promotion');
 		
+		$getSlide = new SlideModel();
+
+		$lastSlide = $getSlide->realLastSlide();
+
+		$RealLastSlide = implode('', end($lastSlide));
+
 		$data = [
 			'comments'		=>	$comments,
 			'statut'		=>  $statut,
+			'slide'			=> $getSlide->find($RealLastSlide),
 		];	
 
 
@@ -187,7 +196,17 @@ class FrontController extends MasterController
 	 */
 	public function events()
 	{
-		$this->showStuff('front/Event/viewEvent');
+		$getEvent = new EventModel();
+
+		$lastEvent = $getEvent->realLastEvent();
+
+		$RealLastEvent = implode('', end($lastEvent));
+
+		$data = [
+			'event' => $getEvent->find($RealLastEvent),
+		];
+
+		$this->showStuff('front/Event/viewEvent', $data);
 	}
 
 	/**

@@ -70,10 +70,6 @@ class EventController extends Controller
 				$errors[] = 'Le titre de l\'évènement doit comporter plus de 3 caractères';
 			}
 
-			if(!v::notEmpty()->length(5,null)->validate($post['content'])){
-				$errors[] = 'La description de l\'évènement doit contenir plus de 5 caractères';
-			}
-
 			if(!v::image()->validate($_FILES['picture']['tmp_name'])){
 				$errors[] = 'L\'affiche envoyé n\'est pas une image valide';
 			}
@@ -107,7 +103,6 @@ class EventController extends Controller
 
 				$dataInsert = [
 					'title' => $post['title'],
-					'content' => $post['content'],
 					'picture' => $imgName,
 				];
 
@@ -170,15 +165,6 @@ class EventController extends Controller
 				}
 				else {
 					$afficheEvent['title'] = $post['title'];
-				}
-			}
-
-			if(!empty($post['content']) && isset($post['content'])){
-				if(!v::notEmpty()->length(5,null)->validate($post['content'])){
-					$errors[] = 'La description de l\'évènement doit contenir plus de 5 caractères';
-				}
-				else {
-					$afficheEvent['content'] = $post['content'];
 				}
 			}
 

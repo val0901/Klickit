@@ -72,10 +72,6 @@ class SlideController extends Controller
 				$errors[] = 'Une erreur est survenue lors de l\'upload de l\'image';
 			}
 
-			if(!v::notEmpty()->url()->validate($post['link'])){
-				$errors[] = 'L\'url du slide n\'est pas valide';
-			}
-
 			if(count($errors) === 0){
 				$img = Image::make($_FILES['picture']['tmp_name']);
 
@@ -98,7 +94,6 @@ class SlideController extends Controller
 				$dataInsert = [
 					'title'   => $post['title'],
 					'picture' => $imgName,
-					'link'	  => $post['link'],
 				];
 
 				if($insert->insert($dataInsert)){
@@ -176,15 +171,6 @@ class SlideController extends Controller
 
 				if(!v::uploaded()->validate($_FILES['picture']['tmp_name'])){
 					$errors[] = 'Une erreur est survenue lors de l\'upload de l\'image';
-				}
-			}
-
-			if(!empty($post['link']) && isset($post['link'])){
-				if(!v::notEmpty()->url()->validate($post['link'])){
-					$errors[] = 'L\'url du slide n\'est pas valide';
-				}
-				else {
-					$afficheSlide['link'] = $post['link'];
 				}
 			}
 

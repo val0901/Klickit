@@ -1,7 +1,7 @@
 <?php $this->layout('layoutback', ['title' => 'Mettre à jour le slide']) ?>
 
 <?php $this->start('main_content') ?>
-	<a href="<?=$this->url('listSlide');?>"><button class="btn btn-info">Retour liste des Slides</button></a>
+	<a href="<?=$this->url('listSlide');?>"><button class="btn btn-info">Retour liste des Bandeaux</button></a>
 	<h3 class="titleItem">Vu du Slide</h3>
 	<div id="view" class="row">
 		<div class="preview col-lg-6">
@@ -15,17 +15,16 @@
 					
 						<div class="details col-lg-6">
 							<h3 class="titleArt"><?=$affichage['title'];?></h3>
-							
-							<p class="price"><strong>lien vers l'évènement : </strong><?=$affichage['link'];?></p>
+						
 						</div>
 	</div>
 	<br><br>
 	
-	<h3>Modification du Slide</h3>
+	<h3>Modification du Bandeau</h3>
 
 	<br><br>
 		<?php if($success): ?>
-			<p id="reload" class="alert alert-success">Slide modifié</p>
+			<p id="reload" class="alert alert-success">bandeau modifié</p>
 		<?php elseif(isset($errors) && !empty($errors)):?>
 			<p class="alert alert-danger"><?=implode('<br>', $errors);?></p>	
 		<?php endif;?>
@@ -48,20 +47,12 @@
 		    <input id="picture" name="picture" class="input-file" type="file">
 		  </div>
 		</div>
-
-		<!-- File Button --> 
-		<div class="form-group">
-		  <label class="col-md-4 control-label" for="link">Url de l'évènement lié</label>
-		  <div class="col-md-4">
-		    <input id="link" name="link" class="input-file" type="text" style="color:black;"> <!-- Sans le style le champ s'écrit en blanc -->
-		  </div>
-		</div>
-
+		
 		<!-- Button -->
 		<div class="form-group">
 		  <label class="col-md-4 control-label" for="submit"></label>
 		  <div class="col-md-4">
-		    <button id="submit" name="submit" class="btn btn-info">Modifier le Slide</button>
+		    <button id="submit" name="submit" class="btn btn-info">Modifier le bandeau</button>
 		  </div>
 		</div>
 	</form>
