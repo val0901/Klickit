@@ -39,6 +39,7 @@ class MasterController extends Controller
 				'w_current_route' => $app->getCurrentRoute(),
 				'w_site_name'	  => $app->getConfig('site_name'),
 				'w_items'		  => $getBasket->getShoppingCartItem($user['id']),
+				'w_total'		  => $getBasket->getTotal($user['id']),
 			]
 		);
 

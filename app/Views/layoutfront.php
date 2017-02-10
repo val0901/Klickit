@@ -126,15 +126,16 @@
 										<?php foreach($w_items as $item) : ?>
 											<div class="col-xs-10">
 												<?=$item['name']?>
+
 											</div>
 
 											<?php if($item['newPrice'] == 0) : ?>
 												<div class="col-xs-2">
-													<?= $item['price'] ?>€
+													<?= $item['price'] ?>€ x <?=$item['qt'];?>
 												</div>
 											<?php else : ?>
 												<div class="col-xs-2">
-													<?= $item['newPrice'] ?>€
+													<?= $item['newPrice'] ?>€ x <?=$item['qt'];?>
 												</div>
 											<?php endif; ?>
 										<?php endforeach; ?>
@@ -157,7 +158,7 @@
 	-->
 								<div class="row" style="margin: 0 10px;border-top:1px dotted #000;padding-top:10px;">
 									<div class="col-xs-6 shoppingmenu_total">
-										<p>Total:</p>
+										<p>Total: <?=$w_total;?></p>
 									</div>
 									<div class="col-xs-6 shoppingmenu_total price" style="text-align:right;">
 										<!--ajout du prix en AJAX-->
