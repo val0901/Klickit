@@ -694,40 +694,40 @@ class AjaxController extends Controller
 		foreach($allOrder as $dateValue){
 			$year = date_format(date_create($dateValue['date_creation']), 'Y');
 
-			if(date_format(date_create($dateValue['date_creation']), 'm') == 01){
+			if(date_format(date_create($dateValue['date_creation']), 'm') == '01'){
 				$month = 1;
 			}
-			elseif(date_format(date_create($dateValue['date_creation']), 'm') == 02){
+			elseif(date_format(date_create($dateValue['date_creation']), 'm') == '02'){
 				$month = 2;
 			}
-			elseif(date_format(date_create($dateValue['date_creation']), 'm') == 03){
+			elseif(date_format(date_create($dateValue['date_creation']), 'm') == '03'){
 				$month = 3;
 			}
-			elseif(date_format(date_create($dateValue['date_creation']), 'm') == 04){
+			elseif(date_format(date_create($dateValue['date_creation']), 'm') == '04'){
 				$month = 4;
 			}
-			elseif(date_format(date_create($dateValue['date_creation']), 'm') == 05){
+			elseif(date_format(date_create($dateValue['date_creation']), 'm') == '05'){
 				$month = 5;
 			}
-			elseif(date_format(date_create($dateValue['date_creation']), 'm') == 06){
+			elseif(date_format(date_create($dateValue['date_creation']), 'm') == '06'){
 				$month = 6;
 			}
-			elseif(date_format(date_create($dateValue['date_creation']), 'm') == 07){
+			elseif(date_format(date_create($dateValue['date_creation']), 'm') == '07'){
 				$month = 7;
 			}
-			elseif(date_format(date_create($dateValue['date_creation']), 'm') == 08){
+			elseif(date_format(date_create($dateValue['date_creation']), 'm') == '08'){
 				$month = 8;
 			}
-			elseif(date_format(date_create($dateValue['date_creation']), 'm') == 09){
+			elseif(date_format(date_create($dateValue['date_creation']), 'm') == '09'){
 				$month = 9;
 			}
-			elseif(date_format(date_create($dateValue['date_creation']), 'm') == 10){
+			elseif(date_format(date_create($dateValue['date_creation']), 'm') == '10'){
 				$month = 10;
 			}
-			elseif(date_format(date_create($dateValue['date_creation']), 'm') == 11){
+			elseif(date_format(date_create($dateValue['date_creation']), 'm') == '11'){
 				$month = 11;
 			}
-			elseif(date_format(date_create($dateValue['date_creation']), 'm') == 12){
+			elseif(date_format(date_create($dateValue['date_creation']), 'm') == '12'){
 				$month = 12;
 			}
 
