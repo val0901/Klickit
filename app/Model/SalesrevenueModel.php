@@ -71,4 +71,52 @@ class SalesrevenueModel extends \W\Model\Model
 			return true;
 		}
 	}
+
+	/**
+	 * Requête de recherche pour le chiffre d'affaire
+	 */
+	public function searchSales($search)
+	{
+		$sql = '';
+
+		if(isset($search) && !empty($search)) {
+			$sql = ' WHERE month LIKE :search OR year LIKE :search';
+		} 
+
+		$query = 'SELECT * FROM '.$this->table.$sql;
+
+		$sth = $this->dbh->prepare($query);
+
+		if(!empty($sql)) {
+			$sth->bindValue(':search', '%'.$search.'%');
+		}
+
+		if($sth->execute()) {
+			return $sth->fetchAll();
+		}
+	}
+
+	/**
+	 * Requête de recherche par mois pour le chiffre d'affaire
+	 */
+	public function searchSalesByMonth($search)
+	{
+		$sql = '';
+
+		if(isset($search) && !empty($search)) {
+			$sql = ' WHERE month LIKE :search';
+		} 
+
+		$query = 'SELECT * FROM '.$this->table.$sql;
+
+		$sth = $this->dbh->prepare($query);
+
+		if(!empty($sql)) {
+			$sth->bindValue(':search', '%'.$search.'%');
+		}
+
+		if($sth->execute()) {
+			return $sth->fetchAll();
+		}
+	}
 }

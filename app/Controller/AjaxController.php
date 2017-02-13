@@ -772,4 +772,183 @@ class AjaxController extends Controller
 
 		$this->showJson($json);
 	}
+
+	/**
+	 * Recherche pour listItem
+	 */
+	public function searchItem()
+	{
+		$json = [];
+		$post = [];
+		$viewSearch = null;
+
+		if(isset($_POST)){
+			$post = array_map('trim', array_map('strip_tags', $_POST));
+			
+			if(!empty($post['search'])){
+
+				$searchItem = new ItemModel();
+
+				$search = $searchItem->searchItem($post['search'], $post['category']);
+
+				if(!empty($search)){
+					foreach ($search as $value) {
+						$viewSearch.= '<tr><td>'.$value['id'].'</td>';
+						$viewSearch.= '<td>'.$value['name'].'</td>';
+						$viewSearch.= '<td>'.$value['quantity'].'</td>';
+						if($value['newPrice'] == 0) {
+							$viewSearch.= '<td>'.$value['price'].'</td>';
+						}
+						elseif($value['newPrice'] > 0){
+							$viewSearch.= '<td>'.$value['newPrice'].'</td>';
+						}
+						$viewSearch.= '<td>'.$value['statut'].'</td>';
+						$viewSearch.= '<td><a href="'.$this->generateUrl('updateItem', ['id'=> $value['id']]).'"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>';
+						$viewSearch.= '<td><button class="btn btn-danger delete-message" data-id="'.$value['id'].'">Effacer le message</button></td></tr>';
+					}
+				}
+				else {
+					$viewSearch = '<td>Aucun article correspondant à votre recherche</td>';
+				}
+
+				if($post['category'] == 'PlaymobilClassique'){	
+					$json = [
+						'code' => 'classique',
+						'msg'  => $viewSearch
+					];
+				}
+				elseif ($post['category'] == 'PlaymobilCustom') {
+					$json = [
+						'code' => 'custom',
+						'msg'  => $viewSearch
+					];
+				}
+				elseif($post['category'] == 'PiecesDetachees'){
+					$json = [
+						'code' => 'piece',
+						'msg'  => $viewSearch
+					];
+				}
+				elseif($post['category'] == 'Divers'){
+					$json = [
+						'code' => 'divers',
+						'msg'  => $viewSearch
+					];
+				}
+			}
+
+			if($post['category'] == 'PlaymobilClassique'){	
+				$json = [
+					'code' => 'classique',
+					'msg'  => 'Veuillez renseigner la recherche'
+				];
+			}
+			elseif ($post['category'] == 'PlaymobilCustom') {
+				$json = [
+					'code' => 'custom',
+					'msg'  => 'Veuillez renseigner la recherche'
+				];
+			}
+			elseif($post['category'] == 'PiecesDetachees'){
+				$json = [
+					'code' => 'piece',
+					'msg'  => 'Veuillez renseigner la recherche'
+				];
+			}
+			elseif($post['category'] == 'Divers'){
+				$json = [
+					'code' => 'divers',
+					'msg'  => 'Veuillez renseigner la recherche'
+				];
+			}
+		}
+		echo json_encode($json);
+	}
+
+	/**
+	 * Recherche pour le chiffre d'affaire
+	 */
+	public function searchSales()
+	{
+		$json = [];
+		$get = [];
+		$viewSearch = null;
+		$search = '';
+
+		if(!empty($_GET)){
+			$get = array_map('trim', array_map('strip_tags', $_GET));
+
+			$searchSales = new SalesrevenueModel();
+
+			if($get['search'] == 'Janvier' || $get['search'] == 'janvier'){
+				$searchMonth = 1;
+				$search = $searchSales->searchSalesByMonth($searchMonth);
+			}
+			elseif($get['search'] == 'Février' || $get['search'] == 'février' || $get['search'] == 'Fevrier' || $get['search'] == 'fevrier'){
+				$searchMonth = 2;
+				$search = $searchSales->searchSalesByMonth($searchMonth);
+			}
+			elseif($get['search'] == 'Mars' || $get['search'] == 'mars'){
+				$searchMonth = 3;
+				$search = $searchSales->searchSalesByMonth($searchMonth);
+			}
+			elseif($get['search'] == 'Avril' || $get['search'] == 'avril'){
+				$searchMonth = 4;
+				$search = $searchSales->searchSalesByMonth($searchMonth);
+			}
+			elseif($get['search'] == 'Mai' || $get['search'] == 'mai'){
+				$searchMonth = 5;
+				$search = $searchSales->searchSalesByMonth($searchMonth);
+			}
+			elseif($get['search'] == 'Juin' || $get['search'] == 'juin'){
+				$searchMonth = 6;
+				$search = $searchSales->searchSalesByMonth($searchMonth);
+			}
+			elseif($get['search'] == 'Juillet' || $get['search'] == 'juillet'){
+				$searchMonth = 7;
+				$search = $searchSales->searchSalesByMonth($searchMonth);
+			}
+			elseif($get['search'] == 'Août' || $get['search'] == 'août' || $get['search'] == 'Aout' || $get['search'] == 'aout'){
+				$searchMonth = 8;
+				$search = $searchSales->searchSalesByMonth($searchMonth);
+			}
+			elseif($get['search'] == 'Septembre' || $get['search'] == 'septembre'){
+				$searchMonth = 9;
+				$search = $searchSales->searchSalesByMonth($searchMonth);
+			}
+			elseif($get['search'] == 'Octobre' || $get['search'] == 'octobre'){
+				$searchMonth = 10;
+				$search = $searchSales->searchSalesByMonth($searchMonth);
+			}
+			elseif($get['search'] == 'Novembre' || $get['search'] == 'novembre'){
+				$searchMonth = 11;
+				$search = $searchSales->searchSalesByMonth($searchMonth);
+			}
+			elseif($get['search'] == 'Décembre' || $get['search'] == 'décembre' || $get['search'] == 'Decembre' || $get['search'] == 'decembre'){
+				$searchMonth = 12;
+				$search = $searchSales->searchSalesByMonth($searchMonth);
+			}
+			else{
+				$search = $searchSales->searchSales($get['search']);	
+			}
+
+			if(!empty($search)){	
+				foreach ($search as $value) {
+					$viewSearch.= '<tr><td>'.$value['month'].'</td>';
+					$viewSearch.= '<td>'.$value['year'].'</td>';
+					$viewSearch.= '<td>'.$value['revenue'].'€</td>';
+				}
+			}
+			else {
+				$viewSearch.= '<td>Aucun mois/année correspondant à votre recherche</td>';
+			}
+
+			$json = [
+				'code' => 'success',
+				'msg'  => $viewSearch
+			];
+		}
+
+		echo json_encode($json);
+	}
 }
