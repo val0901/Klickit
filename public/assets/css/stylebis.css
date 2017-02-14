@@ -68,7 +68,13 @@
 	font-size: 1.2em;
 	font-family: 'Roboto', sans-serif;
 }
-
+p.apropos_text.head_apropos {
+    padding: 5em;
+    background-color: antiquewhite;
+    margin-top: 2em;
+    line-height: 1.5em;
+    font-size: large;
+}
 .apropos_container {
     padding: 1.5em 25em;
 }
@@ -92,7 +98,7 @@
     padding: 2vh 5vw;
 }
 .event_shareRS{
-    background-color: #7bc942;
+    background-color: #ff931e;
     padding: 20px;
     text-align: center;
 }
