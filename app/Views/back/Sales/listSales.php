@@ -3,11 +3,14 @@
 <?php $this->start('main_content') ?>
 		<div id="errorUpdate" style="color:white;"></div>
 		<form method="post" class="form-inline">
-			<button id="salesRevenu" type="button" class="btn btn-info">Mettre à jour le chiffre d'affaire</button>
+			<div class="form-group">
+				<button id="salesRevenu" type="button" class="btn btn-info">Mettre à jour le chiffre d'affaire</button>
+			</div>
+			<br><br>
 			<div class="form-group">
 				<input type="text" class="form-control" id="search" name="search" placeholder="Recherche ...">
 			</div>
-			<button type="submit" id="submit" class="btn btn-info search_order">Rechercher</button>
+			<button type="submit" id="submit" class="btn btn-info search_sales">Rechercher</button>
 			<br><br>
 			<div id="viewOrder">
 				<table class="table table-responsive">
@@ -22,7 +25,7 @@
 							<tr>
 								<td><?=$salesValue['month'];?></td>
 								<td><?=$salesValue['year'];?></td>
-								<td><?=$salesValue['revenue'];?></td>
+								<td><?=$salesValue['revenue'];?>€</td>
 							</tr>
 						<?php endforeach; ?>	
 					</tbody>			
@@ -63,6 +66,22 @@
 						else if(ok.code == 'no'){
 							$('#errorUpdate').html(ok.msg);
 						}
+					}
+				});
+			});
+
+		/**** RECHERCHE EN AJAX ****/
+			$('.search_sales').click(function(e){
+				e.preventDefault();
+
+				$.ajax({
+					url: '<?=$this->url('ajax_searchSales');?>',
+					type: 'get',
+					cache: false,
+					data: $('#search'),
+					dataType: 'json',
+					success: function(search){
+						$('#result').html(search.msg);
 					}
 				});
 			});

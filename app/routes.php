@@ -27,6 +27,8 @@
 		['GET|POST', '/ajax/searchUser', 'Ajax#searchUser', 'ajax_searchUser'],
 		['GET|POST', '/ajax/searchMessage', 'Ajax#searchMessage', 'ajax_searchMessage'],
 		['GET|POST', '/ajax/searchOrder', 'Ajax#searchOrder', 'ajax_searchOrder'],
+		['GET|POST', '/ajax/searchItem', 'Ajax#searchItem', 'ajax_searchItem'],
+		['GET|POST', '/ajax/searchSales', 'Ajax#searchSales', 'ajax_searchSales'],
 		['GET|POST', '/ajax/deleteFilter', 'Ajax#deleteFilter', 'ajax_deleteFilter'],
 		['GET|POST', '/ajax/addFilter', 'Ajax#addFilter', 'ajax_addFilter'],
 		['GET|POST', '/ajax/updateFilter', 'Ajax#updateFilter', 'ajax_updateFilter'],

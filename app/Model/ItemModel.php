@@ -251,4 +251,29 @@ class ItemModel extends \W\Model\Model
 			return $sth->fetchAll();
 		}
 	}
+
+	/**
+	 * Recherche sur la page ListItem en BACK
+	 */
+	public function searchItem($search, $category)
+	{
+		$sql = '';
+
+		if(isset($search) && !empty($search)) {
+			$sql = ' WHERE name LIKE :search OR description LIKE :search OR statut LIKE :search OR category LIKE :search OR sub_category LIKE :search AND category = :category';
+		}
+
+		$query = 'SELECT * FROM '.$this->table.$sql;
+
+		$sth = $this->dbh->prepare($query);
+
+		if(!empty($sql)) {
+			$sth->bindValue(':search', '%'.$search.'%');
+		}
+		$sth->bindValue(':category', $category);
+
+		if($sth->execute()) {
+			return $sth->fetchAll();
+		}
+	}
 }
