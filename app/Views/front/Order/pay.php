@@ -9,7 +9,7 @@
 ?>
 
 <?php $this->start('main_content') ?>
-<div class="container_general">
+<div class="container">
 	<?php if($_GET['success'] == 'false') : ?>
 		<div class="jumbotron">
 			<p>Une erreur est survenue lors de la procédure de paiement. Vous allez être rediriger vers la page d'accueil</p>
