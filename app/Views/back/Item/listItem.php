@@ -11,7 +11,7 @@
 			<button type="submit" id="submit" class="btn btn-info search_item_classique">Rechercher</button>
 			<br><br>
 			<table class="table table-responsive">
-				<thead>
+				<thead class="backgthead">
 					<th>N°</th>
 					<th>Nom</th>
 					<th>Quantité</th>
@@ -20,7 +20,7 @@
 					<th colspan="2">Action</th>
 				</thead>
 
-				<tbody id="result_classique">
+				<tbody id="result_classique" class="backgtbody">
 					<?php foreach($Classic as $value) : ?>
 						<tr>
 							<td><?=$value['id'];?></td>
@@ -55,7 +55,7 @@
 			<button type="submit" id="submit" name="submit" class="btn btn-info search_item_custom">Rechercher</button>
 			<br><br>
 			<table class="table table-responsive">
-				<thead>
+				<thead class="backgthead">
 					<th>N°</th>
 					<th>Nom</th>
 					<th>Quantité</th>
@@ -64,7 +64,7 @@
 					<th colspan="2">Action</th>
 				</thead>
 
-				<tbody id="result_custom">
+				<tbody id="result_custom" class="backgtbody">
 					<?php foreach($Custom as $value) : ?>
 						<tr>
 							<td><?=$value['id'];?></td>
@@ -98,7 +98,7 @@
 			<button type="submit" id="submit" name="submit" class="btn btn-info search_item_piece">Rechercher</button>
 			<br><br>
 			<table class="table table-responsive">
-				<thead>
+				<thead class="backgthead">
 					<th>N°</th>
 					<th>Nom</th>
 					<th>Quantité</th>
@@ -107,7 +107,7 @@
 					<th colspan="2">Action</th>
 				</thead>
 
-				<tbody id="result_piece">
+				<tbody id="result_piece" class="backgtbody">
 					<?php foreach($Piece as $value) : ?>
 						<tr>
 							<td><?=$value['id'];?></td>
@@ -141,7 +141,7 @@
 			<button type="submit" id="submit" name="submit" class="btn btn-info search_item_divers">Rechercher</button>
 			<br><br>
 			<table class="table table-responsive">
-				<thead>
+				<thead class="backgthead">
 					<th>N°</th>
 					<th>Nom</th>
 					<th>Quantité</th>
@@ -150,7 +150,7 @@
 					<th colspan="2">Action</th>
 				</thead>
 
-				<tbody id="result_divers">
+				<tbody id="result_divers" class="backgtbody">
 					<?php foreach($Divers as $value) : ?>
 						<tr>
 							<td><?=$value['id'];?></td>

@@ -11,7 +11,7 @@
 			<button type="submit" id="submit" class="btn btn-info search_message">Rechercher</button>
 			<br><br>	
 			<table class="table table-responsive">
-				<thead>
+				<thead class="backgthead">
 					<th>Pseudonyme</th>
 					<th>Adresse email</th>
 					<th>Sujet</th>
@@ -20,7 +20,7 @@
 					<th colspan="2">Action</th>
 				</thead>
 
-				<tbody id="result">
+				<tbody id="result" class="backgtbody">
 					<?php foreach($messages as $message) : ?>
 						<?php 
 							if ($message['statut'] == 'NonLu'){

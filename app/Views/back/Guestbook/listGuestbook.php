@@ -6,7 +6,7 @@
 	<?php else:?>
 		<form>
 			<table class="table table-responsive">
-				<thead>
+				<thead class="backgthead">
 					<th>Prénom</th>
 					<th>Nom</th>
 					<th>Pseudonyme</th>
@@ -15,7 +15,7 @@
 					<th colspan="2">Action</th>
 				</thead>
 
-				<tbody>
+				<tbody class="backgtbody">
 					<?php foreach($messages as $message) : ?>
 						<tr>
 							<td><?=$message['firstname'];?></td>

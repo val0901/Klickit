@@ -4,13 +4,13 @@
 	<a href="<?=$this->url('addSlide');?>"><button class="btn btn-info">Ajout d'un bandeau</button></a>
 	<form>
 		<table class="table table-responsive">
-			<thead>
+			<thead class="backgthead">
 				<th>N°</th>
 				<th>Titre</th>
 				<th colspan="2">Action</th>
 			</thead>
 
-			<tbody>
+			<tbody class="backgtbody">
 				<?php foreach($slide as $value) : ?>
 					<tr>
 						<td><?=$value['id'];?></td>

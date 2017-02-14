@@ -10,12 +10,12 @@
 
 		<form>	
 			<table class="table table-responsive">
-				<thead>
+				<thead class="backgthead">
 					<th>Nom du filtre</th>
 					<th colspan="2">Action</th>
 				</thead>
 
-				<tbody>
+				<tbody class="backgtbody">
 					<?php foreach($filters as $filter) : ?>
 						<tr>
 							<td><?=ucfirst($filter['name']);?></td>

@@ -14,7 +14,7 @@
 		<button type="submit" id="submit" class="btn btn-info search_user">Rechercher</button>
 		<br><br>
 		<table class="table table-responsive">
-			<thead>
+			<thead class="backgthead">
 				<th>Civilité</th>
 				<th>Rôle</th>
 				<th>Nom</th>
@@ -24,7 +24,7 @@
 				<th colspan="2">Action</th>
 			</thead>
 
-			<tbody id="result">
+			<tbody id="result" class="backgtbody">
 				<?php foreach($users as $user) : ?>
 					<tr>
 						<td><?=$user['social_title'];?></td>

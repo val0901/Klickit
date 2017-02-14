@@ -14,13 +14,13 @@
 			<br><br>
 			<div id="viewOrder">
 				<table class="table table-responsive">
-					<thead>
+					<thead class="backgthead">
 						<th>Mois</th>
 						<th>Année</th>
 						<th>Chiffre d'affaire</th>
 					</thead>
 
-					<tbody id="result">
+					<tbody id="result" class="backgtbody">
 						<?php foreach($sales as $salesValue) : ?>
 							<tr>
 								<td>

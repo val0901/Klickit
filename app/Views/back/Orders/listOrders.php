@@ -11,7 +11,7 @@
 		<br><br>
 		<div id="viewOrder">
 			<table class="table table-responsive">
-				<thead>
+				<thead class="backgthead">
 					<th>Numéro</th>
 					<th>Client</th>
 					<th>Contenu de la commande</th>
@@ -19,11 +19,11 @@
 					<th>Sous-Total</th>
 					<th>Total</th>
 					<th>Date de la commande</th>
-					<th>Statut</th>
+					<th colspan="2">Statut</th>
 					<!-- <th id="thaction">Changer le statut</th> -->
 				</thead>
 
-				<tbody id="result">
+				<tbody id="result" class="backgtbody">
 				<?php foreach($orders as $order): ;?>
 					<tr>
 						<td><?=$order['id']; ?></td>

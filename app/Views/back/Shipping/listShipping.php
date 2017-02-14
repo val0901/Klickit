@@ -8,14 +8,14 @@
 	<?php else:?>
 		<form>	
 			<table class="table table-responsive">
-				<thead>
+				<thead class="backgthead">
 					<th>Nom de l'option</th>
 					<th>Prix</th>
 					<th>Détails</th>
 					<th colspan="2">Action</th>
 				</thead>
 
-				<tbody>
+				<tbody class="backgtbody">
 					<?php foreach($options as $option) : ?>
 						<tr>
 							<td><?=$option['title'];?></td>
