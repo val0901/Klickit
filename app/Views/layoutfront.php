@@ -133,7 +133,7 @@
 													x <?=$item['qt'];?>
 												</div>
 												<div class="col-xs-2 text-right ">
-													<?= $item['price'] ?>€
+													<?= $item['price'] * $item['qt']?>€
 												</div>
                                     
 											<?php else : ?>
@@ -141,7 +141,7 @@
 													x <?=$item['qt'];?>
 												</div>
 												<div class="col-xs-2 text-right ">
-													<?= $item['newPrice'] ?>€
+													<?= $item['newPrice'] * $item['qt']?>€
 												</div>
 											<?php endif; ?>
 										<?php endforeach; ?>
