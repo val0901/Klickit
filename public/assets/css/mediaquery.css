@@ -1,408 +1,420 @@
 @media screen and (max-width: 1400px) {
-	.slideartL_title {
-	font-size: 30px;
-	padding: 8px 200px;
-}
+    .slideartL_title {
+        font-size: 30px;
+        padding: 8px 200px;
+    }
 
-	.slideartR_title {
-		font-size: 30px;
-		padding: 8px 200px;
-	}
-	
-	.span3 {
-	width: 50%;
-	float: left;
-    margin: 0 0px;
-}
-	
-	.slidecontent_nouveau {
-	font-size: 3.1vw;
-}
+    .slideartR_title {
+        font-size: 30px;
+        padding: 8px 200px;
+    }
 
-	.slidecontent_promo {
-	font-size: 3.1vw;
-}
-	
-	.caption h4 {
-    font-size: 3.0vw;
-}
+    .span3 {
+        width: 50%;
+        float: left;
+        margin: 0 0px;
+    }
 
-	.caption p {
-    font-size: 2.5vw;
-}
-	
-	.viewcategory_nouveau {
-	font-size: 1.5vw;
-}
-	
-	.viewcategory_promo {
-	font-size: 1.5vw;
-}
-	
+    .slidecontent_nouveau {
+        font-size: 3.1vw;
+    }
+
+    .slidecontent_promo {
+        font-size: 3.1vw;
+    }
+
+    .caption h4 {
+        font-size: 3.0vw;
+    }
+
+    .caption p {
+        font-size: 2.5vw;
+    }
+
+    .viewcategory_nouveau {
+        font-size: 1.5vw;
+    }
+
+    .viewcategory_promo {
+        font-size: 1.5vw;
+    }
+
     /*tête de person pour guestBook*/
     .img-responsive-tete {
         width: 6vw;
     }
-    
+
     .playmo_hide {
-    display: none;
-}
-    
-    
+        display: none;
+    }
+
+
 }
 
 @media screen and (max-width: 1250px) {
     .quote_hide {
-		display: none;
-	}
+        display: none;
+    }
 }
 
 @media screen and (max-width: 1200px) {
-	.ipad_padding {
-		padding-top: 10px;
-	}
-	
-	.quote_hide {
-		margin-right: 20px;
-	}
-	
-	.event_title {
-	font-size: 35px;
-	padding: 8px 150px;
-	}
-	
-	.slideartL_title {
-	font-size: 30px;
-	padding: 8px 150px;
-	}
+    .ipad_padding {
+        padding-top: 10px;
+    }
 
-	.slideartR_title {
-		font-size: 30px;
-		padding: 8px 150px;
-	}
-	
-	.classic_text_show, .customs_text_show, .pieces_text_show, .divers_text_show {
-    top: 20vw;
-	}
-	
-	.img-responsive {
-		width: 100%;
-	}
-    
+    .quote_hide {
+        margin-right: 20px;
+    }
+
+    .event_title {
+        font-size: 35px;
+        padding: 8px 150px;
+    }
+
+    .slideartL_title {
+        font-size: 30px;
+        padding: 8px 150px;
+    }
+
+    .slideartR_title {
+        font-size: 30px;
+        padding: 8px 150px;
+    }
+
+    .classic_text_show, .customs_text_show, .pieces_text_show, .divers_text_show {
+        top: 20vw;
+    }
+
+    .img-responsive {
+        width: 100%;
+    }
+
     /*tête de person pour guestBook*/
-	.img-responsive-tete {
-		width: 76px;
-	}
-	
-	.viewcategorycaption h4 {
-    font-size: 2vw;
-	}
+    .img-responsive-tete {
+        width: 76px;
+    }
 
-	.viewcategorycaption p {
-    font-size: 1.5vw;
-	}
-	
-	.viewcategoryprixpromo {
-	font-size: 2vw;
-	}
-	
-	.orderlogin_box {
-    width: 97%;
-	padding-left: 0px;
-    padding-right: 0px;
-	box-sizing: border-box;
-	}
-    
-	.orderlogin_box {
-    padding-left: 15px;
-    padding-right: 15px;
-	}
-	
-	.col-md-6 {
-		width: 97%;
-	}
-	
-	/*.col-md-3 {
-		width: 100%;
-	}*/
-	
-	.ordermidia_width {
-		width: 100%;
-	}
-	
-	.viewart_savoirwidth {
-		width: 100%;
-	}
-    
+    .viewcategorycaption h4 {
+        font-size: 2vw;
+    }
+
+    .viewcategorycaption p {
+        font-size: 1.3vw;
+    }
+
+    .viewcategoryprixpromo {
+        font-size: 2vw;
+    }
+
+    .orderlogin_box {
+        width: 97%;
+        padding-left: 0px;
+        padding-right: 0px;
+        box-sizing: border-box;
+    }
+
+    .orderlogin_box {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .col-md-6 {
+        width: 97%;
+    }
+
+    /*.col-md-3 {
+    width: 100%;
+}*/
+
+    .ordermidia_width {
+        width: 100%;
+    }
+
+    .viewart_savoirwidth {
+        width: 100%;
+    }
+
 
 }
 
 @media screen and (max-width: 990px) {
-	.footercol1_float {
-		float: left;
-		padding-bottom: 100px;
-	}
-	
-	.footerimg_hide {
-	display: none;
-}
-	
-	.footerrow_margin {
-		margin:0;
-		padding-right:100px;
-		margin-top:0px;
-	}
-	
-	.footer_largestyle {
-	display: none;
-}
+    .footercol1_float {
+        float: left;
+        padding-bottom: 100px;
+    }
 
-	.footer_smallstyle {
-	display: block;
-}
-	
-	.viewcategory_nouveau {
-	font-size: 2.5vw;
-}
-	
-	.viewcategory_promo {
-	font-size: 2.5vw;
-}
-	
-	.addusercol1img_hide {
-	display: none;
-}
-	
-	.adduserscol1_text {
-    font-size: 5vw;
-}
-	
-     .order_buttonscapL {
-    text-align: center;
-}
+    .footerimg_hide {
+        display: none;
+    }
+
+    .footerrow_margin {
+        margin:0;
+        padding-right:100px;
+        margin-top:0px;
+    }
+
+    .footer_largestyle {
+        display: none;
+    }
+
+    .footer_smallstyle {
+        display: block;
+    }
+
+    .viewcategory_nouveau {
+        font-size: 2.5vw;
+    }
+
+    .viewcategory_promo {
+        font-size: 2.5vw;
+    }
+
+    .viewcategorycaption p {
+        font-size: 2.2vw;
+    }
+
+    .addusercol1img_hide {
+        display: none;
+    }
+
+    .adduserscol1_text {
+        font-size: 5vw;
+    }
+
+    .order_buttonscapL {
+        text-align: center;
+    }
 
     .order_buttonscapR {
-    text-align: center;
-}
+        text-align: center;
+    }
 
     /*mentions légales*/
     .legalm_background {
-	padding: 20px;
-}
-    
+        padding: 20px;
+    }
+
     /*tête de person pour guestBook*/
-	.img-responsive-tete {
-		width: 70px;
-	}
+    .img-responsive-tete {
+        width: 70px;
+    }
+
+    h4.salesItems {
+        letter-spacing: 0.1em;
+        font-size: xx-large;
+    }
     
-	
+    h4.salesItems.viewcategorycaption{
+        font-size: xx-large;
+    }
+
 }
 
 @media screen and (max-width: 950px) {
     .navli_width {
-    font-size: 20px;
-}
-	
-	
-	.vignetteEvent_hide {
-	display: none;
-}
-	
-	.event_title {
-	display: none;
-}
-	
-	.slideartL_title {
-	display: none;
-}
+        font-size: 20px;
+    }
 
-	.slideartR_title {
-		display: none;
-	}
-	
-		#cogicon_click {
-	font-size: 6vw;
-}
 
-	#usericon_click {
-		font-size: 6vw;
-}
+    .vignetteEvent_hide {
+        display: none;
+    }
 
-	#shoppingicon_click {
-		font-size: 6vw;
-}
-	
-	
-	.footertitle {
-	font-size: 3.5vw;
-    margin-left: 20px;
-    text-align: left;
-}
-	
-	.footertext {
-	font-size: 2.5vw;
-	margin-left: 20px;
-    text-align: left;
-}
-	
-	.viewcategorycol2_text {
-	font-size: 2.5vw;
-}
-	
-	.viewcategorycaption p {
-    font-size: 2.5vw;
-}
-	
-	.viewcategorycaption h4 {
-    font-size: 3.5vw;
-}
-	
-	.viewcategoryprixpromo {
-	font-size: 3.5vw;
-}
-	
-	.viewcategoryrow2col1_img {
-	padding:40px 20px;
-}
+    .event_title {
+        display: none;
+    }
 
-	.viewcategory_button_size {
-    font-size: 2.5vw;
-}
-	
-	.ordertable_title {
-	margin-top: 5vw;
-	font-size: 2.5vw;
-}
+    .slideartL_title {
+        display: none;
+    }
 
-	.ordertable_text {
-	font-size: 1.5vw;
-}
-	
-	th {
-	font-size: 2.5vw;
-}
+    .slideartR_title {
+        display: none;
+    }
+
+    #cogicon_click {
+        font-size: 6vw;
+    }
+
+    #usericon_click {
+        font-size: 6vw;
+    }
+
+    #shoppingicon_click {
+        font-size: 6vw;
+    }
+
+
+    .footertitle {
+        font-size: 3.5vw;
+        margin-left: 20px;
+        text-align: left;
+    }
+
+    .footertext {
+        font-size: 2.5vw;
+        margin-left: 20px;
+        text-align: left;
+    }
+
+    .viewcategorycol2_text {
+        font-size: 2.5vw;
+    }
+
+    .viewcategorycaption p {
+        font-size: 2.5vw;
+    }
+
+    .viewcategorycaption h4 {
+        font-size: 3.5vw;
+    }
+
+    .viewcategoryprixpromo {
+        font-size: 3.5vw;
+    }
+
+    .viewcategoryrow2col1_img {
+        padding:40px 20px;
+    }
+
+    .viewcategory_button_size {
+        font-size: 2.5vw;
+    }
+
+    .ordertable_title {
+        margin-top: 5vw;
+        font-size: 2.5vw;
+    }
+
+    .ordertable_text {
+        font-size: 1.5vw;
+    }
+
+    th {
+        font-size: 2.5vw;
+    }
     /*mentions légales*/
     .legalm_background {
-	padding: 20px;
-}
-	
-    
+        padding: 20px;
+    }
+
+
     /*tête de person pour guestBook*/
-	.img-responsive-tete {
-		width: 63px;
-	}
-	
-	.table-responsive > .table-bordered {
-    border: 2px solid #000;
-}
-	
-    
+    .img-responsive-tete {
+        width: 63px;
+    }
+
+    .table-responsive > .table-bordered {
+        border: 2px solid #000;
+    }
+
+
 }
 
 @media screen and (max-width: 750px) {
     .navli_width {
-    width: 100%;
-}
-    
+        width: 100%;
+    }
+
     .navlicon_width {
-    width: 100%;
-}
-    
+        width: 100%;
+    }
+
     .dropdown-menu {
-    background-clip: padding-box;
-    background-color: #fff;
-    display: none;
-    float: left;
-    font-size: 14px;
-    left: 0;
-    margin: 2px 0 0;
-    min-width: 100%;
-    padding: 0px 0;
-    position: relative;
-    text-align: left;
-    top: 100%;
-    z-index: 0;
-    border-radius: 0px;
-    box-shadow: none;
-}
-    
+        background-clip: padding-box;
+        background-color: #fff;
+        display: none;
+        float: left;
+        font-size: 14px;
+        left: 0;
+        margin: 2px 0 0;
+        min-width: 100%;
+        padding: 0px 0;
+        position: relative;
+        text-align: left;
+        top: 100%;
+        z-index: 0;
+        border-radius: 0px;
+        box-shadow: none;
+    }
+
     .TLA_bgcolor {
-    position: relative;
-}
-    
+        position: relative;
+    }
+
     .TLA_dropdownbox_width {
-    border: 0px;
-}
-	
-	.soumenu_classics_text li, .soumenu_customs_text li, .soumenu_pieces_text li, .soumenu_boites_text li {
-	border-bottom: 1px solid #000;
-	display: none;
-	margin: 0 0 10px;
-}
+        border: 0px;
+    }
 
-	#plusclassic_hide, #pluscustoms_hide, #pluspieces_hide, #plusboites_hide {
-	display: block;
-}
-	
-	#faminus_hide, #faminus1_hide, #faminus2_hide, #faminus3_hide {
-	display: hide;
-}
-	
-	.soumenu_search {
-    width: 100%;
-}
-	
-	.col-md-10 {
-    width: 100%;
-}
-	
-	.baseline_text {
-    font-size:3.5vw;
-}
-	
-	.nav_left > img {
-	width: 40vw;
-}
-	
-	.container_general {
-    margin: 0 10px;
-}
-	
-	.footercol2_margin {
-	margin-top: 0px;
-}
-	
-	.formlabel {
-	color: #1f3a93;
-	font-size: 2.5vw;
-}
-	
-	.cgv_background {
-	padding: 16px;
-}
+    .soumenu_classics_text li, .soumenu_customs_text li, .soumenu_pieces_text li, .soumenu_boites_text li {
+        border-bottom: 1px solid #000;
+        display: none;
+        margin: 0 0 10px;
+    }
 
-	.cgv_text {
-	font-size: 15px;
-	}
-	
-	.adduser_label {
-	font-size: 2.5vw;
-}
-	
-	.addusercol2_padding {
-    padding: 20px 50px;
-}
+    #plusclassic_hide, #pluscustoms_hide, #pluspieces_hide, #plusboites_hide {
+        display: block;
+    }
+
+    #faminus_hide, #faminus1_hide, #faminus2_hide, #faminus3_hide {
+        display: hide;
+    }
+
+    .soumenu_search {
+        width: 100%;
+    }
+
+    .col-md-10 {
+        width: 100%;
+    }
+
+    .baseline_text {
+        font-size:3.5vw;
+    }
+
+    .nav_left > img {
+        width: 40vw;
+    }
+
+    .container_general {
+        margin: 0 10px;
+    }
+
+    .footercol2_margin {
+        margin-top: 0px;
+    }
+
+    .formlabel {
+        color: #1f3a93;
+        font-size: 2.5vw;
+    }
+
+    .cgv_background {
+        padding: 16px;
+    }
+
+    .cgv_text {
+        font-size: 15px;
+    }
+
+    .adduser_label {
+        font-size: 2.5vw;
+    }
+
+    .addusercol2_padding {
+        padding: 20px 50px;
+    }
     /*mentions légales*/
     .legalm_background {
-	padding: 30px;
-}
-    
-	.shoppingcart_quantity {
-    border-radius: 18px;
-    margin-left: -15px;
-    padding: 0px 8px;
-}
-    
+        padding: 30px;
+    }
+
+    .shoppingcart_quantity {
+        border-radius: 18px;
+        margin-left: -15px;
+        padding: 0px 8px;
+    }
+
     .commentaire_title {
         font-size: 20px;
     }
@@ -411,19 +423,19 @@
         font-size: 20px;
     }
 }
-	
+
 
 @media (max-width: 767px) {
     .page-header, .control-box {
-    text-align: center;
+        text-align: center;
     } 
-	
+
 }
 @media (max-width: 479px) {
     .caption {
-    word-break: break-all;
+        word-break: break-all;
     }
-	
+
 }
 }
 

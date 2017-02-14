@@ -143,11 +143,13 @@ a.linknav{
 		width: 76px;
 	}
 	
+/*
 	.viewcategorycaption h4 {
     font-size: 2vw;
-@@ -168,7 +177,11 @@
+}
+*/
     .legalm_background {
-	padding: 20px;
+	   padding: 20px;
 }
 
     
@@ -156,11 +158,13 @@ a.linknav{
 		width: 70px;
 	}
 	
-}
 
+
+/*
 @@ -262,6 +275,11 @@
 	padding: 20px;
 }
+*/
 	
     
     /*tête de person pour guestBook*/
@@ -168,5 +172,3 @@ a.linknav{
 		width: 63px;
 	}
 	
-    
-}

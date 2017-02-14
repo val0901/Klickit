@@ -1129,6 +1129,7 @@ h4 {
     color: #7ac943;
     font-weight: 600;
     text-transform: uppercase;
+    height: 29px;
 }
 
 .viewcategory_promo {
@@ -1137,6 +1138,7 @@ h4 {
     color: #3fa9f5;
     font-weight: 600;
     text-transform: uppercase;
+    height: 29px;
 }
 
 .viewcategorycaption h4 {
@@ -1333,7 +1335,6 @@ h1.goodToGo {
     background-color: #ff931e;
     margin: 1px 0px;
 }
-
 .viewcategoryrow2col1customs_tirer a {
     color: #fff;
 }
@@ -1344,13 +1345,20 @@ h1.goodToGo {
 }
 
 .viewcategory_defaut {
-    height: 22px;
+    height: 29px;
 }
 
 #pagination a {
     font-size: 20px;
 
 }
+p.paraphItem{
+    height: 20px;
+}
+h4.salesItems {
+    letter-spacing: 0.1em;
+}
+
 
 /*pieces.php*/
 .pieces_background {
