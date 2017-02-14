@@ -79,7 +79,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
 								<h4 class="salesItems"><span class="viewcategoryprixpromo"><?=$product['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$product['price'];?>€</span></h4>
 							<?php endif; ?>
 
-							<p>
+							<p class="paraphItem">
 								<span style="cursor:pointer;">
 									<?php if(!empty($_SESSION['user'])): ?>
 										<?php if(in_array($product['id'], $favorite)): ?>

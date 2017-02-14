@@ -79,12 +79,12 @@
                         <a href="<?=$this->url('viewArt', ['id' => $product['id']]);?>"><img src="<?=$this->assetUrl('art/'.$product['picture1']);?>" alt="photo de playmobil" class="img-thumbnail"></a>
                         <div id="listItem" class="viewcategorycaption">
                             <?php if($product['newPrice'] == 0) : ?>
-                            <h4><?=$product['price'];?>€</h4>
+                            <h4 class="salesItems"><?=$product['price'];?>€</h4>
                             <?php else : ?>
-                            <h4><span class="viewcategoryprixpromo"><?=$product['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$product['price'];?>€</span></h4>
+                            <h4 class="salesItems"><span class="viewcategoryprixpromo"><?=$product['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$product['price'];?>€</span></h4>
                             <?php endif; ?>
 
-                            <p>
+                            <p class="paraphItem">
                                 <span style="cursor:pointer;">
                                     <?php if(!empty($_SESSION['user'])): ?>
                                     <?php if(in_array($product['id'], $favorite)): ?>
@@ -108,8 +108,8 @@
                         </div>
 
                         <!--BOUTON AJOUTER AU PANIER-->
-
-                        <div class="bottom viewcategory_button">
+                        <!--j'ai supprimé .bottom dans la class-->
+                        <div class="viewcategory_button">
                             
                             <!--j'ai supprimé .btn-primary dans la class button-->
                             <?php if(!empty($_SESSION['user'])): ?>

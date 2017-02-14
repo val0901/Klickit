@@ -17,7 +17,7 @@
 			<i class="fa fa-phone" aria-hidden="true"> <span class="telnumber" style="font-family: 'Advent Pro', sans-serif;">06 11 82 17 71</span></i><br>
 
 			<?php  if($success) : ?>
-				<p class="alert alert-success">Merci pour votre message. Nous vous répondrons dans les plus brefs délais</p>
+				<p class="alert alert-success">Merci pour votre message. Nous vous répondrons dans les plus brefs délais.</p>
 			<?php elseif(!empty($errors)) : ?>
 				<p class="alert alert-danger"><?=implode('<br>',$errors)?></p>
 			<?php endif;?>

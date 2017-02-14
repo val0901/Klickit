@@ -1007,13 +1007,22 @@ input::-moz-focus-inner { border: 0; }
     width: 28vw;
     cursor: pointer;
 }
-
+button.contactbutton:focus {
+    outline: none;
+}
 button, html input[type="button"], input[type="reset"], input[type="submit"] {
     background-color: transparent;
     border: medium none;
     cursor: pointer;
 }
-
+p.alert.alert-danger, p.alert.alert-success {
+    margin-top: 20px;
+    border: none;
+    font-size: 1.2em;
+}
+.form-control{
+    color: black;
+}
 /*mentions légales*/
 
 .container.legalm_background{
