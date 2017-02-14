@@ -21,24 +21,30 @@
 				</thead>
 
 				<tbody id="result" class="backgtbody">
-					<?php foreach($messages as $message) : ?>
-						<?php 
-							if ($message['statut'] == 'NonLu'){
-								$bold = ' style="font-weight:bold;" ';
-							}else{
-								$bold = '';
-							}
-						?>
+					<?php if(!empty($messages)): ?>
+						<?php foreach($messages as $message) : ?>
+							<?php 
+								if ($message['statut'] == 'NonLu'){
+									$bold = ' style="font-weight:bold;" ';
+								}else{
+									$bold = '';
+								}
+							?>
+							<tr>
+								<td <?=$bold?> ><?=$message['username'];?></td>
+								<td <?=$bold?> ><?=$message['email'];?></td>
+								<td <?=$bold?> ><?=$message['subject'];?></td> 
+								<td <?=$bold?> ><?=substr($message['content'], 0, 30).'...';?></td>
+								<td <?=$bold?> ><?=$message['statut'];?></td>
+								<td><a href="<?=$this->url('viewMessage', ['id'=>$message['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>
+								<td><button class="btn btn-danger delete-message" data-id="<?=$message['id']?>">Effacer le message</button></td>
+							</tr>	
+						<?php endforeach;?>
+					<?php else: ?>
 						<tr>
-							<td <?=$bold?> ><?=$message['username'];?></td>
-							<td <?=$bold?> ><?=$message['email'];?></td>
-							<td <?=$bold?> ><?=$message['subject'];?></td> 
-							<td <?=$bold?> ><?=substr($message['content'], 0, 30).'...';?></td>
-							<td <?=$bold?> ><?=$message['statut'];?></td>
-							<td><a href="<?=$this->url('viewMessage', ['id'=>$message['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>
-							<td><button class="btn btn-danger delete-message" data-id="<?=$message['id']?>">Effacer le message</button></td>
-						</tr>	
-					<?php endforeach;?>
+							<td colspan="7">Aucune information</td>
+						</tr>
+					<?php endif; ?>
 				</tbody>
 			</table>
 		</form>

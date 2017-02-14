@@ -25,18 +25,24 @@
 			</thead>
 
 			<tbody id="result" class="backgtbody">
-				<?php foreach($users as $user) : ?>
+				<?php if(!empty($users)): ?>
+					<?php foreach($users as $user) : ?>
+						<tr>
+							<td><?=$user['social_title'];?></td>
+							<td><?=$user['role'];?></td>
+							<td><?=$user['lastname'];?></td>
+							<td><?=$user['firstname'];?></td>
+							<td><?=$user['username'];?></td>
+							<td><?=$user['email'];?></td>
+							<td><a href="<?=$this->url('updateUser', ['id'=>$user['id']]);?>">Mettre à jour le profil</a></td>
+							<td><button class="btn btn-danger delete-user" data-id="<?=$user['id']?>">Effacer le profil</button></td>
+						</tr>	
+					<?php endforeach;?>
+				<?php else: ?>
 					<tr>
-						<td><?=$user['social_title'];?></td>
-						<td><?=$user['role'];?></td>
-						<td><?=$user['lastname'];?></td>
-						<td><?=$user['firstname'];?></td>
-						<td><?=$user['username'];?></td>
-						<td><?=$user['email'];?></td>
-						<td><a href="<?=$this->url('updateUser', ['id'=>$user['id']]);?>">Mettre à jour le profil</a></td>
-						<td><button class="btn btn-danger delete-user" data-id="<?=$user['id']?>">Effacer le profil</button></td>
-					</tr>	
-				<?php endforeach;?>
+						<td colspan="8">Aucune information</td>
+					</tr>
+				<?php endif; ?>
 			</tbody>
 		</table>
 	</form>	

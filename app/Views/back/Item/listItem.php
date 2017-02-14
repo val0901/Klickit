@@ -21,21 +21,27 @@
 				</thead>
 
 				<tbody id="result_classique" class="backgtbody">
-					<?php foreach($Classic as $value) : ?>
+					<?php if(!empty($Classic)): ?>
+						<?php foreach($Classic as $value) : ?>
+							<tr>
+								<td><?=$value['id'];?></td>
+								<td><?=$value['name'];?></td>
+								<td><?=$value['quantity'];?></td>
+								<?php if($value['newPrice'] == 0) : ?>
+									<td><?=$value['price'];?></td>
+								<?php elseif($value['newPrice'] > 0) : ?>
+									<td><?=$value['newPrice'];?></td>
+								<?php endif; ?>
+								<td><?=$value['statut'];?></td>
+								<td><a href="<?=$this->url('updateItem', ['id'=>$value['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>
+								<td><button class="btn btn-danger delete-item" data-id="<?=$value['id']?>">Effacer le produit</button></td>
+							</tr>	
+						<?php endforeach;?>
+					<?php else: ?>
 						<tr>
-							<td><?=$value['id'];?></td>
-							<td><?=$value['name'];?></td>
-							<td><?=$value['quantity'];?></td>
-							<?php if($value['newPrice'] == 0) : ?>
-								<td><?=$value['price'];?></td>
-							<?php elseif($value['newPrice'] > 0) : ?>
-								<td><?=$value['newPrice'];?></td>
-							<?php endif; ?>
-							<td><?=$value['statut'];?></td>
-							<td><a href="<?=$this->url('updateItem', ['id'=>$value['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>
-							<td><button class="btn btn-danger delete-item" data-id="<?=$value['id']?>">Effacer le produit</button></td>
-						</tr>	
-					<?php endforeach;?>
+							<td colspan="7">Aucune information</td>
+						</tr>
+					<?php endif; ?>
 				</tbody>
 			</table>
 
@@ -65,21 +71,27 @@
 				</thead>
 
 				<tbody id="result_custom" class="backgtbody">
-					<?php foreach($Custom as $value) : ?>
+					<?php if(!empty($Custom)): ?>
+						<?php foreach($Custom as $value) : ?>
+							<tr>
+								<td><?=$value['id'];?></td>
+								<td><?=$value['name'];?></td>
+								<td><?=$value['quantity'];?></td>
+								<?php if($value['newPrice'] == 0) : ?>
+									<td><?=$value['price'];?></td>
+								<?php elseif($value['newPrice'] > 0) : ?>
+									<td><?=$value['newPrice'];?></td>
+								<?php endif; ?>
+								<td><?=$value['statut'];?></td>
+								<td><a href="<?=$this->url('updateItem', ['id'=>$value['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>
+								<td><button class="btn btn-danger delete-item" data-id="<?=$value['id']?>">Effacer le produit</button></td>
+							</tr>	
+						<?php endforeach;?>
+					<?php else: ?>
 						<tr>
-							<td><?=$value['id'];?></td>
-							<td><?=$value['name'];?></td>
-							<td><?=$value['quantity'];?></td>
-							<?php if($value['newPrice'] == 0) : ?>
-								<td><?=$value['price'];?></td>
-							<?php elseif($value['newPrice'] > 0) : ?>
-								<td><?=$value['newPrice'];?></td>
-							<?php endif; ?>
-							<td><?=$value['statut'];?></td>
-							<td><a href="<?=$this->url('updateItem', ['id'=>$value['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>
-							<td><button class="btn btn-danger delete-item" data-id="<?=$value['id']?>">Effacer le produit</button></td>
-						</tr>	
-					<?php endforeach;?>
+							<td colspan="7">Aucune information</td>
+						</tr>
+					<?php endif; ?>
 				</tbody>
 			</table>
 			
@@ -108,21 +120,27 @@
 				</thead>
 
 				<tbody id="result_piece" class="backgtbody">
-					<?php foreach($Piece as $value) : ?>
+					<?php if(!empty($Piece)): ?>
+						<?php foreach($Piece as $value) : ?>
+							<tr>
+								<td><?=$value['id'];?></td>
+								<td><?=$value['name'];?></td>
+								<td><?=$value['quantity'];?></td>
+								<?php if($value['newPrice'] == 0) : ?>
+									<td><?=$value['price'];?></td>
+								<?php elseif($value['newPrice'] > 0) : ?>
+									<td><?=$value['newPrice'];?></td>
+								<?php endif; ?>
+								<td><?=$value['statut'];?></td>
+								<td><a href="<?=$this->url('updateItem', ['id'=>$value['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>
+								<td><button class="btn btn-danger delete-item" data-id="<?=$value['id']?>">Effacer le produit</button></td>
+							</tr>	
+						<?php endforeach;?>
+					<?php else: ?>
 						<tr>
-							<td><?=$value['id'];?></td>
-							<td><?=$value['name'];?></td>
-							<td><?=$value['quantity'];?></td>
-							<?php if($value['newPrice'] == 0) : ?>
-								<td><?=$value['price'];?></td>
-							<?php elseif($value['newPrice'] > 0) : ?>
-								<td><?=$value['newPrice'];?></td>
-							<?php endif; ?>
-							<td><?=$value['statut'];?></td>
-							<td><a href="<?=$this->url('updateItem', ['id'=>$value['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>
-							<td><button class="btn btn-danger delete-item" data-id="<?=$value['id']?>">Effacer le produit</button></td>
-						</tr>	
-					<?php endforeach;?>
+							<td colspan="7">Aucune information</td>
+						</tr>
+					<?php endif; ?>
 				</tbody>
 			</table>
 
@@ -151,21 +169,27 @@
 				</thead>
 
 				<tbody id="result_divers" class="backgtbody">
-					<?php foreach($Divers as $value) : ?>
+					<?php if(!empty($Divers)): ?>
+						<?php foreach($Divers as $value) : ?>
+							<tr>
+								<td><?=$value['id'];?></td>
+								<td><?=$value['name'];?></td>
+								<td><?=$value['quantity'];?></td>
+								<?php if($value['newPrice'] == 0) : ?>
+									<td><?=$value['price'];?></td>
+								<?php elseif($value['newPrice'] > 0) : ?>
+									<td><?=$value['newPrice'];?></td>
+								<?php endif; ?>
+								<td><?=$value['statut'];?></td>
+								<td><a href="<?=$this->url('updateItem', ['id'=>$value['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>
+								<td><button class="btn btn-danger delete-item" data-id="<?=$value['id']?>">Effacer le produit</button></td>
+							</tr>	
+						<?php endforeach;?>
+					<?php else: ?>
 						<tr>
-							<td><?=$value['id'];?></td>
-							<td><?=$value['name'];?></td>
-							<td><?=$value['quantity'];?></td>
-							<?php if($value['newPrice'] == 0) : ?>
-								<td><?=$value['price'];?></td>
-							<?php elseif($value['newPrice'] > 0) : ?>
-								<td><?=$value['newPrice'];?></td>
-							<?php endif; ?>
-							<td><?=$value['statut'];?></td>
-							<td><a href="<?=$this->url('updateItem', ['id'=>$value['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>
-							<td><button class="btn btn-danger delete-item" data-id="<?=$value['id']?>">Effacer le produit</button></td>
-						</tr>	
-					<?php endforeach;?>
+							<td colspan="7">Aucune information</td>
+						</tr>
+					<?php endif; ?>
 				</tbody>
 			</table>
 

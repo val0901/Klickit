@@ -16,15 +16,21 @@
 				</thead>
 
 				<tbody class="backgtbody">
-					<?php foreach($options as $option) : ?>
+					<?php if(!empty($options)): ?>
+						<?php foreach($options as $option) : ?>
+							<tr>
+								<td><?=$option['title'];?></td>
+								<td><?=$option['price'];?>€</td>
+								<td><?=nl2br($option['content']);?></td>
+								<td><a href="<?=$this->url('updateShipping', ['id'=>$option['id']])?>">Mettre à jour l'option d'envoi</a></td>
+								<td><button class="btn btn-danger delete-option" data-id="<?=$option['id']?>">Effacer l'option d'envoi</button></td>
+							</tr>	
+						<?php endforeach;?>
+					<?php else: ?>
 						<tr>
-							<td><?=$option['title'];?></td>
-							<td><?=$option['price'];?>€</td>
-							<td><?=nl2br($option['content']);?></td>
-							<td><a href="<?=$this->url('updateShipping', ['id'=>$option['id']])?>">Mettre à jour l'option d'envoi</a></td>
-							<td><button class="btn btn-danger delete-option" data-id="<?=$option['id']?>">Effacer l'option d'envoi</button></td>
-						</tr>	
-					<?php endforeach;?>
+							<td colspan="5">Aucune information</td>
+						</tr>
+					<?php endif; ?>
 				</tbody>
 			</table>
 		</form>	

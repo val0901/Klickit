@@ -11,14 +11,20 @@
 				</thead>
 
 				<tbody class="backgtbody">
-					<?php foreach($event as $value) : ?>
+					<?php if(!empty($event)): ?>
+						<?php foreach($event as $value) : ?>
+							<tr>
+								<td><?=$value['id'];?></td>
+								<td><?=$value['title'];?></td>
+								<td><a href="<?=$this->url('updateEvent', ['id'=>$value['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>
+								<td><button class="btn btn-danger delete-event" data-id="<?=$value['id']?>">Effacer l'évènement'</button></td>
+							</tr>	
+						<?php endforeach;?>
+					<?php else: ?>
 						<tr>
-							<td><?=$value['id'];?></td>
-							<td><?=$value['title'];?></td>
-							<td><a href="<?=$this->url('updateEvent', ['id'=>$value['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>
-							<td><button class="btn btn-danger delete-event" data-id="<?=$value['id']?>">Effacer l'évènement'</button></td>
-						</tr>	
-					<?php endforeach;?>
+							<td colspan="4">Aucune information</td>
+						</tr>
+					<?php endif; ?>
 				</tbody>
 			</table>
 	</form>

@@ -24,56 +24,62 @@
 				</thead>
 
 				<tbody id="result" class="backgtbody">
-				<?php foreach($orders as $order): ;?>
-					<tr>
-						<td><?=$order['id']; ?></td>
-						<td><?=$order['lastname'].' '.$order['firstname'].'<br>'.$order['adress'].'<br>'.$order['zipcode'].' '.$order['city']; ?></td>
-						<td>
-						<?php 
-							$contents = explode(', ', $order['contenu']); 
-							$quantity = explode(', ', $order['quantity']);
+					<?php if(!empty($orders)): ?>
+						<?php foreach($orders as $order): ;?>
+							<tr>
+								<td><?=$order['id']; ?></td>
+								<td><?=$order['lastname'].' '.$order['firstname'].'<br>'.$order['adress'].'<br>'.$order['zipcode'].' '.$order['city']; ?></td>
+								<td>
+								<?php 
+									$contents = explode(', ', $order['contenu']); 
+									$quantity = explode(', ', $order['quantity']);
 
-							for($i=0;$i<count($contents);$i++){
-								$content_basket[$order['id']][] = [
-									'content' 	=> $contents[$i],
-									'quantity' 	=> $quantity[$i],
-								];
-							}
+									for($i=0;$i<count($contents);$i++){
+										$content_basket[$order['id']][] = [
+											'content' 	=> $contents[$i],
+											'quantity' 	=> $quantity[$i],
+										];
+									}
 
-							foreach ($content_basket[$order['id']] as $basket){
-								$list_items = $items->findItems($basket['content']); 
+									foreach ($content_basket[$order['id']] as $basket){
+										$list_items = $items->findItems($basket['content']); 
 
-								echo '<a href="'.$this->url('updateItem', ['id'=>$list_items['id']]).'" style="color:white;">'.$list_items['name'].'</a> <br>';
-							}
-						?>
-						</td>
-						<td> 
-        				<?php 
-        					foreach ($content_basket[$order['id']] as $basket){
-        						echo $basket['quantity'].'<br>';
-        					} 
-        				?>
-						</td>
-						<td><?=$order['sub_total'];?></td>
-						<td><?=$order['total'];?></td>
-						
-						<td><?= date('d/m/Y', strtotime($order['date_creation']));?></td>
-						<td>
-							<?php   if ($order['statut'] == 'enPreparation') : ?>
-								 		<p>En préparation</p>
-								 		<button type="button" data-id="<?=$order['id']?>" class="order_sent" style="color:black;">Commande expédiée</button>
-							<?php	elseif ($order['statut'] == 'commande') : ?>
-								  		<p>Commandé</p>
-								  		<button type="button" data-id="<?=$order['id']?>" class="order_prepare" style="color:black;">Commande en préparation</button>
-							<?php	elseif ($order['statut'] == 'expedie') : ?>
-								  		<p>Expédiée</p>
-							<?php   endif; ?>
-						</td>						
-						<td>
-							<div> <a href="<?=$this->url('viewOrders', ['id'=>$order['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></i></a></div>
-						</td>
-					</tr>
-				<?php endforeach; ?>			
+										echo '<a href="'.$this->url('updateItem', ['id'=>$list_items['id']]).'" style="color:white;">'.$list_items['name'].'</a> <br>';
+									}
+								?>
+								</td>
+								<td> 
+		        				<?php 
+		        					foreach ($content_basket[$order['id']] as $basket){
+		        						echo $basket['quantity'].'<br>';
+		        					} 
+		        				?>
+								</td>
+								<td><?=$order['sub_total'];?></td>
+								<td><?=$order['total'];?></td>
+								
+								<td><?= date('d/m/Y', strtotime($order['date_creation']));?></td>
+								<td>
+									<?php   if ($order['statut'] == 'enPreparation') : ?>
+										 		<p>En préparation</p>
+										 		<button type="button" data-id="<?=$order['id']?>" class="order_sent" style="color:black;">Commande expédiée</button>
+									<?php	elseif ($order['statut'] == 'commande') : ?>
+										  		<p>Commandé</p>
+										  		<button type="button" data-id="<?=$order['id']?>" class="order_prepare" style="color:black;">Commande en préparation</button>
+									<?php	elseif ($order['statut'] == 'expedie') : ?>
+										  		<p>Expédiée</p>
+									<?php   endif; ?>
+								</td>						
+								<td>
+									<div> <a href="<?=$this->url('viewOrders', ['id'=>$order['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></i></a></div>
+								</td>
+							</tr>
+						<?php endforeach; ?>
+					<?php else: ?>
+						<tr>
+							<td colspan="9">Aucune information</td>
+						</tr>
+					<?php endif; ?>			
 				</tbody>			
 			</table>
 		</div>

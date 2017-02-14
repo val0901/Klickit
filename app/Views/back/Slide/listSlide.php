@@ -11,14 +11,20 @@
 			</thead>
 
 			<tbody class="backgtbody">
-				<?php foreach($slide as $value) : ?>
+				<?php if(!empty($slide)): ?>
+					<?php foreach($slide as $value) : ?>
+						<tr>
+							<td><?=$value['id'];?></td>
+							<td><?=$value['title'];?></td>
+							<td><a href="<?=$this->url('updateSlide', ['id'=>$value['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>
+							<td><button class="btn btn-danger delete-slide" data-id="<?=$value['id']?>">Effacer le bandeau</button></td>
+						</tr>	
+					<?php endforeach;?>
+				<?php else: ?>
 					<tr>
-						<td><?=$value['id'];?></td>
-						<td><?=$value['title'];?></td>
-						<td><a href="<?=$this->url('updateSlide', ['id'=>$value['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>
-						<td><button class="btn btn-danger delete-slide" data-id="<?=$value['id']?>">Effacer le bandeau</button></td>
-					</tr>	
-				<?php endforeach;?>
+						<td colspan="4">Aucune information</td>
+					</tr>
+				<?php endif; ?>
 			</tbody>
 		</table>
 	</form>
