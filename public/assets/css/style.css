@@ -240,7 +240,9 @@ margin: 0;
 padding: 0;
 width: 100%;
 }*/
-
+.input-group.searchbar_margin {
+    padding: 16px;
+}
 p.result {
     margin-top: 20px;
     font-size: xx-large;
@@ -310,7 +312,15 @@ i {
 .search_padding {
     padding: 22px 0px;
 }
-
+input#search {
+    letter-spacing: 0.2em;
+}
+.col-md-9.colmarginL.colR_back.search {
+    width: 100%;
+}
+ul.navbar-right.search_dropdownbox_width.search {
+    margin-right: -46px;
+}
 a:hover,
 a:focus {
     color: #fff;
@@ -351,11 +361,19 @@ a:focus {
     background-color: #ff931e;
     border: 1px solid #ff931e;
 }
-
+/*
+suppression du contour orange
 .searchbar_margin {
     margin: 20px;
 }
-
+*/
+.form-group.search {
+    margin: 0;
+}
+.colmarginL.ipad_padding.search {
+    padding: 0;
+    margin: 0;
+}
 .checkbox_font {
     font-size: 20px;
     color: #ff931e;

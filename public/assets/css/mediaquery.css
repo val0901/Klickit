@@ -48,7 +48,9 @@
         display: none;
     }
 
-
+    ul.navbar-right.search_dropdownbox_width.search {
+        margin-right: -49px;
+    }
 }
 
 @media screen and (max-width: 1250px) {
@@ -61,7 +63,15 @@
     .ipad_padding {
         padding-top: 10px;
     }
-
+    /*
+    .colmarginL.ipad_padding.search {
+    padding: 0;
+    margin: 0;
+}
+    */
+    ul.navbar-right.search_dropdownbox_width.search {
+        margin-right: -55px;
+    }
     .quote_hide {
         margin-right: 20px;
     }
@@ -203,7 +213,7 @@
         letter-spacing: 0.1em;
         font-size: xx-large;
     }
-    
+
     h4.salesItems.viewcategorycaption{
         font-size: xx-large;
     }

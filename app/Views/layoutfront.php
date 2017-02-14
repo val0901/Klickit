@@ -297,20 +297,18 @@
 		<!--End menu contact-->
 		
 		<!--menu icon search-->
-		<ul class="navbar-right search_dropdownbox_width" style="width: 100%; padding: 0; margin: 0;">
+		<ul class="navbar-right search_dropdownbox_width search">
 			<li class="navlicon_width dropdown">
 			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-search search_padding" aria-hidden="true"></i>
 			  </a>
 			  <ul class="dropdown-menu soumenu_search">
-				  <div class="row" style="margin:0;padding:0;">
-				    <div class="col-md-3 col3_back">
-				    </div>
-				    <div class="col-md-9 colmarginL colR_back">
-					  <div class="colmarginL ipad_padding"> 
-					    <div class="form-group">
+				  <div class="row">
+				    <div class="col-md-9 colmarginL colR_back search">
+					  <div class="colmarginL ipad_padding search"> 
+					    <div class="form-group search">
 					   	 <form>
 							<div class="input-group searchbar_margin">
-								<input type="text" class="form-control" placeholder="Cherchez de filtres..." name="search" id="search" value="">
+								<input type="text" class="form-control search" placeholder="Rechercher un article..." name="search" id="search" value="">
 								<div class="input-group-addon btn btn-primary">
 									<button type="submit" name="submit_search" id="submit_search" style="background:transparent;border:none;">
 								<i class="fa fa-search" aria-hidden="true"></i>	
