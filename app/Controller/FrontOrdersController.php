@@ -16,6 +16,17 @@ use PayPal\Api\ExecutePayment;
 use PayPal\Api\Payment; 
 use PayPal\Api\PaymentExecution; 
 use PayPal\Api\Transaction;
+use PayPal\Api\Address; 
+use PayPal\Api\BillingInfo; 
+use PayPal\Api\Cost; 
+use PayPal\Api\Currency; 
+use PayPal\Api\Invoice; 
+use PayPal\Api\InvoiceAddress; 
+use PayPal\Api\InvoiceItem; 
+use PayPal\Api\MerchantInfo; 
+use PayPal\Api\PaymentTerm; 
+use PayPal\Api\Phone; 
+use PayPal\Api\ShippingInfo;
 
 class FrontOrdersController extends MasterController 
 {
@@ -237,13 +248,20 @@ class FrontOrdersController extends MasterController
 	//Page de réussite après paiement
 	public function pay()
 	{		
+
 		$getOrder = new UserModel;
+		$getIdOrder = new OrdersModel;
 		$user = $this->getUser();
 		$data = [];
 		$get = new ItemModel;
 
+		//On récupère la commande terminée de l'utilisateur
 		$getOrderByID = $getOrder->getCurrentOrderById($user['id']);
 		$current_order = end($getOrderByID);
+
+		$idOrders = $getIdOrder->getOrderByIdMember($user['id']);
+		$current_orderID = end($idOrders);
+
 
 
 		$paypal = new APIContext(
@@ -256,34 +274,96 @@ class FrontOrdersController extends MasterController
 			
 			if($_GET['success'] == 'true'){
 
+				//On prépare l'exécution du paiement
 				$paymentId = $_GET['paymentId'];
 				$payment = Payment::get($paymentId, $paypal);
 
 				$PayerID = $_GET['PayerID'];
 				$execution = new PaymentExecution;
-				$execution->setPayerId($PayerID);		
+				$execution->setPayerId($PayerID);
+
+				//On prépare la facture paypal
+				// $invoice = new Invoice;
+				// $invoice->setMerchantInfo(new MerchantInfo)->setBillingInfo([new BillingInfo])->setNote('Votre facture')->setPaymentTerm(new PaymentTerm)->setShippingInfo(new ShippingInfo);
+
+				// $invoice->getMerchantInfo()->setEmail('sav@klickit.fr')->setFirstName('Laurent')->setLastName('Lafont')->setBusinessName('Klickit')->setPhone(new Phone)->setAddress(new Address);
+
+				// $invoice->getMerchantInfo()->getPhone()->setCountryCode('033')->setNationalNumber('611821771');
+
+				// $invoice->getMerchantInfo()->getAddress()->setLine1('1, résidence beau pré')->setCity('Saucats')->setPostalCode('33650')->setCountryCode('FR');
+
+				// $billing = $invoice->getBillingInfo();
+				// $billing[0]->setEmail($current_order['email']);
+
+				// $billing[0]->setBusinessName($current_order['firstname'].' '.$current_order['lastname'])->setAdditionalInfo('Votre facture détaillée')->setAddress(new InvoiceAddress);
+
+				// $billing[0]->getAddress()->setLine1($user['adress'])->setCity($user['city'])->setPostalCode($user['zipcode'])->setCountryCode($current_order['country']);
+
+				// $items = [];
+				// $content = explode(', ', $current_order['contenu']);
+				// $quantity = explode(', ', $current_order['quantity']);
+				// $i = 0;
+
+				// foreach($content as $key => $value){
+				// 	$qte = $quantity[$key];
+
+				// 	$item_property = $get->findItemsForAPI($value);
+
+				// 	$items[$i] = new InvoiceItem;
+
+				// 	$items[$i]->setName($item_property['name'])->setQuantity($qte)->setUnitPrice(new Currency);
+
+				// 	if($item_property['newPrice'] == 0){
+				// 		$items[$i]->getUnitPrice()->setCurrency('EU')->setValue($item_property['price']);
+				// 	}elseif($item_property['newPrice'] > 0){
+				// 		$items[$i]->getUnitPrice()->setCurrency('EU')->setValue($item_property['newPrice']);
+				// 	}
+					
+				// 	$i++;	
+					
+				// }
+				
+				// $invoice->setItems($items);
+
+				// $invoice->getPaymentTerm()->setTermType('NET_45');
+
+				// $invoice->getShippingInfo()->setFirstName($current_order['firstname'])->setLastName($current_order['lastname'])->setBusinessName('Not applicable')->setAddress(new InvoiceAddress);
+
+				// $invoice->getShippingInfo()->getAddress()->setLine1($current_order['address'])->setCity($current_order['city'])->setPostalCode($current_order['zipcode'])->setCountryCode($current_order['country']);
+
+				// $invoice->setLogoUrl('https://www.paypalobjects.com/webstatic/i/logo/rebrand/ppcom.svg');
+
+				// var_dump($invoice);
+
 
 				try {
 
-					$result = $payment->execute($execution, $paypal);
-					var_dump($result);
+					$result = $payment->execute($execution, $paypal); //execution du paiement
+					
+					//$invoice->create($paypal);
+					// $number = Invoice::generateNumber($paypal);
+					// $sendStatus = $invoice->send($paypal);
+					// $invoice = Invoice::get($number, $paypal);
+
 
 				} catch (PayPal\Exception\PayPalConnectionException $e) {
 
 					//var_dump($e->getCode());
-					var_dump($e->getData());
+					//var_dump($e->getData());
 					die($e);
 
 				} catch (Exception $e) {
+
 					die($e);
 				}
 
 			}
 
 			$data = [
-				'user'	=> $user,
-				'get'	=> $get,
-				'order' => $current_order,
+				'user'		=> $user,
+				'get'		=> $get,
+				'order' 	=> $current_order,
+				'idOrder'	=> $current_orderID,
 			];
 
 			$this->showStuff('front/Order/pay', $data);

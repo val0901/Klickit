@@ -389,7 +389,7 @@ class AjaxFrontController extends Controller
 				$errors[] = 'Votre adresse doit comporter au moins 3 caractères <br>';
 			}
 
-			if(!v::notEmpty()->length(3,null)->validate($post['country'])){
+			if(!v::notEmpty()->length(2,null)->validate($post['country'])){
 				$errors[] = 'Votre adresse doit comporter au moins 3 caractères <br>';
 			}
 

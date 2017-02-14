@@ -270,17 +270,18 @@ class OrdersModel extends \W\Model\Model
 		}
 	}
 
-	//en cours 
-	// public function calculSalesRevenue($year, $month)
-	// 	{
-	// 		$sql = 'SELECT * FROM '.$this->table.' WHERE year = :year AND month = :month';
+	/**
+	* récupère une commande en fonction de l'id du membre
+	*/
+	public function getOrderByIdMember($id)
+	{
 
-	// 		$sth = $this->dbh->prepare($sql);
-	// 		$sth->bindValue(':year', $year);
-	// 		$sth->bindValue(':month', $month);
-	// 		$sth->execute();
+		$sql = 'SELECT * FROM '.$this->table.' WHERE idMember = :id';
 
-	// 		$result = $sth->fetchAll();
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':id', $id);
 
-	// 	}
+		return $sth->fetchAll();
+
+	}
 }

@@ -76,16 +76,16 @@
                     <?php if($country['0']['country'] == ''): ?>
                         <li>
                             <select class="country_choice" name="country_choice">
-                                <option value="France">France</option>
-                                <option value="Belgique">Belgique</option>
-                                <option value="Suisse">Suisse</option>
-                                <option value="Chine">Chine</option>
-                                <option value="Etat-Unis">Etat-Unis</option>
+                                <option value="FR">France</option>
+                                <option value="BE">Belgique</option>
+                                <option value="CH">Suisse</option>
+                                <option value="CN">Chine</option>
+                                <option value="US">Etat-Unis</option>
                             </select>
                             <br>
                             <button type="button" class="selectCountry">Enregistrer le pays</button>
                         </li>
-                    <?php elseif($country['0']['country'] == 'France'): ?>
+                    <?php elseif($country['0']['country'] == 'FR'): ?>
                         <input type="hidden" name="u_country" value="<?=$country['0']['country']?>">
                         <ul  style="float:right;">
                                 <li>
@@ -166,16 +166,16 @@
                     <?php if($country['0']['country'] == ''): ?>
                         <li>
                             <select class="country_choice" name="country_choice">
-                                <option value="France">France</option>
-                                <option value="Belgique">Belgique</option>
-                                <option value="Suisse">Suisse</option>
-                                <option value="Chine">Chine</option>
-                                <option value="Etat-Unis">Etat-Unis</option>
+                                <option value="FR">France</option>
+                                <option value="BE">Belgique</option>
+                                <option value="CH">Suisse</option>
+                                <option value="CN">Chine</option>
+                                <option value="US">Etat-Unis</option>
                             </select>
                             <br>
                             <button type="button" class="selectCountry">Enregistrer le pays</button>
                         </li>
-                    <?php elseif($country['0']['country'] == 'France'): ?>
+                    <?php elseif($country['0']['country'] == 'FR'): ?>
                         <input type="hidden" name="country" value="<?=$country['0']['country']?>">
                         <ul  style="float:right;">
                 				<li>
