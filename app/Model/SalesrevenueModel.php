@@ -10,7 +10,7 @@ class SalesrevenueModel extends \W\Model\Model
 		$debut = ($page - 1) * $max;
 
 		// requête sur la table  où on definit les variables de la page de démarrage($debut) et là le nombre de lignes par page($max)
-		$sql = 'SELECT * from '.$this->table. ' ORDER BY id ASC LIMIT :debut, :max '; 
+		$sql = 'SELECT * from '.$this->table. ' ORDER BY id DESC LIMIT :debut, :max '; 
 
 		$sth = $this->dbh->prepare($sql);
 		$sth->bindValue(':max', $max, \PDO::PARAM_INT);
@@ -19,6 +19,19 @@ class SalesrevenueModel extends \W\Model\Model
 		$sth->execute(); 
 
 		return $sth->fetchAll();	
+	}
+
+	/**
+	 * Requête select toute la table sans pagination
+	 */
+	public function findSales()
+	{
+		$sql = 'SELECT * FROM '.$this->table;
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->execute();
+
+		return $sth->fetchAll();
 	}
 
 	/** 

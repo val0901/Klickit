@@ -23,7 +23,33 @@
 					<tbody id="result">
 						<?php foreach($sales as $salesValue) : ?>
 							<tr>
-								<td><?=$salesValue['month'];?></td>
+								<td>
+									<?php if($salesValue['month'] == '1'):?>
+										Janvier
+									<?php elseif($salesValue['month'] == '2'):?>
+										Février
+									<?php elseif($salesValue['month'] == '3'):?>
+										Mars
+									<?php elseif($salesValue['month'] == '4'):?>
+										Avril
+									<?php elseif($salesValue['month'] == '5'):?>
+										Mai
+									<?php elseif($salesValue['month'] == '6'):?>
+										Juin
+									<?php elseif($salesValue['month'] == '7'):?>
+										Juillet
+									<?php elseif($salesValue['month'] == '8'):?>
+										Août
+									<?php elseif($salesValue['month'] == '9'):?>
+										Septembre
+									<?php elseif($salesValue['month'] == '10'):?>
+										Octobre
+									<?php elseif($salesValue['month'] == '11'):?>
+										Novembre
+									<?php elseif($salesValue['month'] == '12'):?>
+										Décembre
+									<?php endif; ?>
+								</td>
 								<td><?=$salesValue['year'];?></td>
 								<td><?=$salesValue['revenue'];?>€</td>
 							</tr>

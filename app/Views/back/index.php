@@ -1,7 +1,59 @@
 <?php $this->layout('layoutback', ['title' => 'Page d\'accueil']) ?>
 
 <?php $this->start('main_content') ?>
-
+	
+	<h4>Chiffre d'affaire</h4>
+	<div>
+		<table class="table">
+			<thead class="backgthead">
+				<th>Mois</th>
+				<th>Année</th>
+				<th>Revenue</th>
+			</thead>
+			<tbody class="backgtbody">
+				<?php foreach ($sales as $salesValue): ?>
+					<tr>
+						<td>
+							<?php if($salesValue['month'] == '1'):?>
+								Janvier
+							<?php elseif($salesValue['month'] == '2'):?>
+								Février
+							<?php elseif($salesValue['month'] == '3'):?>
+								Mars
+							<?php elseif($salesValue['month'] == '4'):?>
+								Avril
+							<?php elseif($salesValue['month'] == '5'):?>
+								Mai
+							<?php elseif($salesValue['month'] == '6'):?>
+								Juin
+							<?php elseif($salesValue['month'] == '7'):?>
+								Juillet
+							<?php elseif($salesValue['month'] == '8'):?>
+								Août
+							<?php elseif($salesValue['month'] == '9'):?>
+								Septembre
+							<?php elseif($salesValue['month'] == '10'):?>
+								Octobre
+							<?php elseif($salesValue['month'] == '11'):?>
+								Novembre
+							<?php elseif($salesValue['month'] == '12'):?>
+								Décembre
+							<?php endif; ?>
+						</td>
+						<td><?=$salesValue['year'];?></td>
+						<td><?=$salesValue['revenue'];?>€</td>
+					</tr>
+				<?php endforeach ?>
+			</tbody>
+			<tfoot id="voirplus">
+			    <tr>
+			        <td colspan="9">
+			            <a href="<?= $this->url('listSales')?>" >Voir plus</a>
+			        </td>
+			    </tr>
+			</tfoot>
+		</table>
+	</div>
 	<!--Derniers messages  -->	
 	<h3>Vos dernières commandes</h3>
 	<div id="lastorder">

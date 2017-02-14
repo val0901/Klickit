@@ -11,6 +11,7 @@ use \Model\OrdersModel;
 use \Model\ItemModel;
 use \Model\MessageModel;
 use \Model\GuestbookModel;
+use \Model\SalesrevenueModel;
 use \W\Security\AuthentificationModel;
 use \W\Security\AuthorizationModel;
 use \W\Security\StringUtils;
@@ -36,10 +37,22 @@ class BackController extends Controller
 
 		$items = new ItemModel();
 
+		$salesValue = [
+			'month'   => '',
+			'year' 	  => '',
+			'revenue' => '',
+		];
+
+		$sales = new SalesrevenueModel();
+		$allSales = array_reverse($sales->findSales());
+
+		$lastSales = array_slice($allSales, 0, 2);
+
 		$data = [
+			'sales'	   => $lastSales,
 			'orders'   => $list_orders,
 			'messages' => $list_messages,
-			'items' => $items,
+			'items'    => $items,
 			'comments' => $list_guestbook,
 		];
 
