@@ -280,6 +280,7 @@ class OrdersModel extends \W\Model\Model
 
 		$sth = $this->dbh->prepare($sql);
 		$sth->bindValue(':id', $id);
+		$sth->execute();
 
 		return $sth->fetchAll();
 

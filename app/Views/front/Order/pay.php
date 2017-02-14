@@ -10,6 +10,7 @@
 
 <?php $this->start('main_content') ?>
 <div class="container">
+	<div class="row">
 	<?php if($_GET['success'] == 'false') : ?>
 		<div class="jumbotron">
 			<p>Une erreur est survenue lors de la procédure de paiement. Vous allez être rediriger vers la page d'accueil</p>
@@ -44,7 +45,7 @@
 	                              echo date_format($date, 'd-m-Y');
 	                            ?>   
 	                          </strong></p>
-	                      <p><strong>FACTURE N° <?=$order['id']?></strong></p>
+	                      <p><strong>FACTURE N° <?=$idOrder['id']?></strong></p>
 	                  </div>
 	              </div>
 	              <br>
@@ -120,6 +121,7 @@
 	          <!--End viewuserorder table-->
 	      </div>
 	  </div>
-	<?php endif; ?>  	
+	<?php endif; ?>  
+	</div>	
 </div>		
 <?php $this->stop('main_content') ?>
