@@ -9,24 +9,11 @@ use \Model\BasketModel;
 use \Model\UserModel;
 use \W\Security\AuthorizationModel;
 use \PayPal\Rest\ApiContext as APIContext;
-use \PayPal\Auth\OAuthTokenCredential as TokenCredential;
-use PayPal\Api\Amount; 
-use PayPal\Api\Details; 
+use \PayPal\Auth\OAuthTokenCredential as TokenCredential; 
 use PayPal\Api\ExecutePayment; 
 use PayPal\Api\Payment; 
 use PayPal\Api\PaymentExecution; 
-use PayPal\Api\Transaction;
-use PayPal\Api\Address; 
-use PayPal\Api\BillingInfo; 
-use PayPal\Api\Cost; 
-use PayPal\Api\Currency; 
-use PayPal\Api\Invoice; 
-use PayPal\Api\InvoiceAddress; 
-use PayPal\Api\InvoiceItem; 
-use PayPal\Api\MerchantInfo; 
-use PayPal\Api\PaymentTerm; 
-use PayPal\Api\Phone; 
-use PayPal\Api\ShippingInfo;
+
 
 class FrontOrdersController extends MasterController 
 {
