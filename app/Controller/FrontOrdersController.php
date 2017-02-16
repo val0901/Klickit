@@ -282,79 +282,19 @@ class FrontOrdersController extends MasterController
 				$execution = new PaymentExecution;
 				$execution->setPayerId($PayerID);
 
-				//On prépare la facture paypal
-				$invoice = new Invoice;
-				$invoice->setMerchantInfo(new MerchantInfo)->setBillingInfo([new BillingInfo])->setNote('Votre facture')->setPaymentTerm(new PaymentTerm)->setShippingInfo(new ShippingInfo);
-
-				$invoice->getMerchantInfo()->setEmail('sav@klickit.fr')->setFirstName('Laurent')->setLastName('Lafont')->setBusinessName('Klickit')->setPhone(new Phone)->setAddress(new Address);
-
-				$invoice->getMerchantInfo()->getPhone()->setCountryCode('033')->setNationalNumber('611821771');
-
-				$invoice->getMerchantInfo()->getAddress()->setLine1('1, résidence beau pré')->setCity('Saucats')->setPostalCode('33650')->setCountryCode('FR');
-
-				$billing = $invoice->getBillingInfo();
-				$billing[0]->setEmail($current_order['email']);
-
-				$billing[0]->setBusinessName($current_order['firstname'].' '.$current_order['lastname'])->setAdditionalInfo('Votre facture détaillée')->setAddress(new InvoiceAddress);
-
-				$billing[0]->getAddress()->setLine1($user['adress'])->setCity($user['city'])->setPostalCode($user['zipcode'])->setCountryCode($current_order['country']);
-
-				$items = [];
-				$content = explode(', ', $current_order['contenu']);
-				$quantity = explode(', ', $current_order['quantity']);
-				$i = 0;
-
-				$item1discount = new Cost(); 
-				$item1discount->setPercent("0");
-				foreach($content as $key => $value){
-					$qte = $quantity[$key];
-
-					$item_property = $get->findItemsForAPI($value);
-
-					$items[$i] = new InvoiceItem;
-
-					$items[$i]->setName($item_property['name'])->setQuantity($qte)->setDiscount($item1discount)->setUnitPrice(new Currency);
-
-					if($item_property['newPrice'] == 0){
-						$items[$i]->getUnitPrice()->setCurrency('EU')->setValue($item_property['price']);
-					}elseif($item_property['newPrice'] > 0){
-						$items[$i]->getUnitPrice()->setCurrency('EU')->setValue($item_property['newPrice']);
-					}
-					
-					$i++;	
-					
-				}
-				
-				$invoice->setItems($items);
-
-				$invoice->getPaymentTerm()->setTermType('NET_45');
-
-				$invoice->getShippingInfo()->setFirstName($current_order['firstname'])->setLastName($current_order['lastname'])->setBusinessName('Not applicable')->setAddress(new InvoiceAddress);
-
-				$invoice->getShippingInfo()->getAddress()->setLine1($current_order['address'])->setCity($current_order['city'])->setPostalCode($current_order['zipcode'])->setCountryCode($current_order['country']);
-
-				$invoice->setLogoUrl('https://www.paypalobjects.com/webstatic/i/logo/rebrand/ppcom.svg');
-
-				// var_dump($invoice);
-
 				try {
 
 					$result = $payment->execute($execution, $paypal); //execution du paiement
-					
-					$invoice->create($paypal);
-					// $number = Invoice::generateNumber($paypal);
-					// $sendStatus = $invoice->send($paypal);
-					// $invoice = Invoice::get($number, $paypal);
 
 
 				} catch (PayPal\Exception\PayPalConnectionException $e) {
 
-					//var_dump($e->getCode());
-					//var_dump($e->getData());
+					$this->redirectToRoute('front_affcptuser', ['id' => $user['id']]);
 					die($e);
 
 				} catch (Exception $e) {
 
+					$this->redirectToRoute('front_affcptuser', ['id' => $user['id']]);
 					die($e);
 				}
 

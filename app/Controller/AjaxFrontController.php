@@ -541,7 +541,7 @@ class AjaxFrontController extends Controller
 							$sendMail->addAddress($user['email'], $user['firstname'].' '.$user['lastname']); 	   	//$user['email']
 							//$sendMail->addCC(''); 					//Copie envoyer à l'adresse souhaitée du mail
 
-							$sendMail->Subject = 'paiement chèque';
+							$sendMail->Subject = 'Votre commande (Paiement PayPal)';
 							$sendMail->Body    = $contentEmail; //On envoi le message éventuellement en HTML
 							$sendMail->AltBody = $contentEmail; //On envoi le message sans HTML
 
@@ -593,7 +593,7 @@ class AjaxFrontController extends Controller
 						$sendMail->addAddress($user['email'], $user['firstname'].' '.$user['lastname']); 	   	//$user['email']
 						//$sendMail->addCC(''); 					//Copie envoyer à l'adresse souhaitée du mail
 
-						$sendMail->Subject = 'paiement chèque';
+						$sendMail->Subject = 'Votre commande (Paiement par chèque)';
 						$sendMail->Body    = $contentEmail; //On envoi le message éventuellement en HTML
 						$sendMail->AltBody = $contentEmail; //On envoi le message sans HTML
 
@@ -644,7 +644,7 @@ class AjaxFrontController extends Controller
 						$sendMail->addAddress($user['email'], $user['firstname'].' '.$user['lastname']); 	   	//$user['email']
 						//$sendMail->addCC(''); 					//Copie envoyer à l'adresse souhaitée du mail
 
-						$sendMail->Subject = 'paiement virement';
+						$sendMail->Subject = 'Votre commande (Paiement par virement banquaire)';
 						$sendMail->Body    = $contentEmail; //On envoi le message éventuellement en HTML
 						$sendMail->AltBody = $contentEmail; //On envoi le message sans HTML
 
