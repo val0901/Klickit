@@ -973,11 +973,11 @@ class AjaxController extends Controller
 					
 					$viewSearch.= '<tr><td>'.$month.'</td>';
 					$viewSearch.= '<td>'.$value['year'].'</td>';
-					$viewSearch.= '<td>'.$value['revenue'].'€</td>';
+					$viewSearch.= '<td>'.$value['revenue'].'€</td></tr>';
 				}
 			}
 			else {
-				$viewSearch.= '<td colspan="3">Aucun mois/année correspondant à votre recherche</td>';
+				$viewSearch.= '<tr><td colspan="3">Aucun mois/année correspondant à votre recherche</td></tr>';
 			}
 
 			$json = [
