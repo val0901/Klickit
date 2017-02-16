@@ -36,25 +36,14 @@
 			  </div>
 			  <div class="form-group orderlogin_label">
 				<label for="exampleInputName2">Pays</label>
-    			<input type="text" class="form-control" name="country" id="country" value="<?php 
-    				switch($order['country']){
-    					case 'FR':
-    						echo 'France';
-    						break;
-    					case 'BE':
-    						echo 'Belgique';
-    						break;
-    					case 'CH':
-    						echo 'Suisse';
-    						break;
-    					case 'CN':
-    						echo 'Chine';
-    						break;
-    					case 'US':
-    						echo 'Etats-Unis';
-    						break;
-    				}
-    			?>">
+    			<select class="form-control" name="country">
+                    <option value="FR">France</option>
+                    <option value="BE">Belgique</option>
+                    <option value="CH">Suisse</option>
+                    <option value="CN">Chine</option>
+                    <option value="US">Etat-Unis</option>
+                </select>
+
 			  </div>
 			  <div class="form-group orderlogin_label">
 				<label for="exampleInputName2">Ville</label>
