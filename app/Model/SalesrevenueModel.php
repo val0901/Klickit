@@ -125,7 +125,7 @@ class SalesrevenueModel extends \W\Model\Model
 		$sth = $this->dbh->prepare($query);
 
 		if(!empty($sql)) {
-			$sth->bindValue(':search', '%'.$search.'%');
+			$sth->bindValue(':search', $search);
 		}
 
 		if($sth->execute()) {

@@ -304,6 +304,8 @@ class FrontOrdersController extends MasterController
 				$quantity = explode(', ', $current_order['quantity']);
 				$i = 0;
 
+				$item1discount = new Cost(); 
+				$item1discount->setPercent("0");
 				foreach($content as $key => $value){
 					$qte = $quantity[$key];
 
@@ -311,7 +313,7 @@ class FrontOrdersController extends MasterController
 
 					$items[$i] = new InvoiceItem;
 
-					$items[$i]->setName($item_property['name'])->setQuantity($qte)->setUnitPrice(new Currency);
+					$items[$i]->setName($item_property['name'])->setQuantity($qte)->setDiscount($item1discount)->setUnitPrice(new Currency);
 
 					if($item_property['newPrice'] == 0){
 						$items[$i]->getUnitPrice()->setCurrency('EU')->setValue($item_property['price']);
@@ -334,7 +336,6 @@ class FrontOrdersController extends MasterController
 				$invoice->setLogoUrl('https://www.paypalobjects.com/webstatic/i/logo/rebrand/ppcom.svg');
 
 				// var_dump($invoice);
-
 
 				try {
 

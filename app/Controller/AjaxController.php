@@ -880,51 +880,51 @@ class AjaxController extends Controller
 
 			$searchSales = new SalesrevenueModel();
 
-			if($get['search'] == 'Janvier' || $get['search'] == 'janvier'){
+			if($get['search'] == 'Janvier' || $get['search'] == 'janvier' || $get['search'] == '01' || $get['search'] == '1'){
 				$searchMonth = 1;
 				$search = $searchSales->searchSalesByMonth($searchMonth);
 			}
-			elseif($get['search'] == 'Février' || $get['search'] == 'février' || $get['search'] == 'Fevrier' || $get['search'] == 'fevrier'){
+			elseif($get['search'] == 'Février' || $get['search'] == 'février' || $get['search'] == 'Fevrier' || $get['search'] == 'fevrier' || $get['search'] == '02' || $get['search'] == '2'){
 				$searchMonth = 2;
 				$search = $searchSales->searchSalesByMonth($searchMonth);
 			}
-			elseif($get['search'] == 'Mars' || $get['search'] == 'mars'){
+			elseif($get['search'] == 'Mars' || $get['search'] == 'mars' || $get['search'] == '03' || $get['search'] == '3'){
 				$searchMonth = 3;
 				$search = $searchSales->searchSalesByMonth($searchMonth);
 			}
-			elseif($get['search'] == 'Avril' || $get['search'] == 'avril'){
+			elseif($get['search'] == 'Avril' || $get['search'] == 'avril' || $get['search'] == '04' || $get['search'] == '4'){
 				$searchMonth = 4;
 				$search = $searchSales->searchSalesByMonth($searchMonth);
 			}
-			elseif($get['search'] == 'Mai' || $get['search'] == 'mai'){
+			elseif($get['search'] == 'Mai' || $get['search'] == 'mai' || $get['search'] == '05' || $get['search'] == '5'){
 				$searchMonth = 5;
 				$search = $searchSales->searchSalesByMonth($searchMonth);
 			}
-			elseif($get['search'] == 'Juin' || $get['search'] == 'juin'){
+			elseif($get['search'] == 'Juin' || $get['search'] == 'juin' || $get['search'] == '06' || $get['search'] == '6'){
 				$searchMonth = 6;
 				$search = $searchSales->searchSalesByMonth($searchMonth);
 			}
-			elseif($get['search'] == 'Juillet' || $get['search'] == 'juillet'){
+			elseif($get['search'] == 'Juillet' || $get['search'] == 'juillet' || $get['search'] == '07' || $get['search'] == '7'){
 				$searchMonth = 7;
 				$search = $searchSales->searchSalesByMonth($searchMonth);
 			}
-			elseif($get['search'] == 'Août' || $get['search'] == 'août' || $get['search'] == 'Aout' || $get['search'] == 'aout'){
+			elseif($get['search'] == 'Août' || $get['search'] == 'août' || $get['search'] == 'Aout' || $get['search'] == 'aout' || $get['search'] == '08'|| $get['search'] == '8'){
 				$searchMonth = 8;
 				$search = $searchSales->searchSalesByMonth($searchMonth);
 			}
-			elseif($get['search'] == 'Septembre' || $get['search'] == 'septembre'){
+			elseif($get['search'] == 'Septembre' || $get['search'] == 'septembre' || $get['search'] == '09' || $get['search'] == '9'){
 				$searchMonth = 9;
 				$search = $searchSales->searchSalesByMonth($searchMonth);
 			}
-			elseif($get['search'] == 'Octobre' || $get['search'] == 'octobre'){
+			elseif($get['search'] == 'Octobre' || $get['search'] == 'octobre' || $get['search'] == '10'){
 				$searchMonth = 10;
 				$search = $searchSales->searchSalesByMonth($searchMonth);
 			}
-			elseif($get['search'] == 'Novembre' || $get['search'] == 'novembre'){
+			elseif($get['search'] == 'Novembre' || $get['search'] == 'novembre' || $get['search'] == '11'){
 				$searchMonth = 11;
 				$search = $searchSales->searchSalesByMonth($searchMonth);
 			}
-			elseif($get['search'] == 'Décembre' || $get['search'] == 'décembre' || $get['search'] == 'Decembre' || $get['search'] == 'decembre'){
+			elseif($get['search'] == 'Décembre' || $get['search'] == 'décembre' || $get['search'] == 'Decembre' || $get['search'] == 'decembre' || $get['search'] == '12'){
 				$searchMonth = 12;
 				$search = $searchSales->searchSalesByMonth($searchMonth);
 			}
@@ -934,13 +934,50 @@ class AjaxController extends Controller
 
 			if(!empty($search)){	
 				foreach ($search as $value) {
-					$viewSearch.= '<tr><td>'.$value['month'].'</td>';
+					if($value['month'] == '1'){
+						$month = 'Janvier';
+					}
+					elseif($value['month'] == '2'){
+						$month = 'Février';
+					}
+					elseif($value['month'] == '3'){
+						$month = 'Mars';
+					}
+					elseif($value['month'] == '4'){
+						$month = 'Avril';
+					}
+					elseif($value['month'] == '5'){
+						$month = 'Mai';
+					}
+					elseif($value['month'] == '6'){
+						$month = 'Juin';
+					}
+					elseif($value['month'] == '7'){
+						$month = 'Juillet';
+					}
+					elseif($value['month'] == '8'){
+						$month = 'Août';
+					}
+					elseif($value['month'] == '9'){
+						$month = 'Septembre';
+					}
+					elseif($value['month'] == '10'){
+						$month = 'Octobre';
+					}
+					elseif($value['month'] == '11'){
+						$month = 'Novembre';
+					}
+					elseif($value['month'] == '12'){
+						$month = 'Décembre';
+					}
+					
+					$viewSearch.= '<tr><td>'.$month.'</td>';
 					$viewSearch.= '<td>'.$value['year'].'</td>';
 					$viewSearch.= '<td>'.$value['revenue'].'€</td>';
 				}
 			}
 			else {
-				$viewSearch.= '<td>Aucun mois/année correspondant à votre recherche</td>';
+				$viewSearch.= '<td colspan="3">Aucun mois/année correspondant à votre recherche</td>';
 			}
 
 			$json = [
