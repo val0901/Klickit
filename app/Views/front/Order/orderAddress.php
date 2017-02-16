@@ -36,7 +36,25 @@
 			  </div>
 			  <div class="form-group orderlogin_label">
 				<label for="exampleInputName2">Pays</label>
-    			<input type="text" class="form-control" name="country" id="country" value="<?=$order['country'];?>">
+    			<input type="text" class="form-control" name="country" id="country" value="<?php 
+    				switch($order['country']){
+    					case 'FR':
+    						echo 'France';
+    						break;
+    					case 'BE':
+    						echo 'Belgique';
+    						break;
+    					case 'CH':
+    						echo 'Suisse';
+    						break;
+    					case 'CN':
+    						echo 'Chine';
+    						break;
+    					case 'US':
+    						echo 'Etats-Unis';
+    						break;
+    				}
+    			?>">
 			  </div>
 			  <div class="form-group orderlogin_label">
 				<label for="exampleInputName2">Ville</label>
