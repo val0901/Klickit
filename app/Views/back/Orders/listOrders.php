@@ -28,7 +28,7 @@
 						<?php foreach($orders as $order): ;?>
 							<tr>
 								<td><?=$order['id']; ?></td>
-								<td><?=$order['lastname'].' '.$order['firstname'].'<br>'.$order['adress'].'<br>'.$order['zipcode'].' '.$order['city']; ?></td>
+								<td><?=$order['lastname'].' '.$order['firstname'].'<br>'.$order['address'].'<br>'.$order['zipcode'].' '.$order['city'].'<br>'.$order['country']; ?></td>
 								<td>
 								<?php 
 									$contents = explode(', ', $order['contenu']); 

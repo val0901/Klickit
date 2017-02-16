@@ -27,7 +27,7 @@ class OrdersModel extends \W\Model\Model
 		$debut = ($page - 1) * $max;
 
 		// requête avec jointure où on definit les variables de la page de démarrage($debut) et là le nombre de lignes par page($max)
-		$sql = 'SELECT ' .$this->table.'.*, u.firstname, u.lastname,u.social_title, u.adress, u.zipcode,u.city FROM ' . $this->table . ' LEFT JOIN user AS u ON '.$this->table.'.idMember = u.id ORDER BY ' .$this->table.'.date_creation DESC LIMIT :debut, :max';
+		$sql = 'SELECT ' .$this->table.'.*, u.firstname, u.lastname FROM ' . $this->table . ' LEFT JOIN user AS u ON '.$this->table.'.idMember = u.id ORDER BY ' .$this->table.'.date_creation DESC LIMIT :debut, :max';
 
 		$sth = $this->dbh->prepare($sql);
 		$sth->bindValue(':max', $max, \PDO::PARAM_INT);
