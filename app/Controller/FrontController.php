@@ -45,9 +45,28 @@ class FrontController extends MasterController
 
 		$RealLastSlide = implode('', end($lastSlide));
 
+		$i = 0;
+		while ($i < 3){
+			$i++;
+			shuffle($statut);
+			switch ($i) {
+				case 1:
+					$statut1 = array_slice($statut, 0, 4);
+					break;
+				case 2:
+					$statut2 = array_slice($statut, 0, 4);
+					break;
+				case 3:
+					$statut3 = array_slice($statut, 0, 4);
+					break;
+			}
+		}
+
 		$data = [
-			'comments'		=>	$comments,
-			'statut'		=>  $statut,
+			'comments'		=> $comments,
+			'statut1'		=> $statut1,
+			'statut2'		=> $statut2,
+			'statut3'		=> $statut3,
 			'slide'			=> $getSlide->find($RealLastSlide),
 		];	
 

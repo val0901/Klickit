@@ -111,7 +111,7 @@
                 <div class="carousel-inner">
                     <div class="item active">
                         <ul class="thumbnails">
-                            <?php foreach ($statut as $newProduct) : ?>
+                            <?php foreach ($statut1 as $newProduct) : ?>
                             <li class="span3">
                                 <div class="thumbnail">
                                     <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
@@ -143,7 +143,7 @@
                     </div><!-- /Slide1 --> 
                     <div class="item">
                         <ul class="thumbnails">
-                            <?php foreach ($statut as $newProduct) : ?>
+                            <?php foreach ($statut2 as $newProduct) : ?>
                             <li class="span3">
                                 <div class="thumbnail">
                                     <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
@@ -176,7 +176,7 @@
                     </div><!-- /Slide2 --> 
                     <div class="item">
                         <ul class="thumbnails">
-                            <?php foreach ($statut as $newProduct) : ?>
+                            <?php foreach ($statut3 as $newProduct) : ?>
                             <li class="span3">
                                 <div class="thumbnail">
                                     <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
