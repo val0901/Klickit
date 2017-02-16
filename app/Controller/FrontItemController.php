@@ -59,14 +59,33 @@ class FrontItemController extends MasterController
 		$getfilters = new FilterModel();
 		$filters= $getfilters->findAll();
 
+		$i = 0;
+		while ($i < 3){
+			$i++;
+			shuffle($afficheNewItems);
+			switch ($i) {
+				case 1:
+					$statut1 = array_slice($afficheNewItems, 0, 4);
+					break;
+				case 2:
+					$statut2 = array_slice($afficheNewItems, 0, 4);
+					break;
+				case 3:
+					$statut3 = array_slice($afficheNewItems, 0, 4);
+					break;
+			}
+		}
+
 		$data = [
-			'affiche' 		 => $afficheItems,
-			'afficheNewItem' => $afficheNewItems,
-			'favorite'		 => explode(', ', $favoriteList), // Ici on transforme sous forme de tableau, simple, le contenu string de la variable $favoriteList, on pourra donc parcourir le tableau facilement grâce à un in_array comme on a besoin
-			'max' 			 => $max,
-			'page'			 => $page,
-			'nb'			 => $nb,
-			'filters'		 => $filters,
+			'affiche' 		  => $afficheItems,
+			'afficheNewItem1' => $statut1,
+			'afficheNewItem2' => $statut2,
+			'afficheNewItem3' => $statut3,
+			'favorite'		  => explode(', ', $favoriteList), // Ici on transforme sous forme de tableau, simple, le contenu string de la variable $favoriteList, on pourra donc parcourir le tableau facilement grâce à un in_array comme on a besoin
+			'max' 			  => $max,
+			'page'			  => $page,
+			'nb'			  => $nb,
+			'filters'		  => $filters,
 		];
 
 		$this->showStuff('front/Items/classics', $data);
@@ -111,14 +130,33 @@ class FrontItemController extends MasterController
 		$getfilters = new FilterModel();
 		$filters= $getfilters->findAll();
 
+		$i = 0;
+		while ($i < 3){
+			$i++;
+			shuffle($afficheNewItems);
+			switch ($i) {
+				case 1:
+					$statut1 = array_slice($afficheNewItems, 0, 4);
+					break;
+				case 2:
+					$statut2 = array_slice($afficheNewItems, 0, 4);
+					break;
+				case 3:
+					$statut3 = array_slice($afficheNewItems, 0, 4);
+					break;
+			}
+		}
+
 		$data = [
-			'afficheNewItem' => $afficheNewItems,
-			'items'			 => $items,
-			'favorite'		 => explode(', ', $favoriteList),
-			'max' 			 => $max,
-			'page' 			 => $page,
-			'nb'			 => $nb,
-			'filters'		 => $filters,
+			'afficheNewItem1' => $statut1,
+			'afficheNewItem2' => $statut2,
+			'afficheNewItem3' => $statut3,
+			'items'			  => $items,
+			'favorite'		  => explode(', ', $favoriteList),
+			'max' 			  => $max,
+			'page' 			  => $page,
+			'nb'			  => $nb,
+			'filters'		  => $filters,
 
 		];
 
@@ -164,9 +202,28 @@ class FrontItemController extends MasterController
 		$getfilters = new FilterModel();
 		$filters= $getfilters->findAll();
 
+		$i = 0;
+		while ($i < 3){
+			$i++;
+			shuffle($afficheNewItems);
+			switch ($i) {
+				case 1:
+					$statut1 = array_slice($afficheNewItems, 0, 4);
+					break;
+				case 2:
+					$statut2 = array_slice($afficheNewItems, 0, 4);
+					break;
+				case 3:
+					$statut3 = array_slice($afficheNewItems, 0, 4);
+					break;
+			}
+		}
+
 		$data = [
 			'affiche' 		 => $afficheItems,
-			'afficheNewItem' => $afficheNewItems,
+			'afficheNewItem1' => $statut1,
+			'afficheNewItem2' => $statut2,
+			'afficheNewItem3' => $statut3,
 			'favorite'		 => explode(', ', $favoriteList),
 			'max' 			 => $max,
 			'page' 			 => $page,
@@ -216,8 +273,27 @@ class FrontItemController extends MasterController
 		$getfilters = new FilterModel();
 		$filters= $getfilters->findAll();
 
+		$i = 0;
+		while ($i < 3){
+			$i++;
+			shuffle($afficheNewItems);
+			switch ($i) {
+				case 1:
+					$statut1 = array_slice($afficheNewItems, 0, 4);
+					break;
+				case 2:
+					$statut2 = array_slice($afficheNewItems, 0, 4);
+					break;
+				case 3:
+					$statut3 = array_slice($afficheNewItems, 0, 4);
+					break;
+			}
+		}
+
 		$data = [
-			'afficheNewItem' => $afficheNewItems,
+			'afficheNewItem1' => $statut1,
+			'afficheNewItem2' => $statut2,
+			'afficheNewItem3' => $statut3,
 			'items'			 => $items,
 			'favorite'		 => explode(', ', $favoriteList),
 			'max'			 => $max,
@@ -268,9 +344,28 @@ class FrontItemController extends MasterController
 		$getfilters = new FilterModel();
 		$filters= $getfilters->findAll();
 
+		$i = 0;
+		while ($i < 3){
+			$i++;
+			shuffle($afficheNewItems);
+			switch ($i) {
+				case 1:
+					$statut1 = array_slice($afficheNewItems, 0, 4);
+					break;
+				case 2:
+					$statut2 = array_slice($afficheNewItems, 0, 4);
+					break;
+				case 3:
+					$statut3 = array_slice($afficheNewItems, 0, 4);
+					break;
+			}
+		}
+
 		$data = [
 			'affiche' 		 => $afficheItems,
-			'afficheNewItem' => $afficheNewItems,
+			'afficheNewItem1' => $statut1,
+			'afficheNewItem2' => $statut2,
+			'afficheNewItem3' => $statut3,
 			'favorite'		 => explode(', ', $favoriteList),
 			'max'			 => $max,
 			'page'			 => $page,
@@ -320,8 +415,27 @@ class FrontItemController extends MasterController
 		$getfilters = new FilterModel();
 		$filters= $getfilters->findAll();
 
+		$i = 0;
+		while ($i < 3){
+			$i++;
+			shuffle($afficheNewItems);
+			switch ($i) {
+				case 1:
+					$statut1 = array_slice($afficheNewItems, 0, 4);
+					break;
+				case 2:
+					$statut2 = array_slice($afficheNewItems, 0, 4);
+					break;
+				case 3:
+					$statut3 = array_slice($afficheNewItems, 0, 4);
+					break;
+			}
+		}
+
 		$data = [
-			'afficheNewItem' => $afficheNewItems,
+			'afficheNewItem1' => $statut1,
+			'afficheNewItem2' => $statut2,
+			'afficheNewItem3' => $statut3,
 			'items'			 => $items,
 			'favorite'		 => explode(', ', $favoriteList),
 			'max'			 => $max,
@@ -372,9 +486,28 @@ class FrontItemController extends MasterController
 		$getfilters = new FilterModel();
 		$filters= $getfilters->findAll();
 
+		$i = 0;
+		while ($i < 3){
+			$i++;
+			shuffle($afficheNewItems);
+			switch ($i) {
+				case 1:
+					$statut1 = array_slice($afficheNewItems, 0, 4);
+					break;
+				case 2:
+					$statut2 = array_slice($afficheNewItems, 0, 4);
+					break;
+				case 3:
+					$statut3 = array_slice($afficheNewItems, 0, 4);
+					break;
+			}
+		}
+
 		$data = [
 			'items' 		 => $items,
-			'afficheNewItem' => $afficheNewItems,
+			'afficheNewItem1' => $statut1,
+			'afficheNewItem2' => $statut2,
+			'afficheNewItem3' => $statut3,
 			'favorite'		 => explode(', ', $favoriteList),
 			'max'			 => $max,
 			'page'			 => $page,
@@ -424,8 +557,27 @@ class FrontItemController extends MasterController
 		$getfilters = new FilterModel();
 		$filters= $getfilters->findAll();
 
+		$i = 0;
+		while ($i < 3){
+			$i++;
+			shuffle($afficheNewItems);
+			switch ($i) {
+				case 1:
+					$statut1 = array_slice($afficheNewItems, 0, 4);
+					break;
+				case 2:
+					$statut2 = array_slice($afficheNewItems, 0, 4);
+					break;
+				case 3:
+					$statut3 = array_slice($afficheNewItems, 0, 4);
+					break;
+			}
+		}
+
 		$data = [
-			'afficheNewItem' => $afficheNewItems,
+			'afficheNewItem1' => $statut1,
+			'afficheNewItem2' => $statut2,
+			'afficheNewItem3' => $statut3,
 			'items'			 => $items,
 			'favorite'		 => explode(', ', $favoriteList),
 			'max'			 => $max,

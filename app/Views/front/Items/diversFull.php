@@ -157,7 +157,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
         <div class="carousel-inner">
             <div class="item active">
                     <ul class="thumbnails">
-                    	<?php foreach ($afficheNewItem as $newProduct) : ?>
+                    	<?php foreach ($afficheNewItem1 as $newProduct) : ?>
 	                        <li class="span3">
 	                            <div class="thumbnail">
 	                                <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
@@ -190,7 +190,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
               </div><!-- /Slide1 --> 
             <div class="item">
                     <ul class="thumbnails">
-                        <?php foreach ($afficheNewItem as $newProduct) : ?>
+                        <?php foreach ($afficheNewItem2 as $newProduct) : ?>
                        	    <li class="span3">
                        	        <div class="thumbnail">
                        	            <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
@@ -223,7 +223,7 @@ Vous trouverez également des pièces détachées d'origine de la marque PLAYMOB
               </div><!-- /Slide2 --> 
             <div class="item">
                     <ul class="thumbnails">
-                        <?php foreach ($afficheNewItem as $newProduct) : ?>
+                        <?php foreach ($afficheNewItem3 as $newProduct) : ?>
 	                        <li class="span3">
 	                            <div class="thumbnail">
 	                                <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
