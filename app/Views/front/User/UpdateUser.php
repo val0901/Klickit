@@ -25,66 +25,56 @@
 			<h1>mes informations personnelles</h1>
 			<p class="orderMC_text">Vous pouvez modifier ici vos informations personnelles.</p>
 			<hr>
-			<form>
-				<p>
-					<label class="orderlogin_label">Civilité</label>
-				</p>
-				<label class="radio-inline">
-				  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Homme
-				</label>
-				<label class="radio-inline">
-				  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Femme
-				</label>
-				<br><br>
-				<div class="form-group orderlogin_label">
+
+			<?php if($success) : ?>
+				<p class="alert alert-success">Compte mis à jour</p>
+			<?php elseif(isset($errors) && !empty($errors)) :?>
+				<p class="alert alert-danger"><?=implode('<br>',$errors)?></p>
+			<?php endif;?>	
+
+			<form method="post">
+
+			  <div class="form-group adduser_label">
+			  <label for="exampleInputName2">Civilité</label>
+			    <select id="social_title" name="social_title" class="form-control">
+			      <option value="M">M.</option>
+			      <option value="Mme">Mme</option>
+			    </select>
+			  </div>
+
+			  <div class="form-group adduser_label">
 				<label for="exampleInputName2">Nom</label>
-    			<input type="text" class="form-control" id="exampleInputName2" placeholder="votre nom">
+    			<input type="text" class="form-control" id="exampleInputName2" value="<?=$user['lastname']?>" name="lastname">
 			  </div>
-			  <div class="form-group orderlogin_label">
+			  <div class="form-group adduser_label">
 				<label for="exampleInputName2">Prénom</label>
-    			<input type="text" class="form-control" id="exampleInputName2" placeholder="votre prénom">
+    			<input type="text" class="form-control" id="exampleInputName2" value="<?=$user['firstname']?>" name="firstname">
 			  </div>
-			  <div class="form-group orderlogin_label">
+			  <div class="form-group adduser_label">
 				<label for="exampleInputName2">Pseudo</label>
-    			<input type="text" class="form-control" id="exampleInputName2" placeholder="votre pseudo">
+    			<input type="text" class="form-control" id="exampleInputName2" value="<?=$user['username']?>" name="username">
 			  </div>
-			  <div class="form-group orderlogin_label has-success has-feedback">
-			  <label class="control-label" for="inputSuccess2" style="color: #000;">Email</label>
-			  <input type="text" class="form-control" id="inputSuccess2" aria-describedby="inputSuccess2Status" placeholder="email@mail.fr">
-			  <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-			  <span id="inputSuccess2Status" class="sr-only">(success)</span>
-			</div>
-			  <div class="form-group orderlogin_label has-error has-feedback">
-			  <label class="control-label" for="inputError2" style="color: #000;">Mot de passe</label>
-			  <p style="text-decoration:underline;text-align:center;"><a href="<?=$this->url('back_forgot_pwd')?>" style="color: #ff9121;">Réinitialisation de mot de passe par mail</a></p>
-			  <span id="inputError2Status" class="sr-only">(error)</span>
-			</div>
-			  <br>
-			  <div class="form-group orderlogin_label">
+			  <div class="form-group adduser_label">
 				<label for="exampleInputName2">Adresse</label>
-    			<input type="text" class="form-control" id="exampleInputName2" placeholder="votre adresse">
+    			<input type="text" class="form-control" id="exampleInputName2" value="<?=$user['adress']?>" name="address">
 			  </div>
-			  <div class="form-group orderlogin_label">
-				<label for="exampleInputName2">Complément adresse</label>
-    			<input type="text" class="form-control" id="exampleInputName2" placeholder="votre complément d'adresse">
+			  <div class="form-group adduser_label">
+				<label for="exampleInputName2">Code postal</label>
+    			<input type="text" class="form-control" id="exampleInputName2" value="<?=$user['zipcode']?>" name="zipcode">
 			  </div>
-			  <div class="form-group orderlogin_label">
-				<label for="exampleInputName2">Code Postal</label>
-    			<input type="text" class="form-control" id="exampleInputName2" placeholder="votre code postal">
-			  </div>
-			  <div class="form-group orderlogin_label">
-				<label for="exampleInputName2">Pays</label>
-    			<select class="form-control">
-				  <option selected disabled>--Selectionnez--</option>
-				  <option>France Métropolitaine</option>
-				</select>
-			  </div>
-			  <div class="form-group orderlogin_label">
+			  <div class="form-group adduser_label">
 				<label for="exampleInputName2">Ville</label>
-    			<input type="text" class="form-control" id="exampleInputName2" placeholder="votre ville">
+    			<input type="text" class="form-control" id="exampleInputName2" value="<?=$user['city']?>" name="city">
 			  </div>
-			  <br>
-				<button type="submit" class="btn btn-default adduser_button orderlogin_button1"><i class="fa fa-user" aria-hidden="true"><span class="orderlogin_button1text"> mettre à jour</span></i></button>
+			  <div class="form-group adduser_label">
+				<label for="exampleInputEmail1">Email</label>
+				<input type="email" class="form-control" id="exampleInputEmail1" value="<?=$user['email']?>" name="email">
+			  </div>
+			  <div class="form-group adduser_label">
+				<label for="exampleInputPassword1">Mot de passe</label>
+				<input type="password" class="form-control" id="exampleInputPassword1" placeholder="votre mot de passe" name="password">
+			  </div>
+			  <button type="submit" class="btn btn-default adduser_button">S'inscrire</button>
 			</form>
 			<br><br>
 		</div>
