@@ -301,4 +301,29 @@ class FrontOrdersController extends MasterController
 
 	}
 
+	//Page de réussite après paiment par chèque ou virement
+	public function payNoPayPal()
+	{
+		$getOrder = new UserModel;
+		$getIdOrder = new OrdersModel;
+		$user = $this->getUser();
+		$data = [];
+		$get = new ItemModel;
+
+		$getOrderByID = $getOrder->getCurrentOrderById($user['id']);
+		$current_order = end($getOrderByID);
+
+		$idOrders = $getIdOrder->getOrderByIdMember($user['id']);
+		$current_orderID = end($idOrders);
+
+		$data = [
+				'user'		=> $user,
+				'get'		=> $get,
+				'order' 	=> $current_order,
+				'idOrder'	=> $current_orderID,
+			];
+
+		$this->showStuff('front/Order/payNoPayPal', $data);
+	}
+
 }

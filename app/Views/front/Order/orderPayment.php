@@ -120,10 +120,10 @@
 						window.location.assign(up.link);
 					}
 					else if(up.code == 'cheque'){
-						window.location.assign("<?=$this->url('front_affcptuser', ['id' => $_SESSION['user']['id']]);?>");
+						window.location.assign("<?=$this->url('front_payNoPayPal');?>");
 					}
 					else if(up.code == 'virement'){
-						window.location.assign("<?=$this->url('front_affcptuser', ['id' => $_SESSION['user']['id']]);?>");
+						window.location.assign("<?=$this->url('front_payNoPayPal');?>");
 					}
 				}
 			});
