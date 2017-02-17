@@ -808,7 +808,7 @@ class AjaxController extends Controller
 					}
 				}
 				else {
-					$viewSearch = '<td>Aucun article correspondant à votre recherche</td>';
+					$viewSearch = '<td colspan="7">Aucun article correspondant à votre recherche</td>';
 				}
 
 				if($post['category'] == 'PlaymobilClassique'){	
@@ -836,30 +836,31 @@ class AjaxController extends Controller
 					];
 				}
 			}
-
-			if($post['category'] == 'PlaymobilClassique'){	
-				$json = [
-					'code' => 'classique',
-					'msg'  => 'Veuillez renseigner la recherche'
-				];
-			}
-			elseif ($post['category'] == 'PlaymobilCustom') {
-				$json = [
-					'code' => 'custom',
-					'msg'  => 'Veuillez renseigner la recherche'
-				];
-			}
-			elseif($post['category'] == 'PiecesDetachees'){
-				$json = [
-					'code' => 'piece',
-					'msg'  => 'Veuillez renseigner la recherche'
-				];
-			}
-			elseif($post['category'] == 'Divers'){
-				$json = [
-					'code' => 'divers',
-					'msg'  => 'Veuillez renseigner la recherche'
-				];
+			else{	
+				if($post['category'] == 'PlaymobilClassique'){	
+					$json = [
+						'code' => 'classique',
+						'msg'  => 'Veuillez renseigner la recherche'
+					];
+				}
+				elseif ($post['category'] == 'PlaymobilCustom') {
+					$json = [
+						'code' => 'custom',
+						'msg'  => 'Veuillez renseigner la recherche'
+					];
+				}
+				elseif($post['category'] == 'PiecesDetachees'){
+					$json = [
+						'code' => 'piece',
+						'msg'  => 'Veuillez renseigner la recherche'
+					];
+				}
+				elseif($post['category'] == 'Divers'){
+					$json = [
+						'code' => 'divers',
+						'msg'  => 'Veuillez renseigner la recherche'
+					];
+				}
 			}
 		}
 		echo json_encode($json);
