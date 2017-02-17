@@ -1,4 +1,4 @@
-<?php $this->layout('layoutfront', ['title' => 'catégorie Classics', 'meta' => 'Klickit, Custom Playmobil, Personnalisation Playmobil, ']) ?>
+<?php $this->layout('layoutfront', ['title' => 'Klickit - à propos', 'meta' => 'Klickit, Custom Playmobil, Personnalisation Playmobil, ']) ?>
 
 <?php $this->start('main_content') ?>
 <div class="apropos_container">

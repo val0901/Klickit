@@ -1,4 +1,4 @@
-<?php $this->layout('layoutfront', ['title' => 'catégorie Classics', 'meta' => 'mots clés de la page events']) ?>
+<?php $this->layout('layoutfront', ['title' => 'événements', 'meta' => 'mots clés de la page events']) ?>
 
 <?php $this->start('main_content') ?>
 

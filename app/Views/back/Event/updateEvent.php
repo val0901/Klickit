@@ -59,10 +59,6 @@
 
 <?php $this->start('js') ?>
 	<script>
-		var affichage = document.getElementById('view');
-
-		if (document.getElementById('reload')) {
-			affichage.location.href=affichage.location.href;
-		}
+		
 	</script>
 <?php $this->stop('js') ?>
