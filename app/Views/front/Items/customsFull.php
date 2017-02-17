@@ -46,7 +46,7 @@
 						<?php endforeach; ?>
 						<button type="button" id="searchFilter">Rechercher</button>
 					</div>
-				</div>v>
+				</div>
 			</li>
 			<!-- <li>
 				<h3 class="viewcategoryrow2col1_title">état</h3>
