@@ -34,12 +34,12 @@
                     </div>
                     <div class="caption">
                         <?php if($list_items['newPrice'] == 0) : ?>
-                          <h4><span style="cursor:pointer;"><button class="favorite" type="submit" name="<?=str_replace(' ', '', $list_items['name']);?>" value="<?=$list_items['id'];?>" data-id="<?=$list_items['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Supprimer de mes favoris"></i></button></span> <?=$list_items['price'];?>€</h4>
+                          <h4 class="salesItems"><span style="cursor:pointer;"><button class="favorite" type="submit" name="<?=str_replace(' ', '', $list_items['name']);?>" value="<?=$list_items['id'];?>" data-id="<?=$list_items['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Supprimer de mes favoris"></i></button></span> <?=$list_items['price'];?>€</h4>
                         <?php else : ?>
-                          <h4><span style="cursor:pointer;"><button class="favorite" type="submit" name="<?=str_replace(' ', '', $list_items['name']);?>" value="<?=$list_items['id'];?>" data-id="<?=$list_items['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Supprimer de mes favoris"></i></button></span> <span class="viewcategoryprixpromo"><?=$list_items['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$list_items['price'];?>€</span></h4>
+                          <h4 class="salesItems"><span style="cursor:pointer;"><button class="favorite" type="submit" name="<?=str_replace(' ', '', $list_items['name']);?>" value="<?=$list_items['id'];?>" data-id="<?=$list_items['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Supprimer de mes favoris"></i></button></span> <span class="viewcategoryprixpromo"><?=$list_items['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$list_items['price'];?>€</span></h4>
                         <?php endif; ?>
 
-                        <p><?=$list_items['name'];?></p>
+                        <p class="paraphItem"><?=$list_items['name'];?></p>
 
                         <?php if($list_items['statut'] == 'nouveaute'):?>
                           <div class="viewcategory_nouveau"><?=$list_items['statut'];?></div>
@@ -54,9 +54,9 @@
                         </div>
                         <p class="favorite_voirplus">
                           <?php if($list_items['category'] == 'PlaymobilClassique'): ?>
-                            <a href="<?=$this->url('listItemClassicsFull');?>">Voir même catégorie</a>
+                            <a class="hoverlinkred" href="<?=$this->url('listItemClassicsFull');?>">Voir même catégorie</a>
                           <?php elseif($list_items['category'] == 'PlaymobilCustom'): ?>
-                            <a href="<?=$this->url('listItemCustomFull');?>">Voir même catégorie</a>
+                            <a class="hoverlinkred" href="<?=$this->url('listItemCustomFull');?>">Voir même catégorie</a>
                           <?php elseif($list_items['category'] == 'PiecesDetachees'): ?>
                             <a href="<?=$this->url('listItemPiecesFull');?>">Voir même catégorie</a>
                           <?php elseif($list_items['category'] == 'Divers'): ?>

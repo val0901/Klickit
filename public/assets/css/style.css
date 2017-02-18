@@ -4,6 +4,8 @@ html, body {
     color: #000000;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
@@ -1775,6 +1777,10 @@ a#breadcrumb:hover{
 
 a.hoverlinkorange:hover{
     color: #ffa700;
+}
+a.hoverlinkred:hover{
+    color: #ea2229;
+    font-weight: bold;
 }
 
 .orderMC_title {
