@@ -1,4 +1,4 @@
-<?php $this->layout('layoutfront', ['title' => 'événements', 'meta' => 'mots clés de la page events']) ?>
+<?php $this->layout('layoutfront', ['title' => 'Klickit participe à cet évènement', 'meta' => 'collection, evenement, collectionneur, collection playmobil, evenement playmobil, collectionneur playmobil']) ?>
 
 <?php $this->start('main_content') ?>
 

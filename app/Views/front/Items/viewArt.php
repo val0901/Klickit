@@ -1,4 +1,4 @@
-<?php $this->layout('layoutfront', ['title' => 'view notre articles']) ?>
+<?php $this->layout('layoutfront', ['title' => 'Boutique Klickit']) ?>
 
 <?php $this->start('main_content') ?>
 <!--<div class="vignetteEvent_hide">
@@ -75,179 +75,164 @@
                         <?php endif; ?>
                     </span>
                 </p>
-                <br><br>
-                <i class="fa fa-twitter-square fa-3x fa-fw" aria-hidden="true" style="color:#3fa9f5;"></i>
+
+                <!-- BOUTON DE PARTAGE SOCIAUX -->
+                <br>
 
                 <!-- Bouton Facebook statique -->
-                <i class="fa fa-facebook-square fa-3x fa-fw" aria-hidden="true" style="color:#335199;"></i>
+                <button class="button share_twitter" data-url="<?=$this->url('viewArt' , ['id' => $items['id']]);?>">
+                    <i class="fa fa-twitter-square fa-3x fa-fw" aria-hidden="true" style="color:#3fa9f5;"></i>
+                </button>
 
-                <!--IFRAME-->
-<!--
-                <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&layout=button&size=large&mobile_iframe=true&width=88&height=28&appId" width="88" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
--->
-                <!-- SDK JAVASCRIPT -->
-                <!-- Bouton Facebook dynamique -->
-                <i id="shareBtn" class="fa fa-facebook-square fa-3x fa-fw btn btn-success clearfix" aria-hidden="true" style="color:#335199;"></i>
+                <!-- Bouton Facebook statique -->
+                <button class="button share_facebook" data-url="<?=$this->url('viewArt' , ['id' => $items['id']]);?>">
+                    <i class="fa fa-facebook-square fa-3x fa-fw" aria-hidden="true" style="color:#335199;"></i>
+                </button>
 
-                <p style="margin-top: 50px">
-                <hr>
-                <a class="btn btn-small"  href="https://developers.facebook.com/docs/sharing/reference/share-dialog">Share Dialog Documentation</a>
-                </p>
 
-            <!-- SCRIPT SHARE FACEBOOK -->          
-            <script>
-                document.getElementById('shareBtn').onclick = function() {
-                    FB.ui({
-                        method: 'share',
-                        display: 'popup',
-                        href: 'https://developers.facebook.com/docs/',
-                    }, function(response){});
-                }
-            </script>
-
-        </div>
-    </div>
-    <br><br>
-    <div class="row">
-        <div class="col-md-3 viewart_savoirboder">
-            <div class="col-xs-2 viewart_savoirback">
-            </div>
-            <div class="col-xs-10">
-                <p class="viewart_savoirtitle">EN SAVOIR PLUS</p>
             </div>
         </div>
-        <div class="col-md-9 viewart_savoirwidth">
-            <p class="viewart_savoirtext"><?=$items['description']?>
-            </p>
-        </div>
-    </div>
-    <br><br>
-    </div>
-
-<!--Slide articles-->
-<div class="clear"></div>
-<div class="slideartL_title">nouveau!</div>
-<!--<div class="slideartR_title">promo!</div>-->
-
-<div class="">
-    <div class="row-fluid">
-        <div class="span12">
-
-
-            <div class="carousel slide" id="myCarousel">
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <ul class="thumbnails">
-                            <?php foreach ($afficheNewItem as $newProduct) : ?>
-                            <li class="span3">
-                                <div class="thumbnail">
-                                    <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
-                                </div>
-                                <div class="caption">
-                                    <?php if($newProduct['newPrice'] == 0) : ?>
-                                    <h4><?=$newProduct['price'];?>€</h4>
-                                    <?php elseif($newProduct['newPrice'] > 0) : ?>
-                                    <h4><span class="viewcategoryprixpromo"><?=$product['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$product['price'];?>€</span></h4>
-                                    <?php endif; ?>
-                                    <p>
-                                        <span style="cursor:pointer;">
-                                            <?php if(!empty($_SESSION['user'])): ?>
-                                            <?php if(in_array($newProduct['id'], $favorite)): ?>
-                                            <button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id']?>" data-id="<?=$newProduct['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #999;" title="Ajouter à mes favoris"></i></button>
-                                            <?php else: ?>
-                                            <button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id'];?>" data-id="<?=$newProduct['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button>
-                                            <?php endif; ?>
-                                            <?php else : ?>
-                                            <a href="<?=$this->url('login');?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></a>
-                                            <?php endif; ?>
-                                        </span> <?=$newProduct['name'];?>
-                                    </p>
-                                    <div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
-                                    <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
-                                </div>
-                            </li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div><!-- /Slide1 --> 
-                    <div class="item">
-                        <ul class="thumbnails">
-                            <?php foreach ($afficheNewItem as $newProduct) : ?>
-                            <li class="span3">
-                                <div class="thumbnail">
-                                    <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
-                                </div>
-                                <div class="caption">
-                                    <?php if($newProduct['newPrice'] == 0) : ?>
-                                    <h4><?=$newProduct['price'];?>€</h4>
-                                    <?php else : ?>
-                                    <h4><?=$newProduct['newPrice'];?></h4>
-                                    <?php endif; ?>
-                                    <p>
-                                        <span style="cursor:pointer;">
-                                            <?php if(!empty($_SESSION['user'])): ?>
-                                            <?php if(in_array($newProduct['id'], $favorite)): ?>
-                                            <button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id']?>" data-id="<?=$newProduct['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #999;" title="Ajouter à mes favoris"></i></button>
-                                            <?php else: ?>
-                                            <button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id'];?>" data-id="<?=$newProduct['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button>
-                                            <?php endif; ?>
-                                            <?php else : ?>
-                                            <a href="<?=$this->url('login');?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></a>
-                                            <?php endif; ?>
-                                        </span> <?=$newProduct['name'];?>
-                                    </p>
-                                    <div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
-                                    <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
-                                </div>
-                            </li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div><!-- /Slide2 --> 
-                    <div class="item">
-                        <ul class="thumbnails">
-                            <?php foreach ($afficheNewItem as $newProduct) : ?>
-                            <li class="span3">
-                                <div class="thumbnail">
-                                    <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
-                                </div>
-                                <div class="caption">
-                                    <?php if($newProduct['newPrice'] == 0) : ?>
-                                    <h4><?=$newProduct['price'];?>€</h4>
-                                    <?php else : ?>
-                                    <h4><?=$newProduct['newPrice'];?></h4>
-                                    <?php endif; ?>
-                                    <p>
-                                        <span style="cursor:pointer;">
-                                            <?php if(!empty($_SESSION['user'])): ?>
-                                            <?php if(in_array($newProduct['id'], $favorite)): ?>
-                                            <button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id']?>" data-id="<?=$newProduct['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #999;" title="Ajouter à mes favoris"></i></button>
-                                            <?php else: ?>
-                                            <button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id'];?>" data-id="<?=$newProduct['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button>
-                                            <?php endif; ?>
-                                            <?php else : ?>
-                                            <a href="<?=$this->url('login');?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></a>
-                                            <?php endif; ?>
-                                        </span> <?=$newProduct['name'];?>
-                                    </p>
-                                    <div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
-                                    <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
-                                </div>
-                            </li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div><!-- /Slide3 --> 
+        <br><br>
+        <div class="row">
+            <div class="col-md-3 viewart_savoirboder">
+                <div class="col-xs-2 viewart_savoirback">
                 </div>
+                <div class="col-xs-10">
+                    <p class="viewart_savoirtitle">EN SAVOIR PLUS</p>
+                </div>
+            </div>
+            <div class="col-md-9 viewart_savoirwidth">
+                <p class="viewart_savoirtext"><?=$items['description']?>
+                </p>
+            </div>
+        </div>
+        <br><br>
+    </div>
 
-                <div class="control-box">                            
-                    <a data-slide="prev" href="#myCarousel" class="carousel-control left">‹</a>
-                    <a data-slide="next" href="#myCarousel" class="carousel-control right">›</a>
-                </div><!-- /.control-box -->   
+    <!--Slide articles-->
+    <div class="clear"></div>
+    <div class="slideartL_title">nouveau!</div>
+    <!--<div class="slideartR_title">promo!</div>-->
 
-            </div><!-- /#myCarousel -->
+    <div class="">
+        <div class="row-fluid">
+            <div class="span12">
 
-        </div><!-- /.span12 -->          
-    </div><!-- /.row --> 
-</div><!-- /.container -->
-<br><br>
+
+                <div class="carousel slide" id="myCarousel">
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <ul class="thumbnails">
+                                <?php foreach ($afficheNewItem as $newProduct) : ?>
+                                <li class="span3">
+                                    <div class="thumbnail">
+                                        <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
+                                    </div>
+                                    <div class="caption">
+                                        <?php if($newProduct['newPrice'] == 0) : ?>
+                                        <h4><?=$newProduct['price'];?>€</h4>
+                                        <?php elseif($newProduct['newPrice'] > 0) : ?>
+                                        <h4><span class="viewcategoryprixpromo"><?=$product['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$product['price'];?>€</span></h4>
+                                        <?php endif; ?>
+                                        <p>
+                                            <span style="cursor:pointer;">
+                                                <?php if(!empty($_SESSION['user'])): ?>
+                                                <?php if(in_array($newProduct['id'], $favorite)): ?>
+                                                <button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id']?>" data-id="<?=$newProduct['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #999;" title="Ajouter à mes favoris"></i></button>
+                                                <?php else: ?>
+                                                <button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id'];?>" data-id="<?=$newProduct['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button>
+                                                <?php endif; ?>
+                                                <?php else : ?>
+                                                <a href="<?=$this->url('login');?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></a>
+                                                <?php endif; ?>
+                                            </span> <?=$newProduct['name'];?>
+                                        </p>
+                                        <div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
+                                        <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
+                                    </div>
+                                </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div><!-- /Slide1 --> 
+                        <div class="item">
+                            <ul class="thumbnails">
+                                <?php foreach ($afficheNewItem as $newProduct) : ?>
+                                <li class="span3">
+                                    <div class="thumbnail">
+                                        <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
+                                    </div>
+                                    <div class="caption">
+                                        <?php if($newProduct['newPrice'] == 0) : ?>
+                                        <h4><?=$newProduct['price'];?>€</h4>
+                                        <?php else : ?>
+                                        <h4><?=$newProduct['newPrice'];?></h4>
+                                        <?php endif; ?>
+                                        <p>
+                                            <span style="cursor:pointer;">
+                                                <?php if(!empty($_SESSION['user'])): ?>
+                                                <?php if(in_array($newProduct['id'], $favorite)): ?>
+                                                <button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id']?>" data-id="<?=$newProduct['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #999;" title="Ajouter à mes favoris"></i></button>
+                                                <?php else: ?>
+                                                <button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id'];?>" data-id="<?=$newProduct['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button>
+                                                <?php endif; ?>
+                                                <?php else : ?>
+                                                <a href="<?=$this->url('login');?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></a>
+                                                <?php endif; ?>
+                                            </span> <?=$newProduct['name'];?>
+                                        </p>
+                                        <div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
+                                        <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
+                                    </div>
+                                </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div><!-- /Slide2 --> 
+                        <div class="item">
+                            <ul class="thumbnails">
+                                <?php foreach ($afficheNewItem as $newProduct) : ?>
+                                <li class="span3">
+                                    <div class="thumbnail">
+                                        <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
+                                    </div>
+                                    <div class="caption">
+                                        <?php if($newProduct['newPrice'] == 0) : ?>
+                                        <h4><?=$newProduct['price'];?>€</h4>
+                                        <?php else : ?>
+                                        <h4><?=$newProduct['newPrice'];?></h4>
+                                        <?php endif; ?>
+                                        <p>
+                                            <span style="cursor:pointer;">
+                                                <?php if(!empty($_SESSION['user'])): ?>
+                                                <?php if(in_array($newProduct['id'], $favorite)): ?>
+                                                <button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id']?>" data-id="<?=$newProduct['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #999;" title="Ajouter à mes favoris"></i></button>
+                                                <?php else: ?>
+                                                <button class="favorite" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id'];?>" data-id="<?=$newProduct['id'];?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></button>
+                                                <?php endif; ?>
+                                                <?php else : ?>
+                                                <a href="<?=$this->url('login');?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></a>
+                                                <?php endif; ?>
+                                            </span> <?=$newProduct['name'];?>
+                                        </p>
+                                        <div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
+                                        <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
+                                    </div>
+                                </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div><!-- /Slide3 --> 
+                    </div>
+
+                    <div class="control-box">                            
+                        <a data-slide="prev" href="#myCarousel" class="carousel-control left">‹</a>
+                        <a data-slide="next" href="#myCarousel" class="carousel-control right">›</a>
+                    </div><!-- /.control-box -->   
+
+                </div><!-- /#myCarousel -->
+
+            </div><!-- /.span12 -->          
+        </div><!-- /.row --> 
+    </div><!-- /.container -->
+    <br><br>
 </form>
 <?php $this->stop('main_content') ?>
 
@@ -293,5 +278,76 @@
             });
         });
     });
+</script>
+<?php $this->stop('js')?>
+
+<!-- SCRIPT PARTAGE MEDIAS SOCIAUX -->
+<!--TWITTER-->
+<?php $this->start('js')?>
+<script>
+
+    (function(){
+
+
+
+        var popupCenter = function(url, title, width, height){
+
+            var popupWidth = width || 640;
+
+            var popupHeight = height || 320;
+
+            var windowLeft = window.screenLeft || window.screenX;
+
+            var windowTop = window.screenTop || window.screenY;
+
+            var windowWidth = window.innerWidth || document.documentElement.clientWidth;
+
+            var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+            var popupWidth = 640;
+
+            var popupHeight = 320;
+
+            var popupLeft = windowLeft + windowWidth / 2 - popupWidth / 2;
+
+            var popupTop = windowTop + windowHeight / 2 - popupHeight / 2;
+
+            window.open(url, title, 'scrollbar=yes, width= ' + popupWidth + ', height=' + popupHeight +', top='+ popupTop +', left='+ popupLeft +'');
+
+        };
+
+
+        document.querySelector('.share_twitter').addEventListener('click', function(e){
+            e.preventDefault();
+
+            var url = this.getAttribute('data-url');
+
+            var shareUrl = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(document.title) + 
+                "&via=Klickit33" + 
+                "&url=" + encodeURIComponent(url);
+
+            popupCenter(shareUrl, "Partager sur Twitter")
+        });    
+
+
+
+
+        /*<!--FACEBOOK-->*/
+
+
+
+        document.querySelector('.share_facebook').addEventListener('click', function(e){
+            e.preventDefault();
+
+            var url = this.getAttribute('data-url');
+
+            var shareUrl = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url);
+
+            popupCenter(shareUrl, "Partagez sur facebook");
+
+        });    
+
+    })();
+
 </script>
 <?php $this->stop('js')?>
