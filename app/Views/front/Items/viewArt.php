@@ -66,19 +66,40 @@
 				<span style="cursor:pointer;">
 					<?php if(!empty($_SESSION['user'])): ?>
 						<?php if(in_array($items['id'], $favorite)): ?>
-							<button class="favorite" type="submit" name="<?=str_replace(' ', '', $items['name']);?>" value="<?=$items['id'];?>" data-id="<?=$items['id'];?>"><i class="fa fa-heart fa-2x" aria-hidden="true" style="color: #c11131;" title="Ajouter à mes favoris"><span class="viewart_fontfamily">Déjà en favoris</span></i></button> 
+							<button class="favorite" type="submit" name="<?=str_replace(' ', '', $items['name']);?>" value="<?=$items['id'];?>" data-id="<?=$items['id'];?>"><i class="fa fa-heart fa-2x pictoheart" aria-hidden="true" style="color: #c11131;" title="Ajouter à mes favoris"><span class="viewart_fontfamily">Déjà en favoris</span></i></button> 
 						<?php else: ?>
-							<button class="favorite" type="submit" name="<?=str_replace(' ', '', $items['name']);?>" value="<?=$items['id'];?>" data-id="<?=$items['id'];?>"><i class="fa fa-heart-o fa-2x" aria-hidden="true" style="color: #999;" title="Ajouter à mes favoris"><span class="viewart_fontfamily">Ajouter à mes favoris</span></i></button>
+							<button class="favorite" type="submit" name="<?=str_replace(' ', '', $items['name']);?>" value="<?=$items['id'];?>" data-id="<?=$items['id'];?>"><i class="fa fa-heart-o fa-2x pictoheart" aria-hidden="true" style="color: #999;" title="Ajouter à mes favoris"><span class="viewart_fontfamily">Ajouter à mes favoris</span></i></button>
 						<?php endif; ?>
 					<?php else : ?>
-						<a href="<?=$this->url('login');?>"><i class="fa fa-heart-o fa-2x" aria-hidden="true" style="color: #999;" title="Ajouter à mes favoris"><span class="viewart_fontfamily">Ajouter à mes favoris</span></i></a>
+						<a href="<?=$this->url('login');?>"><i class="fa fa-heart-o fa-2x pictoheart" aria-hidden="true" style="color: #999;" title="Ajouter à mes favoris"><span class="viewart_fontfamily">Ajouter à mes favoris</span></i></a>
 					<?php endif; ?>
 				</span>
 			</p>
 			<br><br>
 			<i class="fa fa-twitter-square fa-3x fa-fw" aria-hidden="true" style="color:#3fa9f5;"></i>
-			<i class="fa fa-facebook-square fa-3x fa-fw" aria-hidden="true" style="color:#335199;"></i>
-		</div>
+			
+
+            <i class="fa fa-facebook-square fa-3x fa-fw" aria-hidden="true" style="color:#335199;"></i>
+            
+<!-- BOUTON SHARE FACEBOOK
+            <i id="shareBtn" class="fa fa-facebook-square fa-3x fa-fw btn btn-success clearfix" aria-hidden="true" style="color:#335199;">Share</i>
+
+            <p style="margin-top: 50px">
+            <hr>
+            <a class="btn btn-small"  href="https://developers.facebook.com/docs/sharing/reference/share-dialog">Share Dialog Documentation</a>
+            </p>
+-->
+<!-- SCRIPT SHARE FACEBOOK           <script>
+document.getElementById('shareBtn').onclick = function() {
+  FB.ui({
+    method: 'share',
+    display: 'popup',
+    href: 'https://developers.facebook.com/docs/',
+  }, function(response){});
+}
+</script>-->
+
+        </div>
 	</div>
 	<br><br>
 	<div class="row">
