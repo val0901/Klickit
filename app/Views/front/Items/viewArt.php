@@ -50,12 +50,12 @@
                 <br><br>
                 <div class="">
                     <?php if(!empty($_SESSION['user'])): ?>
-                    <button data-id="<?=$items['id']?>" type="submit" class="btn btn-primary viewcategory_button_size addBasket">  <span class="name">
+                    <button data-id="<?=$items['id']?>" type="button" class="btn btn-primary viewcategory_button_size addBasket">  <span class="name">
                         Ajouter au panier
                         </span>
                     </button>
                     <?php else : ?>
-                    <a href="<?=$this->url('login');?>" target="_blank"><button data-id="<?=$items['id']?>" type="submit" class="btn btn-primary viewcategory_button_size addBasket">  <span class="name">
+                    <a href="<?=$this->url('login');?>" target="_blank"><button data-id="<?=$items['id']?>" type="button" class="btn btn-primary viewcategory_button_size addBasket">  <span class="name">
                         Ajouter au panier
                         </span>
                         </button></a>
@@ -253,7 +253,7 @@
                 dataType: 'json',
                 success: function(out){
                     if(out.code == 'ok'){
-                        window.location.href=window.location.href;
+                        $('body').load('<?=$this->url('viewArt', ['id' => $items['id']]);?>');
                     }
                 }
             });
@@ -279,11 +279,9 @@
         });
     });
 </script>
-<?php $this->stop('js')?>
 
 <!-- SCRIPT PARTAGE MEDIAS SOCIAUX -->
 <!--TWITTER-->
-<?php $this->start('js')?>
 <script>
 
     (function(){
