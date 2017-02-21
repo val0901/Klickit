@@ -3,7 +3,7 @@
 <?php $this->start('main_content') ?>
 <!--<div class="vignetteEvent_hide">
 <a href="<?=$this->url('front_contact')?>"><img class="img-responsive" src="<?=$this->assetUrl('/img/vignetteEvent1.png');?>" id="vignetteviewart_hover" onmouseover="vignetteviewarthover();" onmouseout="vignetteviewartout();"></a>
-</div>-->
+</div>--> 
 <form method="post">
     <div class="container_viewart">
         <div class="row">
