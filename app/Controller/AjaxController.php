@@ -616,9 +616,32 @@ class AjaxController extends Controller
 					$sendMail->addAddress($user['email'], $user['firstname'].' '.$user['lastname']); 	   	//$user['email']
 					//$sendMail->addCC(''); 					//Copie envoyer à l'adresse souhaitée du mail
 
-					$sendMail->Subject = 'commande en préparation';
-					$sendMail->Body    = $contentEmail; //On envoi le message éventuellement en HTML
-					$sendMail->AltBody = $contentEmail; //On envoi le message sans HTML
+					$sendMail->Subject = 'Commande en préparation';
+					$sendMail->Body    = $contentEmail="
+                        <div style='display:flex; justify-content:center;'><p>Cher Client,</p>
+
+                        <p>Nous avons bien reçu votre demande, et nous vous remercions de votre confiance.</p>
+
+                        <p>Vous avez souhaité régler par chèque. Merci de le libeller à l'ordre de &quot;KLICKIT&quot; et
+                        d'inscrire au dos du chèque, le numéro de votre commande : N°".NUMERO DE COMMANDE."</p>
+
+                        <p>Il sera à adresser à :</p>
+
+                        <p><b>KLICKIT</b></p>
+
+                        <p><b>1, résidence beau pré</b></p>
+
+                        <p><b>33650 Saucats</b></p>
+
+                        <p>Nous vous rappelons que le ou les produits vous sont réservés pour une période de 10 jours ouvrés suivant la date de validation de votre commande sur le site. Au delà de cette période, la non réception du règlement entraine l'annulation de la commande.</p>
+
+                        <p>La facture sera disponible en téléchargement dans <a href='http://localhost/Klickit/public/listOrders'>votre espace client</a> dès réception du règlement.</p>
+
+                        <p>Restant à votre disposition pour toute information complémentaire dont vous auriez besoin, nous
+                        vous adressons nos salutations.</p>
+                        </div>"; 
+                    //On envoi le message éventuellement en HTML
+					$sendMail->AltBody = $contentEmail="Cher Client, Nous avons bien reçu le paiement de votre commande et nous vous remercions de votre confiance. L\'expédition sera faite dans les plus brefs délais. La facture est disponible en téléchargement dans votre espace client. Restant à votre disposition pour toute information complémentaire dont vous auriez besoin, nous vous adressons nos salutations.";
 
 					if($sendMail->send()){
 
@@ -649,8 +672,16 @@ class AjaxController extends Controller
 					//$sendMail->addCC(''); 					//Copie envoyer à l'adresse souhaitée du mail
 
 					$sendMail->Subject = 'commande expédiée';
-					$sendMail->Body    = $contentEmail; //On envoi le message éventuellement en HTML
-					$sendMail->AltBody = $contentEmail; //On envoi le message sans HTML
+					$sendMail->Body    = $contentEmail="
+                    <div style='display:flex; justify-content:center;'><p>Cher Client,</p> 
+                    
+                    <p>Nous avons bien reçu le paiement de votre commande et nous vous remercions de votre confiance.</p> 
+                    
+                    <p>L'expédition sera faite dans les plus brefs délais.</p> 
+                    
+                    <p>La facture est disponible en téléchargement dans <a href='http://localhost/Klickit/public/listOrders'>votre espace client</a>.</p> 
+                    <p>Restant à votre disposition pour toute information complémentaire dont vous auriez besoin, nous vous adressons nos salutations.</p></div>"; //On envoi le message éventuellement en HTML
+					$sendMail->AltBody = $contentEmail="Cher Client, Nous avons bien reçu le paiement de votre commande et nous vous remercions de votre confiance. L'expédition sera faite dans les plus brefs délais. La facture est disponible en téléchargement dans votre espace client. Restant à votre disposition pour toute information complémentaire dont vous auriez besoin, nous vous adressons nos salutations."; //On envoi le message sans HTML
 
 					if($sendMail->send()){
 
