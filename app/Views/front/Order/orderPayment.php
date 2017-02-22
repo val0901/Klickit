@@ -45,13 +45,19 @@
                             </div>
                             <li style="float: left;margin:0 20px;">
                                 <i class="fa fa-cc-paypal fa-4x img-responsive colorPaymentEmpty payment" id="orderpaypal_hover" aria-hidden="true">
-                            </i>
+                                </i>
 
                                 <!--
 <img class="img-responsive" id="selectPaypal" src="" id="orderpaypal_hover">
 -->
                             </li>
-                            <li class="orderpayment_text" style="float:left;">Paypal</li>
+                            <li class="orderpayment_text" style="float:left;">Paypal ou</li>
+                            <li style="float: left;margin:0 20px;">
+                                <i class="fa fa-credit-card fa-4x img-responsive colorPaymentEmpty payment" id="orderpaypal_hover" aria-hidden="true">
+                                </i>
+                            </li>
+                            <li class="orderpayment_text" style="float:left;">Carte Bleue</li>
+                            
                         </label>
                     </div>	
                     <br>
