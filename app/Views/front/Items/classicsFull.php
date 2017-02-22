@@ -13,7 +13,7 @@
 		<div class="col-md-9">
 			<div class="container_general">
 				<h1 class="viewcategorycol2classic_title">Classics</h1>
-				<p class="viewcategorycol2_text">Les personnages de la catégorie "Classic" sont issus de la gamme PLAYMOBIL d'origine et Ils n'ont subi aucune transformation. Ils peuvent provenir de boites, sachets séries, blisters ou autre. Certains personnages ne sont plus commercialisés ou sont des exclusivités d'autres pays.</p>
+				<p class="viewcategorycol2_text">Les personnages de la catégorie "Classic" sont issus de la gamme PLAYMOBIL® d'origine et Ils n'ont subi aucune transformation (excepté certaines modifications par démembrement). Ils peuvent provenir de boites, sachets séries, blisters ou autre. </p>
 			</div>
 		</div>
 	</div>

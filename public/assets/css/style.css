@@ -1830,12 +1830,16 @@ a.hoverlinkred:hover{
     font-family: 'Advent Pro', sans-serif;
 }
 
+a.hoverlinkorange:focus {
+    color: #ff8112;
+}
+
 /*updateuser.php*/
 .updateuser_box {
     width: 100%;
     border:1px solid #ccc;
     background-color:#eee;
-    padding:0px 10px;
+    padding:0px 20px;
     /*	margin: 0 10px;
     */}
 

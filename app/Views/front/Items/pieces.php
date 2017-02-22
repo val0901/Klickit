@@ -13,7 +13,7 @@
 		<div class="col-md-9">
 			<div class="container_general">
 				<h1 class="viewcategorycol2pieces_title">Pièces détachées</h1>
-				<p class="viewcategorycol2_text">Ardeo, mihi credite, Patres conscripti (id quod vosmet de me existimatis et facitis ipsi) incredibili quodam amore patriae, qui me amor et subvenire olim impendentibus periculis maximis cum dimicatione capitis, et rursum, cum omnia tela undique esse intenta in patriam viderem, subire coegit atque excipere unum pro universis. Hic me meus in rem publicam animus pristinus ac perennis cum C. Caesare reducit, reconciliat, restituit in gratiam.</p>
+				<p class="viewcategorycol2_text">Dans cette rubrique, vous trouverez de multiples pièces pour compléter ou modifier vos personnages Playmobil®.</p>
 			</div>
 		</div>
 	</div>
