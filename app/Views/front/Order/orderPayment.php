@@ -44,7 +44,7 @@
                             <div class="clear">
                             </div>
                             <li style="float: left;margin:0 20px;">
-                                <i class="fa fa-cc-paypal fa-4x img-responsive colorPaymentEmpty payment" id="orderpaypal_hover" aria-hidden="true">
+                                <i class="fa fa-cc-paypal fa-4x img-responsive colorPaymentEmpty payment orderpaypal_hover" id="orderpaypal_hover" aria-hidden="true">
                                 </i>
 
                                 <!--
@@ -53,7 +53,7 @@
                             </li>
                             <li class="orderpayment_text" style="float:left;">Paypal ou</li>
                             <li style="float: left;margin:0 20px;">
-                                <i class="fa fa-credit-card fa-4x img-responsive colorPaymentEmpty payment" id="orderpaypal_hover" aria-hidden="true">
+                                <i class="fa fa-credit-card fa-4x img-responsive colorPaymentEmpty payment orderpaypal_hover" id="orderpaypal_hover" aria-hidden="true">
                                 </i>
                             </li>
                             <li class="orderpayment_text" style="float:left;">Carte Bleue</li>
@@ -153,10 +153,10 @@
             // On remet toute les méthodes de paiement en gris en modifiant leurs class, on vérifie d'abord si elles sont vert et si elles le sont ont enlève la class vert et rajoute la class gris
 
             // On vérifie les class pour la méthode de paiement 1
-            if($('#orderpaypal_hover').hasClass('colorPaymentCheck')){
+            if($('.orderpaypal_hover').hasClass('colorPaymentCheck')){
                 // Et on enlève la class qui met en vert pour la mettre en gris
-                $('#orderpaypal_hover').removeClass('colorPaymentCheck');
-                $('#orderpaypal_hover').addClass('colorPaymentEmpty');
+                $('.orderpaypal_hover').removeClass('colorPaymentCheck');
+                $('.orderpaypal_hover').addClass('colorPaymentEmpty');
             }
 
             // On vérifie les class pour la méthode de paiement 2
@@ -174,7 +174,12 @@
             }
 
             // Ici on prend l'ID dynamiquement pour lui rajouter la class verte
-            $('#'+idMethod).addClass('colorPaymentCheck'); // On rajoute une nouvelle
+            if(idMethod == 'orderpaypal_hover'){
+                $('.'+idMethod).addClass('colorPaymentCheck');
+            }
+            else{
+                $('#'+idMethod).addClass('colorPaymentCheck'); // On rajoute une nouvelle
+            }
         }
     });    
 </script>
