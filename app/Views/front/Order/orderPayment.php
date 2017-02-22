@@ -39,12 +39,12 @@
 
                 <div class="orderpaymentradio_margin">
                     <div class="radio">
-                        <label class="radio myorder">
-                            <input id="methode1" type="radio" name="payment" value="paypal" class="payment orderpayment_checked1">
+                        <label class="radio myorder payment" data-id="orderpaypal_hover">
+                            <input type="radio" name="payment" data-id="orderpaypal_hover" value="paypal" class="payment orderpayment_checked1">
                             <div class="clear">
                             </div>
                             <li style="float: left;margin:0 20px;">
-                                <i class="fa fa-cc-paypal fa-4x img-responsive colorPaymentEmpty" id="orderpaypal_hover" aria-hidden="true">
+                                <i class="fa fa-cc-paypal fa-4x img-responsive colorPaymentEmpty payment" id="orderpaypal_hover" aria-hidden="true">
                             </i>
 
                                 <!--
@@ -57,10 +57,10 @@
                     <br>
                     <div class="radio">
                         <label class="radio myorder">
-                            <input type="radio" name="payment" id="methode2" value="cheque" class="payment orderpayment_checked2">
+                            <input type="radio" name="payment" data-id="ordercheque_hover" value="cheque" class="payment orderpayment_checked2">
                             <div class="clear"></div>
                             <li style="float: left;margin:0 20px;">
-                                <i class="fa fa-id-card-o fa-4x img-responsive colorPaymentEmpty" aria-hidden="true" id="ordercheque_hover"></i>
+                                <i class="fa fa-id-card-o fa-4x img-responsive colorPaymentEmpty payment" aria-hidden="true" id="ordercheque_hover"></i>
 
                                 <!--
 <img class="img-responsive" id="selectCheque" src="<?/*=$this->assetUrl('/img/paychq.png');*/?>" id="ordercheque_hover">
@@ -72,10 +72,10 @@
                     <br>
                     <div class="radio">
                         <label class="radio myorder">
-                            <input type="radio" name="payment" id="methode3" value="virement" class="payment orderpayment_checked3">
+                            <input type="radio" name="payment" data-id="ordervirement_hover" value="virement" class="payment orderpayment_checked3">
                             <div class="clear"></div>
                             <li style="float: left;margin:0 20px;">
-                                <i class="fa fa-exchange fa-4x img-responsive colorPaymentEmpty" aria-hidden="true" id="ordervirement_hover"></i>
+                                <i class="fa fa-exchange fa-4x img-responsive colorPaymentEmpty payment" aria-hidden="true" id="ordervirement_hover"></i>
 
                                 <!--
 <img class="img-responsive" id="selectVirement" src="<?/*=$this->assetUrl('/img/payvir.png');*/?>" id="ordervirement_hover">
@@ -135,46 +135,42 @@
 <!--CHANGE COLOR PAYMENT-->
 <?php $this->start('js') ?>
 <script>
-
     // Class paiement a rajouter à toute les méthodes, pour gérer sur quoi nous cliquons quand on active le script
     $('.payment').click(function(){
+        // Possibilité de stocker "$(this).data('id')" dans une variable aussi et de mettre la variable en paramètre
+        // var idMethod = $(this).data('id');
+        var idMethod = $(this).data('id');
+        methodIcon(idMethod);
 
-                        // Possibilité de stocker "$(this).data('id')" dans une variable aussi et de mettre la variable en paramètre
-                        // var idMethod = $(this).data('id');
-                        // methodIcon(idMethod);
-                        var idMethod = $(this).data('id');
+        function methodIcon(idMethod)
+        {       
+            // On remet toute les méthodes de paiement en gris en modifiant leurs class, on vérifie d'abord si elles sont vert et si elles le sont ont enlève la class vert et rajoute la class gris
 
-    function methodIcon(idMethod)
-    {       
-        // On remet toute les méthodes de paiement en gris en modifiant leurs class, on vérifie d'abord si elles sont vert et si elles le sont ont enlève la class vert et rajoute la class gris
+            // On vérifie les class pour la méthode de paiement 1
+            if($('#orderpaypal_hover').hasClass('colorPaymentCheck')){
+                // Et on enlève la class qui met en vert pour la mettre en gris
+                $('#orderpaypal_hover').removeClass('colorPaymentCheck');
+                $('#orderpaypal_hover').addClass('colorPaymentEmpty');
+            }
 
-        // On vérifie les class pour la méthode de paiement 1
-        if($('#methode1').hasClass('.colorPaymentEmpty')){
-            // Et on enlève la class qui met en vert pour la mettre en gris
-            $('#methode1').removeClass('.colorPaymentEmpty');
-            $('#methode1').addClass('.colorPaymentCheck');
+            // On vérifie les class pour la méthode de paiement 2
+            if($('#ordercheque_hover').hasClass('colorPaymentCheck')){
+                // Et on enlève la class qui met en vert pour la mettre en gris
+                $('#ordercheque_hover').removeClass('colorPaymentCheck');
+                $('#ordercheque_hover').addClass('colorPaymentEmpty');
+            }
+
+            // On vérifie les class pour la méthode de paiement 3
+            if($('#ordervirement_hover').hasClass('colorPaymentCheck')){
+                // Et on enlève la class qui met en vert pour la mettre en gris
+                $('#ordervirement_hover').removeClass('colorPaymentCheck');
+                $('#ordervirement_hover').addClass('colorPaymentEmpty');
+            }
+
+            // Ici on prend l'ID dynamiquement pour lui rajouter la class verte
+            $('#'+idMethod).addClass('colorPaymentCheck'); // On rajoute une nouvelle
         }
-
-        // On vérifie les class pour la méthode de paiement 2
-        if($('#methode2').hasClass('.colorPaymentEmpty')){
-            // Et on enlève la class qui met en vert pour la mettre en gris
-            $('#methode2').removeClass('.colorPaymentEmpty');
-            $('#methode2').addClass('.colorPaymentCheck');
-        }
-
-        // On vérifie les class pour la méthode de paiement 3
-        if($('#methode3').hasClass('.colorPaymentEmpty')){
-            // Et on enlève la class qui met en vert pour la mettre en gris
-            $('#methode3').removeClass('.colorPaymentEmpty');
-            $('#methode3').addClass('.colorPaymentCheck');
-        }
-
-        // Ici on prend l'ID dynamiquement pour lui rajouter la class verte
-        $('#'+idMethod).addClass('.colorPaymentCheck'); // On rajoute une nouvelle
-    };
     });    
-
-
 </script>
 
 
