@@ -80,11 +80,11 @@
                 <br>
 
                 <!-- Bouton Facebook statique -->
-<<<<<<< HEAD
+
                 <button class="button share_twitter" data-url="http://localhost/Klickit/public/viewArt/22">
-=======
+
                 <button class="button share_twitter" data-url="http://www.localhost:8000<?=$this->url('viewArt' , ['id' => $items['id']]);?>">
->>>>>>> origin/master
+
                     <i class="fa fa-twitter-square fa-3x fa-fw" aria-hidden="true" style="color:#3fa9f5;"></i>
                 </button>
 
@@ -289,8 +289,6 @@
 <script>
 
     (function(){
-
-
 
         var popupCenter = function(url, title, width, height){
 
