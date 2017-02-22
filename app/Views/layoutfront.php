@@ -362,6 +362,9 @@
 						<a href="<?=$this->url('front_contact');?>"><p class="footertext" style="color: #fff;">Contact</p></a>
 						<a href="<?=$this->url('front_team');?>"><p class="footertext" style="color: #fff;">Equipe de création</p></a>
 						<a href="<?=$this->url('fGuestbook');?>"><p class="footertext" style="color: #fff;">Laissez nous votre avis</p></a>
+                    
+                    <a href="<?=$this->url('front_aPropos');?>" alt="Lien vers A propos contenant les paiements acceptés" title="Voir les paiements acceptés"><img class="img-responsive paypalfooter" max-width="228px" src="<?=$this->assetUrl('/img/buy-logo-large-fr.png')?>" data-pin-nopin="true"></a>                        
+
 					</div>
 					<div class="col-md-4 etiq_width">
 						<p class="footertitle">Suivez-nous</p>

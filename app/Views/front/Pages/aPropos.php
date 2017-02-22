@@ -39,14 +39,14 @@
     <br><br>
 
     
-     <i class="fa fa-info-circle fa-2x apropospicinfo" aria-hidden="true"></i> <h2 class="apropos_txtinfo">Paiement</h2>
+     <i class="fa fa-info-circle fa-2x apropospicinfo" aria-hidden="true"></i> <h2 class="apropos_txtinfo paiement">Paiement</h2>
     <br><br>
     <table class="apropos_containpaie">
         <tr class="apropos_picsortpaie">
-            <td class="apropos_td"><i class="fa fa-credit-card fa-4x apropos_sortpaie" aria-hidden="true"> </i></td>
-            <td class="apropos_td"><i class="fa fa-cc-paypal fa-4x apropos_sortpaie" aria-hidden="true"></i></td>
-            <td class="apropos_td"><i class="fa fa-address-card-o fa-4x apropos_sortpaie" aria-hidden="true"></i></td>
-            <td class="apropos_td"><i class="fa fa-exchange fa-4x apropos_sortpaie" aria-hidden="true"></i></td>
+            <td class="apropos_td"><img src="<?=$this->assetUrl('img/logo_paypal_moyens_paiement_fr.png');?>" class="fa fa-cc-paypal fa-4x apropos_sortpaie" aria-hidden="true"></td>
+            <td class="apropos_td"><img src="<?=$this->assetUrl('img/paypal_logo2.jpg');?>" class="fa fa-cc-paypal fa-4x apropos_sortpaie" aria-hidden="true"></td>
+            <td class="apropos_td"><img src="<?=$this->assetUrl('img/paiement_cheque.jpg');?>" class="fa fa-cc-paypal fa-4x apropos_sortpaie" aria-hidden="true"></td>
+            <td class="apropos_td"><img src="<?=$this->assetUrl('img/paiement_virement.jpg');?>" class="fa fa-cc-paypal fa-4x apropos_sortpaie" aria-hidden="true"></td>
         </tr>
         <tr class="apropos_sortpaie">
             <td class="apropos_td">CB</td>
