@@ -39,7 +39,7 @@
 
                 <div class="orderpaymentradio_margin">
                     <div class="radio">
-                        <label class="radio myorder payment" data-id="orderpaypal_hover">
+                        <label class="radio myorder">
                             <input type="radio" name="payment" data-id="orderpaypal_hover" value="paypal" class="payment orderpayment_checked1">
                             <div class="clear">
                             </div>
@@ -174,10 +174,11 @@
             }
 
             // Ici on prend l'ID dynamiquement pour lui rajouter la class verte
-            if(idMethod == 'orderpaypal_hover'){
+            if(idMethod == 'orderpaypal_hover'){ // Si le paramètre est égale à l'id du choix par paypal alors ...
+                // On gère par class pour pouvoir modifier la couleur des deux <i> 
                 $('.'+idMethod).addClass('colorPaymentCheck');
             }
-            else{
+            else{ // Sinon on gère par ID pour sélectionner seulement le <i> qui nous intéresse
                 $('#'+idMethod).addClass('colorPaymentCheck'); // On rajoute une nouvelle
             }
         }
