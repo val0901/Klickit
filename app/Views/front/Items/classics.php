@@ -8,12 +8,12 @@
             <div class="col-md-3" style="position:relative;">
                 <div class="classic_text_show"><span>Classics</span></div>
                 <img class="img-responsive" src="<?=$this->assetUrl('/img/img_classic.jpg');?>">
-                <div class="classic_text">Classics</div>
+                <div class="classic_text"><a href="/Klickit/public/Classics" style="color:white;">Classics</a></div>
             </div>
             <div class="col-md-9">
                 <div class="container_general">
                     <h1 class="viewcategorycol2_title">Classics</h1>
-                    <p class="viewcategorycol2_text">Les personnages de la catégorie "Classic" sont issus de la gamme PLAYMOBIL® d'origine et Ils n'ont subi aucune transformation (excepté certaines modifications par démembrement). Ils peuvent provenir de boites, sachets séries, blisters ou autre.</p>
+                    <p class="viewcategorycol2_text">Les personnages de la catégorie "Classic" sont issus de la gamme PLAYMOBIL&reg; d'origine et Ils n'ont subi aucune transformation (excepté certaines modifications par démembrement). Ils peuvent provenir de boites, sachets séries, blisters ou autre.</p>
                 </div>
             </div>
         </div>

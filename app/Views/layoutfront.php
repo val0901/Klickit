@@ -251,7 +251,7 @@
 				  </div>
 				  <div class="col-lg-3 col-md-6 soumenu_TLA_height">
 					  <div class="soumenu_TLA_text">
-						  <li style="float:left;"><a href="<?=$this->url('listItemPiecesFull');?>" style="color:#ea2127;">Pieces détachées</a><li>
+						  <li style="float:left;"><a href="<?=$this->url('listItemPiecesFull');?>" style="color:#ea2127;">Pièces détachées</a><li>
 						  <li style="float:right;"><i class="fa fa-plus faplus_color plus_pieces" aria-hidden="true" id="pluspieces_hide"></i><i class="fa fa-minus faminus_color minus_pieces" aria-hidden="true" id="faminus2_hide"></i></li>
 						  <div class="clear"></div>
 						  <ul class="soumenu_pieces_text">

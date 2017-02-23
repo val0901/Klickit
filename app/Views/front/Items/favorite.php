@@ -18,7 +18,7 @@
 	<div class="clear"></div>
 	<br><br>
 	<p class="orderMC_title">MES FAVORIS</p>
-	<p class="orderMC_text">Vous trouverez ici tous vos favoris que vous pouvez ajouter directement dans votre panier. Vous serez averti par mail si un de vos articles préféré est en promotion.</p>
+	<p class="orderMC_text">Vous trouverez ici tous vos favoris que vous pouvez ajouter directement dans votre panier. Vous serez averti par mail si un de vos articles préférés est en promotion.</p>
 	<hr>
 	<br>
 	   

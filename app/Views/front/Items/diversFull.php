@@ -13,7 +13,7 @@
 		<div class="col-md-9">
 			<div class="container_general">
 				<h1 class="viewcategorycol2divers_title">Divers</h1>
-				<p class="viewcategorycol2_text">Retrouvez dans cette rubrique, des boites et sets Playmobil neufs et d'occasions ainsi que des produits dérivés.</p>
+				<p class="viewcategorycol2_text">Retrouvez dans cette rubrique, des boites et sets PLAYMOBIL&reg; neufs et d'occasions ainsi que des produits dérivés.</p>
 			</div>
 		</div>
 	</div>

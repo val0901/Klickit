@@ -8,12 +8,12 @@
 		<div class="col-md-3" style="position:relative;">
 			<div class="classic_text_show"><span>Divers</span></div>
 			<img class="img-responsive" src="<?=$this->assetUrl('/img/img_boitessets.jpg');?>">
-			<div class="divers_text">Divers</div>
+			<div class="divers_text"><a href="/Klickit/public/Divers" style="color:white;">Boites/Set</a></div>
 		</div>
 		<div class="col-md-9">
 			<div class="container_general">
 				<h1 class="viewcategorycol2divers_title">Divers</h1>
-				<p class="viewcategorycol2_text">Retrouvez dans cette rubrique, des boites et sets Playmobil neufs et d'occasions ainsi que des produits dérivés.</p>
+				<p class="viewcategorycol2_text">Retrouvez dans cette rubrique, des boites et sets PLAYMOBIL&reg; neufs et d'occasions ainsi que des produits dérivés.</p>
 			</div>
 		</div>
 	</div>
