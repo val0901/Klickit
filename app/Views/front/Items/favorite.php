@@ -66,10 +66,11 @@
               </div>
               <?php endforeach; ?> <!-- fin du foreach $favorite -->
               <br><br>
+ </div>
+
               <div class="favoritedelete_button">
                 <button type="submit" id="allDelete" name="allDelete" value="<?=$_SESSION['user']['id'];?>" class="btn btn-primary favoritedelete_button_size">Supprimer tous mes favoris</button>
               </div>
-       </div>
    </div>
   </div>
   <div class="col-md-3">

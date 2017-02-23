@@ -371,7 +371,7 @@ a:focus {
 /*
 suppression du contour orange
 .searchbar_margin {
-    margin: 20px;
+margin: 20px;
 }
 */
 .form-group.search {
@@ -1589,7 +1589,7 @@ td {
 }
 
 .ordertable_title {
-    margin-top: 5vw;
+    margin-top: 6vw;
     font-size: 1.5vw;
     color: #391e20;
 }
@@ -1680,13 +1680,29 @@ a#breadcrumb:hover{
     opacity: 1;
     color:black;
 }
+.btn-primary[disabled]:hover{
+    background-color: #ef820b;
 
+}
+.btn-primary:active:focus, .btn-primary:focus, .btn-primary.focus{
+    background-color: #fe941e;
+    outline: none;
+}
+.btn-primary:active, .btn-primary:active:hover{
+    background-color: #ef820b;
+    outline: none;
+}
+
+/*my_order*/
+div.orderlogin_label input {
+    letter-spacing: 2px;
+}
 /*orderlogin.php*/
 .orderlogin_box {
     width: 48%;
     border:1px solid #ccc;
     background-color:#eee;
-    padding:0px 10px;
+    padding:0px 20px;
     margin: 0 10px;
 }
 
@@ -1783,10 +1799,10 @@ label.radio.myorder{
 }
 
 .colorPaymentEmpty{
- color: dimgrey;
+    color: dimgrey;
 }
 .colorPaymentCheck{
- color: limegreen;
+    color: limegreen;
 }
 
 /*listorder.php*/
@@ -1805,7 +1821,7 @@ a.hoverlinkorange:hover{
     color: #ffa700;
 }
 a.hoverlinkred:hover{
-    color: #ea2229;
+    color: #ef820b;
     font-weight: bold;
 }
 
@@ -1833,7 +1849,17 @@ a.hoverlinkred:hover{
 a.hoverlinkorange:focus {
     color: #ff8112;
 }
-
+button.btn.btn-primary.order_buttonpadding.ordercontinu_color:focus {
+    background-color: #dc0e15;
+    outline: none;
+}
+button.btn.btn-primary.order_buttonpadding.ordercontinu_color:active {
+    background-color: #ea232a;
+    outline: none;
+}
+a#breadcrumb {
+    pointer-events: none;
+}
 /*updateuser.php*/
 .updateuser_box {
     width: 100%;
@@ -1867,6 +1893,12 @@ a.hoverlinkorange:focus {
 .cptuser_contenu {
     background-color: #fff;
     padding: 50px 30px 340px;
+}
+.btn-default:focus, .btn-default.focus {
+    outline: none;
+}
+.btn-default:active, .btn-default:active:hover {
+    outline: none;
 }
 
 /*viewart.php*/
@@ -2001,11 +2033,27 @@ span.salesItems{
     border: 0 none;
     font-size: 1vw;
     text-transform: uppercase;
+    margin-top: 10px;
 }
 
 .favoritedelete_button_size:hover {
     background-color: #482b2d;
 }
+.btn-primary:active:focus, .btn-primary:focus, .btn-primary.focus{
+    background-color: #fe941e;
+    outline: none;
+}
+.btn-primary:active, .btn-primary:active:hover{
+    background-color: #ef820b;
+    outline: none;
+}
+button#allDelete:active {
+    background-color: black;
+}
+button#allDelete:focus {
+    background-color: black;
+}
+
 /*guestbook.php*/
 .guestbook_button {
     text-transform: uppercase;
