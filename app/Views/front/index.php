@@ -6,7 +6,7 @@
     <div class="row">
         <a href="<?=$this->url('listItemClassicsFull');?>" class="ahovercat">
             <div class="col-lg-3 col-xs-6" style="position:relative;" id="categoryclassic_hover">
-                <div class="classic_text"><span>Classics</span></div>
+                <div class="classic_text index"><span>Classics</span></div>
                 <img class="img-responsive" src="<?=$this->assetUrl('/img/img_classic.jpg');?>" id="categoryclassic_hover">
                 <div class="classic_text_show"><span style="font-weight: 600;">Classics</span></div>
             </div>
@@ -14,7 +14,7 @@
 
         <a href="<?=$this->url('listItemCustomFull');?>" class="ahovercat">
             <div class="col-lg-3 col-xs-6" id="categorycustoms_hover">
-                <div class="customs_text"><span>Customs</span></div>
+                <div class="customs_text index"><span>Customs</span></div>
                 <img class="img-responsive" src="<?=$this->assetUrl('/img/img_custom.jpg');?>" id="categorycustoms_hover">
                 <div class="customs_text_show" style="font-weight: 600;">Customs</div>
             </div>
@@ -22,7 +22,7 @@
 
         <a href="<?=$this->url('listItemPiecesFull');?>" class="ahovercat">
             <div class="col-lg-3 col-xs-6" id="categorypieces_hover">
-                <div class="pieces_text"><span>Pièces</span></div>
+                <div class="pieces_text index"><span>Pièces</span></div>
                 <img class="img-responsive" src="<?=$this->assetUrl('/img/img_pieces.jpg');?>" id="categorypieces_hover">
                 <div class="pieces_text_show" style="font-weight: 600;">Pièces</div>
             </div>
@@ -30,7 +30,7 @@
 
         <a href="<?=$this->url('listItemDiversFull');?>" class="ahovercat">
             <div class="col-lg-3 col-xs-6" id="categorydivers_hover">
-                <div class="divers_text"><span>Divers</span></div>
+                <div class="divers_text index"><span>Divers</span></div>
                 <img class="img-responsive" src="<?=$this->assetUrl('/img/img_boitessets.jpg');?>" id="categorydivers_hover">
                 <div class="divers_text_show" style="font-weight: 600;">Divers</div>
             </div>

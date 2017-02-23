@@ -196,6 +196,14 @@ div#view {
     background-color: #ff931e;;
 }
 
+button#searchFilter {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0 5px;
+    font-size: large;
+}
+
 .clear {
     clear: both;
 }
@@ -506,7 +514,11 @@ img.img-responsive.paypalfooter {
     text-align: center;
     width: 100%;
 }
-
+.classic_text.index:hover, .customs_text.index:hover, .pieces_text.index:hover, .divers_text.index:hover {
+    opacity: 0;
+    -webkit-transition: background-color ease-in-out 2s;
+    transition: background-color ease-in-out 2s;
+}
 .classic_text_show, .customs_text_show, .pieces_text_show, .divers_text_show {
     top: 10vw;
     color: #fff;
@@ -579,32 +591,32 @@ img.img-responsive.paypalfooter {
 #categoryclassic_hover:hover {
     background-color: #3fa9f5;
     opacity: 0.5;
-    -webkit-transition: background-color ease-in-out .2s;
-    transition: background-color ease-in-out .2s;
+    -webkit-transition: background-color ease-in-out .3s;
+    transition: background-color ease-in-out .3s;
     cursor: pointer;
 }
 
 #categorycustoms_hover:hover {
     background-color: #ff931e;
     opacity: 0.4;
-    -webkit-transition: background-color ease-in-out .2s;
-    transition: background-color ease-in-out .2s;
+    -webkit-transition: background-color ease-in-out .3s;
+    transition: background-color ease-in-out .3s;
     cursor: pointer;
 }
 
 #categorypieces_hover:hover {
     background-color: #7ac943;
     opacity: 0.4;
-    -webkit-transition: background-color ease-in-out .2s;
-    transition: background-color ease-in-out .2s;
+    -webkit-transition: background-color ease-in-out .3s;
+    transition: background-color ease-in-out .3s;
     cursor: pointer;
 }
 
 #categorydivers_hover:hover {
     background-color: #ea2229;
     opacity: 0.4;
-    -webkit-transition: background-color ease-in-out .2s;
-    transition: background-color ease-in-out .2s;
+    -webkit-transition: background-color ease-in-out .3s;
+    transition: background-color ease-in-out .3s;
     cursor: pointer;
 }
 
@@ -822,6 +834,7 @@ font-size:30pt;
     .iamCol { text-align: center; font-size:30pt; }
     .iamCol p { display: inline !important; }
     .slideCol { font-size: 50pt; text-align: center; margin-top: 5px; }
+    button#searchFilter{ display: inline}
 }
 
 /* Medium Devices, Desktops */
@@ -989,7 +1002,9 @@ input::-moz-focus-inner { border: 0; }
     font-weight: 600;
     text-transform: uppercase;
 }
-
+.carousel {
+    border-top: 1px dashed #d2d2d2;
+}
 /*contact.php*/
 .contactbanner > img {
     position:relative;
@@ -1389,9 +1404,11 @@ h1.goodToGo {
     height: 29px;
 }
 
-#pagination a {
+/*#pagination a {
     font-size: 20px;
-
+} changement taille responsive*/
+div#pagination {
+    font-size: x-large;
 }
 p.paraphItem{
     height: 20px;

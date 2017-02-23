@@ -35,6 +35,7 @@
 			<div class="viewcategoryrow2col1customs_tirer"><a id="customsmenu_scat" href="<?=$this->url('listItemCustoms', ['sub_category'=>'PiecesEnResine']);?>">Pièces en résine</a></div>
 			<div class="viewcategoryrow2col1customs_tirer"><a id="customsmenu_scat" href="<?=$this->url('listItemCustoms', ['sub_category'=>'Stickers']);?>">Stickers</a></div>
 			<li>
+                <!-- MENU FILTRES -->
 				<h3 class="viewcategoryrow2col1_title">filtres</h3>
 				<div class="form-group viewcategory_checkboxmargin">
 					<div class="form-group viewcategory_checkboxmargin">
@@ -43,7 +44,7 @@
 							<input type="checkbox" class="filter_value" value='<?=$filter['name'];?>'> <span class="viewcategorycheckbox_font"><?=ucfirst($filter['name']);?></span>
 							</label>
 						<?php endforeach; ?>
-						<button type="button" id="searchFilter">Rechercher</button>
+						<button type="button" id="searchFilter" class="changeArrow">Rechercher</button>
 					</div>
 				</div>
 			</li>

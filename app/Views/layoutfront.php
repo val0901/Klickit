@@ -4,36 +4,35 @@
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="vente de playmobils customisés neuf occasion playmobil napoléon western pirate fée princesses police robots espace animaux sport tampographie customs accessoires  stickers résine">
-    <meta name="author" content="Laurent Lafont" />
-    <meta name="copyright" content="© Klickit Inc." />
+    <meta name="description" content="Boutique de vente de personnages Playmobil customisés, neufs et d'occasions, de pièces et accessoires. Organisation de manisfestations Playmobil.">
+    <meta name="author" content="Laurent Lafont">
+    <meta name="copyright" content="&copy; Klickit Inc.">
 
 
         <meta name="robots" content="index, follow, archive">
 
          <!-- Méta FB -->
-        <meta property="og:title" content="Titre contenuFB">
-        <meta property="og:description" content="Description courte et UNIQUE">
+        <meta property="og:title" content="La Boutique &copy; Klickit">
+        <meta property="og:description" content="Découvre toi aussi la boutique Klickit : Playmobil Customisés, pièces, accessoires, boites et autres...">
         <meta property="og:locale" content="fr_FR">
-        <meta property="og:site_name" content="Nom du site web">
-        <meta property="og:image" content="http://adressedemonimage600x315.jpg">
-        <meta property="og:type" content="website"><!-- voir ogp.me/*types -->
+        <meta property="og:site_name" content="http://www.klickit.fr/">
+        <meta property="og:image" content="http:///www.klickit.fr/public/assets/img/KLICKIT-logo-napoleon.png">
+        <meta property="og:type" content="website">
         <!-- FIN Méta FB -->
 
         <!-- Méta GOOGLE+ -->
-        <meta itemprop="name" content="Titre contenu G+">
-        <meta itemprop="description" content="Tdescription courte et unique G+">
-        <meta itemprop="image" content="http://adressedemonimage400x160.jpg G+">
+        <meta itemprop="name" content="La Boutique &copy; Klickit">
+        <meta itemprop="description" content="Découvre toi aussi la boutique Klickit : Playmobil Customisés, pièces, accessoires, boites et autres...">
+        <meta itemprop="image" content="http:///www.klickit.fr/public/assets/img/KLICKIT-logo-napoleon.png">
         <!-- FIN Méta G+ -->
 
         <!-- Méta TWITTER -->
-        <meta name="twitter:card" content="summary"><!-- il faut écrire summary (=résumé) -->
-        <meta name="twitter:site" content="@idtwitter"><!-- que si on a un compte twitter actif-->
-        <meta name="twitter:title" content="titre de la page">
-        <meta name="twitter:description" content="description de la page">
-        <meta name="twitter:image" content="url image">
-        <!-- FIN Méta TWITTER -->
-    
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@Klickit33">
+        <meta name="twitter:creator" content="@yourtwitterhandle">
+        <meta name="twitter:title" content="La Boutique &copy; Klickit">
+        <meta name="twitter:description" content="Découvre toi aussi la boutique Klickit : Playmobil Customisés, pièces, accessoires, boites et autres...">
+        <meta name="twitter:image" content="http:///www.klickit.fr/public/assets/img/KLICKIT-logo-napoleon.png">    
     
     
     
@@ -227,7 +226,7 @@
 							  <li><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Western']);?>" style="color:#000;">Western</a></li>
 							  <li><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Fantasy']);?>" style="color:#000;">Fantasy</a></li>
 							  <li><a href="<?=$this->url('listItemClassics', ['sub_category'=>'XVIIIe']);?>" style="color:#000;">XVIIIe</a></li>
-							  <li><a href="<?=$this->url('listItemClassics', ['sub_category'=>'FeesPrincesses']);?>" style="color:#000;">Fées & Princesses</a></li>
+							  <li><a href="<?=$this->url('listItemClassics', ['sub_category'=>'FeesPrincesses']);?>" style="color:#000;">Fées &amp; Princesses</a></li>
 							  <li><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Police']);?>" style="color:#000;">Police</a></li>
 							  <li><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Animaux']);?>" style="color:#000;">Animaux</a></li>
 							  <li><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Sport']);?>" style="color:#000;">Sport</a></li>
