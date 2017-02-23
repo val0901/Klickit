@@ -715,6 +715,9 @@ a#customsmenu_scat{
     font-size:25px;
     font-weight:600;
 }
+a.ahovercat:hover {
+    opacity: 1;
+}
 /*commentaire slider*/
 /*.container-fluid {
 padding-right: 0px !important;
@@ -828,7 +831,7 @@ font-size:30pt;
     .slideCol { font-size: 55pt; text-align: left; }
 }
 
-/*index.php la derniere event*/
+/*index.php le dernier event*/
 .event_title {
     position:absolute;
     z-index:5;

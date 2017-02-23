@@ -4,7 +4,7 @@
 <!--section 4 boutons categories-->
 <div class="">
     <div class="row">
-        <a href="<?=$this->url('listItemClassicsFull');?>">
+        <a href="<?=$this->url('listItemClassicsFull');?>" class="ahovercat">
             <div class="col-lg-3 col-xs-6" style="position:relative;" id="categoryclassic_hover">
                 <div class="classic_text"><span>Classics</span></div>
                 <img class="img-responsive" src="<?=$this->assetUrl('/img/img_classic.jpg');?>" id="categoryclassic_hover">
@@ -12,7 +12,7 @@
             </div>
         </a>
 
-        <a href="<?=$this->url('listItemCustomFull');?>">
+        <a href="<?=$this->url('listItemCustomFull');?>" class="ahovercat">
             <div class="col-lg-3 col-xs-6" id="categorycustoms_hover">
                 <div class="customs_text"><span>Customs</span></div>
                 <img class="img-responsive" src="<?=$this->assetUrl('/img/img_custom.jpg');?>" id="categorycustoms_hover">
@@ -20,7 +20,7 @@
             </div>
         </a>
 
-        <a href="<?=$this->url('listItemPiecesFull');?>">
+        <a href="<?=$this->url('listItemPiecesFull');?>" class="ahovercat">
             <div class="col-lg-3 col-xs-6" id="categorypieces_hover">
                 <div class="pieces_text"><span>Pièces</span></div>
                 <img class="img-responsive" src="<?=$this->assetUrl('/img/img_pieces.jpg');?>" id="categorypieces_hover">
@@ -28,7 +28,7 @@
             </div>
         </a>
 
-        <a href="<?=$this->url('listItemDiversFull');?>">
+        <a href="<?=$this->url('listItemDiversFull');?>" class="ahovercat">
             <div class="col-lg-3 col-xs-6" id="categorydivers_hover">
                 <div class="divers_text"><span>Divers</span></div>
                 <img class="img-responsive" src="<?=$this->assetUrl('/img/img_boitessets.jpg');?>" id="categorydivers_hover">
