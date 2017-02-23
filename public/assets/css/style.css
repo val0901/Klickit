@@ -1344,7 +1344,33 @@ button#simple:hover{
     transform-origin: 0 0;
     margin-left: 6px;
 }
-
+button#searchFilter.classics {
+    background-color: #289ff4;
+}
+button#searchFilter.classics:hover {
+    background-color: #4daff5;
+}
+button#searchFilter.classics:focus {
+    background-color: #1a89d8;
+}
+button#searchFilter.pieces {
+    background-color: #65bd28;
+}
+button#searchFilter.pieces:hover {
+    background-color: #7ad13d;
+}
+button#searchFilter.pieces:focus {
+    background-color: #54b213;
+}
+button#searchFilter.divers {
+    background-color: #ea232a;
+}
+button#searchFilter.divers:hover {
+    background-color: #f53d43;
+}
+button#searchFilter.divers:focus {
+    background-color: #d4141b;
+}
 h1.goodToGo {
     color: #7bc942;
 }

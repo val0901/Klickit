@@ -39,7 +39,7 @@
 							<input type="checkbox" class="filter_value" value='<?=$filter['name'];?>'> <span class="viewcategorycheckbox_font"><?=ucfirst($filter['name']);?></span>
 							</label>
 						<?php endforeach; ?>
-						<button type="button" id="searchFilter">Rechercher</button>
+						<button type="button" id="searchFilter"class="changeArrow divers">Rechercher</button>
 					</div>
 				</div>
 			</li>
