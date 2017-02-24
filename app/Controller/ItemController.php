@@ -233,7 +233,7 @@ class ItemController extends Controller
 					'name'		   => $post['name'],
 					'description'  => $post['description'],
 					'quantity' 	   => $post['quantity'],
-					'price' 	   => $post['price'],
+					'price' 	   => str_replace('.', ',', $post['price']),
 					'picture1'	   => $imgName,
 					'picture2'     => $imgName2,
 					'statut' 	   => $post['statut'],
@@ -377,7 +377,7 @@ class ItemController extends Controller
 					$errors[] = 'Le nouveau prix doit être supérieur à 0';
 				}
 				else {
-					$afficheItem['price'] = $post['price'];
+					$afficheItem['price'] = str_replace('.', ',', $post['price']);
 				}
 			}
 
@@ -386,7 +386,7 @@ class ItemController extends Controller
 					$errors[] = 'Le nouveau prix doit être supérieur à 0';
 				}
 				else {
-					$afficheItem['newPrice'] = $post['newPrice'];
+					$afficheItem['newPrice'] = str_replace('.', ',', $post['newPrice']);
 				}
 			}
 
