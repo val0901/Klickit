@@ -137,7 +137,7 @@ class ItemController extends Controller
 				$errors[] = 'La quantité doit comporter au moins 1 unité';
 			}
 
-			if(!v::notEmpty()->digit()->length(1,null)->validate($post['price'])){
+			if(!v::notEmpty()->validate($post['price'])){
 				$errors[] = 'Le prix doit être supérieur à 0';
 			}
 
@@ -373,7 +373,7 @@ class ItemController extends Controller
 			}
 
 			if(!empty($post['price']) && isset($post['price'])) {
-				if(!v::notEmpty()->digit()->length(1,null)->validate($post['price'])){
+				if(!v::notEmpty()->validate($post['price'])){
 					$errors[] = 'Le nouveau prix doit être supérieur à 0';
 				}
 				else {
@@ -382,7 +382,7 @@ class ItemController extends Controller
 			}
 
 			if(!empty($post['newPrice']) && isset($post['newPrice'])) {
-				if(!v::notEmpty()->digit()->length(1,null)->validate($post['newPrice'])){
+				if(!v::notEmpty()->validate($post['newPrice'])){
 					$errors[] = 'Le nouveau prix doit être supérieur à 0';
 				}
 				else {

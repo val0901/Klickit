@@ -623,7 +623,7 @@ class AjaxController extends Controller
                         <p>Nous avons bien reçu votre demande, et nous vous remercions de votre confiance.</p>
 
                         <p>Vous avez souhaité régler par chèque. Merci de le libeller à l'ordre de &quot;KLICKIT&quot; et
-                        d'inscrire au dos du chèque, le numéro de votre commande : N°".NUMERO DE COMMANDE."</p>
+                        d'inscrire au dos du chèque, le numéro de votre commande : N°".$post['id']."</p>
 
                         <p>Il sera à adresser à :</p>
 

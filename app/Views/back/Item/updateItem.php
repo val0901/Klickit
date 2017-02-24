@@ -149,7 +149,6 @@
 			      <option value="Police">Police</option>
 			      <option value="Animaux">Animaux</option>
 			      <option value="Sport">Sport</option>
-			      <option value="Divers">Divers</option>
 			  	  <option value="CustomsTampographies">Customs tampographiés</option>
 			  	  <option value="CustomsPeints">Customs peints</option>
 			  	  <option value="BustesTampographies">Bustes tampographiés</option>
