@@ -1290,8 +1290,15 @@ button#simple:hover{
     -webkit-transition: ease-in-out 150ms;
     transition: ease-in-out 150ms;
 }
-.changeArrow:focus {
+.changeArrow:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
     outline: none;
+/*
+     outline-offset: -2px; 
+*/
+}
+.btn:hover{
+    background-color: #ef820b;
+    border-color: #ef820b;
 }
 
 .name {
@@ -2021,6 +2028,7 @@ span.salesItems{
     color: #ccc;
     text-align: right;
     margin-top: 45px;
+    letter-spacing: 1px;
 }
 
 .col-xs-6 p {
@@ -2042,7 +2050,27 @@ span.salesItems{
 #linknav-order a:hover{
     color: #fe941e;
 }
+#impression {
+    background-color: #ff931e;
+    border: 0 none;
+    font-size: 1.5vw;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 4px;
+}
 
+.btnimpression{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+td:first-child{
+    text-align: left;
+}
 
 /*favorite.php*/
 .favorite_price {
