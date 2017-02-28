@@ -2030,23 +2030,18 @@ span.salesItems{
     margin-top: 45px;
     letter-spacing: 1px;
 }
-
 .col-xs-6 p {
     line-height: 0.8em;
 }
-
 .playmo_hide {
     display: block;
 }
-
 .table-responsive {
     border: 0px solid #ddd;
 }
-
 .table-bordered {
     border: 2px solid #000;
 }
-
 #linknav-order a:hover{
     color: #fe941e;
 }
@@ -2058,7 +2053,6 @@ span.salesItems{
     color: white;
     border-radius: 4px;
 }
-
 .btnimpression{
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2067,9 +2061,18 @@ span.salesItems{
     -ms-flex-pack: center;
     justify-content: center;
 }
-
 td:first-child{
     text-align: left;
+}
+input#impression:focus {
+    outline: none;
+}
+input#impression:hover {
+    background-color: #ef820b;
+    border-color: #ef820b;
+}
+input#impression:active {
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
 }
 
 /*favorite.php*/
@@ -2079,29 +2082,24 @@ td:first-child{
     font-weight: 600;
     text-align: center;
 }
-
 .favorite_pricenormal {
     font-size: 20px;
     color: #3fa9f5;
     font-weight: 600;
     text-decoration: line-through;
 }
-
 .favorite_button_size {
     background-color: #ff931e;
     border: 0 none;
     font-size: 1vw;
     text-transform: uppercase;
 }
-
 .favorite_voirplus {
     text-align: center;
 }
-
 .favoritedelete_button {
     text-align: center;
 }
-
 .favoritedelete_button_size {
     background-color: #391e20;
     border: 0 none;
@@ -2109,7 +2107,6 @@ td:first-child{
     text-transform: uppercase;
     margin-top: 10px;
 }
-
 .favoritedelete_button_size:hover {
     background-color: #482b2d;
 }

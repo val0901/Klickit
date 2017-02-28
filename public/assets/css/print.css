@@ -1,12 +1,12 @@
 @media print {
-  #menu, #footer, aside {
-    display:none;
-  }
-  body {
-    font-size:120%;
-    color:black;
-  }
-    .btnimpression{
-        display: none;
+    .nav_left, .baseline_text, .nav_right, .navbar-default, .col-md-3, .btnimpression, footer {
+        display:none;
     }
+    body {
+        font-size:140%;
+        color:black;
+    }
+.listorder_contenu {
+    padding: 10px;
+}    
 }

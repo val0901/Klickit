@@ -16,14 +16,10 @@
                         </div>
 
                         <!-- ESSAI AFFICHAGE FACTURE OU COMMANDE EN FONCTION STATUT -->   
-                        <?php if($order['statut'] == 'enPreparation') : ?>
-                        <div class="col-xs-6">
-                            <p class="viewuserorder_title" id="facture">FACTURE</p>      
-                        </div>
+                        <?php if($order['statut'] == 'expedie') : ?> 
+                            <div class="col-xs-6"><p class="viewuserorder_title" id="facture">FACTURE</p></div>
                         <?php else: ?>
-                        <div class="col-xs-6">
-                            <p class="viewuserorder_title" id="commande">COMMANDE</p>      
-                        </div>
+                            <div class="col-xs-6"><p class="viewuserorder_title" id="commande">COMMANDE</p></div>
                         <?php endif; ?>
 
                         <!--
