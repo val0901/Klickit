@@ -1750,6 +1750,19 @@ a#breadcrumb:hover{
 div.orderlogin_label input {
     letter-spacing: 2px;
 }
+.row.formcenter {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+p#error {
+    font-size: initial;
+    color: #de0008;
+}
+
 /*orderlogin.php*/
 .orderlogin_box {
     width: 48%;
