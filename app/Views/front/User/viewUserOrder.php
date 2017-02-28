@@ -17,16 +17,16 @@
 
                         <!-- ESSAI AFFICHAGE FACTURE OU COMMANDE EN FONCTION STATUT -->   
                         <?php if($order['statut'] == 'expedie') : ?> 
-                            <div class="col-xs-6"><p class="viewuserorder_title" id="facture">FACTURE</p></div>
+                        <div class="col-xs-6"><p class="viewuserorder_title" id="facture">FACTURE</p></div>
                         <?php else: ?>
-                            <div class="col-xs-6"><p class="viewuserorder_title" id="commande">COMMANDE</p></div>
+                        <div class="col-xs-6"><p class="viewuserorder_title" id="commande">COMMANDE</p></div>
                         <?php endif; ?>
 
                         <!--
-                        <div class="col-xs-6">
-                        <p class="viewuserorder_title">FACTURE</p>      
-                        </div>      
-                        -->
+<div class="col-xs-6">
+<p class="viewuserorder_title">FACTURE</p>      
+</div>      
+-->
                     </div>
                     <br><br>
                     <div class="row">
@@ -109,7 +109,16 @@
                         <p style="text-align:right;">TVA non applicable, art. 293 B du CGI</p>
                         <br>
                         <div>
-                            <p style="line-height: 10px;">Veuillez libeller votre chèque à l'ordre de Lafont Laurent.</p>
+                            <!-- INFO PAIMENT FACTURE -->                            
+                            <?php if($order['statut'] == 'expedie') : ?> 
+                            <p style="line-height: 10px;">Facture réglée par <?=$order['payment']?>.</p>
+                            <?php elseif($order['statut'] == 'enPreparation'): ?>
+                            <p style="line-height: 10px;">Votre commande a été réglée par <?=$order['payment']?> et va être expédiée dans les plus brefs délais.</p>
+                            <?php elseif($order['statut'] == 'commande'): ?>
+                            <p style="line-height: 10px;">Votre commande est en attente de règlement par <?=$order['payment']?>.</p>
+                            <?php endif; ?>
+
+
                             <p style="line-height: 10px;">Pour toutes questions concernant cette facture, merci de me contacter à <a class="hoverlinkorange" id=" linknav-order" href="<?=$this->url('front_contact');?>">  contact@klickit.fr</a></p>
                             <br><br>
                             <p style="text-align:center;"><strong>MERCI DE VOTRE CONFIANCE !</strong></p>
@@ -144,16 +153,16 @@
 </script>
 <!-- afficher facture ou commande dans la page -->
 <script>
-$(document).ready(function(){
-   $('#facture').show(function(){
-       $('.showcde').hide();
-       $('.showfact').show(); 
-   }); 
-   $('#commande').show(function(){
-       $('.showfact').hide();
-       $('.showcde').show(); 
-   }); 
-});
+    $(document).ready(function(){
+        $('#facture').show(function(){
+            $('.showcde').hide();
+            $('.showfact').show(); 
+        }); 
+        $('#commande').show(function(){
+            $('.showfact').hide();
+            $('.showcde').show(); 
+        }); 
+    });
 
 </script>
 
