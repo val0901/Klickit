@@ -223,13 +223,13 @@ class AjaxController extends Controller
 				if(!in_array($_POST['status'], $state)){
 					$error = 'Veuillez choisir le statut de la commande';
 				}
-				elseif($_POST['status'] == 'commandé'){
+				elseif($_POST['status'] == 'commande'){
 					$new_state = 'commandé';
 				}
-				elseif($_POST['status'] == 'en préparation'){
+				elseif($_POST['status'] == 'enPreparation'){
 					$new_state = 'en préparation';
 				}
-				elseif($_POST['status'] == 'expédié'){
+				elseif($_POST['status'] == 'expedie'){
 					$new_state = 'expédié';
 				}
 
