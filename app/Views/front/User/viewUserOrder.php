@@ -26,16 +26,11 @@
                         </div>
                         <?php endif; ?>
 
-
-
-
-
-
                         <!--
-<div class="col-xs-6">
-<p class="viewuserorder_title">FACTURE</p>      
-</div>      
--->
+                        <div class="col-xs-6">
+                        <p class="viewuserorder_title">FACTURE</p>      
+                        </div>      
+                        -->
                     </div>
                     <br><br>
                     <div class="row">
@@ -53,7 +48,7 @@
                                 echo date_format($date, 'd-m-Y');
                                 ?>   
                                 </strong></p>
-                            <p><strong><span>FACTURE</span> N° <?=$order['id']?></strong></p>
+                            <p><strong><span class="showcde">COMMANDE</span><span class="showfact">FACTURE</span> N° <?=$order['id']?></strong></p>
                         </div>
                     </div>
                     <br>
@@ -145,10 +140,26 @@
 
 <?php $this->stop('main_content') ?>
 <?php $this->start('js') ?>
+<!-- bouton imprimer page -->
 <script type="text/javascript">
     function imprimer_page(){
         window.print();
     }
 </script>
+<!-- afficher facture ou commande dans la page -->
+<script>
+$(document).ready(function(){
+   $('#facture').show(function(){
+       $('.showcde').hide();
+       $('.showfact').show(); 
+   }); 
+   $('#commande').show(function(){
+       $('.showfact').hide();
+       $('.showcde').show(); 
+   }); 
+});
+
+</script>
+
 <?php $this->stop('js') ?>
 
