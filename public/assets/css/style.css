@@ -112,7 +112,7 @@ header {
     left: auto;
     border: 1px dotted #999;
     box-shadow: 1px 3px 8px #ddd;
-    z-index: 20;
+    z-index: 20000;
     background-color: #fff;
     width: 300px;
 }
@@ -1905,6 +1905,7 @@ a.hoverlinkred:hover{
 
 .orderMC_text {
     font-size: 1.3em;
+    letter-spacing: 1px;
 }
 
 .ordertable_title {
