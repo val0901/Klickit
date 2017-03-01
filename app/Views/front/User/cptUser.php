@@ -20,14 +20,14 @@
 	<p class="orderMC_text">Bienvenue sur votre page d'accueil.  Vous pouvez y gérer vos informations personnelles ainsi que visualiser vos commandes.</p>
 	<hr>
 	<br>
-	   <div class="row">
-		   <div class="col-md-9">
+	   <div id="colcptuser" class="row">
+		   <div id="rowcptuser" class="col-md-9">
 		   	   <p class="cptuser_textlien"><a href="<?=$this->url('front_listOrders');?>">histori<span style="letter-spacing: 0.01em;">q</span>ue de mes commandes</a></p>
 			   <p class="cptuser_textlien"><a href="<?=$this->url('front_fUpdateUser', ['id' => $_SESSION['user']['id']]);?>">mes informations personnelles</a></p>   
 			   <p class="cptuser_textlien"><a href="<?=$this->url('favorite', ['id'=> $_SESSION['user']['id']]);?>">mes favoris</a></p> 
 		   </div>
-		   <div class="col-md-3">
-		   	<a href="<?=$this->url('fGuestbook');?>"><img class="img-responsive" src="<?=$this->assetUrl('/img/gestbookvign.jpg');?>" id="cptuser_hover" style="cursor: pointer" onmouseover="imghover();" onmouseout="imgout();"></a> 
+		   <div id="rowcptuser" class="col-md-3">
+		   	<a href="<?=$this->url('fGuestbook');?>"><img class="img-responsive center-block" src="<?=$this->assetUrl('/img/gestbookvign.jpg');?>" id="cptuser_hover" style="cursor: pointer" onmouseover="imghover();" onmouseout="imgout();"></a> 
 		   </div>
 	   </div>
 	     
@@ -46,3 +46,7 @@
 
 
 <?php $this->stop('main_content') ?>
+
+<?php $this->start('js') ?>
+
+<?php $this->stop('js') ?>

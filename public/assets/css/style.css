@@ -191,7 +191,7 @@ div#view {
 .soumenu_search {
     margin: 2px 0;
     padding: 0;
-    width: 1167%;
+    width: 1161%;
     border: 10px solid #ff931e;
     background-color: #ff931e;;
 }
@@ -318,7 +318,7 @@ i {
 
 .navlicon_width {
     float: left;
-    width: 8.66%;
+    width: 8.5%;
     border:1px dotted #ccc;
     text-align: center;
     font-size: 25px;
@@ -586,6 +586,7 @@ img.img-responsive.paypalfooter {
 
 .navbar {
     margin-bottom: 0;
+    z-index: 10000;
 }
 
 #categoryclassic_hover:hover {
@@ -811,6 +812,8 @@ font-size:30pt;
 
 
 /*==========  Mobile First Method  ==========*/
+
+/*ul.navbar-right.search_dropdownbox_width.search*/
 
 /* Custom, iPhone Retina */ 
 @media only screen and (min-width : 320px) and (max-width : 479px) {

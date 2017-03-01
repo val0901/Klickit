@@ -297,7 +297,7 @@
 		<!--End menu contact-->
 		
 		<!--menu icon search-->
-		<ul class="navbar-right search_dropdownbox_width search">
+		<ul class="navbar-right search_dropdownbox_width search" style="padding-left: 0px;">
 			<li class="navlicon_width dropdown">
 			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-search search_padding" aria-hidden="true"></i>
 			  </a>

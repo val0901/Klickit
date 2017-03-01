@@ -1,3 +1,4 @@
+/* JUSQU A 1400 PX*/
 @media screen and (max-width: 1400px) {
     .slideartL_title {
         font-size: 30px;
@@ -51,14 +52,20 @@
     ul.navbar-right.search_dropdownbox_width.search {
         margin-right: -49px;
     }
+    /* search */
+    .soumenu_search{
+        width: 1153%
+    }
 }
 
+/* JUSQU A 1250 PX*/
 @media screen and (max-width: 1250px) {
     .quote_hide {
         display: none;
     }
 }
 
+/* JUSQU A 1200 PX*/
 @media screen and (max-width: 1200px) {
     .ipad_padding {
         padding-top: 10px;
@@ -70,7 +77,7 @@
 }
     */
     ul.navbar-right.search_dropdownbox_width.search {
-        margin-right: -55px;
+        margin-right: 0;
     }
     .quote_hide {
         margin-right: 20px;
@@ -143,10 +150,18 @@
     .viewart_savoirwidth {
         width: 100%;
     }
-
+    /* compte user */
+    img#cptuser_hover {
+        width: 44vh;
+    }
+    /* search */
+    .soumenu_search{
+        width: 1198%
+    }    
 
 }
 
+/* JUSQU A 990 PX*/
 @media screen and (max-width: 990px) {
     .footercol1_float {
         float: left;
@@ -202,9 +217,9 @@
     /*mentions légales*/
     .legalm_background {
         padding: 20px;
-    }
+    }f
 
-    /*tête de person pour guestBook*/
+    /*tête de personnage pour guestBook*/
     .img-responsive-tete {
         width: 70px;
     }
@@ -217,89 +232,88 @@
     h4.salesItems.viewcategorycaption{
         font-size: xx-large;
     }
+    
+    /* compte user */
 
+    #colcptuser{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #rowcptuser{
+        width: 100%; 
+    }
+    img#cptuser_hover{
+        width: 44vh;
+    }
+    /* search */
+    .soumenu_search{
+        width: 1199%
+    }    
+    
 }
 
+/* JUSQU A 950 PX*/
 @media screen and (max-width: 950px) {
     .navli_width {
         font-size: 20px;
     }
-
-
     .vignetteEvent_hide {
         display: none;
     }
-
     .event_title {
         display: none;
     }
-
     .slideartL_title {
         display: none;
     }
-
     .slideartR_title {
         display: none;
     }
-
     #cogicon_click {
         font-size: 6vw;
     }
-
     #usericon_click {
         font-size: 6vw;
     }
-
     #shoppingicon_click {
         font-size: 6vw;
     }
-
-
     .footertitle {
         font-size: 3.5vw;
         margin-left: 20px;
         text-align: left;
     }
-
     .footertext {
         font-size: 2.5vw;
         margin-left: 20px;
         text-align: left;
     }
-
     .viewcategorycol2_text {
         font-size: 2.5vw;
     }
-
     .viewcategorycaption p {
         font-size: 2.5vw;
     }
-
     .viewcategorycaption h4 {
         font-size: 3.5vw;
     }
-
     .viewcategoryprixpromo {
         font-size: 3.5vw;
     }
-
     .viewcategoryrow2col1_img {
         padding:40px 20px;
     }
-
     .viewcategory_button_size {
         font-size: 2.5vw;
     }
-
     .ordertable_title {
         margin-top: 5vw;
         font-size: 2.5vw;
     }
-
     .ordertable_text {
         font-size: 1.5vw;
     }
-
     th {
         font-size: 2.5vw;
     }
@@ -307,21 +321,21 @@
     .legalm_background {
         padding: 20px;
     }
-
-
     /*tête de person pour guestBook*/
     .img-responsive-tete {
         width: 63px;
     }
-
     .table-responsive > .table-bordered {
         border: 2px solid #000;
     }
-
-
+    /* search */
+    .soumenu_search{
+        width: 1206%
+    }    
 }
 
-@media screen and (max-width: 750px) {
+/* JUSQU A 767 PX*/
+@media screen and (max-width: 767px) {
     .navli_width {
         width: 100%;
     }
@@ -434,13 +448,20 @@
     }
 }
 
-
+/* JUSQU A 767 PX*/
 @media (max-width: 767px) {
     .page-header, .control-box {
         text-align: center;
     } 
-
+/*
+.navbar-right .dropdown-menu {
+    right: 0;
+    left: auto;
+    }
+*/
 }
+
+/* JUSQU A 479 PX*/
 @media (max-width: 479px) {
     .caption {
         word-break: break-all;
