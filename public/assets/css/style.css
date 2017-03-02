@@ -634,7 +634,7 @@ img.img-responsive.paypalfooter {
 }
 
 .soumenu_classics_text, .soumenu_customs_text, .soumenu_pieces_text, .soumenu_boites_text {
-    font-size: 20px;
+    font-size: 3.3vh;
     color: #000;
 }
 
@@ -645,7 +645,7 @@ img.img-responsive.paypalfooter {
     line-height: 50px;
     margin: 0;
     cursor: pointer;
-    padding: 0 20px;
+    padding: 0 0 0 20px;
 }
 
 .soumenu_classics_text li:hover, .soumenu_customs_text li:hover, .soumenu_pieces_text li:hover, .soumenu_boites_text li:hover {
