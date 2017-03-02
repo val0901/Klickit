@@ -62,3 +62,18 @@
 </div>
 
 <?php $this->stop('main_content') ?>
+<?php $this->start('js') ?>
+
+<!--
+	contact button send
+-->
+<script>
+    $(document).ready(function(){
+		$(".contactbutton > img").hover(function () { $(this).attr("src", "<?=$this->assetUrl('/img/formcontactsubmithover2.png');?>") }, function () { $(this).attr("src", "<?=$this->assetUrl('/img/formcontactsubmit.png');?>") }); 
+	})
+</script>
+<!--
+	End contact button send
+-->
+
+<?php $this->stop('js') ?>

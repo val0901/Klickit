@@ -789,11 +789,6 @@ $(document).ready(function(){
 }
 	/*End vignetteEvent position*/
 	
-	/*contact button send*/
-	$(document).ready(function(){
-		$(".contactbutton > img").hover(function () { $(this).attr("src", "<?=$this->assetUrl('/img/formcontactsubmithover2.png');?>") }, function () { $(this).attr("src", "<?=$this->assetUrl('/img/formcontactsubmit.png');?>") }); 
-	})
-	/*End contact button send*/
 
 	/*index.php slide article*/
 	$(document).ready(function() {
