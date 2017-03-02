@@ -7,9 +7,9 @@
     La boutique
     </h1>
 
-    <p class="apropos_text head_apropos"><strong>&copy;Klickit</strong> est une entreprise familiale, née d&#39;un passionné de Playmobil&reg; et d&#39;histoire. Depuis plusieurs années, nous proposons à travers les expositions Playmobils copyright aux quatre coins de la France, de nombreux personnages issus des gammes Playmobil copyright, mais aussi des customs de personnages historiques réalisé par tampographie, créations de pièces en résine, peinture, stickers, pièces détachées, etc... </p>
+    <p class="apropos_text head_apropos"><strong>&copy;Klickit</strong> est une entreprise familiale, née d&#39;un passionné de Playmobil&reg; et d&#39;histoire. Depuis plusieurs années, nous proposons à travers les expositions Playmobils copyright aux quatre coins de la France, de nombreux personnages issus des gammes Playmobil copyright, mais aussi des customs de personnages historiques réalisés par tampographie, créations de pièces en résine, peinture, stickers, pièces détachées, etc... </p>
 
-    <p class="apropos_text">Désormais, nous vous proposons tous ses produits en ligne !</p>
+    <p class="apropos_text">Désormais, nous vous proposons tous ces produits en ligne !</p>
 
     <p class="apropos_text">Nous nous efforçons de vous proposer le plus large choix possible de personnages ainsi que des nouveautés régulières.</p>
 
