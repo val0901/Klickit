@@ -48,10 +48,19 @@
         padding: 0 1em;
 
     }
-
+    .event_poster {
+        margin-right: 4px;
+    }
 
 }
     
+@media screen and (max-width: 990px) {
+    .event_poster {
+        margin-right: 0;
+    }
+    
+}
+
 @media screen and (max-width: 990px) {
     .apropos_container {
 	padding: 1.5em 6em;
