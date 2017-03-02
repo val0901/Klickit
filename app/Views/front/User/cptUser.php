@@ -27,7 +27,7 @@
 			   <p class="cptuser_textlien"><a href="<?=$this->url('favorite', ['id'=> $_SESSION['user']['id']]);?>">mes favoris</a></p> 
 		   </div>
 		   <div id="rowcptuser" class="col-md-3">
-		   	<a href="<?=$this->url('fGuestbook');?>"><img class="img-responsive center-block" src="<?=$this->assetUrl('/img/gestbookvign.jpg');?>" id="cptuser_hover" style="cursor: pointer" onmouseover="imghover();" onmouseout="imgout();"></a> 
+		   	<a href="<?=$this->url('fGuestbook');?>"><img class="img-responsive center-block" src="<?=$this->assetUrl('/img/gestbookvign.jpg');?>" id="cptuser_hover" style="cursor: pointer" onmouseover="imghover();" onmouseout="imgout();" async></a> 
 		   </div>
 	   </div>
 	     
@@ -46,7 +46,30 @@
 
 
 <?php $this->stop('main_content') ?>
-
 <?php $this->start('js') ?>
+<script>
+/*cptuser.php image change*/
+	/*$(document).ready(function(){
+		$("#cptuser_hover").hover(function () { $(this).attr("src", "<?=$this->assetUrl('/img/gestbookvignhover.jpg');?>") }, function () { $(this).attr("src", "<?=$this->assetUrl('/img/gestbookvign.jpg');?>") }); 
+	})*/
+		
+	function imghover() {
+		$(document).ready(function(){
 
+			$("#cptuser_hover").hover(function(){
+			$(this).attr("src", "<?=$this->assetUrl('/img/gestbookvign.jpg');?>");
+		})			
+	})
+}
+		
+	function imgout() {
+		$(document).ready(function(){
+
+			$("#cptuser_hover").hover(function(){
+			$(this).attr("src", "<?=$this->assetUrl('/img/gestbookvignhover.jpg');?>");
+		})			
+	})
+}
+	/*End cptuser.php image change*/
+</script>
 <?php $this->stop('js') ?>

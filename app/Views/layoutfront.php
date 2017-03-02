@@ -798,29 +798,7 @@ $(document).ready(function(){
   });
 	/*End index.php slide article*/
 		
-	/*cptuser.php image change*/
-	/*$(document).ready(function(){
-		$("#cptuser_hover").hover(function () { $(this).attr("src", "<?=$this->assetUrl('/img/gestbookvignhover.jpg');?>") }, function () { $(this).attr("src", "<?=$this->assetUrl('/img/gestbookvign.jpg');?>") }); 
-	})*/
-		
-	function imghover() {
-		$(document).ready(function(){
 
-			$("#cptuser_hover").hover(function(){
-			$(this).attr("src", "<?=$this->assetUrl('/img/gestbookvign.jpg');?>");
-		})			
-	})
-}
-		
-	function imgout() {
-		$(document).ready(function(){
-
-			$("#cptuser_hover").hover(function(){
-			$(this).attr("src", "<?=$this->assetUrl('/img/gestbookvignhover.jpg');?>");
-		})			
-	})
-}
-	/*End cptuser.php image change*/
 		
   /*orderpayment radio click photo change*/
 /*$(document).ready(function(){
