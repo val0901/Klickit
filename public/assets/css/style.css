@@ -634,7 +634,7 @@ img.img-responsive.paypalfooter {
 }
 
 .soumenu_classics_text, .soumenu_customs_text, .soumenu_pieces_text, .soumenu_boites_text {
-    font-size: 3.3vh;
+    font-size: 1.7vw;
     color: #000;
 }
 
@@ -1946,8 +1946,7 @@ a#breadcrumb {
     padding: 10px 0;
     border-bottom: 1px dotted #ccc;
 }
-
-/*cptuser.php*/
+soumenu_classics_text/*cptuser.php*/
 .cptuser_textlien {
     font-size: 25px;
     text-transform: uppercase;
@@ -1975,66 +1974,120 @@ a#breadcrumb {
 .container_viewart {
     margin: 20px 150px;
 }
-
+.containviewart{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
 .viewart_fontweight {
     font-weight: 600;
 }
-
 .viewart_fontref {
     font-size: 20px;
 }
-
 .viewart_fonttitle {
     color: #391e20;
 }
-
 .viewart_fontpro {
     font-size: 30px;
     color: #3fa9f5;
 }
-
 .viewart_fontsolde {
     font-size: 50px;
     color: #7ac943;
 }
-
 .viewart_fontnormal {
     font-size: 30px;
     color: #3fa9f5;
     text-decoration: line-through;
 }
-
 .viewart_fontfamily {
     font-family: 'Advent Pro', sans-serif;
     margin-left: 10px;
 }
-
 .viewart_savoirback {
     background-image: url("../img/boxBackground.jpg");
     height: 50px;
 }
-
 .viewart_savoirtitle {
     font-size: 20px;
     font-weight: 600;
     padding-left: 10px;
     padding-top: 10px;
 }
-
 .viewart_savoirboder {
     border: 2px dotted #ddd;
 }
-
 .viewart_savoirtext {
     font-size: 20px;
     padding: 20px;
     color: #999;
     border: 2px dotted #ddd;
 }
-
 span.salesItems{
     letter-spacing: 0.1em;
 }
+/*slide image*/
+#slideviewart {
+  position: relative;
+  overflow: hidden;
+  margin: 20px auto 0 auto;
+  border-radius: 4px;
+}
+#slideviewart ul {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 200px;
+  list-style: none;
+}
+#slideviewart ul li {
+  position: relative;
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 500px;
+  height: 500px;
+  background: #ccc;
+  text-align: center;
+  line-height: 300px;
+}
+a.control_prev, a.control_next {
+  position: absolute;
+  top: 40%;
+  z-index: 999;
+  display: block;
+  padding: 4% 3%;
+  width: auto;
+  height: auto;
+  background: #2a2a2a;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+a.control_prev:hover, a.control_next:hover {
+  opacity: 1;
+  -webkit-transition: all 0.2s ease;
+}
+a.control_prev {
+  border-radius: 0 2px 2px 0;
+}
+a.control_next {
+  right: 0;
+  border-radius: 2px 0 0 2px;
+}
+
+
 
 /*404.php*/
 
