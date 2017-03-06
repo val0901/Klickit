@@ -63,6 +63,8 @@
  
 </head>
 <body>
+    <a name="haut" id="haut"></a>
+
 	<?php 
 		$_SESSION['general_search'] = '';
 
@@ -330,7 +332,10 @@
 </nav>
 <!--End nav-->
 		<section>
+
 			<?= $this->section('main_content') ?>
+            <div><a id="cRetour" class="cInvisible" href="#haut"></a></div>
+
 		</section>
 
 	<!--footer-->
@@ -834,5 +839,13 @@ $(document).ready(function(){
   /*End orderpayment radio click photo change*/
 
     </script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+  window.onscroll = function(ev) {
+    document.getElementById("cRetour").className = (window.pageYOffset > 100) ? "cVisible" : "cInvisible";
+  };
+});
+</script>
+
 </body>
 </html>

@@ -43,6 +43,41 @@ li {
 .favoriteicon_original {
     color: #999;
 }
+/*retour en haut de page*/
+a#cRetour{
+  border-radius:3px;
+  padding:10px;
+  font-size:15px;
+  text-align:center;
+  color:#fff;
+  background:rgba(0, 0, 0, 0.25);
+  position:fixed;
+  right:20px;
+  opacity:1;
+  z-index:99999;
+  -webkit-transition: all ease-in 0.2s;
+  transition:all ease-in 0.2s;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  text-decoration: none;
+}
+a#cRetour:before{ content: "\25b2"; }
+a#cRetour:hover{
+  background:rgba(0, 0, 0, 1);
+  -webkit-transition: all ease-in 0.2s;
+  transition:all ease-in 0.2s;
+}
+a#cRetour.cInvisible{
+  bottom:-35px;
+  opacity:0;
+  -webkit-transition: all ease-in 0.5s;
+  transition:all ease-in 0.5s;
+}
+
+a#cRetour.cVisible{
+  bottom:20px;
+  opacity:1;
+}
 
 /*Header*/
 .nav_left > img {
@@ -845,6 +880,7 @@ font-size:30pt;
     #textSlider.row { margin-right: 0px !important; margin-left: 0px !important; }
     .iamCol { text-align: right; font-size:30pt; }
     .slideCol { font-size: 55pt; text-align: left; }
+    div#rowcptuser { font-size: 3vw;}
 }
 
 /*index.php le dernier event*/
@@ -1969,7 +2005,11 @@ soumenu_classics_text/*cptuser.php*/
 .btn-default:active, .btn-default:active:hover {
     outline: none;
 }
-
+div#rowcptuser {
+    color: black;
+    font-size: 2vw;
+    text-align: center;
+}
 /*viewart.php*/
 .container_viewart {
     margin: 20px 150px;

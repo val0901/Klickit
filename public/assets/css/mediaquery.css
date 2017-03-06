@@ -56,6 +56,7 @@
     .soumenu_search{
         width: 1153%
     }
+    
 }
 
 /* JUSQU A 1250 PX*/
@@ -154,6 +155,13 @@
     img#cptuser_hover {
         width: 44vh;
     }
+    div#rowcptuser {
+    font-size: 2vw;
+    }
+    div#rowcptuser {
+    font-size: 3vw;
+    }
+
     /* search */
     .soumenu_search{
         width: 1198%
@@ -236,8 +244,15 @@
     /* compte user */
 
     #colcptuser{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
     }
     #rowcptuser{
@@ -249,7 +264,11 @@
     /* search */
     .soumenu_search{
         width: 1199%
-    }    
+    }
+    div#rowcptuser {
+    font-size: 3vw;
+    }
+
     
 }
 
@@ -331,7 +350,12 @@
     /* search */
     .soumenu_search{
         width: 1206%
-    }    
+    }
+    /* cptuser.php */
+    div#rowcptuser {
+    font-size: 4vw;
+    }
+
 }
 
 /* JUSQU A 767 PX*/
@@ -446,6 +470,11 @@
     .comment_username {
         font-size: 20px;
     }
+    /* cptuser.php */
+    div#rowcptuser {
+    font-size: 4vw;
+    }
+    
 }
 
 /* JUSQU A 767 PX*/
@@ -466,7 +495,22 @@
     .caption {
         word-break: break-all;
     }
-
+    /* cptuser.php */
+    div#rowcptuser {
+    font-size: 7vw;
+    }
+    
 }
+
+/* JUSQU A 320 PX*/
+@media (max-width: 320px) {
+    .caption {
+        word-break: break-all;
+    }
+    /* cptuser.php */
+    div#rowcptuser {
+    font-size: 6vw;
+    }
+    
 }
 

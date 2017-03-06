@@ -78,7 +78,9 @@ p.apropos_text.head_apropos {
 .apropos_container {
     padding: 1.5em 25em;
 }
-
+td.apropos_td {
+    text-align: center;
+}
 
 /*events.php*/
 .event_etitle {
