@@ -5,28 +5,28 @@
 
 <form>
 	<div id="viewOrder">
-			<table class="table">
-				<thead>
-					<th>Numéro</th>
-					<th>Client</th>
-					<th>Adresse</th>
+			<table class="table vieworder table-responsive">
+				<thead class="backgthead">
+					<th class="optimphone">Numéro</th>
+					<th class="optimphone">Client</th>
+					<th class="optimphone">Adresse</th>
 					<th>Contenu de la commande</th>
 					<th>Quantité</th>
-					<th>Sous-Total</th>
-					<th>Frais de port</th>
+					<th class="optimphone">Sous-Total</th>
+					<th class="optimphone">Frais de port</th>
 					<th>Total</th>
-					<th>Date de la commande</th>
+					<th class="optimphone">Date de la commande</th>
 					<th>Statut</th>
 					<th>Type de paiement</th>
-					<th id="thaction">Action</th>
+					<th class="optimphone" id="thaction">Action</th>
 				</thead>
 
-				<tbody>
+				<tbody class="backgtbody">
 				<?php foreach ($orders as $order): ;?>
 					<tr>
-						<td><?=$id_order; ?></td>
-						<td><?=$order['lastname'].' '.$order['firstname'].'<br>'; ?></td>
-						<td><?= $order['adress'].'<br>'.$order['zipcode'].' '.$order['city'] ?></td>
+						<td class="optimphone"><?=$id_order; ?></td>
+						<td class="optimphone"><?=$order['lastname'].' '.$order['firstname'].'<br>'; ?></td>
+						<td class="optimphone"><?= $order['adress'].'<br>'.$order['zipcode'].' '.$order['city'] ?></td>
 						<td>
 							<?php $contents = explode(', ', $order['contenu']); ?>
 							<?php 
@@ -44,10 +44,10 @@
 								<p><?=$quanti;?></p><br>
 							<?php endforeach; ?>
 						</td>
-						<td><?=$order['sub_total'];?></td>
-						<td><?=$order['shipping'];?></td>
+						<td class="optimphone"><?=$order['sub_total'];?></td>
+						<td class="optimphone"><?=$order['shipping'];?></td>
 						<td><?=$order['total'];?></td>
-						<td><?= date('d/m/Y', strtotime($order['date_creation']));?></td>
+						<td class="optimphone"><?= date('d/m/Y', strtotime($order['date_creation']));?></td>
 						<td>
 							<div class="form-group" id="selectStt">									
 								<?php   if ($order['statut'] == 'enPreparation') : ?>
@@ -63,7 +63,7 @@
 							</div>
 						</td>
 						<td><?=$order['payment'];?></td>
-						<td><button class="btn btn-danger delete-order" data-id="<?=$id_order?>">Effacer la commande</button></td>
+						<td class="optimphone"><button class="btn btn-danger delete-order" data-id="<?=$id_order?>">Effacer</button></td>
 					</tr>
 				<?php endforeach; ?>			
 				</tbody>			

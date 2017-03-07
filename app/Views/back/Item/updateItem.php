@@ -3,14 +3,18 @@
 <?php $this->start('main_content') ?>
 	<a href="<?=$this->url('listItem');?>"><button class="btn btn-info">Retour liste article</button></a>
 	<h3 class="titleItem">Vu du produit</h3>
-	<div id="view" class="row">
-		<div class="preview col-lg-12">
-			<div class="preview-pic row">
-				<div class="tab-pane active col-sm-6" id="pic-1"><img class="vignphone" src="<?=$this->assetUrl('art/'.$affichage['picture1']);?>" /></div>
-				<div class="tab-pane active col-sm-6" id="pic-2"><img class="vignphone" src="<?=$this->assetUrl('art/'.$affichage['picture2']);?>" /></div>
+	<div id="view">
+		<div class="preview">
+			<div class="preview-pic">
+				<div class="tab-pane active" id="pic-1">
+                    <img class="vignphone" src="<?=$this->assetUrl('art/'.$affichage['picture1']);?>">
+                </div>
+				<div class="tab-pane active" id="pic-2">
+                    <img class="vignphone" src="<?=$this->assetUrl('art/'.$affichage['picture2']);?>">
+                </div>
 			</div>
 		</div>
-			<div class="details col-lg-12">
+			<div class="details">
 				<h3 class="titleArt"><?=$affichage['name'];?></h3>
 				
 				<p class="price"><?=$affichage['description'];?></p>
@@ -34,17 +38,17 @@
 				</p>
 			</div>
 	</div>
-	<br><br>
+	<br class="optimphone"><br class="optimphone">
 
 	<h3>Modification du produit</h3>
 
-	<br><br>
+	<br class="optimphone"><br class="optimphone">
 		<?php if($success): ?>
 			<p id="reload" class="alert alert-success">Produit modifié</p>
 		<?php elseif(isset($errors) && !empty($errors)):?>
 			<p class="alert alert-danger"><?=implode('<br>', $errors);?></p>	
 		<?php endif;?>
-	<br><br>
+	<br class="optimphone"><br class="optimphone">
 	<form class="form-horizontal" method="post" enctype="multipart/form-data">
 		<!-- Text input-->
 		<div class="form-group">

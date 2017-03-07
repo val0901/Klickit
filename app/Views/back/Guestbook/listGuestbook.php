@@ -7,9 +7,9 @@
 		<form>
 			<table class="table table-responsive">
 				<thead class="backgthead">
-					<th>Prénom</th>
-					<th>Nom</th>
-					<th>Pseudonyme</th>
+					<th class="optimphone">Prénom</th>
+					<th class="optimphone">Nom</th>
+					<th class="optimphone">Pseudonyme</th>
 					<th>Commentaire</th>
 					<th>Publié</th>				
 					<th colspan="2">Action</th>
@@ -19,13 +19,13 @@
 					<?php if(!empty($messages)): ?>
 						<?php foreach($messages as $message) : ?>
 							<tr>
-								<td><?=$message['firstname'];?></td>
-								<td><?=$message['lastname'];?></td>
-								<td><?=$message['username'];?></td>
+								<td class="optimphone"><?=$message['firstname'];?></td>
+								<td class="optimphone"><?=$message['lastname'];?></td>
+								<td class="optimphone"><?=$message['username'];?></td>
 								<td><?=substr($message['content'],0,20).'...';?></td>
 								<td><?=ucfirst($message['published'])?></td>
 								<td><a href="<?=$this->url('moderation', ['id'=>$message['id']])?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>
-								<td><button class="btn btn-danger delete-message" data-id="<?=$message['id']?>">Effacer le commentaire</button></td>
+								<td><button class="btn btn-danger delete-message" data-id="<?=$message['id']?>">Effacer</button></td>
 							</tr>	
 						<?php endforeach;?>
 					<?php else: ?>

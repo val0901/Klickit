@@ -13,10 +13,10 @@
 			<table class="table table-responsive">
 				<thead class="backgthead">
 					<th>Numéro</th>
-					<th>Client</th>
-					<th>Contenu de la commande</th>
-					<th>Quantité</th>
-					<th>Sous-Total</th>
+					<th class="optimphone">Client</th>
+					<th class="optimphone">Contenu de la commande</th>
+					<th class="optimphone">Quantité</th>
+					<th class="optimphone">Sous-Total</th>
 					<th>Total</th>
 					<th>Date de la commande</th>
 					<th colspan="2">Statut</th>
@@ -28,8 +28,8 @@
 						<?php foreach($orders as $order): ;?>
 							<tr>
 								<td><?=$order['id']; ?></td>
-								<td><?=$order['lastname'].' '.$order['firstname'].'<br>'.$order['address'].'<br>'.$order['zipcode'].' '.$order['city'].'<br>'.$order['country']; ?></td>
-								<td>
+								<td class="optimphone"><?=$order['lastname'].' '.$order['firstname'].'<br>'.$order['address'].'<br>'.$order['zipcode'].' '.$order['city'].'<br>'.$order['country']; ?></td>
+								<td class="optimphone">
 								<?php 
 									$contents = explode(', ', $order['contenu']); 
 									$quantity = explode(', ', $order['quantity']);
@@ -48,24 +48,24 @@
 									}
 								?>
 								</td>
-								<td> 
+								<td class="optimphone"> 
 		        				<?php 
 		        					foreach ($content_basket[$order['id']] as $basket){
 		        						echo $basket['quantity'].'<br>';
 		        					} 
 		        				?>
 								</td>
-								<td><?=$order['sub_total'];?></td>
+								<td class="optimphone"><?=$order['sub_total'];?></td>
 								<td><?=$order['total'];?></td>
 								
 								<td><?= date('d/m/Y', strtotime($order['date_creation']));?></td>
 								<td>
 									<?php   if ($order['statut'] == 'enPreparation') : ?>
 										 		<p>En préparation</p>
-										 		<button type="button" data-id="<?=$order['id']?>" class="order_sent" style="color:black;">Commande expédiée</button>
+										 		<button  class="optimphone" type="button" data-id="<?=$order['id']?>" class="order_sent" style="color:black;">Commande expédiée</button>
 									<?php	elseif ($order['statut'] == 'commande') : ?>
 										  		<p>Commandé</p>
-										  		<button type="button" data-id="<?=$order['id']?>" class="order_prepare" style="color:black;">Commande en préparation</button>
+										  		<button  class="optimphone" type="button" data-id="<?=$order['id']?>" class="order_prepare" style="color:black;">Commande en préparation</button>
 									<?php	elseif ($order['statut'] == 'expedie') : ?>
 										  		<p>Expédiée</p>
 									<?php   endif; ?>

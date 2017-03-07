@@ -20,8 +20,8 @@
 						<?php foreach($filters as $filter) : ?>
 							<tr>
 								<td><?=ucfirst($filter['name']);?></td>
-								<td><a href="<?=$this->url('updateFilter', ['id'=>$filter['id']])?>">Mettre à jour le filtre</a></td>
-								<td><button class="btn btn-danger delete-filter" data-id="<?=$filter['id']?>">Effacer le filtre</button></td>
+								<td><a href="<?=$this->url('updateFilter', ['id'=>$filter['id']])?>">Mettre à jour</a></td>
+								<td><button class="btn btn-danger delete-filter" data-id="<?=$filter['id']?>">Effacer</button></td>
 							</tr>	
 						<?php endforeach;?>
 					<?php else: ?>

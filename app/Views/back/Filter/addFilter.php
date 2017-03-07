@@ -2,7 +2,7 @@
 
 <?php $this->start('main_content') ?>
 
-<a href="<?=$this->url('listFilter');?>"><button class="btn btn-info">Retour liste des commandes</button></a>
+<a href="<?=$this->url('listFilter');?>"><button class="btn btn-info">Retour liste des filtres</button></a>
 
 <?php if($success):?>
 	<p class="alert alert-success">Filtre ajouté</p>

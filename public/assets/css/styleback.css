@@ -245,18 +245,6 @@ form.buttonmessage {
 
 
 /*****************UPDATE USER*************/
-/*body {
-overflow-x: hidden; 
-}*/
-div#pic-1 {
-    /*
-    max-height: 200px;
-    width: 100%;
-    */
-}
-#pic-2 {
-    margin-left: 200px;
-}
 img.imgphone {
     max-height: 200px;
     width: auto;
@@ -269,14 +257,6 @@ img.imgphone {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column; 
-    /*
-    width: 50px;
-    */
-}
-.col-lg-6 {
-    /*
-    width: 50%;
-    */
 }
 .price {
     font-size:1.3vw;
@@ -297,14 +277,28 @@ span {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
-    flex-direction: column; }
+    flex-direction: column; 
+}
 @media screen and (max-width: 996px) {
     .preview {
-        margin-bottom: 20px; } }
+        margin-bottom: 20px; 
+    } 
+}
 .preview-pic {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
-    flex-grow: 1; }
+    flex-grow: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+}
 .tab-content {
     overflow: hidden; }
 .tab-content img {
@@ -335,6 +329,9 @@ span {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column; 
+    -webkit-box-align: start; 
+    -ms-flex-align: start; 
+    align-items: flex-start;
 }
 .colors {
     -webkit-box-flex: 1;
@@ -422,27 +419,23 @@ img.imgevent {
     max-height: auto;
     width: 100%;
 }
-/*
-.optimphone{
-    display: inherit;
-}
-*/
 /* UPDATE SLIDE */
 .preview.col-lg-6 {
     width: 100%;
 }
 /* UPDATE ITEM */
 img.vignphone, div#pic-1, div#pic-2 {
-    /*
-    max-height: 20vw;
-    max-width: 20vw;
-    */
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
     -ms-flex-pack: distribute;
     justify-content: space-around;
+}
+div#pic-1, div#pic-2 {
+    max-width: 300px;
+    max-height: 300px;
+    margin-bottom: 10px;
 }
 .details.col-lg-6 {
     width: 44%;
@@ -480,6 +473,11 @@ div#view {
     align-items: flex-start;
     font-size: 1vw;
 }
+img.vignphone{
+    height: auto;
+    width: 100%;
+}
+
 
 /************************************************* 
 Devices, Phones ASUS ZONEFONE 2 résulution 1080 x 1920 px **************************************************/ 
@@ -572,10 +570,11 @@ Devices, Phones ASUS ZONEFONE 2 résulution 1080 x 1920 px *********************
     p.price {
         font-size: 3vw;
     }
-    .details.col-lg-6, .details.col-lg-12{
-        font-size: 2vw;
-        width: 100%
+    /* VIEW ORDER*/
+    div#viewOrder {
+    font-size: smaller;
     }
+
 }
 
 /******************************************** 
@@ -654,61 +653,8 @@ Small Devices, Tablets
         -ms-flex-pack: distribute;
         justify-content: space-around;
     }
-    img.vignphone, div#pic-1, div#pic-2{
-        /*
-        max-height: 39vw;
-        max-width: 39vw;
-        */
+    /* VIEW ORDER*/
+    div#viewOrder {
+    font-size: small;
     }
-    /*
-    img.vignphone, div#pic-1, div#pic-2 {
-    max-height: 20vw;
-    max-width: 20vw;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
-}
-    .details.col-lg-6 {
-    width: 44%;
-}
-    div#view {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-    .preview.col-lg-6 {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-}
-    .details.col-lg-6 {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    font-size: 1vw;
-}
-    */
-
-
-
 }
