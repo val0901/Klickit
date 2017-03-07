@@ -171,14 +171,19 @@ class FrontOrdersController extends MasterController
 			$customFDP = 0;
 		}
 
-		if($fdp['somme'] >= 1 && $fdp['somme'] <= 3 ){
-			$finalFDP = $customFDP + 2.50;
+		if($customFDP === 0){
+			if($fdp['somme'] >= 1 && $fdp['somme'] <= 3 ){
+				$finalFDP = 2.50;
 
-		}elseif($fdp['somme'] >= 4 && $fdp['somme'] <= 8){
-			$finalFDP = $customFDP + 3.90;
+			}elseif($fdp['somme'] >= 4 && $fdp['somme'] <= 8){
+				$finalFDP = 3.90;
 
-		}elseif($fdp['somme'] > 8){
-			$finalFDP = $customFDP + 6.90;
+			}elseif($fdp['somme'] > 8){
+				$finalFDP = 6.90;
+			}
+		}
+		elseif($customFDP === 6.90){
+			$finalFDP = 6.90;
 		}
 
 		$data = [
