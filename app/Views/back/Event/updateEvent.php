@@ -3,31 +3,33 @@
 <?php $this->start('main_content') ?>
 	<a href="<?=$this->url('listEvent');?>"><button class="btn btn-info">Retour liste des évènements</button></a>
 	<h3 class="titleItem">Vu de l'évènement</h3>
-	<div id="view" class="row">
-		<div class="preview col-lg-6">
+	<div id="view" class="row col-lg-12">
+		<div class="preview">
 			
-				<div class="preview-pic row">
-					<div class="tab-pane active col-sm-6" id="pic-1"><img src="<?=$this->assetUrl('events/'.$affichage['picture']);?>" /></div>
-				</div>
+            <div class="preview-pic row">
+                <div class="tab-pane active col-sm-12 vignevent" id="pic-1">
+                    <img class="imgevent" src="<?=$this->assetUrl('events/'.$affichage['picture']);?>">
+                </div>
+            </div>
 			
 		</div>
-		
 					
-						<div class="details col-lg-6">
-							<h3 class="titleArt"><?=$affichage['title'];?></h3>
-						</div>
+		<div class="details">
+			<h3 class="titleArt"><?=$affichage['title'];?></h3>
+		</div>
 	</div>
-	<br><br>
+
+	<br class="optimphone"><br class="optimphone">
 
 	<h3>Modification de l'évènement</h3>
 
-	<br><br>
+	<br class="optimphone"><br class="optimphone">
 		<?php if($success): ?>
 			<p id="reload" class="alert alert-success">Évènement modifié</p>
 		<?php elseif(isset($errors) && !empty($errors)):?>
 			<p class="alert alert-danger"><?=implode('<br>', $errors);?></p>	
 		<?php endif;?>
-	<br><br>
+	<br class="optimphone"><br class="optimphone">
 	<form class="form-horizontal" method="post" enctype="multipart/form-data">
 		
 		<!-- Text input-->

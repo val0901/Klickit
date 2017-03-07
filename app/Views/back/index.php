@@ -2,7 +2,7 @@
 
 <?php $this->start('main_content') ?>
 	
-	<h4>Chiffre d'affaire</h4>
+	<h3>Chiffre d'affaire</h3>
 	<div>
 		<table class="table">
 			<thead class="backgthead">
@@ -68,12 +68,12 @@
 			<thead class="backgthead">
 				<th>Numéro</th>
 				<th>Client</th>
-				<th>Contenu de la commande</th>
-				<th>Quantité</th>
-				<th>Sous-Total</th>
+				<th class="title_home_phone">Contenu de la commande</th>
+				<th class="title_home_phone">Quantité</th>
+				<th class="title_home_phone">Sous-Total</th>
 				<th>Total</th>
 				<th>Date de la commande</th>
-				<th>Statut</th>
+				<th class="title_home_phone">Statut</th>
 				<th>Action</th>
 			</thead>
 
@@ -83,7 +83,7 @@
 						<tr>
 							<td><?=$order['id']; ?></td>
 							<td><?=$order['lastname'].' '.$order['firstname']; ?></td>
-							<td>
+							<td class="title_home_phone">
 								<?php $contents = explode(', ', $order['contenu']); ?>
 
 								<?php 
@@ -95,7 +95,7 @@
 										?>
 								<?php endforeach; ?>
 	            			</td>
-	            			<td>
+	            			<td class="title_home_phone">
 	            				<?php $quantity = explode(', ', $order['quantity']); ?>
 	            				<?php foreach ($quantity as $value):?>
 	            					<?php
@@ -103,10 +103,10 @@
 	            					?>
 	            				<?php endforeach;?>	
 	            			</td>
-	            			<td><?=$order['sub_total'];?></td>
+	            			<td class="title_home_phone"><?=$order['sub_total'];?></td>
 	            			<td><?=$order['total'];?></td>
 							<td><?= date('d/m/Y', strtotime($order['date_creation']));?></td>
-							<td>
+							<td class="title_home_phone">
 							<?php if ($order['statut'] == 'enPreparation') :
 								 		echo 'En préparation';
 								  elseif ($order['statut'] == 'commande') :
@@ -145,10 +145,10 @@
 			<table class="table table-responsive">
 				<thead class="backgthead">
 					<th>Pseudonyme</th>
-					<th>Adresse email</th>
+					<th class="title_home_phone">Adresse email</th>
 					<th>Date</th>
 					<th>Sujet</th>
-					<th>Contenu</th>
+					<th class="title_home_phone">Contenu</th>
 					<th>Statut</th>
 					<th colspan="2">Action</th>
 				</thead>
@@ -165,10 +165,10 @@
 							?>
 							<tr>
 								<td <?=$bold?> ><?=$message['username'];?></td>
-								<td <?=$bold?> ><?=$message['email'];?></td>
+								<td <?=$bold?> class="title_home_phone"><?=$message['email'];?></td>
 								<td><?= date('d/m/Y', strtotime($order['date_creation']));?></td>
 								<td <?=$bold?> ><?=$message['subject'];?></td> 
-								<td <?=$bold?> ><?=$message['content'];?></td>
+								<td <?=$bold?> class="title_home_phone"><?=$message['content'];?></td>
 								<td <?=$bold?> ><?=$message['statut'];?></td>
 								<td><a href="<?=$this->url('viewMessage', ['id'=>$message['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>
 							</tr>	
@@ -195,8 +195,8 @@
 		<form>
 			<table class="table table-responsive">
 				<thead class="backgthead">
-					<th>Prénom</th>
-					<th>Nom</th>
+					<th class="title_home_phone">Prénom</th>
+					<th class="title_home_phone">Nom</th>
 					<th>Pseudonyme</th>
 					<th>Commentaire</th>
 					<th>Publié</th>				
@@ -207,8 +207,8 @@
 					<?php if(!empty($comments)): ?>
 						<?php foreach($comments as $comment) : ?>
 							<tr>
-								<td><?=$comment['firstname'];?></td>
-								<td><?=$comment['lastname'];?></td>
+								<td class="title_home_phone"><?=$comment['firstname'];?></td>
+								<td class="title_home_phone"><?=$comment['lastname'];?></td>
 								<td><?=$comment['username'];?></td>
 								<td><?=substr($comment['content'],0,20).'...';?></td>
 								<td><?=ucfirst($comment['published'])?></td>

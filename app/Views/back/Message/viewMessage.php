@@ -5,16 +5,16 @@
 		<p class="alert alert-danger">Aucun message trouvé</p>
 	<?php else : ?>	
 
-		<h3>Sujet : <?=$message['subject']?></h3>
-		<h3>Contenu : </h3>
+		<p>Sujet : <?=$message['subject']?></p>
+		<p>Contenu : </p>
 		<div class="jumbotron ">
 			<?=nl2br($message['content'])?>	
 		</div>
 
-		<form method="get">
-			<button class="btn btn-success" name="read">Marquer comme lu</button>
-			<button class="btn btn-warning" name="not-read">Marquer comme non-lu</button>
-			<button class="btn btn-primary" id="answer-show">Répondre</button>
+		<form class="buttonmessage" method="get">
+			<button class="btn btn-success btngestmess" name="read">Marquer comme lu</button>
+			<button class="btn btn-warning btngestmess" name="not-read">Marquer comme non-lu</button>
+			<button class="btn btn-primary btngestmess" id="answer-show">Répondre</button>
 		</form>	
 
 		<!-- message de réussite ou d'erreur pour l'envoi de la réponse -->

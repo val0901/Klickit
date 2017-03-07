@@ -38,7 +38,7 @@
 					          <a class="navbar-brand" href="<?=$this->url('front_index');?>" target="_blank">Klickit</a>
 					        </div>
 					        <div class="navbar navbar-right">
-						        <ul>
+						        <ul class="bonjour">
 						        	<?php if(!empty($_SESSION)): ?>
 							        	<li><a href="<?=$this->url('front_affcptuser', ['id' => $_SESSION['user']['id']]);?>" target="_blank">Bonjour <?=$_SESSION['user']['firstname'].' '.$_SESSION['user']['lastname'];?></a></li>
 							        	<li><form><button id="logout" type="submit" data-id="login_out">Se déconnecter</button></form></li>

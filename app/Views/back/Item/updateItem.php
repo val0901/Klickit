@@ -4,13 +4,13 @@
 	<a href="<?=$this->url('listItem');?>"><button class="btn btn-info">Retour liste article</button></a>
 	<h3 class="titleItem">Vu du produit</h3>
 	<div id="view" class="row">
-		<div class="preview col-lg-6">
+		<div class="preview col-lg-12">
 			<div class="preview-pic row">
-				<div class="tab-pane active col-sm-6" id="pic-1"><img src="<?=$this->assetUrl('art/'.$affichage['picture1']);?>" /></div>
-				<div class="tab-pane active col-sm-6" id="pic-2"><img src="<?=$this->assetUrl('art/'.$affichage['picture2']);?>" /></div>
+				<div class="tab-pane active col-sm-6" id="pic-1"><img class="vignphone" src="<?=$this->assetUrl('art/'.$affichage['picture1']);?>" /></div>
+				<div class="tab-pane active col-sm-6" id="pic-2"><img class="vignphone" src="<?=$this->assetUrl('art/'.$affichage['picture2']);?>" /></div>
 			</div>
 		</div>
-			<div class="details col-lg-6">
+			<div class="details col-lg-12">
 				<h3 class="titleArt"><?=$affichage['name'];?></h3>
 				
 				<p class="price"><?=$affichage['description'];?></p>

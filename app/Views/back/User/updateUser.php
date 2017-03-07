@@ -8,13 +8,13 @@
 <?php if (empty($user)) :?>
 	<p class="alert alert-danger">Aucun utilisateur trouvé</p>
 <?php else :?>
-	<div id="view" class="row">			
-		<div class="details col-lg-6">
+	<div id="view" class="row col-lg-12">			
+		<div class="details col-lg-12">
 			<p class="price">Prénom : <?=$user['firstname'];?></p>
 			<p class="price">Nom : <?=$user['lastname'];?></p>
 			<p class="price">Pseudonyme : <?=$user['username'];?></p>
 		</div>
-		<div class="details col-lg-6">	
+		<div class="details col-lg-12">	
 			<p class="price">Adresse email : <?=$user['email'];?></p>
 			<p class="price">Adresse postale : <br><?=$user['adress'].'<br>'.$user['zipcode'].'<br>'.$user['city'];?></p>
 		</div>

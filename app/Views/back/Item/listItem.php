@@ -12,11 +12,11 @@
 			<br><br>
 			<table class="table table-responsive">
 				<thead class="backgthead">
-					<th>N°</th>
+					<th class="optimphone">N°</th>
 					<th>Nom</th>
 					<th>Quantité</th>
 					<th>Prix</th>
-					<th>statut</th>
+					<th class="optimphone">statut</th>
 					<th colspan="2">Action</th>
 				</thead>
 
@@ -24,7 +24,7 @@
 					<?php if(!empty($Classic)): ?>
 						<?php foreach($Classic as $value) : ?>
 							<tr>
-								<td><?=$value['id'];?></td>
+								<td class="optimphone"><?=$value['id'];?></td>
 								<td><?=$value['name'];?></td>
 								<td><?=$value['quantity'];?></td>
 								<?php if($value['newPrice'] == 0) : ?>
@@ -32,9 +32,9 @@
 								<?php elseif($value['newPrice'] > 0) : ?>
 									<td><?=$value['newPrice'];?></td>
 								<?php endif; ?>
-								<td><?=$value['statut'];?></td>
+								<td class="optimphone"><?=$value['statut'];?></td>
 								<td><a href="<?=$this->url('updateItem', ['id'=>$value['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>
-								<td><button class="btn btn-danger delete-item" data-id="<?=$value['id']?>">Effacer le produit</button></td>
+								<td><button class="btn btn-danger delete-item" data-id="<?=$value['id']?>">Effacer</button></td>
 							</tr>	
 						<?php endforeach;?>
 					<?php else: ?>
@@ -52,7 +52,7 @@
 					<?= ($nb < 1 ) ? '' : ($page!= ceil($nb/$max) ? '<a href="?'. $search .'page='. ($page + 1) .'"><i class="fa fa-arrow-right fa-fw" aria-hidden="true"></i></a>':''); ?>
 				</div>	
 
-			<br><br>
+			<br class="optimphone"><br class="optimphone">
 
 			<h3>Catégorie Custom</h3>
 			<div class="form-group">
@@ -62,11 +62,11 @@
 			<br><br>
 			<table class="table table-responsive">
 				<thead class="backgthead">
-					<th>N°</th>
+					<th class="optimphone">N°</th>
 					<th>Nom</th>
 					<th>Quantité</th>
 					<th>Prix</th>
-					<th>statut</th>
+					<th class="optimphone">statut</th>
 					<th colspan="2">Action</th>
 				</thead>
 
@@ -74,7 +74,7 @@
 					<?php if(!empty($Custom)): ?>
 						<?php foreach($Custom as $value) : ?>
 							<tr>
-								<td><?=$value['id'];?></td>
+								<td class="optimphone"><?=$value['id'];?></td>
 								<td><?=$value['name'];?></td>
 								<td><?=$value['quantity'];?></td>
 								<?php if($value['newPrice'] == 0) : ?>
@@ -82,9 +82,9 @@
 								<?php elseif($value['newPrice'] > 0) : ?>
 									<td><?=$value['newPrice'];?></td>
 								<?php endif; ?>
-								<td><?=$value['statut'];?></td>
+								<td class="optimphone"><?=$value['statut'];?></td>
 								<td><a href="<?=$this->url('updateItem', ['id'=>$value['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>
-								<td><button class="btn btn-danger delete-item" data-id="<?=$value['id']?>">Effacer le produit</button></td>
+								<td><button class="btn btn-danger delete-item" data-id="<?=$value['id']?>">Effacer</button></td>
 							</tr>	
 						<?php endforeach;?>
 					<?php else: ?>
@@ -101,7 +101,7 @@
 					<?= ($nb1 < 1 ) ? '' : ($page!= ceil($nb1/$max) ? '<a href="?'. $search .'page='. ($page + 1) .'"><i class="fa fa-arrow-right fa-fw" aria-hidden="true"></i></a>':''); ?>
 				</div>	
 
-			<br><br>
+			<br class="optimphone"><br class="optimphone">
 
 			<h3>Catégorie Pièces Détachées</h3>
 			<div class="form-group">
@@ -111,11 +111,11 @@
 			<br><br>
 			<table class="table table-responsive">
 				<thead class="backgthead">
-					<th>N°</th>
+					<th class="optimphone">N°</th>
 					<th>Nom</th>
 					<th>Quantité</th>
 					<th>Prix</th>
-					<th>statut</th>
+					<th class="optimphone">statut</th>
 					<th colspan="2">Action</th>
 				</thead>
 
@@ -123,7 +123,7 @@
 					<?php if(!empty($Piece)): ?>
 						<?php foreach($Piece as $value) : ?>
 							<tr>
-								<td><?=$value['id'];?></td>
+								<td class="optimphone"><?=$value['id'];?></td>
 								<td><?=$value['name'];?></td>
 								<td><?=$value['quantity'];?></td>
 								<?php if($value['newPrice'] == 0) : ?>
@@ -131,9 +131,9 @@
 								<?php elseif($value['newPrice'] > 0) : ?>
 									<td><?=$value['newPrice'];?></td>
 								<?php endif; ?>
-								<td><?=$value['statut'];?></td>
+								<td class="optimphone"><?=$value['statut'];?></td>
 								<td><a href="<?=$this->url('updateItem', ['id'=>$value['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>
-								<td><button class="btn btn-danger delete-item" data-id="<?=$value['id']?>">Effacer le produit</button></td>
+								<td><button class="btn btn-danger delete-item" data-id="<?=$value['id']?>">Effacer</button></td>
 							</tr>	
 						<?php endforeach;?>
 					<?php else: ?>
@@ -150,7 +150,7 @@
 				<?= ($nb2 < 1 ) ? '' : ($page!= ceil($nb2/$max) ? '<a href="?'. $search .'page='. ($page + 1) .'"><i class="fa fa-arrow-right fa-fw" aria-hidden="true"></i></a>':''); ?>
 			</div>
 
-			<br><br>
+			<br class="optimphone"><br class="optimphone">
 
 			<h3>Catégorie Divers</h3>
 			<div class="form-group">
@@ -160,11 +160,11 @@
 			<br><br>
 			<table class="table table-responsive">
 				<thead class="backgthead">
-					<th>N°</th>
+					<th class="optimphone">N°</th>
 					<th>Nom</th>
 					<th>Quantité</th>
 					<th>Prix</th>
-					<th>statut</th>
+					<th class="optimphone">statut</th>
 					<th colspan="2">Action</th>
 				</thead>
 
@@ -172,7 +172,7 @@
 					<?php if(!empty($Divers)): ?>
 						<?php foreach($Divers as $value) : ?>
 							<tr>
-								<td><?=$value['id'];?></td>
+								<td class="optimphone"><?=$value['id'];?></td>
 								<td><?=$value['name'];?></td>
 								<td><?=$value['quantity'];?></td>
 								<?php if($value['newPrice'] == 0) : ?>
@@ -180,9 +180,9 @@
 								<?php elseif($value['newPrice'] > 0) : ?>
 									<td><?=$value['newPrice'];?></td>
 								<?php endif; ?>
-								<td><?=$value['statut'];?></td>
+								<td class="optimphone"><?=$value['statut'];?></td>
 								<td><a href="<?=$this->url('updateItem', ['id'=>$value['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>
-								<td><button class="btn btn-danger delete-item" data-id="<?=$value['id']?>">Effacer le produit</button></td>
+								<td><button class="btn btn-danger delete-item" data-id="<?=$value['id']?>">Effacer</button></td>
 							</tr>	
 						<?php endforeach;?>
 					<?php else: ?>

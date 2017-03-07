@@ -15,11 +15,11 @@
 		<br><br>
 		<table class="table table-responsive">
 			<thead class="backgthead">
-				<th>Civilité</th>
-				<th>Rôle</th>
+				<th class="title_home_phone">Civilité</th>
+				<th class="title_home_phone">Rôle</th>
 				<th>Nom</th>
-				<th>Prénom</th>
-				<th>Pseudonyme</th>
+				<th class="title_home_phone">Prénom</th>
+				<th class="title_home_phone">Pseudonyme</th>
 				<th>Adresse email</th>
 				<th colspan="2">Action</th>
 			</thead>
@@ -28,14 +28,14 @@
 				<?php if(!empty($users)): ?>
 					<?php foreach($users as $user) : ?>
 						<tr>
-							<td><?=$user['social_title'];?></td>
-							<td><?=$user['role'];?></td>
+							<td class="title_home_phone"><?=$user['social_title'];?></td>
+							<td class="title_home_phone"><?=$user['role'];?></td>
 							<td><?=$user['lastname'];?></td>
-							<td><?=$user['firstname'];?></td>
-							<td><?=$user['username'];?></td>
+							<td class="title_home_phone"><?=$user['firstname'];?></td>
+							<td class="title_home_phone"><?=$user['username'];?></td>
 							<td><?=$user['email'];?></td>
-							<td><a href="<?=$this->url('updateUser', ['id'=>$user['id']]);?>">Mettre à jour le profil</a></td>
-							<td><button class="btn btn-danger delete-user" data-id="<?=$user['id']?>">Effacer le profil</button></td>
+							<td><a href="<?=$this->url('updateUser', ['id'=>$user['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></i></a></td>
+							<td><button class="btn btn-danger delete-user" data-id="<?=$user['id']?>">Effacer</button></td>
 						</tr>	
 					<?php endforeach;?>
 				<?php else: ?>

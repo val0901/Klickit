@@ -12,10 +12,10 @@
 			<br><br>	
 			<table class="table table-responsive">
 				<thead class="backgthead">
-					<th>Pseudonyme</th>
-					<th>Adresse email</th>
+					<th class="title_home_phone">Pseudonyme</th>
+					<th class="title_home_phone">Adresse email</th>
 					<th>Sujet</th>
-					<th>Contenu</th>
+					<th class="title_home_phone">Contenu</th>
 					<th>Statut</th>
 					<th colspan="2">Action</th>
 				</thead>
@@ -31,13 +31,13 @@
 								}
 							?>
 							<tr>
-								<td <?=$bold?> ><?=$message['username'];?></td>
-								<td <?=$bold?> ><?=$message['email'];?></td>
+								<td <?=$bold?> class="title_home_phone"><?=$message['username'];?></td>
+								<td <?=$bold?> class="title_home_phone"><?=$message['email'];?></td>
 								<td <?=$bold?> ><?=$message['subject'];?></td> 
-								<td <?=$bold?> ><?=substr($message['content'], 0, 30).'...';?></td>
+								<td <?=$bold?> class="title_home_phone"><?=substr($message['content'], 0, 30).'...';?></td>
 								<td <?=$bold?> ><?=$message['statut'];?></td>
-								<td><a href="<?=$this->url('viewMessage', ['id'=>$message['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>
-								<td><button class="btn btn-danger delete-message" data-id="<?=$message['id']?>">Effacer le message</button></td>
+                                <td><a href="<?=$this->url('viewMessage', ['id'=>$message['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></i></a></td>
+								<td><button class="btn btn-danger delete-message" data-id="<?=$message['id']?>">Effacer</button></td>
 							</tr>	
 						<?php endforeach;?>
 					<?php else: ?>
