@@ -479,7 +479,28 @@
 			});
 		});
 	</script>
-	<script>
+    <script>
+// effet +1 AJOUTER AU PANIER
+        var counter = 0;
+
+// When we click "Add to Basket"...
+$('.add-to-basket').click(function(){
+  // Add the animation class
+  $('.item--helper, .basket').addClass('added');
+  // Increase the counter
+  counter++;
+  // Add the new counter to the basket after 1s
+  var buttonCount = setTimeout(function(){
+    $('.basket').attr('data-count', counter);
+  }, 1000);
+  // Remove the animation classes after 1.5s
+  var wait = setTimeout(function(){
+    $('.item--helper, .basket').removeClass('added');
+  }, 1500);
+});
+    </script>
+	
+    <script>
 
 	/*ICONE DE DECONNEXION*/
 $(document).ready(function(){
