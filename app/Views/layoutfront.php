@@ -183,7 +183,11 @@
 					<!--icon-cog menu-->
                     <li class="span_float">
                     	<?php if(!empty($_SESSION['user']) && isset($_SESSION['user'])): ?>
-                        	<form><button id="logout" type="submit" data-id="login_out"><i class="fa fa-sign-out fa-5x icon_cursor navR_color" aria-hidden="true" id="cogicon_click" title="Deconnexion" style="color: #ea2229;"></i></button></form>
+                        	<form>
+                                <button id="logout" type="submit" data-id="login_out">
+                                    <i id="logout" class="fa fa-sign-out fa-5x icon_cursor" aria-hidden="true" id="cogicon_click" title="Deconnexion" style="color: #ea2229;"></i>
+                                </button>
+                            </form>
                         <?php endif; ?>
                     </li>
                     <!--End icon-cog menu-->
