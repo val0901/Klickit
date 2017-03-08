@@ -41,7 +41,7 @@
 
 <!--Les derniers commentaires-->
 <div class="vignetteEvent_hide">
-    <a href="<?=$this->url('front_contact')?>"><img class="img-responsive" src="<?=$this->assetUrl('/img/vignetteEvent1.png');?>" id="vignette_hover" onmouseover="vignettehover();" onmouseout="vignetteout();"></a>
+    <a class="ahoveroff" href="<?=$this->url('front_contact')?>"><img class="img-responsive" src="<?=$this->assetUrl('/img/vignetteEvent1.png');?>" id="vignette_hover" onmouseover="vignettehover();" onmouseout="vignetteout();"></a>
 </div>
 <div class="row commtaire_back">
     <div class="col-md-2"></div>
