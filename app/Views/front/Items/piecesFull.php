@@ -104,12 +104,12 @@
 	                    </div>
 						<div class="viewcategory_button">
 							<?php if(!empty($_SESSION['user'])): ?>
-                                <button type="button" class="changeArrow btn viewcategory_button_size add_to_shopping_cart" data-id="<?=$product['id']?>">  <span class="name">
+                                <button type="button" class="changeArrow btn viewcategory_button_size add_to_shopping_cart ahoveroff" data-id="<?=$product['id']?>">  <span class="name">
                                     Ajouter au panier
                                     </span>
                                 </button>
                             <?php else : ?>
-                                <a href="<?=$this->url('login');?>" target="_blank"><button id="simple" type="button" class="changeArrow btn viewcategory_button_size" data-id="<?=$product['id']?>">  <span class="name">
+                                <a class="ahoveroff" href="<?=$this->url('login');?>" target="_blank"><button id="simple" type="button" class="changeArrow btn viewcategory_button_size ahoveroff" data-id="<?=$product['id']?>">  <span class="name">
                                     Ajouter au panier
                                     </span>
                                 </button></a>
@@ -174,7 +174,7 @@
                     	<?php foreach ($afficheNewItem1 as $newProduct) : ?>
 	                        <li class="span3">
 	                            <div class="thumbnail">
-	                                <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
+	                                <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img class="ahoveron" src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
 	                            </div>
 	                            <div class="caption">
 	                            	<?php if($newProduct['newPrice'] == 0) : ?>
@@ -207,7 +207,7 @@
                         <?php foreach ($afficheNewItem2 as $newProduct) : ?>
                        	    <li class="span3">
                        	        <div class="thumbnail">
-                       	            <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
+                       	            <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img class="ahoveron" src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
                        	        </div>
                        	        <div class="caption">
                        	            <?php if($newProduct['newPrice'] == 0) : ?>
@@ -240,7 +240,7 @@
                         <?php foreach ($afficheNewItem3 as $newProduct) : ?>
 	                        <li class="span3">
 	                            <div class="thumbnail">
-	                                <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
+	                                <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img class="ahoveron" src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
 	                            </div>
 	                            <div class="caption">
 	                            	<?php if($newProduct['newPrice'] == 0) : ?>

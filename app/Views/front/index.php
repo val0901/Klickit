@@ -93,7 +93,7 @@
     <!--
 ../../../app/Views/front/Event/viewEvent.php
 -->
-    <a href="<?=$this->url('front_events');?>"> <img class="img-responsive" src="<?=$this->assetUrl('slide/'.$slide['picture']);?>"></a>
+    <a href="<?=$this->url('front_events');?>"> <img class="ahoveron" class="img-responsive" src="<?=$this->assetUrl('slide/'.$slide['picture']);?>"></a>
 </div>
 <!--End Le dernier évènement-->
 
@@ -114,7 +114,7 @@
                             <?php foreach ($statut1 as $newProduct) : ?>
                             <li class="span3">
                                 <div class="thumbnail">
-                                    <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
+                                    <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img class="ahoveron" src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
                                 </div>
                                 <div class="caption">
                                     <?php if($newProduct['newPrice'] == 0) : ?>
@@ -146,7 +146,7 @@
                             <?php foreach ($statut2 as $newProduct) : ?>
                             <li class="span3">
                                 <div class="thumbnail">
-                                    <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
+                                    <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img class="ahoveron" src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
                                 </div>
 
                                 <div class="caption">
@@ -179,7 +179,7 @@
                             <?php foreach ($statut3 as $newProduct) : ?>
                             <li class="span3">
                                 <div class="thumbnail">
-                                    <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
+                                    <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img class="ahoveron" src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
                                 </div>
                                 <div class="caption">
                                     <?php if($newProduct['newPrice'] == 0) : ?>

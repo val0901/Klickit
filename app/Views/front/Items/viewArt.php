@@ -15,7 +15,7 @@
                             <img src="<?=$this->assetUrl('art/'.$items['picture1']);?>">
                         </li>
                         <!-- ajout 2e image-->
-                        <li style="background: #aaa;">
+                        <li style="background: #fff;">
                             <img src="<?=$this->assetUrl('art/'.$items['picture2']);?>">
                         </li>
                     </ul>

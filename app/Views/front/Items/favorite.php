@@ -30,7 +30,7 @@
             <?php $list_items = $items->findItems($value['id_item']); ?>
                 <div class="col-lg-3 col-sm-6">
                     <div class="thumbnail">
-                        <a href="<?=$this->url('viewArt', ['id' => $list_items['id']]);?>"><img src="<?=$this->assetUrl('art/'.$list_items['picture1']);?>" alt=""></a>
+                        <a href="<?=$this->url('viewArt', ['id' => $list_items['id']]);?>"><img class="ahoveron" src="<?=$this->assetUrl('art/'.$list_items['picture1']);?>" alt=""></a>
                     </div>
                     <div class="caption">
                         <?php if($list_items['newPrice'] == 0) : ?>

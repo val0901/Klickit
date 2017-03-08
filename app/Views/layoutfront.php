@@ -119,7 +119,7 @@
                     
                     <!--icon-shoppingcart-->
                     <li class="span_float">
-                        <i class="fa fa-shopping-cart fa-5x icon_cursor navR_color fa-fw" aria-hidden="true" id="shoppingicon_click"></i>
+                        <i class="fa fa-shopping-cart fa-5x icon_cursor navR_color fa-fw ahoveron" aria-hidden="true" id="shoppingicon_click"></i>
 						<!--<span class="shoppingcart_quantity">1</span>-->
 						<div class="shoppingsoumenu_hidden">
 							<div id="reloadBasket">
@@ -365,12 +365,12 @@
 			<div class="row footerrow_margin">
 				<div class="col-md-4 etiq_width">
 					<p class="footertitle">Société</p>
-						<a href="<?=$this->url('front_legalMention');?>"><p class="footertext" style="color: #fff;">Mentions légales</p></a>				
-						<a href="<?=$this->url('front_cgv');?>"><p class="footertext" style="color: #fff;">Condition Générales de Ventes</p></a>
-						<a href="<?=$this->url('front_createEvent');?>"><p class="footertext" style="color: #fff;">Création d'évènement Playmobil</p></a>
-						<a href="<?=$this->url('front_contact');?>"><p class="footertext" style="color: #fff;">Contact</p></a>
-						<a href="<?=$this->url('front_team');?>"><p class="footertext" style="color: #fff;">Equipe de création</p></a>
-						<a href="<?=$this->url('fGuestbook');?>"><p class="footertext" style="color: #fff;">Laissez nous votre avis</p></a>
+						<a href="<?=$this->url('front_legalMention');?>"><p class="footertext ahoveron" style="color: #fff;">Mentions légales</p></a>				
+						<a href="<?=$this->url('front_cgv');?>"><p class="footertext ahoveron" style="color: #fff;">Condition Générales de Ventes</p></a>
+						<a href="<?=$this->url('front_createEvent');?>"><p class="footertext ahoveron" style="color: #fff;">Création d'évènement Playmobil</p></a>
+						<a href="<?=$this->url('front_contact');?>"><p class="footertext ahoveron" style="color: #fff;">Contact</p></a>
+						<a href="<?=$this->url('front_team');?>"><p class="footertext ahoveron" style="color: #fff;">Equipe de création</p></a>
+						<a href="<?=$this->url('fGuestbook');?>"><p class="footertext ahoveron" style="color: #fff;">Laissez nous votre avis</p></a>
                     
                     <a href="<?=$this->url('front_aPropos');?>" alt="Lien vers A propos contenant les paiements acceptés" title="Voir les paiements acceptés"><img class="img-responsive paypalfooter" max-width="228px" src="<?=$this->assetUrl('/img/buy-logo-large-fr.png')?>" data-pin-nopin="true"></a>                        
 
@@ -403,12 +403,12 @@
 				</div>
 				<div class="col-xs-6 etiq_width_small">
 					<p class="footertitle">Société</p>
-					<a href="<?=$this->url('front_legalMention');?>"><p class="footertext">Mentions légales</p></a>
-					<a href="<?=$this->url('front_cgv');?>"><p class="footertext">Condition Générales de Ventes</p></a>
-					<a href="<?=$this->url('front_createEvent');?>"><p class="footertext">Création d'évènement Playmobil</p></a>
-					<a href="<?=$this->url('front_contact');?>"><p class="footertext">Contact</p></a>
-					<a href="<?=$this->url('front_team');?>"><p class="footertext">Equipe de création</p></a>
-					<a href="<?=$this->url('fGuestbook');?>"><p class="footertext">Laissez nous votre avis</p></a>
+					<a href="<?=$this->url('front_legalMention');?>"><p class="footertext ahoveron">Mentions légales</p></a>
+					<a href="<?=$this->url('front_cgv');?>"><p class="footertext ahoveron">Condition Générales de Ventes</p></a>
+					<a href="<?=$this->url('front_createEvent');?>"><p class="footertext ahoveron">Création d'évènement Playmobil</p></a>
+					<a href="<?=$this->url('front_contact');?>"><p class="footertext ahoveron">Contact</p></a>
+					<a href="<?=$this->url('front_team');?>"><p class="footertext ahoveron">Equipe de création</p></a>
+					<a href="<?=$this->url('fGuestbook');?>"><p class="footertext ahoveron">Laissez nous votre avis</p></a>
 					<br>
 					<p class="footertitle">Suivez-nous</p>
 					<a href="https://www.facebook.com/Klickit-787164048000917/" target="_blank"><i class="fa fa-facebook-square fa-2x footer_neticon" aria-hidden="true"> <span class="footertext">Sur Facebook</span></i></a>
