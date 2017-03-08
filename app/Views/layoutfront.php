@@ -118,7 +118,7 @@
                     <!--End icon-user menu-->
                     
                     <!--icon-shoppingcart-->
-                    <li class="span_float">
+                    <li class="span_float basket">
                         <i class="fa fa-shopping-cart fa-5x icon_cursor navR_color fa-fw ahoveron" aria-hidden="true" id="shoppingicon_click"></i>
 						<!--<span class="shoppingcart_quantity">1</span>-->
 						<div class="shoppingsoumenu_hidden">
@@ -480,24 +480,19 @@
 		});
 	</script>
     <script>
-// effet +1 AJOUTER AU PANIER
-        var counter = 0;
+		// effet +1 AJOUTER AU PANIER
+		// When we click "Add to Basket"...
+		$('.add-to-basket').click(function(){
+			var idProduct = $(this).data('id');
 
-// When we click "Add to Basket"...
-$('.add-to-basket').click(function(){
-  // Add the animation class
-  $('.item--helper, .basket').addClass('added');
-  // Increase the counter
-  counter++;
-  // Add the new counter to the basket after 1s
-  var buttonCount = setTimeout(function(){
-    $('.basket').attr('data-count', counter);
-  }, 1000);
-  // Remove the animation classes after 1.5s
-  var wait = setTimeout(function(){
-    $('.item--helper, .basket').removeClass('added');
-  }, 1500);
-});
+		    // Add the animation class
+		    $('#'+idProduct+', .basket').addClass('added');
+
+		    // Remove the animation classes after 1.5s
+		    var wait = setTimeout(function(){
+		        $('#'+idProduct+', .basket').removeClass('added');
+		    }, 1000);
+		});
     </script>
 	
     <script>

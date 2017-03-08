@@ -103,8 +103,9 @@
 								<div class="viewcategory_defaut"></div>
 							<?php endif; ?>
 	                    </div>
+	                    
                         <!-- container +1 -->
-                        <div class="item--helper">
+                        <div id="<?=$product['id'];?>" class="item--helper">
                             <span id="plus1">+1</span>
                         </div>
 						<div class="viewcategory_button item">

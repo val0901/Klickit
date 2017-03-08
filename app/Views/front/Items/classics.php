@@ -107,18 +107,19 @@
                             <?php endif; ?>
                         </div>
 
-                        <!--BOUTON AJOUTER AU PANIER-->
-                        <!--j'ai supprimé .bottom dans la class-->
+                        <!-- container +1 -->
+                        <div id="<?=$product['id'];?>" class="item--helper">
+                            <span id="plus1">+1</span>
+                        </div>
                         <div class="viewcategory_button">
-                            
                             <!--j'ai supprimé .btn-primary dans la class button-->
                             <?php if(!empty($_SESSION['user'])): ?>
-                                <button id="simple" type="button" class="changeArrow btn viewcategory_button_size add_to_shopping_cart ahoveroff" data-id="<?=$product['id']?>">  <span class="name">
+                                <button id="simple" type="button" class="changeArrow btn viewcategory_button_size add_to_shopping_cart ahoveroff add-to-basket" data-id="<?=$product['id']?>">  <span class="name">
                                     Ajouter au panier
                                     </span>
                                 </button>
                             <?php else : ?>
-                                <a class="ahoveroff" href="<?=$this->url('login');?>" target="_blank"><button id="simple" type="button" class="changeArrow btn viewcategory_button_size" data-id="<?=$product['id']?>">  <span class="name">
+                                <a class="ahoveroff" href="<?=$this->url('login');?>" target="_blank"><button id="simple" type="button" class="changeArrow btn viewcategory_button_size ahoveroff add-to-basket" data-id="<?=$product['id']?>">  <span class="name">
                                     Ajouter au panier
                                     </span>
                                 </button></a>
