@@ -828,9 +828,9 @@ class AjaxFrontController extends Controller
 					$viewSearch.= '<div class="viewcategory_defaut"></div>';
 				}
 
-				$viewSearch.= '</div><div class="viewcategory_button"><button type="submit" class="btn btn-primary viewcategory_button_size add_to_shopping_cart" data-id="'.$item['id'].'">ajouter au panier</button></div></div>';
+				$viewSearch.= '<div id="'.$item['id'].'" class="item--helper"> <span id="plus1">+1</span> </div> </div><div class="viewcategory_button"><button type="submit" class="btn btn-primary viewcategory_button_size add_to_shopping_cart ahoveroff add-to-basket" data-id="'.$item['id'].'">ajouter au panier</button></div></div>';
 			}
-
+                            
 			if(!empty($viewSearch)){
 				$json = [
 					'code'     => 'ok',

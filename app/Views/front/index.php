@@ -113,62 +113,99 @@
                         <ul class="thumbnails">
                             <?php foreach ($statut1 as $newProduct) : ?>
                             <li class="span3">
-                                <div class="thumbnail">
-                                    <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img class="ahoveron" src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
-                                </div>
-                                <div class="caption">
-                                    <?php if($newProduct['newPrice'] == 0) : ?>
-                                    <h4><?=$newProduct['price'];?>€</h4>
-                                    <?php else : ?>
-                                    <h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
-                                    <?php endif; ?>
-                                    <p><?=$newProduct['name'];?></p>
+                                <div>
+                                    <div class="thumbnail">
+                                        <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img class="ahoveron" src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
+                                    </div>
+                                    <div class="caption">
+                                        <?php if($newProduct['newPrice'] == 0) : ?>
+                                        <h4><?=$newProduct['price'];?>€</h4>
+                                        <?php else : ?>
+                                        <h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
+                                        <?php endif; ?>
+                                        <p><?=$newProduct['name'];?></p>
 
-                                    <?php if($newProduct['statut'] == 'nouveaute'):?>
-                                    <div class="viewcategory_nouveau"><?=$newProduct['statut'];?></div>
-                                    <?php elseif($newProduct['statut'] == 'promotion'):?>
-                                    <div class="viewcategory_promo"><?=$newProduct['statut'];?></div>
-                                    <?php elseif($newProduct['statut'] == 'defaut'): ?>
-                                    <div class="viewcategory_defaut"></div>
-                                    <?php endif; ?>
-                                    <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
+                                        <?php if($newProduct['statut'] == 'nouveaute'):?>
+                                        <div class="viewcategory_nouveau"><?=$newProduct['statut'];?></div>
+                                        <?php elseif($newProduct['statut'] == 'promotion'):?>
+                                        <div class="viewcategory_promo"><?=$newProduct['statut'];?></div>
+                                        <?php elseif($newProduct['statut'] == 'defaut'): ?>
+                                        <div class="viewcategory_defaut"></div>
+                                        <?php endif; ?>
+                                        <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
+                                    </div>
+                                </div>
+
+                                <!-- container +1 -->
+                                <div id="<?=$newProduct['id'];?>" class="item--helper">
+                                    <span id="plus1">+1</span>
                                 </div>
                                 <div class="viewcategory_button">
-                                    <button type="button" class="btn btn-primary viewcategory_button_size add_to_shopping_cart" data-id="<?=$product['id']?>">ajouter au panier</button>
-                                </div><br>
+                                    <!--j'ai supprimé .btn-primary dans la class button-->
+                                    <?php if(!empty($_SESSION['user'])): ?>
+                                        <button id="simple" type="button" class="changeArrow btn viewcategory_button_size add_to_shopping_cart ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
+                                            Ajouter au panier
+                                            </span>
+                                        </button>
+                                    <?php else : ?>
+                                        <a class="ahoveroff" href="<?=$this->url('login');?>" target="_blank"><button id="simple" type="button" class="changeArrow btn viewcategory_button_size ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
+                                            Ajouter au panier
+                                            </span>
+                                        </button></a>
+                                    <?php endif; ?>
+                                </div>
+                            <br>
                                 
                             </li>
                             <?php endforeach; ?>
                         </ul>
                     </div><!-- /Slide1 --> 
+
                     <div class="item">
                         <ul class="thumbnails">
                             <?php foreach ($statut2 as $newProduct) : ?>
                             <li class="span3">
-                                <div class="thumbnail">
-                                    <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img class="ahoveron" src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
+                                <div>
+                                    <div class="thumbnail">
+                                        <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img class="ahoveron" src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
+                                    </div>
+
+                                    <div class="caption">
+                                        <?php if($newProduct['newPrice'] == 0) : ?>
+                                        <h4><?=$newProduct['price'];?>€</h4>
+                                        <?php else : ?>
+                                        <h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
+                                        <?php endif; ?>
+                                        <p><?=$newProduct['name'];?></p>
+
+                                        <?php if($newProduct['statut'] == 'nouveaute'):?>
+                                        <div class="viewcategory_nouveau"><?=$newProduct['statut'];?></div>
+                                        <?php elseif($newProduct['statut'] == 'promotion'):?>
+                                        <div class="viewcategory_promo"><?=$newProduct['statut'];?></div>
+                                        <?php elseif($newProduct['statut'] == 'defaut'): ?>
+                                        <div class="viewcategory_defaut"></div>
+                                        <?php endif; ?>
+                                        <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
+                                    </div>
                                 </div>
-
-                                <div class="caption">
-                                    <?php if($newProduct['newPrice'] == 0) : ?>
-                                    <h4><?=$newProduct['price'];?>€</h4>
-                                    <?php else : ?>
-                                    <h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
-                                    <?php endif; ?>
-                                    <p><?=$newProduct['name'];?></p>
-
-                                    <?php if($newProduct['statut'] == 'nouveaute'):?>
-                                    <div class="viewcategory_nouveau"><?=$newProduct['statut'];?></div>
-                                    <?php elseif($newProduct['statut'] == 'promotion'):?>
-                                    <div class="viewcategory_promo"><?=$newProduct['statut'];?></div>
-                                    <?php elseif($newProduct['statut'] == 'defaut'): ?>
-                                    <div class="viewcategory_defaut"></div>
-                                    <?php endif; ?>
-                                    <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
+                                <div id="<?=$newProduct['id'];?>" class="item--helper">
+                                    <span id="plus1">+1</span>
                                 </div>
                                 <div class="viewcategory_button">
-                                    <button type="button" class="btn btn-primary viewcategory_button_size add_to_shopping_cart" data-id="<?=$product['id']?>">ajouter au panier</button>
-                                </div><br>
+                                    <!--j'ai supprimé .btn-primary dans la class button-->
+                                    <?php if(!empty($_SESSION['user'])): ?>
+                                        <button id="simple" type="button" class="changeArrow btn viewcategory_button_size add_to_shopping_cart ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
+                                            Ajouter au panier
+                                            </span>
+                                        </button>
+                                    <?php else : ?>
+                                        <a class="ahoveroff" href="<?=$this->url('login');?>" target="_blank"><button id="simple" type="button" class="changeArrow btn viewcategory_button_size ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
+                                            Ajouter au panier
+                                            </span>
+                                        </button></a>
+                                    <?php endif; ?>
+                                </div>
+                                <br>
 
                             </li>
                             <?php endforeach; ?>
@@ -178,39 +215,47 @@
                         <ul class="thumbnails">
                             <?php foreach ($statut3 as $newProduct) : ?>
                             <li class="span3">
-                                <div class="thumbnail">
-                                    <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img class="ahoveron" src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
-                                </div>
-                                <div class="caption">
-                                    <?php if($newProduct['newPrice'] == 0) : ?>
-                                    <h4><?=$newProduct['price'];?>€</h4>
-                                    <?php else : ?>
-                                    <h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
-                                    <?php endif; ?>
-                                    <p><?=$newProduct['name'];?></p>
+                                <div>
+                                    <div class="thumbnail">
+                                        <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img class="ahoveron" src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
+                                    </div>
+                                    <div class="caption">
+                                        <?php if($newProduct['newPrice'] == 0) : ?>
+                                        <h4><?=$newProduct['price'];?>€</h4>
+                                        <?php else : ?>
+                                        <h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
+                                        <?php endif; ?>
+                                        <p><?=$newProduct['name'];?></p>
 
-                                    <?php if($newProduct['statut'] == 'nouveaute'):?>
-                                    <div class="viewcategory_nouveau"><?=$newProduct['statut'];?></div>
-                                    <?php elseif($newProduct['statut'] == 'promotion'):?>
-                                    <div class="viewcategory_promo"><?=$newProduct['statut'];?></div>
-                                    <?php elseif($newProduct['statut'] == 'defaut'): ?>
-                                    <div class="viewcategory_defaut"></div>
-                                    <?php endif; ?>
-                                    <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
+                                        <?php if($newProduct['statut'] == 'nouveaute'):?>
+                                        <div class="viewcategory_nouveau"><?=$newProduct['statut'];?></div>
+                                        <?php elseif($newProduct['statut'] == 'promotion'):?>
+                                        <div class="viewcategory_promo"><?=$newProduct['statut'];?></div>
+                                        <?php elseif($newProduct['statut'] == 'defaut'): ?>
+                                        <div class="viewcategory_defaut"></div>
+                                        <?php endif; ?>
+                                        <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
+                                    </div>
+                                </div>
+                                
+                                <div id="<?=$newProduct['id'];?>" class="item--helper">
+                                    <span id="plus1">+1</span>
                                 </div>
                                 <div class="viewcategory_button">
+                                    <!--j'ai supprimé .btn-primary dans la class button-->
                                     <?php if(!empty($_SESSION['user'])): ?>
-                                        <button id="simple" type="button" class="changeArrow btn viewcategory_button_size add_to_shopping_cart" data-id="<?=$product['id']?>">  <span class="name">
+                                        <button id="simple" type="button" class="changeArrow btn viewcategory_button_size add_to_shopping_cart ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
                                             Ajouter au panier
                                             </span>
                                         </button>
                                     <?php else : ?>
-                                        <a href="<?=$this->url('login');?>" target="_blank"><button id="simple" type="button" class="changeArrow btn viewcategory_button_size" data-id="<?=$product['id']?>">  <span class="name">
+                                        <a class="ahoveroff" href="<?=$this->url('login');?>" target="_blank"><button id="simple" type="button" class="changeArrow btn viewcategory_button_size ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
                                             Ajouter au panier
                                             </span>
                                         </button></a>
                                     <?php endif; ?>
-                                </div><br>
+                                </div>
+                                <br>
                                 
                             </li>
                             <?php endforeach; ?>

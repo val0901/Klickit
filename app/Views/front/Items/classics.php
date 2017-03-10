@@ -506,10 +506,24 @@ $(document).ready(function(){
                                 dataType: 'json',
                                 success: function(out){
                                     if(out.code == 'ok'){
-                                        // window.location.href= window.location.href;
+                                        $('#reloadBasket').load('<?=$this->url('reloadBasket');?>');
                                     }
                                 }
                             });
+                        });
+
+                        // effet +1 AJOUTER AU PANIER
+                        // When we click "Add to Basket"...
+                        $('.add-to-basket').click(function(){
+                            var idProduct = $(this).data('id');
+
+                            // Add the animation class
+                            $('#'+idProduct+', .basket').addClass('added');
+
+                            // Remove the animation classes after 1.5s
+                            var wait = setTimeout(function(){
+                                $('#'+idProduct+', .basket').removeClass('added');
+                            }, 1000);
                         });
                     }
                     else if(search.code == 'no'){
