@@ -201,10 +201,7 @@
                     if(up.code == 'paypal'){
                         window.location.href = up.link;
                     }
-                    else if(up.code == 'cheque'){
-                        window.location.href = "<?=$this->url('front_payNoPayPal');?>";
-                    }
-                    else if(up.code == 'virement'){
+                    else {
                         window.location.href = "<?=$this->url('front_payNoPayPal');?>";
                     }
                 }
