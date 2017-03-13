@@ -21,16 +21,16 @@
             Développeur web junior    
         </h2>
         <div class=text-description>
-            Sortant d'un Bac Pro Commerce, j'ai décidé de me réorienter vers un domaine qui me plaisait, j'ai donc trouvé mon bonheur dans le développement Web. 
+            Sortant d'un Bac Pro Commerce, j'ai décidé de me réorienter vers un domaine qui me plaisait, j'ai donc trouvé mon bonheur dans le développement Web grâce à la formation WebForce3 qui m'a permis de me spécialisé en PHP/JavaScript/Jquery/MySQL tout en maitrisant les bases CSS3 et HTML5. 
 
             <br><br>
-            Le challenge, me creuser la tête pour trouver des solutions techniques, me donner à fond pour réussir et réaliser mes objectifs, c'est ce qui me plaît en tant que développeur Back Junior. 
+            Le challenge, me creuser la tête pour trouver des solutions techniques, me donner à fond pour réussir et réaliser mes objectifs, c'est ce qui me plaît en tant que développeur. 
 
             <br><br>
             À court terme je souhaite être indépendant en micro entreprise pour affiner mes compétences en Web. Mon objectif est d'apprendre des langages de programmation plus adaptés aux jeux vidéo pour être développeur jeux vidéo.              <br><br>
             <a class="linkteam" href="https://www.linkedin.com/in/th%C3%A9o-appelius-19441b137/" target="_blank">Contacter Théo</a>
             <br>
-            Twitter : @AppeliusTheo
+            Twitter : <a class="linkteam" href="https://twitter.com/AppeliusTheo" target="_blank">@AppeliusTheo</a>
         </div>
     </div>
 
@@ -53,6 +53,8 @@
             <br><br>
 
             <a class="linkteam" href="#" target="_blank">Contacter Valérie</a>
+            <br>
+            Twitter : <a class="linkteam" href="https://twitter.com/baldy_symezac" target="_blank">@baldy_symezac</a>
 
         </div>
     </div>
@@ -81,7 +83,8 @@
 
 
             <a class="linkteam" href="https://www.linkedin.com/in/webdesign-cecile-lafont/" target="_blank">Contacter Cécile</a>
-            Twitter : @emaginetapub
+            <br>
+            Twitter : <a class="linkteam" href="https://twitter.com/emaginetapub" target="_blank">@emaginetapub</a>
 
         </div>
     </div>
@@ -107,7 +110,7 @@
             <br><br>
             <a class="linkteam" href="https://www.linkedin.com/in/landy-razafindrabe-15847b5a" target="_blank">Contacter Landy</a>
             <br>
-            Twitter : @lrazafindrabe
+            Twitter : <a class="linkteam" href="https://twitter.com/LRazafindrabe" target="_blank">@lrazafindrabe</a>
 
         </div>
     </div>
