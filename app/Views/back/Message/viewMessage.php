@@ -33,7 +33,7 @@
 			<div class="form-group">
 		  		<label class="col-md-4 control-label" for="email">Votre adresse email (CC)</label>  
 		  		<div class="col-md-4">
-		  			<input id="email" name="email" placeholder="exemple@mail.com" class="form-control input-md" required="" type="text"> 
+		  			<input id="email" name="email" placeholder="exemple@mail.com" class="form-control input-md" type="text"> 
 		  		</div>
 			</div>
 

@@ -104,16 +104,28 @@ class MessageController extends Controller
 				$post[$key] = trim(strip_tags($value));
 			}
 
-			if(!v::notEmpty()->email()->validate($post['email'])){
-				$errors[] = 'L\'adresse email n\'est pas valide';
-			}
+			if(empty($post['email'])){
 
-			if(!v::notEmpty()->length(5,null)->validate($post['subject'])){
-				$errors[] = 'Le sujet du message doit au moins comporter 5 caractères';
-			}
+				if(!v::notEmpty()->length(5,null)->validate($post['subject'])){
+					$errors[] = 'Le sujet du message doit au moins comporter 5 caractères';
+				}
 
-			if(!v::notEmpty()->length(10,null)->validate($post['content'])){
-				$errors[] = 'Le message doit au moins comporter 10 caractères';
+				if(!v::notEmpty()->length(10,null)->validate($post['content'])){
+					$errors[] = 'Le message doit au moins comporter 10 caractères';
+				}
+			}elseif(!empty($post['email'])){
+				
+				if(!v::notEmpty()->email()->validate($post['email'])){
+					$errors[] = 'L\'adresse email n\'est pas valide';
+				}
+
+				if(!v::notEmpty()->length(5,null)->validate($post['subject'])){
+					$errors[] = 'Le sujet du message doit au moins comporter 5 caractères';
+				}
+
+				if(!v::notEmpty()->length(10,null)->validate($post['content'])){
+					$errors[] = 'Le message doit au moins comporter 10 caractères';
+				}
 			}
 
 			if(count($errors) === 0){
