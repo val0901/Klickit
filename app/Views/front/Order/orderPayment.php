@@ -199,13 +199,13 @@
                 dataType: 'json',
                 success: function(up){
                     if(up.code == 'paypal'){
-                        window.location.assign(up.link);
+                        window.location.href = up.link;
                     }
                     else if(up.code == 'cheque'){
-                        window.location.assign("<?=$this->url('front_payNoPayPal');?>");
+                        window.location.href = "<?=$this->url('front_payNoPayPal');?>";
                     }
                     else if(up.code == 'virement'){
-                        window.location.assign("<?=$this->url('front_payNoPayPal');?>");
+                        window.location.href = "<?=$this->url('front_payNoPayPal');?>";
                     }
                 }
             });

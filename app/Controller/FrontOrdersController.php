@@ -234,7 +234,12 @@ class FrontOrdersController extends MasterController
 			];
 		}	
 
-		$this->showStuff('front/User/pdfOrder', $data);
+		if(!empty($this->getUser())){
+			$this->showStuff('front/User/pdfOrder', $data);
+		}
+		else {
+			$this->redirectToRoute('login');
+		}
 	}
 
 	//Page de réussite après paiement
@@ -299,11 +304,13 @@ class FrontOrdersController extends MasterController
 				'idOrder'	=> $current_orderID,
 			];
 
-			$this->showStuff('front/Order/pay', $data);
-			//var_dump($payment);
+			if(!empty($this->getUser())){
+				$this->showStuff('front/Order/pay', $data);
+			}
+			else {
+				$this->redirectToRoute('login');
+			}
 		}	
-		
-
 	}
 
 	//Page de réussite après paiment par chèque ou virement
@@ -328,7 +335,12 @@ class FrontOrdersController extends MasterController
 				'idOrder'	=> $current_orderID,
 			];
 
-		$this->showStuff('front/Order/payNoPayPal', $data);
+		if(!empty($this->getUser())){
+			$this->showStuff('front/Order/payNoPayPal', $data);
+		}
+		else {
+			$this->redirectToRoute('login');
+		}
 	}
 
 }
