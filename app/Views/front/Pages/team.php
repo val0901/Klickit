@@ -18,7 +18,7 @@
             </div>
         </div>
         <h2 class="h2team">            
-            Développeur web junior    
+            Développeur Full Stack junior    
         </h2>
         <div class=text-description>
             Sortant d'un Bac Pro Commerce, j'ai décidé de me réorienter vers un domaine qui me plaisait, j'ai donc trouvé mon bonheur dans le développement Web grâce à la formation WebForce3 qui m'a permis de me spécialisé en PHP/JavaScript/Jquery/MySQL tout en maitrisant les bases CSS3 et HTML5. 
@@ -99,7 +99,7 @@
             </div>
         </div>
         <h2 class="h2team">            
-            Développeur web junior    
+            Développeur Full Stack junior    
         </h2>
         <div class=text-description>
             Issu d'un DUT Métiers du Multimédia et de l’Internet, j'ai décidé d'effectuer la formation Webforce3 pour améliorer mes compétences acquises. Cette formation m'a permis de mieux maîtriser PHP/MySQL ainsi que les techniques d’intégration web.             
