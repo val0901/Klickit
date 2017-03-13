@@ -113,13 +113,13 @@ class BackController extends Controller
 				$sendMail->isSMTP();                                      
 				$sendMail->Host = 'ssl0.ovh.net';  									// Hôte du SMTP
 				$sendMail->SMTPAuth = true;                               				// SMTP Authentification
-				$sendMail->Username = 'sav@klickit.fr'; //Username         				// SMTP username
+				$sendMail->Username = 'contact@klickit.fr'; //Username         				// SMTP username
 				$sendMail->Password = 'silSAV33@'; //mot de passe                    	 				// SMTP password
 				$sendMail->SMTPSecure = 'tls';                         					// Enable TLS encryption, `ssl` also accepted
 				$sendMail->Port = 587;                                					// TCP port to connect to
 				$sendMail->CharSet = 'UTF-8';
 
-				$sendMail->setFrom('sav@klickit.fr', 'Klickit');		  				//Expéditeur
+				$sendMail->setFrom('contact@klickit.fr', 'Klickit');		  				//Expéditeur
 				$sendMail->addAddress($post['email'], $name_user); 	   	//Destinataire
 
 				$sendMail->Subject = 'Réinitialisation du mot de passe';
