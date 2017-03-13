@@ -31,7 +31,7 @@
 		<h3> Répondre au message de <?=$message['username']?></h3>
 
 			<div class="form-group">
-		  		<label class="col-md-4 control-label" for="email">Votre adresse email (CC)</label>  
+		  		<label class="col-md-4 control-label" for="email">Adresse Email pour Carbon Copy (pas obligatoire)</label>  
 		  		<div class="col-md-4">
 		  			<input id="email" name="email" placeholder="exemple@mail.com" class="form-control input-md" type="text"> 
 		  		</div>
