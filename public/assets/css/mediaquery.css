@@ -49,9 +49,11 @@
         display: none;
     }
 
+/* problème marge right scroll vertical firefox
     ul.navbar-right.search_dropdownbox_width.search {
         margin-right: -49px;
     }
+*/
     /* search */
     .soumenu_search{
         width: 1153%
@@ -349,7 +351,7 @@
     }
     /* search */
     .soumenu_search{
-        width: 1206%
+        width: 1206%;
     }
     /* cptuser.php */
     div#rowcptuser {

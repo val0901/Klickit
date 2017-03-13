@@ -12,17 +12,17 @@ html, body {
     -ms-flex-direction: column;
     flex-direction: column;
 }
-
+ul.navbar-right.search_dropdownbox_width.search{
+    margin-right: 0;
+}
 .container {
     margin: 20px auto;
     padding: 0px;
 }
-
 a {
     text-decoration: none;
     color: #fe941e;
 }
-
 a:hover {
     color: #fff;
     text-decoration: none;
@@ -368,9 +368,11 @@ input#search {
 .col-md-9.colmarginL.colR_back.search {
     width: 100%;
 }
+/* problème marge right scroll vertical firefox
 ul.navbar-right.search_dropdownbox_width.search {
     margin-right: -46px;
 }
+*/
 a:hover,
 a:focus {
     color: #fff;
