@@ -62,10 +62,10 @@
 								<td>
 									<?php   if ($order['statut'] == 'enPreparation') : ?>
 										 		<p>En préparation</p>
-										 		<button  class="optimphone" type="button" data-id="<?=$order['id']?>" class="order_sent" style="color:black;">Commande expédiée</button>
+										 		<button  class="optimphone order_sent" type="button" data-id="<?=$order['id']?>" style="color:black;">Commande expédiée</button>
 									<?php	elseif ($order['statut'] == 'commande') : ?>
 										  		<p>Commandé</p>
-										  		<button  class="optimphone" type="button" data-id="<?=$order['id']?>" class="order_prepare" style="color:black;">Commande en préparation</button>
+										  		<button  class="optimphone order_prepare" type="button" data-id="<?=$order['id']?>" style="color:black;">Commande en préparation</button>
 									<?php	elseif ($order['statut'] == 'expedie') : ?>
 										  		<p>Expédiée</p>
 									<?php   endif; ?>
