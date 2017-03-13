@@ -64,7 +64,7 @@
 <input type="checkbox"> <span class="viewcategorycheckbox_font"> Promo</span>
 </label>
 </div>
-</li> -->
+</li> --> 
             </div>
             <!--End viewcategory row2 col1-->
 
