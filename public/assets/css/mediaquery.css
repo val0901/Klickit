@@ -15,7 +15,15 @@
         float: left;
         margin: 0 0px;
     }
-
+    .span4 {
+        width: 21%;
+    }
+    .viewcategoryprixpromo {
+        font-size: 3vw;
+    }
+    .viewcategoryprixdelete {
+    font-size: 2.3vw;
+    }
     .slidecontent_nouveau {
         font-size: 3.1vw;
     }
@@ -30,6 +38,9 @@
 
     .caption p {
         font-size: 2.5vw;
+        line-height: 5vh;
+        min-height: 10vh;
+        
     }
 
     .viewcategory_nouveau {
@@ -58,6 +69,19 @@
     .soumenu_search{
         width: 1153%
     }
+    /* Style départ animation */
+    .item--helper-slide {
+        width: 6rem;
+        box-shadow: 0 1px 2px rgba(0,0,0,.2);
+        position: absolute;
+        right: 4%;
+        top: 250px;
+        z-index: 1;
+        -webkit-transform: scale(2);
+        transform: scale(2);
+        opacity: 0;
+    }
+    
     
 }
 
@@ -121,11 +145,6 @@
     .viewcategorycaption p {
         font-size: 1.3vw;
     }
-
-    .viewcategoryprixpromo {
-        font-size: 2vw;
-    }
-
     .orderlogin_box {
         width: 97%;
         padding-left: 0px;
@@ -167,7 +186,29 @@
     /* search */
     .soumenu_search{
         width: 1198%
-    }    
+    }
+        /* Style départ animation */
+    .item--helper-slide {
+        width: 6rem;
+        box-shadow: 0 1px 2px rgba(0,0,0,.2);
+        position: absolute;
+        right: 4%;
+        top: 150px;
+        z-index: 1;
+        -webkit-transform: scale(2);
+        transform: scale(2);
+        opacity: 0;
+    }
+    .span4 {
+        width: 20%;
+    }
+    .viewcategoryprixpromo {
+        font-size: 3vw;
+    }
+    .viewcategoryprixdelete {
+        font-size: 2.3vw;
+    }
+
 
 }
 
@@ -270,7 +311,32 @@
     div#rowcptuser {
     font-size: 3vw;
     }
-
+    .span4 {
+    width: 40%;
+    }
+    .caption p {
+    font-size: 3vw;
+    line-height: 3vh;
+    min-height: 6vh;
+    }
+    .viewcategoryprixdelete {
+        font-size: 2.7vw;
+    }
+    .viewcategory_button_size {
+        font-size: xx-large;
+    }
+    .item--helper-slide {
+    top: 325px;
+    }
+    #usericon_click {
+        font-size: 5vw;
+    }
+    #shoppingicon_click {
+        font-size: 5vw;
+    }
+    i#logout{
+        font-size: 5vw;
+    }
     
 }
 
@@ -292,12 +358,6 @@
         display: none;
     }
     #cogicon_click {
-        font-size: 6vw;
-    }
-    #usericon_click {
-        font-size: 6vw;
-    }
-    #shoppingicon_click {
         font-size: 6vw;
     }
     .footertitle {
@@ -326,7 +386,7 @@
         padding:40px 20px;
     }
     .viewcategory_button_size {
-        font-size: 2.5vw;
+        font-size: x-large;
     }
     .ordertable_title {
         margin-top: 5vw;
@@ -357,6 +417,9 @@
     div#rowcptuser {
     font-size: 4vw;
     }
+    .item--helper-slide {
+    top: 400px;
+}
 
 }
 
@@ -365,11 +428,9 @@
     .navli_width {
         width: 100%;
     }
-
     .navlicon_width {
         width: 100%;
     }
-
     .dropdown-menu {
         background-clip: padding-box;
         background-color: #fff;
@@ -476,7 +537,32 @@
     div#rowcptuser {
     font-size: 4vw;
     }
-    
+    .span4 {
+    width: 40%;
+    }
+    .caption h4 {
+    font-size: xx-large;
+    }
+    .viewcategoryprixpromo {
+    font-size: xx-large;
+    }
+    .viewcategoryprixdelete {
+        font-size: x-large;
+    }
+    .viewcategory_button_size {
+        font-size: medium;
+    }
+    .item--helper-slide {
+    top: 300px;
+    }
+    .caption p {
+        font-size: 3vw;
+        line-height: 2.85vh;
+        min-height: 2vh;
+        height: 4vh;
+    }    
+
+
 }
 
 /* JUSQU A 767 PX*/
@@ -499,9 +585,27 @@
     }
     /* cptuser.php */
     div#rowcptuser {
-    font-size: 7vw;
+        font-size: 7vw;
     }
-    
+    .span4 {
+        width: 78%;
+    }
+    .caption p {
+        font-size: 5vw;
+        line-height: 2vh;
+        min-height: 4vh;
+        height: 4vh;
+    }
+    .item--helper-slide {
+        right: 5px;    
+        top: 250px;
+    }
+    .viewcategory_promo {
+        font-size: 5.5vw;
+    }
+    .viewcategory_nouveau {
+        font-size: 5.5vw;
+    }
 }
 
 /* JUSQU A 320 PX*/

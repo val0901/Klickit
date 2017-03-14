@@ -112,7 +112,7 @@
                     <div class="item active">
                         <ul class="thumbnails">
                             <?php foreach ($statut1 as $newProduct) : ?>
-                            <li class="span3">
+                            <li class="span4">
                                 <div>
                                     <div class="thumbnail">
                                         <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img class="ahoveron" src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
@@ -123,7 +123,7 @@
                                         <?php else : ?>
                                         <h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
                                         <?php endif; ?>
-                                        <p><?=$newProduct['name'];?></p>
+                                        <p class="title_slide_name"><?=$newProduct['name'];?></p>
 
                                         <?php if($newProduct['statut'] == 'nouveaute'):?>
                                         <div class="viewcategory_nouveau"><?=$newProduct['statut'];?></div>
@@ -137,7 +137,7 @@
                                 </div>
 
                                 <!-- container +1 -->
-                                <div id="<?=$newProduct['id'];?>" class="item--helper">
+                                <div id="<?=$newProduct['id'];?>" class="item--helper-slide">
                                     <span id="plus1">+1</span>
                                 </div>
                                 <div class="viewcategory_button">
@@ -164,7 +164,7 @@
                     <div class="item">
                         <ul class="thumbnails">
                             <?php foreach ($statut2 as $newProduct) : ?>
-                            <li class="span3">
+                            <li class="span4">
                                 <div>
                                     <div class="thumbnail">
                                         <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img class="ahoveron" src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
@@ -176,7 +176,7 @@
                                         <?php else : ?>
                                         <h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
                                         <?php endif; ?>
-                                        <p><?=$newProduct['name'];?></p>
+                                        <p class="title_slide_name"><?=$newProduct['name'];?></p>
 
                                         <?php if($newProduct['statut'] == 'nouveaute'):?>
                                         <div class="viewcategory_nouveau"><?=$newProduct['statut'];?></div>
@@ -188,7 +188,7 @@
                                         <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
                                     </div>
                                 </div>
-                                <div id="<?=$newProduct['id'];?>" class="item--helper">
+                                <div id="<?=$newProduct['id'];?>" class="item--helper-slide">
                                     <span id="plus1">+1</span>
                                 </div>
                                 <div class="viewcategory_button">
@@ -214,7 +214,7 @@
                     <div class="item">
                         <ul class="thumbnails">
                             <?php foreach ($statut3 as $newProduct) : ?>
-                            <li class="span3">
+                            <li class="span4">
                                 <div>
                                     <div class="thumbnail">
                                         <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img class="ahoveron" src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
@@ -225,7 +225,7 @@
                                         <?php else : ?>
                                         <h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
                                         <?php endif; ?>
-                                        <p><?=$newProduct['name'];?></p>
+                                        <p class="title_slide_name"><?=$newProduct['name'];?></p>
 
                                         <?php if($newProduct['statut'] == 'nouveaute'):?>
                                         <div class="viewcategory_nouveau"><?=$newProduct['statut'];?></div>
@@ -238,7 +238,7 @@
                                     </div>
                                 </div>
                                 
-                                <div id="<?=$newProduct['id'];?>" class="item--helper">
+                                <div id="<?=$newProduct['id'];?>" class="item--helper-slide">
                                     <span id="plus1">+1</span>
                                 </div>
                                 <div class="viewcategory_button">

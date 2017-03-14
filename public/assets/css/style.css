@@ -201,14 +201,18 @@ div#view {
     font-size: 3.7vw;
 }
 
+/*
 #usericon_click {
     position: relative;
     font-size: 3.7vw;
 }
+*/
 
+/*
 #shoppingicon_click {
     font-size: 3.7vw;
 }
+*/
 
 .span_float {
     position: relative;
@@ -967,15 +971,20 @@ a.ahoveroff:hover {
 /* Thumbnail Box */
 .caption h4 {
     color: #ea2229;
-    font-size: 1.5vw;
+    font-size: 2vw;
+    letter-spacing: 2px;
     text-align: center;
     font-weight: 600;
 }
 
 .caption p {
     color: #000;
-    font-size: 1.1vw;
+    font-size: 2vw;
+    line-height: 5vh;
     text-align: center;
+}
+.title_slide_name{
+    height: 8vh;
 }
 
 .btn.btn-mini {
@@ -1017,6 +1026,13 @@ input::-moz-focus-inner { border: 0; }
     width: 21.9%;
     float: left;
     margin: 0 20px;
+}
+/* spécial slide */
+.span4 {
+    width: 21.7%;
+    float: left;
+    margin: 0 20px;
+    position: relative;
 }
 
 .thumbnails {
@@ -1220,11 +1236,12 @@ h4 {
 
 .viewcategoryprixdelete {
     text-decoration:line-through;
+    font-size: 1.8vw;
 }
 
 .viewcategoryprixpromo {
     color: #3fa9f5;
-    font-size: 1.5vw;
+    font-size: 2vw;
 }
 
 .viewcategory_nouveau {
@@ -1477,9 +1494,21 @@ h1.goodToGo {
     transform: scale(2);
     opacity: 0;
 }
+/* Style départ animation */
+.item--helper-slide {
+    width: 6rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    position: absolute;
+    right: 7%;
+    top: 300px;
+    z-index: 1;
+    -webkit-transform: scale(2);
+    transform: scale(2);
+    opacity: 0;
+}
 
 /* Declare the animation for adding to basket */
-.item--helper.added {
+.item--helper.added, .item--helper-slide.added {
     -webkit-animation: basket-fly 1s ease-in-out;
     animation: basket-fly 1s ease-in-out;  
 }
