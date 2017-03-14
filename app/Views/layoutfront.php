@@ -174,7 +174,7 @@
 								</div>
 							</div>
 							<div>
-								<a href="<?=$this->url('front_orderList')?>"><button type="button" class="btn btn-primary shoppingmenu_button">VOIR PANIER</button></a>
+								<!-- <a href="<?//=$this->url('front_orderList')?>"><button type="button" class="btn btn-primary shoppingmenu_button">VOIR PANIER</button></a> -->
 							</div>
                         </div>
                     </li>
