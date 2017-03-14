@@ -65,12 +65,6 @@
 		['GET|POST', '/admin/listOrders', 'Orders#listOrders', 'listOrders'],
 		['GET|POST', '/admin/viewOrder/[i:id]', 'Orders#viewOrders', 'viewOrders'],
 
-
-		//Pages liées à ShippingController
-		['GET|POST', '/admin/listShipping', 'Shipping#listShipping', 'listShipping'],
-		['GET|POST', '/admin/addShipping', 'Shipping#addShipping', 'addShipping'],
-		['GET|POST', '/admin/updateShipping/[i:id]', 'Shipping#updateShipping', 'updateShipping'],
-
 		//Pages liées à GuestbookController
 		['GET|POST', '/admin/listGuestbook', 'Guestbook#listGuestbook', 'listGuestbook'],
 		['GET|POST', '/admin/moderation/[i:id]', 'Guestbook#moderation', 'moderation'],

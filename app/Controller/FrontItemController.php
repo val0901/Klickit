@@ -617,8 +617,27 @@ class FrontItemController extends MasterController
 			$favoriteList = substr($myFavorite, 0, -2);
 		}
 
+		$i = 0;
+		while ($i < 3){
+			$i++;
+			shuffle($afficheNewItems);
+			switch ($i) {
+				case 1:
+					$statut1 = array_slice($afficheNewItems, 0, 4);
+					break;
+				case 2:
+					$statut2 = array_slice($afficheNewItems, 0, 4);
+					break;
+				case 3:
+					$statut3 = array_slice($afficheNewItems, 0, 4);
+					break;
+			}
+		}
+
 		$data = [
-			'afficheNewItem' => $afficheNewItems,
+			'afficheNewItem1' => $statut1,
+			'afficheNewItem2' => $statut2,
+			'afficheNewItem3' => $statut3,
 			'favorite'		 => explode(', ', $favoriteList),
 			'items'			 => $items,
 		];
