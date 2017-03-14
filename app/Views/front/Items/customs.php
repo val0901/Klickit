@@ -36,17 +36,19 @@
 			<div class="viewcategoryrow2col1customs_tirer"><a id="customsmenu_scat" href="<?=$this->url('listItemCustoms', ['sub_category'=>'PiecesEnResine']);?>">Pièces en résine</a></div>
 			<div class="viewcategoryrow2col1customs_tirer"><a id="customsmenu_scat" href="<?=$this->url('listItemCustoms', ['sub_category'=>'Stickers']);?>">Stickers</a></div>
 			<li>
-				<h3 class="viewcategoryrow2col1_title">filtres</h3>
-				<div class="form-group viewcategory_checkboxmargin">
+				<?php if(!empty($filters)) : ?>
+					<h3 class="viewcategoryrow2col1_title">filtres</h3>
 					<div class="form-group viewcategory_checkboxmargin">
-						<?php foreach ($filters as $filter) : ?>
-							<label class="viewcategorycheckbox_border">
-							<input type="checkbox" class="filter_value" value='<?=$filter['name'];?>'> <span class="viewcategorycheckbox_font"><?=ucfirst($filter['name']);?></span>
-							</label>
-						<?php endforeach; ?>
-						<button type="button" id="searchFilter" class="changeArrow ahoveron">Rechercher</button>
+						<div class="form-group viewcategory_checkboxmargin">
+							<?php foreach ($filters as $filter) : ?>
+								<label class="viewcategorycheckbox_border">
+								<input type="checkbox" class="filter_value" value='<?=$filter['name'];?>'> <span class="viewcategorycheckbox_font"><?=ucfirst($filter['name']);?></span>
+								</label>
+							<?php endforeach; ?>
+							<button type="button" id="searchFilter" class="changeArrow ahoveron">Rechercher</button>
+						</div>
 					</div>
-				</div>
+				<?php endif; ?>
 			</li>
 			<!-- <li>
 				<h3 class="viewcategoryrow2col1_title">état</h3>
@@ -136,7 +138,7 @@
 					<div class="col-md-3 viewcategorypage_center">
 						
 					</div>
-					<div class="col-md-6 viewcategorypage_center">
+					<div class="col-md-6 viewcategorypage_center viewPagination">
 					<?php $search = (isset($_GET['search']))? 'search='. $_GET['search'].'&' :'';?>
 					<div id="pagination">
 						<?= ($page!=1) ? '<a href="?'. $search .'page='. ($page - 1) .'"><i class="fa fa-arrow-left fa-fw" style="color:black;"></i></a>':''; ?>
@@ -450,6 +452,7 @@
 					success: function(search){
 						if(search.code == 'ok'){
 							$('#replace').html(search.msg);
+							$('.viewPagination').css('display', 'none');
 							$('.favorite').click(function(e){
 								e.preventDefault();
 

@@ -147,7 +147,7 @@
                     <div class="col-md-3 viewcategorypage_center">
 
                     </div>
-                    <div class="col-md-6 viewcategorypage_center">
+                    <div class="col-md-6 viewcategorypage_center viewPagination">
                         <?php $search = (isset($_GET['search']))? 'search='. $_GET['search'].'&' :'';?>
                         <div id="pagination">
                             <?= ($page!=1) ? '<a href="?'. $search .'page='. ($page - 1) .'"><i class="fa fa-arrow-left fa-fw" style="color:black;"></i></a>':''; ?>
@@ -519,6 +519,7 @@ $(document).ready(function(){
                 success: function(search){
                     if(search.code == 'ok'){
                         $('#replace').html(search.msg);
+                        $('.viewPagination').css('display', 'none');
                         $('.favorite').click(function(e){
                             e.preventDefault();
 
