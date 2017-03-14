@@ -717,7 +717,7 @@ class AjaxController extends Controller
 		if(empty($allOrder)){
 			$json = [
 				'code' => 'no',
-				'msg'  => 'Aucune mise à jour du chiffre d\'affaire disponible, réessayez quand vous aurez vendu quelque chose ;)',
+				'msg'  => 'Aucune mise à jour du chiffre d\'affaire disponible <br> <span style="color:red;">/!\ Seule les commandes expédiés entre en compte pour le chiffre d\'affaire /!\</span> <br> So ... go get money :]',
 			];
 			$this->showJson($json);
 		}
