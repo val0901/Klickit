@@ -2380,7 +2380,7 @@ input#impression:active {
 .favoritedelete_button_size {
     background-color: #391e20;
     border: 0 none;
-    font-size: 1vw;
+    font-size: 3vh;
     text-transform: uppercase;
     margin-top: 10px;
 }
