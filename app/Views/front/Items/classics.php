@@ -178,7 +178,7 @@
                         <div class="item active">
                             <ul class="thumbnails">
                                 <?php foreach ($afficheNewItem1 as $newProduct) : ?>
-                                <li class="span3">
+                                <li class="span4">
                                     <div class="thumbnail">
                                         <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img class="ahoveron" src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
                                     </div>
@@ -211,7 +211,7 @@
                         <div class="item">
                             <ul class="thumbnails">
                                 <?php foreach ($afficheNewItem2 as $newProduct) : ?>
-                                <li class="span3">
+                                <li class="span4">
                                     <div class="thumbnail">
                                         <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img class="ahoveron" src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
                                     </div>
@@ -244,7 +244,7 @@
                         <div class="item">
                             <ul class="thumbnails">
                                 <?php foreach ($afficheNewItem3 as $newProduct) : ?>
-                                <li class="span3">
+                                <li class="span4">
                                     <div class="thumbnail">
                                         <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img class="ahoveron" src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
                                     </div>

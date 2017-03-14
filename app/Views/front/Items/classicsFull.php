@@ -164,13 +164,13 @@
 <div class="row-fluid">
 <div class="span12">
 
-        
+
     <div class="carousel slide" id="myCarousel">
         <div class="carousel-inner">
             <div class="item active">
                     <ul class="thumbnails">
                     	<?php foreach ($afficheNewItem1 as $newProduct) : ?>
-	                        <li class="span3">
+	                        <li class="span4">
 	                            <div class="thumbnail">
 	                                <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
 	                            </div>
@@ -196,6 +196,26 @@
 									<div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
 	                                <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
 	                            </div>
+                                <!-- container +1 -->
+                                <div id="<?=$newProduct['id'];?>" class="item--helper-slide">
+                                    <span id="plus1">+1</span>
+                                </div>
+                                <div class="viewcategory_button">
+                                    <!--j'ai supprimé .btn-primary dans la class button-->
+                                    <?php if(!empty($_SESSION['user'])): ?>
+                                        <button id="simple" type="button" class="changeArrow btn viewcategory_button_size add_to_shopping_cart ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
+                                            Ajouter au panier
+                                            </span>
+                                        </button>
+                                    <?php else : ?>
+                                        <a class="ahoveroff" href="<?=$this->url('login');?>" target="_blank"><button id="simple" type="button" class="changeArrow btn viewcategory_button_size ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
+                                            Ajouter au panier
+                                            </span>
+                                        </button></a>
+                                    <?php endif; ?>
+                                </div>
+                                <br><br>
+
 	                        </li>
 	                    <?php endforeach; ?>
                     </ul>
@@ -203,7 +223,7 @@
             <div class="item">
                     <ul class="thumbnails">
                         <?php foreach ($afficheNewItem2 as $newProduct) : ?>
-                       	    <li class="span3">
+                       	    <li class="span4">
                        	        <div class="thumbnail">
                        	            <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
                        	        </div>
@@ -229,6 +249,25 @@
                        			<div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
                        	        <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
                        	        </div>
+                                <!-- container +1 -->
+                                <div id="<?=$newProduct['id'];?>" class="item--helper-slide">
+                                    <span id="plus1">+1</span>
+                                </div>
+                                <div class="viewcategory_button">
+                                    <!--j'ai supprimé .btn-primary dans la class button-->
+                                    <?php if(!empty($_SESSION['user'])): ?>
+                                        <button id="simple" type="button" class="changeArrow btn viewcategory_button_size add_to_shopping_cart ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
+                                            Ajouter au panier
+                                            </span>
+                                        </button>
+                                    <?php else : ?>
+                                        <a class="ahoveroff" href="<?=$this->url('login');?>" target="_blank"><button id="simple" type="button" class="changeArrow btn viewcategory_button_size ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
+                                            Ajouter au panier
+                                            </span>
+                                        </button></a>
+                                    <?php endif; ?>
+                                </div>
+<br><br>
                        	    </li>
                        	<?php endforeach; ?>
                     </ul>
@@ -236,7 +275,7 @@
             <div class="item">
                     <ul class="thumbnails">
                         <?php foreach ($afficheNewItem3 as $newProduct) : ?>
-	                        <li class="span3">
+	                        <li class="span4">
 	                            <div class="thumbnail">
 	                                <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
 	                            </div>
@@ -259,8 +298,28 @@
 										<?php endif; ?>
 										</span> <?=$newProduct['name'];?>
 	                				</p>
+									<div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
 	                                <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
 	                            </div>
+                                <!-- container +1 -->
+                                <div id="<?=$newProduct['id'];?>" class="item--helper-slide">
+                                    <span id="plus1">+1</span>
+                                </div>
+                                <div class="viewcategory_button">
+                                    <!--j'ai supprimé .btn-primary dans la class button-->
+                                    <?php if(!empty($_SESSION['user'])): ?>
+                                        <button id="simple" type="button" class="changeArrow btn viewcategory_button_size add_to_shopping_cart ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
+                                            Ajouter au panier
+                                            </span>
+                                        </button>
+                                    <?php else : ?>
+                                        <a class="ahoveroff" href="<?=$this->url('login');?>" target="_blank"><button id="simple" type="button" class="changeArrow btn viewcategory_button_size ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
+                                            Ajouter au panier
+                                            </span>
+                                        </button></a>
+                                    <?php endif; ?>
+                                </div>
+<br><br>
 	                        </li>
 	                    <?php endforeach; ?>
                     </ul>
