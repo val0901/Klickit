@@ -14,6 +14,7 @@ use \Model\MessageModel;
 use \Model\GuestbookModel;
 use \Model\EventModel;
 use \Model\SlideModel;
+use \Model\FavoriteModel;
 use \W\Security\AuthentificationModel;
 use \W\Security\AuthorizationModel;
 use \W\Security\StringUtils;
@@ -38,6 +39,22 @@ class FrontController extends MasterController
 
 		$getStatut = new ItemModel();
 		$statut = $getStatut->findStatut('nouveaute', 'promotion');
+
+		$favorite = new FavoriteModel();
+		$favoriteList = '';
+		if(!empty($this->getUser())){
+			$userFavorite = $favorite->findFavorisItem($_SESSION['user']['id']);
+
+			$myFavorite = '';
+
+			foreach ($userFavorite as $favoris) {
+				foreach ($favoris as $value) {
+					$myFavorite.= $value.', ';
+				}
+			}
+
+			$favoriteList = substr($myFavorite, 0, -2);
+		}
 		
 		$getSlide = new SlideModel();
 
@@ -67,6 +84,7 @@ class FrontController extends MasterController
 			'statut1'		=> $statut1,
 			'statut2'		=> $statut2,
 			'statut3'		=> $statut3,
+			'favorite'		=> explode(', ', $favoriteList),
 			'slide'			=> $getSlide->find($RealLastSlide),
 		];	
 
