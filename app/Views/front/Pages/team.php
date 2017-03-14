@@ -21,13 +21,13 @@
             Développeur Full Stack junior    
         </h2>
         <div class=text-description>
-            Sortant d'un Bac Pro Commerce, j'ai décidé de me réorienter vers un domaine qui me plaisait, j'ai donc trouvé mon bonheur dans le développement Web grâce à la formation WebForce3 qui m'a permis de me spécialisé en PHP/JavaScript/Jquery/MySQL tout en maitrisant les bases CSS3 et HTML5. 
+            Sortant d'un Bac Pro Commerce, j'ai décidé de me réorienter vers un domaine qui me plaisait, j'ai donc trouvé mon bonheur dans le développement Web grâce à la formation WebForce3 qui m'a permis de me spécialiser en PHP/JavaScript/Jquery/MySQL tout en maitrisant les bases CSS3 et HTML5. 
 
             <br><br>
             Le challenge, me creuser la tête pour trouver des solutions techniques, me donner à fond pour réussir et réaliser mes objectifs, c'est ce qui me plaît en tant que développeur. 
 
             <br><br>
-            À court terme je souhaite être indépendant en micro entreprise pour affiner mes compétences en Web. Mon objectif est d'apprendre des langages de programmation plus adaptés aux jeux vidéo pour être développeur jeux vidéo.              <br><br>
+            À court terme, je souhaite être indépendant en micro entreprise pour affiner mes compétences en Web. Mon objectif est d'apprendre des langages de programmation plus adaptés aux jeux vidéo pour être développeur jeux vidéo.              <br><br>
             <a class="linkteam" href="https://www.linkedin.com/in/th%C3%A9o-appelius-19441b137/" target="_blank">Contacter Théo</a>
             <br>
             Twitter : <a class="linkteam" href="https://twitter.com/AppeliusTheo" target="_blank">@AppeliusTheo</a>
@@ -44,15 +44,17 @@
             </div>
         </div>
         <h2 class="h2team">            
-            Développeur Back End    
+            Développeur Web junior   
         </h2>
         <div class=text-description>
-            Proinde die funestis interrogationibus praestituto imaginarius iudex equitum resedit magister adhibitis aliis iam quae essent agenda praedoctis, et adsistebant hinc inde notarii, quid quaesitum esset, quidve responsum, cursim ad Caesarem perferentes, cuius imperio truci, stimulis reginae exsertantis aurem subinde per aulaeum, nec diluere obiecta permissi nec defensi periere conplures.
+            Etant attirée par l’informatique depuis plusieurs années, j’ai décidé de franchir le pas de la reconversion : j’ai commencé par une certification ayant pour thème « Les réseaux, l’IT (systèmes d’information) et moi » délivrée par orange pour faire le point sur mes connaissances.
             <br><br>
-            Dum apud Persas, ut supra narravimus, perfidia regis motus agitat insperatos, et in eois tractibus bella rediviva consurgunt, anno sexto decimo et eo diutius post Nepotiani exitium, saeviens per urbem aeternam urebat cuncta Bellona, ex primordiis minimis ad clades excita luctuosas, quas obliterasset utinam iuge silentium! ne forte paria quandoque temptentur, plus exemplis generalibus nocitura quam delictis.
+            Après des recherches, je me suis orientée vers la formation de développeur Web dispensée par Webforce 3, formation courte et enrichissante me permettant d’apprendre les bases et d’accéder au marché du travail rapidement.
             <br><br>
-
-            <a class="linkteam" href="#" target="_blank">Contacter Valérie</a>
+            Les certifications de développeur et intégrateur Web obtenues avec succès, dans une démarche de progression, je dois maintenant me perfectionner et découvrir d’autres technologies.
+            <br><br>
+    
+            <a class="linkteam" href="https://twitter.com/baldy_symezac" target="_blank">Contacter Valérie</a>
             <br>
             Twitter : <a class="linkteam" href="https://twitter.com/baldy_symezac" target="_blank">@baldy_symezac</a>
 
@@ -129,7 +131,7 @@
         </h2>
 
         <div class=text-description>
-            Experte en Html5, CSS3, Javascript, Jquery, AngularJS, PHP et mySQL et intermédiaire en Wordpress et responsiveresponsive web design.  J'ai 4 ans d'expérience dans le métier de développeur Web et suite à une formation WebForce3, j'ai toutes les compétences pour être développeur Full Stack.
+            Experte en Html5, CSS3, Javascript, Jquery, AngularJS, PHP et mySQL et intermédiaire en Wordpress et responsive web design.  J'ai 4 ans d'expérience dans le métier de développeur Web et suite à une formation WebForce3, j'ai toutes les compétences pour être développeur Full Stack.
 
             <br><br>
             Ma prochaine étape : développer sur mobile. Ma meilleure expérience à Shanghai : un site mobile sur une App WECHAT pour une agence immobilière.  
