@@ -120,7 +120,7 @@
 		    </select>
 		  </div>
 		</div>
-
+		<p style="color:red;">/!\ Pensez à ajouter les filtres AVANT d'enregistrer le produit (dans le cas ou vous n'avez pas de filtre, veuillez les créer dans la catégorie "Filtres") /!\</p>
 		<!-- Multiple Checkboxes -->
 		<div class="form-group">
 		  <label class="col-md-4 control-label" for="checkboxes">Filtre :</label>

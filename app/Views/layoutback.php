@@ -61,13 +61,13 @@
 						          <ul class="nav navbar-nav navbar-justified
 						          ">
 							        <li><a href="<?=$this->url('back_index');?>">Accueil</a></li>
-							        <li><a href="<?=$this->url('listSales');?>">Chiffre d'affaires</a></li>
-							        <li><a href="<?=$this->url('listUser');?>">Utilisateur</a></li>
-						            <li><a href="<?=$this->url('listMessage');?>">Message</a></li>
-						            <li><a href="<?=$this->url('listEvent');?>">Evènement</a></li>
-						            <li><a href="<?=$this->url('listSlide');?>">Bandeau</a></li>
-						            <li><a href="<?=$this->url('listItem');?>">Article</a></li>
-						            <li><a href="<?=$this->url('listOrders');?>">Commande</a></li>
+							        <li><a href="<?=$this->url('listSales');?>">Chiffres d'affaires</a></li>
+							        <li><a href="<?=$this->url('listUser');?>">Utilisateurs</a></li>
+						            <li><a href="<?=$this->url('listMessage');?>">Messages</a></li>
+						            <li><a href="<?=$this->url('listEvent');?>">Evènements</a></li>
+						            <li><a href="<?=$this->url('listSlide');?>">Bandeaux</a></li>
+						            <li><a href="<?=$this->url('listItem');?>">Articles</a></li>
+						            <li><a href="<?=$this->url('listOrders');?>">Commandes</a></li>
 						            <li><a href="<?=$this->url('listFilter');?>">Filtres</a></li>
 						            <li><a href="<?=$this->url('listGuestbook');?>">Livre d'Or</a></li>
 						          </ul>

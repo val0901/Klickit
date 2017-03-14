@@ -8,7 +8,7 @@
 		<div class="col-md-3" style="position:relative;">
 			<div class="classic_text_show"><span>Customs</span></div>
 			<img class="img-responsive" src="<?=$this->assetUrl('/img/img_custom.jpg');?>">
-			<div class="customs_text"><a href="/Klickit/public/Customs" style="color:white">Customs</a></div>
+			<div class="customs_text"><a href="www.klickit.fr/public/Customs" style="color:white">Customs</a></div>
 		</div>
 		<div class="col-md-9">
 			<div class="container_general">
@@ -379,19 +379,19 @@
 			
 			var locationOk = true;
 
-			if(window.location.pathname == '/Klickit/public/Customs/CustomsTampographies'){
+			if(window.location.pathname == '/public/Customs/CustomsTampographies'){
 				var locationOk = true;
 			}
-			else if(window.location.pathname == '/Klickit/public/Customs/CustomsPeints'){
+			else if(window.location.pathname == '/public/Customs/CustomsPeints'){
 				var locationOk = true;
 			}
-			else if(window.location.pathname == '/Klickit/public/Customs/BustesTampographies'){
+			else if(window.location.pathname == '/public/Customs/BustesTampographies'){
 				var locationOk = true;
 			}
-			else if(window.location.pathname == '/Klickit/public/Customs/PiecesEnResine'){
+			else if(window.location.pathname == '/public/Customs/PiecesEnResine'){
 				var locationOk = true;
 			}
-			else if(window.location.pathname == '/Klickit/public/Customs/Stickers'){
+			else if(window.location.pathname == '/public/Customs/Stickers'){
 				var locationOk = true;
 			}
 			else {
@@ -402,23 +402,23 @@
 			}
 
 			/********************* FIL D'ARIANNE *********************/
-			if(window.location.pathname == '/Klickit/public/Customs/CustomsTampographies'){
+			if(window.location.pathname == '/public/Customs/CustomsTampographies'){
 				$('#arianne_js').text('Customs Tampographiés');
 				$('#arianne_js').attr('<?=$this->url('listItemCustoms', ['sub_category' =>'CustomsTampographies']);?>');
 			}
-			else if(window.location.pathname == '/Klickit/public/Customs/CustomsPeints'){
+			else if(window.location.pathname == '/public/Customs/CustomsPeints'){
 				$('#arianne_js').text('Customs Peints');
 				$('#arianne_js').attr('<?=$this->url('listItemCustoms', ['sub_category' =>'CustomsPeints']);?>');
 			}
-			else if(window.location.pathname == '/Klickit/public/Customs/BustesTampographies'){
+			else if(window.location.pathname == '/public/Customs/BustesTampographies'){
 				$('#arianne_js').text('Bustes Tampographiés');
 				$('#arianne_js').attr('<?=$this->url('listItemCustoms', ['sub_category' =>'BustesTampographies']);?>');
 			}
-			else if(window.location.pathname == '/Klickit/public/Customs/PiecesEnResine'){
+			else if(window.location.pathname == '/public/Customs/PiecesEnResine'){
 				$('#arianne_js').text('Pièces En Résine');
 				$('#arianne_js').attr('<?=$this->url('listItemCustoms', ['sub_category' =>'PiecesEnResine']);?>');
 			}
-			else if(window.location.pathname == '/Klickit/public/Customs/Stickers'){
+			else if(window.location.pathname == '/public/Customs/Stickers'){
 				$('#arianne_js').text('Stickers');
 				$('#arianne_js').attr('<?=$this->url('listItemCustoms', ['sub_category' =>'Stickers']);?>');
 			}
