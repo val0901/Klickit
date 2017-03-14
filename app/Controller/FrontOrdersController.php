@@ -154,7 +154,7 @@ class FrontOrdersController extends MasterController
 
 		$getBasket = new BasketModel;
 
-		$finalFDP = '';
+		$finalFDP = 0;
 
 		//Gestion des sous-catégories
 		$subCat = '';
@@ -164,27 +164,29 @@ class FrontOrdersController extends MasterController
 
 		$arraySub_category = explode(', ', substr($subCat, 0, -2));
 
-		//S'il y a un Custom, on rajoute 6.90
-		if(in_array('CustomsPeints', $arraySub_category) || in_array('PiecesEnResine', $arraySub_category)){
-			$customFDP = 6.90;
-		}else{
-			$customFDP = 0;
-		}
+		if($selectForCountry['0']['country'] == 'FR'){
+			//S'il y a un Custom, on rajoute 6.90
+			if(in_array('CustomsPeints', $arraySub_category) || in_array('PiecesEnResine', $arraySub_category)){
+				$customFDP = 6.90;
+			}else{
+				$customFDP = 0;
+			}
 
-		if($customFDP === 0){
-			if($fdp['somme'] >= 1 && $fdp['somme'] <= 3 ){
-				$finalFDP = 2.50;
+			if($customFDP === 0){
+				if($fdp['somme'] >= 1 && $fdp['somme'] <= 3 ){
+					$finalFDP = 2.50;
 
-			}elseif($fdp['somme'] >= 4 && $fdp['somme'] <= 8){
-				$finalFDP = 3.90;
+				}elseif($fdp['somme'] >= 4 && $fdp['somme'] <= 8){
+					$finalFDP = 3.90;
 
-			}elseif($fdp['somme'] > 8){
+				}elseif($fdp['somme'] > 8){
+					$finalFDP = 6.90;
+				}
+			}
+			elseif($customFDP === 6.90){
 				$finalFDP = 6.90;
 			}
-		}
-		elseif($customFDP === 6.90){
-			$finalFDP = 6.90;
-		}
+		} // Mettre autant de condition que de pays pour gérer des frais de port propre à chaque pays 
 
 		$data = [
 			'total'	   => $total,

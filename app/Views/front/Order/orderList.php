@@ -105,6 +105,10 @@
                             </li>
                         </ul>
                         <button type="button" class="resetCountry">Changer de pays</button>
+                    <?php elseif($country['0']['country'] != 'FR'): ?>
+                        <span>Pays non livré pour le moment</span>
+                        <br>
+                        <button type="button" class="resetCountry">Changer de pays</button>
                     <?php endif; ?>
                 </div>
                     <!-- *************************************************************************************************** -->
@@ -195,7 +199,11 @@
                             </li>
                         </ul>
                         <button type="button" class="resetCountry">Changer de pays</button>
-                <?php endif; ?>
+                    <?php elseif($country['0']['country'] != 'FR'): ?>
+                            <span>Pays non livré pour le moment</span>
+                            <br>
+                            <button type="button" class="resetCountry">Changer de pays</button>
+                    <?php endif; ?>
         		</div>
             <?php endif; ?>
         </div>
@@ -227,6 +235,8 @@
             <div class="col-md-6 order_buttonscapR">
                 <?php if($country['0']['country'] == ''): ?>
                     <button type="button" disabled="disabled" class="btn btn-primary order_buttonpadding ordercommander_color poursuit-order">POURSUIVRE MA COMMANDE</button>
+                <?php elseif($country['0']['country'] != 'FR') : ?>
+                    <button type="button" disabled="disabled" class="btn btn-primary order_buttonpadding ordercommander_color poursuit-order">Pays non livré</button>
                 <?php else: ?>
                     <button type="button" class="btn btn-primary order_buttonpadding ordercommander_color poursuit-order">POURSUIVRE MA COMMANDE</button>
                 <?php endif; ?>
@@ -243,6 +253,8 @@
             <div class="col-md-6 order_buttonscapR">
                 <?php if($country['0']['country'] == ''): ?>
                     <button type="button" disabled="disabled" class="btn btn-primary order_buttonpadding ordercommander_color get-order">COMMANDER</button>
+                <?php elseif($country['0']['country'] != 'FR') : ?>
+                    <button type="button" disabled="disabled" class="btn btn-primary order_buttonpadding ordercommander_color poursuit-order">Pays non livré</button>
                 <?php else: ?>
                     <button type="button" class="btn btn-primary order_buttonpadding ordercommander_color get-order">COMMANDER</button>
                 <?php endif; ?>
