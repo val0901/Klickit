@@ -80,7 +80,7 @@
             Je souhaite me perfectionner en développement Web et évoluer sur du développement mobile. L'entreprise idéale : agence Web ou SSII pour la diversité des projets. Poste idéal : évolution rapide sur un poste de responsable ou chef de projet Web et mobile.
 
             <br><br>
-            Obtimiste, toujours à la recherche de solution pour évoluer, j'aime le travail d'équipe et m'adapte parfaitement au changement. 
+            Optimiste, toujours à la recherche de solutions pour évoluer, j'aime le travail d'équipe et m'adapte parfaitement au changement. 
             <br><br>
 
 
