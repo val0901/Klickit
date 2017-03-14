@@ -2368,7 +2368,7 @@ input#impression:active {
 .favorite_button_size {
     background-color: #ff931e;
     border: 0 none;
-    font-size: 1vw;
+    font-size: x-large;
     text-transform: uppercase;
 }
 .favorite_voirplus {
@@ -2400,6 +2400,10 @@ button#allDelete:active {
 }
 button#allDelete:focus {
     background-color: black;
+}
+.col-lg-3.col-sm-6 {
+    width: 33%;
+    margin: 0 1vw;
 }
 
 /*guestbook.php*/

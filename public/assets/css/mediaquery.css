@@ -4,12 +4,10 @@
         font-size: 30px;
         padding: 8px 200px;
     }
-
     .slideartR_title {
         font-size: 30px;
         padding: 8px 200px;
     }
-
     .span3 {
         width: 50%;
         float: left;
@@ -27,25 +25,20 @@
     .slidecontent_nouveau {
         font-size: 3.1vw;
     }
-
     .slidecontent_promo {
         font-size: 3.1vw;
     }
-
     .caption h4 {
         font-size: 3.0vw;
     }
-
     .caption p {
         font-size: 2.5vw;
         line-height: 4vh;        
         min-height: 10vh;
     }
-
     .viewcategory_nouveau {
         font-size: 1.5vw;
     }
-
     .viewcategory_promo {
         font-size: 1.5vw;
     }
@@ -54,7 +47,6 @@
     .img-responsive-tete {
         width: 6vw;
     }
-
     .playmo_hide {
         display: none;
     }
@@ -80,7 +72,9 @@
         transform: scale(2);
         opacity: 0;
     }
-
+    .favorite_button_size {
+        font-size: large;
+    }
 
 }
 
@@ -207,6 +201,10 @@
     .viewcategoryprixdelete {
         font-size: 2.3vw;
     }
+    .favorite_button_size {
+        font-size: x-large;
+    }
+    
 
 
 }
@@ -586,6 +584,10 @@
     i#logout{
         font-size: 10vw;
     }
+    .favorite_button_size {
+        font-size: large;
+    }
+
 
 
 }

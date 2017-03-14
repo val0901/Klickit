@@ -39,7 +39,7 @@
                           <h4 class="salesItems"><span style="cursor:pointer;"><button class="favorite" type="submit" name="<?=str_replace(' ', '', $list_items['name']);?>" value="<?=$list_items['id'];?>" data-id="<?=$list_items['id'];?>"><i class="fa fa-heart fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #c11131;" title="Supprimer de mes favoris"></i></button></span> <span class="viewcategoryprixpromo"><?=$list_items['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$list_items['price'];?>€</span></h4>
                         <?php endif; ?>
 
-                        <p class="paraphItem"><?=$list_items['name'];?></p>
+                        <p class="caption h4"><?=$list_items['name'];?></p>
 
                         <?php if($list_items['statut'] == 'nouveaute'):?>
                           <div class="viewcategory_nouveau"><?=$list_items['statut'];?></div>
