@@ -8,7 +8,7 @@
             <div class="col-md-3" style="position:relative;">
                 <div class="classic_text_show"><span>Classics</span></div>
                 <img class="img-responsive" src="<?=$this->assetUrl('/img/img_classic.jpg');?>">
-                <div class="classic_text"><a href="/Klickit/public/Classics" style="color:white;">Classics</a></div>
+                <div class="classic_text"><a href="www.klickit.fr/public/Classics" style="color:white;">Classics</a></div>
             </div>
             <div class="col-md-9">
                 <div class="container_general">
@@ -41,17 +41,19 @@
                 <div class="viewcategoryrow2col1_tirer"><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Sport']);?>">Sport</a></div>
                 <div class="viewcategoryrow2col1_tirer"><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Divers']);?>">Divers</a></div>
                 <li>
-                    <h3 class="viewcategoryrow2col1_title">filtres</h3>
-                    <div class="form-group viewcategory_checkboxmargin">
+                    <?php if(!empty($filters)) : ?>
+                        <h3 class="viewcategoryrow2col1_title">filtres</h3>
                         <div class="form-group viewcategory_checkboxmargin">
-                            <?php foreach ($filters as $filter) : ?>
-                            <label class="viewcategorycheckbox_border">
-                                <input type="checkbox" class="filter_value" value='<?=$filter['name'];?>'> <span class="viewcategorycheckbox_font"><?=ucfirst($filter['name']);?></span>
-                            </label>
-                            <?php endforeach; ?>
-                            <button type="button" id="searchFilter" class="changeArrow classics">Rechercher</button>
-                        </div>
-                    </div>
+                            <div class="form-group viewcategory_checkboxmargin">
+                                <?php foreach ($filters as $filter) : ?>
+                                <label class="viewcategorycheckbox_border">
+                                    <input type="checkbox" class="filter_value" value='<?=$filter['name'];?>'> <span class="viewcategorycheckbox_font"><?=ucfirst($filter['name']);?></span>
+                                </label>
+                                <?php endforeach; ?>
+                                <button type="button" id="searchFilter" class="changeArrow classics">Rechercher</button>
+                            </div>
+                        </div>       
+                    <?php endif; ?>
                 </li>
                 <!-- <li>
 <h3 class="viewcategoryrow2col1_title">état</h3>
@@ -145,7 +147,7 @@
                     <div class="col-md-3 viewcategorypage_center">
 
                     </div>
-                    <div class="col-md-6 viewcategorypage_center">
+                    <div class="col-md-6 viewcategorypage_center viewPagination">
                         <?php $search = (isset($_GET['search']))? 'search='. $_GET['search'].'&' :'';?>
                         <div id="pagination">
                             <?= ($page!=1) ? '<a href="?'. $search .'page='. ($page - 1) .'"><i class="fa fa-arrow-left fa-fw" style="color:black;"></i></a>':''; ?>
@@ -404,37 +406,37 @@ $(document).ready(function(){
 
         var locationOk = true;
 
-        if(window.location.pathname == '/Klickit/public/Classics/Chevaliers'){
+        if(window.location.pathname == '/public/Classics/Chevaliers'){
             locationOk = true;
         }
-        else if(window.location.pathname == '/Klickit/public/Classics/Pirates'){
+        else if(window.location.pathname == '/public/Classics/Pirates'){
             locationOk = true;
         }
-        else if(window.location.pathname == '/Klickit/public/Classics/Antique'){
+        else if(window.location.pathname == '/public/Classics/Antique'){
             locationOk = true;
         }
-        else if(window.location.pathname == '/Klickit/public/Classics/Western'){
+        else if(window.location.pathname == '/public/Classics/Western'){
             locationOk = true;
         }
-        else if(window.location.pathname == '/Klickit/public/Classics/Fantasy'){
+        else if(window.location.pathname == '/public/Classics/Fantasy'){
             locationOk = true;
         }
-        else if(window.location.pathname == '/Klickit/public/Classics/XVIIIe'){
+        else if(window.location.pathname == '/public/Classics/XVIIIe'){
             locationOk = true;
         }
-        else if(window.location.pathname == '/Klickit/public/Classics/FeesPrincesses'){
+        else if(window.location.pathname == '/public/Classics/FeesPrincesses'){
             locationOk = true;
         }
-        else if(window.location.pathname == '/Klickit/public/Classics/Police'){
+        else if(window.location.pathname == '/public/Classics/Police'){
             locationOk = true;
         }
-        else if(window.location.pathname == '/Klickit/public/Classics/Animaux'){
+        else if(window.location.pathname == '/public/Classics/Animaux'){
             locationOk = true;
         }
-        else if(window.location.pathname == '/Klickit/public/Classics/Sport'){
+        else if(window.location.pathname == '/public/Classics/Sport'){
             locationOk = true;
         }
-        else if(window.location.pathname == '/Klickit/public/Classics/Divers'){
+        else if(window.location.pathname == '/public/Classics/Divers'){
             locationOk = true;
         }
         else {
@@ -445,47 +447,47 @@ $(document).ready(function(){
         }
 
         /********************* FIL D'ARIANNE *********************/
-        if(window.location.pathname == '/Klickit/public/Classics/Chevaliers'){
+        if(window.location.pathname == '/public/Classics/Chevaliers'){
             $('#arianne_js').text('Chevaliers');
             $('#arianne_js').attr('<?=$this->url('listItemClassics', ['sub_category'=>'Chevaliers']);?>');
         }
-        else if(window.location.pathname == '/Klickit/public/Classics/Pirates'){
+        else if(window.location.pathname == '/public/Classics/Pirates'){
             $('#arianne_js').text('Pirates');
             $('#arianne_js').attr('<?=$this->url('listItemClassics', ['sub_category'=>'Pirates']);?>');
         }
-        else if(window.location.pathname == '/Klickit/public/Classics/Antique'){
+        else if(window.location.pathname == '/public/Classics/Antique'){
             $('#arianne_js').text('Antique');
             $('#arianne_js').attr('<?=$this->url('listItemClassics', ['sub_category' =>'Antique']);?>');
         }
-        else if(window.location.pathname == '/Klickit/public/Classics/Western'){
+        else if(window.location.pathname == '/public/Classics/Western'){
             $('#arianne_js').text('Western');
             $('#arianne_js').attr('<?=$this->url('listItemClassics', ['sub_category' =>'Western']);?>');
         }
-        else if(window.location.pathname == '/Klickit/public/Classics/Fantasy'){
+        else if(window.location.pathname == '/public/Classics/Fantasy'){
             $('#arianne_js').text('Fantasy');
             $('#arianne_js').attr('<?=$this->url('listItemClassics', ['sub_category' =>'Fantasy']);?>');
         }
-        else if(window.location.pathname == '/Klickit/public/Classics/XVIIIe'){
+        else if(window.location.pathname == '/public/Classics/XVIIIe'){
             $('#arianne_js').text('XVIIIe');
             $('#arianne_js').attr('<?=$this->url('listItemClassics', ['sub_category' =>'XVIIIe']);?>');
         }
-        else if(window.location.pathname == '/Klickit/public/Classics/FeesPrincesses'){
+        else if(window.location.pathname == '/public/Classics/FeesPrincesses'){
             $('#arianne_js').text('Fées & Princesses');
             $('#arianne_js').attr('<?=$this->url('listItemClassics', ['sub_category' =>'FeesPrincesses']);?>');
         }
-        else if(window.location.pathname == '/Klickit/public/Classics/Police'){
+        else if(window.location.pathname == '/public/Classics/Police'){
             $('#arianne_js').text('Police');
             $('#arianne_js').attr('<?=$this->url('listItemClassics', ['sub_category' =>'Police']);?>');
         }
-        else if(window.location.pathname == '/Klickit/public/Classics/Animaux'){
+        else if(window.location.pathname == '/public/Classics/Animaux'){
             $('#arianne_js').text('Animaux');
             $('#arianne_js').attr('<?=$this->url('listItemClassics', ['sub_category' =>'Animaux']);?>');
         }
-        else if(window.location.pathname == '/Klickit/public/Classics/Sport'){
+        else if(window.location.pathname == '/public/Classics/Sport'){
             $('#arianne_js').text('Sport');
             $('#arianne_js').attr('<?=$this->url('listItemClassics', ['sub_category' =>'Sport']);?>');
         }
-        else if(window.location.pathname == '/Klickit/public/Classics/Divers'){
+        else if(window.location.pathname == '/public/Classics/Divers'){
             $('#arianne_js').text('Divers');
             $('#arianne_js').attr('<?=$this->url('listItemClassics', ['sub_category' =>'Divers']);?>');
         }
@@ -517,6 +519,7 @@ $(document).ready(function(){
                 success: function(search){
                     if(search.code == 'ok'){
                         $('#replace').html(search.msg);
+                        $('.viewPagination').css('display', 'none');
                         $('.favorite').click(function(e){
                             e.preventDefault();
 

@@ -8,7 +8,7 @@
 		<div class="col-md-3" style="position:relative;">
 			<div class="classic_text_show"><span>Customs</span></div>
 			<img class="img-responsive" src="<?=$this->assetUrl('/img/img_custom.jpg');?>">
-			<div class="customs_text"><a href="/Klickit/public/Customs" style="color:white">Customs</a></div>
+			<div class="customs_text"><a href="www.klickit.fr/public/Customs" style="color:white">Customs</a></div>
 		</div>
 		<div class="col-md-9">
 			<div class="container_general">
@@ -36,17 +36,19 @@
 			<div class="viewcategoryrow2col1customs_tirer"><a id="customsmenu_scat" href="<?=$this->url('listItemCustoms', ['sub_category'=>'PiecesEnResine']);?>">Pièces en résine</a></div>
 			<div class="viewcategoryrow2col1customs_tirer"><a id="customsmenu_scat" href="<?=$this->url('listItemCustoms', ['sub_category'=>'Stickers']);?>">Stickers</a></div>
 			<li>
-				<h3 class="viewcategoryrow2col1_title">filtres</h3>
-				<div class="form-group viewcategory_checkboxmargin">
+				<?php if(!empty($filters)) : ?>
+					<h3 class="viewcategoryrow2col1_title">filtres</h3>
 					<div class="form-group viewcategory_checkboxmargin">
-						<?php foreach ($filters as $filter) : ?>
-							<label class="viewcategorycheckbox_border">
-							<input type="checkbox" class="filter_value" value='<?=$filter['name'];?>'> <span class="viewcategorycheckbox_font"><?=ucfirst($filter['name']);?></span>
-							</label>
-						<?php endforeach; ?>
-						<button type="button" id="searchFilter" class="changeArrow ahoveron">Rechercher</button>
+						<div class="form-group viewcategory_checkboxmargin">
+							<?php foreach ($filters as $filter) : ?>
+								<label class="viewcategorycheckbox_border">
+								<input type="checkbox" class="filter_value" value='<?=$filter['name'];?>'> <span class="viewcategorycheckbox_font"><?=ucfirst($filter['name']);?></span>
+								</label>
+							<?php endforeach; ?>
+							<button type="button" id="searchFilter" class="changeArrow ahoveron">Rechercher</button>
+						</div>
 					</div>
-				</div>
+				<?php endif; ?>
 			</li>
 			<!-- <li>
 				<h3 class="viewcategoryrow2col1_title">état</h3>
@@ -136,7 +138,7 @@
 					<div class="col-md-3 viewcategorypage_center">
 						
 					</div>
-					<div class="col-md-6 viewcategorypage_center">
+					<div class="col-md-6 viewcategorypage_center viewPagination">
 					<?php $search = (isset($_GET['search']))? 'search='. $_GET['search'].'&' :'';?>
 					<div id="pagination">
 						<?= ($page!=1) ? '<a href="?'. $search .'page='. ($page - 1) .'"><i class="fa fa-arrow-left fa-fw" style="color:black;"></i></a>':''; ?>
@@ -379,19 +381,19 @@
 			
 			var locationOk = true;
 
-			if(window.location.pathname == '/Klickit/public/Customs/CustomsTampographies'){
+			if(window.location.pathname == '/public/Customs/CustomsTampographies'){
 				var locationOk = true;
 			}
-			else if(window.location.pathname == '/Klickit/public/Customs/CustomsPeints'){
+			else if(window.location.pathname == '/public/Customs/CustomsPeints'){
 				var locationOk = true;
 			}
-			else if(window.location.pathname == '/Klickit/public/Customs/BustesTampographies'){
+			else if(window.location.pathname == '/public/Customs/BustesTampographies'){
 				var locationOk = true;
 			}
-			else if(window.location.pathname == '/Klickit/public/Customs/PiecesEnResine'){
+			else if(window.location.pathname == '/public/Customs/PiecesEnResine'){
 				var locationOk = true;
 			}
-			else if(window.location.pathname == '/Klickit/public/Customs/Stickers'){
+			else if(window.location.pathname == '/public/Customs/Stickers'){
 				var locationOk = true;
 			}
 			else {
@@ -402,23 +404,23 @@
 			}
 
 			/********************* FIL D'ARIANNE *********************/
-			if(window.location.pathname == '/Klickit/public/Customs/CustomsTampographies'){
+			if(window.location.pathname == '/public/Customs/CustomsTampographies'){
 				$('#arianne_js').text('Customs Tampographiés');
 				$('#arianne_js').attr('<?=$this->url('listItemCustoms', ['sub_category' =>'CustomsTampographies']);?>');
 			}
-			else if(window.location.pathname == '/Klickit/public/Customs/CustomsPeints'){
+			else if(window.location.pathname == '/public/Customs/CustomsPeints'){
 				$('#arianne_js').text('Customs Peints');
 				$('#arianne_js').attr('<?=$this->url('listItemCustoms', ['sub_category' =>'CustomsPeints']);?>');
 			}
-			else if(window.location.pathname == '/Klickit/public/Customs/BustesTampographies'){
+			else if(window.location.pathname == '/public/Customs/BustesTampographies'){
 				$('#arianne_js').text('Bustes Tampographiés');
 				$('#arianne_js').attr('<?=$this->url('listItemCustoms', ['sub_category' =>'BustesTampographies']);?>');
 			}
-			else if(window.location.pathname == '/Klickit/public/Customs/PiecesEnResine'){
+			else if(window.location.pathname == '/public/Customs/PiecesEnResine'){
 				$('#arianne_js').text('Pièces En Résine');
 				$('#arianne_js').attr('<?=$this->url('listItemCustoms', ['sub_category' =>'PiecesEnResine']);?>');
 			}
-			else if(window.location.pathname == '/Klickit/public/Customs/Stickers'){
+			else if(window.location.pathname == '/public/Customs/Stickers'){
 				$('#arianne_js').text('Stickers');
 				$('#arianne_js').attr('<?=$this->url('listItemCustoms', ['sub_category' =>'Stickers']);?>');
 			}
@@ -450,6 +452,7 @@
 					success: function(search){
 						if(search.code == 'ok'){
 							$('#replace').html(search.msg);
+							$('.viewPagination').css('display', 'none');
 							$('.favorite').click(function(e){
 								e.preventDefault();
 

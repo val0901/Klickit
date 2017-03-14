@@ -8,7 +8,7 @@
 		<div class="col-md-3" style="position:relative;">
 			<div class="classic_text_show"><span>Pièces détachées</span></div>
 			<img class="img-responsive" src="<?=$this->assetUrl('/img/img_pieces.jpg');?>">
-			<div class="pieces_text"><a href="/Klickit/public/Pieces" style="color:white;">Pièces détachées</a></div>
+			<div class="pieces_text"><a href="www.klickit.fr/public/Pieces" style="color:white;">Pièces détachées</a></div>
 		</div>
 		<div class="col-md-9">
 			<div class="container_general">
@@ -38,17 +38,19 @@
 			<div class="viewcategoryrow2col1pieces_tirer"><a href="<?=$this->url('listItemPieces', ['sub_category'=>'Cheveux']);?>">Cheveux</a></div>
 			<div class="viewcategoryrow2col1pieces_tirer"><a href="<?=$this->url('listItemPieces', ['sub_category'=>'Divers']);?>">Divers</a></div>
 			<li>
-				<h3 class="viewcategoryrow2col1_title">filtres</h3>
-				<div class="form-group viewcategory_checkboxmargin">
+				<?php if(!empty($filters)) : ?>
+					<h3 class="viewcategoryrow2col1_title">filtres</h3>
 					<div class="form-group viewcategory_checkboxmargin">
-						<?php foreach ($filters as $filter) : ?>
-							<label class="viewcategorycheckbox_border">
-							<input type="checkbox" class="filter_value" value='<?=$filter['name'];?>'> <span class="viewcategorycheckbox_font"><?=ucfirst($filter['name']);?></span>
-							</label>
-						<?php endforeach; ?>
-						<button type="button" id="searchFilter"class="changeArrow pieces">Rechercher</button>
+						<div class="form-group viewcategory_checkboxmargin">
+							<?php foreach ($filters as $filter) : ?>
+								<label class="viewcategorycheckbox_border">
+								<input type="checkbox" class="filter_value" value='<?=$filter['name'];?>'> <span class="viewcategorycheckbox_font"><?=ucfirst($filter['name']);?></span>
+								</label>
+							<?php endforeach; ?>
+							<button type="button" id="searchFilter"class="changeArrow pieces">Rechercher</button>
+						</div>
 					</div>
-				</div>
+				<?php endif; ?>
 			</li>
 			<!-- <li>
 				<h3 class="viewcategoryrow2col1_title">état</h3>
@@ -138,7 +140,7 @@
 					<div class="col-md-3 viewcategorypage_center">
 						
 					</div>
-					<div class="col-md-6 viewcategorypage_center">
+					<div class="col-md-6 viewcategorypage_center viewPagination">
 					<?php $search = (isset($_GET['search']))? 'search='. $_GET['search'].'&' :'';?>
 					<div id="pagination">
 						<?= ($page!=1) ? '<a href="?'. $search .'page='. ($page - 1) .'"><i class="fa fa-arrow-left fa-fw" style="color:black;"></i></a>':''; ?>
@@ -382,28 +384,28 @@
 
 			var locationOk = true;
 
-			if(window.location.pathname == '/Klickit/public/Pieces/Armes'){
+			if(window.location.pathname == '/public/Pieces/Armes'){
 				var locationOk = true;
 			}
-			else if(window.location.pathname == '/Klickit/public/Pieces/Coiffes'){
+			else if(window.location.pathname == '/public/Pieces/Coiffes'){
 				var locationOk = true;
 			}
-			else if(window.location.pathname == '/Klickit/public/Pieces/Manchettes'){
+			else if(window.location.pathname == '/public/Pieces/Manchettes'){
 				var locationOk = true;
 			}
-			else if(window.location.pathname == '/Klickit/public/Pieces/Cols'){
+			else if(window.location.pathname == '/public/Pieces/Cols'){
 				var locationOk = true;
 			}
-			else if(window.location.pathname == '/Klickit/public/Pieces/Ceinturons'){
+			else if(window.location.pathname == '/public/Pieces/Ceinturons'){
 				var locationOk = true;
 			}
-			else if(window.location.pathname == '/Klickit/public/Pieces/Tetes'){
+			else if(window.location.pathname == '/public/Pieces/Tetes'){
 				var locationOk = true;
 			}
-			else if(window.location.pathname == '/Klickit/public/Pieces/Cheveux'){
+			else if(window.location.pathname == '/public/Pieces/Cheveux'){
 				var locationOk = true;
 			}
-			else if(window.location.pathname == '/Klickit/public/Pieces/Divers'){
+			else if(window.location.pathname == '/public/Pieces/Divers'){
 				var locationOk = true;
 			}
 			else {
@@ -414,35 +416,35 @@
 			}
 
 			/********************* FIL D'ARIANNE *********************/
-			if(window.location.pathname == '/Klickit/public/Pieces/Armes'){
+			if(window.location.pathname == '/public/Pieces/Armes'){
 				$('#arianne_js').text('Armes');
 				$('#arianne_js').attr('<?=$this->url('listItemPieces', ['sub_category' =>'Armes']);?>');
 			}
-			else if(window.location.pathname == '/Klickit/public/Pieces/Coiffes'){
+			else if(window.location.pathname == '/public/Pieces/Coiffes'){
 				$('#arianne_js').text('Coiffes');
 				$('#arianne_js').attr('<?=$this->url('listItemPieces', ['sub_category' =>'Coiffes']);?>');
 			}
-			else if(window.location.pathname == '/Klickit/public/Pieces/Manchettes'){
+			else if(window.location.pathname == '/public/Pieces/Manchettes'){
 				$('#arianne_js').text('Manchettes');
 				$('#arianne_js').attr('<?=$this->url('listItemPieces', ['sub_category' =>'Manchettes']);?>');
 			}
-			else if(window.location.pathname == '/Klickit/public/Pieces/Cols'){
+			else if(window.location.pathname == '/public/Pieces/Cols'){
 				$('#arianne_js').text('Cols');
 				$('#arianne_js').attr('<?=$this->url('listItemPieces', ['sub_category' =>'Cols']);?>');
 			}
-			else if(window.location.pathname == '/Klickit/public/Pieces/Ceinturons'){
+			else if(window.location.pathname == '/public/Pieces/Ceinturons'){
 				$('#arianne_js').text('Ceinturons');
 				$('#arianne_js').attr('<?=$this->url('listItemPieces', ['sub_category' =>'Ceinturons']);?>');
 			}
-			else if(window.location.pathname == '/Klickit/public/Pieces/Tetes'){
+			else if(window.location.pathname == '/public/Pieces/Tetes'){
 				$('#arianne_js').text('Têtes');
 				$('#arianne_js').attr('<?=$this->url('listItemPieces', ['sub_category' =>'Tetes']);?>');
 			}
-			else if(window.location.pathname == '/Klickit/public/Pieces/Cheveux'){
+			else if(window.location.pathname == '/public/Pieces/Cheveux'){
 				$('#arianne_js').text('Cheveux');
 				$('#arianne_js').attr('<?=$this->url('listItemPieces', ['sub_category' =>'Cheveux']);?>');
 			}
-			else if(window.location.pathname == '/Klickit/public/Pieces/Divers'){
+			else if(window.location.pathname == '/public/Pieces/Divers'){
 				$('#arianne_js').text('Divers');
 				$('#arianne_js').attr('<?=$this->url('listItemPieces', ['sub_category' =>'Divers']);?>');
 			}
@@ -474,6 +476,7 @@
 					success: function(search){
 						if(search.code == 'ok'){
 							$('#replace').html(search.msg);
+							$('.viewPagination').css('display', 'none');
 							$('.favorite').click(function(e){
 								e.preventDefault();
 
