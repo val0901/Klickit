@@ -135,8 +135,7 @@
                                                 <a href="<?=$this->url('login');?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></a>
                                                 <?php endif; ?>
                                             </span>
-                                        </p>
-                                        <p class="title_slide_name"><?=$newProduct['name'];?></p>
+                                        <?=$newProduct['name'];?></p>
 
                                         <?php if($newProduct['statut'] == 'nouveaute'):?>
                                         <div class="viewcategory_nouveau"><?=$newProduct['statut'];?></div>
@@ -201,8 +200,7 @@
                                                 <a href="<?=$this->url('login');?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></a>
                                                 <?php endif; ?>
                                             </span>
-                                        </p>
-                                        <p class="title_slide_name"><?=$newProduct['name'];?></p>
+                                        <?=$newProduct['name'];?></p>
 
                                         <?php if($newProduct['statut'] == 'nouveaute'):?>
                                         <div class="viewcategory_nouveau"><?=$newProduct['statut'];?></div>
@@ -263,8 +261,7 @@
                                                 <a href="<?=$this->url('login');?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></a>
                                                 <?php endif; ?>
                                             </span>
-                                        </p>
-                                        <p class="title_slide_name"><?=$newProduct['name'];?></p>
+                                        <?=$newProduct['name'];?></p>
 
                                         <?php if($newProduct['statut'] == 'nouveaute'):?>
                                         <div class="viewcategory_nouveau"><?=$newProduct['statut'];?></div>

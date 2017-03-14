@@ -22,7 +22,7 @@
         font-size: 3vw;
     }
     .viewcategoryprixdelete {
-    font-size: 2.3vw;
+        font-size: 2.3vw;
     }
     .slidecontent_nouveau {
         font-size: 3.1vw;
@@ -38,9 +38,8 @@
 
     .caption p {
         font-size: 2.5vw;
-        line-height: 5vh;
+        line-height: 4vh;        
         min-height: 10vh;
-        
     }
 
     .viewcategory_nouveau {
@@ -60,11 +59,11 @@
         display: none;
     }
 
-/* problème marge right scroll vertical firefox
+    /* problème marge right scroll vertical firefox
     ul.navbar-right.search_dropdownbox_width.search {
-        margin-right: -49px;
-    }
-*/
+    margin-right: -49px;
+}
+    */
     /* search */
     .soumenu_search{
         width: 1153%
@@ -81,8 +80,8 @@
         transform: scale(2);
         opacity: 0;
     }
-    
-    
+
+
 }
 
 /* JUSQU A 1250 PX*/
@@ -177,17 +176,17 @@
         width: 44vh;
     }
     div#rowcptuser {
-    font-size: 2vw;
+        font-size: 2vw;
     }
     div#rowcptuser {
-    font-size: 3vw;
+        font-size: 3vw;
     }
 
     /* search */
     .soumenu_search{
         width: 1198%
     }
-        /* Style départ animation */
+    /* Style départ animation */
     .item--helper-slide {
         width: 6rem;
         box-shadow: 0 1px 2px rgba(0,0,0,.2);
@@ -283,7 +282,7 @@
     h4.salesItems.viewcategorycaption{
         font-size: xx-large;
     }
-    
+
     /* compte user */
 
     #colcptuser{
@@ -309,15 +308,16 @@
         width: 1199%
     }
     div#rowcptuser {
-    font-size: 3vw;
+        font-size: 3vw;
     }
     .span4 {
-    width: 40%;
+        width: 40%;
     }
     .caption p {
-    font-size: 3vw;
-    line-height: 3vh;
-    min-height: 6vh;
+        font-size: 3vw;
+        line-height: 3vh;
+        min-height: 6vh;
+        height: 10vh;
     }
     .viewcategoryprixdelete {
         font-size: 2.7vw;
@@ -326,7 +326,7 @@
         font-size: xx-large;
     }
     .item--helper-slide {
-    top: 325px;
+        top: 325px;
     }
     #usericon_click {
         font-size: 5vw;
@@ -337,7 +337,14 @@
     i#logout{
         font-size: 5vw;
     }
-    
+    .col2_commentaireback {
+        padding: 8vh;
+    }
+    li.span4 {
+    margin-bottom: 2vh;
+    }
+
+
 }
 
 /* JUSQU A 950 PX*/
@@ -350,13 +357,22 @@
     }
     .event_title {
         display: none;
+        border-top: 2px solid black;
     }
+    .evenement_img {
+        border-top: 20px solid #7ac943;
+        border-bottom: 11px solid #7ac943;
+    }    
     .slideartL_title {
-        display: none;
-    }
+        position: relative;
+        margin-top: 0;
+        width: 100%;
+        font-size: x-large;    }
     .slideartR_title {
-        display: none;
-    }
+        display: absolute;
+        margin-top: 0;
+        width: 100%;
+        font-size: x-large;    }
     #cogicon_click {
         font-size: 6vw;
     }
@@ -415,11 +431,11 @@
     }
     /* cptuser.php */
     div#rowcptuser {
-    font-size: 4vw;
+        font-size: 4vw;
     }
     .item--helper-slide {
-    top: 400px;
-}
+        top: 400px;
+    }
 
 }
 
@@ -535,16 +551,16 @@
     }
     /* cptuser.php */
     div#rowcptuser {
-    font-size: 4vw;
+        font-size: 4vw;
     }
     .span4 {
-    width: 40%;
+        width: 40%;
     }
     .caption h4 {
-    font-size: xx-large;
+        font-size: xx-large;
     }
     .viewcategoryprixpromo {
-    font-size: xx-large;
+        font-size: xx-large;
     }
     .viewcategoryprixdelete {
         font-size: x-large;
@@ -553,7 +569,7 @@
         font-size: medium;
     }
     .item--helper-slide {
-    top: 300px;
+        top: 300px;
     }
     .caption p {
         font-size: 3vw;
@@ -579,12 +595,12 @@
     .page-header, .control-box {
         text-align: center;
     } 
-/*
-.navbar-right .dropdown-menu {
+    /*
+    .navbar-right .dropdown-menu {
     right: 0;
     left: auto;
-    }
-*/
+}
+    */
 }
 
 /* JUSQU A 479 PX*/
@@ -624,8 +640,8 @@
     }
     /* cptuser.php */
     div#rowcptuser {
-    font-size: 6vw;
+        font-size: 6vw;
     }
-    
+
 }
 

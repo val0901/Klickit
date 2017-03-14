@@ -708,7 +708,7 @@ a#customsmenu_scat{
 
 .col2_commentaireback {
     background-color: #fff;
-    padding: 16vh;
+    padding: 12vh;
 }
 
 .col2commtaire_margin {
@@ -794,7 +794,7 @@ font-size:30pt;
     text-align: left;
     overflow: hidden;
     font-weight: 900;
-    font-size:70pt;
+    font-size: -webkit-xxx-large;
     display: block;
     white-space: wrap;
 }
@@ -804,6 +804,12 @@ font-size:30pt;
     height: 100pt;
     line-height: 30pt;
     overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 .scroller .inner { -webkit-animation: 10s normal infinite running scroll; animation: 10s normal infinite running scroll; }
 @-webkit-keyframes scroll {
@@ -871,7 +877,7 @@ font-size:30pt;
 @media only screen and (min-width : 992px) and (max-width : 1200px) {
     #textSlider.row { margin-right: 0px !important; margin-left: 0px !important; }
     .iamCol { text-align: right; font-size:30pt; }
-    .slideCol { font-size: 55pt; text-align: left; }
+    .slideCol { font-size: 55pt; text-align: left; padding: 10px;}
     div#rowcptuser { font-size: 3vw;}
 }
 
@@ -968,6 +974,7 @@ a.ahoveroff:hover {
     font-size: 2vw;
     line-height: 5vh;
     text-align: center;
+    height: 12vh;
 }
 .title_slide_name{
     height: 8vh;
