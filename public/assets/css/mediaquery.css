@@ -561,6 +561,15 @@
         min-height: 2vh;
         height: 4vh;
     }    
+    #usericon_click {
+        font-size: 10vw;
+    }
+    #shoppingicon_click {
+        font-size: 10vw;
+    }
+    i#logout{
+        font-size: 10vw;
+    }
 
 
 }
