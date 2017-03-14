@@ -162,7 +162,7 @@
 
     </div>
 
-    <!--nouveute slideshow-->
+    <!--nouveaute slideshow-->
     <!--Slide articles-->
     <div class="clear"></div>
     <div class="slideartL_title">nouveau!</div>
