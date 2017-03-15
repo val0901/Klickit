@@ -635,7 +635,7 @@ class AjaxController extends Controller
 
                         <p>Nous vous rappelons que le ou les produits vous sont réservés pour une période de 10 jours ouvrés suivant la date de validation de votre commande sur le site. Au delà de cette période, la non réception du règlement entraine l'annulation de la commande.</p>
 
-                        <p>La facture sera disponible en téléchargement dans <a href='http://localhost/Klickit/public/listOrders'>votre espace client</a> dès réception du règlement.</p>
+                        <p>La facture sera disponible en téléchargement dans <a href='http://www.klickit.fr/listOrders'>votre espace client</a> dès réception du règlement.</p>
 
                         <p>Restant à votre disposition pour toute information complémentaire dont vous auriez besoin, nous
                         vous adressons nos salutations.</p>
@@ -679,7 +679,7 @@ class AjaxController extends Controller
                     
                     <p>L'expédition sera faite dans les plus brefs délais.</p> 
                     
-                    <p>La facture est disponible en téléchargement dans <a href='http://localhost/Klickit/public/listOrders'>votre espace client</a>.</p> 
+                    <p>La facture est disponible en téléchargement dans <a href='http://www.klickit.fr/listOrders'>votre espace client</a>.</p> 
                     <p>Restant à votre disposition pour toute information complémentaire dont vous auriez besoin, nous vous adressons nos salutations.</p></div>"; //On envoi le message éventuellement en HTML
 					$sendMail->AltBody = $contentEmail="Cher Client, Nous avons bien reçu le paiement de votre commande et nous vous remercions de votre confiance. L'expédition sera faite dans les plus brefs délais. La facture est disponible en téléchargement dans votre espace client. Restant à votre disposition pour toute information complémentaire dont vous auriez besoin, nous vous adressons nos salutations."; //On envoi le message sans HTML
 
