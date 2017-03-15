@@ -49,8 +49,15 @@
                           <div class="viewcategory_defaut"></div>
                         <?php endif; ?>
                     </div>
+
+                        <div id="<?=$list_items['id'];?>" class="item--helper">
+                            <span id="plus1">+1</span>
+                        </div>
                         <div class="viewcategory_button">
-                          <button type="button" class="btn btn-primary favorite_button_size ">ajouter au panier</button>
+                          <button type="button" class="btn btn-primary favorite_button_size add_to_shopping_cart ahoveroff add-to-basket" data-id="<?=$list_items['id']?>">  <span class="name">
+                                    Ajouter au panier
+                                    </span>
+                                </button>
                         </div>
                         <p class="favorite_voirplus">
                           <?php if($list_items['category'] == 'PlaymobilClassique'): ?>
