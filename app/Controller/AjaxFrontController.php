@@ -490,7 +490,7 @@ class AjaxFrontController extends Controller
 						$transaction->setAmount($amount)->setItemList($itemList)->setDescription('Votre commande')->setInvoiceNumber(uniqid());
 
 						$redirectUrls = new RedirectUrls();
-						$redirectUrls->setReturnUrl('http://www.klickit.fr/public/pay?success=true')->setCancelUrl('http://www.klickit.fr/public/pay?success=false');
+						$redirectUrls->setReturnUrl('http://www.klickit.fr/pay?success=true')->setCancelUrl('http://www.klickit.fr/pay?success=false');
 
 						$payment = new Payment();
 						$payment->setIntent('sale')->setPayer($payer)->setRedirectUrls($redirectUrls)->setTransactions([$transaction]);	

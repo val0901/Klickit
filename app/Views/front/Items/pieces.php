@@ -8,7 +8,7 @@
 		<div class="col-md-3" style="position:relative;">
 			<div class="classic_text_show"><span>Pièces détachées</span></div>
 			<img class="img-responsive" src="<?=$this->assetUrl('/img/img_pieces.jpg');?>">
-			<div class="pieces_text"><a href="www.klickit.fr/public/Pieces" style="color:white;">Pièces détachées</a></div>
+			<div class="pieces_text"><a href="www.klickit.fr/Pieces" style="color:white;">Pièces détachées</a></div>
 		</div>
 		<div class="col-md-9">
 			<div class="container_general">
@@ -384,28 +384,28 @@
 
 			var locationOk = true;
 
-			if(window.location.pathname == '/public/Pieces/Armes'){
+			if(window.location.pathname == '/Pieces/Armes'){
 				var locationOk = true;
 			}
-			else if(window.location.pathname == '/public/Pieces/Coiffes'){
+			else if(window.location.pathname == '/Pieces/Coiffes'){
 				var locationOk = true;
 			}
-			else if(window.location.pathname == '/public/Pieces/Manchettes'){
+			else if(window.location.pathname == '/Pieces/Manchettes'){
 				var locationOk = true;
 			}
-			else if(window.location.pathname == '/public/Pieces/Cols'){
+			else if(window.location.pathname == '/Pieces/Cols'){
 				var locationOk = true;
 			}
-			else if(window.location.pathname == '/public/Pieces/Ceinturons'){
+			else if(window.location.pathname == '/Pieces/Ceinturons'){
 				var locationOk = true;
 			}
-			else if(window.location.pathname == '/public/Pieces/Tetes'){
+			else if(window.location.pathname == '/Pieces/Tetes'){
 				var locationOk = true;
 			}
-			else if(window.location.pathname == '/public/Pieces/Cheveux'){
+			else if(window.location.pathname == '/Pieces/Cheveux'){
 				var locationOk = true;
 			}
-			else if(window.location.pathname == '/public/Pieces/Divers'){
+			else if(window.location.pathname == '/Pieces/Divers'){
 				var locationOk = true;
 			}
 			else {
@@ -416,35 +416,35 @@
 			}
 
 			/********************* FIL D'ARIANNE *********************/
-			if(window.location.pathname == '/public/Pieces/Armes'){
+			if(window.location.pathname == '/Pieces/Armes'){
 				$('#arianne_js').text('Armes');
 				$('#arianne_js').attr('<?=$this->url('listItemPieces', ['sub_category' =>'Armes']);?>');
 			}
-			else if(window.location.pathname == '/public/Pieces/Coiffes'){
+			else if(window.location.pathname == '/Pieces/Coiffes'){
 				$('#arianne_js').text('Coiffes');
 				$('#arianne_js').attr('<?=$this->url('listItemPieces', ['sub_category' =>'Coiffes']);?>');
 			}
-			else if(window.location.pathname == '/public/Pieces/Manchettes'){
+			else if(window.location.pathname == '/Pieces/Manchettes'){
 				$('#arianne_js').text('Manchettes');
 				$('#arianne_js').attr('<?=$this->url('listItemPieces', ['sub_category' =>'Manchettes']);?>');
 			}
-			else if(window.location.pathname == '/public/Pieces/Cols'){
+			else if(window.location.pathname == '/Pieces/Cols'){
 				$('#arianne_js').text('Cols');
 				$('#arianne_js').attr('<?=$this->url('listItemPieces', ['sub_category' =>'Cols']);?>');
 			}
-			else if(window.location.pathname == '/public/Pieces/Ceinturons'){
+			else if(window.location.pathname == '/Pieces/Ceinturons'){
 				$('#arianne_js').text('Ceinturons');
 				$('#arianne_js').attr('<?=$this->url('listItemPieces', ['sub_category' =>'Ceinturons']);?>');
 			}
-			else if(window.location.pathname == '/public/Pieces/Tetes'){
+			else if(window.location.pathname == '/Pieces/Tetes'){
 				$('#arianne_js').text('Têtes');
 				$('#arianne_js').attr('<?=$this->url('listItemPieces', ['sub_category' =>'Tetes']);?>');
 			}
-			else if(window.location.pathname == '/public/Pieces/Cheveux'){
+			else if(window.location.pathname == '/Pieces/Cheveux'){
 				$('#arianne_js').text('Cheveux');
 				$('#arianne_js').attr('<?=$this->url('listItemPieces', ['sub_category' =>'Cheveux']);?>');
 			}
-			else if(window.location.pathname == '/public/Pieces/Divers'){
+			else if(window.location.pathname == '/Pieces/Divers'){
 				$('#arianne_js').text('Divers');
 				$('#arianne_js').attr('<?=$this->url('listItemPieces', ['sub_category' =>'Divers']);?>');
 			}

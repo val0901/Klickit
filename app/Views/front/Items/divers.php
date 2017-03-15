@@ -8,7 +8,7 @@
 		<div class="col-md-3" style="position:relative;">
 			<div class="classic_text_show"><span>Divers</span></div>
 			<img class="img-responsive" src="<?=$this->assetUrl('/img/img_boitessets.jpg');?>">
-			<div class="divers_text"><a href="www.klickit.fr/public/Divers" style="color:white;">Boites/Set</a></div>
+			<div class="divers_text"><a href="www.klickit.fr/Divers" style="color:white;">Boites/Set</a></div>
 		</div>
 		<div class="col-md-9">
 			<div class="container_general">
@@ -374,10 +374,10 @@
 
 			var locationOk = true;
 
-			if(window.location.pathname == '/public/Divers/?'){
+			if(window.location.pathname == '/Divers/?'){
 				var locationOk = true;
 			}
-			else if(window.location.pathname == '/public/Divers/?'){
+			else if(window.location.pathname == '/Divers/?'){
 				var locationOk = true;
 			}
 			else {

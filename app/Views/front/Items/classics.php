@@ -8,7 +8,7 @@
             <div class="col-md-3" style="position:relative;">
                 <div class="classic_text_show"><span>Classics</span></div>
                 <img class="img-responsive" src="<?=$this->assetUrl('/img/img_classic.jpg');?>">
-                <div class="classic_text"><a href="www.klickit.fr/public/Classics" style="color:white;">Classics</a></div>
+                <div class="classic_text"><a href="www.klickit.fr/Classics" style="color:white;">Classics</a></div>
             </div>
             <div class="col-md-9">
                 <div class="container_general">
@@ -406,37 +406,37 @@ $(document).ready(function(){
 
         var locationOk = true;
 
-        if(window.location.pathname == '/public/Classics/Chevaliers'){
+        if(window.location.pathname == '/Classics/Chevaliers'){
             locationOk = true;
         }
-        else if(window.location.pathname == '/public/Classics/Pirates'){
+        else if(window.location.pathname == '/Classics/Pirates'){
             locationOk = true;
         }
-        else if(window.location.pathname == '/public/Classics/Antique'){
+        else if(window.location.pathname == '/Classics/Antique'){
             locationOk = true;
         }
-        else if(window.location.pathname == '/public/Classics/Western'){
+        else if(window.location.pathname == '/Classics/Western'){
             locationOk = true;
         }
-        else if(window.location.pathname == '/public/Classics/Fantasy'){
+        else if(window.location.pathname == '/Classics/Fantasy'){
             locationOk = true;
         }
-        else if(window.location.pathname == '/public/Classics/XVIIIe'){
+        else if(window.location.pathname == '/Classics/XVIIIe'){
             locationOk = true;
         }
-        else if(window.location.pathname == '/public/Classics/FeesPrincesses'){
+        else if(window.location.pathname == '/Classics/FeesPrincesses'){
             locationOk = true;
         }
-        else if(window.location.pathname == '/public/Classics/Police'){
+        else if(window.location.pathname == '/Classics/Police'){
             locationOk = true;
         }
-        else if(window.location.pathname == '/public/Classics/Animaux'){
+        else if(window.location.pathname == '/Classics/Animaux'){
             locationOk = true;
         }
-        else if(window.location.pathname == '/public/Classics/Sport'){
+        else if(window.location.pathname == '/Classics/Sport'){
             locationOk = true;
         }
-        else if(window.location.pathname == '/public/Classics/Divers'){
+        else if(window.location.pathname == '/Classics/Divers'){
             locationOk = true;
         }
         else {
@@ -447,47 +447,47 @@ $(document).ready(function(){
         }
 
         /********************* FIL D'ARIANNE *********************/
-        if(window.location.pathname == '/public/Classics/Chevaliers'){
+        if(window.location.pathname == '/Classics/Chevaliers'){
             $('#arianne_js').text('Chevaliers');
             $('#arianne_js').attr('<?=$this->url('listItemClassics', ['sub_category'=>'Chevaliers']);?>');
         }
-        else if(window.location.pathname == '/public/Classics/Pirates'){
+        else if(window.location.pathname == '/Classics/Pirates'){
             $('#arianne_js').text('Pirates');
             $('#arianne_js').attr('<?=$this->url('listItemClassics', ['sub_category'=>'Pirates']);?>');
         }
-        else if(window.location.pathname == '/public/Classics/Antique'){
+        else if(window.location.pathname == '/Classics/Antique'){
             $('#arianne_js').text('Antique');
             $('#arianne_js').attr('<?=$this->url('listItemClassics', ['sub_category' =>'Antique']);?>');
         }
-        else if(window.location.pathname == '/public/Classics/Western'){
+        else if(window.location.pathname == '/Classics/Western'){
             $('#arianne_js').text('Western');
             $('#arianne_js').attr('<?=$this->url('listItemClassics', ['sub_category' =>'Western']);?>');
         }
-        else if(window.location.pathname == '/public/Classics/Fantasy'){
+        else if(window.location.pathname == '/Classics/Fantasy'){
             $('#arianne_js').text('Fantasy');
             $('#arianne_js').attr('<?=$this->url('listItemClassics', ['sub_category' =>'Fantasy']);?>');
         }
-        else if(window.location.pathname == '/public/Classics/XVIIIe'){
+        else if(window.location.pathname == '/Classics/XVIIIe'){
             $('#arianne_js').text('XVIIIe');
             $('#arianne_js').attr('<?=$this->url('listItemClassics', ['sub_category' =>'XVIIIe']);?>');
         }
-        else if(window.location.pathname == '/public/Classics/FeesPrincesses'){
+        else if(window.location.pathname == '/Classics/FeesPrincesses'){
             $('#arianne_js').text('Fées & Princesses');
             $('#arianne_js').attr('<?=$this->url('listItemClassics', ['sub_category' =>'FeesPrincesses']);?>');
         }
-        else if(window.location.pathname == '/public/Classics/Police'){
+        else if(window.location.pathname == '/Classics/Police'){
             $('#arianne_js').text('Police');
             $('#arianne_js').attr('<?=$this->url('listItemClassics', ['sub_category' =>'Police']);?>');
         }
-        else if(window.location.pathname == '/public/Classics/Animaux'){
+        else if(window.location.pathname == '/Classics/Animaux'){
             $('#arianne_js').text('Animaux');
             $('#arianne_js').attr('<?=$this->url('listItemClassics', ['sub_category' =>'Animaux']);?>');
         }
-        else if(window.location.pathname == '/public/Classics/Sport'){
+        else if(window.location.pathname == '/Classics/Sport'){
             $('#arianne_js').text('Sport');
             $('#arianne_js').attr('<?=$this->url('listItemClassics', ['sub_category' =>'Sport']);?>');
         }
-        else if(window.location.pathname == '/public/Classics/Divers'){
+        else if(window.location.pathname == '/Classics/Divers'){
             $('#arianne_js').text('Divers');
             $('#arianne_js').attr('<?=$this->url('listItemClassics', ['sub_category' =>'Divers']);?>');
         }

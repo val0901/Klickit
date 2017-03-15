@@ -16,14 +16,14 @@
         <meta property="og:description" content="Découvre toi aussi la boutique Klickit : Playmobil Customisés, pièces, accessoires, boites et autres...">
         <meta property="og:locale" content="fr_FR">
         <meta property="og:site_name" content="http://www.klickit.fr/">
-        <meta property="og:image" content="http:///www.klickit.fr/public/assets/img/KLICKIT-logo-napoleon.png">
+        <meta property="og:image" content="http:///www.klickit.fr/assets/img/KLICKIT-logo-napoleon.png">
         <meta property="og:type" content="website">
         <!-- FIN Méta FB -->
 
         <!-- Méta GOOGLE+ -->
         <meta itemprop="name" content="La Boutique &copy; Klickit">
         <meta itemprop="description" content="Découvre toi aussi la boutique Klickit : Playmobil Customisés, pièces, accessoires, boites et autres...">
-        <meta itemprop="image" content="http:///www.klickit.fr/public/assets/img/KLICKIT-logo-napoleon.png">
+        <meta itemprop="image" content="http:///www.klickit.fr/assets/img/KLICKIT-logo-napoleon.png">
         <!-- FIN Méta G+ -->
 
         <!-- Méta TWITTER -->
@@ -32,7 +32,7 @@
         <meta name="twitter:creator" content="@yourtwitterhandle">
         <meta name="twitter:title" content="La Boutique &copy; Klickit">
         <meta name="twitter:description" content="Découvre toi aussi la boutique Klickit : Playmobil Customisés, pièces, accessoires, boites et autres...">
-        <meta name="twitter:image" content="http:///www.klickit.fr/public/assets/img/KLICKIT-logo-napoleon.png">    
+        <meta name="twitter:image" content="http:///www.klickit.fr/assets/img/KLICKIT-logo-napoleon.png">    
     
     
     
