@@ -341,7 +341,14 @@
     li.span4 {
     margin-bottom: 2vh;
     }
-
+    /* apropos */
+    p.apropos_text.head_apropos {
+        padding: 1.5em;
+        background-color: antiquewhite;
+        margin-top: 2em;
+        line-height: 1.5em;
+        font-size: 3vw;
+    }
 
 }
 

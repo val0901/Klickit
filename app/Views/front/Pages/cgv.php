@@ -20,7 +20,7 @@
 		</p>
 		<hr>
 		<h3>5 - Paiement</h3>
-		<p>Par Carte bancaire : via PAYPAL en suivant les instructions à partir du panier. Paiement par chèque : merci de le libeller à l'ordre de "KLICKIT" et d'inscrire au dos du chèque, le numéro de votre commande. Il sera à adresser à : KLICKIT, 1, résidence beau pré, 33650 Saucats. Par virement bancaire : Merci d'indiquer lors de votre virement bancaire, le numéro de votre commande. Il sera à adresser à : Laurent Lafont, IBAN FR23 1001 1000 2003 3506 1893 K88, BIC PSSTFRPPCNE.
+		<p class="cgv_text">Par Carte bancaire : via PAYPAL en suivant les instructions à partir du panier. Paiement par chèque : merci de le libeller à l'ordre de "KLICKIT" et d'inscrire au dos du chèque, le numéro de votre commande. Il sera à adresser à : KLICKIT, 1, résidence beau pré, 33650 Saucats. Par virement bancaire : Merci d'indiquer lors de votre virement bancaire, le numéro de votre commande. Il sera à adresser à : Laurent Lafont, IBAN FR23 1001 1000 2003 3506 1893 K88, BIC PSSTFRPPCNE.
 		Le ou les produits vous sont réservés pour une période de 10 jours ouvrés suivant la date de validation de votre commande sur le site. Au delà de cette période, la non réception du règlement entraine l'annulation de la commande.</p>
 		<hr>
 		<h3>6 - Livraison</h3>

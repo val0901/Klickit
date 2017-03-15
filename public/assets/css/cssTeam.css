@@ -2,7 +2,6 @@
     text-align: center;
     color: #66D9EF;
 }
-
 h2.h2team {
     font-size: 2em;
     color: #66D9EF;
@@ -10,6 +9,7 @@ h2.h2team {
 }
 .childTeam {
     width: 15%;
+    min-width: 250px;
 }
 hr.lineteam {
     width: 95%;
@@ -20,18 +20,26 @@ a.linkteam {
     font-weight: 600;
 }
 .containerTeam {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -ms-flex-pack: distribute;
     justify-content: space-around;
     margin-bottom: 30px;
     margin-top: 30px;
 }
 
-.text-description{
+.text-description {
     margin: 40px 0;
+    letter-spacing: 1px;
+    font-size: medium;
 }
-
 .wrap {
     border-radius: 50%;
     height: 250px;
