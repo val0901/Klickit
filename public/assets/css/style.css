@@ -1904,12 +1904,10 @@ td {
     border-bottom: 1px dotted #ccc;
     padding: 10px 0;
 }
-
 .orderfrais_list > li {
     text-indent: 40px;
-    font-size: 18px;
+    font-size: 3vh;
 }
-
 .orderfrais_border {
     padding:20px;
     margin-top: 50px;

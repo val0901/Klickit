@@ -591,6 +591,11 @@
     .favorite_button_size {
         font-size: large;
     }
+    /* apropos */
+    p.apropos_text.head_apropos {
+        padding: 1.5em;
+        font-size: 4vw;
+    }
 
 
 
