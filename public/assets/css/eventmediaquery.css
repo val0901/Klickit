@@ -12,8 +12,6 @@
         text-align: center;
         color: #7ac941;
         font-size: 2em;
-        padding: 0 1em;
-
     }
     .apropos_sortpaie{
         text-align: center;
@@ -21,6 +19,20 @@
         font-size: 2em;
         padding: 0 1em;
     }
+    .apropos_containpaie {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
 
 }
 @media screen and (max-width: 1200px) {

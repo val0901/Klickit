@@ -596,7 +596,10 @@
         padding: 1.5em;
         font-size: 4vw;
     }
-
+    .orderfrais_list > li {
+        text-indent: 30px;
+        font-size: 3.2vw;
+    }
 
 
 }
@@ -642,6 +645,11 @@
     .viewcategory_nouveau {
         font-size: 5.5vw;
     }
+    .orderfrais_list > li {
+        text-indent: 0;
+        font-size: 4.5vw;
+    }
+
 }
 
 /* JUSQU A 320 PX*/
