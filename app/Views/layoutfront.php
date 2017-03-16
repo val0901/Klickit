@@ -13,11 +13,13 @@
 
          <!-- Méta FB -->
         <meta property="og:title" content="La Boutique &copy; Klickit">
-        <meta property="og:description" content="Découvre toi aussi la boutique Klickit : Playmobil Customisés, pièces, accessoires, boites et autres...">
         <meta property="og:locale" content="fr_FR">
         <meta property="og:site_name" content="http://www.klickit.fr/">
-        <meta property="og:image" content="http://www.klickit.fr/assets/img/KLICKIT-logo-napoleon-rect.jpg">
         <meta property="og:type" content="website">
+        <meta property="og:description" content="Découvre toi aussi la boutique Klickit : Playmobil Customisés, pièces, accessoires, boites et autres...">
+        <meta property="og:image" content="http://www.klickit.fr/assets/img/KLICKIT-logo-napoleon-rect.jpg">
+        <?= $this->section('meta')?>
+    
         <!-- FIN Méta FB -->
 
         <!-- Méta GOOGLE+ -->
@@ -49,6 +51,9 @@
     <link rel="stylesheet" href="<?= $this->assetUrl('css/style.css') ?>">
     <link rel="stylesheet" href="<?= $this->assetUrl('css/mediaquery.css') ?>">
     <link rel="stylesheet" media="print" href="<?= $this->assetUrl('css/print.css') ?>" type="text/css">
+    <!--[if IE]>
+    <link rel="stylesheet" type="text/css" href="<?= $this->assetUrl('css/ie.css') ?>" />
+    <![endif]-->
     <!-- styles page event-->
     <link rel="stylesheet" href="<?= $this->assetUrl('css/stylebis.css') ?>">
     <link rel="stylesheet" href="<?= $this->assetUrl('css/eventmediaquery.css') ?>">
@@ -410,9 +415,16 @@
 					<a href="<?=$this->url('front_team');?>"><p class="footertext ahoveron">Equipe de création</p></a>
 					<a href="<?=$this->url('fGuestbook');?>"><p class="footertext ahoveron">Laissez nous votre avis</p></a>
 					<br>
-					<p class="footertitle">Suivez-nous</p>
+					
+                    <p class="footertitle">Suivez-nous</p>
 					<a href="https://www.facebook.com/Klickit-787164048000917/" target="_blank"><i class="fa fa-facebook-square fa-2x footer_neticon" aria-hidden="true"> <span class="footertext">Sur Facebook</span></i></a>
 					<a href=" https://twitter.com/Klickit33" target="_blank"><i class="fa fa-twitter-square fa-2x footer_neticon" aria-hidden="true"> <span class="footertext">Sur Twitter</span></i></a>
+                    <br><br>
+                    
+                    <p class="footertitle">Partagez</p>
+					<a href="https://www.facebook.com/Klickit-787164048000917/" target="_blank"><i class="fa fa-share fa-2x footer_neticon" aria-hidden="true"><span class="footertext">Sur Facebook</span></i></a>
+					<a href=" https://twitter.com/Klickit33" target="_blank"><i class="fa fa-share fa-2x footer_neticon" aria-hidden="true"> <span class="footertext">Sur Twitter</span></i></a>
+
 				</div>
 			</div>
 			
