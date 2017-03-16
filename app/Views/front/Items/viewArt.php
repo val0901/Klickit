@@ -92,15 +92,15 @@
 
                     <!-- Bouton Facebook statique -->
 
-                    <button class="button share_twitter" data-url="http://localhost/Klickit/public/viewArt/22">
+                    <button class="button share_twitter" data-url="http://www.klickit/viewArt/<?=$items['id'];?>">
 
-                        <button class="button share_twitter" data-url="http://www.localhost:8000<?=$this->url('viewArt' , ['id' => $items['id']]);?>">
+                        <button class="button share_twitter" data-url="http://www.klickit.fr<?=$this->url('viewArt' , ['id' => $items['id']]);?>">
 
                             <i class="fa fa-twitter-square fa-3x fa-fw" aria-hidden="true" style="color:#3fa9f5;"></i>
                         </button>
 
                         <!-- Bouton Facebook statique -->
-                        <button class="button share_facebook" data-url="http://www.localhost:8000<?=$this->url('viewArt' , ['id' => $items['id']]);?>">
+                        <button class="button share_facebook" data-url="http://www.klickit.fr<?=$this->url('viewArt' , ['id' => $items['id']]);?>">
                             <i class="fa fa-facebook-square fa-3x fa-fw" aria-hidden="true" style="color:#335199;"></i>
                         </button>
 
