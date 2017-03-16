@@ -1,4 +1,12 @@
 <?php $this->layout('layoutfront', ['title' => 'Klickit participe à cet évènement', 'meta' => 'collection, evenement, collectionneur, collection playmobil, evenement playmobil, collectionneur playmobil']) ?>
+<?php $this->start('meta') ?>
+        <meta property="og:description" content="Venez découvrir la boutique Klickit sur cet évènement...">
+        <meta property="og:image" content="<?=$this->assetUrl('events/'.$event['picture']);?>">
+<!--
+        <meta property="og:description" content="Découvre toi aussi la boutique Klickit : Playmobil Customisés, pièces, accessoires, boites et autres...">
+        <meta property="og:image" content="http://www.klickit.fr/assets/img/KLICKIT-logo-napoleon-rect.jpg">
+-->
+<?php $this->stop('meta') ?>
 
 <?php $this->start('main_content') ?>
 
