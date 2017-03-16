@@ -13,7 +13,7 @@
 
     <p class="apropos_text">Nous nous efforçons de vous proposer le plus large choix possible de personnages ainsi que des nouveautés régulières.</p>
 
-    <p class="apropos_text">Tous nos produits sont neufs ou d&#39;occasion proche du neuf.</p>
+    <p class="apropos_text">Tous nos produits sont neufs ou d&#39;occasion proches du neuf.</p>
 
     <i class="fa fa-info-circle fa-2x apropospicinfo" aria-hidden="true"></i> <h2 class="apropos_txtinfo">Livraison</h2>
 
