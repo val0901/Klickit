@@ -70,14 +70,19 @@
 	font-family: 'Roboto', sans-serif;
 }
 p.apropos_text.head_apropos {
-    padding: 5em;
     background-color: antiquewhite;
     margin-top: 2em;
     line-height: 1.5em;
-    font-size: large;
+}
+.head_apropos {
+    padding: 1.2em;
+    font-size: 2vw;
 }
 .apropos_container {
     padding: 1.5em 25em;
+}
+.apropos_container {
+    padding: 1em 15em;
 }
 td.apropos_td {
     text-align: center;

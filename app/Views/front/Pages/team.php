@@ -47,7 +47,7 @@
             Développeur Web junior   
         </h2>
         <div class=text-description>
-            Etant attirée par l’informatique depuis plusieurs années, j’ai décidé de franchir le pas de la reconversion : j’ai commencé par une certification ayant pour thème « Les réseaux, l’IT (systèmes d’information) et moi » délivrée par orange pour faire le point sur mes connaissances.
+            Etant attirée par l’informatique depuis plusieurs années, j’ai décidé de franchir le pas de la reconversion : j’ai commencé par une certification ayant pour thème « Les réseaux, l’IT (systèmes d’information) et moi » délivrée par Orange pour faire le point sur mes connaissances.
             <br><br>
             Après des recherches, je me suis orientée vers la formation de développeur Web dispensée par Webforce 3, formation courte et enrichissante me permettant d’apprendre les bases et d’accéder au marché du travail rapidement.
             <br><br>
