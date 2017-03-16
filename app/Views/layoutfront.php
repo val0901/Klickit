@@ -16,12 +16,7 @@
         <meta property="og:description" content="Découvre toi aussi la boutique Klickit : Playmobil Customisés, pièces, accessoires, boites et autres...">
         <meta property="og:locale" content="fr_FR">
         <meta property="og:site_name" content="http://www.klickit.fr/">
-        <meta property="og:image" content="<?=$this->assetUrl('/img/KLICKIT-logo-napoleon-copy.png');?>">
-        <meta property="og:image:url" content="<?=$this->assetUrl('/img/KLICKIT-logo-napoleon-copy.png');?>">
-        <meta property="og:image:secure_url" content="http://www.klickit.it/public/assets/img/KLICKIT-logo-napoleon-copy.png">
-        <meta property="og:image:type" content="image/png/jpg/jpeg/gif">
-        <meta property="og:image:width" content="500px">
-        <meta property="og:image:height" content="117px">
+        <meta property="og:image" content="http://www.klickit.fr/assets/img/KLICKIT-logo-napoleon-rect.jpg">
         <meta property="og:type" content="website">
         <!-- FIN Méta FB -->
 

@@ -11,6 +11,7 @@ html, body {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
+    width: 100%;
 }
 ul.navbar-right.search_dropdownbox_width.search{
     margin-right: 0;
@@ -708,7 +709,7 @@ a#customsmenu_scat{
 
 .col2_commentaireback {
     background-color: #fff;
-    padding: 12vh;
+    padding: 10vh;
 }
 
 .col2commtaire_margin {
@@ -718,7 +719,12 @@ a#customsmenu_scat{
 .commentaire_title {
     font-size: 30px;
     font-weight: 400;
+/*
     line-height: 20px;
+*/
+}
+.commentaire {
+    line-height: 6vh;
 }
 
 .quote_hide {
@@ -747,7 +753,6 @@ a#customsmenu_scat{
 
 .comment_text {
     padding-left:10px;
-    font-size: 2vw;
     font-weight:400;
 }
 
@@ -801,8 +806,11 @@ font-size:30pt;
 .slideCol p { margin: 0px !important; }
 
 .scroller {
-    height: 100pt;
+    height: 100%;
+    padding: 10px;
+/*
     line-height: 30pt;
+*/
     overflow: hidden;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -861,7 +869,7 @@ font-size:30pt;
     #textSlider.row { margin-right: 0px !important; margin-left: 0px !important; }
     .iamCol { text-align: center; font-size:25pt; }
     .iamCol p { display: inline !important; }
-    .slideCol { font-size: 38pt; text-align: center; margin-top: -20px; }
+    .slideCol { /*font-size: 38pt;*/ text-align: center; margin-top: -20px; }
 }
 
 /* Small Devices, Tablets */
@@ -869,7 +877,7 @@ font-size:30pt;
     #textSlider.row { margin-right: 0px !important; margin-left: 0px !important; }
     .iamCol { text-align: center; font-size:30pt; }
     .iamCol p { display: inline !important; }
-    .slideCol { font-size: 50pt; text-align: center; margin-top: 5px; }
+    .slideCol { text-align: center; margin-top: 5px; }
     button#searchFilter{ display: inline}
 }
 

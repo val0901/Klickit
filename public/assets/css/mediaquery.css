@@ -600,7 +600,14 @@
         text-indent: 30px;
         font-size: 3.2vw;
     }
-
+    .comment_text {
+        padding-left:10px;
+        font-weight:400;
+        font-size: 3vw;
+    }
+    .commentaire {
+        line-height: 4vh;
+    }
 
 }
 
@@ -649,6 +656,21 @@
         text-indent: 0;
         font-size: 4.5vw;
     }
+    .comment_text {
+        font-size: 5vw;
+    }
+    .commentaire {
+        line-height: 5vh;
+    }
+    .col-xs-12.etiq_width_small.left {
+        display: none;
+    }
+    .footertitle {
+        font-size: 5.5vw;
+    }
+    .footertext {
+        font-size: 4vw;
+    }
 
 }
 
@@ -661,6 +683,16 @@
     div#rowcptuser {
         font-size: 6vw;
     }
+    .comment_text {
+        font-size: 7vw;
+    }
+    .commentaire {
+        line-height: 4vh;
+    }
+    .col2_commentaireback {
+    padding: 4vh;
+}
+
 
 }
 
