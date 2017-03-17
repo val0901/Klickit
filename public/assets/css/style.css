@@ -2381,6 +2381,7 @@ input#impression:active {
 }
 .favorite_voirplus {
     text-align: center;
+    font-size: large;
 }
 .favoritedelete_button {
     text-align: center;
