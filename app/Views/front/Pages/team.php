@@ -28,7 +28,7 @@
 
             <br><br>
             À court terme, je souhaite être indépendant en micro entreprise pour affiner mes compétences en Web. Mon objectif est d'apprendre des langages de programmation plus adaptés aux jeux vidéo pour être développeur jeux vidéo.              <br><br>
-            <a class="linkteam" href="https://www.linkedin.com/in/th%C3%A9o-appelius-19441b137/" target="_blank">Contacter Théo</a>
+            LinkedIn : <a class="linkteam" href="https://www.linkedin.com/in/th%C3%A9o-appelius-19441b137/" target="_blank">Contacter Théo</a>
             <br>
             Twitter : <a class="linkteam" href="https://twitter.com/AppeliusTheo" target="_blank">@AppeliusTheo</a>
         </div>
@@ -54,7 +54,7 @@
             Les certifications de développeur et intégrateur Web obtenues avec succès, dans une démarche de progression, je dois maintenant me perfectionner et découvrir d’autres technologies.
             <br><br>
     
-            <a class="linkteam" href="https://twitter.com/baldy_symezac" target="_blank">Contacter Valérie</a>
+            LinkedIn : <a class="linkteam" href="https://twitter.com/baldy_symezac" target="_blank">Contacter Valérie</a>
             <br>
             Twitter : <a class="linkteam" href="https://twitter.com/baldy_symezac" target="_blank">@baldy_symezac</a>
 
@@ -84,7 +84,7 @@
             <br><br>
 
 
-            <a class="linkteam" href="https://www.linkedin.com/in/webdesign-cecile-lafont/" target="_blank">Contacter Cécile</a>
+            LinkedIn : <a class="linkteam" href="https://www.linkedin.com/in/webdesign-cecile-lafont/" target="_blank">Contacter Cécile</a>
             <br>
             Twitter : <a class="linkteam" href="https://twitter.com/emaginetapub" target="_blank">@emaginetapub</a>
 
@@ -110,7 +110,7 @@
             <br><br>
             Actuellement, je suis développeur web pour doob, une société basée sur Bordeaux et spécialisée dans la diffusion de contenu multimédialibre en médiathèque et sur le web.
             <br><br>
-            <a class="linkteam" href="https://www.linkedin.com/in/landy-razafindrabe-15847b5a" target="_blank">Contacter Landy</a>
+            LinkedIn : <a class="linkteam" href="https://www.linkedin.com/in/landy-razafindrabe-15847b5a" target="_blank">Contacter Landy</a>
             <br>
             Twitter : <a class="linkteam" href="https://twitter.com/LRazafindrabe" target="_blank">@lrazafindrabe</a>
 
@@ -140,7 +140,7 @@
             Pour le moment, j'apprends le PHP MVC pour augmenter la qualité du Code.  Vous pouvez me contacter si vous avez besoin de mes services !
             <br><br>
             
-            <a class="linkteam" href="https://www.linkedin.com/in/jie-xu-667a4644/" target="_blank">Contacter Jie (Jay)</a>
+            LinkedIn : <a class="linkteam" href="https://www.linkedin.com/in/jie-xu-667a4644/" target="_blank">Contacter Jie (Jay)</a>
 
         </div>
     </div>
