@@ -9,9 +9,11 @@
 				<div class="tab-pane active" id="pic-1">
                     <img class="vignphone" src="<?=$this->assetUrl('art/'.$affichage['picture1']);?>">
                 </div>
-				<div class="tab-pane active" id="pic-2">
-                    <img class="vignphone" src="<?=$this->assetUrl('art/'.$affichage['picture2']);?>">
-                </div>
+                <?php if(!empty($affichage['picture2'])): ?>
+					<div class="tab-pane active" id="pic-2">
+	                    <img class="vignphone" src="<?=$this->assetUrl('art/'.$affichage['picture2']);?>">
+	                </div>
+	            <?php endif; ?>
 			</div>
 		</div>
 			<div class="details">
@@ -27,6 +29,7 @@
 				
 				<p class="price"><span>Statut du produit : </span> <?=$affichage['statut'];?></p>
 				<p class="price"><span>Catégorie du produit : </span> <?=$affichage['category'];?></p>
+				<p class="price"><span>Sous-catégorie du produit : </span> <?=$affichage['sub_category'];?></p>
 
 				<?php $allFilter = $ItemFilter->findByIdItem($affichage['id']);?>
 				<p class="filter"><span>Filtres du produit : </span>
