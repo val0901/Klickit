@@ -100,6 +100,7 @@
 			      <option value="Antique">Antique</option>
 			      <option value="Western">Western</option>
 			      <option value="Fantasy">Fantasy</option>
+			      <option value="Robot">Robot</option>
 			      <option value="XVIIIe">XVIIIe</option>
 			      <option value="FeesPrincesses">Fées et Princesses</option>
 			      <option value="Police">Police</option>
