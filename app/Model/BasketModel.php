@@ -183,6 +183,19 @@ class BasketModel extends \W\Model\Model
 	}
 
 	/**
+	 * Suppresion de tout les articles après avoir supprimé l'article en back
+	 */
+	public function deleteItem($id_item)
+	{
+		$sql = 'DELETE FROM '.$this->table.' WHERE id_item = :id_item';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':id_item', $id_item);
+
+		return $sth->execute();
+	}
+
+	/**
 	 * Update des pays
 	 */
 	public function resetCountry($id)

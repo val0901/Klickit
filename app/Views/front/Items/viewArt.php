@@ -7,19 +7,23 @@
 <form method="post">
     <div class="container_viewart"><!---->
         <div class="row containviewart"><!---->
-            <div id="slideviewart"><!---->
-                <a href="#" class="control_next">></a>
-                <a href="#" class="control_prev"><</a>
-                    <ul>
-                        <li>
-                            <img src="<?=$this->assetUrl('art/'.$items['picture1']);?>">
-                        </li>
-                        <!-- ajout 2e image-->
-                        <li style="background: #fff;">
-                            <img src="<?=$this->assetUrl('art/'.$items['picture2']);?>">
-                        </li>
-                    </ul>
-                    </div><!--fin slideviewart-->
+            <?php if(!empty($items['picture2'])): ?>
+                <div id="slideviewart"><!---->
+                    <a href="#" class="control_next">></a>
+                    <a href="#" class="control_prev"><</a>
+                        <ul>
+                            <li>
+                                <img src="<?=$this->assetUrl('art/'.$items['picture1']);?>">
+                            </li>
+                            <!-- ajout 2e image-->
+                            <li style="background: #fff;">
+                                <img src="<?=$this->assetUrl('art/'.$items['picture2']);?>">
+                            </li>
+                        </ul>
+                </div><!--fin slideviewart-->
+            <?php else : ?>
+                <!-- METTRE L'HTML POUR AFFICHER PICTURE1 SI IL N'Y A PAS DE DEUXIEME IMAGE -->
+            <?php endif; ?>
 
                 <div class="col-md-5 viewart_fontweight"><!---->
 
