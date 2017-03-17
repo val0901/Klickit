@@ -74,7 +74,7 @@
 				<label for="exampleInputPassword1">Mot de passe</label>
 				<input type="password" class="form-control" id="exampleInputPassword1" placeholder="votre mot de passe" name="password">
 			  </div>
-			  <button type="submit" class="btn btn-default adduser_button">S'inscrire</button>
+			  <button type="submit" class="btn btn-default adduser_button">Valider</button>
 			</form>
 			<br><br>
 		</div>
