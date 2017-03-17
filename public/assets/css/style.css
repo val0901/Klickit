@@ -2409,9 +2409,15 @@ button#allDelete:active {
 button#allDelete:focus {
     background-color: black;
 }
+/*
 .col-lg-3.col-sm-6 {
     width: 33%;
     margin: 0 1vw;
+}
+*/
+.col-lg-4.col-sm-6.artfav {
+    margin: 0;
+    padding: 2px;
 }
 
 /*guestbook.php*/

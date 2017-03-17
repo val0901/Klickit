@@ -28,7 +28,7 @@
                <!--<div class="col-lg-3 col-sm-6">-->
           <?php foreach($favorite as $value): ?>
             <?php $list_items = $items->findItems($value['id_item']); ?>
-                <div class="col-lg-3 col-sm-6">
+                <div class="col-lg-4 col-sm-6 artfav">
                     <div class="thumbnail">
                         <a href="<?=$this->url('viewArt', ['id' => $list_items['id']]);?>"><img class="ahoveron" src="<?=$this->assetUrl('art/'.$list_items['picture1']);?>" alt=""></a>
                     </div>
