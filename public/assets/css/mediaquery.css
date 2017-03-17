@@ -507,7 +507,6 @@
 
     .container_general {
         margin: 0 10px;
-        padding: 0 1.5em;
     }
 
     .footercol2_margin {
@@ -674,6 +673,9 @@
     }
     .footertext {
         font-size: 4vw;
+    }
+    .viewcategorycol2_text {
+    font-size: 4vw;
     }
 
 }
