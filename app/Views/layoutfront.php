@@ -382,7 +382,10 @@
 						<p class="footertitle">Suivez-nous</p>
 						<a href="https://www.facebook.com/Klickit-787164048000917/" target="_blank"><i class="fa fa-facebook-square fa-2x footer_neticon" aria-hidden="true"> <span class="footertext">Sur Facebook</span></i></a>
 						<a href=" https://twitter.com/Klickit33" target="_blank"><i class="fa fa-twitter-square fa-2x footer_neticon" aria-hidden="true"> <span class="footertext">Sur Twitter</span></i></a>
-					
+					   <p class="footertitle">Partagez</p>
+					   <a href="https://www.facebook.com/Klickit-787164048000917/" target="_blank"><i class="fa fa-share fa-2x footer_neticon" aria-hidden="true"><span class="footertext">Sur Facebook</span></i></a>
+					   <a href=" https://twitter.com/Klickit33" target="_blank"><i class="fa fa-share fa-2x footer_neticon" aria-hidden="true"> <span class="footertext">Sur Twitter</span></i></a>
+
 				</div>
 				<div class="col-md-4 etiq_width">
 					<img src="<?=$this->assetUrl('/img/napoleonlarge.png');?>" alt="" class="footerimg_hide">
@@ -399,7 +402,7 @@
 	<br>
 		<div class="container_general footercontainer_height">
 			<div class="row">
-				<div class="col-xs-6 etiq_width_small">
+				<div class="col-xs-6 etiq_width_small left">
 					<img src="<?=$this->assetUrl('/img/etiq1large.png');?>" alt="" style="margin: 10px 0;">
 					<img src="<?=$this->assetUrl('/img/etiq2large.png');?>" alt="">
 					<img src="<?=$this->assetUrl('/img/etiq3large.png');?>" alt="">

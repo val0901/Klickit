@@ -665,6 +665,9 @@
     .col-xs-12.etiq_width_small.left {
         display: none;
     }
+    .col-xs-6.etiq_width_small.left{
+        display: none;
+    }
     .footertitle {
         font-size: 5.5vw;
     }
