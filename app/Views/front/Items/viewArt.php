@@ -59,7 +59,12 @@
                         <input type="number" name="number" min="1" id="number" placeholder="1">
                     </span>
                     <br><br>
-                    <div class="ajoutpanier"><!---->
+                    <!-- container +1 -->
+                    <div id="<?=$product['id'];?>" class="item--helper">
+                        <span id="plus1">+1</span>
+                    </div>
+
+                    <div class="ajoutpanier item"><!---->
                         <?php if(!empty($_SESSION['user'])): ?>
                         <button data-id="<?=$items['id']?>" type="button" class="btn btn-primary viewcategory_button_size addBasket">  <span class="name">
                             Ajouter au panier
