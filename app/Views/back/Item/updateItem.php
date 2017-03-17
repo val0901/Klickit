@@ -143,6 +143,7 @@
 		  <div class="col-md-4">
 		    <select id="subCategory" name="subCategory" class="form-control">
 		    	  <option selected disabled></option>
+		    	  <option disabled><strong><span>CATÉGORIE CLASSIQUE :</span></strong></option>
 			      <option value="Chevaliers">Chevaliers</option>
 			      <option value="Pirates">Pirates</option>
 			      <option value="Antique">Antique</option>
@@ -153,11 +154,14 @@
 			      <option value="Police">Police</option>
 			      <option value="Animaux">Animaux</option>
 			      <option value="Sport">Sport</option>
+			      <option value="Divers">Divers</option>
+			      <option disabled><strong><span>CATÉGORIE CUSTOM :</span></strong></option>
 			  	  <option value="CustomsTampographies">Customs tampographiés</option>
 			  	  <option value="CustomsPeints">Customs peints</option>
 			  	  <option value="BustesTampographies">Bustes tampographiés</option>
 			  	  <option value="PiecesEnResine">Pièces en résine</option>
 			  	  <option value="Stickers">Stickers</option>
+			  	  <option disabled><strong><span>CATÉGORIE PIÈCES :</span></strong></option>
 			  	  <option value="Armes">Armes</option>
 			  	  <option value="Coiffes">Coiffes</option>
 			  	  <option value="Manchettes">Manchettes</option>
