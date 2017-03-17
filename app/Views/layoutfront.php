@@ -51,9 +51,7 @@
     <link rel="stylesheet" href="<?= $this->assetUrl('css/style.css') ?>">
     <link rel="stylesheet" href="<?= $this->assetUrl('css/mediaquery.css') ?>">
     <link rel="stylesheet" media="print" href="<?= $this->assetUrl('css/print.css') ?>" type="text/css">
-    <!--[if IE]>
-    <link rel="stylesheet" type="text/css" href="<?= $this->assetUrl('css/ie.css') ?>" />
-    <![endif]-->
+    <!--[if IE]><link rel="stylesheet" type="text/css" href="<?= $this->assetUrl('css/ie.css') ?>"><![endif]-->
     <!-- styles page event-->
     <link rel="stylesheet" href="<?= $this->assetUrl('css/stylebis.css') ?>">
     <link rel="stylesheet" href="<?= $this->assetUrl('css/eventmediaquery.css') ?>">
@@ -348,7 +346,7 @@
 		</section>
 
 	<!--footer-->
-	<footer>
+	<footer class="adpatIE">
 	<div class="footer_largestyle">
 	<br>
 		<div class="container_general footercontainer_height">
