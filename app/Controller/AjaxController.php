@@ -73,7 +73,7 @@ class AjaxController extends Controller
 				$basket = new BasketModel();
 				$itemModel  = new ItemModel();
 
-				if($favorite->deleteItem($_POST['id_item']) && $filtre->deleteByItem($_POST['id_item']) && $basket->deleteItem($_POST['id_item'])){
+				if($favorite->deleteItem($_POST['id_item']) && $filtre->deleteByItem($_POST['id_item']) && $basket->deleteItemAll($_POST['id_item'])){
 					$deleteItem = $itemModel->delete($_POST['id_item']);
 				}
 
