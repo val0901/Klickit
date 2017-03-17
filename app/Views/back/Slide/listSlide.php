@@ -62,7 +62,7 @@
 									dataType: 'json',
 									success: function(out){
 										if(out.code == 'ok'){
-							  				$('body').load('<?=$this->url('listSlide');?>');
+							  				window.location.reload();
 										}
 									}
 				  				});

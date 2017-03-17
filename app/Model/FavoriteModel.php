@@ -78,4 +78,17 @@ class FavoriteModel extends \W\Model\Model
 
 		return $sth->execute();
 	}
+
+	/**
+	 * Lors de la suppression d'un article en back, supprime cette article de la table favorite
+	 */
+	public function deleteItem($id_item)
+	{
+		$sql = 'DELETE FROM '.$this->table.' WHERE id_item = :id_item';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':id_item', $id_item);
+
+		return $sth->execute();
+	}
 }

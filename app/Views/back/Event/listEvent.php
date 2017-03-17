@@ -70,7 +70,7 @@
 									dataType: 'json',
 									success: function(out){
 										if(out.code == 'ok'){
-							  				$('body').load('<?=$this->url('listEvent');?>');	
+							  				window.location.reload();	
 										}
 									}
 				  				});

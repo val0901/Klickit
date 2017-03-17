@@ -236,7 +236,7 @@
 									dataType: 'json',
 									success: function(out){
 										if(out.code == 'ok'){
-							  				$('body').load('<?=$this->url('listItem');?>');	
+							  				window.location.reload();	
 										}
 									}
 				  				});
@@ -297,7 +297,7 @@
 													dataType: 'json',
 													success: function(out){
 														if(out.code == 'ok'){
-											  				$('body').load('<?=$this->url('listItem');?>');	
+											  				window.location.reload();	
 														}
 													}
 								  				});
@@ -362,7 +362,7 @@
 													dataType: 'json',
 													success: function(out){
 														if(out.code == 'ok'){
-											  				$('body').load('<?=$this->url('listItem');?>');	
+											  				window.location.reload();	
 														}
 													}
 								  				});
@@ -427,7 +427,7 @@
 													dataType: 'json',
 													success: function(out){
 														if(out.code == 'ok'){
-											  				$('body').load('<?=$this->url('listItem');?>');	
+											  				window.location.reload();	
 														}
 													}
 								  				});
@@ -492,7 +492,7 @@
 													dataType: 'json',
 													success: function(out){
 														if(out.code == 'ok'){
-											  				$('body').load('<?=$this->url('listItem');?>');	
+											  				window.location.reload();	
 														}
 													}
 								  				});

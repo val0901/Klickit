@@ -81,7 +81,7 @@
 								dataType: 'json',
 								success: function(out){
 									if(out.code == 'ok'){
-						  				$('body').load('<?=$this->url('listGuestbook');?>');
+						  				window.location.reload();
 									}
 								}
 			  				});

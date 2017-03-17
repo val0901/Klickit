@@ -69,7 +69,7 @@
 									dataType: 'json',
 									success: function(out){
 										if(out.code == 'ok'){
-							  				$('body').load('<?=$this->url('listFilter');?>');	
+							  				window.location.reload();	
 										}
 									}
 				  				});

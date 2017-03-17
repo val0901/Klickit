@@ -15,6 +15,7 @@ use \Model\ShippingModel;
 use \Model\FilterModel;
 use \Model\FiltrearticleModel;
 use \Model\SalesrevenueModel;
+use \Model\FavoriteModel;
 use \W\Security\AuthentificationModel;
 use \PHPMailer;
 
@@ -66,8 +67,13 @@ class AjaxController extends Controller
 	{
 		if(!empty($_POST)){
 			if(is_numeric($_POST['id_item'])){
+				$favorite = new FavoriteModel();
+				$filtre = new FiltrearticleModel();
 				$itemModel  = new ItemModel();
-				$deleteItem = $itemModel->delete($_POST['id_item']);
+
+				if($favorite->deleteItem($_POST['id_item']) && $filtre->deleteByItem($_POST['id_item'])){
+					$deleteItem = $itemModel->delete($_POST['id_item']);
+				}
 
 				if($deleteItem){
 					$json = ['code' => 'ok'];
