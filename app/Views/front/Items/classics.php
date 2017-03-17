@@ -421,6 +421,9 @@ $(document).ready(function(){
         else if(window.location.pathname == '/Classics/Fantasy'){
             locationOk = true;
         }
+        else if(window.location.pathname == '/Classics/Robot'){
+            locationOk = true;
+        }
         else if(window.location.pathname == '/Classics/XVIIIe'){
             locationOk = true;
         }
@@ -466,6 +469,10 @@ $(document).ready(function(){
         else if(window.location.pathname == '/Classics/Fantasy'){
             $('#arianne_js').text('Fantasy');
             $('#arianne_js').attr('<?=$this->url('listItemClassics', ['sub_category' =>'Fantasy']);?>');
+        }
+        else if(window.location.pathname == 'Classics/Robot'){
+            $('#arianne_js').text('Robot');
+            $('#arianne_js').attr('<?=$this->url('listItemClassics', ['sub_category' =>'Robot']);?>')
         }
         else if(window.location.pathname == '/Classics/XVIIIe'){
             $('#arianne_js').text('XVIIIe');
