@@ -34,7 +34,7 @@
 			<div class="viewcategoryrow2col1_tirer"><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Antique']);?>">Antique</a></div>
 			<div class="viewcategoryrow2col1_tirer"><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Western']);?>">Western</a></div>
 			<div class="viewcategoryrow2col1_tirer"><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Fantasy']);?>">Fantasy</a></div>
-			<div class="viewcategoryrow2col1_tirer"><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Robot']);?>">Robot</a></div>
+			<div class="viewcategoryrow2col1_tirer"><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Robot']);?>">Robot Espace</a></div>
 			<div class="viewcategoryrow2col1_tirer"><a href="<?=$this->url('listItemClassics', ['sub_category'=>'XVIIIe']);?>">XVIIIe</a></div>
 			<div class="viewcategoryrow2col1_tirer"><a href="<?=$this->url('listItemClassics', ['sub_category'=>'FeesPrincesses']);?>">Fées &amp; Princesses</a></div>
 			<div class="viewcategoryrow2col1_tirer"><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Police']);?>">Police</a></div>
@@ -72,19 +72,21 @@
 		<!--End viewcategory row2 col1-->
 		<!--viewcategory row2 col2-->
 		<div id="refresh_list" class="col-md-9">
-			<h4 class="viewcategory_pages"><a href="<?=$this->url('front_index');?>">Home </a><span>></span><a href="<?=$this->url('listItemClassicsFull');?>"> Classics</a></h4>
+			<h4 class="viewcategory_pages">
+                <a href="<?=$this->url('front_index');?>">Home </a><span>></span><a href="<?=$this->url('listItemClassicsFull');?>"> Classics</a>
+            </h4>
 			<div class="row" id="replace">
 				<?php foreach ($items as $product) : ?>
 					<div class="col-md-3 col-xs-6 viewcategoryrow2col1_img">
                      <a href="<?=$this->url('viewArt', ['id' => $product['id']]);?>"><img src="<?=$this->assetUrl('art/'.$product['picture1']);?>" alt="photo de playmobil" class="img-thumbnail" style=""></a>
-						<div class="viewcategorycaption">
+						<div id="listItem" class="viewcategorycaption">
 							<?php if($product['newPrice'] == 0) : ?>
 								<h4 class="salesItems"><?=$product['price'];?>€</h4>
 							<?php else : ?>
 								<h4 class="salesItems"><span class="viewcategoryprixpromo"><?=$product['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$product['price'];?>€</span></h4>
 							<?php endif; ?>
 
-							<p class="iconeFavorite">
+							<p class="paraphItem">
 								<span style="cursor:pointer;">
 									<?php if(!empty($_SESSION['user'])): ?>
 										<?php if(in_array($product['id'], $favorite)): ?>
@@ -113,7 +115,7 @@
                         </div>
 						<div class="viewcategory_button item">
 							<?php if(!empty($_SESSION['user'])): ?>
-                                <button type="button" class="changeArrow btn viewcategory_button_size add_to_shopping_cart ahoveroff add-to-basket" data-id="<?=$product['id']?>">  <span class="name">
+                                <button id="simple" type="button" class="changeArrow btn viewcategory_button_size add_to_shopping_cart ahoveroff add-to-basket" data-id="<?=$product['id']?>">  <span class="name">
                                     Ajouter au panier
                                     </span>
                                 </button>

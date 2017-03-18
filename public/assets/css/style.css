@@ -1972,6 +1972,9 @@ p#error {
     font-size: initial;
     color: #de0008;
 }
+i.fa.fa-trash {
+    cursor: pointer;
+}
 
 /*orderlogin.php*/
 .orderlogin_box {
