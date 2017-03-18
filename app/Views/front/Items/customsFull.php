@@ -29,11 +29,11 @@
 	<div class="row">
 		<div class="col-md-3">
 			<h3 class="viewcategoryrow2col1_title">sous-catégories</h3>
-			<div class="viewcategoryrow2col1customs_tirer"><a id="customsmenu_scat" href="<?=$this->url('listItemCustoms', ['sub_category'=>'CustomsTampographies']);?>">Customs tampographiés</a></div>
-			<div class="viewcategoryrow2col1customs_tirer"><a id="customsmenu_scat" href="<?=$this->url('listItemCustoms', ['sub_category'=>'CustomsPeints']);?>">Customs peints</a></div>		
-			<div class="viewcategoryrow2col1customs_tirer"><a id="customsmenu_scat" href="<?=$this->url('listItemCustoms', ['sub_category'=>'BustesTampographies']);?>">Bustes tampographiés</a></div>
-			<div class="viewcategoryrow2col1customs_tirer"><a id="customsmenu_scat" href="<?=$this->url('listItemCustoms', ['sub_category'=>'PiecesEnResine']);?>">Pièces en résine</a></div>
-			<div class="viewcategoryrow2col1customs_tirer"><a id="customsmenu_scat" href="<?=$this->url('listItemCustoms', ['sub_category'=>'Stickers']);?>">Stickers</a></div>
+			<div class="viewcategoryrow2col1customs_tirer"><a class="btnscatclic" id="customsmenu_scat" href="<?=$this->url('listItemCustoms', ['sub_category'=>'CustomsTampographies']);?>">Customs tampographiés</a></div>
+			<div class="viewcategoryrow2col1customs_tirer"><a class="btnscatclic" id="customsmenu_scat" href="<?=$this->url('listItemCustoms', ['sub_category'=>'CustomsPeints']);?>">Customs peints</a></div>		
+			<div class="viewcategoryrow2col1customs_tirer"><a class="btnscatclic" id="customsmenu_scat" href="<?=$this->url('listItemCustoms', ['sub_category'=>'BustesTampographies']);?>">Bustes tampographiés</a></div>
+			<div class="viewcategoryrow2col1customs_tirer"><a class="btnscatclic" id="customsmenu_scat" href="<?=$this->url('listItemCustoms', ['sub_category'=>'PiecesEnResine']);?>">Pièces en résine</a></div>
+			<div class="viewcategoryrow2col1customs_tirer"><a class="btnscatclic" id="customsmenu_scat" href="<?=$this->url('listItemCustoms', ['sub_category'=>'Stickers']);?>">Stickers</a></div>
 			<li>
 				<?php if(!empty($filters)) : ?>
 	                <!-- MENU FILTRES -->

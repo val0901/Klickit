@@ -1198,7 +1198,7 @@ h3 {
     text-align: center;
     font-size: 25px;
     color: #fff;
-    padding: 10px 50px;
+    line-height: 53px;
     background-color: #3fa9f5;
     margin: 1px 0px;
 }
@@ -1316,6 +1316,11 @@ h4 {
 .viewcategorycol2classic_title {
     font-size: 3em;
     color: #3fa9f5;
+}
+a.btnscatclic{
+    display: block;
+    height: 100%;
+    width: 100%;
 }
 
 /********* BOUTON AJOUTER AU PANIER *********/
@@ -1630,9 +1635,9 @@ h1.goodToGo {
     text-align: center;
     font-size: 25px;
     color: #fff;
-    padding: 10px 50px;
     background-color: #ff931e;
     margin: 1px 0px;
+    line-height: 53px;
 }
 .viewcategoryrow2col1customs_tirer a {
     color: #fff;
@@ -1674,7 +1679,7 @@ h4.salesItems {
     text-align: center;
     font-size: 25px;
     color: #fff;
-    padding: 10px 50px;
+    line-height: 53px;
     background-color: #7ac943;
     margin: 1px 0px;
 }
@@ -1701,7 +1706,7 @@ h4.salesItems {
     text-align: center;
     font-size: 25px;
     color: #fff;
-    padding: 10px 50px;
+    line-height: 53px;
     background-color: #ea2229;
     margin: 1px 0px;
 }

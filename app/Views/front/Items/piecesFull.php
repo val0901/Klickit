@@ -29,14 +29,14 @@
 	<div class="row">
 		<div class="col-md-3">
 			<h3 class="viewcategoryrow2col1_title">sous-catégories</h3>
-			<div class="viewcategoryrow2col1pieces_tirer"><a href="<?=$this->url('listItemPieces', ['sub_category'=>'Armes']);?>">Armes</a></div>
-			<div class="viewcategoryrow2col1pieces_tirer"><a href="<?=$this->url('listItemPieces', ['sub_category'=>'Coiffes']);?>">Coiffes</a></div>		
-			<div class="viewcategoryrow2col1pieces_tirer"><a href="<?=$this->url('listItemPieces', ['sub_category'=>'Manchettes']);?>">Manchettes</a></div>
-			<div class="viewcategoryrow2col1pieces_tirer"><a href="<?=$this->url('listItemPieces', ['sub_category'=>'Cols']);?>">Cols</a></div>
-			<div class="viewcategoryrow2col1pieces_tirer"><a href="<?=$this->url('listItemPieces', ['sub_category'=>'Ceinturons']);?>">Ceinturons</a></div>
-			<div class="viewcategoryrow2col1pieces_tirer"><a href="<?=$this->url('listItemPieces', ['sub_category'=>'Tetes']);?>">Têtes</a></div>
-			<div class="viewcategoryrow2col1pieces_tirer"><a href="<?=$this->url('listItemPieces', ['sub_category'=>'Cheveux']);?>">Cheveux</a></div>
-			<div class="viewcategoryrow2col1pieces_tirer"><a href="<?=$this->url('listItemPieces', ['sub_category'=>'Divers']);?>">Divers</a></div>
+			<div class="viewcategoryrow2col1pieces_tirer"><a class="btnscatclic" href="<?=$this->url('listItemPieces', ['sub_category'=>'Armes']);?>">Armes</a></div>
+			<div class="viewcategoryrow2col1pieces_tirer"><a class="btnscatclic" href="<?=$this->url('listItemPieces', ['sub_category'=>'Coiffes']);?>">Coiffes</a></div>		
+			<div class="viewcategoryrow2col1pieces_tirer"><a class="btnscatclic" href="<?=$this->url('listItemPieces', ['sub_category'=>'Manchettes']);?>">Manchettes</a></div>
+			<div class="viewcategoryrow2col1pieces_tirer"><a class="btnscatclic" href="<?=$this->url('listItemPieces', ['sub_category'=>'Cols']);?>">Cols</a></div>
+			<div class="viewcategoryrow2col1pieces_tirer"><a class="btnscatclic" href="<?=$this->url('listItemPieces', ['sub_category'=>'Ceinturons']);?>">Ceinturons</a></div>
+			<div class="viewcategoryrow2col1pieces_tirer"><a class="btnscatclic" href="<?=$this->url('listItemPieces', ['sub_category'=>'Tetes']);?>">Têtes</a></div>
+			<div class="viewcategoryrow2col1pieces_tirer"><a class="btnscatclic" href="<?=$this->url('listItemPieces', ['sub_category'=>'Cheveux']);?>">Cheveux</a></div>
+			<div class="viewcategoryrow2col1pieces_tirer"><a class="btnscatclic" href="<?=$this->url('listItemPieces', ['sub_category'=>'Divers']);?>">Divers</a></div>
 			<li>
 				<?php if(!empty($filters)) : ?>
 					<h3 class="viewcategoryrow2col1_title">filtres</h3>

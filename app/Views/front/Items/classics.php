@@ -29,18 +29,18 @@
         <div class="row">
             <div class="col-md-3">
                 <h3 class="viewcategoryrow2col1_title">sous-catégories</h3>
-                <div class="viewcategoryrow2col1_tirer"><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Chevaliers']);?>">Chevaliers</a></div>
-                <div class="viewcategoryrow2col1_tirer"><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Pirates']);?>">Pirates</a></div>		
-                <div class="viewcategoryrow2col1_tirer"><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Antique']);?>">Antique</a></div>
-                <div class="viewcategoryrow2col1_tirer"><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Western']);?>">Western</a></div>
-                <div class="viewcategoryrow2col1_tirer"><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Fantasy']);?>">Fantasy</a></div>
-                <div class="viewcategoryrow2col1_tirer"><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Robot']);?>">Robot Espace</a></div>
-                <div class="viewcategoryrow2col1_tirer"><a href="<?=$this->url('listItemClassics', ['sub_category'=>'XVIIIe']);?>">XVIIIe</a></div>
-                <div class="viewcategoryrow2col1_tirer"><a href="<?=$this->url('listItemClassics', ['sub_category'=>'FeesPrincesses']);?>">Fées &amp; Princesses</a></div>
-                <div class="viewcategoryrow2col1_tirer"><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Police']);?>">Police</a></div>
-                <div class="viewcategoryrow2col1_tirer"><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Animaux']);?>">Animaux</a></div>
-                <div class="viewcategoryrow2col1_tirer"><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Sport']);?>">Sport</a></div>
-                <div class="viewcategoryrow2col1_tirer"><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Divers']);?>">Divers</a></div>
+                <div class="viewcategoryrow2col1_tirer"><a class="btnscatclic" href="<?=$this->url('listItemClassics', ['sub_category'=>'Chevaliers']);?>">Chevaliers</a></div>
+                <div class="viewcategoryrow2col1_tirer"><a class="btnscatclic" href="<?=$this->url('listItemClassics', ['sub_category'=>'Pirates']);?>">Pirates</a></div>		
+                <div class="viewcategoryrow2col1_tirer"><a class="btnscatclic" href="<?=$this->url('listItemClassics', ['sub_category'=>'Antique']);?>">Antique</a></div>
+                <div class="viewcategoryrow2col1_tirer"><a class="btnscatclic" href="<?=$this->url('listItemClassics', ['sub_category'=>'Western']);?>">Western</a></div>
+                <div class="viewcategoryrow2col1_tirer"><a class="btnscatclic" href="<?=$this->url('listItemClassics', ['sub_category'=>'Fantasy']);?>">Fantasy</a></div>
+                <div class="viewcategoryrow2col1_tirer"><a class="btnscatclic" href="<?=$this->url('listItemClassics', ['sub_category'=>'Robot']);?>">Robot Espace</a></div>
+                <div class="viewcategoryrow2col1_tirer"><a class="btnscatclic" href="<?=$this->url('listItemClassics', ['sub_category'=>'XVIIIe']);?>">XVIIIe</a></div>
+                <div class="viewcategoryrow2col1_tirer"><a class="btnscatclic" href="<?=$this->url('listItemClassics', ['sub_category'=>'FeesPrincesses']);?>">Fées &amp; Princesses</a></div>
+                <div class="viewcategoryrow2col1_tirer"><a class="btnscatclic" href="<?=$this->url('listItemClassics', ['sub_category'=>'Police']);?>">Police</a></div>
+                <div class="viewcategoryrow2col1_tirer"><a class="btnscatclic" href="<?=$this->url('listItemClassics', ['sub_category'=>'Animaux']);?>">Animaux</a></div>
+                <div class="viewcategoryrow2col1_tirer"><a class="btnscatclic" href="<?=$this->url('listItemClassics', ['sub_category'=>'Sport']);?>">Sport</a></div>
+                <div class="viewcategoryrow2col1_tirer"><a class="btnscatclic" href="<?=$this->url('listItemClassics', ['sub_category'=>'Divers']);?>">Divers</a></div>
                 <li>
                     <?php if(!empty($filters)) : ?>
                         <h3 class="viewcategoryrow2col1_title">filtres</h3>

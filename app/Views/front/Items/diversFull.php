@@ -29,7 +29,7 @@
 	<div class="row">
 		<div class="col-md-3">
 			<h3 class="viewcategoryrow2col1_title">sous-catégories</h3>
-			<!-- <div class="viewcategoryrow2col1customs_tirer"><a href="#"></a></div> --> <!-- à activer (ainsi qu'à dupliquer au nombre de sous-catégorie que nous aurons) lorsqu'on aura des sous-catégories pour cette catégorie -->
+			<!-- <div class="viewcategoryrow2col1customs_tirer"><a class="btnscatclic" href="#"></a></div> --> <!-- à activer (ainsi qu'à dupliquer au nombre de sous-catégorie que nous aurons) lorsqu'on aura des sous-catégories pour cette catégorie -->
 			<li>
 				<?php if(!empty($filters)) : ?>
 					<h3 class="viewcategoryrow2col1_title">filtres</h3>
