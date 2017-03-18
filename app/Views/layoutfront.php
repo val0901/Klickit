@@ -235,7 +235,7 @@
 							  <li><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Antique']);?>" style="color:#000;">Antique</a></li>
 							  <li><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Western']);?>" style="color:#000;">Western</a></li>
 							  <li><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Fantasy']);?>" style="color:#000;">Fantasy</a></li>
-							  <li><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Robot']);?>" style="color:#000;">Espace Robot</a></li>
+							  <li><a href="<?=$this->url('listItemClassics', ['sub_category'=>'Robot']);?>" style="color:#000;">Robot Espace</a></li>
                               <!--rajout scat-->
 							  <li><a href="<?=$this->url('listItemClassics', ['sub_category'=>'XVIIIe']);?>" style="color:#000;">XVIIIe</a></li>
 							  <li><a href="<?=$this->url('listItemClassics', ['sub_category'=>'FeesPrincesses']);?>" style="color:#000;">Fées &amp; Princesses</a></li>
