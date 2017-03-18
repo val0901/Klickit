@@ -8,7 +8,7 @@
 		<div class="col-md-3" style="position:relative;">
 			<div class="classic_text_show"><span>Customs</span></div>
 			<img class="img-responsive" src="<?=$this->assetUrl('/img/img_custom.jpg');?>">
-			<div class="customs_text"><a href="www.klickit.fr/Customs" style="color:white">Customs</a></div>
+			<div class="customs_text"><a href="<?=$this->url('listItemCustomFull');?>" style="color:white">Customs</a></div>
 		</div>
 		<div class="col-md-9">
 			<div class="container_general">

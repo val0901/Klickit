@@ -8,7 +8,7 @@
             <div class="col-md-3" style="position:relative;">
                 <div class="classic_text_show"><span>Classics</span></div>
                 <img class="img-responsive" src="<?=$this->assetUrl('/img/img_classic.jpg');?>">
-                <div class="classic_text"><a href="www.klickit.fr/Classics" style="color:white;">Classics</a></div>
+                <div class="classic_text"><a href="<?=$this->url('listItemClassicsFull');?>" style="color:white;">Classics</a></div>
             </div>
             <div class="col-md-9">
                 <div class="container_general">

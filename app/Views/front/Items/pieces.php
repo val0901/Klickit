@@ -8,7 +8,7 @@
 		<div class="col-md-3" style="position:relative;">
 			<div class="classic_text_show"><span>Pièces détachées</span></div>
 			<img class="img-responsive" src="<?=$this->assetUrl('/img/img_pieces.jpg');?>">
-			<div class="pieces_text"><a href="www.klickit.fr/Pieces" style="color:white;">Pièces détachées</a></div>
+			<div class="pieces_text"><a href="<?=$this->url('listItemPiecesFull');?>" style="color:white;">Pièces détachées</a></div>
 		</div>
 		<div class="col-md-9">
 			<div class="container_general">
