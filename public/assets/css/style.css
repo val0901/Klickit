@@ -2256,7 +2256,35 @@ span.salesItems{
 
 /* NOUVEAU SLIDER */
 
-div#slider{
+.carousel-caption{
+    display: none;
+}
+div#carousel-example-generic {
+    border: 1px solid #d2d2d2;
+    border-radius: 4px;
+    margin-right: 25px;
+    margin: 0 auto;
+}
+.carousel-control.left, .carousel-control.right {
+    background-image: none;
+    background-repeat: no-repeat;
+}
+.carousel-control {
+    background: none;
+    border: 0px;
+    border-radius: 0px;
+    display: inline-block;
+    font-size: 34px;
+    font-weight: 200;
+    line-height: 18px;
+    opacity: 0.5;
+    padding: 0;
+    position: absolute;
+    height: 100%;
+    width: 10%;
+    color: #d2d2d2;
+}
+/*div#slider{
   margin:auto;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -2322,7 +2350,7 @@ p.bjqs-caption{
   padding:2%;
   position:absolute;
   bottom:0;
-}
+}*/
 
 /* ANCIEN SLIDER
 #slideviewart {

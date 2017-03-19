@@ -347,14 +347,14 @@
         font-size: 3vw;
     }
     /* viewart */
-/*
+
     .container_viewart {
-        margin: 20px 150px;
-        margin-left: 0px;
-        margin-right: 0px;
-        padding-left: 150px;
-        padding-right: 150px;
+        margin: 20px 30px;
     }
+    div#carousel-example-generic {
+    margin: 0 auto;
+    }
+/*    
     #slideviewart {
         position: relative;
         overflow: hidden;
