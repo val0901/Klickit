@@ -28,6 +28,33 @@
 
 
 
+            <!--
+<?php if(!empty($items['picture2'])): ?>
+<div id="slideviewart">
+<a href="#" class="control_next">></a>
+<a href="#" class="control_prev"><</a>
+<ul>
+<li>
+<img class="img-thumbnail" src="<?=$this->assetUrl('art/'.$items['picture1']);?>">
+</li>
+<li style="background: #fff;">
+<img class="img-thumbnail"  src="<?=$this->assetUrl('art/'.$items['picture2']);?>">
+</li>
+</ul>
+</div>
+<?php else : ?>
+<div id="slideviewart">
+<ul>
+<li>
+<img class="img-thumbnail"  src="<?=$this->assetUrl('art/'.$items['picture1']);?>">
+</li>
+<li style="background: #fff; z-index: -1000;">
+<img class="img-thumbnail"  src="<?=$this->assetUrl('art/'.$items['picture2']);?>">
+</li>
+</ul>
+</div>
+<?php endif; ?>
+-->
             <!--fin slideviewart-->
             <div class="col-md-5 viewart_fontweight"><!---->
 
@@ -351,7 +378,7 @@
  *
  */
 
-(function($) {
+;(function($) {
 
     "use strict";
 
@@ -1056,7 +1083,54 @@
 
 })(jQuery);
     </script>
+<!--
+    <script>
 
+        jQuery(document).ready(function ($) {
+
+            var slideCount = $('#slideviewart ul li').length;
+            var slideWidth = $('#slideviewart ul li').width();
+            var slideHeight = $('#slideviewart ul li').height();
+            var sliderUlWidth = slideCount * slideWidth;
+
+            $('#slideviewart').css({ width: slideWidth, height: slideHeight });
+
+            $('#slideviewart ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+
+            $('#slideviewart ul li:last-child').prependTo('#slideviewart ul');
+
+            function moveLeft() {
+                $('#slideviewart ul').animate({
+                    left: + slideWidth
+                }, 200, function () {
+                    $('#slideviewart ul li:last-child').prependTo('#slideviewart ul');
+                    $('#slideviewart ul').css('left', '');
+                });
+            };
+
+            function moveRight() {
+                $('#slideviewart ul').animate({
+                    left: - slideWidth
+                }, 200, function () {
+                    $('#slideviewart ul li:first-child').appendTo('#slideviewart ul');
+                    $('#slideviewart ul').css('left', '');
+                });
+            };
+
+            $('a.control_prev').click(function () {
+                moveLeft();
+            });
+
+            $('a.control_next').click(function () {
+                moveRight();
+            });
+
+        });
+
+
+
+    </script>
+-->
 
     <script>
         $(document).ready(function(){
