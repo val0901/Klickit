@@ -352,7 +352,8 @@
         margin: 20px 30px;
     }
     div#carousel-example-generic {
-    margin: 0 auto;
+        margin: 0 auto;
+        width: 100%;
     }
 /*    
     #slideviewart {
