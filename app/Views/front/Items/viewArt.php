@@ -107,7 +107,7 @@
                 </span>
                 <br><br>
                 <!-- container +1 -->
-                <div id="<?=$product['id'];?>" class="item--helper">
+                <div id="<?=$items['id'];?>" class="item--helper viewartbasket">
                     <span id="plus1">+1</span>
                 </div>
 
@@ -387,6 +387,20 @@
                         }
                     }
                 });
+            });
+            
+            // effet +1 AJOUTER AU PANIER
+            // When we click "Add to Basket"...
+            $('.addBasket').click(function(){
+                var idProduct = $(this).data('id');
+
+                // Add the animation class
+                $('#'+idProduct+', .basket').addClass('added');
+
+                // Remove the animation classes after 1.5s
+                var wait = setTimeout(function(){
+                    $('#'+idProduct+', .basket').removeClass('added');
+                }, 1000);
             });
 
             $('.favorite').click(function(e){
