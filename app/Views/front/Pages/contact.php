@@ -45,6 +45,7 @@
 			  </div>
 			  <div class="form-group">
 				<label for="text" class="formlabel">Message</label>
+                  <p>* votre message doit comporter plus de 10 caractères </p>
 				<textarea id="text" class="form-control" rows="10" placeholder="Bonjour, je souhaiterais ..." name="message"></textarea>
 			  </div>	
 				
