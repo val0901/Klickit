@@ -347,9 +347,9 @@
                             </div><!-- /Slide3 --> 
                         </div>
 
-                        <div class="control-box">                            
-                            <a data-slide="prev" href="#myCarousel" class="carousel-control left">‹</a>
-                            <a data-slide="next" href="#myCarousel" class="carousel-control right">›</a>
+                        <div class="control-box slider">                            
+                            <a data-slide="prev" href="#myCarousel" class="carousel-control left slider">‹</a>
+                            <a data-slide="next" href="#myCarousel" class="carousel-control right slider">›</a>
                         </div><!-- /.control-box -->   
 
                     </div><!-- /#myCarousel -->
