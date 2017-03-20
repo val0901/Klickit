@@ -1011,7 +1011,16 @@ a.ahoveroff:hover {
     height: 30px;
     width: 35px;
 }
-
+/* SLIDER BAS DE PAGE */
+a.carousel-control.left.slider, a.carousel-control.right.slider {
+    background-image: -webkit-linear-gradient(left, rgba(255, 147, 30, 1) 100%, rgba(255, 147, 30, 1) 100%);
+    background-image: linear-gradient(to right, rgba(255, 147, 30, 1) 100%, rgba(255, 147, 30, 1) 100%);
+    position: inherit;
+    padding: 7px 14px;
+    line-height: 10px;
+    width: 34px;
+    height: 30px;
+}
 /* ADD-ON
 -------------------------------------------------- */
 ::-moz-selection { background: #ff5e99; color: #FFFFFF; text-shadow: 0; }
