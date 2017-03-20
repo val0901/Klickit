@@ -370,21 +370,22 @@
 				});
 			});
 
-			// Sécurisation de la page, on ne peut plus écrire ce que l'on veut dans l'URL, pour les "?" voir commentaire dans l'ajax juste au dessus, ligne 282
+			// Sécurisation de la page si un jour il y a des sous-catégories, remplacer les ?
 
 			var locationOk = true;
 
 			if(window.location.pathname == '/Divers/?'){
-				var locationOk = true;
+				locationOk = true;
 			}
 			else if(window.location.pathname == '/Divers/?'){
-				var locationOk = true;
+				locationOk = true;
 			}
 			else {
 				locationOk = false;
-				if(locationOk == false){
-					document.location.href="<?=$this->url('listItemDiversFull');?>";
-				}
+			}
+
+			if(locationOk == false){
+				document.location.href="<?=$this->url('listItemDiversFull');?>";
 			}
 		});
 	</script>

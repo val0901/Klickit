@@ -382,25 +382,26 @@
 			var locationOk = true;
 
 			if(window.location.pathname == '/Customs/CustomsTampographies'){
-				var locationOk = true;
+				locationOk = true;
 			}
 			else if(window.location.pathname == '/Customs/CustomsPeints'){
-				var locationOk = true;
+				locationOk = true;
 			}
 			else if(window.location.pathname == '/Customs/BustesTampographies'){
-				var locationOk = true;
+				locationOk = true;
 			}
 			else if(window.location.pathname == '/Customs/PiecesEnResine'){
-				var locationOk = true;
+				locationOk = true;
 			}
 			else if(window.location.pathname == '/Customs/Stickers'){
-				var locationOk = true;
+				locationOk = true;
 			}
 			else {
 				locationOk = false;
-				if(locationOk == false){
-					document.location.href="<?=$this->url('listItemCustomFull');?>";
-				}
+			}
+			
+			if(locationOk == false){
+				document.location.href="<?=$this->url('listItemCustomFull');?>";
 			}
 
 			/********************* FIL D'ARIANNE *********************/

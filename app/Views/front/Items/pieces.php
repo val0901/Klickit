@@ -385,36 +385,37 @@
 			var locationOk = true;
 
 			if(window.location.pathname == '/Pieces/Armes'){
-				var locationOk = true;
+				locationOk = true;
 			}
 			else if(window.location.pathname == '/Pieces/Coiffes'){
-				var locationOk = true;
+				locationOk = true;
 			}
 			else if(window.location.pathname == '/Pieces/Manchettes'){
-				var locationOk = true;
+				locationOk = true;
 			}
 			else if(window.location.pathname == '/Pieces/Cols'){
-				var locationOk = true;
+				locationOk = true;
 			}
 			else if(window.location.pathname == '/Pieces/Ceinturons'){
-				var locationOk = true;
+				locationOk = true;
 			}
 			else if(window.location.pathname == '/Pieces/Tetes'){
-				var locationOk = true;
+				locationOk = true;
 			}
 			else if(window.location.pathname == '/Pieces/Cheveux'){
-				var locationOk = true;
+				locationOk = true;
 			}
 			else if(window.location.pathname == '/Pieces/Divers'){
-				var locationOk = true;
+				locationOk = true;
 			}
 			else {
 				locationOk = false;
-				if(locationOk == false){
-					document.location.href="<?=$this->url('listItemPiecesFull');?>";
-				}
 			}
 
+			if(locationOk == false){
+				document.location.href="<?=$this->url('listItemPiecesFull');?>";
+			}
+			
 			/********************* FIL D'ARIANNE *********************/
 			if(window.location.pathname == '/Pieces/Armes'){
 				$('#arianne_js').text('Armes');

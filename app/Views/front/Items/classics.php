@@ -445,11 +445,11 @@ $(document).ready(function(){
         }
         else {
             locationOk = false;
-            if(locationOk == false){
-                document.location.href="<?=$this->url('listItemClassicsFull');?>";
-            }
         }
 
+        if(locationOk == false){
+            document.location.href="<?=$this->url('listItemClassicsFull');?>";
+        }
         /********************* FIL D'ARIANNE *********************/
         if(window.location.pathname == '/Classics/Chevaliers'){
             $('#arianne_js').text('Chevaliers');
