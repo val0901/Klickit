@@ -13,7 +13,7 @@
 		<div class="col-md-9">
 			<div class="container_general">
 				<h1 class="viewcategorycol2classic_title">Classics</h1>
-				<p class="viewcategorycol2_text">Les personnages de la catégorie "Classic" sont issus de la gamme PLAYMOBIL&reg; d'origine et ils n'ont subi aucune transformation (excepté certaines modifications par démembrement). Ils peuvent provenir de boites, sachets séries, blisters ou autre. </p>
+				<p class="viewcategorycol2_text">Les personnages de la catégorie "Classics" sont issus de la gamme PLAYMOBIL&reg; d'origine et ils n'ont subi aucune transformation (excepté certaines modifications par démembrement). Ils peuvent provenir de boites, sachets séries, blisters ou autre. </p>
 			</div>
 		</div>
 	</div>
@@ -331,9 +331,9 @@
               </div><!-- /Slide3 --> 
         </div>
         
-        <div class="control-box">                            
-            <a data-slide="prev" href="#myCarousel" class="carousel-control left">‹</a>
-            <a data-slide="next" href="#myCarousel" class="carousel-control right">›</a>
+        <div class="control-box slider">                            
+            <a data-slide="prev" href="#myCarousel" class="carousel-control left slider">‹</a>
+            <a data-slide="next" href="#myCarousel" class="carousel-control right slider">›</a>
         </div><!-- /.control-box -->   
                               
     </div><!-- /#myCarousel -->
