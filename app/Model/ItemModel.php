@@ -171,12 +171,16 @@ class ItemModel extends \W\Model\Model
 	/**
 	 * REQUÊTE D'AFFICHAGE D'UNE SUB_CATEGORY
 	 */
-	public function findSubCategory($sub_category)
+	public function findSubCategory($sub_category, $page, $max)
 	{
-		$sql = 'SELECT * FROM '.$this->table.' WHERE sub_category = :subCategory';
+		$debut = ($page - 1) * $max;
+		
+		$sql = 'SELECT * FROM '.$this->table.' WHERE sub_category = :subCategory LIMIT :debut, :max';
 
 		$sth = $this->dbh->prepare($sql);
 		$sth->bindValue(':subCategory', $sub_category);
+		$sth->bindValue(':max', $max, \PDO::PARAM_INT);
+		$sth->bindValue(':debut', $debut, \PDO::PARAM_INT);
 		$sth->execute();
 
 		return $sth->fetchAll();
