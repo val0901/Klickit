@@ -11,7 +11,7 @@
     <div class="childTeam">
         <div class="wrap">
             <div class="text-part text-color1">
-                Développeur BACK
+                Théo Appelius
             </div>
             <div class="image-part">
                 <img src="<?=$this->assetUrl('/img/theo-appelius.jpg');?>">
