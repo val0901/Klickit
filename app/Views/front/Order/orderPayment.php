@@ -111,9 +111,9 @@
             <div class="orderlist_total">
                 <ul  style="float:right;">
                     <li>
-                        <p><?=$order['sub_total'];?></p>
-                        <p><?=$order['shipping'];?></p>
-                        <p><strong><?=$order['total'];?></strong></p>
+                        <p><?=$order['sub_total'];?> €</p>
+                        <p><?=$order['shipping'];?> €</p>
+                        <p><strong><?=$order['total'];?> €</strong></p>
                     </li>
                 </ul>
                 <ul>
