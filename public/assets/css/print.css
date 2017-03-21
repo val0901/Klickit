@@ -1,4 +1,6 @@
 @media print {
+
+    /* VIEWORDER */
     .nav_left, .baseline_text, .nav_right, .navbar-default, .col-md-3, .btnimpression, footer {
         display:none;
     }
@@ -7,7 +9,17 @@
         font-size:140%;
         color:black;
     }
-.listorder_contenu {
-    padding: 10px;
-}    
+    .listorder_contenu {
+        padding: 10px;
+    }   
+    
+    /* PAYNOPAYPAL */
+    header, .container_general, .clear, .navbar, .navbar-default, .navbar.navbar-default, .infopay, .ordermidia_width{
+        display: none;
+    }
+    .listorder_contenu{
+        width: 100%;
+        
+    }
+    
 }

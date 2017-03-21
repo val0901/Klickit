@@ -1521,6 +1521,11 @@ h1.goodToGo {
     transform: scale(2);
     opacity: 0;
 }
+.item--helper.viewartbasket {
+    z-index: 1000;
+    left: 10%;
+    bottom: 49%;
+}
 
 /* Declare the animation for adding to basket */
 .item--helper.added, .item--helper-slide.added {
@@ -2097,7 +2102,10 @@ label.radio.myorder{
 .colorPaymentCheck{
     color: limegreen;
 }
-
+.col-lg-12.col-md-12.ordermidia_width {
+    font-size: 2em;
+    margin-top: 45px;
+}
 /*listorder.php*/
 .listorder_back {
     background-image: url("../img/boxBackground.jpg");
@@ -2107,7 +2115,9 @@ label.radio.myorder{
     /*position:absolute;
     z-index:5;*/
     background-color: #fff;
-    padding: 50px 30px 250px;
+    padding: 50px 30px 60px;
+    margin-bottom: 50px;
+    border: 1px solid #391e20;
 }
 
 a.hoverlinkorange:hover{
