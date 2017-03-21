@@ -384,9 +384,6 @@
 						<p class="footertitle">Suivez-nous</p>
 						<a href="https://www.facebook.com/Klickit-787164048000917/" target="_blank"><i class="fa fa-facebook-square fa-2x footer_neticon" aria-hidden="true"> <span class="footertext">Sur Facebook</span></i></a>
 						<a href=" https://twitter.com/Klickit33" target="_blank"><i class="fa fa-twitter-square fa-2x footer_neticon" aria-hidden="true"> <span class="footertext">Sur Twitter</span></i></a>
-					   <p class="footertitle">Partagez</p>
-					   <a href="https://www.facebook.com/Klickit-787164048000917/" target="_blank"><i class="fa fa-share fa-2x footer_neticon" aria-hidden="true"><span class="footertext">Sur Facebook</span></i></a>
-					   <a href=" https://twitter.com/Klickit33" target="_blank"><i class="fa fa-share fa-2x footer_neticon" aria-hidden="true"> <span class="footertext">Sur Twitter</span></i></a>
 
 				</div>
 				<div class="col-md-4 etiq_width">
