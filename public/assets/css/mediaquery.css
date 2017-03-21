@@ -678,7 +678,12 @@
         margin: 0 20px;
         font-size: 2vw;
     }
-
+    /* pay2 */
+    .col-lg-12.col-md-12.ordermidia_width{
+        margin: 0;
+        padding: 10px 30px;
+        font-size: 1.6em;
+    }
 
 }
 
@@ -749,7 +754,7 @@
     font-size: 4vw;
     }
     /* paynopaypal */
-    .listorder_contenu{
+    div.listorder_contenu {
         display: none;
     }
 }
