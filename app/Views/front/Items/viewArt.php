@@ -1,5 +1,27 @@
 <?php $this->layout('layoutfront', ['title' => 'Boutique Klickit']) ?>
 
+<?php $this->start('meta') ?>
+
+    <!-- Méta FB -->
+    <meta property="og:description" content="Découvre toi aussi la boutique Klickit : Playmobil Customisés, pièces, accessoires, boites et autres...">
+    <meta property="og:image" content="<?=$this->assetUrl('art/'.$items['picture1']);?>">
+    <meta property="og:url" content="http://www.klickit.fr<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>">
+    <!-- Méta TWITTER -->
+    <meta name="twitter:description" content="Découvre toi aussi la boutique Klickit : Playmobil Customisés, pièces, accessoires, boites et autres...">
+    <meta name="twitter:image" content="http://www.klickit.fr<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"> 
+    <meta name="twitter:card" content="produit">
+    <Meta name = "twitter: label1" content = "Description">
+    <Meta name = "twitter: data1" content = "<?=$items['description']?>">
+    <Meta name = "twitter: label2" content = "Prix">
+    <Meta name = "twitter: données2" content = "<?php if($items['newPrice'] == 0): ?>
+                    <?=$items['price'];?> €
+                    <?php elseif($items['newPrice'] > 0): ?>
+                    <?=$items['newPrice'];?> €
+                    <?php endif; ?>">
+
+
+<?php $this->stop('meta') ?>
+
 <?php $this->start('main_content') ?>
 <!--<div class="vignetteEvent_hide">
 <a href="<?=$this->url('front_contact')?>"><img class="img-responsive" src="<?=$this->assetUrl('/img/vignetteEvent1.png');?>" id="vignetteviewart_hover" onmouseover="vignetteviewarthover();" onmouseout="vignetteviewartout();"></a>
@@ -8,38 +30,38 @@
     <div class="container_viewart"><!---->
         <div class="row containviewart">
             <!--slideviewart-->
-        <?php if(!empty($items['picture2'])): ?>
+            <?php if(!empty($items['picture2'])): ?>
 
             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
-<!--
-                <ol class="carousel-indicators">
-                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                </ol>
+                <!--
+<ol class="carousel-indicators">
+<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+</ol>
 -->
 
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
                         <img src="<?=$this->assetUrl('art/'.$items['picture1']);?>">
-<!--
-                        <div class="carousel-caption">
-                            ...
-                        </div>
+                        <!--
+<div class="carousel-caption">
+...
+</div>
 -->
                     </div>
                     <div class="item">
                         <img src="<?=$this->assetUrl('art/'.$items['picture2']);?>">
-<!--
-                        <div class="carousel-caption">
-                            ...
-                        </div>
+                        <!--
+<div class="carousel-caption">
+...
+</div>
 -->
                     </div>
-<!--
-                    ...
+                    <!--
+...
 -->
                 </div>
 
@@ -53,7 +75,7 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-            
+
             <?php else : ?>
             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                 <!-- Wrapper for slides -->
@@ -138,389 +160,391 @@
                         <?php endif; ?>
                     </span>
                 </p>
-
-                <!-- BOUTON DE PARTAGE SOCIAUX -->
+                
+<!-- BOUTON DE PARTAGE SOCIAUX -->
                 <br>
 
-                <!-- Bouton Facebook statique -->
+<!-- Bouton Twitter statique -->
 
-                <button class="button share_twitter" data-url="http://www.klickit/viewArt/<?=$items['id'];?>">
+                <button class="button share_twitter" data-url="http://www.klickit.fr<?=$this->url('viewArt' , ['id' => $items['id']]);?>">
 
-                    <button class="button share_twitter" data-url="http://www.klickit.fr<?=$this->url('viewArt' , ['id' => $items['id']]);?>">
+                    <i class="fa fa-twitter-square fa-3x fa-fw" aria-hidden="true" style="color:#3fa9f5;"></i>
+                </button>
 
-                        <i class="fa fa-twitter-square fa-3x fa-fw" aria-hidden="true" style="color:#3fa9f5;"></i>
-                    </button>
+<!-- Bouton Facebook statique -->
 
-                    <!-- Bouton Facebook statique -->
-                    <button class="button share_facebook" data-url="http://www.klickit.fr<?=$this->url('viewArt' , ['id' => $items['id']]);?>">
-                        <i class="fa fa-facebook-square fa-3x fa-fw" aria-hidden="true" style="color:#335199;"></i>
-                    </button>
-
-
-                    </div><!--fin viewart_fontweight-->
-            </div><!--fin row-->
-            <br><br>
-            <div class="row">
-                <div class="col-md-3 viewart_savoirboder">
-                    <div class="col-xs-2 viewart_savoirback">
-                    </div>
-                    <div class="col-xs-10">
-                        <p class="viewart_savoirtitle">EN SAVOIR PLUS</p>
-                    </div>
-                </div><!--fin viewart_savoirboder-->
-                <div class="col-md-9 viewart_savoirwidth">
-                    <p class="viewart_savoirtext"><?=$items['description']?>
-                    </p>
-                </div><!--fin viewart_savoirwidth-->
-            </div><!--fin row-->
-            <br><br>
-        </div><!--fin container_viewart-->
-
-        <!--nouveaute slideshow-->
-        <!--Slide articles-->
-        <div class="clear"></div>
-        <div class="slideartL_title">nouveau!</div>
-        <!--<div class="slideartR_title">promo!</div>-->
-
-        <div class="">
-            <div class="row-fluid">
-                <div class="span12">
+                <button class="button share_facebook" data-url="http://www.klickit.fr<?=$this->url('viewArt' , ['id' => $items['id']]);?>">
+                    <i class="fa fa-facebook-square fa-3x fa-fw" aria-hidden="true" style="color:#335199;"></i>
+                </button>
 
 
-                    <div class="carousel slide" id="myCarousel">
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                <ul class="thumbnails">
-                                    <?php foreach ($afficheNewItem1 as $newProduct) : ?>
-                                    <li class="span4">
-                                        <div class="thumbnail">
-                                            <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img class="ahoveron" src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
-                                        </div>
-                                        <div class="caption">
-                                            <?php if($newProduct['newPrice'] == 0) : ?>
-                                            <h4><?=$newProduct['price'];?>€</h4>
-                                            <?php else : ?>
-                                            <h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
-                                            <?php endif; ?>
-                                            <p>
-                                                <span style="cursor:pointer;">
-                                                    <?php if(!empty($_SESSION['user'])): ?>
-                                                    <?php if(in_array($newProduct['id'], $favorite)): ?>
-                                                    <button class="favorite2" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id']?>" data-id="<?=$newProduct['id'];?>"><span class="<?=$newProduct['id'];?> fa fa-heart fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #c11131;" title="Retirer de mes favoris"></span></button>
-                                                    <?php else: ?>
-                                                    <button class="favorite2" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id'];?>" data-id="<?=$newProduct['id'];?>"><span class="<?=$newProduct['id'];?> fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></span></button>
-                                                    <?php endif; ?>
-                                                    <?php else : ?>
-                                                    <a href="<?=$this->url('login');?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></a>
-                                                    <?php endif; ?>
-                                                </span> <?=$newProduct['name'];?>
-                                            </p>
-                                            <div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
-                                            <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
-                                        </div>
-                                        <!-- container +1 -->
-                                        <div id="<?=$newProduct['id'];?>" class="item--helper-slide">
-                                            <span id="plus1">+1</span>
-                                        </div>
-                                        <div class="viewcategory_button">
-                                            <!--j'ai supprimé .btn-primary dans la class button-->
-                                            <?php if(!empty($_SESSION['user'])): ?>
-                                            <button id="simple" type="button" class="changeArrow btn viewcategory_button_size add_to_shopping_cart ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
-                                                Ajouter au panier
-                                                </span>
-                                            </button>
-                                            <?php else : ?>
-                                            <a class="ahoveroff" href="<?=$this->url('login');?>" target="_blank"><button id="simple" type="button" class="changeArrow btn viewcategory_button_size ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
-                                                Ajouter au panier
-                                                </span>
-                                                </button></a>
-                                            <?php endif; ?>
-                                        </div>
-                                        <br><br>                                    
-                                    </li>
-                                    <?php endforeach; ?>
-                                </ul>
-                            </div><!-- /Slide1 --> 
-                            <div class="item">
-                                <ul class="thumbnails">
-                                    <?php foreach ($afficheNewItem2 as $newProduct) : ?>
-                                    <li class="span4">
-                                        <div class="thumbnail">
-                                            <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img class="ahoveron" src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
-                                        </div>
-                                        <div class="caption">
-                                            <?php if($newProduct['newPrice'] == 0) : ?>
-                                            <h4><?=$newProduct['price'];?>€</h4>
-                                            <?php else : ?>
-                                            <h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
-                                            <?php endif; ?>
-                                            <p>
-                                                <span style="cursor:pointer;">
-                                                    <?php if(!empty($_SESSION['user'])): ?>
-                                                    <?php if(in_array($newProduct['id'], $favorite)): ?>
-                                                    <button class="favorite2" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id']?>" data-id="<?=$newProduct['id'];?>"><span class="<?=$newProduct['id'];?> fa fa-heart fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #c11131;" title="Retirer de mes favoris"></span></button>
-                                                    <?php else: ?>
-                                                    <button class="favorite2" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id'];?>" data-id="<?=$newProduct['id'];?>"><span class="<?=$newProduct['id'];?> fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></span></button>
-                                                    <?php endif; ?>
-                                                    <?php else : ?>
-                                                    <a href="<?=$this->url('login');?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></a>
-                                                    <?php endif; ?>
-                                                </span> <?=$newProduct['name'];?>
-                                            </p>
-                                            <div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
-                                            <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
-                                        </div>
-                                        <!-- container +1 -->
-                                        <div id="<?=$newProduct['id'];?>" class="item--helper-slide">
-                                            <span id="plus1">+1</span>
-                                        </div>
-                                        <div class="viewcategory_button">
-                                            <!--j'ai supprimé .btn-primary dans la class button-->
-                                            <?php if(!empty($_SESSION['user'])): ?>
-                                            <button id="simple" type="button" class="changeArrow btn viewcategory_button_size add_to_shopping_cart ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
-                                                Ajouter au panier
-                                                </span>
-                                            </button>
-                                            <?php else : ?>
-                                            <a class="ahoveroff" href="<?=$this->url('login');?>" target="_blank"><button id="simple" type="button" class="changeArrow btn viewcategory_button_size ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
-                                                Ajouter au panier
-                                                </span>
-                                                </button></a>
-                                            <?php endif; ?>
-                                        </div>
-                                        <br><br>                                    
-                                    </li>
-                                    <?php endforeach; ?>
-                                </ul>
-                            </div><!-- /Slide2 --> 
-                            <div class="item">
-                                <ul class="thumbnails">
-                                    <?php foreach ($afficheNewItem3 as $newProduct) : ?>
-                                    <li class="span4">
-                                        <div class="thumbnail">
-                                            <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img class="ahoveron" src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
-                                        </div>
-                                        <div class="caption">
-                                            <?php if($newProduct['newPrice'] == 0) : ?>
-                                            <h4><?=$newProduct['price'];?>€</h4>
-                                            <?php else : ?>
-                                            <h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
-                                            <?php endif; ?>
-                                            <p>
-                                                <span style="cursor:pointer;">
-                                                    <?php if(!empty($_SESSION['user'])): ?>
-                                                    <?php if(in_array($newProduct['id'], $favorite)): ?>
-                                                    <button class="favorite2" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id']?>" data-id="<?=$newProduct['id'];?>"><span class="<?=$newProduct['id'];?> fa fa-heart fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #c11131;" title="Retirer de mes favoris"></span></button>
-                                                    <?php else: ?>
-                                                    <button class="favorite2" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id'];?>" data-id="<?=$newProduct['id'];?>"><span class="<?=$newProduct['id'];?> fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></span></button>
-                                                    <?php endif; ?>
-                                                    <?php else : ?>
-                                                    <a href="<?=$this->url('login');?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></a>
-                                                    <?php endif; ?>
-                                                </span> <?=$newProduct['name'];?>
-                                            </p>
-                                            <div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
-                                            <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
-                                        </div>
-                                        <!-- container +1 -->
-                                        <div id="<?=$newProduct['id'];?>" class="item--helper-slide">
-                                            <span id="plus1">+1</span>
-                                        </div>
-                                        <div class="viewcategory_button">
-                                            <!--j'ai supprimé .btn-primary dans la class button-->
-                                            <?php if(!empty($_SESSION['user'])): ?>
-                                            <button id="simple" type="button" class="changeArrow btn viewcategory_button_size add_to_shopping_cart ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
-                                                Ajouter au panier
-                                                </span>
-                                            </button>
-                                            <?php else : ?>
-                                            <a class="ahoveroff" href="<?=$this->url('login');?>" target="_blank"><button id="simple" type="button" class="changeArrow btn viewcategory_button_size ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
-                                                Ajouter au panier
-                                                </span>
-                                                </button></a>
-                                            <?php endif; ?>
-                                        </div>
-                                        <br><br>                                    
-                                    </li>
-                                    <?php endforeach; ?>
-                                </ul>
-                            </div><!-- /Slide3 --> 
-                        </div>
-
-                        <div class="control-box slider">                            
-                            <a data-slide="prev" href="#myCarousel" class="carousel-control left slider">‹</a>
-                            <a data-slide="next" href="#myCarousel" class="carousel-control right slider">›</a>
-                        </div><!-- /.control-box -->   
-
-                    </div><!-- /#myCarousel -->
-
-                </div><!-- /.span12 -->          
-            </div><!-- /.row --> 
-        </div><!-- /.container -->
+            </div><!--fin viewart_fontweight-->
+        </div><!--fin row-->
         <br><br>
-        <!--End Slide articles-->
-        <!--End nouveute slideshow-->
+        <div class="row">
+            <div class="col-md-3 viewart_savoirboder">
+                <div class="col-xs-2 viewart_savoirback">
+                </div>
+                <div class="col-xs-10">
+                    <p class="viewart_savoirtitle">EN SAVOIR PLUS</p>
+                </div>
+            </div><!--fin viewart_savoirboder-->
+            <div class="col-md-9 viewart_savoirwidth">
+                <p class="viewart_savoirtext"><?=$items['description']?>
+                </p>
+            </div><!--fin viewart_savoirwidth-->
+        </div><!--fin row-->
+        <br><br>
+    </div><!--fin container_viewart-->
 
-        </form>
-    <?php $this->stop('main_content') ?>
+    <!--nouveaute slideshow-->
+    <!--Slide articles-->
+    <div class="clear"></div>
+    <div class="slideartL_title">nouveau!</div>
+    <!--<div class="slideartR_title">promo!</div>-->
 
-    <?php $this->start('js')?>
+    <div class="">
+        <div class="row-fluid">
+            <div class="span12">
 
 
-    <script>
-        $(document).ready(function(){
-            $('.addBasket').click(function(e){
-                e.preventDefault();
+                <div class="carousel slide" id="myCarousel">
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <ul class="thumbnails">
+                                <?php foreach ($afficheNewItem1 as $newProduct) : ?>
+                                <li class="span4">
+                                    <div class="thumbnail">
+                                        <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img class="ahoveron" src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
+                                    </div>
+                                    <div class="caption">
+                                        <?php if($newProduct['newPrice'] == 0) : ?>
+                                        <h4><?=$newProduct['price'];?>€</h4>
+                                        <?php else : ?>
+                                        <h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
+                                        <?php endif; ?>
+                                        <p>
+                                            <span style="cursor:pointer;">
+                                                <?php if(!empty($_SESSION['user'])): ?>
+                                                <?php if(in_array($newProduct['id'], $favorite)): ?>
+                                                <button class="favorite2" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id']?>" data-id="<?=$newProduct['id'];?>"><span class="<?=$newProduct['id'];?> fa fa-heart fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #c11131;" title="Retirer de mes favoris"></span></button>
+                                                <?php else: ?>
+                                                <button class="favorite2" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id'];?>" data-id="<?=$newProduct['id'];?>"><span class="<?=$newProduct['id'];?> fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></span></button>
+                                                <?php endif; ?>
+                                                <?php else : ?>
+                                                <a href="<?=$this->url('login');?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></a>
+                                                <?php endif; ?>
+                                            </span> <?=$newProduct['name'];?>
+                                        </p>
+                                        <div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
+                                        <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
+                                    </div>
+                                    <!-- container +1 -->
+                                    <div id="<?=$newProduct['id'];?>" class="item--helper-slide">
+                                        <span id="plus1">+1</span>
+                                    </div>
+                                    <div class="viewcategory_button">
+                                        <!--j'ai supprimé .btn-primary dans la class button-->
+                                        <?php if(!empty($_SESSION['user'])): ?>
+                                        <button id="simple" type="button" class="changeArrow btn viewcategory_button_size add_to_shopping_cart ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
+                                            Ajouter au panier
+                                            </span>
+                                        </button>
+                                        <?php else : ?>
+                                        <a class="ahoveroff" href="<?=$this->url('login');?>" target="_blank"><button id="simple" type="button" class="changeArrow btn viewcategory_button_size ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
+                                            Ajouter au panier
+                                            </span>
+                                            </button></a>
+                                        <?php endif; ?>
+                                    </div>
+                                    <br><br>                                    
+                                </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div><!-- /Slide1 --> 
+                        <div class="item">
+                            <ul class="thumbnails">
+                                <?php foreach ($afficheNewItem2 as $newProduct) : ?>
+                                <li class="span4">
+                                    <div class="thumbnail">
+                                        <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img class="ahoveron" src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
+                                    </div>
+                                    <div class="caption">
+                                        <?php if($newProduct['newPrice'] == 0) : ?>
+                                        <h4><?=$newProduct['price'];?>€</h4>
+                                        <?php else : ?>
+                                        <h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
+                                        <?php endif; ?>
+                                        <p>
+                                            <span style="cursor:pointer;">
+                                                <?php if(!empty($_SESSION['user'])): ?>
+                                                <?php if(in_array($newProduct['id'], $favorite)): ?>
+                                                <button class="favorite2" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id']?>" data-id="<?=$newProduct['id'];?>"><span class="<?=$newProduct['id'];?> fa fa-heart fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #c11131;" title="Retirer de mes favoris"></span></button>
+                                                <?php else: ?>
+                                                <button class="favorite2" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id'];?>" data-id="<?=$newProduct['id'];?>"><span class="<?=$newProduct['id'];?> fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></span></button>
+                                                <?php endif; ?>
+                                                <?php else : ?>
+                                                <a href="<?=$this->url('login');?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></a>
+                                                <?php endif; ?>
+                                            </span> <?=$newProduct['name'];?>
+                                        </p>
+                                        <div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
+                                        <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
+                                    </div>
+                                    <!-- container +1 -->
+                                    <div id="<?=$newProduct['id'];?>" class="item--helper-slide">
+                                        <span id="plus1">+1</span>
+                                    </div>
+                                    <div class="viewcategory_button">
+                                        <!--j'ai supprimé .btn-primary dans la class button-->
+                                        <?php if(!empty($_SESSION['user'])): ?>
+                                        <button id="simple" type="button" class="changeArrow btn viewcategory_button_size add_to_shopping_cart ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
+                                            Ajouter au panier
+                                            </span>
+                                        </button>
+                                        <?php else : ?>
+                                        <a class="ahoveroff" href="<?=$this->url('login');?>" target="_blank"><button id="simple" type="button" class="changeArrow btn viewcategory_button_size ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
+                                            Ajouter au panier
+                                            </span>
+                                            </button></a>
+                                        <?php endif; ?>
+                                    </div>
+                                    <br><br>                                    
+                                </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div><!-- /Slide2 --> 
+                        <div class="item">
+                            <ul class="thumbnails">
+                                <?php foreach ($afficheNewItem3 as $newProduct) : ?>
+                                <li class="span4">
+                                    <div class="thumbnail">
+                                        <a href="<?=$this->url('viewArt', ['id' => $newProduct['id']]);?>"><img class="ahoveron" src="<?=$this->assetUrl('art/'.$newProduct['picture1']);?>" alt=""></a>
+                                    </div>
+                                    <div class="caption">
+                                        <?php if($newProduct['newPrice'] == 0) : ?>
+                                        <h4><?=$newProduct['price'];?>€</h4>
+                                        <?php else : ?>
+                                        <h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
+                                        <?php endif; ?>
+                                        <p>
+                                            <span style="cursor:pointer;">
+                                                <?php if(!empty($_SESSION['user'])): ?>
+                                                <?php if(in_array($newProduct['id'], $favorite)): ?>
+                                                <button class="favorite2" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id']?>" data-id="<?=$newProduct['id'];?>"><span class="<?=$newProduct['id'];?> fa fa-heart fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" style="color: #c11131;" title="Retirer de mes favoris"></span></button>
+                                                <?php else: ?>
+                                                <button class="favorite2" type="submit" name="<?=str_replace(' ', '', $newProduct['name']);?>" value="<?=$newProduct['id'];?>" data-id="<?=$newProduct['id'];?>"><span class="<?=$newProduct['id'];?> fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></span></button>
+                                                <?php endif; ?>
+                                                <?php else : ?>
+                                                <a href="<?=$this->url('login');?>"><i class="fa fa-heart-o fa-fw favoriteicon_original favoriteicon_click" aria-hidden="true" title="Ajouter à mes favoris"></i></a>
+                                                <?php endif; ?>
+                                            </span> <?=$newProduct['name'];?>
+                                        </p>
+                                        <div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
+                                        <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
+                                    </div>
+                                    <!-- container +1 -->
+                                    <div id="<?=$newProduct['id'];?>" class="item--helper-slide">
+                                        <span id="plus1">+1</span>
+                                    </div>
+                                    <div class="viewcategory_button">
+                                        <!--j'ai supprimé .btn-primary dans la class button-->
+                                        <?php if(!empty($_SESSION['user'])): ?>
+                                        <button id="simple" type="button" class="changeArrow btn viewcategory_button_size add_to_shopping_cart ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
+                                            Ajouter au panier
+                                            </span>
+                                        </button>
+                                        <?php else : ?>
+                                        <a class="ahoveroff" href="<?=$this->url('login');?>" target="_blank"><button id="simple" type="button" class="changeArrow btn viewcategory_button_size ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
+                                            Ajouter au panier
+                                            </span>
+                                            </button></a>
+                                        <?php endif; ?>
+                                    </div>
+                                    <br><br>                                    
+                                </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div><!-- /Slide3 --> 
+                    </div>
 
-                var idProduct = $(this).data('id');
-                var idQuantity = $('#number').val();
+                    <div class="control-box slider">                            
+                        <a data-slide="prev" href="#myCarousel" class="carousel-control left slider">‹</a>
+                        <a data-slide="next" href="#myCarousel" class="carousel-control right slider">›</a>
+                    </div><!-- /.control-box -->   
 
-                $.ajax({
-                    url: '<?=$this->url('ajax_addToCartView'); ?>',
-                    type: 'post',
-                    cache: false,
-                    data: {id_product: idProduct, id_quantity: idQuantity},  // $_POST['id_product']
-                    dataType: 'json',
-                    success: function(out){
-                        if(out.code == 'ok'){
-                            $('body').load('<?=$this->url('viewArt', ['id' => $items['id']]);?>');
-                        }
-                    }
-                });
-            });
-            
-            // effet +1 AJOUTER AU PANIER
-            // When we click "Add to Basket"...
-            $('.addBasket').click(function(){
-                var idProduct = $(this).data('id');
+                </div><!-- /#myCarousel -->
 
-                // Add the animation class
-                $('#'+idProduct+', .basket').addClass('added');
+            </div><!-- /.span12 -->          
+        </div><!-- /.row --> 
+    </div><!-- /.container -->
+    <br><br>
+    <!--End Slide articles-->
+    <!--End nouveute slideshow-->
 
-                // Remove the animation classes after 1.5s
-                var wait = setTimeout(function(){
-                    $('#'+idProduct+', .basket').removeClass('added');
-                }, 1000);
-            });
+</form>
+<?php $this->stop('main_content') ?>
 
-            $('.favorite').click(function(e){
-                e.preventDefault();
+<?php $this->start('js')?>
 
-                var idFavorite = $(this).data('id');
 
-                $.ajax({
-                    url: '<?=$this->url('ajax_favorite');?>',
-                    type: 'post',
-                    cache: false,
-                    data: {id_item: idFavorite},
-                    dataType: 'json',
-                    success: function(add){
-                        if(add.msg == 'ok'){
-                            $('body').load('<?=$this->url('viewArt', ['id' => $items['id']]);?>');
-                        }
-                    }
-                });
-            });
+<script>
+    $(document).ready(function(){
+        $('.addBasket').click(function(e){
+            e.preventDefault();
 
-            $('.favorite2').click(function(e){
-                e.preventDefault();
+            var idProduct = $(this).data('id');
+            var idQuantity = $('#number').val();
 
-                var idFavorite = $(this).data('id');
-
-                function favIcon() // Change l'îcone favoris sans recharger la page
-                {
-                    if($('.'+idFavorite).hasClass('fa-heart-o')){ // On vérifie que l'élement avec l'ID contenu dans idFavorite a la class fa-heart-o
-                        $('.'+idFavorite).removeClass('fa-heart-o'); // On vire la class
-                        $('.'+idFavorite).addClass('fa-heart'); // On rajoute une nouvelle
-                        $('.'+idFavorite).css('color', '#c11131'); // On change la couleur
-                    }
-                    else if($('.'+idFavorite).hasClass('fa-heart')){ // On vérifie que l'élement avec l'ID contenu dans idFavorite a la class fa-heart
-                        $('.'+idFavorite).removeClass('fa-heart'); // On vire la class
-                        $('.'+idFavorite).addClass('fa-heart-o'); // On rajoute une nouvelle
-                        $('.'+idFavorite).css('color', '#999999'); // On change la couleur
+            $.ajax({
+                url: '<?=$this->url('ajax_addToCartView'); ?>',
+                type: 'post',
+                cache: false,
+                data: {id_product: idProduct, id_quantity: idQuantity},  // $_POST['id_product']
+                dataType: 'json',
+                success: function(out){
+                    if(out.code == 'ok'){
+                        $('body').load('<?=$this->url('viewArt', ['id' => $items['id']]);?>');
                     }
                 }
-
-                $.ajax({
-                    url: '<?=$this->url('ajax_favorite');?>',
-                    type: 'post',
-                    cache: false,
-                    data: {id_item: idFavorite},
-                    dataType: 'json',
-                    success: function(add){
-                        if(add.msg == 'ok'){
-                            favIcon();
-                        }
-                    }
-                });
             });
         });
-    </script>
 
-    <!-- SCRIPT PARTAGE MEDIAS SOCIAUX -->
-    <!--TWITTER-->
-    <script>
+        // effet +1 AJOUTER AU PANIER
+        // When we click "Add to Basket"...
+        $('.addBasket').click(function(){
+            var idProduct = $(this).data('id');
 
-        (function(){
+            // Add the animation class
+            $('#'+idProduct+', .basket').addClass('added');
 
-            var popupCenter = function(url, title, width, height){
+            // Remove the animation classes after 1.5s
+            var wait = setTimeout(function(){
+                $('#'+idProduct+', .basket').removeClass('added');
+            }, 1000);
+        });
 
-                var popupWidth = width || 640;
+        $('.favorite').click(function(e){
+            e.preventDefault();
 
-                var popupHeight = height || 320;
+            var idFavorite = $(this).data('id');
 
-                var windowLeft = window.screenLeft || window.screenX;
+            $.ajax({
+                url: '<?=$this->url('ajax_favorite');?>',
+                type: 'post',
+                cache: false,
+                data: {id_item: idFavorite},
+                dataType: 'json',
+                success: function(add){
+                    if(add.msg == 'ok'){
+                        $('body').load('<?=$this->url('viewArt', ['id' => $items['id']]);?>');
+                    }
+                }
+            });
+        });
 
-                var windowTop = window.screenTop || window.screenY;
+        $('.favorite2').click(function(e){
+            e.preventDefault();
 
-                var windowWidth = window.innerWidth || document.documentElement.clientWidth;
+            var idFavorite = $(this).data('id');
 
-                var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+            function favIcon() // Change l'îcone favoris sans recharger la page
+            {
+                if($('.'+idFavorite).hasClass('fa-heart-o')){ // On vérifie que l'élement avec l'ID contenu dans idFavorite a la class fa-heart-o
+                    $('.'+idFavorite).removeClass('fa-heart-o'); // On vire la class
+                    $('.'+idFavorite).addClass('fa-heart'); // On rajoute une nouvelle
+                    $('.'+idFavorite).css('color', '#c11131'); // On change la couleur
+                }
+                else if($('.'+idFavorite).hasClass('fa-heart')){ // On vérifie que l'élement avec l'ID contenu dans idFavorite a la class fa-heart
+                    $('.'+idFavorite).removeClass('fa-heart'); // On vire la class
+                    $('.'+idFavorite).addClass('fa-heart-o'); // On rajoute une nouvelle
+                    $('.'+idFavorite).css('color', '#999999'); // On change la couleur
+                }
+            }
 
-                var popupWidth = 640;
+            $.ajax({
+                url: '<?=$this->url('ajax_favorite');?>',
+                type: 'post',
+                cache: false,
+                data: {id_item: idFavorite},
+                dataType: 'json',
+                success: function(add){
+                    if(add.msg == 'ok'){
+                        favIcon();
+                    }
+                }
+            });
+        });
+    });
+</script>
 
-                var popupHeight = 320;
+<!-- SCRIPT PARTAGE MEDIAS SOCIAUX -->
+<script>
 
-                var popupLeft = windowLeft + windowWidth / 2 - popupWidth / 2;
+(function(){
+   
+        var popupCenter = function(url, title, width, height){
+        
+        var popupWidth = width || 640;
 
-                var popupTop = windowTop + windowHeight / 2 - popupHeight / 2;
+        var popupHeight = height || 320;
+        
+        var windowLeft = window.screenLeft || window.screenX;
 
-                window.open(url, title, 'scrollbar=yes, width= ' + popupWidth + ', height=' + popupHeight +', top='+ popupTop +', left='+ popupLeft +'');
+        var windowTop = window.screenTop || window.screenY;
 
-            };
+        var windowWidth = window.innerWidth || document.documentElement.clientWidth;
 
+        var windowHeight = window.innerHeight || document.documentElement.clientHeight;
 
-            document.querySelector('.share_twitter').addEventListener('click', function(e){
-                e.preventDefault();
+        var popupLeft = windowLeft + windowWidth / 2 - popupWidth / 2 ;
 
-                var url = this.getAttribute('data-url');
-
-                var shareUrl = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(document.title) + 
-                    "&via=Klickit33" + 
-                    "&url=" + encodeURIComponent(url);
-
-                popupCenter(shareUrl, "Partager sur Twitter")
-            });    
-
-
+        var popupTop = windowTop + windowHeight / 2 - popupHeight / 2 ;
 
 
-            /*<!--FACEBOOK-->*/
+        var popup = window.open(url, title, 'scrollbars=yes, width=' + popupWidth + ', height=' + popupHeight + ', top=' + popupTop + ', left=' + popupLeft);
+
+        popup.focus();
+            
+        return true;
+    };
+    
+
+/*
+<!-- SCRIPT PARTAGE MEDIAS SOCIAUX -->
+<!--TWITTER-->
+*/
+
+    document.querySelector('.share_twitter').addEventListener('click', function(e){
+        e.preventDefault();
+
+        var url = this.getAttribute('data-url');
+
+        var shareUrl = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(document.title) + "&via=Klickit33" + "&url=" + encodeURIComponent(url);
+
+        popupCenter(shareUrl, "Partager sur Twitter");
+    });    
 
 
+/*
+<!-- SCRIPT PARTAGE MEDIAS SOCIAUX -->
+<!--FACEBOOK-->
+*/
 
-            document.querySelector('.share_facebook').addEventListener('click', function(e){
-                e.preventDefault();
+    document.querySelector('.share_facebook').addEventListener('click', function(e){
+        e.preventDefault();
 
-                var url = this.getAttribute('data-url');
+        var url = this.getAttribute('data-url');
 
-                var shareUrl = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url);
+        var shareUrl = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url);
 
-                popupCenter(shareUrl, "Partagez sur facebook");
+        popupCenter(shareUrl, "Partager sur Facebook");
 
-            });    
+    });    
 
-        })();
+    
+})();    
+    
 
-    </script>
-    <?php $this->stop('js')?>
+</script>
+<?php $this->stop('js')?>
