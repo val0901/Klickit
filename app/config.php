@@ -2,10 +2,10 @@
 
 $w_config = [
    	//information de connexion à la bdd
-	'db_host' => 'localhost',						//hôte (ip, domaine) de la bdd
-    'db_user' => 'root',							//nom d'utilisateur pour la bdd
-    'db_pass' => '',								//mot de passe de la bdd
-    'db_name' => 'klickit',								//nom de la bdd
+	'db_host' => 'klickitfrjlol333.mysql.db',						//hôte (ip, domaine) de la bdd
+    'db_user' => 'klickitfrjlol333',							//nom d'utilisateur pour la bdd
+    'db_pass' => 'Chipster33',								//mot de passe de la bdd
+    'db_name' => 'klickitfrjlol333',								//nom de la bdd    
     'db_table_prefix' => '',						//préfixe ajouté aux noms de table
 
 	//authentification, autorisation
