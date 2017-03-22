@@ -1491,7 +1491,7 @@ h1.goodToGo {
 }
 /* effect +1 AJOUTER AU PANIER */
 #plus1 {
-    font-size: 3em;
+    font-size: 2em;
     color: red;
     display: block;
     position: absolute;

@@ -125,7 +125,7 @@
                 <br><br><br><br>
                 <span class="viewart_fontref">Quantité </span>
                 <span>
-                    <input type="number" name="number" min="1" id="number" placeholder="1">
+                    <input type="number" name="number" min="1" id="number" value="1">
                 </span>
                 <br><br>
                 <!-- container +1 -->
@@ -140,7 +140,7 @@
                         </span>
                     </button>
                     <?php else : ?>
-                    <a href="<?=$this->url('login');?>" target="_blank"><button data-id="<?=$items['id']?>" type="button" class="btn btn-primary viewcategory_button_size addBasket">  <span class="name">
+                    <a href="<?=$this->url('login');?>" target="_blank"><button data-id="<?=$items['id']?>" type="button" class="btn btn-primary viewcategory_button_size">  <span class="name">
                         Ajouter au panier
                         </span>
                         </button></a>
@@ -291,12 +291,11 @@
                                         <div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
                                         <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
                                     </div>
+                                    <div class="viewcategory_button">
                                     <!-- container +1 -->
                                     <div id="<?=$newProduct['id'];?>" class="item--helper-slide">
                                         <span id="plus1">+1</span>
                                     </div>
-                                    <div class="viewcategory_button">
-                                        <!--j'ai supprimé .btn-primary dans la class button-->
                                         <?php if(!empty($_SESSION['user'])): ?>
                                         <button id="simple" type="button" class="changeArrow btn viewcategory_button_size add_to_shopping_cart ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
                                             Ajouter au panier
@@ -409,7 +408,7 @@
                 }
             });
         });
-
+ 
         // effet +1 AJOUTER AU PANIER
         // When we click "Add to Basket"...
         $('.addBasket').click(function(){
