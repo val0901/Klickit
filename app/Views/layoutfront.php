@@ -125,7 +125,7 @@
 													x <?=$item['qt'];?>
 												</div>
 												<div class="col-xs-2 text-right ">
-													<?= str_replace('.', ',', $item['price']) * $item['qt']?>€
+													<?= str_replace('.', ',', $item['price'] * $item['qt'])?>€
 												</div>
                                     
 											<?php else : ?>
@@ -133,7 +133,7 @@
 													x <?=$item['qt'];?>
 												</div>
 												<div class="col-xs-2 text-right ">
-													<?= str_replace('.', ',', $item['newPrice']) * $item['qt']?>€
+													<?= str_replace('.', ',', $item['newPrice'] * $item['qt'])?>€
 												</div>
 											<?php endif; ?>
 										<?php endforeach; ?>
