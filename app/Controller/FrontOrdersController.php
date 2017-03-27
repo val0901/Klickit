@@ -265,8 +265,6 @@ class FrontOrdersController extends MasterController
 
 		$paypal = new APIContext(
 			new TokenCredential(
-				'Ac7zciJxbLPkLZS_B42CXjunY2-l7-HwXQ4bOYMrLdVEGsaLezI7x6X3hfLjLXhjbGjDxPOUhrhH2C0p',
-				'EFSWbLVH2RRDm-EwAAgKe7Ondurs3_bh3FmYbWLhCyYoJQAsPTP4R6B0uNgRb5kTmW2CbDcRsIhtkt2h')
 			);
 
 		if(isset($_GET['paymentId'], $_GET['PayerID'], $_GET['success'])){

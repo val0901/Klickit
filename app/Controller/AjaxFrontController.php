@@ -453,7 +453,9 @@ class AjaxFrontController extends Controller
 
 						$paypal = new APIContext(
 							new TokenCredential(
-                                'ARWN7vmPrzTO7lSciJG3zFrB1LbiS95YdsstvgpXFg5fbRmZv3x-zuTuBZeeMR4zRx8c8IKV8GO_edG7', 'ED1gpOMFZMeCNmaTYQwJUWjAD4TOPBdo-aDR02fLDAlMALhCCa9fTcHDl5rcNg0oUqyeGJb7q9Gy_iVX')
+                                /*'ARWN7vmPrzTO7lSciJG3zFrB1LbiS95YdsstvgpXFg5fbRmZv3x-zuTuBZeeMR4zRx8c8IKV8GO_edG7'*/
+                                /*'ED1gpOMFZMeCNmaTYQwJUWjAD4TOPBdo-aDR02fLDAlMALhCCa9fTcHDl5rcNg0oUqyeGJb7q9Gy_iVX'*/
+
 							);
 
 						$payer = new Payer();
