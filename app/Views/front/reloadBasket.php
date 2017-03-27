@@ -34,7 +34,7 @@
 			Total :
 		</div>
 		<div class="col-xs-6 shoppingmenu_total price text-right">
-			<?=$w_total;?>€
+			<?=str_replace('.', ',', $w_total);?>€
 		</div>
 	</div>
 </div>
