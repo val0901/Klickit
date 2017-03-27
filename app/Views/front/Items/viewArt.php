@@ -110,14 +110,14 @@
 
                 <span class="viewart_fontsolde salesItems">
                     <?php if($items['newPrice'] == 0): ?>
-                    <?=$items['price'];?> €
+                    <?=str_replace('.', ',', $items['price']);?> €
                     <?php elseif($items['newPrice'] > 0): ?>
-                    <?=$items['newPrice'];?> €
+                    <?=str_replace('.', ',', $items['newPrice']);?> €
                     <?php endif; ?>
                 </span>
                 <span class="viewart_fontnormal salesItems">
                     <?php if($items['newPrice'] > 0): ?> 
-                    <?=$items['price'];?> €
+                    <?=str_replace('.', ',', $items['price']);?> €
                     <?php elseif($items['newPrice'] == 0): ?>
 
                     <?php endif; ?>
@@ -219,9 +219,9 @@
                                     </div>
                                     <div class="caption">
                                         <?php if($newProduct['newPrice'] == 0) : ?>
-                                        <h4><?=$newProduct['price'];?>€</h4>
+                                        <h4><?=str_replace('.', ',', $newProduct['price']);?>€</h4>
                                         <?php else : ?>
-                                        <h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
+                                        <h4><span class="viewcategoryprixpromo"><?=str_replace('.', ',', $newProduct['newPrice']);?>€</span> <span class="viewcategoryprixdelete"><?=str_replace('.', ',', $newProduct['price']);?>€</span></h4>
                                         <?php endif; ?>
                                         <p>
                                             <span style="cursor:pointer;">
@@ -271,9 +271,9 @@
                                     </div>
                                     <div class="caption">
                                         <?php if($newProduct['newPrice'] == 0) : ?>
-                                        <h4><?=$newProduct['price'];?>€</h4>
+                                        <h4><?=str_replace('.', ',', $newProduct['price']);?>€</h4>
                                         <?php else : ?>
-                                        <h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
+                                        <h4><span class="viewcategoryprixpromo"><?=str_replace('.', ',', $newProduct['newPrice']);?>€</span> <span class="viewcategoryprixdelete"><?=str_replace('.', ',', $newProduct['price']);?>€</span></h4>
                                         <?php endif; ?>
                                         <p>
                                             <span style="cursor:pointer;">
@@ -322,9 +322,9 @@
                                     </div>
                                     <div class="caption">
                                         <?php if($newProduct['newPrice'] == 0) : ?>
-                                        <h4><?=$newProduct['price'];?>€</h4>
+                                        <h4><?=str_replace('.', ',', $newProduct['price']);?>€</h4>
                                         <?php else : ?>
-                                        <h4><span class="viewcategoryprixpromo"><?=$newProduct['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$newProduct['price'];?>€</span></h4>
+                                        <h4><span class="viewcategoryprixpromo"><?=str_replace('.', ',', $newProduct['newPrice']);?>€</span> <span class="viewcategoryprixdelete"><?=str_replace('.', ',', $newProduct['price']);?>€</span></h4>
                                         <?php endif; ?>
                                         <p>
                                             <span style="cursor:pointer;">

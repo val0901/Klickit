@@ -22,9 +22,9 @@
 		             <a href="<?=$this->url('viewArt', ['id' => $product['id']]);?>"><img src="<?=$this->assetUrl('art/'.$product['picture1']);?>" alt="photo de playmobil" class="img-thumbnail" style=""></a>
 						<div class="viewcategorycaption">
 							<?php if($product['newPrice'] == 0) : ?>
-								<h4><?=$product['price'];?>€</h4>
+								<h4><?=str_replace('.', ',', $product['price']);?>€</h4>
 							<?php else : ?>
-								<h4><span class="viewcategoryprixpromo"><?=$product['newPrice'];?>€</span> <span class="viewcategoryprixdelete"><?=$product['price'];?>€</span></h4>
+								<h4><span class="viewcategoryprixpromo"><?=str_replace('.', ',', $product['newPrice']);?>€</span> <span class="viewcategoryprixdelete"><?=str_replace('.', ',', $product['price']);?>€</span></h4>
 							<?php endif; ?>
 
 							<p class="iconeFavorite">

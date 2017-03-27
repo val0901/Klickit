@@ -800,10 +800,10 @@ class AjaxFrontController extends Controller
 				$viewSearch.= '<a href="'.$this->generateUrl('viewArt', ['id' => $item['id']]).'"><img src="'.$picutreLink->assetUrl('art/'.$item['picture1']).'" alt="photo de playmobil" class="img-thumbnail" style=""></a>';
 
 				if($item['newPrice'] == 0){
-					$viewSearch.= '<div class="viewcategorycaption"><h4>'.$item['price'].'€</h4>';
+					$viewSearch.= '<div class="viewcategorycaption"><h4>'.str_replace('.', ',', $item['price']).'€</h4>';
 				}
 				else {
-					$viewSearch.= '<h4><span class="viewcategoryprixpromo">'.$item['newPrice'].'€</span><span class="viewcategoryprixdelete">'.$item['price'].'€</span></h4>';
+					$viewSearch.= '<h4><span class="viewcategoryprixpromo">'.str_replace('.', ',', $item['newPrice']).'€</span><span class="viewcategoryprixdelete">'.str_replace('.', ',', $item['price']).'€</span></h4>';
 				}
 
 				$viewSearch.='<p class="iconeFavorite"><span style="cursor:pointer;">';
