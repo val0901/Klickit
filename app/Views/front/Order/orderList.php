@@ -218,8 +218,8 @@
                 <h3><i class="fa fa-globe" aria-hidden="true" style="color:#000;"> <span class="orderfraislist_title">France Métropolitaine</span></i></h3>
                 <li>1 à 3 personnages ( <span class="orderfrais_price">+ 2,50€</span> )</li>
                 <li>4 à 8 personnages ( <span class="orderfrais_price">+ 3,90€</span> )</li>
-                <li>au dela de 8 personnages ( <span class="orderfrais_price">+ 6.90€</span> )</li>
-                <li>pièces & customs en rèsine ou peints ( <span class="orderfrais_price">+ 6.90€</span> )</li>
+                <li>au dela de 8 personnages ( <span class="orderfrais_price">+ 6,90€</span> )</li>
+                <li>pièces &amp; customs en rèsine ou peints ( <span class="orderfrais_price">+ 6,90€</span> )</li>
             </ol>
         </div>
     </div>
