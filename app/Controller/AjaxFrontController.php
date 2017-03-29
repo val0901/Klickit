@@ -506,7 +506,7 @@ class AjaxFrontController extends Controller
 
 				if(!empty($approvalUrl)){
 					if($user['social_title'] == 'Mme'){
-						$contentEmail = 'Bonjour Madame '.$user['lastname'].' '.$user['firstname'].', vous avez choisi le mode de paiement par PayPal pour votre commande n°'.$current_order['id'].' qui contient : <br> <ul>';
+						$contentEmail = 'Bonjour Madame '.$user['lastname'].' '.$user['firstname'].', vous avez choisi le mode de paiement par PayPal ou CB pour votre commande n°'.$current_order['id'].' qui contient : <br> <ul>';
 
 						foreach ($orderContent as $contentMail) {
 							$product = $findItems->findItems($contentMail);
@@ -516,7 +516,7 @@ class AjaxFrontController extends Controller
 						$contentEmail.= '</ul> <br> Votre commande vous sera expédié dès validation du paiement <br> <br> Merci de votre confiance, à très bientôt sur Klickit ! <br><br> L\'équipe Klickit.';
 					}
 					elseif($user['social_title'] == 'M'){
-						$contentEmail = 'Bonjour Monsieur '.$user['lastname'].' '.$user['firstname'].', vous avez choisi le mode de paiement par PayPal pour votre commande n°'.$current_order['id'].' qui contient : <br> <ul>';
+						$contentEmail = 'Bonjour Monsieur '.$user['lastname'].' '.$user['firstname'].', vous avez choisi le mode de paiement par PayPal ou CB pour votre commande n°'.$current_order['id'].' qui contient : <br> <ul>';
 
 						foreach ($orderContent as $contentMail) {
 							$product = $findItems->findItems($contentMail);
@@ -530,7 +530,7 @@ class AjaxFrontController extends Controller
 					$sendMail->Host = 'ssl0.ovh.net';  									// Hôte du SMTP
 					$sendMail->SMTPAuth = true;                               				// SMTP Authentification
 					$sendMail->Username = 'contact@klickit.fr'; //Username         				// SMTP username
-					$sendMail->Password = 'silSAV33@'; //mot de passe                    	 				// SMTP password
+					$sendMail->Password = 'mdp'; //mot de passe                    	 				// SMTP password
 					$sendMail->SMTPSecure = 'tls';                         					// Enable TLS encryption, `ssl` also accepted
 					$sendMail->Port = 587;                                					// TCP port to connect to
 					$sendMail->CharSet = 'UTF-8';
@@ -580,7 +580,7 @@ class AjaxFrontController extends Controller
 						$sendMail->Host = 'ssl0.ovh.net';  									// Hôte du SMTP
 						$sendMail->SMTPAuth = true;                               				// SMTP Authentification
 						$sendMail->Username = 'contact@klickit.fr'; //Username         				// SMTP username
-						$sendMail->Password = 'silSAV33@'; //mot de passe                    	 				// SMTP password
+						$sendMail->Password = 'mdp'; //mot de passe                    	 				// SMTP password
 						$sendMail->SMTPSecure = 'tls';                         					// Enable TLS encryption, `ssl` also accepted
 						$sendMail->Port = 587;                                					// TCP port to connect to
 						$sendMail->CharSet = 'UTF-8';
@@ -631,7 +631,7 @@ class AjaxFrontController extends Controller
 						$sendMail->Host = 'ssl0.ovh.net';  									// Hôte du SMTP
 						$sendMail->SMTPAuth = true;                               				// SMTP Authentification
 						$sendMail->Username = 'contact@klickit.fr'; //Username         				// SMTP username
-						$sendMail->Password = 'silSAV33@'; //mot de passe                    	 				// SMTP password
+						$sendMail->Password = 'mdp'; //mot de passe                    	 				// SMTP password
 						$sendMail->SMTPSecure = 'tls';                         					// Enable TLS encryption, `ssl` also accepted
 						$sendMail->Port = 587;                                					// TCP port to connect to
 						$sendMail->CharSet = 'UTF-8';
