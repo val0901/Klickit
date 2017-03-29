@@ -26,7 +26,7 @@ class OrdersController extends Controller
 		$max = 15;
 
 		$orders = new OrdersModel();
-		$list_orders = $orders->findAllOrders($page, $max);
+		$list_orders = $orders->findAllOrdersEnd($page, $max);
 
 		$items = new ItemModel();
 
