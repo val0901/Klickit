@@ -247,11 +247,12 @@ class FrontOrdersController extends MasterController
 	//Page de réussite après paiement
 	public function pay()
 	{		
-		$getOrder = new UserModel;
-		$getIdOrder = new OrdersModel;
-		$deleteBasket = new BasketModel;
+		$getOrder = new UserModel();
+		$getIdOrder = new OrdersModel();
+		$updateOrder = new OrdersModel();
+		$deleteBasket = new BasketModel();
 		$user = $this->getUser();
-		$get = new ItemModel;
+		$get = new ItemModel();
 
 		$data = [
 			'user' => $user,
@@ -259,19 +260,24 @@ class FrontOrdersController extends MasterController
 		];
 
 		if($_GET['success'] == 'true'){
-			if($getIdOrder->updatePaymentOrder($user['id'], 'paypal')){
+			if($updateOrder->updatePaymentOrder($user['id'], 'paypal')){
 				$deleteBasket->deleteAllBasket($user['id']);
-				//On récupère la commande terminée de l'utilisateur
-				$getOrderByID = $getOrder->getCurrentOrderById($user['id']);
-				$current_order = end($getOrderByID);
-				$data['order'] = $current_order;
-
-				$idOrders = $getIdOrder->getOrderByIdMember($user['id']);
-				$current_orderID = end($idOrders);
-				$data['idOrder'] = $current_orderID;
-
-				//var_dump($current_orderID);
+				var_dump('C\'est ok');
 			}
+			else{
+				var_dump($updateOrder->updatePaymentOrder($user['id'], 'paypal'));
+			}
+
+			//On récupère la commande terminée de l'utilisateur
+			$getOrderByID = $getOrder->getCurrentOrderById($user['id']);
+			$current_order = end($getOrderByID);
+			$data['order'] = $current_order;
+
+			$idOrders = $getIdOrder->getOrderByIdMember($user['id']);
+			$current_orderID = end($idOrders);
+			$data['idOrder'] = $current_orderID;
+
+			//var_dump($current_orderID);
 		}
 
 		$paypal = new APIContext(
