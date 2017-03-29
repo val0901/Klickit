@@ -258,7 +258,7 @@ class FrontOrdersController extends MasterController
 		];
 
 		if($_GET['success'] == 'true'){
-			if($getIdOrder->updatePaymentOrder($user['id'], $_POST['payment'])){
+			if($getIdOrder->updatePaymentOrder($user['id'], 'paypal')){
 				//On récupère la commande terminée de l'utilisateur
 				$getOrderByID = $getOrder->getCurrentOrderById($user['id']);
 				$current_order = end($getOrderByID);
