@@ -40,9 +40,7 @@ class MessageModel extends \W\Model\Model
 	*/
 	public function find15Messages()
 	{
-
-		// @todo: modifier la structure de la table "message" pour se baser sur un ID plutôt qu'un username
-		$sql = 'SELECT ' .$this->table.'.*, u.username, u.email FROM ' . $this->table . ' LEFT JOIN user AS u ON '.$this->table.'.username = u.username ORDER BY ' .$this->table.'.date_creation DESC LIMIT 15';
+		$sql = 'SELECT * FROM ' .$this->table.' date_creation DESC LIMIT 15';
 
 		$sth = $this->dbh->prepare($sql);
 		$sth->execute();
