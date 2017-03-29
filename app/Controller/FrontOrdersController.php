@@ -249,6 +249,7 @@ class FrontOrdersController extends MasterController
 	{		
 		$getOrder = new UserModel;
 		$getIdOrder = new OrdersModel;
+		$deleteBasket = new BasketModel;
 		$user = $this->getUser();
 		$get = new ItemModel;
 
@@ -259,6 +260,7 @@ class FrontOrdersController extends MasterController
 
 		if($_GET['success'] == 'true'){
 			if($getIdOrder->updatePaymentOrder($user['id'], 'paypal')){
+				$deleteBasket->deleteAllBasket($user['id']);
 				//On récupère la commande terminée de l'utilisateur
 				$getOrderByID = $getOrder->getCurrentOrderById($user['id']);
 				$current_order = end($getOrderByID);

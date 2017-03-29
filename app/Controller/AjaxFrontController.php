@@ -546,12 +546,10 @@ class AjaxFrontController extends Controller
 
 					$sendMail->send();
 					
-					if($deleteBasket->deleteAllBasket($user['id'])){
-						$json = [
-							'code' => 'paypal',
-							'link' => $approvalUrl,
-						];
-					}
+					$json = [
+						'code' => 'paypal',
+						'link' => $approvalUrl,
+					];
 				}
 			}
 			elseif ($_POST['payment'] == 'cheque') {
