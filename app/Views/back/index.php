@@ -166,7 +166,7 @@
 							<tr>
 								<td <?=$bold?> ><?=$message['username'];?></td>
 								<td <?=$bold?> class="title_home_phone"><?=$message['email'];?></td>
-								<td><?= date('d/m/Y', strtotime($order['date_creation']));?></td>
+								<td <?=$bold?> ><?=$order['date_creation'];?></td>
 								<td <?=$bold?> ><?=$message['subject'];?></td> 
 								<td <?=$bold?> class="title_home_phone"><?=$message['content'];?></td>
 								<td <?=$bold?> ><?=$message['statut'];?></td>
