@@ -651,14 +651,7 @@ class AjaxController extends Controller
 					$sendMail->AltBody = $contentEmail="Cher Client, Nous avons bien reçu le paiement de votre commande et nous vous remercions de votre confiance. L\'expédition sera faite dans les plus brefs délais. La facture est disponible en téléchargement dans votre espace client. Restant à votre disposition pour toute information complémentaire dont vous auriez besoin, nous vous adressons nos salutations.";
 
 					if($sendMail->send()){
-
 						$success = true;
-
-						$json = [
-							'code' => 'ok',
-
-						];
-
 					}
 				}
 				elseif($post['statut'] == 'expedie'){
@@ -691,20 +684,23 @@ class AjaxController extends Controller
 					$sendMail->AltBody = $contentEmail="Cher Client, Nous avons bien reçu le paiement de votre commande et nous vous remercions de votre confiance. L'expédition sera faite dans les plus brefs délais. La facture est disponible en téléchargement dans votre espace client. Restant à votre disposition pour toute information complémentaire dont vous auriez besoin, nous vous adressons nos salutations."; //On envoi le message sans HTML
 
 					if($sendMail->send()){
-
 						$success = true;
-
-						$json = [
-							'code' => 'ok',
-
-						];
-
 					}
 				}
-				
-				
 			}
 		}
+
+		if($success = true){
+			$json = [
+				'code' => 'ok',
+			];
+		}
+		else{
+			$json = [
+				'code' => 'no',
+			];
+		}
+
 		$this->showJson($json);
 	}
 

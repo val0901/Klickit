@@ -50,12 +50,22 @@
                             <td><p><?=$order['total']?> €<p></td>  
                             <td><p><?=$order['payment']?><p></td>
 
-                            <?php if($order['statut'] == 'enPreparation') : ?>
-                            <td><p><i class="fa fa-circle" aria-hidden="true" style="color: #fe941e;"> <span class="ordertable_statut">En cours de préparation</span></i><p></td>
-                            <?php elseif($order['statut'] == 'expedie') :?>
-                            <td><p><i class="fa fa-circle" aria-hidden="true" style="color: #56b621;"> <span class="ordertable_statut">Commande Expédiée</span></i><p></td>
-                            <?php elseif($order['statut'] == 'commande') : ?>
-                            <td><p><i class="fa fa-circle" aria-hidden="true" style="color: #999;"> <span class="ordertable_statut">En attente de paiement</span></i><p></td>  
+                            <?php if($order['payment'] == 'paypal') : ?>
+                                <?php if($order['statut'] == 'enPreparation') : ?>
+                                    <td><p><i class="fa fa-circle" aria-hidden="true" style="color: #fe941e;"> <span class="ordertable_statut">En cours de préparation</span></i><p></td>
+                                <?php elseif($order['statut'] == 'expedie') :?>
+                                    <td><p><i class="fa fa-circle" aria-hidden="true" style="color: #56b621;"> <span class="ordertable_statut">Commande Expédiée</span></i><p></td>
+                                <?php elseif($order['statut'] == 'commande') : ?>
+                                    <td><p><i class="fa fa-circle" aria-hidden="true" style="color: #999;"> <span class="ordertable_statut">Payé en attente de traitement</span></i><p></td>  
+                                <?php endif; ?>
+                            <?php else : ?>
+                                <?php if($order['statut'] == 'enPreparation') : ?>
+                                    <td><p><i class="fa fa-circle" aria-hidden="true" style="color: #fe941e;"> <span class="ordertable_statut">En cours de préparation</span></i><p></td>
+                                <?php elseif($order['statut'] == 'expedie') :?>
+                                    <td><p><i class="fa fa-circle" aria-hidden="true" style="color: #56b621;"> <span class="ordertable_statut">Commande Expédiée</span></i><p></td>
+                                <?php elseif($order['statut'] == 'commande') : ?>
+                                    <td><p><i class="fa fa-circle" aria-hidden="true" style="color: #999;"> <span class="ordertable_statut">En attente de paiement</span></i><p></td>  
+                                <?php endif; ?>
                             <?php endif; ?>
 
                             <!-- suppression de la colonne facture pdf

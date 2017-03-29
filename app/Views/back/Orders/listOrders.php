@@ -148,7 +148,7 @@
 
 	<script>
 
-		$(document).ready(function(){
+/*		$(document).ready(function(){
 
 			var id_order = $(this).data('id');
 			var select = $('select').val();
@@ -157,19 +157,19 @@
 				e.preventDefault();
 
 				$.ajax({
-					url: '<?=$this->url('ajax_updateStatus'); ?>',
+					url: '<?//=$this->url('ajax_updateStatus'); ?>',
 					type: 'post',
 					cache: false,
 					data: {id: id_order, status: select},  // $_POST['id']
 					dataType: 'json',
 					success: function(out){
 						if(out.code == 'ok'){
-							$('body').load('<?=$this->url('listOrders');?>');	
+							$('body').load('<?//=$this->url('listOrders');?>');	
 						}
 					}
 				});
 			});
-		});
+		});*/
 
 		// AJAX POUR LA RECHERCHE
 		$('.search_order').click(function(e){
@@ -198,14 +198,7 @@
 							dataType: 'json',
 							success: function(order){
 								if(order.code == 'ok'){
-									$.alert({
-								        title: 'Email Envoyé',
-								        content: 'Le client a été averti du changement de statut de sa commande',
-								        theme: 'dark',
-								        buttons: function(){
-								        	$('body').load('<?=$this->url('listOrders');?>');
-								        }
-								    });
+								    $('body').load('<?=$this->url('listOrders');?>');
 								}
 							}
 						});
@@ -226,16 +219,7 @@
 							dataType: 'json',
 							success: function(order){
 								if(order.code == 'ok'){
-									$.alert({
-								        title: 'Email Envoyé',
-								        content: 'Le client a été averti du changement de statut de sa commande',
-								        theme: 'dark',
-								        buttons: {
-								        	Ok: function(){
-									        	$('body').load('<?=$this->url('listOrders');?>');
-									        }
-									    }
-								    });
+									$('body').load('<?=$this->url('listOrders');?>');
 								}
 							}
 						});
