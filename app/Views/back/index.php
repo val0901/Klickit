@@ -157,7 +157,7 @@
 					<?php if(!empty($messages)): ?>
 						<?php foreach($messages as $message) : ?>
 							<?php 
-								if ($message['statut'] == 'Non lu'){
+								if ($message['statut'] == 'NonLu'){
 									$bold = ' style="font-weight:bold;" ';
 								}else{
 									$bold = '';
@@ -169,7 +169,13 @@
 								<td <?=$bold?> ><?=$order['date_creation'];?></td>
 								<td <?=$bold?> ><?=$message['subject'];?></td> 
 								<td <?=$bold?> class="title_home_phone"><?=$message['content'];?></td>
-								<td <?=$bold?> ><?=$message['statut'];?></td>
+								<td <?=$bold?> >
+									<?php if($message['statut'] == "NonLu"): ?>
+										<p>Non Lu</p>
+									<?php else : ?>
+										<?=$message['statut'];?>
+									<?php endif; ?>
+								</td>
 								<td><a href="<?=$this->url('viewMessage', ['id'=>$message['id']]);?>"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>
 							</tr>	
 						<?php endforeach;?>
