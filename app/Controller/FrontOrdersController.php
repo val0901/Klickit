@@ -247,21 +247,30 @@ class FrontOrdersController extends MasterController
 	//Page de réussite après paiement
 	public function pay()
 	{		
-
 		$getOrder = new UserModel;
 		$getIdOrder = new OrdersModel;
 		$user = $this->getUser();
-		$data = [];
 		$get = new ItemModel;
 
-		//On récupère la commande terminée de l'utilisateur
-		$getOrderByID = $getOrder->getCurrentOrderById($user['id']);
-		$current_order = end($getOrderByID);
+		$data = [
+			'user' => $user,
+			'get'  => $get,
+		];
 
-		$idOrders = $getIdOrder->getOrderByIdMember($user['id']);
-		$current_orderID = end($idOrders);
+		if($_GET['success'] == 'true'){
+			if($getIdOrder->updatePaymentOrder($user['id'], $_POST['payment'])){
+				//On récupère la commande terminée de l'utilisateur
+				$getOrderByID = $getOrder->getCurrentOrderById($user['id']);
+				$current_order = end($getOrderByID);
+				$data['order'] = $current_order;
 
-		//var_dump($current_orderID);
+				$idOrders = $getIdOrder->getOrderByIdMember($user['id']);
+				$current_orderID = end($idOrders);
+				$data['idOrder'] = $current_orderID;
+
+				//var_dump($current_orderID);
+			}
+		}
 
 		$paypal = new APIContext(
 			new TokenCredential(
@@ -297,21 +306,14 @@ class FrontOrdersController extends MasterController
 				}
 
 			}
+		}
 
-			$data = [
-				'user'		=> $user,
-				'get'		=> $get,
-				'order' 	=> $current_order,
-				'idOrder'	=> $current_orderID,
-			];
-
-			if(!empty($this->getUser())){
-				$this->showStuff('front/Order/pay', $data);
-			}
-			else {
-				$this->redirectToRoute('login');
-			}
-		}	
+		if(!empty($this->getUser())){
+			$this->showStuff('front/Order/pay', $data);
+		}
+		else {
+			$this->redirectToRoute('login');
+		}
 	}
 
 	//Page de réussite après paiment par chèque ou virement

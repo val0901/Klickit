@@ -1,11 +1,12 @@
 <?php 
-
+	
 	if($_GET['success'] == 'true'){
-		$this->layout('layoutfront', ['title' => 'Paiement réussi']);
-	}elseif($_GET['success'] == 'false'){
+		$this->layout('layoutfront', ['title' => 'Paiement réussi']); 
+	}
+	elseif($_GET['success'] == 'false'){
 		$this->layout('layoutfront', ['title' => 'Erreur dans la procédure de paiement']);
 	}
-	
+
 ?>
 
 <?php $this->start('main_content') ?>
