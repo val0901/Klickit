@@ -40,7 +40,7 @@ class MessageModel extends \W\Model\Model
 	*/
 	public function find15Messages()
 	{
-		$sql = 'SELECT * FROM ' .$this->table.' date_creation DESC LIMIT 15';
+		$sql = 'SELECT * FROM '.$this->table.'ORDER BY date_creation DESC LIMIT 15';
 
 		$sth = $this->dbh->prepare($sql);
 		$sth->execute();
