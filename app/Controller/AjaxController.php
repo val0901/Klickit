@@ -247,8 +247,7 @@ class AjaxController extends Controller
 					'statut'	=> $new_state
 				];
 
-				$updating = $update->update($updated_status, $_POST['id']);
-				if($updating){
+				if($update->update($updated_status, $_POST['id'])){
 					$json = [
 						'code'=>'ok',
 					];
