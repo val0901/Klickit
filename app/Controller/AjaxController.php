@@ -838,7 +838,7 @@ class AjaxController extends Controller
 						}
 						$viewSearch.= '<td>'.$value['statut'].'</td>';
 						$viewSearch.= '<td><a href="'.$this->generateUrl('updateItem', ['id'=> $value['id']]).'"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></a></td>';
-						$viewSearch.= '<td><button class="btn btn-danger delete-item" data-id="'.$value['id'].'">Effacer l'article'</button></td></tr>';
+						$viewSearch.= '<td><button class="btn btn-danger delete-item" data-id="'.$value['id'].'">Effacer l\'article</button></td></tr>';
 					}
 				}
 				else {
