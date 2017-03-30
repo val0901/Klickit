@@ -448,108 +448,112 @@ class AjaxFrontController extends Controller
 
 		if(!empty($_POST) && isset($_POST)){
 			if($_POST['payment'] == 'paypal'){
-				$paypal = new APIContext(
-					new TokenCredential(
-                        'AQntTHlOr7-Wnh6oA0oW2153NxSDBAgB7gwHmh--TlHZuYaBkMfIJSHyF_fCy6wNY4LW_VX64t-AiSz9','EJt5WsZg-jQRQ2pQdZVauU-IvhxWcK6UvdD6MkkeLm8TN729XTXevzJ6kyK4DP2Roe8GLz4si9EXsSHm')
-                        /*'ARWN7vmPrzTO7lSciJG3zFrB1LbiS95YdsstvgpXFg5fbRmZv3x-zuTuBZeeMR4zRx8c8IKV8GO_edG7'*/
-                        /*'ED1gpOMFZMeCNmaTYQwJUWjAD4TOPBdo-aDR02fLDAlMALhCCa9fTcHDl5rcNg0oUqyeGJb7q9Gy_iVX'*/
+				if($updateOrder->updatePaymentOrder($user['id'], $_POST['payment'])){
+					$paypal = new APIContext(
+						new TokenCredential(
+	                        'AQntTHlOr7-Wnh6oA0oW2153NxSDBAgB7gwHmh--TlHZuYaBkMfIJSHyF_fCy6wNY4LW_VX64t-AiSz9','EJt5WsZg-jQRQ2pQdZVauU-IvhxWcK6UvdD6MkkeLm8TN729XTXevzJ6kyK4DP2Roe8GLz4si9EXsSHm')
+	                        /*'ARWN7vmPrzTO7lSciJG3zFrB1LbiS95YdsstvgpXFg5fbRmZv3x-zuTuBZeeMR4zRx8c8IKV8GO_edG7'*/
+	                        /*'ED1gpOMFZMeCNmaTYQwJUWjAD4TOPBdo-aDR02fLDAlMALhCCa9fTcHDl5rcNg0oUqyeGJb7q9Gy_iVX'*/
 
-					);
+						);
 
-				$payer = new Payer();
-				$payer->setPaymentMethod('paypal');
+					$payer = new Payer();
+					$payer->setPaymentMethod('paypal');
 
-				$quantity = explode(', ',$current_order['quantity']);
-				$content = explode(', ', $current_order['contenu']);
+					$quantity = explode(', ',$current_order['quantity']);
+					$content = explode(', ', $current_order['contenu']);
 
-				$items = [];
+					$items = [];
 
-				foreach($content as $key => $value){
-					$item = new Item();
+					foreach($content as $key => $value){
+						$item = new Item();
 
-					$item_property = $getItem->findItemsForAPI($value);
-					$qte = $quantity[$key];
+						$item_property = $getItem->findItemsForAPI($value);
+						$qte = $quantity[$key];
 
-					if($item_property['newPrice'] == 0){
-						$items[] = $item->setName($item_property['name'])->setCurrency('EUR')->setQuantity($qte)->setPrice($item_property['price']);
-					}elseif($item_property['newPrice'] > 0){
-						$items[] = $item->setName($item_property['name'])->setCurrency('EUR')->setQuantity($qte)->setPrice($item_property['newPrice']);
-					}
-				}
-
-				$itemList = new ItemList();
-				$itemList->setItems($items);
-
-				$details = new Details();
-				$details->setShipping($current_order['shipping'])->setSubTotal($current_order['sub_total']);
-
-				$amount = new Amount();
-				$amount->setCurrency('EUR')->setTotal($current_order['total'])->setDetails($details);
-
-				$transaction = new Transaction();
-				$transaction->setAmount($amount)->setItemList($itemList)->setDescription('Votre commande')->setInvoiceNumber(uniqid());
-
-				$redirectUrls = new RedirectUrls();
-				$redirectUrls->setReturnUrl('http://www.klickit.fr/pay?success=true')->setCancelUrl('http://www.klickit.fr/pay?success=false');
-
-				$payment = new Payment();
-				$payment->setIntent('sale')->setPayer($payer)->setRedirectUrls($redirectUrls)->setTransactions([$transaction]);	
-
-				try {
-					$payment->create($paypal);
-				} catch (Exception $e) {
-					die($e);
-				}
-
-				$approvalUrl = null;
-				$approvalUrl = $payment->getApprovalLink();
-
-				if(!empty($approvalUrl)){
-					if($user['social_title'] == 'Mme'){
-						$contentEmail = 'Bonjour Madame '.$user['lastname'].' '.$user['firstname'].', vous avez choisi le mode de paiement par PayPal ou CB pour votre commande n°'.$current_order['id'].' qui contient : <br> <ul>';
-
-						foreach ($orderContent as $contentMail) {
-							$product = $findItems->findItems($contentMail);
-							$contentEmail.= '<li>'.$product['name'].'</li>';
+						if($item_property['newPrice'] == 0){
+							$items[] = $item->setName($item_property['name'])->setCurrency('EUR')->setQuantity($qte)->setPrice($item_property['price']);
+						}elseif($item_property['newPrice'] > 0){
+							$items[] = $item->setName($item_property['name'])->setCurrency('EUR')->setQuantity($qte)->setPrice($item_property['newPrice']);
 						}
-						
-						$contentEmail.= '</ul> <br> Votre commande vous sera expédié dès validation du paiement <br> <br> Merci de votre confiance, à très bientôt sur Klickit ! <br><br> L\'équipe Klickit.';
 					}
-					elseif($user['social_title'] == 'M'){
-						$contentEmail = 'Bonjour Monsieur '.$user['lastname'].' '.$user['firstname'].', vous avez choisi le mode de paiement par PayPal ou CB pour votre commande n°'.$current_order['id'].' qui contient : <br> <ul>';
 
-						foreach ($orderContent as $contentMail) {
-							$product = $findItems->findItems($contentMail);
-							$contentEmail.= '<li>'.$product['name'].'</li>';
+					$itemList = new ItemList();
+					$itemList->setItems($items);
+
+					$details = new Details();
+					$details->setShipping($current_order['shipping'])->setSubTotal($current_order['sub_total']);
+
+					$amount = new Amount();
+					$amount->setCurrency('EUR')->setTotal($current_order['total'])->setDetails($details);
+
+					$transaction = new Transaction();
+					$transaction->setAmount($amount)->setItemList($itemList)->setDescription('Votre commande')->setInvoiceNumber(uniqid());
+
+					$redirectUrls = new RedirectUrls();
+					$redirectUrls->setReturnUrl('http://www.klickit.fr/pay?success=true')->setCancelUrl('http://www.klickit.fr/pay?success=false');
+
+					$payment = new Payment();
+					$payment->setIntent('sale')->setPayer($payer)->setRedirectUrls($redirectUrls)->setTransactions([$transaction]);	
+
+					try {
+						$payment->create($paypal);
+					} catch (Exception $e) {
+						die($e);
+					}
+
+					$approvalUrl = null;
+					$approvalUrl = $payment->getApprovalLink();
+
+					if(!empty($approvalUrl)){
+						if($user['social_title'] == 'Mme'){
+							$contentEmail = 'Bonjour Madame '.$user['lastname'].' '.$user['firstname'].', vous avez choisi le mode de paiement par PayPal ou CB pour votre commande n°'.$current_order['id'].' qui contient : <br> <ul>';
+
+							foreach ($orderContent as $contentMail) {
+								$product = $findItems->findItems($contentMail);
+								$contentEmail.= '<li>'.$product['name'].'</li>';
+							}
+							
+							$contentEmail.= '</ul> <br> Votre commande vous sera expédié dès validation du paiement <br> <br> Merci de votre confiance, à très bientôt sur Klickit ! <br><br> L\'équipe Klickit.';
 						}
+						elseif($user['social_title'] == 'M'){
+							$contentEmail = 'Bonjour Monsieur '.$user['lastname'].' '.$user['firstname'].', vous avez choisi le mode de paiement par PayPal ou CB pour votre commande n°'.$current_order['id'].' qui contient : <br> <ul>';
+
+							foreach ($orderContent as $contentMail) {
+								$product = $findItems->findItems($contentMail);
+								$contentEmail.= '<li>'.$product['name'].'</li>';
+							}
+							
+							$contentEmail.= '</ul> <br> Votre commande vous sera expédié dès validation du paiement <br>  <br> Merci de votre confiance, à très bientôt sur Klickit ! <br><br> L\'équipe Klickit.';
+						}
+
+						$sendMail->isSMTP();                                      
+						$sendMail->Host = 'ssl0.ovh.net';  									// Hôte du SMTP
+						$sendMail->SMTPAuth = true;                               				// SMTP Authentification
+						$sendMail->Username = 'contact@klickit.fr'; //Username         				// SMTP username
+						$sendMail->Password = 'mdp'; //mot de passe                    	 				// SMTP password
+						$sendMail->SMTPSecure = 'tls';                         					// Enable TLS encryption, `ssl` also accepted
+						$sendMail->Port = 587;                                					// TCP port to connect to
+						$sendMail->CharSet = 'UTF-8';
+
+						$sendMail->setFrom('contact@klickit.fr', 'Klickit');		  		//Expéditeur
 						
-						$contentEmail.= '</ul> <br> Votre commande vous sera expédié dès validation du paiement <br>  <br> Merci de votre confiance, à très bientôt sur Klickit ! <br><br> L\'équipe Klickit.';
+						$sendMail->addAddress($user['email'], $user['firstname'].' '.$user['lastname']); 	   	//$user['email']
+						//$sendMail->addCC(''); 					//Copie envoyer à l'adresse souhaitée du mail
+
+						$sendMail->Subject = 'Votre commande (Paiement PayPal)';
+						$sendMail->Body    = $contentEmail; //On envoi le message éventuellement en HTML
+						$sendMail->AltBody = $contentEmail; //On envoi le message sans HTML
+
+						$sendMail->send();
+						
+						if($deleteBasket->deleteAllBasket($user['id'])){
+							$json = [
+								'code' => 'paypal',
+								'link' => $approvalUrl,
+							];
+						}
 					}
-
-					$sendMail->isSMTP();                                      
-					$sendMail->Host = 'ssl0.ovh.net';  									// Hôte du SMTP
-					$sendMail->SMTPAuth = true;                               				// SMTP Authentification
-					$sendMail->Username = 'contact@klickit.fr'; //Username         				// SMTP username
-					$sendMail->Password = 'mdp'; //mot de passe                    	 				// SMTP password
-					$sendMail->SMTPSecure = 'tls';                         					// Enable TLS encryption, `ssl` also accepted
-					$sendMail->Port = 587;                                					// TCP port to connect to
-					$sendMail->CharSet = 'UTF-8';
-
-					$sendMail->setFrom('contact@klickit.fr', 'Klickit');		  		//Expéditeur
-					
-					$sendMail->addAddress($user['email'], $user['firstname'].' '.$user['lastname']); 	   	//$user['email']
-					//$sendMail->addCC(''); 					//Copie envoyer à l'adresse souhaitée du mail
-
-					$sendMail->Subject = 'Votre commande (Paiement PayPal)';
-					$sendMail->Body    = $contentEmail; //On envoi le message éventuellement en HTML
-					$sendMail->AltBody = $contentEmail; //On envoi le message sans HTML
-
-					$sendMail->send();
-					
-					$json = [
-						'code' => 'paypal',
-						'link' => $approvalUrl,
-					];
 				}
 			}
 			elseif ($_POST['payment'] == 'cheque') {
