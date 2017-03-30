@@ -108,7 +108,7 @@ class BackController extends Controller
 				//Préparation de l'envoi du mail
 				$sendMail = new PHPMailer;
 
-				$contentEmail = 'Bonjour '.$name_user.'.<br> Lien pour réinitialiser votre mot de passe : '.'<a href="localhost'.$this->generateUrl('back_reset_pwd', ['id_token'=> $id_token, 'token' => $token]).'">Cliquez ici</a>';
+				$contentEmail = 'Bonjour '.$name_user.'.<br> Voici le lien pour réinitialiser votre mot de passe : '.'<a href="http://klickit.fr'.$this->generateUrl('back_reset_pwd', ['id_token'=> $id_token, 'token' => $token]).'">Cliquez ici</a>';
 
 				$sendMail->isSMTP();                                      
 				$sendMail->Host = 'ssl0.ovh.net';  									// Hôte du SMTP
