@@ -460,17 +460,16 @@ class ItemController extends Controller
 					$afficheItem['picture2'] = $imgName2;
 				}
 			}
-			
-				if($insert->update($afficheItem, $id)){
-					if(count($affichageItem) > 0){
+				if(count($affichageItem) > 0){
+					if($insert->update($afficheItem, $id)){
 						$success = true;
 					}
-					else{
-						$errors[] = 'Veuillez renseigner les champs pour toute modification';
+					else {
+						$errors[] = 'Erreur lors de la mise à jour en base de données';
 					}
 				}
-				else {
-					$errors[] = 'Erreur lors de la mise à jour en base de données';
+				else{
+					$errors[] = 'Veuillez renseigner les champs pour toute modification';
 				}
 			}
 
