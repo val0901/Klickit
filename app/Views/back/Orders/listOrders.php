@@ -93,7 +93,7 @@
 	</div>
 				
 	
-
+	
 
 
 	
@@ -130,15 +130,38 @@
 				var id_statut2 = $(this).data('id');
 				var statut_proccess2 = 'expedie';
 
-				$.ajax({
-					url: '<?=$this->url('ajax_orderUpdateStatut');?>',
-					type: 'post',
-					cache: false,
-					data: {id: id_statut2, statut: statut_proccess2},
-					dataType: 'json',
-					success: function(order){
-						if(order.code == 'ok'){
-							$('body').load('<?=$this->url('listOrders');?>');
+				$.confirm({
+
+					title: 'Expédié la commande ?',
+
+					content: 'Êtes-vous sûr de vouloir expédié cette commande ?',
+
+					type: 'blue',
+
+					theme: 'light',
+
+					buttons: {
+						ok:{
+							text: 'Expédié la commande',
+							btnClass: 'btn-blue',
+							keys: ['enter'],
+							action: function(){
+								$.ajax({
+									url: '<?=$this->url('ajax_orderUpdateStatut');?>',
+									type: 'post',
+									cache: false,
+									data: {id: id_statut2, statut: statut_proccess2},
+									dataType: 'json',
+									success: function(order){
+										if(order.code == 'ok'){
+											$('body').load('<?=$this->url('listOrders');?>');
+										}
+									}
+								});
+							}
+						},
+						cancel: function(button) {
+
 						}
 					}
 				});
@@ -147,30 +170,6 @@
 	</script>
 
 	<script>
-
-/*		$(document).ready(function(){
-
-			var id_order = $(this).data('id');
-			var select = $('select').val();
-
-			$('select').change(function(e){
-				e.preventDefault();
-
-				$.ajax({
-					url: '<?//=$this->url('ajax_updateStatus'); ?>',
-					type: 'post',
-					cache: false,
-					data: {id: id_order, status: select},  // $_POST['id']
-					dataType: 'json',
-					success: function(out){
-						if(out.code == 'ok'){
-							$('body').load('<?//=$this->url('listOrders');?>');	
-						}
-					}
-				});
-			});
-		});*/
-
 		// AJAX POUR LA RECHERCHE
 		$('.search_order').click(function(e){
 			e.preventDefault();
@@ -211,15 +210,38 @@
 						var id_statut2 = $(this).data('id');
 						var statut_proccess2 = 'expedie';
 
-						$.ajax({
-							url: '<?=$this->url('ajax_orderUpdateStatut');?>',
-							type: 'post',
-							cache: false,
-							data: {id: id_statut2, statut: statut_proccess2},
-							dataType: 'json',
-							success: function(order){
-								if(order.code == 'ok'){
-									$('body').load('<?=$this->url('listOrders');?>');
+						$.confirm({
+
+							title: 'Expédié la commande ?',
+
+							content: 'Êtes-vous sûr de vouloir expédié cette commande ?',
+
+							type: 'blue',
+
+							theme: 'light',
+
+							buttons: {
+								ok:{
+									text: 'Expédié la commande',
+									btnClass: 'btn-blue',
+									keys: ['enter'],
+									action: function(){
+										$.ajax({
+											url: '<?=$this->url('ajax_orderUpdateStatut');?>',
+											type: 'post',
+											cache: false,
+											data: {id: id_statut2, statut: statut_proccess2},
+											dataType: 'json',
+											success: function(order){
+												if(order.code == 'ok'){
+													$('body').load('<?=$this->url('listOrders');?>');
+												}
+											}
+										});
+									}
+								},
+								cancel: function(button) {
+
 								}
 							}
 						});
