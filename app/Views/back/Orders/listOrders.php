@@ -132,9 +132,9 @@
 
 				$.confirm({
 
-					title: 'Expédié la commande ?',
+					title: '<span style="color:#3498DB;">Expédié la commande ?</span>',
 
-					content: 'Êtes-vous sûr de vouloir expédié cette commande ?',
+					content: '<span style="color:#3498DB;">Êtes-vous sûr de vouloir expédié cette commande ?</span>',
 
 					type: 'blue',
 
@@ -212,9 +212,9 @@
 
 						$.confirm({
 
-							title: 'Expédié la commande ?',
+							title: '<span style="color:#3498DB;">Expédié la commande ?</span>',
 
-							content: 'Êtes-vous sûr de vouloir expédié cette commande ?',
+							content: '<span style="color:#3498DB;">Êtes-vous sûr de vouloir expédié cette commande ?</span>',
 
 							type: 'blue',
 
