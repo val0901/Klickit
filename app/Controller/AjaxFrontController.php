@@ -694,6 +694,7 @@ class AjaxFrontController extends Controller
 	public function updateQuantity()
 	{
 		$add = new BasketModel;
+		$get = new ItemModel();
 		$user = $this->getUser();
 		$json = [];
 
@@ -701,19 +702,28 @@ class AjaxFrontController extends Controller
 			if(is_numeric($_POST['id_product'])){
 
 				$quantity = $add->getBasketByUser($user['id'], $_POST['id_product']);
+				$stock = $get->selectStock($_POST['id_product']);
 
-				$updateQuantity = $quantity['quantity'] + 1;
+				if($quantity['quantity'] == $stock['quantity']){
+					$updateQuantity = $quantity['quantity'];
+				}
+				elseif($quantity['quantity'] > $stock['quantity']){
+					$updateQuantity = $stock['quantity'];
+				}
+				elseif($quantity['quantity'] < $stock['quantity']){
+					$updateQuantity = $quantity['quantity'] + 1;
+				}
 
-					if($update = $add->updateQuantityBasket($user['id'], $_POST['id_product'], $updateQuantity)){
-						$json = [
-							'code' => 'ok'
-						];
-					}
-					else{
-						$json = [	
-							'code' => 'no'
-						];
-					}
+				if($update = $add->updateQuantityBasket($user['id'], $_POST['id_product'], $updateQuantity)){
+					$json = [
+						'code' => 'ok'
+					];
+				}
+				else{
+					$json = [	
+						'code' => 'no'
+					];
+				}
 			}else{
 				$json = [
 					'code' => 'no'
