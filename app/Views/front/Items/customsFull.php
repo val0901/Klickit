@@ -102,23 +102,29 @@
 							<?php endif; ?>
 	                    </div>
 
-	                    <!-- container +1 -->
-	                    <div id="<?=$product['id'];?>" class="item--helper">
-	                        <span id="plus1">+1</span>
-	                    </div>
-						<div class="viewcategory_button">
-							<?php if(!empty($_SESSION['user'])): ?>
-                                <button type="button" class="changeArrow btn viewcategory_button_size add_to_shopping_cart ahoveroff add-to-basket" data-id="<?=$product['id']?>">  <span class="name">
-                                    Ajouter au panier
-                                    </span>
-                                </button>
-                            <?php else : ?>
-                                <a class="ahoveroff" href="<?=$this->url('login');?>" target="_blank"><button id="simple" type="button" class="changeArrow btn viewcategory_button_size ahoveroff add-to-basket" data-id="<?=$product['id']?>">  <span class="name">
-                                    Ajouter au panier
-                                    </span>
-                                </button></a>
-                            <?php endif; ?>
-						</div>
+	                    <?php if($product['quantity'] == 0): ?>
+                            <p>RUPTURE DE STOCK</p>
+                        <?php elseif($product['quantity'] > 0): ?>
+                            <!-- container +1 -->
+                            <div id="<?=$product['id'];?>" class="item--helper">
+                                <span id="plus1">+1</span>
+                            </div>
+                            <div class="viewcategory_button">
+                                <!--j'ai supprimé .btn-primary dans la class button-->
+                                <?php if(!empty($_SESSION['user'])): ?>
+                                    <button id="simple" type="button" class="changeArrow btn viewcategory_button_size add_to_shopping_cart ahoveroff add-to-basket" data-id="<?=$product['id']?>">  <span class="name">
+                                        Ajouter au panier
+                                        </span>
+                                    </button>
+                                <?php else : ?>
+                                    <a class="ahoveroff" href="<?=$this->url('login');?>" target="_blank"><button id="simple" type="button" class="changeArrow btn viewcategory_button_size ahoveroff add-to-basket" data-id="<?=$product['id']?>">  <span class="name">
+                                        Ajouter au panier
+                                        </span>
+                                    </button></a>
+                                <?php endif; ?>
+                            </div>
+                            <!--fin BOUTON AJOUTER AU PANIER-->
+                        <?php endif; ?>
 					</div>
 				<?php endforeach; ?>
 			</div>
@@ -193,25 +199,29 @@
                                         <div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
                                         <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
                                     </div>
-                                <!-- container +1 -->
-                                <div id="<?=$newProduct['id'];?>" class="item--helper-slide">
-                                    <span id="plus1">+1</span>
-                                </div>
-                                <div class="viewcategory_button">
-                                    <!--j'ai supprimé .btn-primary dans la class button-->
-                                    <?php if(!empty($_SESSION['user'])): ?>
-                                        <button id="simple" type="button" class="changeArrow btn viewcategory_button_size add_to_shopping_cart ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
-                                            Ajouter au panier
-                                            </span>
-                                        </button>
-                                    <?php else : ?>
-                                        <a class="ahoveroff" href="<?=$this->url('login');?>" target="_blank"><button id="simple" type="button" class="changeArrow btn viewcategory_button_size ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
-                                            Ajouter au panier
-                                            </span>
-                                        </button></a>
-                                    <?php endif; ?>
-                                </div>
-                            <br><br>                                    
+                                <?php if($newProduct['quantity'] == 0): ?>
+                                    <p>RUPTURE DE STOCK</p>
+                                <?php elseif($newProduct['quantity'] > 0): ?>    
+                                    <!-- container +1 -->
+                                    <div id="<?=$newProduct['id'];?>" class="item--helper-slide">
+                                        <span id="plus1">+1</span>
+                                    </div>
+                                    <div class="viewcategory_button">
+                                        <!--j'ai supprimé .btn-primary dans la class button-->
+                                        <?php if(!empty($_SESSION['user'])): ?>
+                                            <button id="simple" type="button" class="changeArrow btn viewcategory_button_size add_to_shopping_cart ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
+                                                Ajouter au panier
+                                                </span>
+                                            </button>
+                                        <?php else : ?>
+                                            <a class="ahoveroff" href="<?=$this->url('login');?>" target="_blank"><button id="simple" type="button" class="changeArrow btn viewcategory_button_size ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
+                                                Ajouter au panier
+                                                </span>
+                                            </button></a>
+                                        <?php endif; ?>
+                                    </div>
+                                <?php endif; ?>
+                            	<br><br>                                    
                                 </li>
                                 <?php endforeach; ?>
                             </ul>
@@ -245,25 +255,29 @@
                                         <div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
                                         <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
                                     </div>
-                                <!-- container +1 -->
-                                <div id="<?=$newProduct['id'];?>" class="item--helper-slide">
-                                    <span id="plus1">+1</span>
-                                </div>
-                                <div class="viewcategory_button">
-                                    <!--j'ai supprimé .btn-primary dans la class button-->
-                                    <?php if(!empty($_SESSION['user'])): ?>
-                                        <button id="simple" type="button" class="changeArrow btn viewcategory_button_size add_to_shopping_cart ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
-                                            Ajouter au panier
-                                            </span>
-                                        </button>
-                                    <?php else : ?>
-                                        <a class="ahoveroff" href="<?=$this->url('login');?>" target="_blank"><button id="simple" type="button" class="changeArrow btn viewcategory_button_size ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
-                                            Ajouter au panier
-                                            </span>
-                                        </button></a>
-                                    <?php endif; ?>
-                                </div>
-                            <br><br>                                    
+                                <?php if($newProduct['quantity'] == 0): ?>
+                                    <p>RUPTURE DE STOCK</p>
+                                <?php elseif($newProduct['quantity'] > 0): ?>    
+                                    <!-- container +1 -->
+                                    <div id="<?=$newProduct['id'];?>" class="item--helper-slide">
+                                        <span id="plus1">+1</span>
+                                    </div>
+                                    <div class="viewcategory_button">
+                                        <!--j'ai supprimé .btn-primary dans la class button-->
+                                        <?php if(!empty($_SESSION['user'])): ?>
+                                            <button id="simple" type="button" class="changeArrow btn viewcategory_button_size add_to_shopping_cart ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
+                                                Ajouter au panier
+                                                </span>
+                                            </button>
+                                        <?php else : ?>
+                                            <a class="ahoveroff" href="<?=$this->url('login');?>" target="_blank"><button id="simple" type="button" class="changeArrow btn viewcategory_button_size ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
+                                                Ajouter au panier
+                                                </span>
+                                            </button></a>
+                                        <?php endif; ?>
+                                    </div>
+                                <?php endif; ?>
+                            	<br><br>                                    
                                 </li>
                                 <?php endforeach; ?>
                             </ul>
@@ -297,25 +311,29 @@
                                         <div class="slidecontent_nouveau"><?=$newProduct['statut'];?></div>
                                         <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
                                     </div>
-                                <!-- container +1 -->
-                                <div id="<?=$newProduct['id'];?>" class="item--helper-slide">
-                                    <span id="plus1">+1</span>
-                                </div>
-                                <div class="viewcategory_button">
-                                    <!--j'ai supprimé .btn-primary dans la class button-->
-                                    <?php if(!empty($_SESSION['user'])): ?>
-                                        <button id="simple" type="button" class="changeArrow btn viewcategory_button_size add_to_shopping_cart ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
-                                            Ajouter au panier
-                                            </span>
-                                        </button>
-                                    <?php else : ?>
-                                        <a class="ahoveroff" href="<?=$this->url('login');?>" target="_blank"><button id="simple" type="button" class="changeArrow btn viewcategory_button_size ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
-                                            Ajouter au panier
-                                            </span>
-                                        </button></a>
-                                    <?php endif; ?>
-                                </div>
-                            <br><br>                                    
+                                <?php if($newProduct['quantity'] == 0): ?>
+                                    <p>RUPTURE DE STOCK</p>
+                                <?php elseif($newProduct['quantity'] > 0): ?>    
+                                    <!-- container +1 -->
+                                    <div id="<?=$newProduct['id'];?>" class="item--helper-slide">
+                                        <span id="plus1">+1</span>
+                                    </div>
+                                    <div class="viewcategory_button">
+                                        <!--j'ai supprimé .btn-primary dans la class button-->
+                                        <?php if(!empty($_SESSION['user'])): ?>
+                                            <button id="simple" type="button" class="changeArrow btn viewcategory_button_size add_to_shopping_cart ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
+                                                Ajouter au panier
+                                                </span>
+                                            </button>
+                                        <?php else : ?>
+                                            <a class="ahoveroff" href="<?=$this->url('login');?>" target="_blank"><button id="simple" type="button" class="changeArrow btn viewcategory_button_size ahoveroff add-to-basket" data-id="<?=$newProduct['id']?>">  <span class="name">
+                                                Ajouter au panier
+                                                </span>
+                                            </button></a>
+                                        <?php endif; ?>
+                                    </div>
+                                <?php endif; ?>
+                            	<br><br>                                    
                                 </li>
                                 <?php endforeach; ?>
                             </ul>

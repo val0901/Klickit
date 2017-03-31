@@ -49,16 +49,20 @@
                           <div class="viewcategory_defaut"></div>
                         <?php endif; ?>
                     </div>
-                        <!-- ajouter au panier -->
-                        <div id="<?=$list_items['id'];?>" class="item--helper">
-                            <span id="plus1">+1</span>
-                        </div>
-                        <div class="viewcategory_button item">
-                          <button type="button" class="btn btn-primary favorite_button_size add_to_shopping_cart ahoveroff add-to-basket" data-id="<?=$list_items['id']?>">  <span class="name">
-                                    Ajouter au panier
-                                    </span>
-                                </button>
-                        </div>
+                        <?php if($list_items['quantity'] == 0): ?>
+                            <p>RUPTURE DE STOCK</p>
+                        <?php elseif($list_items['quantity'] > 0): ?>
+                            <!-- ajouter au panier -->
+                            <div id="<?=$list_items['id'];?>" class="item--helper">
+                                <span id="plus1">+1</span>
+                            </div>
+                            <div class="viewcategory_button item">
+                              <button type="button" class="btn btn-primary favorite_button_size add_to_shopping_cart ahoveroff add-to-basket" data-id="<?=$list_items['id']?>">  <span class="name">
+                                        Ajouter au panier
+                                        </span>
+                                    </button>
+                            </div>
+                        <?php endif; ?>
                         <p class="favorite_voirplus">
                           <?php if($list_items['category'] == 'PlaymobilClassique'): ?>
                             <a class="hoverlinkred" href="<?=$this->url('listItemClassicsFull');?>">Voir même catégorie</a>
