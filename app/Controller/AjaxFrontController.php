@@ -55,13 +55,13 @@ class AjaxFrontController extends Controller
 					$quantity = $find->getBasketByUser($loggedUser['id'], $_POST['id_product']);
 					$stock = $get->selectStock($_POST['id_product']);
 
-					if($quantity['quantity'] = $stock){
+					if($quantity['quantity'] = $stock['quantity']){
 						$updateQuantity = $quantity['quantity'];
 					}
-					elseif($quantity['quantity'] > $stock){
+					elseif($quantity['quantity'] > $stock['quantity']){
 						$updateQuantity = $stock;
 					}
-					else{
+					elseif($quantity['quantity'] < $stock['quantity']){
 						if(empty($_POST['id_quantity'])){
 							$updateQuantity = $quantity['quantity'] + 1;
 						}
@@ -133,13 +133,13 @@ class AjaxFrontController extends Controller
 					$quantity = $find->getBasketByUser($loggedUser['id'], $_POST['id_product']);
 					$stock = $get->selectStock($_POST['id_product']);
 
-					if($quantity['quantity'] = $stock){
+					if($quantity['quantity'] = $stock['quantity']){
 						$updateQuantity = $quantity['quantity'];
 					}
-					elseif($quantity['quantity'] > $stock){
-						$updateQuantity = $stock;
+					elseif($quantity['quantity'] > $stock['quantity']){
+						$updateQuantity = $stock['quantity'];
 					}
-					else{
+					elseif($quantity['quantity'] < $stock['quantity']){
 						$updateQuantity = $quantity['quantity'] + 1;
 					}
 
