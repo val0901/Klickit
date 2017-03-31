@@ -125,7 +125,11 @@
                 <br><br><br><br>
                 <span class="viewart_fontref">Quantité </span>
                 <span>
-                    <input type="number" name="number" min="1" id="number" value="1">
+                    <select name="number" id="number">
+                        <?php for($i = 1 ; $i <= $items['quantity'] ; $i++): ?>
+                            <option value="<?=$i;?>"><?=$i;?></option>
+                        <?php endfor; ?>
+                    </select>
                 </span>
                 <br><br>
 
