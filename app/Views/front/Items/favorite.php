@@ -50,7 +50,7 @@
                         <?php endif; ?>
                     </div>
                         <?php if($list_items['quantity'] == 0): ?>
-                            <p>RUPTURE DE STOCK</p>
+                                    <p class="ruptureQte">RUPTURE DE STOCK</p>
                         <?php elseif($list_items['quantity'] > 0): ?>
                             <!-- ajouter au panier -->
                             <div id="<?=$list_items['id'];?>" class="item--helper">

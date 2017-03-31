@@ -124,7 +124,7 @@
                 </span>
                 <br><br><br><br>
                 <?php if($items['quantity'] == 0): ?>
-                    <p>RUPTURE DE STOCK</p>
+                    <p class="ruptureQte">RUPTURE DE STOCK</p>
                 <?php elseif($items['quantity'] > 0): ?>
                     <span class="viewart_fontref">Quantité </span>
                     <span>
@@ -249,7 +249,7 @@
                                         <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
                                     </div>
                                         <?php if($newProduct['quantity'] == 0): ?>
-                                            <p>RUPTURE DE STOCK</p>
+                                            <p class="ruptureQte">RUPTURE DE STOCK</p>
                                         <?php elseif($newProduct['quantity'] > 0): ?>    
                                             <!-- container +1 -->
                                             <div id="<?=$newProduct['id'];?>" class="item--helper-slide">
@@ -306,7 +306,7 @@
                                     </div>
                                     <div class="viewcategory_button">
                                     <?php if($newProduct['quantity'] == 0): ?>
-                                        <p>RUPTURE DE STOCK</p>
+                                        <p class="ruptureQte">RUPTURE DE STOCK</p>
                                     <?php elseif($newProduct['quantity'] > 0): ?>    
                                         <!-- container +1 -->
                                         <div id="<?=$newProduct['id'];?>" class="item--helper-slide">
@@ -362,7 +362,7 @@
                                         <!--<a class="btn btn-mini" href="#">&raquo; Read More</a>-->
                                     </div>
                                     <?php if($newProduct['quantity'] == 0): ?>
-                                        <p>RUPTURE DE STOCK</p>
+                                        <p class="ruptureQte">RUPTURE DE STOCK</p>
                                     <?php elseif($newProduct['quantity'] > 0): ?>    
                                         <!-- container +1 -->
                                         <div id="<?=$newProduct['id'];?>" class="item--helper-slide">
