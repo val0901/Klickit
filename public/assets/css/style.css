@@ -2006,7 +2006,18 @@ i.fa.fa-trash {
     cursor: pointer;
 }
 button.selectCountry {
-    color: red;
+    color: white;
+    margin: 10px 10px 5px 0;
+    padding: 2px 10px;
+    background-color: red;
+    border-radius: 18px;
+}
+button.resetCountry {
+    color: white;
+    margin: 10px 10px 5px 0;
+    padding: 2px 10px;
+    background-color: #1f3a93;
+    border-radius: 18px;
 }
 
 /*orderlogin.php*/
