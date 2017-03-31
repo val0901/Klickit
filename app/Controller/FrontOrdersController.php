@@ -267,6 +267,16 @@ class FrontOrdersController extends MasterController
 			$current_orderID = end($idOrders);
 			$data['idOrder'] = $current_orderID;
 
+			$quantity = explode(', ',$current_order['quantity']);
+			$content = explode(', ', $current_order['contenu']);
+
+			foreach($content as $key => $value){
+				$stockQuantity = $get->selectStock($value);
+				var_dump($stockQuantity);
+				$stockSoustraction = $get->stockSoustraction($value, $stockQuantity - $quantity[$key]);
+				var_dump($stockSoustraction);
+			}
+
 			//var_dump($current_orderID);
 		}
 
@@ -328,6 +338,16 @@ class FrontOrdersController extends MasterController
 
 		$idOrders = $getIdOrder->getOrderByIdMember($user['id']);
 		$current_orderID = end($idOrders);
+
+		$quantity = explode(', ',$current_order['quantity']);
+		$content = explode(', ', $current_order['contenu']);
+
+		foreach($content as $key => $value){
+			$stockQuantity = $get->selectStock($value);
+			var_dump($stockQuantity);
+			$stockSoustraction = $get->stockSoustraction($value, $stockQuantity - $quantity[$key]);
+			var_dump($stockSoustraction);
+		}
 
 		$data = [
 				'user'		=> $user,

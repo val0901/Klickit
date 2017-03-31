@@ -280,4 +280,35 @@ class ItemModel extends \W\Model\Model
 			return $sth->fetchAll();
 		}
 	}
+
+	public function selectStock($id_item)
+	{
+		$sql = 'SELECT quantity FROM '.$this->table.' WHERE id = :id';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':id', $id_item);
+
+		$sth->execute();
+
+		return $sth->fetch();
+	}
+
+	/**
+	 * Soustraction du stock lors de l'achat
+	 */
+	public function stockSoustraction($id_item, $number)
+	{
+		$sql = 'UPDATE '.$this->table.' SET quantity = :quantity WHERE id = :id';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':id', $id_item);
+		$sth->bindValue(':quantity', $number);
+
+		if($sth->execute()){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
 }
