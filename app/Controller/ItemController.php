@@ -363,7 +363,7 @@ class ItemController extends Controller
 				}
 			}
 
-			if(!empty($post['price']) || isset($post['quantity'])) {
+			if(isset($post['quantity'] || !empty($post['price']))) {
 				if(!v::digit()->length(1,null)->validate($post['quantity'])){
 					$errors[] = 'La quantité doit comporter au moins 1 unité';
 				}
