@@ -861,6 +861,8 @@ font-size:30pt;
     .iamCol { text-align: center; font-size:20pt; }
     .iamCol p { display: inline !important; }
     .slideCol { font-size: 25pt; text-align: center; margin-top: -20px; }
+    /* special ios */
+    div.ios li {font-size: x-large;}
 }
 
 /* Extra Small Devices, Phones */ 
@@ -869,6 +871,9 @@ font-size:30pt;
     .iamCol { text-align: center; font-size:25pt; }
     .iamCol p { display: inline !important; }
     .slideCol { /*font-size: 38pt;*/ text-align: center; margin-top: -20px; }
+    /* special ios */
+    div.ios li {font-size: x-large;}
+
 }
 
 /* Small Devices, Tablets */
@@ -878,6 +883,9 @@ font-size:30pt;
     .iamCol p { display: inline !important; }
     .slideCol { text-align: center; margin-top: 5px; }
     button#searchFilter{ display: inline}
+    /* special ios */
+    div.ios li {font-size: larger;}
+
 }
 
 /* Medium Devices, Desktops */
@@ -886,6 +894,9 @@ font-size:30pt;
     .iamCol { text-align: right; font-size:30pt; }
     .slideCol { font-size: 55pt; text-align: left; padding: 10px;}
     div#rowcptuser { font-size: 3vw;}
+    /* special ios */
+    div.ios li {font-size: larger;}
+
 }
 
 /*index.php le dernier event*/
@@ -1994,6 +2005,9 @@ p#error {
 i.fa.fa-trash {
     cursor: pointer;
 }
+button.selectCountry {
+    color: red;
+}
 
 /*orderlogin.php*/
 .orderlogin_box {
@@ -2192,7 +2206,10 @@ soumenu_classics_text/*cptuser.php*/
 .cptuser_textlien a{
     color: #ff931e;
 }
-
+a.cptuser_textlien {
+    color: #ff931e;
+    opacity: 1;
+}
 .cptuser_contenu {
     background-color: #fff;
     padding: 50px 30px 340px;

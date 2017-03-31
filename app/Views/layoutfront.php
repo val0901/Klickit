@@ -206,13 +206,13 @@
 		<!--End menu icon home-->
         
         <!--menu tous les articles-->
-		<li class="navli_width TLA_bgcolor">
+		<li class="ios navli_width TLA_bgcolor">
           <a href="#" class="dropdown-toggle slidetoggle linknav" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="padding: 15px;">Tous les articles
           </a>
-          <ul class="dropdown-menu TLA_dropdownbox_width">
+          <ul class="ios dropdown-menu TLA_dropdownbox_width">
 			  <div class="row">
 				  <div class="col-lg-3 col-md-6 soumenu_TLA_height">
-					  <div class="soumenu_TLA_text">
+					  <div class="ios soumenu_TLA_text">
 						  <li style="float:left;"><a href="<?=$this->url('listItemClassicsFull');?>" style="color:#ea2127;">Classics</a><li>
 						  <li style="float:right;"><i class="fa fa-plus faplus_color plus_classic" aria-hidden="true" id="plusclassic_hide"></i><i class="fa fa-minus faminus_color minus_classic" aria-hidden="true" id="faminus_hide"></i></li>
 						  <div class="clear"></div>
@@ -234,7 +234,7 @@
 					  </div>
 				  </div>
 				  <div class="col-lg-3 col-md-6 soumenu_TLA_height">
-					  <div class="soumenu_TLA_text">
+					  <div class="ios soumenu_TLA_text">
 						  <li style="float:left;"><a href="<?=$this->url('listItemCustomFull');?>" style="color:#ea2127;">Customs</a><li>
 						  <li style="float:right;"><i class="fa fa-plus faplus_color plus_customs" aria-hidden="true" id="pluscustoms_hide"></i><i class="fa fa-minus faminus_color minus_customs" aria-hidden="true" id="faminus1_hide"></i></li>
 						  <div class="clear"></div>
@@ -248,7 +248,7 @@
 					  </div>
 				  </div>
 				  <div class="col-lg-3 col-md-6 soumenu_TLA_height">
-					  <div class="soumenu_TLA_text">
+					  <div class="ios soumenu_TLA_text">
 						  <li style="float:left;"><a href="<?=$this->url('listItemPiecesFull');?>" style="color:#ea2127;">Pièces détachées</a><li>
 						  <li style="float:right;"><i class="fa fa-plus faplus_color plus_pieces" aria-hidden="true" id="pluspieces_hide"></i><i class="fa fa-minus faminus_color minus_pieces" aria-hidden="true" id="faminus2_hide"></i></li>
 						  <div class="clear"></div>
@@ -265,7 +265,7 @@
 					  </div>
 				  </div>
 				  <div class="col-lg-3 col-md-6 soumenu_TLA_height">
-					  <div class="soumenu_TLA_text">
+					  <div class="ios soumenu_TLA_text">
 						  <li style="float:left;"><a href="<?=$this->url('listItemDiversFull');?>" style="color:#ea2127;">Boites/Set</a><li>
 						  <li style="float:right;"><i class="fa fa-plus faplus_color plus_boites" aria-hidden="true" id="plusboites_hide"></i><i class="fa fa-minus faminus_color minus_boites" aria-hidden="true" id="faminus3_hide"></i></li>
 						  <div class="clear"></div>
@@ -283,19 +283,19 @@
 		<!--End menu tous les articles-->
         
         <!--menu a propos-->
-		<li class="navli_width AP_bgcolor"><a class=" linknav" href="<?=$this->url('front_aPropos');?>">A propos</a></li>
+		<li class="ios navli_width AP_bgcolor"><a class=" linknav" href="<?=$this->url('front_aPropos');?>">A propos</a></li>
 		<!--End menu a propos-->
 		
 		<!--menu eventmentiel-->
-        <li class="navli_width EVT_bgcolor"><a class=" linknav" href="<?=$this->url('front_events');?>">Evènementiel</a></li>
+        <li class="ios navli_width EVT_bgcolor"><a class=" linknav" href="<?=$this->url('front_events');?>">Evènementiel</a></li>
 		<!--End menu eventmentiel-->
         
 		<!--menu contact--> 
-        <li class="navli_width CT_bgcolor"><a class=" linknav" href="<?=$this->url('front_contact');?>">Contact</a></li>
+        <li class="ios navli_width CT_bgcolor"><a class=" linknav" href="<?=$this->url('front_contact');?>">Contact</a></li>
 		<!--End menu contact-->
 		
 		<!--menu icon search-->
-		<ul class="navbar-right search_dropdownbox_width search" style="padding-left: 0px;">
+		<ul class="ios navbar-right search_dropdownbox_width search" style="padding-left: 0px;">
 			<li class="navlicon_width dropdown">
 			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-search search_padding" aria-hidden="true"></i>
 			  </a>
