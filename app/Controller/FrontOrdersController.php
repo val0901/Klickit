@@ -344,9 +344,8 @@ class FrontOrdersController extends MasterController
 
 		foreach($content as $key => $value){
 			$stockQuantity = $get->selectStock($value);
-			var_dump($stockQuantity);
+
 			$stockSoustraction = $get->stockSoustraction($value, $stockQuantity['quantity'] - $quantity[$key]);
-			var_dump($stockSoustraction);
 		}
 
 		$data = [
