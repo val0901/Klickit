@@ -67,6 +67,9 @@ class AjaxFrontController extends Controller
 						}
 						else {
 							$updateQuantity = $quantity['quantity'] + $_POST['id_quantity'];
+							if($updateQuantity > $stock['quantity']){
+								$updateQuantity = $stock['quantity'];
+							}
 						}
 					}
 
