@@ -108,7 +108,7 @@
                     <?php elseif($country['0']['country'] != 'FR'): ?>
                         <span>Pays non livré pour le moment</span>
                         <br>
-                        <button type="button" class="resetCountry"><i class="fa fa-exclamation fa-1x" aria-hidden="true"></i>Changer de pays</button>
+                        <button type="button" class="resetCountry"><i class="fa fa-exclamation fa-1x" aria-hidden="true"></i> Changer de pays</button>
                     <?php endif; ?>
                 </div>
                     <!-- *************************************************************************************************** -->
@@ -177,7 +177,7 @@
                                 <option value="US">Etat-Unis</option>
                             </select>
                             <br>
-                            <button type="button" class="selectCountry">Enregistrer le pays</button>
+                            <button type="button" class="selectCountry"><i class="fa fa-exclamation fa-1x" aria-hidden="true"></i> Enregistrer le pays</button>
                         </li>
                     <?php elseif($country['0']['country'] == 'FR'): ?>
                         <input type="hidden" name="country" value="<?=$country['0']['country']?>">
@@ -198,11 +198,11 @@
                                 <p>TOTAL COMMANDE :</p>
                             </li>
                         </ul>
-                        <button type="button" class="resetCountry">Changer de pays</button>
+                        <button type="button" class="resetCountry"><i class="fa fa-exclamation fa-1x" aria-hidden="true"></i> Changer de pays</button>
                     <?php elseif($country['0']['country'] != 'FR'): ?>
                             <span>Pays non livré pour le moment</span>
                             <br>
-                            <button type="button" class="resetCountry">Changer de pays</button>
+                            <button type="button" class="resetCountry"><i class="fa fa-exclamation fa-1x" aria-hidden="true"></i> Changer de pays</button>
                     <?php endif; ?>
         		</div>
             <?php endif; ?>

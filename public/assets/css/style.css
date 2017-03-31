@@ -2019,6 +2019,9 @@ button.resetCountry {
     background-color: #1f3a93;
     border-radius: 18px;
 }
+i.fa.fa-exclamation.fa-1x {
+    display: initial;
+}
 
 /*orderlogin.php*/
 .orderlogin_box {
