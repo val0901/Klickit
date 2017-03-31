@@ -363,8 +363,8 @@ class ItemController extends Controller
 				}
 			}
 
-			if(!empty($post['quantity']) && isset($post['quantity'])) {
-				if(!v::notEmpty()->digit()->length(1,null)->validate($post['quantity'])){
+			if(isset($post['quantity'])) {
+				if(!v::digit()->length(1,null)->validate($post['quantity'])){
 					$errors[] = 'La quantité doit comporter au moins 1 unité';
 				}
 				else {
