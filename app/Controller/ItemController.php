@@ -363,16 +363,13 @@ class ItemController extends Controller
 				}
 			}
 
-			if(isset($post['quantity'])){
-				if(!v::digit()->length(1,null)->validate($post['quantity'])){
-					$errors[] = 'La quantité doit comporter au moins 1 unité';
-				}
-				else {
+			if(isset($post['quantity']) || !empty($post['price'])){
+				if(v::digit()->length(1,null)->validate($post['quantity'])){
 					$afficheItem['quantity'] = $post['quantity'];
 				}
-			}
-			elseif(empty($post['price'])){
-
+				else {
+					$errors[] = 'La quantité doit comporter au moins 1 unité';
+				}
 			}
 
 			if(!empty($post['price']) && isset($post['price'])) {
