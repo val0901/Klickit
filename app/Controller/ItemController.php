@@ -371,7 +371,7 @@ class ItemController extends Controller
 					$afficheItem['quantity'] = $post['quantity'];
 				}
 			}
-			elseif(empty($post['price']){
+			elseif(empty($post['price'])){
 
 			}
 
