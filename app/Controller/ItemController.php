@@ -421,58 +421,53 @@ class ItemController extends Controller
 
 			if(count($errors) === 0) {
 
-			if(!empty($_FILES['picture1']) && file_exists($_FILES['picture1']['tmp_name'])) {	
-				$img1 = Image::make($_FILES['picture1']['tmp_name']);
-				switch($img1->mime()){
-					case 'image/jpg':
-					case 'image/jpeg':
-						$extension = '.jpg';
-					break;
-					case 'image/png':
-						$extension = '.png';
-					break;
-					case 'image/gif':
-						$extension = '.gif';
-					break;
-				}
-				$imgName = uniqid('art_').$extension;
-				if($img1->save($fullFolderUpload.$imgName)){
-					$afficheItem['picture1'] = $imgName;
-				}
-			}
-
-			if(!empty($_FILES['picture2']) && file_exists($_FILES['picture2']['tmp_name'])) {
-				$img2 = Image::make($_FILES['picture2']['tmp_name']);
-				switch($img2->mime()){
-					case 'image/jpg':
-					case 'image/jpeg':
-						$extension2 = '.jpg';
-					break;
-					case 'image/png':
-						$extension2 = '.png';
-					break;
-					case 'image/gif':
-						$extension2 = '.gif';
-					break;
-				}
-				$imgName2 = uniqid('art_').$extension2;
-				if($img2->save($fullFolderUpload.$imgName2)){
-					$afficheItem['picture2'] = $imgName2;
-				}
-			}
-				if(count($affichageItem) > 0){
-					if($insert->update($afficheItem, $id)){
-						$success = true;
+				if(!empty($_FILES['picture1']) && file_exists($_FILES['picture1']['tmp_name'])) {	
+					$img1 = Image::make($_FILES['picture1']['tmp_name']);
+					switch($img1->mime()){
+						case 'image/jpg':
+						case 'image/jpeg':
+							$extension = '.jpg';
+						break;
+						case 'image/png':
+							$extension = '.png';
+						break;
+						case 'image/gif':
+							$extension = '.gif';
+						break;
 					}
-					else {
-						$errors[] = 'Erreur lors de la mise à jour en base de données';
+					$imgName = uniqid('art_').$extension;
+					if($img1->save($fullFolderUpload.$imgName)){
+						$afficheItem['picture1'] = $imgName;
 					}
 				}
-				else{
-					$errors[] = 'Veuillez renseigner les champs pour toute modification';
+
+				if(!empty($_FILES['picture2']) && file_exists($_FILES['picture2']['tmp_name'])) {
+					$img2 = Image::make($_FILES['picture2']['tmp_name']);
+					switch($img2->mime()){
+						case 'image/jpg':
+						case 'image/jpeg':
+							$extension2 = '.jpg';
+						break;
+						case 'image/png':
+							$extension2 = '.png';
+						break;
+						case 'image/gif':
+							$extension2 = '.gif';
+						break;
+					}
+					$imgName2 = uniqid('art_').$extension2;
+					if($img2->save($fullFolderUpload.$imgName2)){
+						$afficheItem['picture2'] = $imgName2;
+					}
+				}
+
+				if($insert->update($afficheItem, $id)){
+					$success = true;
+				}
+				else {
+					$errors[] = 'Erreur lors de la mise à jour en base de données';
 				}
 			}
-
 		}
 
 			$findFilterItem = new FiltrearticleModel();
