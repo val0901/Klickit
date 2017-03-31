@@ -468,6 +468,10 @@ class AjaxFrontController extends Controller
 					foreach($content as $key => $value){
 						$item = new Item();
 
+						$stockQuantity = $getItem->selectStock($value);
+						
+						$stockSoustraction = $getItem->stockSoustraction($value, $stockQuantity['quantity'] - $quantity[$key]);
+
 						$item_property = $getItem->findItemsForAPI($value);
 						$qte = $quantity[$key];
 

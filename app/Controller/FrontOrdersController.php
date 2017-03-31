@@ -266,17 +266,6 @@ class FrontOrdersController extends MasterController
 			$idOrders = $getIdOrder->getOrderByIdMember($user['id']);
 			$current_orderID = end($idOrders);
 			$data['idOrder'] = $current_orderID;
-
-			$quantity = explode(', ',$current_order['quantity']);
-			$content = explode(', ', $current_order['contenu']);
-
-			foreach($content as $key => $value){
-				$stockQuantity = $get->selectStock($value);
-		
-				$stockSoustraction = $get->stockSoustraction($value, $stockQuantity['quantity'] - $quantity[$key]);
-			}
-
-			//var_dump($current_orderID);
 		}
 
 		$paypal = new APIContext(
