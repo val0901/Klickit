@@ -44,6 +44,7 @@ class AjaxFrontController extends Controller
 		$find = new BasketModel;
 		$update = new BasketModel;
 		$islogged = new Controller;
+		$get = new ItemModel();
 		$loggedUser = $islogged->getUser(); //On récupère l'utilisateur connecté
 		$updateQuantity = 0;
 		
@@ -52,12 +53,21 @@ class AjaxFrontController extends Controller
 
 				if($find->getBasketByUser($loggedUser['id'], $_POST['id_product'])){
 					$quantity = $find->getBasketByUser($loggedUser['id'], $_POST['id_product']);
+					$stock = $get->selectStock($_POST['id_product']);
 
-					if(empty($_POST['id_quantity'])){
-						$updateQuantity = $quantity['quantity'] + 1;
+					if($quantity['quantity'] = $stock){
+						$updateQuantity = $quantity['quantity'];
 					}
-					else {
-						$updateQuantity = $quantity['quantity'] + $_POST['id_quantity'];
+					elseif($quantity['quantity'] > $stock){
+						$updateQuantity = $stock;
+					}
+					else{
+						if(empty($_POST['id_quantity'])){
+							$updateQuantity = $quantity['quantity'] + 1;
+						}
+						else {
+							$updateQuantity = $quantity['quantity'] + $_POST['id_quantity'];
+						}
 					}
 
 					if(isset($_POST['id_product'])){
@@ -110,6 +120,7 @@ class AjaxFrontController extends Controller
 		$insert = new BasketModel;
 		$find = new BasketModel;
 		$update = new BasketModel;
+		$get = new ItemModel();
 		$islogged = new Controller;
 		$loggedUser = $islogged->getUser(); //On récupère l'utilisateur connecté
 		$json = [];
@@ -120,8 +131,17 @@ class AjaxFrontController extends Controller
 				if(is_numeric($_POST['id_product'])){
 
 					$quantity = $find->getBasketByUser($loggedUser['id'], $_POST['id_product']);
+					$stock = $get->selectStock($_POST['id_product']);
 
-					$updateQuantity = $quantity['quantity'] + 1;
+					if($quantity['quantity'] = $stock){
+						$updateQuantity = $quantity['quantity'];
+					}
+					elseif($quantity['quantity'] > $stock){
+						$updateQuantity = $stock;
+					}
+					else{
+						$updateQuantity = $quantity['quantity'] + 1;
+					}
 
 					if(!empty($loggedUser)){
 
