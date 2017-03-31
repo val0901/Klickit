@@ -123,19 +123,19 @@
                     <?php endif; ?>
                 </span>
                 <br><br><br><br>
-                <span class="viewart_fontref">Quantité </span>
-                <span>
-                    <select name="number" id="number">
-                        <?php for($i = 1 ; $i <= $items['quantity'] ; $i++): ?>
-                            <option value="<?=$i;?>"><?=$i;?></option>
-                        <?php endfor; ?>
-                    </select>
-                </span>
-                <br><br>
-
                 <?php if($items['quantity'] == 0): ?>
                     <p>RUPTURE DE STOCK</p>
                 <?php elseif($items['quantity'] > 0): ?>
+                    <span class="viewart_fontref">Quantité </span>
+                    <span>
+                        <select name="number" id="number">
+                            <?php for($i = 1 ; $i <= $items['quantity'] ; $i++): ?>
+                                <option value="<?=$i;?>"><?=$i;?></option>
+                            <?php endfor; ?>
+                        </select>
+                    </span>
+                    <br><br>
+
                     <!-- container +1 -->
                     <div id="<?=$items['id'];?>" class="item--helper viewartbasket">
                         <span id="plus1">+1</span>
