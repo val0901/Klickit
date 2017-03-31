@@ -120,10 +120,10 @@
 		  <label class="col-md-4 control-label" for="statut">Statut</label>
 		  <div class="col-md-4">
 		    <select id="statut" name="statut" class="form-control">
-		      <option selected></option>
+		      <option selected disabled></option>
 		      <option value="promotion">promotion</option>
 		      <option value="nouveaute">nouveauté</option>
-		      <option value="defaut" selected>par defaut</option>
+		      <option value="defaut">par defaut</option>
 		    </select>
 		  </div>
 		</div>
