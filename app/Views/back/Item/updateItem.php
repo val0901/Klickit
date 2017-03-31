@@ -26,6 +26,8 @@
 				<?php elseif($affichage['newPrice'] == 0) : ?>
 					<p class="price"><span>Nouveau prix :</span> Pas de nouveau prix</p>
 				<?php endif; ?>
+
+				<p class="price"><span>Stock : </span><?=$affichage['quantity'];?></p>
 				
 				<p class="price"><span>Statut du produit : </span> <?=$affichage['statut'];?></p>
 				<p class="price"><span>Catégorie du produit : </span> <?=$affichage['category'];?></p>
