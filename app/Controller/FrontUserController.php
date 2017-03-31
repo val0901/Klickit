@@ -6,6 +6,7 @@ use \W\Controller\Controller;
 use \Model\UserModel;
 use \W\Security\AuthorizationModel;
 use \W\Security\AuthentificationModel;
+use \PHPMailer;
 use \Respect\Validation\Validator as v;
 
 class FrontUserController extends MasterController 
@@ -21,6 +22,7 @@ class FrontUserController extends MasterController
 		$errors = [];
 		$social_title = ['M', 'Mme'];
 		$hashPassword = new AuthentificationModel();
+		$sendMail = new PHPMailer;
 		$insert = new UserModel();
 		$success = false;
 
@@ -89,10 +91,35 @@ class FrontUserController extends MasterController
 				}else{
 					$errors[] = 'Erreur lors de l\'ajout en base de données';
 				}
-				
 			}
-
 		}
+
+		if($success == true){
+			$contentEmail = 'Création du comporter';
+
+			$sendMail->isSMTP();                                      
+			$sendMail->Host = 'ssl0.ovh.net';  									// Hôte du SMTP
+			$sendMail->SMTPAuth = true;                               				// SMTP Authentification
+			$sendMail->Username = 'contact@klickit.fr'; //Username         				// SMTP username
+			$sendMail->Password = 'silSAV33@'; //mot de passe                    	 				// SMTP password
+			$sendMail->SMTPSecure = 'tls';                         					// Enable TLS encryption, `ssl` also accepted
+			$sendMail->Port = 587;                                					// TCP port to connect to
+			$sendMail->CharSet = 'UTF-8';
+
+			$sendMail->setFrom('contact@klickit.fr', 'Klickit');		  		//Expéditeur
+			
+			$sendMail->addAddress($post['email'], $post['firstname'].' '.$post['lastname']); 	   	//$user['email']
+			//$sendMail->addCC(''); 					//Copie envoyer à l'adresse souhaitée du mail
+
+			$sendMail->Subject = 'Création du compte klickit.fr';
+			$sendMail->Body    = $contentEmail="Bonjour ".$post['lastname'].' '.$post['firstname']." la création de votre compte klickit.fr est réussi ! <br><br> votre nom d'utilisateur : ".$post['username'].'veuillez ne jamais divulger vos identifiants !'; 
+            //On envoi le message éventuellement en HTML
+
+			$sendMail->AltBody = $contentEmail="";
+
+			$sendMail->send();
+		}
+
 		$params = [
 			'success'	=> $success,
 			'errors'	=> $errors,
