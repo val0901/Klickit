@@ -462,7 +462,12 @@ class ItemController extends Controller
 			}
 			
 				if($insert->update($afficheItem, $id)){
-					$success = true;
+					if(count($affichageItem) > 0){
+						$success = true;
+					}
+					else{
+						$errors[] = 'Veuillez renseigner les champs pour toute modification';
+					}
 				}
 				else {
 					$errors[] = 'Erreur lors de la mise à jour en base de données';

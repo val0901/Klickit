@@ -48,9 +48,9 @@
 	<h3>Modification du produit</h3>
 
 	<br class="optimphone"><br class="optimphone">
-		<?php if($success): ?>
+		<?php if($success == true): ?>
 			<p id="reload" class="alert alert-success">Produit modifié</p>
-		<?php elseif(isset($errors) && !empty($errors)):?>
+		<?php elseif(isset($errors) && !empty($errors) && $success == false):?>
 			<p class="alert alert-danger"><?=implode('<br>', $errors);?></p>	
 		<?php endif;?>
 	<br class="optimphone"><br class="optimphone">
