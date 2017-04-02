@@ -1202,10 +1202,14 @@ h3 {
     color: #3fa9f5;
 }
 
-.viewcategorycol2_text {
+.viewcategorycol2_text, .viewcategorycol2_info {
     font-family: 'Roboto';
     color: #555;
     font-size: 1.6vw;
+}
+.viewcategorycol2_info{
+    font-size: 1.2vw;
+    
 }
 
 .viewcategoryrow2col1_title {
@@ -2294,7 +2298,7 @@ div#rowcptuser {
     border: 2px dotted #ddd;
 }
 .viewart_savoirtext {
-    font-size: 20px;
+    font-size: 1.5vw;
     padding: 20px;
     color: #999;
     border: 2px dotted #ddd;

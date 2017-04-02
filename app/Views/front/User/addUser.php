@@ -60,6 +60,7 @@
 				<label for="exampleInputPassword1">Mot de passe</label>
 				<input type="password" class="form-control" id="exampleInputPassword1" placeholder="votre mot de passe" name="password">
 			  </div>
+                <p class="bg-danger"> * Attention * Si vous ne recevez pas de mail de confirmation de compte, merci de nous contacter.</p>
 			  <button type="submit" class="btn btn-default adduser_button">S'inscrire</button>
 			</form>
 		</div>

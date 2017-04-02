@@ -14,6 +14,7 @@
 			<div class="container_general">
 				<h1 class="viewcategorycol2pieces_title">Pièces détachées</h1>
 				<p class="viewcategorycol2_text">Dans cette rubrique, vous trouverez de multiples pièces pour compléter ou modifier vos personnages PLAYMOBIL&reg;.</p>
+                <p class="viewcategorycol2_info">* articles non adaptés aux moins de 3 ans</p>
 			</div>
 		</div>
 	</div>

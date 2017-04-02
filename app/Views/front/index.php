@@ -149,7 +149,7 @@
                                 </div>
 
                                 <?php if($newProduct['quantity'] == 0): ?>
-                                    <p>RUPTURE DE STOCK</p>
+                                    <p class="ruptureQte">RUPTURE DE STOCK</p>
                                 <?php elseif($newProduct['quantity'] > 0): ?>    
                                     <!-- container +1 -->
                                     <div id="<?=$newProduct['id'];?>" class="item--helper-slide">
@@ -217,7 +217,7 @@
                                     </div>
                                 </div>
                                 <?php if($newProduct['quantity'] == 0): ?>
-                                    <p>RUPTURE DE STOCK</p>
+                                    <p class="ruptureQte">RUPTURE DE STOCK</p>
                                 <?php elseif($newProduct['quantity'] > 0): ?>    
                                     <!-- container +1 -->
                                     <div id="<?=$newProduct['id'];?>" class="item--helper-slide">
@@ -284,7 +284,7 @@
                                 </div>
                                 
                                 <?php if($newProduct['quantity'] == 0): ?>
-                                    <p>RUPTURE DE STOCK</p>
+                                    <p class="ruptureQte">RUPTURE DE STOCK</p>
                                 <?php elseif($newProduct['quantity'] > 0): ?>    
                                     <!-- container +1 -->
                                     <div id="<?=$newProduct['id'];?>" class="item--helper-slide">

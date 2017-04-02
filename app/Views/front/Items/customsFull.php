@@ -14,6 +14,7 @@
 			<div class="container_general">
 				<h1 class="viewcategorycol2customs_title">Customs</h1>
 				<p class="viewcategorycol2_text">Les customs vendus dans la boutique KLICKIT sont des figurines de la marque PLAYMOBIL&reg; qui ont été modifiées. Ces transformations sont faites à l'aide de pièces en résine, tampographies, peintures, stickers... Les personnages modifiés par tampographie sont jouables comme des figurines d'origine. Les personnages modifiés à partir de pièces en résine et peintures ne sont plus considérées comme des jouets, mais comme des figurines de collection. Vous trouverez également des pièces en résine brutes à peindre, des stickers, pour réaliser vous même vos customs.</p>
+                <p class="viewcategorycol2_info">* articles non adaptés aux moins de 3 ans</p>
 			</div>
 		</div>
 	</div>

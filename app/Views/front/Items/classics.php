@@ -14,6 +14,7 @@
                 <div class="container_general">
                     <h1 class="viewcategorycol2_title">Classics</h1>
                     <p class="viewcategorycol2_text">Les personnages de la catégorie "Classics" sont issus de la gamme PLAYMOBIL&reg; d'origine et ils n'ont subi aucune transformation (excepté certaines modifications par démembrement). Ils peuvent provenir de boites, sachets séries, blisters ou autre.</p>
+                    <p class="viewcategorycol2_info">* articles non adaptés aux moins de 3 ans</p>
                 </div>
             </div>
         </div>
