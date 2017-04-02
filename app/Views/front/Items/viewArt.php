@@ -138,7 +138,7 @@
 
                     <!-- container +1 -->
                     <div id="<?=$items['id'];?>" class="item--helper viewartbasket">
-                        <span id="plus1">+1</span>
+                        <span id="plus1">+<span id="addBasket-number"></span></span> 
                     </div>
 
                     <div class="ajoutpanier item"><!---->
@@ -435,6 +435,10 @@
         // effet +1 AJOUTER AU PANIER
         // When we click "Add to Basket"...
         $('.addBasket').click(function(){
+            var numberChoose = $('#number').val();
+
+            $('#addBasket-number').html(numberChoose);
+
             var idProduct = $(this).data('id');
 
             // Add the animation class
