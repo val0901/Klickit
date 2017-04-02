@@ -613,7 +613,7 @@ class AjaxController extends Controller
 					$sendMail->Host = 'ssl0.ovh.net';  									// Hôte du SMTP
 					$sendMail->SMTPAuth = true;                               				// SMTP Authentification
 					$sendMail->Username = 'contact@klickit.fr'; //Username         				// SMTP username
-					$sendMail->Password = 'silSAV33@'; //mot de passe                    	 				// SMTP password
+					$sendMail->Password = 'mdp'; //mot de passe                    	 				// SMTP password
 					$sendMail->SMTPSecure = 'tls';                         					// Enable TLS encryption, `ssl` also accepted
 					$sendMail->Port = 587;                                					// TCP port to connect to
 					$sendMail->CharSet = 'UTF-8';
@@ -661,7 +661,7 @@ class AjaxController extends Controller
 					$sendMail->Host = 'ssl0.ovh.net';  									// Hôte du SMTP
 					$sendMail->SMTPAuth = true;                               				// SMTP Authentification
 					$sendMail->Username = 'contact@klickit.fr'; //Username         				// SMTP username
-					$sendMail->Password = 'silSAV33@'; //mot de passe                    	 				// SMTP password
+					$sendMail->Password = 'mdp'; //mot de passe                    	 				// SMTP password
 					$sendMail->SMTPSecure = 'tls';                         					// Enable TLS encryption, `ssl` also accepted
 					$sendMail->Port = 587;                                					// TCP port to connect to
 					$sendMail->CharSet = 'UTF-8';
