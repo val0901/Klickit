@@ -201,6 +201,7 @@
             <div class="col-md-9 viewart_savoirwidth">
                 <p class="viewart_savoirtext"><?=$items['description']?>
                 </p>
+                <p class="viewcategorycol2_info">* articles non adaptés aux moins de 3 ans</p>
             </div><!--fin viewart_savoirwidth-->
         </div><!--fin row-->
         <br><br>
