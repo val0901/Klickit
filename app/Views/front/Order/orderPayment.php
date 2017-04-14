@@ -16,7 +16,7 @@
 
     <!--Title et border-->
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-3 error">
 
         </div>
         <div class="col-md-6 orderlogin_box">
@@ -191,21 +191,26 @@
         $('.orderpayment_button').click(function(e){
             e.preventDefault();
 
-            $.ajax({
-                url: '<?=$this->url('ajax_updateOrderPayment'); ?>',
-                type: 'post',
-                cache: false,
-                data: $('form').serialize(),
-                dataType: 'json',
-                success: function(up){
-                    if(up.code == 'paypal'){
-                        window.location.href = up.link;
+            if($('input:checked').length > 0){
+                 $.ajax({
+                    url: '<?=$this->url('ajax_updateOrderPayment'); ?>',
+                    type: 'post',
+                    cache: false,
+                    data: $('form').serialize(),
+                    dataType: 'json',
+                    success: function(up){
+                        if(up.code == 'paypal'){
+                            window.location.href = up.link;
+                        }
+                        else {
+                            window.location.href = "<?=$this->url('front_payNoPayPal');?>";
+                        }
                     }
-                    else {
-                        window.location.href = "<?=$this->url('front_payNoPayPal');?>";
-                    }
-                }
-            });
+                });
+            }
+            else{
+                $('.error').html('Veuillez renseigner un paiement');
+            }
         });
     });
 </script>
