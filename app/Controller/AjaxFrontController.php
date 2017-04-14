@@ -455,6 +455,7 @@ class AjaxFrontController extends Controller
 		$getOrder = new UserModel;
 		$deleteBasket = new BasketModel;
 		$getItem = new ItemModel;
+		$getIdOrder = new OrdersModel;
 		$user = $this->getUser();
 		$sendMail = new PHPMailer;
 		$findItems = new ItemModel;
@@ -462,8 +463,10 @@ class AjaxFrontController extends Controller
 		$orderContent = [];
 
 		$getOrderByID = $getOrder->getCurrentOrderById($user['id']);
-
 		$current_order = end($getOrderByID);
+
+		$idOrders = $getIdOrder->getOrderByIdMember($user['id']);
+		$current_orderID = end($idOrders);
 
 		$findItem = new ItemModel();
 
@@ -530,7 +533,7 @@ class AjaxFrontController extends Controller
 
 					if(!empty($approvalUrl)){
 						if($user['social_title'] == 'Mme'){
-							$contentEmail = 'Bonjour Madame '.$user['lastname'].' '.$user['firstname'].', vous avez choisi le mode de paiement par PayPal ou Carte Bancaire pour votre commande n°'.$current_order['id'].' qui contient : <br> <ul>';
+							$contentEmail = 'Bonjour Madame '.$user['lastname'].' '.$user['firstname'].', vous avez choisi le mode de paiement par PayPal ou Carte Bancaire pour votre commande n°'.$current_orderID['id'].' qui contient : <br> <ul>';
 
 							foreach ($orderContent as $contentMail) {
 								$product = $findItems->findItems($contentMail);
@@ -540,7 +543,7 @@ class AjaxFrontController extends Controller
 							$contentEmail.= '</ul> <br> Votre commande vous sera expédié dès validation du paiement <br> <br> Merci de votre confiance, à très bientôt sur Klickit ! <br><br> L\'équipe Klickit.';
 						}
 						elseif($user['social_title'] == 'M'){
-							$contentEmail = 'Bonjour Monsieur '.$user['lastname'].' '.$user['firstname'].', vous avez choisi le mode de paiement par PayPal ou Carte Bancaire pour votre commande n°'.$current_order['id'].' qui contient : <br> <ul>';
+							$contentEmail = 'Bonjour Monsieur '.$user['lastname'].' '.$user['firstname'].', vous avez choisi le mode de paiement par PayPal ou Carte Bancaire pour votre commande n°'.$current_orderID['id'].' qui contient : <br> <ul>';
 
 							foreach ($orderContent as $contentMail) {
 								$product = $findItems->findItems($contentMail);
@@ -583,7 +586,7 @@ class AjaxFrontController extends Controller
 				if($updateOrder->updatePaymentOrder($user['id'], $_POST['payment'])){
 					if($deleteBasket->deleteAllBasket($user['id'])){
 						if($user['social_title'] == 'Mme'){
-							$contentEmail = 'Bonjour Madame '.$user['lastname'].' '.$user['firstname'].', vous avez choisi le mode de paiement par chèque pour votre commande n°'.$current_order['id'].' qui contient : <br> <ul>';
+							$contentEmail = 'Bonjour Madame '.$user['lastname'].' '.$user['firstname'].', vous avez choisi le mode de paiement par chèque pour votre commande n°'.$current_orderID['id'].' qui contient : <br> <ul>';
 
 							foreach ($orderContent as $contentMail) {
 								$product = $findItems->findItems($contentMail);
@@ -593,7 +596,7 @@ class AjaxFrontController extends Controller
 							$contentEmail.= '</ul> <br> Votre commande vous sera expédié dès réception du chèque libellé à l\'ordre de Klickit en indiquant le numéro de la commande au dos de celui-ci. Il est à envoyer à l\'adresse : 1 résidence beau pré, 33650 Saucats.<br><br>Merci de votre confiance, à très bientôt sur Klickit ! <br><br> L\'équipe Klickit.';
 						}
 						elseif($user['social_title'] == 'M'){
-							$contentEmail = 'Bonjour Monsieur '.$user['lastname'].' '.$user['firstname'].', vous avez choisi le mode de paiement par chèque pour votre commande n°'.$current_order['id'].' qui contient : <br> <ul>';
+							$contentEmail = 'Bonjour Monsieur '.$user['lastname'].' '.$user['firstname'].', vous avez choisi le mode de paiement par chèque pour votre commande n°'.$current_orderID['id'].' qui contient : <br> <ul>';
 
 							foreach ($orderContent as $contentMail) {
 								$product = $findItems->findItems($contentMail);
@@ -634,7 +637,7 @@ class AjaxFrontController extends Controller
 				if($updateOrder->updatePaymentOrder($user['id'], $_POST['payment'])){
 					if($deleteBasket->deleteAllBasket($user['id'])){
 						if($user['social_title'] == 'Mme'){
-							$contentEmail = 'Bonjour Madame '.$user['lastname'].' '.$user['firstname'].', vous avez choisi le mode de paiement par virement pour votre commande n°'.$current_order['id'].' qui contient : <br> <ul>';
+							$contentEmail = 'Bonjour Madame '.$user['lastname'].' '.$user['firstname'].', vous avez choisi le mode de paiement par virement pour votre commande n°'.$current_orderID['id'].' qui contient : <br> <ul>';
 
 							foreach ($orderContent as $contentMail) {
 								$product = $findItems->findItems($contentMail);
@@ -644,7 +647,7 @@ class AjaxFrontController extends Controller
 							$contentEmail.= '</ul> <br> Votre commande vous sera expédié dès validation du virement. Il sera à adresser à : Laurent Lafont, IBAN : FR23 1001 1000 2003 3506 1893 K88, BIC : PSSTFRPPCNE, avec le numéro de la commande en commentaire. <br><br>Merci de votre confiance, à très bientôt sur Klickit ! <br><br> L\'équipe Klickit.';
 						}
 						elseif($user['social_title'] == 'M'){
-							$contentEmail = 'Bonjour Monsieur '.$user['lastname'].' '.$user['firstname'].', vous avez choisi le mode de paiement par virement pour votre commande n°'.$current_order['id'].' qui contient : <br> <ul>';
+							$contentEmail = 'Bonjour Monsieur '.$user['lastname'].' '.$user['firstname'].', vous avez choisi le mode de paiement par virement pour votre commande n°'.$current_orderID['id'].' qui contient : <br> <ul>';
 
 							foreach ($orderContent as $contentMail) {
 								$product = $findItems->findItems($contentMail);
