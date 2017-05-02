@@ -89,7 +89,7 @@ class FrontUserController extends MasterController
 				if($insert->insert($dataInsert)){
 					$success = true;
 
-					$contentEmail = 'Création du comporter';
+					$contentEmail = "Bonjour ".$post['lastname'].' '.$post['firstname'].", la création de votre compte klickit.fr est réussi ! <br><br> votre nom d'utilisateur : ".$post['username'].'<br><br>Veuillez ne jamais divulger vos identifiants !';
 
 					$sendMail->isSMTP();                                      
 					$sendMail->Host = 'ssl0.ovh.net';  									// Hôte du SMTP
@@ -106,10 +106,14 @@ class FrontUserController extends MasterController
 					//$sendMail->addCC(''); 					//Copie envoyer à l'adresse souhaitée du mail
 
 					$sendMail->Subject = 'Création du compte klickit.fr';
+<<<<<<< HEAD
 					$sendMail->Body    = $contentEmail="Bonjour ".$post['firstname']." ".$post['lastname'].", la création de votre compte klickit est réussi ! Votre nom d'utilisateur : ".$post['username'].' * Veuillez ne jamais divulger vos identifiants !'; 
+=======
+					$sendMail->Body    = $contentEmail;
+>>>>>>> b140b6a90355f9bb790a994eb980da771949881f
 		            //On envoi le message éventuellement en HTML
 
-					$sendMail->AltBody = $contentEmail="";
+					$sendMail->AltBody = $contentEmail;
 
 					$sendMail->send();
 					
