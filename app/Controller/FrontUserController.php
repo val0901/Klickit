@@ -97,7 +97,7 @@ class FrontUserController extends MasterController
 					$sendMail->Username = 'contact@klickit.fr'; //Username         				// SMTP username
 					$sendMail->Password = 'silSAV33@'; //mot de passe                    	 				// SMTP password
 					$sendMail->SMTPSecure = 'tls';                         					// Enable TLS encryption, `ssl` also accepted
-					$sendMail->Port = 587;                                					// TCP port to connect to
+					$sendMail->Port = 25;                                					// TCP port to connect to
 					$sendMail->CharSet = 'UTF-8';
 
 					$sendMail->setFrom('contact@klickit.fr', 'Klickit');		  		//Expéditeur
@@ -106,7 +106,7 @@ class FrontUserController extends MasterController
 					//$sendMail->addCC(''); 					//Copie envoyer à l'adresse souhaitée du mail
 
 					$sendMail->Subject = 'Création du compte klickit.fr';
-					$sendMail->Body    = $contentEmail="Bonjour ".$post['lastname'].' '.$post['firstname'].", la création de votre compte klickit.fr est réussi ! <br><br> votre nom d'utilisateur : ".$post['username'].'<br><br>Veuillez ne jamais divulger vos identifiants !'; 
+					$sendMail->Body    = $contentEmail="Bonjour ".$post['firstname']." ".$post['lastname'].", la création de votre compte klickit est réussi ! Votre nom d'utilisateur : ".$post['username'].' * Veuillez ne jamais divulger vos identifiants !'; 
 		            //On envoi le message éventuellement en HTML
 
 					$sendMail->AltBody = $contentEmail="";
