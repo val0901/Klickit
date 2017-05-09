@@ -42,10 +42,10 @@
                     <label for="exampleInputName2">Pays</label>
                     <select class="form-control" name="country">
                         <option value="FR">France</option>
-                        <option value="BE">Belgique</option>
-                        <option value="CH">Suisse</option>
-                        <option value="CN">Chine</option>
-                        <option value="US">Etat-Unis</option>
+                        <option value="BE" disabled>Belgique</option>
+                        <option value="CH" disabled>Suisse</option>
+                        <option value="CN" disabled>Chine</option>
+                        <option value="US" disabled>Etat-Unis</option>
                     </select>
 
                 </div>
