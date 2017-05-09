@@ -27,7 +27,7 @@ class BackController extends Controller
 	{
 
 		$orders = new OrdersModel();
-		$list_orders = $orders->findAllWithUsers();
+		$list_orders = $orders->findAllOrdersEndForIndex();
 
 		$messages = new MessageModel();
 		$list_messages = $messages->find15Messages();

@@ -58,6 +58,17 @@ class OrdersModel extends \W\Model\Model
 		return $sth->fetchAll();
 	}
 
+	/*Requête sur la table orders avec jointure sur la table user pour récupérer toute les commandes "Fini" pour la page d'accueil back*/
+	public function findAllOrdersEndForIndex()
+	{
+		$sql = 'SELECT ' .$this->table.'.*, u.firstname, u.lastname FROM ' . $this->table . ' LEFT JOIN user AS u ON '.$this->table.'.idMember = u.id WHERE '.$this->table.'.order_process = "Fini" ORDER BY ' .$this->table.'.date_creation DESC LIMIT 15';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->execute(); 
+
+		return $sth->fetchAll();
+	}
+
 	/** 
 	*Méthode pour compter le nombre de résultat 
 	* @return le nombre de lignes contenu ds la table
