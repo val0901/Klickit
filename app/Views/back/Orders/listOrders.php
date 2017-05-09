@@ -12,13 +12,14 @@
 		<div id="viewOrder">
 			<table class="table table-responsive">
 				<thead class="backgthead">
-					<th>Numéro</th>
+					<th class="optimphone">Numéro</th>
 					<th class="optimphone">Client</th>
 					<th class="optimphone">Contenu de la commande</th>
 					<th class="optimphone">Quantité</th>
 					<th class="optimphone">Sous-Total</th>
-					<th>Total</th>
-					<th>Date de la commande</th>
+					<th class="optimphone">Total</th>
+					<th class="optimphone">Type de paiement</th>
+					<th class="optimphone">Date de la commande</th>
 					<th colspan="2">Statut</th>
 					<!-- <th id="thaction">Changer le statut</th> -->
 				</thead>
@@ -57,7 +58,7 @@
 								</td>
 								<td class="optimphone"><?=$order['sub_total'];?></td>
 								<td><?=$order['total'];?></td>
-								
+								<td><?=$order['payment'];?></td>
 								<td><?= date('d/m/Y', strtotime($order['date_creation']));?></td>
 								<td>
 									<?php   if ($order['statut'] == 'enPreparation') : ?>

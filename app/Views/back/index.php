@@ -72,6 +72,7 @@
 				<th class="title_home_phone">Quantité</th>
 				<th class="title_home_phone">Sous-Total</th>
 				<th>Total</th>
+				<th>Paiement</th>
 				<th>Date de la commande</th>
 				<th class="title_home_phone">Statut</th>
 				<th>Action</th>
@@ -105,6 +106,7 @@
 	            			</td>
 	            			<td class="title_home_phone"><?=$order['sub_total'];?></td>
 	            			<td><?=$order['total'];?></td>
+	            			<td><?=$order['payment'];?></td>
 							<td><?= date('d/m/Y', strtotime($order['date_creation']));?></td>
 							<td class="title_home_phone">
 							<?php if ($order['statut'] == 'enPreparation') :
