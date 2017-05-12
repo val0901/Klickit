@@ -30,7 +30,7 @@ class FrontItemController extends MasterController
 
 		// Permet de récupéré la sous-catégorie sélectionner pour afficher uniquement les playmobils de cette sous-catégorie
 		$affiche = new ItemModel();
-		$afficheItems = $affiche->findSubCategory($sub_category, $page, $max);
+		$afficheItems = $affiche->findSubCategoryAndCategory('PlaymobilClassique', $sub_category, $page, $max);
 
 		// Permet de récupérer les playmobils qui sont de la catégorie annoncé avec le statut nouveauté pour les affichés dans le slider du bas de page
 		$newItems = new ItemModel();
@@ -318,7 +318,7 @@ class FrontItemController extends MasterController
 		$max = 12;
 
 		$affiche = new ItemModel();
-		$afficheItems = $affiche->findSubCategory($sub_category, $page, $max);
+		$afficheItems = $affiche->findSubCategoryAndCategory('PiecesDetachees', $sub_category, $page, $max);
 
 		$newItems = new ItemModel();
 		$afficheNewItems = $newItems->findCategoryStatutCustom('PiecesDetachees', 'nouveaute');
