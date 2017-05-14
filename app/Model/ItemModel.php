@@ -110,6 +110,25 @@ class ItemModel extends \W\Model\Model
 	    return $result['total'];
 	}
 
+	/** 
+	*Méthode pour compter le nombre de résultat par sous catégorie ET catégorie
+	* @return le nombre de lignes contenu ds la table
+	*/
+	public function countResultCategoryAndSub($column1 = false, $column2 = false)
+
+    {
+	    $sql = 'SELECT COUNT(*) as total FROM ' . $this->table;
+
+	    if ($column1 && $column2) {
+	    	$sql.= ' WHERE category = "'.$column1.'" AND sub_category = "' .$column2 .'"';
+	    }
+	    $sth = $this->dbh->prepare($sql);
+	    $sth->execute();
+
+	    $result = $sth->fetch();
+
+	    return $result['total'];
+	}
 
 	/*REQUÊTE SUR LA ITEM PAR ID*/
 	public function findItems($id)

@@ -21,7 +21,7 @@ class FrontItemController extends MasterController
 	{
 		/*Pagination*/
 		$nbpage= new ItemModel();
-		$nb=$nbpage->countResultssub($sub_category);
+		$nb=$nbpage->countResultCategoryAndSub('PlaymobilClassique', $sub_category);
 
 		$page = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
 		$max = 12;
@@ -170,7 +170,7 @@ class FrontItemController extends MasterController
 	{
 		/*pagination*/
 		$nbpage= new ItemModel();
-		$nb=$nbpage->countResultssub($sub_category);
+		$nb=$nbpage->countResultCategoryAndSub('PlaymobilCustom', $sub_category);
 
 		$page = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
 		$max = 12;
@@ -312,7 +312,7 @@ class FrontItemController extends MasterController
 	{
 		/*pagination*/
 		$nbpage= new ItemModel();
-		$nb=$nbpage->countResultssub($sub_category);
+		$nb=$nbpage->countResultCategoryAndSub('PiecesDetachees', $sub_category);
 
 		$page = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
 		$max = 12;
@@ -454,7 +454,7 @@ class FrontItemController extends MasterController
 	{
 		/*pagination*/
 		$nbpage= new ItemModel();
-		$nb=$nbpage->countResultssub($sub_category);
+		$nb=$nbpage->countResultCategoryAndSub('Divers', $sub_category);
 
 		$page = (isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
 		$max = 12;
