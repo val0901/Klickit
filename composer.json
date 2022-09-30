@@ -35,7 +35,7 @@
         "composer/composer": "^1.2",
         "intervention/image": "^2.3",
         "paypal/sdk-core-php": "^3.3",
-        "dompdf/dompdf": "^0.7.0",
+        "dompdf/dompdf": "^2.0.1",
         "paypal/rest-api-sdk-php": "*"
     },
     "autoload": {
